@@ -1515,6 +1515,8 @@ details summary {
 .povo-dunedain { --povo: #aab3c8; }
 .povo-hobbit { --povo: #b8cb7c; }
 .povo-anao { --povo: #d7ae77; }
+.povo-vala { --povo: #f0e3b0; }
+.povo-orc { --povo: #8f8a6a; }
 .povo-homem { --povo: #c89b83; }
 .povo-sinal {
   display: inline-block;

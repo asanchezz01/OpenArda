@@ -1,0 +1,404 @@
+{
+  "etapa": 6,
+  "titulo": "O Hobbit e a linhagem de Durin",
+  "data": "2026-11-07",
+  "prioridade_geracao": [
+    "API local ComfyUI (10.1.4.150), como no HopeGym",
+    "API de imagens da OpenAI se a local estiver indisponível"
+  ],
+  "geracao": {
+    "api": "ComfyUI local",
+    "script": "scripts/gerar-fotografias.py --retratos",
+    "modelo": {
+      "unet": "flux-2-klein-9b-fp8.safetensors",
+      "clip": "qwen_3_8b_fp8mixed.safetensors",
+      "steps": 4,
+      "cfg": 1
+    },
+    "resolucao": [
+      1024,
+      1024
+    ],
+    "webp": {
+      "resolucao": [
+        512,
+        512
+      ],
+      "alvo_kib": 100
+    }
+  },
+  "pesquisa": "Traços a partir de conhecimento prévio das obras; não houve cotejo direto com edições nem consulta a índices nesta entrega.",
+  "personagens": [
+    {
+      "id": "thorin",
+      "nome": "Thorin Escudo de Carvalho",
+      "epoca": "A jornada a Erebor, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Thorin Oakenshield, heir of Durin, an enormously proud and important dwarf: long dark hair and long dark beard touched with grey, piercing blue-grey eyes, a stern noble face, a sky-blue hood with a long silver tassel, a fine dark blue cloak with silver clasps. Proud, grave, commanding expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Capuz azul-celeste com uma longa borla de prata; o mais importante dos anões da companhia."
+      ],
+      "inferido": [
+        "Feições e cor do cabelo não descritas são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Richard Armitage",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "balin",
+      "nome": "Balin",
+      "epoca": "A jornada a Erebor, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Balin, an old, kindly dwarf: a long white beard, white hair, kind twinkling eyes, a scarlet red hood, a brown travelling coat. Warm, wise, friendly expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Capuz escarlate; parece mais velho que os outros e é bondoso com Bilbo."
+      ],
+      "inferido": [
+        "Feições e cor do cabelo não descritas são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Ken Stott",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "dwalin",
+      "nome": "Dwalin",
+      "epoca": "A jornada a Erebor, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Dwalin, a stern warrior dwarf: a blue beard tucked into a golden belt, bright eyes, a strong scarred face, a dark green hood. Gruff, watchful expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Capuz verde-escuro e barba azul presa num cinto dourado."
+      ],
+      "inferido": [
+        "Feições e cor do cabelo não descritas são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Graham McTavish",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "fili",
+      "nome": "Fíli",
+      "epoca": "A jornada a Erebor, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Fíli, one of the youngest of the company: a yellow beard, golden-yellow hair, bright lively eyes, a young cheerful face, a blue hood and a silver belt. Bold, eager expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Capuz azul, cinto de prata e barba amarela; um dos mais jovens, sobrinho de Thorin."
+      ],
+      "inferido": [
+        "Feições e cor do cabelo não descritas são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Dean O'Gorman",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "kili",
+      "nome": "Kíli",
+      "epoca": "A jornada a Erebor, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Kíli, one of the youngest of the company, brother of Fíli: a yellow beard, golden hair, bright keen eyes, a young lively face, a blue hood and a silver belt. Cheerful, daring expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Capuz azul, cinto de prata e barba amarela; irmão de Fíli e sobrinho de Thorin."
+      ],
+      "inferido": [
+        "Feições e cor do cabelo não descritas são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Aidan Turner",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "gloin",
+      "nome": "Glóin",
+      "epoca": "A jornada a Erebor, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Glóin, a sturdy dwarf: a thick red-brown beard, ruddy cheeks, a white hood. Gruff, stubborn, proud expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Capuz branco; irmão de Óin e pai de Gimli."
+      ],
+      "inferido": [
+        "Barba castanho-avermelhada é interpretação.",
+        "Feições e cor do cabelo não descritas são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Peter Hambleton",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "oin",
+      "nome": "Óin",
+      "epoca": "A jornada a Erebor, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Óin, an elderly dwarf, brother of Glóin: a long grey-brown beard, a brown hood. Wise, slightly hard-of-hearing, attentive expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Capuz castanho; irmão de Glóin."
+      ],
+      "inferido": [
+        "Feições e cor do cabelo não descritas são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "John Callen",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "dori",
+      "nome": "Dori",
+      "epoca": "A jornada a Erebor, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Dori, a strong but fussy dwarf: a grey beard in neat braids, a purple hood. Worried, kindly expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Capuz roxo; o mais forte da companhia, segundo o narrador."
+      ],
+      "inferido": [
+        "Feições e cor do cabelo não descritas são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Mark Hadlow",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "nori",
+      "nome": "Nori",
+      "epoca": "A jornada a Erebor, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Nori, a cunning dwarf: a reddish-brown beard and hair arranged in unusual shapes, a purple hood. Sly, amused expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Capuz roxo; irmão de Dori e Ori."
+      ],
+      "inferido": [
+        "Feições e cor do cabelo não descritas são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Jed Brophy",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "ori",
+      "nome": "Ori",
+      "epoca": "A jornada a Erebor, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Ori, a young gentle dwarf: a short soft brown beard, a grey hood and a knitted scarf. Shy, earnest expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Capuz cinzento; irmão de Dori e Nori."
+      ],
+      "inferido": [
+        "Feições e cor do cabelo não descritas são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Adam Brown",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "bifur",
+      "nome": "Bifur",
+      "epoca": "A jornada a Erebor, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Bifur, a rough dwarf from the mining folk: a wild dark beard, a scar on the forehead, a yellow hood. Fierce, odd expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Capuz amarelo."
+      ],
+      "inferido": [
+        "A cicatriz é interpretação.",
+        "Feições e cor do cabelo não descritas são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "William Kircher",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "bofur",
+      "nome": "Bofur",
+      "epoca": "A jornada a Erebor, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Bofur, a cheerful dwarf: a brown moustache and short beard, a yellow hood. Friendly, humorous expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Capuz amarelo; irmão de Bombur."
+      ],
+      "inferido": [
+        "Feições e cor do cabelo não descritas são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "James Nesbitt",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "bombur",
+      "nome": "Bombur",
+      "epoca": "A jornada a Erebor, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Bombur, a very fat, round-faced dwarf: a great red-orange braided beard, rosy cheeks, a pale green hood. Sleepy, good-natured expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Capuz verde-claro; muito gordo."
+      ],
+      "inferido": [
+        "Feições e cor do cabelo não descritas são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Stephen Hunter",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "dain",
+      "nome": "Dáin II Pé de Ferro",
+      "epoca": "Batalha dos Cinco Exércitos, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Dáin II Ironfoot, lord of the Iron Hills and later King under the Mountain: a strong, grizzled mature dwarf with a reddish-grey beard, a battle-worn face, a steel helm-cap and a heavy mail coat with iron plates. Tough, determined expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Senhor das Colinas de Ferro, primo de Thorin; tornou-se Rei sob a Montanha."
+      ],
+      "inferido": [
+        "Cor da barba e armadura são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Billy Connolly",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "bard",
+      "nome": "Bard",
+      "epoca": "Esgaroth, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Bard the Bowman of Lake-town, descendant of Girion of Dale: a tall grim-faced man, dark hair, dark eyes, a lean strong face with a short dark beard, a dark hooded cloak and leather quiver strap. Grim, steadfast expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Bard, de voz e rosto sombrios; descendente de Girion de Valle; matou Smaug com a Flecha Negra."
+      ],
+      "inferido": [
+        "Cabelo e olhos escuros são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Luke Evans",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "thranduil",
+      "nome": "Thranduil",
+      "epoca": "Salões do Rei Elfo, outono de 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Thranduil, the Elvenking of Mirkwood: long golden hair, grey eyes, an ageless proud and cool face, wearing a crown of red autumn leaves and berries, robes of deep red and gold. Proud, aloof expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Cabelo dourado e coroa de frutos silvestres e folhas vermelhas no outono."
+      ],
+      "inferido": [
+        "Olhos e vestes são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Lee Pace",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "beorn",
+      "nome": "Beorn",
+      "epoca": "Casa de Beorn, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Beorn the skin-changer: a huge man with a thick black beard and thick black hair, bare brawny arms with knotted muscles, a coarse woollen tunic. Gruff, wild, watchful expression with a hint of humour. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Homem enorme, de barba e cabelo negros e espessos, braços nus musculosos e túnica de lã."
+      ],
+      "inferido": [
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Mikael Persbrandt",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "durin",
+      "nome": "Durin, o Imortal",
+      "epoca": "Khazad-dûm, nos Dias Antigos",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Durin the Deathless, eldest of the Seven Fathers of the Dwarves, founder of Khazad-dûm: an ancient, venerable dwarf king with a very long white beard, deep wise eyes, a simple crown of silver set with small stars. Majestic, timeless, serene expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "O mais velho dos Sete Pais dos Anões; fundou Khazad-dûm."
+      ],
+      "inferido": [
+        "Aparência não descrita; a coroa alude à coroa de estrelas do Espelhágua.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "thror",
+      "nome": "Thrór",
+      "epoca": "Rei sob a Montanha, antes de Smaug",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Thrór, King under the Mountain, grandfather of Thorin: an old, wealthy dwarf king with a long white beard, a heavy jewelled golden crown, rich robes of gold and dark red. Proud, slightly haunted expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Rei sob a Montanha; perdeu Erebor para Smaug e foi morto por Azog em Moria."
+      ],
+      "inferido": [
+        "Aparência não descrita; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Jeffrey Thomas",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "thrain",
+      "nome": "Thráin II",
+      "epoca": "Depois de Azanulbizar",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one dwarf: short, broad and heavy-boned, with a long thick beard, weathered skin and strong features; head and shoulders only. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Thráin II, son of Thrór and father of Thorin: a grim, weathered dwarf with a long grey-brown beard, one eye lost in battle and covered by a scar, a worn dark travelling hood. Brooding, determined expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Perdeu um olho na Batalha de Azanulbizar; pai de Thorin."
+      ],
+      "inferido": [
+        "Cor da barba é interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Michael Mizrahi",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "azog",
+      "nome": "Azog",
+      "epoca": "Moria, antes de Azanulbizar",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one Orc: a brutal, scarred, inhuman warrior face with coarse greyish skin, heavy brow, sharp uneven teeth and small fierce eyes, realistic like practical prosthetic makeup in a photograph; not a cartoon. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Azog, the great Orc of Moria: a huge brutal head, grey scarred skin, a heavy iron cap-helm, small burning eyes, yellow teeth. Cruel, menacing expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Grande Orc de Moria; matou Thrór e foi morto por Dáin em Azanulbizar."
+      ],
+      "inferido": [
+        "Aparência não descrita; o elmo de ferro é interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Manu Bennett",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "bolg",
+      "nome": "Bolg",
+      "epoca": "Batalha dos Cinco Exércitos, 2941 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one Orc: a brutal, scarred, inhuman warrior face with coarse greyish skin, heavy brow, sharp uneven teeth and small fierce eyes, realistic like practical prosthetic makeup in a photograph; not a cartoon. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Bolg of the North, son of Azog: a massive brutal Orc warrior, dark grey scarred skin, a heavy jaw, a crude iron collar and leather armour. Savage, ferocious expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filho de Azog; liderou os Orcs na Batalha dos Cinco Exércitos e foi morto por Beorn."
+      ],
+      "inferido": [
+        "Aparência não descrita; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "John Tui",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    }
+  ]
+}

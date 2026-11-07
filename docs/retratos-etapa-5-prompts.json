@@ -1,0 +1,295 @@
+{
+  "etapa": 5,
+  "titulo": "Segunda Era e herdeiros de Númenor",
+  "data": "2026-11-07",
+  "prioridade_geracao": [
+    "API local ComfyUI (10.1.4.150), como no HopeGym",
+    "API de imagens da OpenAI se a local estiver indisponível"
+  ],
+  "geracao": {
+    "api": "ComfyUI local",
+    "script": "scripts/gerar-fotografias.py --retratos",
+    "modelo": {
+      "unet": "flux-2-klein-9b-fp8.safetensors",
+      "clip": "qwen_3_8b_fp8mixed.safetensors",
+      "steps": 4,
+      "cfg": 1
+    },
+    "resolucao": [
+      1024,
+      1024
+    ],
+    "webp": {
+      "resolucao": [
+        512,
+        512
+      ],
+      "alvo_kib": 100
+    }
+  },
+  "pesquisa": "Traços a partir de conhecimento prévio das obras; não houve cotejo direto com edições nem consulta a índices nesta entrega.",
+  "personagens": [
+    {
+      "id": "gilgalad",
+      "nome": "Gil-galad",
+      "epoca": "Lindon, na Última Aliança",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Gil-galad, last High King of the Noldor in Middle-earth: long dark hair, grey eyes, a noble, commanding ageless face, a slender gold circlet, ornate golden armour at the shoulders under a dark blue mantle. Valiant, solemn expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Último Alto Rei dos Noldor; liderou a Última Aliança com Elendil."
+      ],
+      "inferido": [
+        "Cabelo, olhos e a armadura dourada são interpretação; a armadura segue o visual dos filmes.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Mark Ferguson",
+        "filme": "The Lord of the Rings: The Fellowship of the Ring (2001)"
+      }
+    },
+    {
+      "id": "cirdan",
+      "nome": "Círdan",
+      "epoca": "Mithlond, no fim da Terceira Era",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Círdan the Shipwright, the most ancient of the Elves in Middle-earth: very tall, grey and old in appearance, with a long silver-grey beard, long grey hair, and eyes as keen as stars; a pale grey hooded robe. Wise, patient, far-seeing expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Muito alto, de barba longa, grisalho e com aparência de velho, salvo os olhos, agudos como estrelas."
+      ],
+      "inferido": [
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Michael Elsworth",
+        "filme": "The Lord of the Rings: The Fellowship of the Ring (2001)"
+      }
+    },
+    {
+      "id": "elendil",
+      "nome": "Elendil",
+      "epoca": "Grande Rei de Arnor e Gondor",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Elendil the Tall, High King of Arnor and Gondor, a Númenórean of great stature in later middle age: dark hair with grey at the temples, grey eyes, a noble long face, short dark beard, a winged silver crown and a dark blue mantle over mail. Regal, resolute expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Chamado o Alto; fundou Arnor e Gondor depois da Queda de Númenor."
+      ],
+      "inferido": [
+        "Cabelo escuro e olhos cinzentos, comuns aos Dúnedain.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Peter McKenzie",
+        "filme": "The Lord of the Rings: The Fellowship of the Ring (2001)"
+      }
+    },
+    {
+      "id": "isildur",
+      "nome": "Isildur",
+      "epoca": "Fim da Segunda Era",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Isildur, elder son of Elendil, a tall Númenórean prince in his prime: dark hair, grey eyes, a proud strong face, short dark beard, mail under a dark mantle with a silver clasp. Proud, determined expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filho mais velho de Elendil; cortou o Um Anel da mão de Sauron."
+      ],
+      "inferido": [
+        "Cores inferidas dos Dúnedain.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Harry Sinclair",
+        "filme": "The Lord of the Rings: The Fellowship of the Ring (2001)"
+      }
+    },
+    {
+      "id": "anarion",
+      "nome": "Anárion",
+      "epoca": "Gondor, fim da Segunda Era",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Anárion, younger son of Elendil, Númenórean prince: dark hair, grey eyes, a calm noble face, short dark beard, a white and silver mantle with a sun emblem clasp. Steady, thoughtful expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filho mais novo de Elendil; governou Gondor com Isildur a partir de Osgiliath."
+      ],
+      "inferido": [
+        "Cores inferidas dos Dúnedain; o emblema do sol alude a Minas Anor.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "arpharazon",
+      "nome": "Ar-Pharazôn",
+      "epoca": "Armenelos, antes da Queda",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Ar-Pharazôn the Golden, last and mightiest King of Númenor: golden hair, a proud handsome face hardened by arrogance, a heavy jewelled golden crown and robes of gold and black. Haughty, ambitious expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "O Dourado, o mais poderoso e orgulhoso dos Reis de Númenor."
+      ],
+      "inferido": [
+        "O cabelo dourado interpreta o título; a coroa e as vestes são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "amandil",
+      "nome": "Amandil",
+      "epoca": "Andúnië, antes da partida para o Oeste",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Amandil, Lord of Andúnië and leader of the Faithful, an elderly Númenórean: white hair and beard, grey eyes, a kind, deeply lined noble face, a plain grey and blue mantle. Gentle, resolute, sorrowful expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Senhor de Andúnië e líder dos Fiéis; pai de Elendil."
+      ],
+      "inferido": [
+        "Aparência não descrita; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "meneldil",
+      "nome": "Meneldil",
+      "epoca": "Rei de Gondor",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Meneldil, son of Anárion, King of Gondor: dark hair, grey eyes, a composed intelligent face, clean-shaven, a white mantle and a simple silver crown. Calm, prudent expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filho de Anárion; recebeu de Isildur o governo de Gondor."
+      ],
+      "inferido": [
+        "Aparência não descrita; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "valandil",
+      "nome": "Valandil",
+      "epoca": "Rei de Arnor",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Valandil, youngest son of Isildur, King of Arnor, raised in Rivendell: dark hair, grey eyes, a young grave face, clean-shaven, a dark blue mantle and a silver circlet. Serious, gentle expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filho caçula de Isildur, criado em Imladris; Rei de Arnor."
+      ],
+      "inferido": [
+        "Aparência não descrita; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "arathorn",
+      "nome": "Arathorn II",
+      "epoca": "Chefe dos Dúnedain",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Arathorn II, Chieftain of the Dúnedain of the North, a Ranger: dark hair, grey eyes, a lean weathered face, short dark beard, a travel-worn dark green hooded cloak with a star-shaped silver brooch. Watchful, grave expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Chefe dos Dúnedain do Norte e pai de Aragorn."
+      ],
+      "inferido": [
+        "Traços inferidos dos Dúnedain e de Aragorn.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "gilraen",
+      "nome": "Gilraen",
+      "epoca": "Imladris, mãe de Aragorn",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human woman with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Gilraen the Fair, a Dúnadan woman, mother of Aragorn: dark hair, grey eyes, a beautiful but sorrowful face, a plain grey gown and dark shawl. Quiet, melancholic expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Gilraen, a Bela; criou Aragorn em Imladris."
+      ],
+      "inferido": [
+        "Cores inferidas dos Dúnedain.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "celebrian",
+      "nome": "Celebrían",
+      "epoca": "Imladris, antes da partida",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf-woman with natural believable skin and subtle pointed ears. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Celebrían, daughter of Galadriel and Celeborn, wife of Elrond: long silver hair, grey eyes, a luminous gentle face, a silver and pale blue gown. Serene, kind expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filha de Celeborn e Galadriel; esposa de Elrond."
+      ],
+      "inferido": [
+        "Cabelo prateado inferido do nome e de Celeborn.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "elladan",
+      "nome": "Elladan",
+      "epoca": "Guerra do Anel",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Elladan, son of Elrond, twin of Elrohir: long dark hair, grey eyes, a fair face very like his father's, a grey cloak over bright mail. Vigilant, stern expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Gêmeo de Elrohir, tão parecidos que não se distinguiam; cavalgou com os Dúnedain."
+      ],
+      "inferido": [
+        "Cabelo escuro e olhos cinzentos como Elrond.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "elrohir",
+      "nome": "Elrohir",
+      "epoca": "Guerra do Anel",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Elrohir, son of Elrond, twin of Elladan: long dark hair, grey eyes, a fair face very like his twin's, a grey cloak over bright mail, a slightly warmer expression than his brother. Vigilant, resolute. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Gêmeo de Elladan, tão parecidos que não se distinguiam."
+      ],
+      "inferido": [
+        "A pequena diferença de expressão entre os gêmeos é interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "eldarion",
+      "nome": "Eldarion",
+      "epoca": "Quarta Era, príncipe herdeiro",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Eldarion, son of Aragorn and Arwen, prince of the Reunited Kingdom, a young man: dark hair, grey eyes, a fair face with something Elvish in it, clean-shaven, a white mantle with a silver star brooch. Noble, hopeful expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filho de Aragorn e Arwen; herdou o Reino Reunido."
+      ],
+      "inferido": [
+        "Aparência não descrita; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "tar-aldarion",
+      "nome": "Tar-Aldarion",
+      "epoca": "Rei Navegador de Númenor",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Tar-Aldarion, the Mariner King of Númenor: dark hair, grey eyes, a sea-weathered energetic face, short beard, a mariner's cloak of dark blue with a silver ship clasp. Restless, adventurous expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Rei de Númenor, grande navegador; fundou a Guilda dos Aventureiros."
+      ],
+      "inferido": [
+        "Aparência não descrita; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "erendis",
+      "nome": "Erendis",
+      "epoca": "Númenor, esposa de Aldarion",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human woman with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Erendis, wife of Tar-Aldarion, a Númenórean woman of the western lands: dark hair, grey eyes, a beautiful proud and stern face, a simple white gown. Proud, wounded, unbending expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Esposa de Aldarion, que se afastou dele pelas longas viagens; mãe de Tar-Ancalimë."
+      ],
+      "inferido": [
+        "Aparência não descrita; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "tar-ancalime",
+      "nome": "Tar-Ancalimë",
+      "epoca": "Primeira Rainha Regente de Númenor",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human woman with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Tar-Ancalimë, first Ruling Queen of Númenor: dark hair, grey eyes, a proud, strong-willed regal face, a silver crown and deep blue royal robes. Proud, imperious expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filha de Aldarion e Erendis, primeira Rainha Regente de Númenor."
+      ],
+      "inferido": [
+        "Aparência não descrita; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "tar-miriel",
+      "nome": "Tar-Míriel",
+      "epoca": "Antes da usurpação de Ar-Pharazôn",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human woman with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Tar-Míriel, rightful Queen of Númenor: long golden hair, grey eyes, a very beautiful sorrowful face, a white and silver gown and a delicate silver crown. Grieving, dignified expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Herdeira legítima do cetro, forçada a casar com Ar-Pharazôn."
+      ],
+      "inferido": [
+        "Cabelo dourado e olhos são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    }
+  ]
+}

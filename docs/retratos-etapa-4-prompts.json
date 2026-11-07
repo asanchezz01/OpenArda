@@ -1,0 +1,294 @@
+{
+  "etapa": 4,
+  "titulo": "Doriath e os Grandes Contos",
+  "data": "2026-11-07",
+  "prioridade_geracao": [
+    "API local ComfyUI (10.1.4.150), como no HopeGym",
+    "API de imagens da OpenAI se a local estiver indisponível"
+  ],
+  "geracao": {
+    "api": "ComfyUI local",
+    "script": "scripts/gerar-fotografias.py --retratos",
+    "modelo": {
+      "unet": "flux-2-klein-9b-fp8.safetensors",
+      "clip": "qwen_3_8b_fp8mixed.safetensors",
+      "steps": 4,
+      "cfg": 1
+    },
+    "resolucao": [
+      1024,
+      1024
+    ],
+    "webp": {
+      "resolucao": [
+        512,
+        512
+      ],
+      "alvo_kib": 100
+    }
+  },
+  "pesquisa": "Traços a partir de conhecimento prévio das obras; não houve cotejo direto com edições nem consulta a índices nesta entrega.",
+  "personagens": [
+    {
+      "id": "thingol",
+      "nome": "Elu Thingol",
+      "epoca": "Menegroth, no auge de Doriath",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Elu Thingol, King of Doriath, the tallest of all Elves: very long, flowing silver hair, a regal face of great authority that looks ageless and youthful, smooth unlined skin like a man of about thirty-five, no wrinkles, grey eyes, a slender silver circlet, a heavy grey mantle over silver-grey robes. Calm, proud, commanding expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "O mais alto dos Filhos de Ilúvatar; cabelo prateado.",
+        "Chamado Singollo, Manto-gris."
+      ],
+      "inferido": [
+        "Olhos cinzentos e a tiara são inferência.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "melian",
+      "nome": "Melian",
+      "epoca": "Doriath, rainha ao lado de Thingol",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one female Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Melian the Maia, Queen of Doriath: a woman of timeless, otherworldly beauty, long dark hair, deep wise eyes with a hint of starlight, a gown of soft deep green and silver, a few small white flowers woven in her hair. Serene, gentle and immensely wise. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Maia do séquito de Yavanna e Vána, de grande beleza e sabedoria; cantora."
+      ],
+      "inferido": [
+        "Cabelo escuro inferido a partir de Lúthien; vestes e flores são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "luthien",
+      "nome": "Lúthien Tinúviel",
+      "epoca": "Doriath, antes da demanda da Silmaril",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf-woman with natural believable skin and subtle pointed ears. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Lúthien Tinúviel, the most beautiful of all the Children of Ilúvatar: long dark hair like the shadows of twilight, luminous grey eyes like a starlit evening, a gown of clear sky blue, small white flowers in her hair. Radiant, gentle, fearless expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Cabelo escuro como as sombras do crepúsculo e olhos cinzentos como a noite estrelada.",
+        "Vestes azuis como o céu sem nuvens; flores nos cabelos."
+      ],
+      "inferido": [
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "beren",
+      "nome": "Beren Erchamion",
+      "epoca": "Doriath, depois do encontro com Lúthien",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Beren son of Barahir, a man of the House of Bëor in his prime: dark brown hair, grey eyes, a lean weathered face marked by years of outlawry and hardship, short rough beard, a worn dark-green hooded cloak. Determined, grave expression with a trace of tenderness. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Homem da Casa de Bëor, filho de Barahir; viveu anos como fora da lei em Dorthonion."
+      ],
+      "inferido": [
+        "Cabelo castanho-escuro e olhos cinzentos, traços comuns à Casa de Bëor.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "barahir",
+      "nome": "Barahir",
+      "epoca": "Dorthonion, depois da Dagor Bragollach",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Barahir, lord of the House of Bëor, a mature, hardened outlaw chieftain: dark hair with grey streaks, grey eyes, a strong lined face, short greying beard, a worn leather jerkin and dark cloak. Stern, unbowed expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Senhor da Casa de Bëor; resistiu como fora da lei em Dorthonion depois da Bragollach."
+      ],
+      "inferido": [
+        "Feições e cores inferidas da Casa de Bëor e de Beren.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "dior",
+      "nome": "Dior Eluchíl",
+      "epoca": "Menegroth, rei de Doriath",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult MALE elf, a man, with masculine features, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Dior Eluchíl, Heir of Thingol, of mixed mortal, Elven and Maiar blood, considered among the fairest of all who lived: dark hair, grey eyes, a noble youthful masculine face with a strong jaw, wearing a necklace of gold and gems with one brilliant white jewel at its center. Regal, grave expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filho de Beren e Lúthien, entre os mais belos do mundo.",
+        "Usava o Nauglamír com a Silmaril."
+      ],
+      "inferido": [
+        "Cabelo escuro e olhos cinzentos herdados de Lúthien e de Beren.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "nimloth",
+      "nome": "Nimloth",
+      "epoca": "Menegroth, rainha de Dior",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf-woman with natural believable skin and subtle pointed ears. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Nimloth, a Sindarin elf-woman, Queen of Doriath, kinswoman of Celeborn: long pale silver hair, light grey eyes, a delicate fair face, a simple white and silver gown. Gentle, quiet, dignified expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Elfa de Doriath, parente de Celeborn; esposa de Dior."
+      ],
+      "inferido": [
+        "Cabelo prateado inferido do parentesco com Celeborn.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "elwing",
+      "nome": "Elwing",
+      "epoca": "Portos do Sirion",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf-woman with natural believable skin and subtle pointed ears. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Elwing the White, daughter of Dior: long dark hair, grey eyes, a fair face, a white gown, wearing a necklace of gold with one brilliant white jewel at its center. Sea wind in her hair, steadfast and wistful expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Elwing, a Branca; guardou a Silmaril no Nauglamír nos Portos do Sirion."
+      ],
+      "inferido": [
+        "Cabelo escuro e olhos cinzentos herdados da família de Lúthien.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "earendil",
+      "nome": "Eärendil",
+      "epoca": "A viagem a Valinor",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Eärendil the Mariner, half-elven, son of Tuor and Idril: golden hair, bright grey-blue eyes, a fair weathered face of a seafarer, a white and silver mariner's cloak, with a brilliant white jewel bound upon his brow by a band of silver. Hopeful, steadfast expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Navegou até Valinor com a Silmaril presa à fronte."
+      ],
+      "inferido": [
+        "Cabelo dourado herdado de Tuor e Idril, ambos de cabelo dourado.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "elros",
+      "nome": "Elros Tar-Minyatur",
+      "epoca": "Primeiro Rei de Númenor",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Elros Tar-Minyatur, half-elven first King of Númenor in his prime: dark hair, grey eyes, a noble, Elvish-fair face with the strength of Men, short dark beard, a silver crown and a deep blue royal mantle. Wise, regal expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Irmão de Elrond, escolheu o destino dos Homens e foi o primeiro Rei de Númenor."
+      ],
+      "inferido": [
+        "Cabelo escuro e olhos cinzentos como os de Elrond.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "hurin",
+      "nome": "Húrin Thalion",
+      "epoca": "Dor-lómin, antes da Nirnaeth Arnoediad",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Húrin Thalion of the House of Hador, lord of Dor-lómin: golden hair, grey eyes, a broad strong face, shorter but sturdy, short golden beard, a mail shirt under a dark red cloak. Steadfast, unyielding expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Senhor de Dor-lómin, da Casa de Hador, de cabelo dourado; menos alto que seus pais, mas incansável."
+      ],
+      "inferido": [
+        "Olhos cinzentos são inferência.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "morwen",
+      "nome": "Morwen Eledhwen",
+      "epoca": "Dor-lómin, antes da Nirnaeth Arnoediad",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human woman with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Morwen Eledhwen, the Elfsheen, of the House of Bëor: long dark hair, piercing grey eyes, a tall proud figure with a beautiful but stern face, a dark grey gown with a simple silver brooch. Proud, unbending, grave expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Chamada Eledhwen, de beleza élfica; cabelo escuro, olhos cinzentos, orgulhosa e severa."
+      ],
+      "inferido": [
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "turin",
+      "nome": "Túrin Turambar",
+      "epoca": "Nargothrond, como Mormegil",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Túrin Turambar, son of Húrin and Morwen, a tall young warrior: dark hair, grey eyes like his mother's, a handsome but grim and haunted face, clean-shaven, a black mail shirt under a dark cloak. Brooding, proud, tragic expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filho de Húrin e Morwen; alto, de cabelo escuro e olhos cinzentos como a mãe."
+      ],
+      "inferido": [
+        "Expressão sombria reflete a sina do personagem; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "nienor",
+      "nome": "Niënor Níniel",
+      "epoca": "Brethil, como Níniel",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human woman with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Niënor Níniel, daughter of Húrin and Morwen: long golden hair, grey eyes, a young beautiful face, a simple pale gown of the woodland folk of Brethil. Gentle, wistful, slightly lost expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filha de Húrin e Morwen; cabelo dourado como o do pai."
+      ],
+      "inferido": [
+        "Olhos cinzentos herdados de Morwen.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "huor",
+      "nome": "Huor",
+      "epoca": "Antes da Nirnaeth Arnoediad",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Huor of the House of Hador, younger brother of Húrin: golden hair, grey eyes, very tall, a young open and brave face, short golden beard, mail under a dark blue cloak. Calm, resolute expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Irmão de Húrin, da Casa de Hador, de cabelo dourado; viveu um tempo em Gondolin."
+      ],
+      "inferido": [
+        "Altura e olhos cinzentos são inferência.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "rian",
+      "nome": "Rían",
+      "epoca": "Dor-lómin, esposa de Huor",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human woman with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Rían of the House of Bëor, wife of Huor: long dark hair, grey eyes, a gentle sorrowful young face, a plain grey woollen gown and shawl. Tender, grieving expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Da Casa de Bëor, esposa de Huor e mãe de Tuor."
+      ],
+      "inferido": [
+        "Cores inferidas da Casa de Bëor.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "tuor",
+      "nome": "Tuor",
+      "epoca": "Chegada a Gondolin",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Tuor son of Huor, of the House of Hador: golden hair, grey-blue eyes, tall and strong, a fair young face weathered by wilderness, short golden beard, wearing an ancient elven mail shirt under a deep blue mantle. Wondering, resolute expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filho de Huor, da Casa de Hador, de cabelo dourado; recebeu as armas deixadas por Turgon em Vinyamar."
+      ],
+      "inferido": [
+        "Olhos cinza-azulados são inferência.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "beleg",
+      "nome": "Beleg Cúthalion",
+      "epoca": "Marcas de Doriath",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Beleg Cúthalion, the Strongbow, chief marchwarden of Doriath, a Sindarin elf: long brown hair tied back, keen grey-green eyes, a lean outdoors face, a green and brown hooded woodsman's cloak with a bow visible over one shoulder. Loyal, watchful, warm expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Arco-forte, chefe dos guardas das fronteiras de Doriath e amigo de Túrin."
+      ],
+      "inferido": [
+        "Aparência não descrita; cabelo e olhos são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "gwindor",
+      "nome": "Gwindor",
+      "epoca": "Nargothrond, depois da fuga de Angband",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Gwindor of Nargothrond, a Noldorin elf after years of thraldom in Angband: dark hair streaked with grey, grey eyes, a once-noble face now gaunt and aged before its time, a simple grey cloak. Weary, sorrowful, kind expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Senhor de Nargothrond, filho de Guilin; voltou alquebrado e envelhecido depois de escapar de Angband."
+      ],
+      "inferido": [
+        "Cabelo e olhos são interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "haleth",
+      "nome": "Haleth",
+      "epoca": "Chefe dos Haladin",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human woman with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Haleth, chieftain of the Haladin, a woman of great will and strength: dark hair in a practical braid, dark eyes, a strong weathered face, a leather jerkin and a forest-green cloak. Fearless, commanding expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Senhora dos Haladin, de grande coragem; levou seu povo para Brethil."
+      ],
+      "inferido": [
+        "Aparência não descrita; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    }
+  ]
+}

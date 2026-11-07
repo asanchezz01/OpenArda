@@ -1,0 +1,163 @@
+{
+  "etapa": 8,
+  "titulo": "Completar os elos genealógicos",
+  "data": "2026-11-07",
+  "prioridade_geracao": [
+    "API local ComfyUI (10.1.4.150), como no HopeGym",
+    "API de imagens da OpenAI se a local estiver indisponível"
+  ],
+  "geracao": {
+    "api": "ComfyUI local",
+    "script": "scripts/gerar-fotografias.py --retratos",
+    "modelo": {
+      "unet": "flux-2-klein-9b-fp8.safetensors",
+      "clip": "qwen_3_8b_fp8mixed.safetensors",
+      "steps": 4,
+      "cfg": 1
+    },
+    "resolucao": [
+      1024,
+      1024
+    ],
+    "webp": {
+      "resolucao": [
+        512,
+        512
+      ],
+      "alvo_kib": 100
+    }
+  },
+  "pesquisa": "Traços a partir de conhecimento prévio das obras; não houve cotejo direto com edições nem consulta a índices nesta entrega.",
+  "personagens": [
+    {
+      "id": "elmo",
+      "nome": "Elmo",
+      "epoca": "Doriath, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Elmo, younger brother of Elu Thingol, a Sindarin elf: long silver-grey hair, grey eyes, a quiet noble face resembling his brother's but gentler and less imposing, a simple grey mantle. Calm, modest expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Irmão mais novo de Thingol e de Olwë, avô de Celeborn."
+      ],
+      "inferido": [
+        "Cabelo prateado inferido de Thingol e Olwë.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "galadhon",
+      "nome": "Galadhon",
+      "epoca": "Doriath",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Galadhon, son of Elmo, a Sindarin lord of Doriath: long silver hair, grey eyes, a refined noble face, a silver-grey robe with a green clasp. Thoughtful, composed expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filho de Elmo e pai de Celeborn e Galathil."
+      ],
+      "inferido": [
+        "Cabelo prateado inferido de Celeborn.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "galathil",
+      "nome": "Galathil",
+      "epoca": "Doriath",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Galathil, brother of Celeborn, a Sindarin elf of Doriath: long pale silver hair, grey eyes, a gentle fair face, a grey and white mantle. Kind, quiet expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Irmão de Celeborn e pai de Nimloth."
+      ],
+      "inferido": [
+        "Cabelo prateado inferido de Celeborn.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "elured",
+      "nome": "Eluréd",
+      "epoca": "Menegroth, pouco antes da ruína de Doriath",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one young elven child about six years old with natural believable skin and subtle pointed ears. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Eluréd, young son of Dior, a little boy: dark hair, grey eyes, a delicate fair child's face, a small grey tunic. Innocent, slightly solemn expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filho de Dior, gêmeo de Elurín; ainda criança quando Doriath caiu."
+      ],
+      "inferido": [
+        "Cabelo e olhos herdados da família de Lúthien.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "elurin",
+      "nome": "Elurín",
+      "epoca": "Menegroth, pouco antes da ruína de Doriath",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one young elven child about six years old with natural believable skin and subtle pointed ears. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Elurín, young son of Dior, twin of Eluréd, a little boy: dark hair, grey eyes, a fair child's face very like his twin's but with a shy smile, a small grey tunic. Gentle, curious expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filho de Dior, gêmeo de Eluréd; ainda criança quando Doriath caiu."
+      ],
+      "inferido": [
+        "A pequena diferença entre os gêmeos é interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "galdor",
+      "nome": "Galdor",
+      "epoca": "Dor-lómin, antes de 462 P.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Galdor the Tall, Lord of Dor-lómin of the House of Hador: golden hair, grey eyes, a tall strong man with a noble face and short golden beard, a mail shirt under a dark red cloak. Brave, steady expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Galdor, o Alto, senhor de Dor-lómin e pai de Húrin e Huor."
+      ],
+      "inferido": [
+        "Cabelo dourado, traço da Casa de Hador.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "amdir",
+      "nome": "Amdír",
+      "epoca": "Lórinand, Segunda Era",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Amdír, King of Lórinand, a Sindarin elf: long light-brown hair, grey-green eyes, a calm, noble woodland face, a green and gold mantle with a circlet of silver leaves. Dignified, serene expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Rei de Lórinand; caiu na Batalha de Dagorlad."
+      ],
+      "inferido": [
+        "Aparência não descrita; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "amroth",
+      "nome": "Amroth",
+      "epoca": "Lórien, antes de partir em busca de Nimrodel",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Amroth, King of Lórien, son of Amdír: long fair golden-brown hair, grey eyes, a young, ardent face, a green mantle with a silver clasp. Longing, romantic, melancholic expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Rei de Lórien, apaixonado por Nimrodel; afogou-se na Baía de Belfalas."
+      ],
+      "inferido": [
+        "Aparência não descrita; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "findis",
+      "nome": "Findis",
+      "epoca": "Tirion, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf-woman with natural believable skin and subtle pointed ears. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Findis, eldest daughter of Finwë and Indis: long dark-gold hair, grey eyes, a composed graceful face, a white and pale gold gown. Gentle, dignified expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filha mais velha de Finwë e Indis; permaneceu em Aman."
+      ],
+      "inferido": [
+        "Cabelo dourado-escuro mistura as cores de Finwë e de Indis; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "lalwen",
+      "nome": "Írimë (Lalwen)",
+      "epoca": "Tirion, antes do exílio",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf-woman with natural believable skin and subtle pointed ears. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Írimë, called Lalwen, daughter of Finwë and Indis: long dark hair, bright grey eyes, a lively proud face, a travelling cloak of deep blue over a silver gown. Spirited, determined expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Filha de Finwë e Indis; seguiu o irmão Fingolfin para o exílio."
+      ],
+      "inferido": [
+        "Cabelo escuro inferido de Fingolfin; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    }
+  ]
+}

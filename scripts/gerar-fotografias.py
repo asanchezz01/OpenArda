@@ -7,6 +7,9 @@
     python scripts/gerar-fotografias.py refazer <id>         # descarta as variações e gera de novo
     python scripts/gerar-fotografias.py folha                # folhas de revisão em fontes-imagens/_folhas/
 
+Com --retratos, o mesmo fluxo vale para os retratos de personagens (docs/ROADMAP-RETRATOS-PERSONAGENS.md):
+docs/retratos-etapa-N-prompts.json -> public/retratos/<id>.webp (512 x 512) e data/retratos.json.
+
 Opções: --etapa N (padrão 1), --variacoes N (padrão 3), --motor auto|comfy|gpt.
 
 Motor, na ordem do projeto HopeGym:
@@ -26,6 +29,17 @@ ROOT = Path(__file__).resolve().parents[1]
 FONTES = ROOT / 'fontes-imagens'
 PUBLICO = ROOT / 'public' / 'fotografias'
 CADASTRO = ROOT / 'data' / 'fotografias.json'
+FINAL = {'pasta': 'fotografias', 'tamanho': (1536, 1024), 'kib': 250, 'qualidades': (82, 76, 70)}
+RETRATOS = False
+
+
+def modo_retratos():
+    global FONTES, PUBLICO, CADASTRO, FINAL, RETRATOS
+    RETRATOS = True
+    FONTES = ROOT / 'fontes-imagens' / 'retratos'
+    PUBLICO = ROOT / 'public' / 'retratos'
+    CADASTRO = ROOT / 'data' / 'retratos.json'
+    FINAL = {'pasta': 'retratos', 'tamanho': (512, 512), 'kib': 100, 'qualidades': (86, 80, 74)}
 
 SERVIDORES = [u.strip().rstrip('/') for u in os.environ.get(
     'COMFY_URLS', 'http://10.1.4.150:8188,http://10.1.4.150:8189').split(',') if u.strip()]
@@ -46,6 +60,10 @@ GPT_QUALIDADE = os.environ.get('GPT_IMAGE_QUALITY', 'medium')
 
 # ---------- prompts ----------
 def carregar(etapa):
+    if RETRATOS:  # prompts completos por personagem, no formato das etapas anteriores dos retratos
+        dados = json.loads((ROOT / 'docs' / f'retratos-etapa-{etapa}-prompts.json').read_text(encoding='utf-8'))
+        largura, altura = dados.get('geracao', {}).get('resolucao', [1024, 1024])
+        return {p['id']: {'prompt': p['prompt'], 'tamanho': (largura, altura)} for p in dados['personagens']}
     arq = ROOT / 'docs' / f'fotografias-etapa-{etapa}-prompts.json'
     dados = json.loads(arq.read_text(encoding='utf-8'))
     largura, altura = dados['tamanho']
@@ -259,15 +277,18 @@ def aprovar(foto_id, n, espelhar=False):
     img = Image.open(origem).convert('RGB')
     if espelhar:
         img = img.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
-    if img.size != (1536, 1024):
-        img = img.resize((1536, 1024), Image.Resampling.LANCZOS)
-    for qualidade in (82, 76, 70):  # alvo de 250 KiB
+    if img.size != FINAL['tamanho']:
+        img = img.resize(FINAL['tamanho'], Image.Resampling.LANCZOS)
+    for qualidade in FINAL['qualidades']:
         img.save(destino, 'WEBP', quality=qualidade, method=6)
-        if destino.stat().st_size <= 250 * 1024:
+        if destino.stat().st_size <= FINAL['kib'] * 1024:
             break
     geracao = next((g for g in registro(foto_id) if g['n'] == n), {})
-    item['imagem'] = f'fotografias/{foto_id}.webp'
-    item['geracao'] = {k: v for k, v in geracao.items() if k != 'servidor'} | ({'espelhada': True} if espelhar else {})
+    item['imagem'] = f"{FINAL['pasta']}/{foto_id}.webp"
+    if RETRATOS:  # mesmo formato das etapas anteriores dos retratos
+        item['geracao'] = {'provedor': 'ComfyUI local' if geracao.get('motor') == 'comfyui' else 'OpenAI', 'modelo': geracao.get('modelo'), 'seed': geracao.get('semente')}
+    else:
+        item['geracao'] = {k: v for k, v in geracao.items() if k != 'servidor'} | ({'espelhada': True} if espelhar else {})
     CADASTRO.write_text(json.dumps(dados, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
     print(f'{foto_id}: v{n} aprovada -> {destino.relative_to(ROOT)} ({destino.stat().st_size // 1024} KiB)')
 
@@ -284,7 +305,7 @@ def folha(fotos, etapa, por_folha=4):
     destino = FONTES / '_folhas'
     destino.mkdir(parents=True, exist_ok=True)
     pendentes = [f for f in fotos if variacoes(f) and not aprovada(f)]
-    largura, altura = 512, 341
+    largura, altura = (384, 384) if RETRATOS else (512, 341)
     for k in range(0, len(pendentes), por_folha):
         grupo = pendentes[k:k + por_folha]
         colunas = max(len(variacoes(f)) for f in grupo)
@@ -320,6 +341,9 @@ def main():
             return valor
         return padrao
 
+    if '--retratos' in args:
+        args.remove('--retratos')
+        modo_retratos()
     etapa = opcao('--etapa', '1')
     n_variacoes = int(opcao('--variacoes', '3'))
     motor = opcao('--motor', 'auto')

@@ -6,7 +6,7 @@ import retratosJson from '../../data/retratos.json';
 import type { FonteRef, TempoRef } from './types';
 import { reinoPorId, tempo } from './data';
 
-export type Povo = 'noldor' | 'sindar' | 'teleri' | 'vanyar' | 'maia' | 'edain' | 'meio' | 'dunedain' | 'hobbit' | 'anao' | 'homem';
+export type Povo = 'noldor' | 'sindar' | 'teleri' | 'vanyar' | 'maia' | 'edain' | 'meio' | 'dunedain' | 'hobbit' | 'anao' | 'homem' | 'vala' | 'orc';
 
 export const NOME_POVO: Record<Povo, string> = {
   noldor: 'Noldor',
@@ -20,6 +20,8 @@ export const NOME_POVO: Record<Povo, string> = {
   hobbit: 'Hobbits',
   anao: 'Anões',
   homem: 'Homens',
+  vala: 'Valar',
+  orc: 'Orcs',
 };
 
 export interface Pessoa {
@@ -65,7 +67,8 @@ const dados = linhagensJson as unknown as { pessoas: Pessoa[]; senhorios: Senhor
 export const pessoas = dados.pessoas;
 export const senhorios = dados.senhorios;
 export const pessoaPorId = new Map(pessoas.map((p) => [p.id, p]));
-const retratoPorId = new Map((retratosJson as unknown as Retrato[]).map((r) => [r.id, r]));
+// só retratos aprovados (com imagem) aparecem; os cadastrados aguardando geração ficam de fora
+const retratoPorId = new Map((retratosJson as unknown as Retrato[]).filter((r) => r.imagem).map((r) => [r.id, r]));
 
 export const retratoDe = (id: string) => retratoPorId.get(id);
 export const nomeSenhorio = (s: Senhorio) => s.nome ?? reinoPorId.get(s.reino ?? '')?.nome ?? s.id;

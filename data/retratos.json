@@ -1708,5 +1708,1914 @@
       "modelo": "flux-2-klein-9b-fp8.safetensors",
       "seed": 214954323071799
     }
+  },
+  {
+    "id": "thingol",
+    "nome": "Elu Thingol",
+    "documentado": [
+      "O mais alto dos Filhos de Ilúvatar; cabelo prateado.",
+      "Chamado Singollo, Manto-gris."
+    ],
+    "inferido": [
+      "Olhos cinzentos e a tiara são inferência.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, caps. 4 e 10. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Elu Thingol"
+  },
+  {
+    "id": "melian",
+    "nome": "Melian",
+    "documentado": [
+      "Maia do séquito de Yavanna e Vána, de grande beleza e sabedoria; cantora."
+    ],
+    "inferido": [
+      "Cabelo escuro inferido a partir de Lúthien; vestes e flores são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta; Quenta, cap. 4. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Melian",
+    "imagem": "retratos/melian.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 266698623637331
+    }
+  },
+  {
+    "id": "luthien",
+    "nome": "Lúthien Tinúviel",
+    "documentado": [
+      "Cabelo escuro como as sombras do crepúsculo e olhos cinzentos como a noite estrelada.",
+      "Vestes azuis como o céu sem nuvens; flores nos cabelos."
+    ],
+    "inferido": [
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 19. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Lúthien Tinúviel",
+    "imagem": "retratos/luthien.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 13129075428210
+    }
+  },
+  {
+    "id": "beren",
+    "nome": "Beren Erchamion",
+    "documentado": [
+      "Homem da Casa de Bëor, filho de Barahir; viveu anos como fora da lei em Dorthonion."
+    ],
+    "inferido": [
+      "Cabelo castanho-escuro e olhos cinzentos, traços comuns à Casa de Bëor.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 19. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Beren Erchamion",
+    "imagem": "retratos/beren.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 245874647381837
+    }
+  },
+  {
+    "id": "barahir",
+    "nome": "Barahir",
+    "documentado": [
+      "Senhor da Casa de Bëor; resistiu como fora da lei em Dorthonion depois da Bragollach."
+    ],
+    "inferido": [
+      "Feições e cores inferidas da Casa de Bëor e de Beren.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 18. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Barahir",
+    "imagem": "retratos/barahir.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 8822659564512
+    }
+  },
+  {
+    "id": "dior",
+    "nome": "Dior Eluchíl",
+    "documentado": [
+      "Filho de Beren e Lúthien, entre os mais belos do mundo.",
+      "Usava o Nauglamír com a Silmaril."
+    ],
+    "inferido": [
+      "Cabelo escuro e olhos cinzentos herdados de Lúthien e de Beren.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 22. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Dior Eluchíl"
+  },
+  {
+    "id": "nimloth",
+    "nome": "Nimloth",
+    "documentado": [
+      "Elfa de Doriath, parente de Celeborn; esposa de Dior."
+    ],
+    "inferido": [
+      "Cabelo prateado inferido do parentesco com Celeborn.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 22. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Nimloth",
+    "imagem": "retratos/nimloth.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 155340918988947
+    }
+  },
+  {
+    "id": "elwing",
+    "nome": "Elwing",
+    "documentado": [
+      "Elwing, a Branca; guardou a Silmaril no Nauglamír nos Portos do Sirion."
+    ],
+    "inferido": [
+      "Cabelo escuro e olhos cinzentos herdados da família de Lúthien.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 24. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Elwing",
+    "imagem": "retratos/elwing.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 243004372057921
+    }
+  },
+  {
+    "id": "earendil",
+    "nome": "Eärendil",
+    "documentado": [
+      "Navegou até Valinor com a Silmaril presa à fronte."
+    ],
+    "inferido": [
+      "Cabelo dourado herdado de Tuor e Idril, ambos de cabelo dourado.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 24. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Eärendil",
+    "imagem": "retratos/earendil.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 274304976764907
+    }
+  },
+  {
+    "id": "elros",
+    "nome": "Elros Tar-Minyatur",
+    "documentado": [
+      "Irmão de Elrond, escolheu o destino dos Homens e foi o primeiro Rei de Númenor."
+    ],
+    "inferido": [
+      "Cabelo escuro e olhos cinzentos como os de Elrond.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte II, cap. 3. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Elros Tar-Minyatur",
+    "imagem": "retratos/elros.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 260369188397421
+    }
+  },
+  {
+    "id": "hurin",
+    "nome": "Húrin Thalion",
+    "documentado": [
+      "Senhor de Dor-lómin, da Casa de Hador, de cabelo dourado; menos alto que seus pais, mas incansável."
+    ],
+    "inferido": [
+      "Olhos cinzentos são inferência.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, caps. 18 e 20. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Húrin Thalion",
+    "imagem": "retratos/hurin.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 81601709104416
+    }
+  },
+  {
+    "id": "morwen",
+    "nome": "Morwen Eledhwen",
+    "documentado": [
+      "Chamada Eledhwen, de beleza élfica; cabelo escuro, olhos cinzentos, orgulhosa e severa."
+    ],
+    "inferido": [
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 21. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Morwen Eledhwen",
+    "imagem": "retratos/morwen.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 144243936621757
+    }
+  },
+  {
+    "id": "turin",
+    "nome": "Túrin Turambar",
+    "documentado": [
+      "Filho de Húrin e Morwen; alto, de cabelo escuro e olhos cinzentos como a mãe."
+    ],
+    "inferido": [
+      "Expressão sombria reflete a sina do personagem; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 21. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Túrin Turambar",
+    "imagem": "retratos/turin.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 192850668063015
+    }
+  },
+  {
+    "id": "nienor",
+    "nome": "Niënor Níniel",
+    "documentado": [
+      "Filha de Húrin e Morwen; cabelo dourado como o do pai."
+    ],
+    "inferido": [
+      "Olhos cinzentos herdados de Morwen.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 21. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Niënor Níniel",
+    "imagem": "retratos/nienor.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 46405242295871
+    }
+  },
+  {
+    "id": "huor",
+    "nome": "Huor",
+    "documentado": [
+      "Irmão de Húrin, da Casa de Hador, de cabelo dourado; viveu um tempo em Gondolin."
+    ],
+    "inferido": [
+      "Altura e olhos cinzentos são inferência.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, caps. 18 e 20. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Huor",
+    "imagem": "retratos/huor.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 77381774916007
+    }
+  },
+  {
+    "id": "rian",
+    "nome": "Rían",
+    "documentado": [
+      "Da Casa de Bëor, esposa de Huor e mãe de Tuor."
+    ],
+    "inferido": [
+      "Cores inferidas da Casa de Bëor.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 20. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Rían",
+    "imagem": "retratos/rian.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 69262596460584
+    }
+  },
+  {
+    "id": "tuor",
+    "nome": "Tuor",
+    "documentado": [
+      "Filho de Huor, da Casa de Hador, de cabelo dourado; recebeu as armas deixadas por Turgon em Vinyamar."
+    ],
+    "inferido": [
+      "Olhos cinza-azulados são inferência.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "De Tuor e sua chegada a Gondolin. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Tuor",
+    "imagem": "retratos/tuor.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 111928088389714
+    }
+  },
+  {
+    "id": "beleg",
+    "nome": "Beleg Cúthalion",
+    "documentado": [
+      "Arco-forte, chefe dos guardas das fronteiras de Doriath e amigo de Túrin."
+    ],
+    "inferido": [
+      "Aparência não descrita; cabelo e olhos são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 21. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Beleg Cúthalion",
+    "imagem": "retratos/beleg.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 278819710627951
+    }
+  },
+  {
+    "id": "gwindor",
+    "nome": "Gwindor",
+    "documentado": [
+      "Senhor de Nargothrond, filho de Guilin; voltou alquebrado e envelhecido depois de escapar de Angband."
+    ],
+    "inferido": [
+      "Cabelo e olhos são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, caps. 20 e 21. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Gwindor",
+    "imagem": "retratos/gwindor.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 156907072821860
+    }
+  },
+  {
+    "id": "haleth",
+    "nome": "Haleth",
+    "documentado": [
+      "Senhora dos Haladin, de grande coragem; levou seu povo para Brethil."
+    ],
+    "inferido": [
+      "Aparência não descrita; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 17. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Haleth",
+    "imagem": "retratos/haleth.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 2792386935367
+    }
+  },
+  {
+    "id": "gilgalad",
+    "nome": "Gil-galad",
+    "documentado": [
+      "Último Alto Rei dos Noldor; liderou a Última Aliança com Elendil."
+    ],
+    "inferido": [
+      "Cabelo, olhos e a armadura dourada são interpretação; a armadura segue o visual dos filmes.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Dos Anéis de Poder. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Gil-galad",
+    "referencia_cinematografica_pendente": {
+      "ator": "Mark Ferguson",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring (2001)"
+    }
+  },
+  {
+    "id": "cirdan",
+    "nome": "Círdan",
+    "documentado": [
+      "Muito alto, de barba longa, grisalho e com aparência de velho, salvo os olhos, agudos como estrelas."
+    ],
+    "inferido": [
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "O Retorno do Rei, Livro VI, cap. 9. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Círdan",
+    "referencia_cinematografica_pendente": {
+      "ator": "Michael Elsworth",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring (2001)"
+    }
+  },
+  {
+    "id": "elendil",
+    "nome": "Elendil",
+    "documentado": [
+      "Chamado o Alto; fundou Arnor e Gondor depois da Queda de Númenor."
+    ],
+    "inferido": [
+      "Cabelo escuro e olhos cinzentos, comuns aos Dúnedain.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Akallabêth; Dos Anéis de Poder. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Elendil",
+    "referencia_cinematografica_pendente": {
+      "ator": "Peter McKenzie",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring (2001)"
+    }
+  },
+  {
+    "id": "isildur",
+    "nome": "Isildur",
+    "documentado": [
+      "Filho mais velho de Elendil; cortou o Um Anel da mão de Sauron."
+    ],
+    "inferido": [
+      "Cores inferidas dos Dúnedain.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Dos Anéis de Poder. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Isildur",
+    "referencia_cinematografica_pendente": {
+      "ator": "Harry Sinclair",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring (2001)"
+    }
+  },
+  {
+    "id": "anarion",
+    "nome": "Anárion",
+    "documentado": [
+      "Filho mais novo de Elendil; governou Gondor com Isildur a partir de Osgiliath."
+    ],
+    "inferido": [
+      "Cores inferidas dos Dúnedain; o emblema do sol alude a Minas Anor.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "I (iv). Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Anárion"
+  },
+  {
+    "id": "arpharazon",
+    "nome": "Ar-Pharazôn",
+    "documentado": [
+      "O Dourado, o mais poderoso e orgulhoso dos Reis de Númenor."
+    ],
+    "inferido": [
+      "O cabelo dourado interpreta o título; a coroa e as vestes são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Akallabêth. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Ar-Pharazôn"
+  },
+  {
+    "id": "amandil",
+    "nome": "Amandil",
+    "documentado": [
+      "Senhor de Andúnië e líder dos Fiéis; pai de Elendil."
+    ],
+    "inferido": [
+      "Aparência não descrita; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Akallabêth. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Amandil"
+  },
+  {
+    "id": "meneldil",
+    "nome": "Meneldil",
+    "documentado": [
+      "Filho de Anárion; recebeu de Isildur o governo de Gondor."
+    ],
+    "inferido": [
+      "Aparência não descrita; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "I (iv). Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Meneldil"
+  },
+  {
+    "id": "valandil",
+    "nome": "Valandil",
+    "documentado": [
+      "Filho caçula de Isildur, criado em Imladris; Rei de Arnor."
+    ],
+    "inferido": [
+      "Aparência não descrita; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "I (iii). Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Valandil"
+  },
+  {
+    "id": "arathorn",
+    "nome": "Arathorn II",
+    "documentado": [
+      "Chefe dos Dúnedain do Norte e pai de Aragorn."
+    ],
+    "inferido": [
+      "Traços inferidos dos Dúnedain e de Aragorn.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "I (v). Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Arathorn II"
+  },
+  {
+    "id": "gilraen",
+    "nome": "Gilraen",
+    "documentado": [
+      "Gilraen, a Bela; criou Aragorn em Imladris."
+    ],
+    "inferido": [
+      "Cores inferidas dos Dúnedain.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "I (v). Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Gilraen"
+  },
+  {
+    "id": "celebrian",
+    "nome": "Celebrían",
+    "documentado": [
+      "Filha de Celeborn e Galadriel; esposa de Elrond."
+    ],
+    "inferido": [
+      "Cabelo prateado inferido do nome e de Celeborn.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "I (v). Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Celebrían"
+  },
+  {
+    "id": "elladan",
+    "nome": "Elladan",
+    "documentado": [
+      "Gêmeo de Elrohir, tão parecidos que não se distinguiam; cavalgou com os Dúnedain."
+    ],
+    "inferido": [
+      "Cabelo escuro e olhos cinzentos como Elrond.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "O Retorno do Rei, Livro V, cap. 2. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Elladan"
+  },
+  {
+    "id": "elrohir",
+    "nome": "Elrohir",
+    "documentado": [
+      "Gêmeo de Elladan, tão parecidos que não se distinguiam."
+    ],
+    "inferido": [
+      "A pequena diferença de expressão entre os gêmeos é interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "O Retorno do Rei, Livro V, cap. 2. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Elrohir"
+  },
+  {
+    "id": "eldarion",
+    "nome": "Eldarion",
+    "documentado": [
+      "Filho de Aragorn e Arwen; herdou o Reino Reunido."
+    ],
+    "inferido": [
+      "Aparência não descrita; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "I (v). Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Eldarion"
+  },
+  {
+    "id": "tar-aldarion",
+    "nome": "Tar-Aldarion",
+    "documentado": [
+      "Rei de Númenor, grande navegador; fundou a Guilda dos Aventureiros."
+    ],
+    "inferido": [
+      "Aparência não descrita; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte II, cap. 2. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Tar-Aldarion"
+  },
+  {
+    "id": "erendis",
+    "nome": "Erendis",
+    "documentado": [
+      "Esposa de Aldarion, que se afastou dele pelas longas viagens; mãe de Tar-Ancalimë."
+    ],
+    "inferido": [
+      "Aparência não descrita; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte II, cap. 2. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Erendis"
+  },
+  {
+    "id": "tar-ancalime",
+    "nome": "Tar-Ancalimë",
+    "documentado": [
+      "Filha de Aldarion e Erendis, primeira Rainha Regente de Númenor."
+    ],
+    "inferido": [
+      "Aparência não descrita; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte II, cap. 2. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Tar-Ancalimë"
+  },
+  {
+    "id": "tar-miriel",
+    "nome": "Tar-Míriel",
+    "documentado": [
+      "Herdeira legítima do cetro, forçada a casar com Ar-Pharazôn."
+    ],
+    "inferido": [
+      "Cabelo dourado e olhos são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Akallabêth. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Tar-Míriel"
+  },
+  {
+    "id": "thorin",
+    "nome": "Thorin Escudo de Carvalho",
+    "documentado": [
+      "Capuz azul-celeste com uma longa borla de prata; o mais importante dos anões da companhia."
+    ],
+    "inferido": [
+      "Feições e cor do cabelo não descritas são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 1. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Thorin Escudo de Carvalho",
+    "referencia_cinematografica_pendente": {
+      "ator": "Richard Armitage",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "balin",
+    "nome": "Balin",
+    "documentado": [
+      "Capuz escarlate; parece mais velho que os outros e é bondoso com Bilbo."
+    ],
+    "inferido": [
+      "Feições e cor do cabelo não descritas são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 1. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Balin",
+    "referencia_cinematografica_pendente": {
+      "ator": "Ken Stott",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "dwalin",
+    "nome": "Dwalin",
+    "documentado": [
+      "Capuz verde-escuro e barba azul presa num cinto dourado."
+    ],
+    "inferido": [
+      "Feições e cor do cabelo não descritas são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 1. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Dwalin",
+    "referencia_cinematografica_pendente": {
+      "ator": "Graham McTavish",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "fili",
+    "nome": "Fíli",
+    "documentado": [
+      "Capuz azul, cinto de prata e barba amarela; um dos mais jovens, sobrinho de Thorin."
+    ],
+    "inferido": [
+      "Feições e cor do cabelo não descritas são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 1. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Fíli",
+    "referencia_cinematografica_pendente": {
+      "ator": "Dean O'Gorman",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "kili",
+    "nome": "Kíli",
+    "documentado": [
+      "Capuz azul, cinto de prata e barba amarela; irmão de Fíli e sobrinho de Thorin."
+    ],
+    "inferido": [
+      "Feições e cor do cabelo não descritas são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 1. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Kíli",
+    "referencia_cinematografica_pendente": {
+      "ator": "Aidan Turner",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "gloin",
+    "nome": "Glóin",
+    "documentado": [
+      "Capuz branco; irmão de Óin e pai de Gimli."
+    ],
+    "inferido": [
+      "Barba castanho-avermelhada é interpretação.",
+      "Feições e cor do cabelo não descritas são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 1. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Glóin",
+    "referencia_cinematografica_pendente": {
+      "ator": "Peter Hambleton",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "oin",
+    "nome": "Óin",
+    "documentado": [
+      "Capuz castanho; irmão de Glóin."
+    ],
+    "inferido": [
+      "Feições e cor do cabelo não descritas são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 1. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Óin",
+    "referencia_cinematografica_pendente": {
+      "ator": "John Callen",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "dori",
+    "nome": "Dori",
+    "documentado": [
+      "Capuz roxo; o mais forte da companhia, segundo o narrador."
+    ],
+    "inferido": [
+      "Feições e cor do cabelo não descritas são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 1. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Dori",
+    "referencia_cinematografica_pendente": {
+      "ator": "Mark Hadlow",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "nori",
+    "nome": "Nori",
+    "documentado": [
+      "Capuz roxo; irmão de Dori e Ori."
+    ],
+    "inferido": [
+      "Feições e cor do cabelo não descritas são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 1. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Nori",
+    "referencia_cinematografica_pendente": {
+      "ator": "Jed Brophy",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "ori",
+    "nome": "Ori",
+    "documentado": [
+      "Capuz cinzento; irmão de Dori e Nori."
+    ],
+    "inferido": [
+      "Feições e cor do cabelo não descritas são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 1. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Ori",
+    "referencia_cinematografica_pendente": {
+      "ator": "Adam Brown",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "bifur",
+    "nome": "Bifur",
+    "documentado": [
+      "Capuz amarelo."
+    ],
+    "inferido": [
+      "A cicatriz é interpretação.",
+      "Feições e cor do cabelo não descritas são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 1. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Bifur",
+    "referencia_cinematografica_pendente": {
+      "ator": "William Kircher",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "bofur",
+    "nome": "Bofur",
+    "documentado": [
+      "Capuz amarelo; irmão de Bombur."
+    ],
+    "inferido": [
+      "Feições e cor do cabelo não descritas são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 1. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Bofur",
+    "referencia_cinematografica_pendente": {
+      "ator": "James Nesbitt",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "bombur",
+    "nome": "Bombur",
+    "documentado": [
+      "Capuz verde-claro; muito gordo."
+    ],
+    "inferido": [
+      "Feições e cor do cabelo não descritas são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 1. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Bombur",
+    "referencia_cinematografica_pendente": {
+      "ator": "Stephen Hunter",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "dain",
+    "nome": "Dáin II Pé de Ferro",
+    "documentado": [
+      "Senhor das Colinas de Ferro, primo de Thorin; tornou-se Rei sob a Montanha."
+    ],
+    "inferido": [
+      "Cor da barba e armadura são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 17. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Dáin II Pé de Ferro",
+    "referencia_cinematografica_pendente": {
+      "ator": "Billy Connolly",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "bard",
+    "nome": "Bard",
+    "documentado": [
+      "Bard, de voz e rosto sombrios; descendente de Girion de Valle; matou Smaug com a Flecha Negra."
+    ],
+    "inferido": [
+      "Cabelo e olhos escuros são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 14. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Bard",
+    "referencia_cinematografica_pendente": {
+      "ator": "Luke Evans",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "thranduil",
+    "nome": "Thranduil",
+    "documentado": [
+      "Cabelo dourado e coroa de frutos silvestres e folhas vermelhas no outono."
+    ],
+    "inferido": [
+      "Olhos e vestes são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 8. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Thranduil",
+    "referencia_cinematografica_pendente": {
+      "ator": "Lee Pace",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "beorn",
+    "nome": "Beorn",
+    "documentado": [
+      "Homem enorme, de barba e cabelo negros e espessos, braços nus musculosos e túnica de lã."
+    ],
+    "inferido": [
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 7. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Beorn",
+    "referencia_cinematografica_pendente": {
+      "ator": "Mikael Persbrandt",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "durin",
+    "nome": "Durin, o Imortal",
+    "documentado": [
+      "O mais velho dos Sete Pais dos Anões; fundou Khazad-dûm."
+    ],
+    "inferido": [
+      "Aparência não descrita; a coroa alude à coroa de estrelas do Espelhágua.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "III O Povo de Durin. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Durin, o Imortal"
+  },
+  {
+    "id": "thror",
+    "nome": "Thrór",
+    "documentado": [
+      "Rei sob a Montanha; perdeu Erebor para Smaug e foi morto por Azog em Moria."
+    ],
+    "inferido": [
+      "Aparência não descrita; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "III O Povo de Durin. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Thrór",
+    "referencia_cinematografica_pendente": {
+      "ator": "Jeffrey Thomas",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "thrain",
+    "nome": "Thráin II",
+    "documentado": [
+      "Perdeu um olho na Batalha de Azanulbizar; pai de Thorin."
+    ],
+    "inferido": [
+      "Cor da barba é interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "III O Povo de Durin. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Thráin II",
+    "referencia_cinematografica_pendente": {
+      "ator": "Michael Mizrahi",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "azog",
+    "nome": "Azog",
+    "documentado": [
+      "Grande Orc de Moria; matou Thrór e foi morto por Dáin em Azanulbizar."
+    ],
+    "inferido": [
+      "Aparência não descrita; o elmo de ferro é interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "III O Povo de Durin. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Azog",
+    "referencia_cinematografica_pendente": {
+      "ator": "Manu Bennett",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "bolg",
+    "nome": "Bolg",
+    "documentado": [
+      "Filho de Azog; liderou os Orcs na Batalha dos Cinco Exércitos e foi morto por Beorn."
+    ],
+    "inferido": [
+      "Aparência não descrita; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "cap. 17. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Bolg",
+    "referencia_cinematografica_pendente": {
+      "ator": "John Tui",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "manwe",
+    "nome": "Manwë",
+    "documentado": [
+      "Rei Antigo de Arda, senhor dos ventos e do ar; habita Ilmarin, no Taniquetil."
+    ],
+    "inferido": [
+      "Vestes azuis e penas de águia são interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Manwë"
+  },
+  {
+    "id": "varda",
+    "nome": "Varda",
+    "documentado": [
+      "Rainha das Estrelas, esposa de Manwë; a luz de Ilúvatar ainda vive em seu rosto."
+    ],
+    "inferido": [
+      "Cabelo e vestes são interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Varda"
+  },
+  {
+    "id": "ulmo",
+    "nome": "Ulmo",
+    "documentado": [
+      "Senhor das Águas; apareceu a Tuor com elmo como uma onda e cota de malha prateada e verde-escura."
+    ],
+    "inferido": [
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta; Contos Inacabados, De Tuor e sua chegada a Gondolin. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Ulmo"
+  },
+  {
+    "id": "aule",
+    "nome": "Aulë",
+    "documentado": [
+      "O Ferreiro, senhor das substâncias da terra; criou os Anões."
+    ],
+    "inferido": [
+      "Aparência é interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Aulë"
+  },
+  {
+    "id": "yavanna",
+    "nome": "Yavanna",
+    "documentado": [
+      "A Doadora de Frutos, esposa de Aulë; em forma de mulher, alta e vestida de verde."
+    ],
+    "inferido": [
+      "Cabelo e coroa de folhas são interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Yavanna"
+  },
+  {
+    "id": "mandos",
+    "nome": "Mandos",
+    "documentado": [
+      "Námo, o Juiz dos Valar e guardião das Casas dos Mortos."
+    ],
+    "inferido": [
+      "Aparência é interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Mandos"
+  },
+  {
+    "id": "vaire",
+    "nome": "Vairë",
+    "documentado": [
+      "A Tecelã, que tece as histórias do tempo em tapeçarias nas Casas de Mandos."
+    ],
+    "inferido": [
+      "Aparência é interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Vairë"
+  },
+  {
+    "id": "irmo",
+    "nome": "Irmo",
+    "documentado": [
+      "Senhor das visões e dos sonhos, dos jardins de Lórien."
+    ],
+    "inferido": [
+      "Aparência é interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Irmo"
+  },
+  {
+    "id": "este",
+    "nome": "Estë",
+    "documentado": [
+      "A Gentil, curadora das dores e do cansaço; veste cinza."
+    ],
+    "inferido": [
+      "Feições e cabelo são interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Estë"
+  },
+  {
+    "id": "nienna",
+    "nome": "Nienna",
+    "documentado": [
+      "Senhora da piedade e do luto, que chora pelas feridas de Arda."
+    ],
+    "inferido": [
+      "Capuz e cabelo são interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Nienna"
+  },
+  {
+    "id": "orome",
+    "nome": "Oromë",
+    "documentado": [
+      "O Grande Cavaleiro, caçador; tocava a trompa Valaróma."
+    ],
+    "inferido": [
+      "Feições são interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Oromë"
+  },
+  {
+    "id": "vana",
+    "nome": "Vána",
+    "documentado": [
+      "A Sempre-jovem; as flores se abrem quando ela passa."
+    ],
+    "inferido": [
+      "Aparência é interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Vána"
+  },
+  {
+    "id": "tulkas",
+    "nome": "Tulkas",
+    "documentado": [
+      "O mais forte dos Valar; cabelo e barba dourados, pele corada; ri mesmo em combate."
+    ],
+    "inferido": [
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Tulkas"
+  },
+  {
+    "id": "nessa",
+    "nome": "Nessa",
+    "documentado": [
+      "Veloz como uma flecha; ama os cervos e a dança."
+    ],
+    "inferido": [
+      "Aparência é interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Nessa"
+  },
+  {
+    "id": "morgoth",
+    "nome": "Morgoth",
+    "documentado": [
+      "Melkor, o Inimigo; usava uma coroa de ferro com as três Silmarils, que lhe queimavam as mãos."
+    ],
+    "inferido": [
+      "Feições são interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Morgoth"
+  },
+  {
+    "id": "eonwe",
+    "nome": "Eönwë",
+    "documentado": [
+      "Arauto de Manwë, comandou a hoste dos Valar na Guerra da Ira."
+    ],
+    "inferido": [
+      "Aparência é interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Eönwë"
+  },
+  {
+    "id": "osse",
+    "nome": "Ossë",
+    "documentado": [
+      "Maia das ondas e das costas, vassalo de Ulmo; amigo dos Teleri."
+    ],
+    "inferido": [
+      "Aparência é interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Ossë"
+  },
+  {
+    "id": "uinen",
+    "nome": "Uinen",
+    "documentado": [
+      "Senhora dos Mares, cujo cabelo se espalha por todas as águas."
+    ],
+    "inferido": [
+      "Feições são interpretação.",
+      "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Uinen"
+  },
+  {
+    "id": "radagast",
+    "nome": "Radagast",
+    "documentado": [
+      "Radagast, o Castanho, um dos Istari, mestre das formas e das cores e amigo das aves e dos animais."
+    ],
+    "inferido": [
+      "Aparência não descrita em detalhe; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "A Sociedade do Anel, Livro II, cap. 2. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Radagast",
+    "referencia_cinematografica_pendente": {
+      "ator": "Sylvester McCoy",
+      "filme": "The Hobbit (2012–2014)"
+    }
+  },
+  {
+    "id": "tom-bombadil",
+    "nome": "Tom Bombadil",
+    "documentado": [
+      "Barba castanha longa, olhos azuis, rosto vermelho como maçã madura, chapéu surrado com pena azul e casaco azul."
+    ],
+    "inferido": [
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "A Sociedade do Anel, Livro I, cap. 6. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Tom Bombadil"
+  },
+  {
+    "id": "fruta-douro",
+    "nome": "Fruta d'Ouro",
+    "documentado": [
+      "Cabelo dourado longo, vestido verde como juncos novos com brilho prateado de orvalho e cinto de ouro com flores azuis."
+    ],
+    "inferido": [
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "A Sociedade do Anel, Livro I, cap. 7. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Fruta d'Ouro"
+  },
+  {
+    "id": "elmo",
+    "nome": "Elmo",
+    "documentado": [
+      "Irmão mais novo de Thingol e de Olwë, avô de Celeborn."
+    ],
+    "inferido": [
+      "Cabelo prateado inferido de Thingol e Olwë.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte II, cap. 4. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Elmo"
+  },
+  {
+    "id": "galadhon",
+    "nome": "Galadhon",
+    "documentado": [
+      "Filho de Elmo e pai de Celeborn e Galathil."
+    ],
+    "inferido": [
+      "Cabelo prateado inferido de Celeborn.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte II, cap. 4. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Galadhon"
+  },
+  {
+    "id": "galathil",
+    "nome": "Galathil",
+    "documentado": [
+      "Irmão de Celeborn e pai de Nimloth."
+    ],
+    "inferido": [
+      "Cabelo prateado inferido de Celeborn.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte II, cap. 4. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Galathil"
+  },
+  {
+    "id": "elured",
+    "nome": "Eluréd",
+    "documentado": [
+      "Filho de Dior, gêmeo de Elurín; ainda criança quando Doriath caiu."
+    ],
+    "inferido": [
+      "Cabelo e olhos herdados da família de Lúthien.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 22. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Eluréd"
+  },
+  {
+    "id": "elurin",
+    "nome": "Elurín",
+    "documentado": [
+      "Filho de Dior, gêmeo de Eluréd; ainda criança quando Doriath caiu."
+    ],
+    "inferido": [
+      "A pequena diferença entre os gêmeos é interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 22. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Elurín"
+  },
+  {
+    "id": "galdor",
+    "nome": "Galdor",
+    "documentado": [
+      "Galdor, o Alto, senhor de Dor-lómin e pai de Húrin e Huor."
+    ],
+    "inferido": [
+      "Cabelo dourado, traço da Casa de Hador.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 18. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Galdor"
+  },
+  {
+    "id": "amdir",
+    "nome": "Amdír",
+    "documentado": [
+      "Rei de Lórinand; caiu na Batalha de Dagorlad."
+    ],
+    "inferido": [
+      "Aparência não descrita; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte II, cap. 4. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Amdír"
+  },
+  {
+    "id": "amroth",
+    "nome": "Amroth",
+    "documentado": [
+      "Rei de Lórien, apaixonado por Nimrodel; afogou-se na Baía de Belfalas."
+    ],
+    "inferido": [
+      "Aparência não descrita; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte II, cap. 4. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Amroth"
+  },
+  {
+    "id": "findis",
+    "nome": "Findis",
+    "documentado": [
+      "Filha mais velha de Finwë e Indis; permaneceu em Aman."
+    ],
+    "inferido": [
+      "Cabelo dourado-escuro mistura as cores de Finwë e de Indis; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "The Peoples of Middle-earth",
+        "local": "The Shibboleth of Fëanor. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Findis"
+  },
+  {
+    "id": "lalwen",
+    "nome": "Írimë (Lalwen)",
+    "documentado": [
+      "Filha de Finwë e Indis; seguiu o irmão Fingolfin para o exílio."
+    ],
+    "inferido": [
+      "Cabelo escuro inferido de Fingolfin; interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "The Peoples of Middle-earth",
+        "local": "The Shibboleth of Fëanor. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Írimë (Lalwen)"
   }
 ]

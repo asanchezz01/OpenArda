@@ -175,7 +175,7 @@ const linhagens = ler('linhagens');
 const retratos = ler('retratos');
 const idPessoas = ids(linhagens.pessoas, 'pessoas');
 ids(linhagens.senhorios, 'senhorios');
-const POVOS = new Set(['noldor', 'sindar', 'teleri', 'vanyar', 'maia', 'edain', 'meio', 'dunedain', 'hobbit', 'anao', 'homem']);
+const POVOS = new Set(['noldor', 'sindar', 'teleri', 'vanyar', 'maia', 'edain', 'meio', 'dunedain', 'hobbit', 'anao', 'homem', 'vala', 'orc']);
 for (const p of linhagens.pessoas) {
   const onde = `pessoa ${p.id}`;
   if (!POVOS.has(p.povo)) erro(`${onde}: povo inválido "${p.povo}"`);
@@ -200,7 +200,9 @@ for (const s of linhagens.senhorios) {
 }
 for (const r of retratos) {
   if (!idPessoas.has(r.id)) avisos.push(`retrato ${r.id}: sem pessoa em linhagens.json`);
-  if (!r.imagem || !existsSync(new URL(`../public/${r.imagem}`, import.meta.url))) erro(`retrato ${r.id}: arquivo de imagem ausente`);
+  // sem imagem = cadastrado e aguardando geração (scripts/gerar-fotografias.py --retratos); não aparece na interface
+  if (!r.imagem) avisos.push(`retrato ${r.id}: aguardando imagem`);
+  else if (!existsSync(new URL(`../public/${r.imagem}`, import.meta.url))) erro(`retrato ${r.id}: arquivo de imagem ausente`);
 }
 
 // fotografias (docs/ROADMAP-FOTOGRAFIAS-LUGARES.md)

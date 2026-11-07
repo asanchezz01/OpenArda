@@ -1,0 +1,324 @@
+{
+  "etapa": 7,
+  "titulo": "Valar e outras figuras de Aman e da Terra-média",
+  "data": "2026-11-07",
+  "prioridade_geracao": [
+    "API local ComfyUI (10.1.4.150), como no HopeGym",
+    "API de imagens da OpenAI se a local estiver indisponível"
+  ],
+  "geracao": {
+    "api": "ComfyUI local",
+    "script": "scripts/gerar-fotografias.py --retratos",
+    "modelo": {
+      "unet": "flux-2-klein-9b-fp8.safetensors",
+      "clip": "qwen_3_8b_fp8mixed.safetensors",
+      "steps": 4,
+      "cfg": 1
+    },
+    "resolucao": [
+      1024,
+      1024
+    ],
+    "webp": {
+      "resolucao": [
+        512,
+        512
+      ],
+      "alvo_kib": 100
+    }
+  },
+  "pesquisa": "Traços a partir de conhecimento prévio das obras; não houve cotejo direto com edições nem consulta a índices nesta entrega.",
+  "personagens": [
+    {
+      "id": "manwe",
+      "nome": "Manwë",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Manwë Súlimo, Elder King of Arda and Lord of the Breath of Arda: a majestic, ageless kingly figure with long silver-white hair, piercing clear blue eyes, a serene noble face, a robe of deep sapphire blue, a few white feathers at the collar. Wise, calm, all-seeing expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Rei Antigo de Arda, senhor dos ventos e do ar; habita Ilmarin, no Taniquetil."
+      ],
+      "inferido": [
+        "Vestes azuis e penas de águia são interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "varda",
+      "nome": "Varda",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one female Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Varda Elentári, Queen of the Stars: a woman of overwhelming, luminous beauty, long dark hair with tiny points of silver light like stars woven in it, eyes deep as the night sky, a gown of midnight blue with silver. Serene, radiant, compassionate expression; a soft light seems to come from her face. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Rainha das Estrelas, esposa de Manwë; a luz de Ilúvatar ainda vive em seu rosto."
+      ],
+      "inferido": [
+        "Cabelo e vestes são interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "ulmo",
+      "nome": "Ulmo",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Ulmo, Lord of Waters, as he appeared to Tuor: a towering, ancient, kingly figure with long dark hair and beard flowing like water, deep sea-grey eyes, a tall helm shaped like the crest of a breaking wave, a coat of mail shimmering like scales of silver and deep green. Grave, mighty, compassionate expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Senhor das Águas; apareceu a Tuor com elmo como uma onda e cota de malha prateada e verde-escura."
+      ],
+      "inferido": [
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "aule",
+      "nome": "Aulë",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Aulë the Smith, maker of the Dwarves: a broad, powerful craftsman with short dark hair and a short dark beard, strong weathered face, intense dark eyes, a leather smith's apron over a dark tunic. Focused, patient, creative expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "O Ferreiro, senhor das substâncias da terra; criou os Anões."
+      ],
+      "inferido": [
+        "Aparência é interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "yavanna",
+      "nome": "Yavanna",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one female Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Yavanna Kementári, Giver of Fruits: a tall woman robed in green, with long hair the colour of ripe wheat, warm earth-brown eyes, a crown of green leaves and small flowers. Warm, nurturing, ancient expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "A Doadora de Frutos, esposa de Aulë; em forma de mulher, alta e vestida de verde."
+      ],
+      "inferido": [
+        "Cabelo e coroa de folhas são interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "mandos",
+      "nome": "Mandos",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Námo, called Mandos, Keeper of the Houses of the Dead and Doomsman of the Valar: a tall, austere figure with long black hair, pale stern face, deep grey eyes that seem to see all fates, a hooded robe of black and dark grey. Solemn, implacable, just expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Námo, o Juiz dos Valar e guardião das Casas dos Mortos."
+      ],
+      "inferido": [
+        "Aparência é interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "vaire",
+      "nome": "Vairë",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one female Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Vairë the Weaver, wife of Mandos: a calm woman with long dark hair bound back, dark thoughtful eyes, a robe of muted woven grey and blue patterns. Quiet, contemplative expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "A Tecelã, que tece as histórias do tempo em tapeçarias nas Casas de Mandos."
+      ],
+      "inferido": [
+        "Aparência é interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "irmo",
+      "nome": "Irmo",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Irmo, called Lórien, master of visions and dreams: a gentle, dreamy figure with long soft brown hair, half-lidded misty grey eyes, a robe of muted lavender and silver-grey. Peaceful, dreamy expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Senhor das visões e dos sonhos, dos jardins de Lórien."
+      ],
+      "inferido": [
+        "Aparência é interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "este",
+      "nome": "Estë",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one female Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Estë the Gentle, healer of hurts and weariness: a soft-featured woman with long pale hair, calm grey eyes, wearing grey raiment. Gentle, restful expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "A Gentil, curadora das dores e do cansaço; veste cinza."
+      ],
+      "inferido": [
+        "Feições e cabelo são interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "nienna",
+      "nome": "Nienna",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one female Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Nienna, Lady of Mercy and of mourning: a woman with a pale sorrowful face, long dark hair under a grey hood, eyes glistening with tears. Compassionate, grieving, wise expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Senhora da piedade e do luto, que chora pelas feridas de Arda."
+      ],
+      "inferido": [
+        "Capuz e cabelo são interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "orome",
+      "nome": "Oromë",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Oromë the Great Rider, huntsman of the Valar: a mighty, vigorous man with long brown hair, a short beard, fierce bright eyes, a green and brown hunting cloak with a great silver-bound horn on a strap. Bold, keen, joyful expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "O Grande Cavaleiro, caçador; tocava a trompa Valaróma."
+      ],
+      "inferido": [
+        "Feições são interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "vana",
+      "nome": "Vána",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one female Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Vána the Ever-young, younger sister of Yavanna: a youthful radiant woman with golden hair crowned with spring flowers, bright warm eyes, a light green and white gown. Joyful, fresh expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "A Sempre-jovem; as flores se abrem quando ela passa."
+      ],
+      "inferido": [
+        "Aparência é interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "tulkas",
+      "nome": "Tulkas",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Tulkas the Strong, champion of the Valar: a huge, muscular man with golden hair and a golden beard, ruddy skin, laughing eyes, bare powerful shoulders. Boisterous, laughing, fearless expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "O mais forte dos Valar; cabelo e barba dourados, pele corada; ri mesmo em combate."
+      ],
+      "inferido": [
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "nessa",
+      "nome": "Nessa",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one female Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Nessa the swift, sister of Oromë and wife of Tulkas: a lithe young woman with long chestnut hair loose as if in motion, bright quick eyes, a light dress of soft green. Lively, playful expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Veloz como uma flecha; ama os cervos e a dança."
+      ],
+      "inferido": [
+        "Aparência é interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "morgoth",
+      "nome": "Morgoth",
+      "epoca": "Angband, Primeira Era",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Morgoth Bauglir, the Dark Lord, in the dark form he took in Middle-earth: a towering, terrible figure with long black hair, a pale proud cruel face marked by pain, burning dark eyes, an iron crown set with three brilliant white jewels, black armour. Malevolent, tormented expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Melkor, o Inimigo; usava uma coroa de ferro com as três Silmarils, que lhe queimavam as mãos."
+      ],
+      "inferido": [
+        "Feições são interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "eonwe",
+      "nome": "Eönwë",
+      "epoca": "A Guerra da Ira, Primeira Era",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Eönwë, herald of Manwë and banner-bearer of the Valar, a Maia: a tall, radiant warrior with long golden hair, clear blue-grey eyes, a noble youthful face, white and gold armour. Commanding, fair, solemn expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Arauto de Manwë, comandou a hoste dos Valar na Guerra da Ira."
+      ],
+      "inferido": [
+        "Aparência é interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "osse",
+      "nome": "Ossë",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Ossë, Maia of the waves and the shores: a wild-looking man with long sea-green streaked hair tangled like seaweed, a short rough beard, stormy grey eyes, a cloak like grey-green sea foam. Restless, fierce, mischievous expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Maia das ondas e das costas, vassalo de Ulmo; amigo dos Teleri."
+      ],
+      "inferido": [
+        "Aparência é interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "uinen",
+      "nome": "Uinen",
+      "epoca": "Valinor, nos Anos das Árvores",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one female Ainu shown in a dignified human-like bodily form, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Uinen, Lady of the Seas, wife of Ossë, a Maia: a calm beautiful woman with very long flowing hair like dark water spreading around her, deep blue-green eyes, a gown like calm sea water. Serene, protective expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Senhora dos Mares, cujo cabelo se espalha por todas as águas."
+      ],
+      "inferido": [
+        "Feições são interpretação.",
+        "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "radagast",
+      "nome": "Radagast",
+      "epoca": "Rhosgobel, Terceira Era",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Radagast the Brown, one of the Istari, a wizard who loves birds and beasts: an old man with long untidy brown-grey hair and beard, kindly bright eyes, an earthy brown hooded robe with feathers and leaves caught in it. Gentle, eccentric expression. Hair, beard and costume may follow the general look of the character in the films, but the face must be original and must not imitate any real actor. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Radagast, o Castanho, um dos Istari, mestre das formas e das cores e amigo das aves e dos animais."
+      ],
+      "inferido": [
+        "Aparência não descrita em detalhe; interpretação.",
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ],
+      "referencia_cinematografica_pendente": {
+        "ator": "Sylvester McCoy",
+        "filme": "The Hobbit (2012–2014)"
+      }
+    },
+    {
+      "id": "tom-bombadil",
+      "nome": "Tom Bombadil",
+      "epoca": "Floresta Velha, 3018 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human man with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Tom Bombadil: a merry man, shorter than a tall man, with a long brown beard, bright blue eyes, a red face creased with laughter-wrinkles like a ripe apple, a battered tall hat with a long blue feather, a bright blue coat. Jolly, laughing expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Barba castanha longa, olhos azuis, rosto vermelho como maçã madura, chapéu surrado com pena azul e casaco azul."
+      ],
+      "inferido": [
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    },
+    {
+      "id": "fruta-douro",
+      "nome": "Fruta d'Ouro",
+      "epoca": "Casa de Tom Bombadil, 3018 T.E.",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult human woman with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Goldberry, the River-daughter: a beautiful woman with long flowing golden hair, bright clear eyes, a gown as green as young rushes shot with silver like dew drops, a golden belt set with small blue flowers. Joyful, serene, welcoming expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "documentado": [
+        "Cabelo dourado longo, vestido verde como juncos novos com brilho prateado de orvalho e cinto de ouro com flores azuis."
+      ],
+      "inferido": [
+        "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      ]
+    }
+  ]
+}
