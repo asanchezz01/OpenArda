@@ -133,24 +133,24 @@
     {"id": "beorn", "nome": "Beorn", "povo": "homem", "resumo": "Troca-peles que podia assumir a forma de um grande urso. Abrigou a companhia de Thorin e decidiu a Batalha dos Cinco Exércitos.", "fontes": [{"fonte": "hobbit", "local": "caps. 7 e 18"}]},
     {"id": "azog", "nome": "Azog", "povo": "orc", "datas": "† 2799 T.E.", "resumo": "Grande Orc de Moria. Matou Thrór, o que levou à Guerra dos Anões e Orcs; foi morto por Dáin.", "fontes": [{"fonte": "sda-apA", "local": "III"}]},
     {"id": "bolg", "nome": "Bolg", "povo": "orc", "pais": ["azog"], "datas": "† 2941 T.E.", "resumo": "Filho de Azog, líder dos Orcs na Batalha dos Cinco Exércitos; morto por Beorn.", "fontes": [{"fonte": "hobbit", "local": "cap. 17"}]},
-    {"id": "manwe", "nome": "Manwë", "epiteto": "Súlimo", "povo": "vala", "fem": false, "resumo": "Rei Antigo de Arda, senhor dos ventos e do ar, o mais nobre dos Valar.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
-    {"id": "varda", "nome": "Varda", "epiteto": "Elentári", "povo": "vala", "fem": true, "resumo": "Rainha das Estrelas, que acendeu as estrelas para o despertar dos Elfos; esposa de Manwë.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "manwe", "nome": "Manwë", "epiteto": "Súlimo", "povo": "vala", "fem": false, "casa": ["varda"], "resumo": "Rei Antigo de Arda, senhor dos ventos e do ar, o mais nobre dos Valar.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "varda", "nome": "Varda", "epiteto": "Elentári", "povo": "vala", "fem": true, "casa": ["manwe"], "resumo": "Rainha das Estrelas, que acendeu as estrelas para o despertar dos Elfos; esposa de Manwë.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
     {"id": "ulmo", "nome": "Ulmo", "povo": "vala", "fem": false, "resumo": "Senhor das Águas, o único dos Valar que nunca abandonou a Terra-média.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
-    {"id": "aule", "nome": "Aulë", "povo": "vala", "fem": false, "resumo": "O Ferreiro, mestre de todos os ofícios; criou os Anões.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
-    {"id": "yavanna", "nome": "Yavanna", "epiteto": "Kementári", "povo": "vala", "fem": true, "resumo": "A Doadora de Frutos, que cantou as Duas Árvores; esposa de Aulë.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
-    {"id": "mandos", "nome": "Mandos", "epiteto": "Námo", "povo": "vala", "fem": false, "resumo": "Námo, o Juiz dos Valar, guardião das Casas dos Mortos.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
-    {"id": "vaire", "nome": "Vairë", "povo": "vala", "fem": true, "resumo": "A Tecelã, esposa de Mandos.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
-    {"id": "irmo", "nome": "Irmo", "epiteto": "Lórien", "povo": "vala", "fem": false, "resumo": "Senhor das visões e dos sonhos, chamado Lórien pelos seus jardins.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
-    {"id": "este", "nome": "Estë", "povo": "vala", "fem": true, "resumo": "A Gentil, curadora das dores e do cansaço; esposa de Irmo.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
-    {"id": "nienna", "nome": "Nienna", "povo": "vala", "fem": true, "resumo": "Senhora da piedade e do luto; irmã de Mandos e Irmo.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
-    {"id": "orome", "nome": "Oromë", "povo": "vala", "fem": false, "resumo": "O Grande Cavaleiro, que encontrou os Elfos em Cuiviénen.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
-    {"id": "vana", "nome": "Vána", "povo": "vala", "fem": true, "resumo": "A Sempre-jovem, esposa de Oromë.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
-    {"id": "tulkas", "nome": "Tulkas", "epiteto": "Astaldo", "povo": "vala", "fem": false, "resumo": "O mais forte dos Valar, que veio a Arda para combater Melkor.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
-    {"id": "nessa", "nome": "Nessa", "povo": "vala", "fem": true, "resumo": "Irmã de Oromë e esposa de Tulkas, veloz e amante da dança.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "aule", "nome": "Aulë", "povo": "vala", "fem": false, "casa": ["yavanna"], "resumo": "O Ferreiro, mestre de todos os ofícios; criou os Anões.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "yavanna", "nome": "Yavanna", "epiteto": "Kementári", "povo": "vala", "fem": true, "casa": ["aule"], "resumo": "A Doadora de Frutos, que cantou as Duas Árvores; esposa de Aulë.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "mandos", "nome": "Mandos", "epiteto": "Námo", "povo": "vala", "fem": false, "casa": ["vaire"], "irmaos": ["nienna", "irmo"], "resumo": "Námo, o Juiz dos Valar, guardião das Casas dos Mortos.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "vaire", "nome": "Vairë", "povo": "vala", "fem": true, "casa": ["mandos"], "resumo": "A Tecelã, esposa de Mandos.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "irmo", "nome": "Irmo", "epiteto": "Lórien", "povo": "vala", "fem": false, "casa": ["este"], "irmaos": ["nienna", "mandos"], "resumo": "Senhor das visões e dos sonhos, chamado Lórien pelos seus jardins.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "este", "nome": "Estë", "povo": "vala", "fem": true, "casa": ["irmo"], "resumo": "A Gentil, curadora das dores e do cansaço; esposa de Irmo.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "nienna", "nome": "Nienna", "povo": "vala", "fem": true, "irmaos": ["mandos", "irmo"], "resumo": "Senhora da piedade e do luto; irmã de Mandos e Irmo.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "orome", "nome": "Oromë", "povo": "vala", "fem": false, "casa": ["vana"], "irmaos": ["nessa"], "resumo": "O Grande Cavaleiro, que encontrou os Elfos em Cuiviénen.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "vana", "nome": "Vána", "povo": "vala", "fem": true, "casa": ["orome"], "resumo": "A Sempre-jovem, esposa de Oromë.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "tulkas", "nome": "Tulkas", "epiteto": "Astaldo", "povo": "vala", "fem": false, "casa": ["nessa"], "resumo": "O mais forte dos Valar, que veio a Arda para combater Melkor.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "nessa", "nome": "Nessa", "povo": "vala", "fem": true, "casa": ["tulkas"], "irmaos": ["orome"], "resumo": "Irmã de Oromë e esposa de Tulkas, veloz e amante da dança.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
     {"id": "morgoth", "nome": "Morgoth", "epiteto": "Melkor, o Inimigo", "povo": "vala", "fem": false, "resumo": "Melkor, o mais poderoso dos Ainur, que se rebelou e se tornou o Inimigo do Mundo.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
-    {"id": "eonwe", "nome": "Eönwë", "povo": "maia", "resumo": "Arauto de Manwë; comandou a hoste dos Valar na Guerra da Ira.", "fontes": [{"fonte": "silm", "local": "Valaquenta; Quenta, cap. 24"}]},
-    {"id": "osse", "nome": "Ossë", "povo": "maia", "resumo": "Maia das ondas, vassalo de Ulmo e amigo dos Teleri.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
-    {"id": "uinen", "nome": "Uinen", "povo": "maia", "fem": true, "resumo": "Senhora dos Mares, esposa de Ossë, protetora dos navegantes.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "eonwe", "nome": "Eönwë", "povo": "maia", "servo_de": ["manwe"], "resumo": "Arauto de Manwë; comandou a hoste dos Valar na Guerra da Ira.", "fontes": [{"fonte": "silm", "local": "Valaquenta; Quenta, cap. 24"}]},
+    {"id": "osse", "nome": "Ossë", "povo": "maia", "casa": ["uinen"], "servo_de": ["ulmo"], "resumo": "Maia das ondas, vassalo de Ulmo e amigo dos Teleri.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
+    {"id": "uinen", "nome": "Uinen", "povo": "maia", "fem": true, "casa": ["osse"], "servo_de": ["ulmo"], "resumo": "Senhora dos Mares, esposa de Ossë, protetora dos navegantes.", "fontes": [{"fonte": "silm", "local": "Valaquenta"}]},
     {"id": "radagast", "nome": "Radagast", "epiteto": "o Castanho", "povo": "maia", "resumo": "Um dos Istari, chamado o Castanho; amigo das aves e dos animais, vivia em Rhosgobel.", "fontes": [{"fonte": "sda", "local": "Livro II, cap. 2"}]},
     {"id": "tom-bombadil", "nome": "Tom Bombadil", "povo": "maia", "resumo": "O mais velho dos seres da Floresta Velha, sobre quem o Anel não tinha poder. Sua natureza nunca foi esclarecida; o povo \"Maia\" aqui é só uma classificação provisória.", "fontes": [{"fonte": "sda", "local": "Livro I, caps. 6 a 8"}]},
     {"id": "fruta-douro", "nome": "Fruta d'Ouro", "povo": "maia", "fem": true, "resumo": "A Filha do Rio, esposa de Tom Bombadil. Sua natureza não é esclarecida; o povo \"Maia\" é classificação provisória.", "fontes": [{"fonte": "sda", "local": "Livro I, cap. 7"}]},
@@ -282,10 +282,10 @@
       { "de": "QE:63", "rotulo": "Elfwine, o Belo, filho de Éomer" }
     ], "fontes": [{ "fonte": "sda-apA", "local": "II A Casa de Eorl" }] },
     { "id": "valinor", "reino": "aman-valinor", "lugares": ["valmar"], "titulo": "Rei de Arda", "governos": [
-      { "de": "AL:#al-aman", "ate": "SE:3319", "rotulo": "Manwë Súlimo, em Ilmarin no Taniquetil" }
+      { "de": "AL:#al-aman", "ate": "SE:3319", "quem": ["manwe"], "nota": "em Ilmarin no Taniquetil" }
     ], "fontes": [{ "fonte": "silm", "local": "Valaquenta" }] },
     { "id": "angband", "reino": "angband", "titulo": "Senhor", "governos": [
-      { "de": "AA:#aa-thangorodrim", "ate": "PE:587", "rotulo": "Morgoth" }
+      { "de": "AA:#aa-thangorodrim", "ate": "PE:587", "quem": ["morgoth"] }
     ], "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 9–24" }] },
     { "id": "mordor", "reino": "mordor", "titulo": "Senhor", "governos": [
       { "de": "SE:1000", "ate": "SE:3441", "quem": ["sauron"], "nota": "prisioneiro em Númenor de 3262 a 3319" },

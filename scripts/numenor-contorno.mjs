@@ -1,33 +1,37 @@
-// Gera o contorno de Númenor usado em data/terreno.json (feição "numenor").
-// A forma segue a descrição de Contos Inacabados ("Uma Descrição de Númenor"):
-// estrela de cinco pontas com região central de ~250 milhas (~400 km) e
-// cinco promontórios. A orientação dos braços segue o mapa de Christopher Tolkien.
-// A posição no Grande Mar é uma inferência (ver data/fontes.json).
-const C = [-2250, -700];
-const arms = [
-  { n: 'Forostar', a: 86, L: 400, w: 15 },
-  { n: 'Orrostar', a: 16, L: 390, w: 13 },
-  { n: 'Hyarrostar', a: -56, L: 420, w: 17 },
-  { n: 'Hyarnustar', a: -128, L: 430, w: 18 },
-  { n: 'Andustar', a: 158, L: 410, w: 14 },
+// Contorno interpretado do mapa de referência fornecido pelo usuário.
+// Coordenadas no mapa (380 × 300), ancoradas no Meneltarma: a escala e a
+// posição no Grande Mar continuam inferidas; as reentrâncias são intencionais.
+const costa = [
+  [254,19], [258,28], [261,33], [252,40], [247,45], [246,55],
+  [240,64], [246,74], [234,81], [237,90], [243,96], [242,102],
+  [255,104], [268,108], [280,107], [292,111], [303,108], [312,111],
+  [320,106], [327,106], [333,98], [337,103], [339,111], [344,114],
+  [339,124], [326,126], [324,138], [318,149], [310,152], [304,157],
+  [300,162], [290,167], [278,169], [263,168], [258,159], [248,156],
+  [240,161], [245,171], [259,179], [264,192], [277,190], [285,193],
+  [292,201], [300,207], [311,208], [320,207], [334,209], [346,211],
+  [348,225], [353,228], [360,233], [350,240], [351,252], [342,258],
+  [333,259], [333,271], [324,273], [317,264], [307,265], [301,262],
+  [296,253], [281,248], [268,245], [259,235], [250,238], [241,227],
+  [232,225], [224,232], [213,229], [211,236], [203,238], [194,244],
+  [192,234], [188,230], [180,232], [171,239], [153,240], [139,249],
+  [121,250], [114,263], [111,276], [97,281], [84,279], [76,285],
+  [68,275], [57,273], [52,267], [40,268], [37,262], [31,260],
+  [39,253], [46,253], [46,245], [52,238], [47,231], [52,218],
+  [59,218], [61,224], [71,215], [85,219], [96,213], [99,201],
+  [107,197], [105,187], [114,181], [117,173], [122,170], [126,160],
+  [122,154], [121,147], [111,144], [106,147], [97,143], [84,147],
+  [72,142], [62,145], [57,139], [46,137], [46,131], [54,125],
+  [51,118], [39,117], [42,112], [48,114], [51,110], [60,108],
+  [55,99], [54,89], [64,83], [70,91], [68,99], [74,102],
+  [80,98], [82,91], [84,84], [91,89],
+  [94,99], [108,104], [117,94], [126,95], [132,86], [143,87],
+  [149,83], [159,76], [169,72], [176,63], [182,55], [190,54],
+  [198,44], [205,44], [211,35], [220,34], [230,27], [242,27],
+  [247,21],
 ];
-const inner = 175;
-const bays = [ { a: 195, depth: 35, w: 9 }, { a: -20, depth: 45, w: 7 }, { a: 128, depth: 25, w: 6 } ];
-const pts = [];
-for (let i = 0; i < 150; i++) {
-  const th = (i / 150) * 360;
-  let r = inner;
-  for (const A of arms) {
-    const d = ((((th - A.a) % 360) + 540) % 360) - 180;
-    r = Math.max(r, inner + (A.L - inner) * Math.pow(Math.exp(-(d * d) / (2 * A.w * A.w)), 0.9));
-  }
-  for (const B of bays) {
-    const d = ((((th - B.a) % 360) + 540) % 360) - 180;
-    r -= B.depth * Math.exp(-(d * d) / (2 * B.w * B.w));
-  }
-  const rad = (th * Math.PI) / 180;
-  pts.push([Math.round(C[0] + Math.cos(rad) * r), Math.round(C[1] + Math.sin(rad) * r)]);
-}
-const out = [pts[0]];
-for (const p of pts) { const q = out[out.length - 1]; if (Math.hypot(p[0] - q[0], p[1] - q[1]) > 14) out.push(p); }
-console.log(JSON.stringify(out));
+
+console.log(JSON.stringify(costa.map(([x, y]) => [
+  Math.round(-2250 + (x - 193) * 2.65),
+  Math.round(-700 + (149 - y) * 2.65),
+])));

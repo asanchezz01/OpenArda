@@ -33,6 +33,9 @@ export interface Pessoa {
   elo?: string; // gerações omitidas entre a pessoa e pais[0]
   fem?: boolean;
   datas?: string;
+  casa?: string[]; // cônjuge registrado nas fontes (união sem filhos)
+  irmaos?: string[]; // irmãos nomeados sem pais registrados
+  servo_de?: string[]; // Valar/Maia a quem o Maia atende
   resumo: string;
   fontes: FonteRef[];
 }
@@ -173,3 +176,6 @@ export function irmaosDe(id: string): { p: Pessoa; meio: boolean }[] {
     .filter((p) => p.id !== id && !p.elo && paisDe(p).some((q) => meus.includes(q)))
     .map((p) => ({ p, meio: !(paisDe(p).length === meus.length && paisDe(p).every((q) => meus.includes(q))) }));
 }
+
+/** Maias que atendem ao Vala/Maia indicado (servo_de). */
+export const sequitoDe = (id: string) => pessoas.filter((p) => p.servo_de?.includes(id));

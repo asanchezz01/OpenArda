@@ -14,6 +14,7 @@ import {
   reinaEm,
   reinadosDe,
   retratoDe,
+  sequitoDe,
   senhorioDoReino,
   senhoriosDoLugar,
   senhoriosEm,
@@ -21,6 +22,7 @@ import {
   totalDescendentes,
   unioesDe,
   type Governo,
+  type Pessoa,
   type Senhorio,
 } from '../core/linhagens';
 import { esc, listaFontes } from './util';
@@ -80,9 +82,14 @@ export function blocoGovernoReino(app: App, reinoId: string): string | null {
   const s = senhorioDoReino(reinoId);
   if (!s) return null;
   const g = governoEm(s, app.t);
+  const ePoder = g?.quem?.some((id) => {
+    const p = pessoaPorId.get(id);
+    return p ? p.povo === 'vala' || p.povo === 'maia' : false;
+  });
   return `<section class="bloco"><h3>Governante nesta época</h3>
     ${g ? `<p class="governante">${COROA}${quem(g, 'link forte')} <span class="nota">${esc(s.titulo)} · ${esc(periodo(g))}${g.nota ? ` · ${esc(g.nota)}` : ''}</span></p>` : `<p class="nota">Ninguém governava ${esc(nomeSenhorio(s))} em ${esc(tempo.rotulo(app.t).principal)}.</p>`}
     ${sucessao(s, app.t)}
+    ${ePoder ? `<p><button type="button" class="link" data-acao="sel" data-sel="valar">Ver os Valar e Maiar</button></p>` : ''}
     <p class="nota">Toque num nome para abrir a árvore genealógica.</p>
   </section>`;
 }
@@ -122,7 +129,40 @@ export function fichaSenhorios(app: App): string {
     }
     ${caidos.length ? `<p class="nota"><strong>Já caídos ou extintos:</strong> ${caidos.map((s) => esc(nomeSenhorio(s))).join(', ')}</p>` : ''}
     ${futuros.length ? `<p class="nota"><strong>Ainda por surgir:</strong> ${futuros.map((s) => esc(nomeSenhorio(s))).join(', ')}</p>` : ''}
-    <section class="bloco"><h3>Abrir uma árvore</h3><p>${abrir('feanor', 'Fëanor')} · ${abrir('finwe', 'Finwë')} · ${abrir('thingol', 'Elu Thingol')} · ${abrir('elendil', 'Elendil')} · ${abrir('aragorn', 'Aragorn')}</p></section>`;
+    <section class="bloco"><h3>Abrir uma árvore</h3><p>${abrir('feanor', 'Fëanor')} · ${abrir('finwe', 'Finwë')} · ${abrir('thingol', 'Elu Thingol')} · ${abrir('elendil', 'Elendil')} · ${abrir('aragorn', 'Aragorn')}</p></section>
+    <section class="bloco"><h3>Valar e Maiar</h3>
+      <p class="nota">Os Poderes que ampararam Arda desde o Primeiro Dia, com seus retratos e laços: cônjuge, irmãos, senhor e séquito.</p>
+      <p><button type="button" class="link forte" data-acao="sel" data-sel="valar">Ver os Valar e Maiar</button></p>
+    </section>`;
+}
+
+function cartaoPoder(p: Pessoa): string {
+  const r = retratoDe(p.id);
+  const com = p.casa?.map((q) => chip(q)).join(' ');
+  const servico = p.servo_de?.map((q) => chip(q)).join(' ');
+  return `<div class="valar-cartao povo-${p.povo}">
+    ${r ? foto(p.id, 96) : `<button type="button" class="valar-sem-retrato" data-acao="sel" data-sel="linhagem:${esc(p.id)}" aria-label="Abrir ficha de ${esc(p.nome)}"><i class="povo-sinal" aria-hidden="true"></i>${esc(p.nome[0] ?? '')}</button>`}
+    <div class="valar-cartao-corpo">
+      <strong class="pessoa-nome">${esc(p.nome)}</strong>
+      ${p.epiteto ? `<span class="pessoa-ep">${esc(p.epiteto)}</span>` : ''}
+      ${(com || servico) ? `<span class="valar-lacos">${com}${servico}</span>` : ''}
+    </div>
+    <div class="valar-cartao-acoes"><button type="button" class="mini" data-acao="sel" data-sel="linhagem:${esc(p.id)}">Ficha</button>${botaoArvore(p.id)}</div>
+  </div>`;
+}
+
+/** Galeria dos Valar e Maiar: os retratos, casais, séquito e caminho para as árvores. */
+export function fichaValar(app: App): string {
+  const grupo = (povo: 'vala' | 'maia') => pessoas.filter((p) => p.povo === povo);
+  const valar = grupo('vala');
+  const maior = grupo('maia');
+  const cartoes = (lista: Pessoa[]) => `<div class="valar-grade">${lista.map(cartaoPoder).join('')}</div>`;
+  return `<header class="ficha-cab"><p class="tipo">Linhagens · ${esc(NOME_POVO.vala)} e ${esc(NOME_POVO.maia)}</p><h2>Valar e Maiar</h2>
+    <p class="nota">Os Poderes de Ilúvatar: Valar, os que ampararam a Terra desde o Primeiro Dia, e Maiar, seus servos. Toque num retrato para ampliá-lo, num nome para abrir a ficha.</p></header>
+    <section class="bloco"><h3>Valar</h3>${cartoes(valar)}</section>
+    <section class="bloco"><h3>Maiar</h3>${cartoes(maior)}</section>
+    <section class="bloco"><h3>Fontes</h3><p class="nota">As ligações de casa, irmãos, senhor e séquito seguem a Valaquenta, em O Silmarillion. Os retratos são interpretações artísticas.</p></section>
+    <div class="acoes rodape"><button type="button" data-acao="linhagens">Quem governava</button></div>`;
 }
 
 function cartao(app: App, id: string, foco: string, conjuge: string | null, extra: string): string {
@@ -172,6 +212,19 @@ function htmlAscendencia(id: string): string {
 
 const legendaPovos = () => `<ul class="legenda-povos">${Object.entries(NOME_POVO).map(([k, v]) => `<li class="povo-${k}"><i class="povo-sinal" aria-hidden="true"></i>${v}</li>`).join('')}</ul>`;
 
+/** Casa, irmãos, senhor e séquito nomeados fora da ascendência (Valar e Maiar). */
+function blocosFamilia(id: string): string {
+  const p = pessoaPorId.get(id);
+  if (!p) return '';
+  const blocos: string[] = [];
+  if (p.casa?.length) blocos.push(`<section class="bloco"><h3>Casa</h3><div class="chips">${p.casa.map((q) => chip(q)).join('')}</div></section>`);
+  if (p.irmaos?.length) blocos.push(`<section class="bloco"><h3>Irmãos</h3><div class="chips">${p.irmaos.map((q) => chip(q)).join('<i>e</i>')}</div></section>`);
+  if (p.servo_de?.length) blocos.push(`<section class="bloco"><h3>A serviço de</h3><div class="chips">${p.servo_de.map((q) => chip(q)).join('<i>e</i>')}</div></section>`);
+  const sequito = sequitoDe(id).map((s) => chip(s.id)).join('<i>e</i>');
+  if (sequito) blocos.push(`<section class="bloco"><h3>Séquito</h3><div class="chips">${sequito}</div></section>`);
+  return blocos.join('');
+}
+
 /** Árvore em tela cheia: mais gerações e espaço para percorrer a família. */
 export function htmlArvoreTela(app: App, id: string): string {
   const p = pessoaPorId.get(id);
@@ -183,6 +236,7 @@ export function htmlArvoreTela(app: App, id: string): string {
       <button type="button" class="fechar" data-fechar-arvore aria-label="Fechar árvore genealógica (Esc)">×</button>
     </header>
     <div class="arvore-tela-asc">${htmlAscendencia(id)}</div>
+    ${blocosFamilia(id)}
     ${legendaPovos()}
     <div class="arvore-rolagem arvore-tela-rolagem"><div class="arvore"><ul>${no(app, id, id, 0, null, 6)}</ul></div></div>
     <p class="nota arvore-tela-nota">Toque num nome para centralizar a árvore nele. A coroa marca quem governa em ${esc(tempo.rotulo(app.t).principal)}.</p>`;
@@ -214,6 +268,7 @@ export function fichaLinhagem(app: App, id: string): string {
     }</section>
     <section class="bloco"><h3>Ascendência</h3>${htmlAscendencia(id)}</section>
     ${irmaos.length ? `<section class="bloco"><h3>Irmãos</h3><div class="chips">${irmaos.map(({ p: x, meio }) => chip(x.id, meio ? (x.fem ? 'meia-irmã' : 'meio-irmão') : '')).join('')}</div></section>` : ''}
+    ${blocosFamilia(id)}
     <section class="bloco"><h3>Descendência</h3>
       ${legendaPovos()}
       <div class="arvore-rolagem"><div class="arvore"><ul>${no(app, id, id, 0, null)}</ul></div></div>

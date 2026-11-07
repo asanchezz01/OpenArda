@@ -6,7 +6,7 @@ import { eras, jornadas, lugarPorId, reinoPorId, tempo } from '../core/data';
 import { Busca } from './busca';
 import { LinhaTempo } from './linha';
 import { fichaAqui, fichaEvento, fichaFonte, fichaFontes, fichaLugar, fichaMarco, fichaReino } from './fichas';
-import { fichaLinhagem, fichaSenhorios, htmlArvoreTela, htmlRetrato } from './linhagens';
+import { fichaLinhagem, fichaSenhorios, fichaValar, htmlArvoreTela, htmlRetrato } from './linhagens';
 import { htmlPainelFotos, htmlVisualizador } from './fotografias';
 import { esc, guardar, h, ler, listaFontes } from './util';
 import { lerLink, montarLink } from './url';
@@ -78,6 +78,7 @@ export class Interface {
         <button type="button" data-acao="jornadas">Seguir uma jornada</button>
         <button type="button" data-acao="eras">Escolher uma era</button>
         <button type="button" data-acao="linhagens">Linhagens e governantes</button>
+        <button type="button" data-acao="valar">Valar e Maiar</button>
         <button type="button" data-acao="fotografias">Fotografias dos lugares</button>
         <button type="button" data-acao="gondolin-3d">Visitar Gondolin em 3D</button>
         <button type="button" data-acao="minas-tirith-3d">Visitar Minas Tirith em 3D</button>
@@ -354,7 +355,7 @@ export class Interface {
   // ---------- painel ----------
   abrir(sel: string, voar = false) {
     const a = this.app;
-    if (sel === 'fontes' || sel === 'jornadas' || sel === 'eras' || sel === 'linhagens' || sel.startsWith('fonte:') || sel.startsWith('aqui:')) {
+    if (sel === 'fontes' || sel === 'jornadas' || sel === 'eras' || sel === 'linhagens' || sel === 'valar' || sel.startsWith('fonte:') || sel.startsWith('aqui:')) {
       this.conteudoAtual = sel;
       if (sel.startsWith('aqui:')) a.selecionar(null);
       this.renderPainel();
@@ -424,11 +425,12 @@ export class Interface {
     else if (tipo === 'eras') html = this.htmlEras();
     else if (tipo === 'linhagem') html = fichaLinhagem(a, id);
     else if (tipo === 'linhagens') html = fichaSenhorios(a);
+    else if (tipo === 'valar') html = fichaValar(a);
     if (!html) return;
     this.ultimoRenderPainel = performance.now();
     const top = this.conteudo.scrollTop;
     const arvoreX = this.conteudo.querySelector('.arvore-rolagem')?.scrollLeft;
-    const largo = tipo === 'linhagem';
+    const largo = tipo === 'linhagem' || tipo === 'valar';
     this.painel.classList.toggle('largo', largo);
     document.body.classList.toggle('painel-largo', largo);
     const abertos = manterScroll ? [...this.conteudo.querySelectorAll('details[open] summary')].map((x) => x.textContent) : [];
@@ -602,6 +604,10 @@ export class Interface {
         break;
       case 'linhagens':
         this.abrir('linhagens');
+        this.camadasEl.hidden = true;
+        break;
+      case 'valar':
+        this.abrir('valar');
         this.camadasEl.hidden = true;
         break;
       case 'jornada':

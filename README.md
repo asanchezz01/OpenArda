@@ -102,7 +102,7 @@ tests/                testes (Vitest): tempo, estados dos lugares e reinos, rele
 scripts/
   validate-data.mjs   verificação de ids, referências cruzadas, tempos e fontes
   formatar-dados.mjs  formata terreno.json com uma feição por linha
-  numenor-contorno.mjs gera o contorno estrelado de Númenor a partir da descrição
+  numenor-contorno.mjs reproduz a costa de Númenor interpretada do mapa de referência
 ```
 
 O relevo não vem de imagens prontas. Ele é uma função calculada a partir de dados vetoriais:

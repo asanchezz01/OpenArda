@@ -1966,6 +1966,74 @@ details summary {
   font-size: 11.5px;
 }
 
+/* ---------- galeria dos Valar e Maiar ---------- */
+.valar-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 10px;
+  margin: 8px 0 4px;
+}
+.valar-cartao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 10px 10px;
+  background: var(--fundo-claro);
+  border: 1px solid var(--linha);
+  border-top: 3px solid var(--povo, var(--linha));
+  border-radius: 10px;
+  text-align: center;
+}
+.valar-cartao:hover {
+  border-color: var(--ouro);
+}
+.valar-cartao .retrato-ampliar img,
+.valar-sem-retrato {
+  border: 1px solid var(--povo, var(--linha));
+}
+.valar-cartao .retrato-ampliar img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.valar-sem-retrato {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-size: 40px;
+  color: var(--povo, var(--tinta));
+  background: none;
+  cursor: pointer;
+}
+.valar-cartao-corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  min-width: 0;
+}
+.valar-cartao-corpo .pessoa-nome {
+  text-align: center;
+}
+.valar-lacos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin-top: 4px;
+}
+.valar-cartao-acoes {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 2px;
+}
+
 /* ---------- árvore genealógica em tela cheia ---------- */
 .abrir-arvore {
   flex: none;
