@@ -1,0 +1,82 @@
+[
+  {
+    "id": "AL",
+    "nome": "Anos das Lâmpadas",
+    "abrev": "A.L.",
+    "datada": false,
+    "peso": 0.07,
+    "cor": "#b9a46a",
+    "descricao": "Os Valar iluminam o mundo com duas grandes lâmpadas, Illuin ao norte e Ormal ao sul, e habitam a ilha de Almaren. Melkor derruba as lâmpadas e a primeira forma de Arda se desfaz.",
+    "nota_datas": "O Silmarillion não dá anos para este período. O atlas navega pela sequência dos acontecimentos.",
+    "vista": { "x": 3300, "y": -150, "d": 3600, "rumo": 0, "inclinacao": 45 },
+    "cursor_padrao": "#al-almaren"
+  },
+  {
+    "id": "AA",
+    "nome": "Anos das Árvores",
+    "abrev": "A.Á.",
+    "datada": false,
+    "peso": 0.13,
+    "cor": "#d9c27a",
+    "descricao": "Telperion e Laurelin iluminam Aman, enquanto a Terra-média permanece sob as estrelas. Os Elfos despertam, fazem a Grande Jornada e muitos chegam a Eldamar.",
+    "nota_datas": "O Silmarillion publicado não numera estes anos. Os Anais de Aman (The History of Middle-earth, vol. X) contam 'anos valianos', mas esse esquema foi revisto por Tolkien; o atlas mostra esses números apenas como datas alternativas.",
+    "vista": { "x": -3380, "y": -128, "d": 440, "rumo": 268, "inclinacao": 71 },
+    "cursor_padrao": "#aa-silmarils"
+  },
+  {
+    "id": "PE",
+    "nome": "Primeira Era",
+    "abrev": "P.E.",
+    "datada": true,
+    "inicio": 1,
+    "fim": 590,
+    "peso": 0.2,
+    "cor": "#c98f5a",
+    "descricao": "Anos do Sol. Os Noldor travam a guerra contra Morgoth em Beleriand. Doriath, Nargothrond e Gondolin florescem e caem; a Guerra da Ira encerra a era e afunda grande parte de Beleriand.",
+    "nota_datas": "Os anos da Primeira Era vêm dos Anais Cinzentos e do Conto dos Anos (The History of Middle-earth, vol. XI). O Silmarillion publicado quase não traz anos, por isso essas datas aparecem marcadas como 'inferido'.",
+    "vista": { "x": -330, "y": -130, "d": 1300, "rumo": 0, "inclinacao": 50 },
+    "cursor_padrao": "PE:400"
+  },
+  {
+    "id": "SE",
+    "nome": "Segunda Era",
+    "abrev": "S.E.",
+    "datada": true,
+    "inicio": 1,
+    "fim": 3441,
+    "peso": 0.27,
+    "cor": "#7fa6c9",
+    "descricao": "Os Edain recebem Númenor. Sauron forja o Um Anel. A ilha cresce em poder, se rebela e é engolida pelo mar em 3319. Os Fiéis fundam Arnor e Gondor.",
+    "nota_datas": "Anos do Conto dos Anos (Apêndice B de O Senhor dos Anéis).",
+    "vista": { "x": -2250, "y": -720, "d": 1400, "rumo": 0, "inclinacao": 45 },
+    "cursor_padrao": "SE:3000"
+  },
+  {
+    "id": "TE",
+    "nome": "Terceira Era",
+    "abrev": "T.E.",
+    "datada": true,
+    "inicio": 1,
+    "fim": 3021,
+    "peso": 0.25,
+    "cor": "#8fb07a",
+    "descricao": "Os reinos no exílio se dividem e declinam; Rohan surge nas antigas terras de Gondor; a era termina com a Guerra do Anel.",
+    "nota_datas": "Anos dos Apêndices A e B de O Senhor dos Anéis.",
+    "vista": { "x": 1300, "y": -500, "d": 2400, "rumo": 0, "inclinacao": 40 },
+    "cursor_padrao": "TE:1000"
+  },
+  {
+    "id": "QE",
+    "nome": "Quarta Era",
+    "abrev": "Q.E.",
+    "datada": true,
+    "inicio": 1,
+    "fim": 120,
+    "peso": 0.08,
+    "cor": "#c9b98f",
+    "descricao": "O Reino Reunido sob Elessar. O atlas cobre os primeiros anos da era, até a morte do rei em 120 Q.E.",
+    "nota_datas": "Anos do Apêndice B ('Acontecimentos posteriores'), convertidos do Registro do Condado (1422 R.C. = 1 Q.E.).",
+    "vista": { "x": 1500, "y": -600, "d": 2200, "rumo": 0, "inclinacao": 40 },
+    "cursor_padrao": "QE:6"
+  }
+]
