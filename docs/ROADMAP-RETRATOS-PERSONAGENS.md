@@ -8,11 +8,11 @@ Atualizado em **7 de novembro de 2026**. Plano de produção para o OpenArda, co
 
 ## Ponto de partida e objetivo
 
-O catálogo local contém **99 personagens** em [data/linhagens.json](../data/linhagens.json). Há **37 retratos criados e cadastrados na interface** em [data/retratos.json](../data/retratos.json): 14 das etapas 0 e 1 e 23 da etapa 2. O build, os testes de renderização e o carregamento dos arquivos foram validados; a conferência visual da página no navegador continua pendente por falha da automação. Veja as entregas da [etapa 1](RETRATOS-ETAPA-1.md) e da [etapa 2](RETRATOS-ETAPA-2.md).
+O catálogo local contém **103 personagens** em [data/linhagens.json](../data/linhagens.json). Há **58 retratos criados e cadastrados na interface** em [data/retratos.json](../data/retratos.json): 14 das etapas 0 e 1, 24 da etapa 2 e 20 da etapa 3. O build, os testes de renderização e o carregamento dos arquivos foram validados; a conferência visual da página no navegador continua pendente por falha da automação. Veja as entregas da [etapa 1](RETRATOS-ETAPA-1.md), da [etapa 2](RETRATOS-ETAPA-2.md) e da [etapa 3](RETRATOS-ETAPA-3.md).
 
-O plano contempla **150 personagens únicos**, incluindo os 75 cadastrados no ponto de partida. São **113 personagens ainda sem retrato neste plano**, incluindo Gandalf. O catálogo também pode crescer com elos genealógicos fora desta seleção. A lista é uma seleção editorial para a biblioteca inicial, não um inventário de todos os personagens de Tolkien. Versões de um mesmo personagem e a extensão de criaturas não entram nessa contagem.
+O plano contempla **150 personagens únicos**, incluindo os 75 cadastrados no ponto de partida. São **92 personagens ainda sem retrato neste plano**. O catálogo também pode crescer com elos genealógicos fora desta seleção. A lista é uma seleção editorial para a biblioteca inicial, não um inventário de todos os personagens de Tolkien. Versões de um mesmo personagem e a extensão de criaturas não entram nessa contagem.
 
-**Expansão atual:** as etapas 0 e 1 foram preservadas; a etapa 2 tem **23 de 24 retratos integrados**, com os atores de Peter Jackson como referência. Gandalf permanece pendente após recusas na geração, inclusive na tentativa pela API autorizada pelo usuário.
+**Expansão atual:** a etapa 2 tem **24/24 retratos integrados**, com Gandalf concluído pela API local; a etapa 3 tem **20/20**. Os 37 retratos existentes antes desta entrega foram preservados. O próximo lote do plano é a etapa 4, Doriath e os Grandes Contos.
 
 ## Ordem das entregas
 
@@ -22,15 +22,15 @@ As etapas indicam prioridade, sem datas prometidas. Dividir cada etapa em lotes 
 | --- | --- | ---: | ---: | --- |
 | 0 | Fëanor e os sete filhos | 9 | 9 | Criados e cadastrados na interface |
 | 1 | Completar a família imediata | 5 | 14 | Integrados; build validado; conferência visual da página pendente |
-| 2 | Protagonistas de O Senhor dos Anéis | 24 | 38 | 23 integrados e verificados automaticamente; Gandalf pendente; conferência visual da página pendente |
-| 3 | Casa de Finwë, Gondolin e Nargothrond | 20 | 58 | Planejado |
+| 2 | Protagonistas de O Senhor dos Anéis | 24 | 38 | 24 integrados e verificados automaticamente; conferência visual da página pendente |
+| 3 | Casa de Finwë, Gondolin e Nargothrond | 20 | 58 | 20 integrados e verificados automaticamente; conferência visual da página pendente |
 | 4 | Doriath e os Grandes Contos | 20 | 78 | Planejado |
 | 5 | Segunda Era e herdeiros de Númenor | 19 | 97 | Planejado |
 | 6 | O Hobbit e a linhagem de Durin | 22 | 119 | Planejado |
 | 7 | Valar e outras figuras de Aman e da Terra-média | 21 | 140 | Planejado |
 | 8 | Completar os elos genealógicos | 10 | 150 | Planejado |
 
-Até a etapa 2, a biblioteca terá 38 personagens; até a etapa 4, 78. Esses são os dois primeiros marcos de cobertura. As etapas seguintes ampliam épocas, povos e completam as lacunas das árvores.
+Com a etapa 2, a biblioteca alcançou 38 retratos; com a etapa 3, 58. O próximo marco é chegar a 78 até a etapa 4. As etapas seguintes ampliam épocas, povos e completam as lacunas das árvores.
 
 ### Etapa 0 — Fëanor e os sete filhos
 
@@ -48,13 +48,13 @@ Até a etapa 2, a biblioteca terá 38 personagens; até a etapa 4, 78. Esses sã
 
 **Personagens (24):** Galadriel; Celeborn; Elrond; Arwen; Aragorn II Elessar; Frodo; Samwise Gamgi; Meriadoc Brandebuque; Peregrin Tûk; Gandalf; Legolas; Gimli; Boromir; Bilbo; Faramir; Denethor II; Théoden; Éomer; Éowyn; Saruman; Gollum/Sméagol; Sauron; Rei-bruxo de Angmar; Gríma Língua de Cobra.
 
-**Entrega parcial realizada:** 24 personagens pesquisados, 23 retratos criados e 23 integrados/verificados automaticamente, com atores, filmes, épocas e diferenças literárias registrados. Todos os novos WebP têm 512 × 512 e menos de 100 KiB. A etapa não está concluída: Gandalf ainda não tem imagem, e a conferência visual da página depende da recuperação da automação do navegador. Consulte a [galeria e as notas da etapa 2](RETRATOS-ETAPA-2.md) e os [prompts utilizados](retratos-etapa-2-prompts.json).
+**Entrega realizada:** 24 personagens pesquisados, 24 retratos criados e 24 integrados/verificados automaticamente, com atores, filmes, épocas e diferenças literárias registrados. Gandalf foi concluído pela API local do HopeGym durante a entrega da etapa 3. Os WebP têm 512 × 512 e menos de 100 KiB. A conferência visual da página depende da recuperação da automação do navegador. Consulte a [galeria e as notas da etapa 2](RETRATOS-ETAPA-2.md) e os [prompts utilizados](retratos-etapa-2-prompts.json).
 
 ### Etapa 3 — Casa de Finwë, Gondolin e Nargothrond
 
 **Personagens (20):** Fingolfin; Finarfin; Olwë; Eärwen; Fingon; Turgon; Elenwë; Aredhel; Idril Celebrindal; Eöl; Maeglin; Finrod Felagund; Orodreth; Angrod; Aegnor; Finduilas de Nargothrond; Anairë; Glorfindel; Ecthelion da Fonte; Voronwë.
 
-**Entrega:** Completar os principais ramos élficos e os protagonistas das cidades da Primeira Era.
+**Entrega realizada:** 20 personagens pesquisados, 20 retratos criados e 20 integrados/verificados automaticamente, usando ComfyUI/FLUX.2 Klein 9B local. Foram acrescentadas as fichas de Anairë, Glorfindel, Ecthelion e Voronwë; Anairë foi ligada aos três filhos já cadastrados. Glorfindel usa Jarl Benzon como referência facial, com a ressalva da identificação em material de cartas/divulgação; os demais seguem fontes literárias e variação familiar. Os arquivos têm 512 × 512 e menos de 100 KiB. Build aprovado com 152 testes; miniaturas inspecionadas. A conferência visual da página permanece pendente. Veja a [galeria e as decisões da etapa 3](RETRATOS-ETAPA-3.md) e os [prompts e parâmetros](retratos-etapa-3-prompts.json).
 
 ### Etapa 4 — Doriath e os Grandes Contos
 
@@ -183,7 +183,7 @@ Outros nomes, como Nimrodel, Haldir, os Magos Azuis e Khamûl, podem entrar conf
 
 Este documento organiza a produção e registra a pesquisa inicial do próximo lote e de alguns casos sensíveis. **A aparência dos 150 personagens ainda não foi pesquisada individualmente**, e a presença na lista não significa que um retrato foi criado.
 
-As etapas 0 e 1 têm 14 imagens preservadas, e a etapa 2 acrescentou 23 pelo padrão existente. Gandalf e a conferência visual da página permanecem pendentes. Datas e custos das etapas restantes dependem da capacidade de produção, das revisões e das consultas às fontes.
+As etapas 0 a 3 somam 58 imagens integradas pelo padrão existente. Gandalf foi concluído; a conferência visual da página permanece pendente. Datas e custos das etapas restantes dependem da capacidade de produção, das revisões e das consultas às fontes.
 
 Referência do trabalho já realizado: [galeria e notas dos retratos de Fëanor](RETRATOS-FEANOR.md).
 

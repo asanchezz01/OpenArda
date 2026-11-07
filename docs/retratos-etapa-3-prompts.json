@@ -1,0 +1,972 @@
+{
+  "etapa": 3,
+  "data": "2026-11-07",
+  "status": "20 de 20 retratos integrados; conferência visual da página pendente",
+  "prioridade_geracao": [
+    "API local configurada no HopeGym",
+    "API de imagens do GPT quando a local estiver indisponível"
+  ],
+  "geracao": {
+    "api": "ComfyUI local",
+    "cliente_origem": "HopeGym/scripts/comfy-planeta-fit.py",
+    "modelo": {
+      "unet": "flux-2-klein-9b-fp8.safetensors",
+      "clip": "qwen_3_8b_fp8mixed.safetensors",
+      "steps": 4,
+      "cfg": 1
+    },
+    "vae": "flux2-vae.safetensors",
+    "resolucao": [
+      1024,
+      1024
+    ],
+    "webp": {
+      "resolucao": [
+        512,
+        512
+      ],
+      "qualidade": 86
+    }
+  },
+  "pesquisa": "Consulta por remissão a Tolkien Gateway e fontes indicadas; não houve cotejo direto com uma edição dos livros.",
+  "personagens": [
+    {
+      "id": "fingolfin",
+      "nome": "Fingolfin",
+      "epoca": "Hithlum, antes da Dagor Bragollach",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Fingolfin, High King of the Noldor: long black hair partly tucked behind ears, broad strong jaw, deep-set cool grey-blue eyes, straight broad nose, slightly heavier brows and more rugged cheek structure than his father. Adult ageless elf with a resolute, steady calm expression. Muted blue mantle over the upper edge of silver armor. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "finwe",
+          "arquivo": "public/retratos/finwe.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        },
+        {
+          "id": "indis",
+          "arquivo": "public/retratos/indis.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Filho de Finwë e Indis.",
+        "Cabelo longo e escuro; armadura prateada no combate com Morgoth."
+      ],
+      "inferido": [
+        "Olhos azul-acinzentados e estrutura facial combinam variações dos pais, sem descrição individual desses traços nas fontes consultadas."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "The Nature of Middle-earth, II.IV Hair; O Silmarillion, Quenta, cap. 18; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Fingolfin"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 280017809333906,
+      "original": "output/imagegen/etapa3/fingolfin-v2.png",
+      "arquivo": "public/retratos/fingolfin.webp"
+    },
+    {
+      "id": "finarfin",
+      "nome": "Finarfin",
+      "epoca": "Tirion, rei dos Noldor que permaneceram em Aman",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Reference images guide only stated family resemblance and photographic style; do not duplicate their subjects or add an actor casting. An adult MALE elf king Finarfin, a man with long golden-blond hair tied loosely behind his ears, clear grey-blue eyes, a high broad forehead, heavier straight eyebrows, a long straight nose, strong defined male jaw and broad neck. Mature masculine face with a thoughtful kind expression and natural skin. Ivory and muted gold royal robe, a very slender plain golden circlet. His golden hair and cheekbones echo his mother Indis; the nose and brow echo his father Finwe, but his face is original and distinct. Show him in Tirion after he became king of the Noldor who remained in Aman.",
+      "referencias_consultadas": [
+        {
+          "id": "indis",
+          "arquivo": "public/retratos/indis.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        },
+        {
+          "id": "finwe",
+          "arquivo": "public/retratos/finwe.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Filho de Finwë e Indis.",
+        "Cabelo dourado herdado dos Vanyar de Indis."
+      ],
+      "inferido": [
+        "Olhos azul-acinzentados, nariz e contorno facial são variações dos pais."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "The Peoples of Middle-earth, The Shibboleth of Fëanor; O Silmarillion, Quenta, cap. 5; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Finarfin"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 82667631271838,
+      "original": "output/imagegen/etapa3/finarfin-v2.png",
+      "arquivo": "public/retratos/finarfin.webp"
+    },
+    {
+      "id": "olwe",
+      "nome": "Olwë",
+      "epoca": "Alqualondë, antes do Fratricídio",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Olwe, king of the Teleri: long pure white hair, clear blue eyes, high broad forehead, elongated aquiline nose, narrow long face with an angular chin and defined cheekbones. An ageless adult male elf, no beard or aged wrinkles. Pearl-grey and sea-blue silk collar, minimal silver circlet. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "celeborn",
+          "arquivo": "public/retratos/celeborn.webp",
+          "papel": "comparação de estilo ou família, conforme notas individuais"
+        },
+        {
+          "id": "galadriel",
+          "arquivo": "public/retratos/galadriel.webp",
+          "papel": "comparação de estilo ou família, conforme notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Senhor dos Teleri de Alqualondë e pai de Eärwen.",
+        "Cabelo longo e branco e olhos azuis."
+      ],
+      "inferido": [
+        "Rosto próprio construído com ecos discretos da parentela Teleri e da neta Galadriel; idade aparente e traje são artísticos."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "Morgoth's Ring, The Later Quenta Silmarillion, Of the Coming of the Elves, §27, p. 163; O Silmarillion, Quenta, caps. 3 e 5; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Olw%C3%AB"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 128960341813137,
+      "original": "output/imagegen/etapa3/olwe-v2.png",
+      "arquivo": "public/retratos/olwe.webp"
+    },
+    {
+      "id": "earwen",
+      "nome": "Eärwen",
+      "epoca": "Aman, esposa de Finarfin",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Earwen, the swan-maiden of Alqualonde, an adult elven woman with long luminous silver hair, blue eyes, high cheekbones, a slender straight nose and gently rounded chin. Composed warm expression, pearl-grey robe with tiny restrained swan-shaped silver clasp, no crown. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "olwe",
+          "arquivo": "public/retratos/olwe.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        },
+        {
+          "id": "galadriel",
+          "arquivo": "public/retratos/galadriel.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Filha de Olwë e esposa de Finarfin.",
+        "Cabelo prateado comparado à luz das estrelas."
+      ],
+      "inferido": [
+        "Olhos azuis e semelhança facial com Olwë e Galadriel são reconstrução familiar."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "Contos Inacabados, A História de Galadriel e Celeborn; O Silmarillion, Quenta, cap. 5; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/E%C3%A4rwen"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 42758221293687,
+      "original": "output/imagegen/etapa3/earwen-v2.png",
+      "arquivo": "public/retratos/earwen.webp"
+    },
+    {
+      "id": "anaire",
+      "nome": "Anairë",
+      "epoca": "Tirion, permaneceu em Aman",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Anaire, Fingolfin's wife, an original adult elven woman in Aman: long straight jet-black hair arranged with two narrow side braids, gentle heart-shaped face, green-grey almond-shaped eyes, a short straight nose, rounded cheekbones, full lower lip and quiet thoughtful expression. Deep muted plum gown with a simple silver neckline. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "indis",
+          "arquivo": "public/retratos/indis.webp",
+          "papel": "comparação de estilo ou família, conforme notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Noldo, esposa de Fingolfin e mãe de Fingon, Turgon e Aredhel; permaneceu em Aman."
+      ],
+      "inferido": [
+        "Sem descrição física individual localizada: cabelo negro, olhos cinza-esverdeados, pele e feições são escolhas artísticas que orientarão os filhos; não foi presumido parentesco com Indis."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "The Peoples of Middle-earth, The Shibboleth of Fëanor, pp. 344–345; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Anair%C3%AB"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 227746713605562,
+      "original": "output/imagegen/etapa3/anaire-v2.png",
+      "arquivo": "public/retratos/anaire.webp"
+    },
+    {
+      "id": "fingon",
+      "nome": "Fingon",
+      "epoca": "Hithlum, antes da Nirnaeth Arnoediad",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Fingon, an adult MALE elven prince with long black hair in two thick great braids threaded with thin gold ribbons, green-grey eyes, strong straight nose and an open courageous expression. Athletic masculine face with a shorter chin and fuller lips than his father. Muted blue-grey noble tunic, no crown. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "fingolfin",
+          "arquivo": "public/retratos/fingolfin.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        },
+        {
+          "id": "anaire",
+          "arquivo": "public/retratos/anaire.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Filho de Fingolfin e Anairë.",
+        "Cabelo longo e escuro em grandes tranças entretecidas de ouro."
+      ],
+      "inferido": [
+        "Olhos cinza-esverdeados e feições combinam variações dos pais."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "The Peoples of Middle-earth, The Shibboleth of Fëanor; O Silmarillion, Quenta, caps. 13 e 20; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Fingon"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 34522332179032,
+      "original": "output/imagegen/etapa3/fingon-v2.png",
+      "arquivo": "public/retratos/fingon.webp"
+    },
+    {
+      "id": "turgon",
+      "nome": "Turgon",
+      "epoca": "Gondolin, antes da queda",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Turgon, an adult MALE elven king of Gondolin, long smooth black hair swept back, cool grey eyes beneath straight eyebrows, broad angular masculine jaw, high forehead and long narrow straight nose. A reserved thoughtful expression, distinctly longer face and thinner mouth than his brother Fingon. Restrained ivory and silver royal collar and a thin silver circlet. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "fingolfin",
+          "arquivo": "public/retratos/fingolfin.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        },
+        {
+          "id": "anaire",
+          "arquivo": "public/retratos/anaire.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Filho de Fingolfin e Anairë, esposo de Elenwë e pai de Idril.",
+        "Estatura excepcional, superada por Thingol."
+      ],
+      "inferido": [
+        "Cabelo negro, olhos cinzentos e rosto reservado são reconstrução a partir dos pais; a estatura não é demonstrada pelo recorte."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "Contos Inacabados, De Tuor e sua chegada a Gondolin; The Peoples of Middle-earth, The Shibboleth of Fëanor; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Turgon"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 155687753004812,
+      "original": "output/imagegen/etapa3/turgon-v2.png",
+      "arquivo": "public/retratos/turgon.webp"
+    },
+    {
+      "id": "elenwe",
+      "nome": "Elenwë",
+      "epoca": "Aman, antes da travessia do Helcaraxë",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Elenwe, an adult Vanyarin elven woman with long light golden hair, a broad heart-shaped face, round clear blue eyes, short straight nose, softly rounded cheeks and a wide warm mouth. Her expression is serene and quietly brave. Pale ivory travelling robe with muted gold trim, no crown. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "indis",
+          "arquivo": "public/retratos/indis.webp",
+          "papel": "comparação de estilo ou família, conforme notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Vanya, esposa de Turgon e mãe de Idril.",
+        "Cabelo dourado transmitido à filha."
+      ],
+      "inferido": [
+        "Olhos azuis, rosto e traje foram reconstruídos; Indis serve apenas ao estilo e à paleta, sem parentesco presumido."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "The Peoples of Middle-earth, The Shibboleth of Fëanor; O Silmarillion, Quenta, cap. 15; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Elenw%C3%AB"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 144672573407268,
+      "original": "output/imagegen/etapa3/elenwe-v2.png",
+      "arquivo": "public/retratos/elenwe.webp"
+    },
+    {
+      "id": "aredhel",
+      "nome": "Aredhel",
+      "epoca": "Gondolin, antes da partida para Nan Elmoth",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Aredhel, the White Lady of the Noldor, an adult strong elven woman with long black hair, pale clear skin, light hazel-grey eyes, defined cheekbones, a firm narrower chin, full straight eyebrows and a confident watchful gaze. Athletic rather than fragile bearing, simple white and silver riding cloak. No crown. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "fingolfin",
+          "arquivo": "public/retratos/fingolfin.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        },
+        {
+          "id": "anaire",
+          "arquivo": "public/retratos/anaire.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Filha de Fingolfin e Anairë.",
+        "Cabelo escuro, pele pálida e vestes prateadas e brancas."
+      ],
+      "inferido": [
+        "Olhos avelã claros e geometria facial são variações familiares."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "O Silmarillion, Quenta, caps. 5 e 16; Morgoth's Ring, Later Quenta; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Aredhel"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 196082968386320,
+      "original": "output/imagegen/etapa3/aredhel-v2.png",
+      "arquivo": "public/retratos/aredhel.webp"
+    },
+    {
+      "id": "idril",
+      "nome": "Idril Celebrindal",
+      "epoca": "Gondolin, adulta antes da queda",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Idril Celebrindal, an adult elven woman of Gondolin, long abundant warm golden hair in soft loose waves, blue-grey eyes, a long elegant nose, high forehead, delicate angular jaw and smaller thoughtful mouth than her mother. Calm perceptive expression with a hint of resolve. Bareheaded, no crown or head jewelry, silver-grey gown and simple green gemstone pendant. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "turgon",
+          "arquivo": "public/retratos/turgon.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        },
+        {
+          "id": "elenwe",
+          "arquivo": "public/retratos/elenwe.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Filha de Turgon e Elenwë.",
+        "Cabelo dourado comparado ao ouro de Laurelin."
+      ],
+      "inferido": [
+        "Olhos azul-acinzentados e feições combinam os pais, com rosto próprio."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "O Silmarillion, Quenta, cap. 15; Contos Inacabados, De Tuor e sua chegada a Gondolin; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Idril"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 16812946941186,
+      "original": "output/imagegen/etapa3/idril-v2.png",
+      "arquivo": "public/retratos/idril.webp"
+    },
+    {
+      "id": "eol",
+      "nome": "Eöl",
+      "epoca": "Nan Elmoth, antes de seguir Aredhel",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Eol the Dark Elf, an adult MALE Sinda with long untidy dark brown-black hair, a narrow lean long masculine face, pronounced hooked nose, deep-set steel-grey eyes, sharply defined cheekbones and a stern withdrawn gaze. Slightly stooped shoulders visible under dark polished galvorn-like armor and charcoal wool. No beard, no crown. 'Dark Elf' is his epithet, not a request to darken skin or add demonic features. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "fingolfin",
+          "arquivo": "public/retratos/fingolfin.webp",
+          "papel": "comparação de estilo ou família, conforme notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Ferreiro de Nan Elmoth, parente de Thingol e pai de Maeglin.",
+        "Cabelo escuro; porte encurvado pelo trabalho da forja e uso de galvorn nas viagens."
+      ],
+      "inferido": [
+        "Olhos cinzentos e rosto comprido e severo são artísticos; Fingolfin é referência de estilo, sem parentesco próximo presumido."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "O Silmarillion, Quenta, cap. 16; descrição física em Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/E%C3%B6l"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 276757411327885,
+      "original": "output/imagegen/etapa3/eol-v2.png",
+      "arquivo": "public/retratos/eol.webp"
+    },
+    {
+      "id": "maeglin",
+      "nome": "Maeglin",
+      "epoca": "Gondolin, adulto antes da traição",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Maeglin, an adult MALE elf of Gondolin, very black straight hair, dark brown eyes, pale skin, a refined angular masculine face, high cheekbones and straight eyebrows. He resembles his mother Aredhel in face and form but has a more slender nose, longer chin and tense guarded expression. Dark charcoal tunic with a narrow silver neckline, no crown, no beard. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "aredhel",
+          "arquivo": "public/retratos/aredhel.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        },
+        {
+          "id": "eol",
+          "arquivo": "public/retratos/eol.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Filho de Eöl e Aredhel, semelhante em rosto e forma à parentela Noldor da mãe.",
+        "Cabelo negro e olhos escuros."
+      ],
+      "inferido": [
+        "Detalhes do nariz, da mandíbula e da expressão combinam variações dos pais."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "O Silmarillion, Quenta, cap. 16; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Maeglin"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 169427900477634,
+      "original": "output/imagegen/etapa3/maeglin-v2.png",
+      "arquivo": "public/retratos/maeglin.webp"
+    },
+    {
+      "id": "finrod",
+      "nome": "Finrod Felagund",
+      "epoca": "Nargothrond, antes da missão com Beren",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Finrod Felagund, an adult MALE elven king, long bright golden hair, warm blue eyes, generous open expression with a slight smile, high cheekbones, a wider nose bridge and more rounded masculine chin than his father. A noble strong man with a youthful ageless face, muted deep green robe with subtle gold embroidery, simple restrained gold circlet. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "finarfin",
+          "arquivo": "public/retratos/finarfin.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        },
+        {
+          "id": "earwen",
+          "arquivo": "public/retratos/earwen.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Filho de Finarfin e Eärwen.",
+        "Rosto e cabelo dourado semelhantes aos do pai."
+      ],
+      "inferido": [
+        "Olhos azuis, sorriso discreto e diferenças faciais em relação ao pai são reconstrução."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "The Peoples of Middle-earth, The Shibboleth of Fëanor; O Silmarillion, Quenta, caps. 17 e 19; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Finrod"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 216992723825288,
+      "original": "output/imagegen/etapa3/finrod-v2.png",
+      "arquivo": "public/retratos/finrod.webp"
+    },
+    {
+      "id": "orodreth",
+      "nome": "Orodreth",
+      "epoca": "Nargothrond, durante seu reinado",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Orodreth, an adult MALE elven lord of Nargothrond in the published Silmarillion family tradition: long dark ash-blond hair, green-grey eyes, a long oval masculine face, broad forehead, narrow straight nose and a smaller firm mouth, a serious slightly apprehensive expression. Simple moss-green cloak with silver trim, no elaborate crown. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "finarfin",
+          "arquivo": "public/retratos/finarfin.webp",
+          "papel": "comparação de estilo ou família, conforme notas individuais"
+        },
+        {
+          "id": "earwen",
+          "arquivo": "public/retratos/earwen.webp",
+          "papel": "comparação de estilo ou família, conforme notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "O catálogo segue O Silmarillion publicado: filho de Finarfin e Eärwen, irmão de Finrod e pai de Finduilas."
+      ],
+      "inferido": [
+        "Sem cor individual de cabelo localizada nas fontes consultadas: loiro acinzentado escuro, olhos cinza-esverdeados e rosto próprio são variações da família."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "O Silmarillion, Quenta, caps. 5, 19 e 21; versões alternativas em Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Orodreth"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 246400600014375,
+      "original": "output/imagegen/etapa3/orodreth-v3.png",
+      "arquivo": "public/retratos/orodreth.webp",
+      "nota_versao": "Preservada a genealogia do Silmarillion publicado. Textos tardios fazem Orodreth filho de Angrod; essa alternativa não foi aplicada silenciosamente à árvore.",
+      "ajuste": {
+        "prompt": "Edit image 1 only to make this adult male elf completely clean-shaven. Remove every trace of moustache, beard and dark facial stubble from his upper lip, chin, jaw and neck, leaving natural bare skin with believable pores and the same facial contours. Preserve the identical face, eyes, eyebrows, ash-blond hair, expression, outfit, pose, lighting and warm blurred background. Do not beautify, change identity, age, camera or crop. No text or watermark.",
+        "entrada": "output/imagegen/etapa3/orodreth-v2.png",
+        "motivo": "Retirar barba por fazer, preservando o rosto.",
+        "seed": 271382862718357,
+        "modelo": {
+          "unet": "flux-2-klein-9b-fp8.safetensors",
+          "clip": "qwen_3_8b_fp8mixed.safetensors",
+          "steps": 4,
+          "cfg": 1
+        },
+        "saida": "output/imagegen/etapa3/orodreth-v3.png"
+      },
+      "geracao_principal_original": "output/imagegen/etapa3/orodreth-v2.png"
+    },
+    {
+      "id": "finduilas",
+      "nome": "Finduilas de Nargothrond",
+      "epoca": "Nargothrond, antes do saque",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Finduilas of Nargothrond, an adult elven woman with long honey-golden hair, grey-green eyes, a narrow oval face, slightly upturned small nose, defined soft cheekbones and an expressive full mouth. Thoughtful gentle expression without tears, muted blue-green noble gown and a small gold hair clasp. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "orodreth",
+          "arquivo": "public/retratos/orodreth.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        },
+        {
+          "id": "earwen",
+          "arquivo": "public/retratos/earwen.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Filha de Orodreth; é a princesa de Nargothrond, não Finduilas de Dol Amroth.",
+        "Cabelo dourado registrado no índice consultado."
+      ],
+      "inferido": [
+        "Olhos cinza-esverdeados, formato de rosto e penteado variam os parentes da genealogia adotada."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "O Silmarillion, Quenta, cap. 21 para identidade; descrição física em Tolkien Gateway, sem cotejo direto.",
+          "consulta": "https://tolkiengateway.net/wiki/Finduilas"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 187916164630057,
+      "original": "output/imagegen/etapa3/finduilas-v2.png",
+      "arquivo": "public/retratos/finduilas.webp"
+    },
+    {
+      "id": "angrod",
+      "nome": "Angrod",
+      "epoca": "Dorthonion, antes da Dagor Bragollach",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Angrod, an adult MALE elven warrior lord of Dorthonion, long golden hair drawn back from his broad forehead, slate-blue eyes, a broad square masculine jaw, heavy straight brows and a wide straight nose. Composed alert expression, muted bronze-grey mail collar and dark green mantle, no crown. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "finarfin",
+          "arquivo": "public/retratos/finarfin.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        },
+        {
+          "id": "earwen",
+          "arquivo": "public/retratos/earwen.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Filho de Finarfin e Eärwen, senhor de Dorthonion com Aegnor.",
+        "Cabelo dourado e mãos de grande força."
+      ],
+      "inferido": [
+        "Olhos cinza-azulados, mandíbula quadrada e expressão são variações familiares; as mãos ficam fora do recorte."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "The Peoples of Middle-earth, The Shibboleth of Fëanor; O Silmarillion, Quenta, caps. 13 e 18; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Angrod"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 173263350294678,
+      "original": "output/imagegen/etapa3/angrod-v3.png",
+      "arquivo": "public/retratos/angrod.webp",
+      "ajuste": {
+        "prompt": "Edit image 1 only to remove all moustache and beard stubble on the upper lip, chin, cheeks and jaw. Keep the exact same adult male elf's face, jaw shape, eyes, eyebrows, golden hair, expression, clothes, pose, camera, lighting and background. Natural clean-shaven bare skin with pores, not waxy or airbrushed. No other changes, no text or watermark.",
+        "entrada": "output/imagegen/etapa3/angrod-v2.png",
+        "motivo": "Retirar barba por fazer, preservando o rosto.",
+        "seed": 60793645162705,
+        "modelo": {
+          "unet": "flux-2-klein-9b-fp8.safetensors",
+          "clip": "qwen_3_8b_fp8mixed.safetensors",
+          "steps": 4,
+          "cfg": 1
+        },
+        "saida": "output/imagegen/etapa3/angrod-v3.png"
+      },
+      "geracao_principal_original": "output/imagegen/etapa3/angrod-v2.png"
+    },
+    {
+      "id": "aegnor",
+      "nome": "Aegnor",
+      "epoca": "Dorthonion, antes da Dagor Bragollach",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Aegnor, an adult MALE elven warrior, thick golden hair with stiff straight raised strands swept upward from the forehead before flowing back, a narrow sharp masculine face, high angular cheekbones, long straight nose and intense green-grey eyes. Fiery determination in the EXPRESSION only, ordinary natural eyes with no literal flames or glowing pupils. Dark olive-grey warrior cloak with restrained silver mail. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "finarfin",
+          "arquivo": "public/retratos/finarfin.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        },
+        {
+          "id": "earwen",
+          "arquivo": "public/retratos/earwen.webp",
+          "papel": "comparação familiar e estilo; ver notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Filho de Finarfin e Eärwen, irmão de Angrod.",
+        "Cabelo dourado rígido e ereto; olhar descrito como ardente."
+      ],
+      "inferido": [
+        "Olhos cinza-esverdeados e feições são variações familiares. O ardor é uma expressão, sem fogo literal nos olhos."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "The Peoples of Middle-earth, The Shibboleth of Fëanor; Morgoth's Ring, Athrabeth Finrod ah Andreth; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Aegnor"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 168065707328986,
+      "original": "output/imagegen/etapa3/aegnor-v2.png",
+      "arquivo": "public/retratos/aegnor.webp"
+    },
+    {
+      "id": "glorfindel",
+      "nome": "Glorfindel",
+      "epoca": "Gondolin, antes da queda; identidade facial inspirada na caracterização dos filmes",
+      "prompt": "Create a new photorealistic square portrait of the adult male elf Glorfindel, with the recognizable facial likeness of Jarl Benzon as the elven film extra shown in image 1. Image 1 is only the actor-character identity reference: preserve his distinctive slender young adult face, high cheekbones, fine straight nose and narrow mouth. Change his hair to long shining GOLDEN hair as explicitly described by Tolkien, keep a youthful fearless expression with a slight joyful smile, bright keen natural eyes. Show First Age Gondolin clothing: restrained gold embroidered cloak and a small golden flower clasp. Head and shoulders centered, whole head inside frame with safe circular-crop margin, muted warm charcoal-brown background and soft natural window light matching the OpenArda portraits. Exactly one adult elf, no bow, sword, signature, text, border or watermark. Do not use Sandro Kopp's face.",
+      "referencias_consultadas": [
+        {
+          "tipo": "caracterização do ator",
+          "ator": "Jarl Benzon",
+          "pagina": "https://www.tolkienwinkel.nl/contents/nl/p11448.html",
+          "url": "https://www.tolkienwinkel.nl/contents/media/l_jarl_benzon_glorfindel_signature.jpg"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [
+        "Fotografia de Jarl Benzon da página registrada"
+      ],
+      "metodo": "referência facial cinematográfica",
+      "documentado": [
+        "Senhor da Casa da Flor Dourada em Gondolin; o catálogo adota a continuidade com o elfo reencarnado de Imladris.",
+        "Cabelo longo e dourado; rosto descrito como jovem, destemido e alegre."
+      ],
+      "inferido": [
+        "Referência facial de Jarl Benzon em caracterização élfica associada a Glorfindel em cartas e autógrafos; não é uma identificação falada no filme.",
+        "Traje da Primeira Era, iluminação e olhos são reconstrução artística."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "A Sociedade do Anel, Muitos Encontros; O Silmarillion, Quenta, cap. 23; The Peoples of Middle-earth, Last Writings; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Glorfindel"
+        },
+        {
+          "obra": "Material de divulgação e autógrafo da caracterização de Jarl Benzon",
+          "local": "Associação a Glorfindel fora da identificação falada no filme.",
+          "consulta": "https://www.tolkienwinkel.nl/contents/nl/p11448.html"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 50077146430444,
+      "original": "output/imagegen/etapa3/glorfindel-v3.png",
+      "arquivo": "public/retratos/glorfindel.webp",
+      "nota_versao": "O figurante Jarl Benzon é associado a Glorfindel por material de cartas e autógrafos; não confundir com Sandro Kopp, associado a Gildor. O cabelo foi mantido dourado conforme Tolkien, embora a fotografia consultada mostre tom mais escuro. Não representa uma cena filmada de Gondolin.",
+      "ajuste": {
+        "prompt": "Edit image 1 to remove the artificial circular picture mask and every circular outline or ring in the background. Fill the entire SQUARE image with a continuous naturally blurred warm charcoal-brown studio backdrop; no visible circular vignette edge, frame or border. Preserve this exact adult male elf's face, recognizable actor likeness, golden hair, smile, clothing and lighting. Make the chin, jaw and upper lip fully clean-shaven with natural bare skin. Do not change pose, camera or facial identity. No lettering or watermark.",
+        "entrada": "output/imagegen/etapa3/glorfindel.png",
+        "motivo": "Remover moldura gerada e barba por fazer.",
+        "seed": 69229948403098,
+        "modelo": {
+          "unet": "flux-2-klein-9b-fp8.safetensors",
+          "clip": "qwen_3_8b_fp8mixed.safetensors",
+          "steps": 4,
+          "cfg": 1
+        },
+        "saida": "output/imagegen/etapa3/glorfindel-v3.png"
+      },
+      "geracao_principal_original": "output/imagegen/etapa3/glorfindel.png"
+    },
+    {
+      "id": "ecthelion",
+      "nome": "Ecthelion da Fonte",
+      "epoca": "Gondolin, guardião do Grande Portão",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Ecthelion of the Fountain, an adult MALE elven lord with a distinct strong rectangular masculine face, a broad straight nose, clear grey eyes, long dark hair beneath a polished silver open-face helmet. The helmet has ONE slender centered steel spike tipped with a small diamond; keep the complete tip well inside the frame with generous margin above. His eyes, nose and mouth fully exposed and readable. Silver mail and silver-white collar, dignified composed expression, no beard. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "turgon",
+          "arquivo": "public/retratos/turgon.webp",
+          "papel": "comparação de estilo ou família, conforme notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Senhor das Fontes e guardião do Grande Portão de Gondolin.",
+        "Vestes prateadas e elmo com ponta de aço rematada por diamante."
+      ],
+      "inferido": [
+        "Cabelo negro, olhos cinzentos e rosto próprio são escolhas artísticas; Turgon é referência de estilo, não pai ou parente confirmado."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "Contos Inacabados, De Tuor e sua chegada a Gondolin; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Ecthelion"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 70604873732417,
+      "original": "output/imagegen/etapa3/ecthelion-v3.png",
+      "arquivo": "public/retratos/ecthelion.webp",
+      "ajuste": {
+        "prompt": "Edit this portrait while preserving the exact adult male elf's face, eyes, hair, armor, pose and photographic lighting. Correct only the silver helmet's ornament: remove the round diamond currently at the BASE of the central spike on the forehead, and put a small faceted diamond at the very TOP TIP of that steel spike instead. The steel spike must visibly terminate in the diamond. Keep the entire spike and diamond inside the square frame; pull the camera back just enough to leave about 8 percent empty background ABOVE the diamond. Keep the same warm charcoal-brown blurred background, no frame, lettering or watermark.",
+        "entrada": "output/imagegen/etapa3/ecthelion-v2.png",
+        "motivo": "Posicionar o diamante na ponta do elmo, com margem no quadro.",
+        "seed": 87061025054333,
+        "modelo": {
+          "unet": "flux-2-klein-9b-fp8.safetensors",
+          "clip": "qwen_3_8b_fp8mixed.safetensors",
+          "steps": 4,
+          "cfg": 1
+        },
+        "saida": "output/imagegen/etapa3/ecthelion-v3.png"
+      },
+      "geracao_principal_original": "output/imagegen/etapa3/ecthelion-v2.png"
+    },
+    {
+      "id": "voronwe",
+      "nome": "Voronwë",
+      "epoca": "Nevrast, após o naufrágio e antes da chegada a Gondolin",
+      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf, natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. Restrained First Age clothing visible at shoulders. No writing, watermark, border, weapons, extra people or scenery. This character has no confirmed corresponding actor in Peter Jackson's films: create an original distinct face. Voronwe, an adult MALE elven mariner after surviving a shipwreck, long wind-tangled dark brown hair, sea-grey eyes, a long narrow face with weather-touched natural skin, prominent cheekbones, slightly crooked-looking nose and a small determined mouth. Clean-shaven, tired but steadfast calm expression. A faded sea-grey great cloak over the upper edge of fine elven mail, no crown or jewels. Create a unique individual face. Preserve the specified literary hair, eyes and dress; use natural facial proportions, not a clone of any other elf. Family resemblance is a variation, never an identical face.",
+      "referencias_consultadas": [
+        {
+          "id": "fingolfin",
+          "arquivo": "public/retratos/fingolfin.webp",
+          "papel": "comparação de estilo ou família, conforme notas individuais"
+        }
+      ],
+      "imagens_enviadas_na_geracao_principal": [],
+      "metodo": "geração por texto; os traços familiares foram comparados no briefing e na revisão",
+      "documentado": [
+        "Marinheiro de Gondolin, filho de Aranwë e de uma Sinda aparentada a Círdan.",
+        "Olhos cinzentos como o mar; cota élfica e grande manto."
+      ],
+      "inferido": [
+        "Cabelo castanho-escuro, rosto marcado pelo tempo no mar e feições são artísticos; sem retratos dos pais disponíveis, não foi presumida filiação a Fingolfin."
+      ],
+      "fontes": [
+        {
+          "obra": "Obras de Tolkien — consulta por fonte secundária",
+          "local": "Contos Inacabados, De Tuor e sua chegada a Gondolin; consulta por Tolkien Gateway.",
+          "consulta": "https://tolkiengateway.net/wiki/Voronw%C3%AB"
+        }
+      ],
+      "modelo": {
+        "unet": "flux-2-klein-9b-fp8.safetensors",
+        "clip": "qwen_3_8b_fp8mixed.safetensors",
+        "steps": 4,
+        "cfg": 1
+      },
+      "seed": 105546755183558,
+      "original": "output/imagegen/etapa3/voronwe-v3.png",
+      "arquivo": "public/retratos/voronwe.webp",
+      "ajuste": {
+        "prompt": "Edit image 1 only to remove every trace of facial hair, moustache and beard stubble on the upper lip, chin, cheeks, neck and jaw, making this adult male elf completely clean-shaven. Keep his identical weather-touched face, fatigue lines, sea-grey eyes, tousled dark hair, expression, grey cloak, mail, pose, camera, light and background. Natural bare skin with pores. No beautification, new accessories, text or watermark.",
+        "entrada": "output/imagegen/etapa3/voronwe-v2.png",
+        "motivo": "Retirar barba por fazer, preservando o rosto.",
+        "seed": 214954323071799,
+        "modelo": {
+          "unet": "flux-2-klein-9b-fp8.safetensors",
+          "clip": "qwen_3_8b_fp8mixed.safetensors",
+          "steps": 4,
+          "cfg": 1
+        },
+        "saida": "output/imagegen/etapa3/voronwe-v3.png"
+      },
+      "geracao_principal_original": "output/imagegen/etapa3/voronwe-v2.png"
+    }
+  ],
+  "complemento_etapa2": {
+    "id": "gandalf",
+    "status": "pendência resolvida",
+    "prompt": "Create an original realistic head-and-shoulders portrait of Gandalf the Grey, with Ian McKellen's recognizable face from Peter Jackson's 2001 The Fellowship of the Ring. Image 1 is the sole character identity reference: preserve his facial structure, expressive eyebrows, long grey hair and beard, and blue eyes. Image 2 is only a reference for soft lighting, muted warm charcoal-brown background and photographic finish; do not copy its person's face or dark hair. Exactly one elderly adult man, grey wool cloak, calm wise expression looking toward camera, no staff or pipe. Square composition, whole head and beard visible, small safe margin for circular avatar, head occupies about 65 percent of image height. Natural detailed skin, understated cinematic photograph, no painting, lettering, border or watermark.",
+    "original": "output/imagegen/etapa3/gandalf.png",
+    "arquivo": "public/retratos/gandalf.webp",
+    "modelo": {
+      "unet": "flux-2-klein-9b-fp8.safetensors",
+      "clip": "qwen_3_8b_fp8mixed.safetensors",
+      "steps": 4,
+      "cfg": 1
+    },
+    "seed": 207095924886834,
+    "referencias": [
+      "Fotografia de Ian McKellen já registrada na etapa 2",
+      "public/retratos/aragorn.webp — somente estilo"
+    ]
+  },
+  "validacao": {
+    "testes": 152,
+    "retratosValidados": 58,
+    "novos": 21,
+    "anterioresPreservados": 37,
+    "totalNovosBytes": 648374,
+    "maiorNovoBytes": 54294,
+    "pessoas": 103,
+    "miniaturas": "inspeção visual em recortes circulares de 96 e 36 px",
+    "navegador": "conferência visual da página pendente por falha da automação"
+  }
+}

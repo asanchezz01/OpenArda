@@ -1564,5 +1564,149 @@
       "modelo": "flux-2-klein-9b-fp8.safetensors",
       "seed": 187916164630057
     }
+  },
+  {
+    "id": "angrod",
+    "nome": "Angrod",
+    "documentado": [
+      "Filho de Finarfin e Eärwen, senhor de Dorthonion com Aegnor.",
+      "Cabelo dourado e mãos de grande força."
+    ],
+    "inferido": [
+      "Olhos cinza-azulados, mandíbula quadrada e expressão são variações familiares; as mãos ficam fora do recorte.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "The Peoples of Middle-earth, The Shibboleth of Fëanor; O Silmarillion, Quenta, caps. 13 e 18; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Angrod"
+      }
+    ],
+    "imagem": "retratos/angrod.webp",
+    "alt": "Retrato artístico de Angrod",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 60793645162705
+    }
+  },
+  {
+    "id": "aegnor",
+    "nome": "Aegnor",
+    "documentado": [
+      "Filho de Finarfin e Eärwen, irmão de Angrod.",
+      "Cabelo dourado rígido e ereto; olhar descrito como ardente."
+    ],
+    "inferido": [
+      "Olhos cinza-esverdeados e feições são variações familiares. O ardor é uma expressão, sem fogo literal nos olhos.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "The Peoples of Middle-earth, The Shibboleth of Fëanor; Morgoth's Ring, Athrabeth Finrod ah Andreth; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Aegnor"
+      }
+    ],
+    "imagem": "retratos/aegnor.webp",
+    "alt": "Retrato artístico de Aegnor",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 168065707328986
+    }
+  },
+  {
+    "id": "glorfindel",
+    "nome": "Glorfindel",
+    "documentado": [
+      "Senhor da Casa da Flor Dourada em Gondolin; o catálogo adota a continuidade com o elfo reencarnado de Imladris.",
+      "Cabelo longo e dourado; rosto descrito como jovem, destemido e alegre."
+    ],
+    "inferido": [
+      "Referência facial de Jarl Benzon em caracterização élfica associada a Glorfindel em cartas e autógrafos; não é uma identificação falada no filme.",
+      "Traje da Primeira Era, iluminação e olhos são reconstrução artística.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "A Sociedade do Anel, Muitos Encontros; O Silmarillion, Quenta, cap. 23; The Peoples of Middle-earth, Last Writings; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Glorfindel"
+      },
+      {
+        "obra": "Material de divulgação e autógrafo da caracterização de Jarl Benzon",
+        "local": "Associação a Glorfindel fora da identificação falada no filme.",
+        "consulta": "https://www.tolkienwinkel.nl/contents/nl/p11448.html"
+      }
+    ],
+    "imagem": "retratos/glorfindel.webp",
+    "alt": "Retrato artístico de Glorfindel",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 69229948403098
+    },
+    "nota_versao": "O figurante Jarl Benzon é associado a Glorfindel por material de cartas e autógrafos; não confundir com Sandro Kopp, associado a Gildor. O cabelo foi mantido dourado conforme Tolkien, embora a fotografia consultada mostre tom mais escuro. Não representa uma cena filmada de Gondolin.",
+    "referencia_cinematografica": {
+      "ator": "Jarl Benzon",
+      "filme": "Trilogia O Senhor dos Anéis, dirigida por Peter Jackson",
+      "epoca": "Gondolin, antes da queda; identidade facial inspirada na caracterização dos filmes",
+      "consulta": "https://www.theonering.net/torwp/2004/08/07/24636-ala-lee-to-attend-fellowship-festival/",
+      "periodo": "2001–2003"
+    }
+  },
+  {
+    "id": "ecthelion",
+    "nome": "Ecthelion da Fonte",
+    "documentado": [
+      "Senhor das Fontes e guardião do Grande Portão de Gondolin.",
+      "Vestes prateadas e elmo com ponta de aço rematada por diamante."
+    ],
+    "inferido": [
+      "Cabelo negro, olhos cinzentos e rosto próprio são escolhas artísticas; Turgon é referência de estilo, não pai ou parente confirmado.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "Contos Inacabados, De Tuor e sua chegada a Gondolin; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Ecthelion"
+      }
+    ],
+    "imagem": "retratos/ecthelion.webp",
+    "alt": "Retrato artístico de Ecthelion da Fonte",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 87061025054333
+    }
+  },
+  {
+    "id": "voronwe",
+    "nome": "Voronwë",
+    "documentado": [
+      "Marinheiro de Gondolin, filho de Aranwë e de uma Sinda aparentada a Círdan.",
+      "Olhos cinzentos como o mar; cota élfica e grande manto."
+    ],
+    "inferido": [
+      "Cabelo castanho-escuro, rosto marcado pelo tempo no mar e feições são artísticos; sem retratos dos pais disponíveis, não foi presumida filiação a Fingolfin.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "Contos Inacabados, De Tuor e sua chegada a Gondolin; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Voronw%C3%AB"
+      }
+    ],
+    "imagem": "retratos/voronwe.webp",
+    "alt": "Retrato artístico de Voronwë",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 214954323071799
+    }
   }
 ]

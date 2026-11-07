@@ -56,8 +56,8 @@ Os 24 personagens da etapa têm ficha; 19 foram acrescentados para esta entrega.
 
 ## Verificação
 
-- `npm run build` aprovado: validação de dados, TypeScript, **129 testes** e build de produção.
-- Os **37 WebP** do catálogo foram decodificados, medem 512 × 512 e carregam com HTTP 200 e conteúdo idêntico ao arquivo local. Os **23 novos** somam **926.484 bytes**; o maior tem **69.032 bytes**, abaixo da meta de 100 KiB.
+- Primeira entrega: `npm run build` aprovado com **129 testes**, validação de dados, TypeScript e build. A conclusão de Gandalf passou pela verificação conjunta da etapa 3, com **152 testes**.
+- Na primeira entrega, os **37 WebP** do catálogo foram decodificados, medem 512 × 512 e carregam com HTTP 200 e conteúdo idêntico ao arquivo local. Os **23 novos** somam **926.484 bytes**; o maior tem **69.032 bytes**, abaixo da meta de 100 KiB.
 - Testes verificam todos os retratos no cabeçalho da ficha (96 px), nos cartões (36 px) e no cabeçalho da árvore em tela cheia (56 px). O validador de dados agora verifica a presença dos arquivos.
 - As 23 imagens foram inspecionadas e comparadas em montagem com recortes circulares de 96 px e 36 px. Os elmos de Sauron e do Rei-bruxo foram reenquadrados para manter as pontas visíveis.
 - Conferência visual da página em computador e celular: pendente; a automação do Chrome falha ao criar uma aba (`timeoutMs`).
