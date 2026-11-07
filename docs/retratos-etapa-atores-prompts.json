@@ -17,191 +17,210 @@
       "nome": "Balin",
       "ator": "Ken Stott",
       "obra": "The Hobbit: An Unexpected Journey (2012)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of Ken Stott as Balin in The Hobbit: An Unexpected Journey (2012). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the old dwarf shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as Ken Stott playing Balin in The Hobbit films by Peter Jackson. Kindly elderly dwarf with a high bald-looking forehead, swept-back snow-white hair and a huge snow-white beard split into two curling forks, bushy white eyebrows, dark red coat. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
         "arquivo": "fontes-imagens/referencias/balin.png",
         "imagem": "https://www.slashfilm.com/img/gallery/beard-fetishists-rejoice-hobbit-dwarves-revealed-photo/intro-import.jpg",
         "pagina": "https://www.slashfilm.com/beard-fetishists-rejoice-hobbit-dwarves-revealed-photo",
         "recorte_de": "balin-dwalin.jpg"
-      }
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "dwalin",
       "nome": "Dwalin",
       "ator": "Graham McTavish",
       "obra": "The Hobbit: An Unexpected Journey (2012)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of Graham McTavish as Dwalin in The Hobbit: An Unexpected Journey (2012). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the dwarf warrior shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as Graham McTavish playing Dwalin in The Hobbit films by Peter Jackson. Gruff dwarf with a BALD scalp covered in dark knotwork tattoos, short dark hair only at the sides, heavy brow, broken nose, a thick dark beard streaked with grey, dark fur-collared leather armor. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
         "arquivo": "fontes-imagens/referencias/dwalin.png",
         "imagem": "https://www.slashfilm.com/img/gallery/beard-fetishists-rejoice-hobbit-dwarves-revealed-photo/intro-import.jpg",
         "pagina": "https://www.slashfilm.com/beard-fetishists-rejoice-hobbit-dwarves-revealed-photo",
         "recorte_de": "balin-dwalin.jpg"
-      }
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "fili",
       "nome": "Fíli",
       "ator": "Dean O'Gorman",
       "obra": "The Hobbit: An Unexpected Journey (2012)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of Dean O'Gorman as Fíli in The Hobbit: An Unexpected Journey (2012). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the young dwarf shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as Dean O'Gorman playing Fíli in The Hobbit films by Peter Jackson. Young dwarf with long wavy BLOND hair with small braids, a blond moustache braided into two long thin plaits, a short blond beard, fur-trimmed dark coat, cheerful confident look. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
         "arquivo": "fontes-imagens/referencias/fili.png",
         "imagem": "https://www.slashfilm.com/img/gallery/the-hobbit-photo-dwarves-fili-kili/intro-import.jpg",
         "pagina": "https://www.slashfilm.com/the-hobbit-photo-dwarves-fili-kili",
         "recorte_de": "fili-kili.jpg"
-      }
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "kili",
       "nome": "Kíli",
       "ator": "Aidan Turner",
       "obra": "The Hobbit: An Unexpected Journey (2012)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of Aidan Turner as Kíli in The Hobbit: An Unexpected Journey (2012). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the young dwarf shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as Aidan Turner playing Kíli in The Hobbit films by Peter Jackson. Youthful handsome dwarf with long dark-brown unruly hair, only short dark stubble beard, dark eyes, fur-lined dark leather coat. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
         "arquivo": "fontes-imagens/referencias/kili.png",
         "imagem": "https://www.slashfilm.com/img/gallery/the-hobbit-photo-dwarves-fili-kili/intro-import.jpg",
         "pagina": "https://www.slashfilm.com/the-hobbit-photo-dwarves-fili-kili",
         "recorte_de": "fili-kili.jpg"
-      }
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "dori",
       "nome": "Dori",
       "ator": "Mark Hadlow",
       "obra": "The Hobbit: An Unexpected Journey (2012)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of Mark Hadlow as Dori in The Hobbit: An Unexpected Journey (2012). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the elderly dwarf shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as Mark Hadlow playing Dori in The Hobbit films by Peter Jackson. Older dwarf with silver-grey hair and silver beard and eyebrows elaborately braided and plaited in neat loops, fussy dignified look, dark purple-brown coat. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
         "arquivo": "fontes-imagens/referencias/dori.png",
         "imagem": "https://www.slashfilm.com/img/gallery/dwarves-dori-nori-ori-peter-jacksons-hobbit/intro-import.jpg",
         "pagina": "https://www.slashfilm.com/dwarves-dori-nori-ori-peter-jacksons-hobbit",
         "recorte_de": "dori-nori-ori.jpg"
-      }
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "nori",
       "nome": "Nori",
       "ator": "Jed Brophy",
       "obra": "The Hobbit: An Unexpected Journey (2012)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of Jed Brophy as Nori in The Hobbit: An Unexpected Journey (2012). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the dwarf shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as Jed Brophy playing Nori in The Hobbit films by Peter Jackson. Sly dwarf with auburn-brown hair styled upward into a distinctive spiky three-pointed STAR shape on top of his head, braided auburn beard and long braided moustache, dark coat. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
         "arquivo": "fontes-imagens/referencias/nori.png",
         "imagem": "https://www.slashfilm.com/img/gallery/dwarves-dori-nori-ori-peter-jacksons-hobbit/intro-import.jpg",
         "pagina": "https://www.slashfilm.com/dwarves-dori-nori-ori-peter-jacksons-hobbit",
         "recorte_de": "dori-nori-ori.jpg"
-      }
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "ori",
       "nome": "Ori",
       "ator": "Adam Brown",
       "obra": "The Hobbit: An Unexpected Journey (2012)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of Adam Brown as Ori in The Hobbit: An Unexpected Journey (2012). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the youngest dwarf shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as Adam Brown playing Ori in The Hobbit films by Peter Jackson. Shy youthful dwarf with a soft innocent face, light-brown hair cut in a short bowl fringe, a short sparse light-brown beard, a chunky hand-knitted grey wool scarf and cowl. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
         "arquivo": "fontes-imagens/referencias/ori.png",
         "imagem": "https://www.slashfilm.com/img/gallery/dwarves-dori-nori-ori-peter-jacksons-hobbit/intro-import.jpg",
         "pagina": "https://www.slashfilm.com/dwarves-dori-nori-ori-peter-jacksons-hobbit",
         "recorte_de": "dori-nori-ori.jpg"
-      }
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "oin",
       "nome": "Óin",
       "ator": "John Callen",
       "obra": "The Hobbit: An Unexpected Journey (2012)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of John Callen as Óin in The Hobbit: An Unexpected Journey (2012). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the old dwarf shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as John Callen playing Óin in The Hobbit films by Peter Jackson. Elderly dwarf with long grey hair and a long grey beard with braided moustache ends curled into rings, bushy grey eyebrows, stern face, dark brown coat. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
         "arquivo": "fontes-imagens/referencias/oin.png",
         "imagem": "https://www.filmbuffonline.com/FBOLNewsreel/wordpress/wp-content/uploads/2011/07/GloinOin.jpg",
         "pagina": "https://www.filmbuffonline.com/FBOLNewsreel/wordpress/2011/07/08/more-hobbit-dwarfs-this-time-oin-and-gloin/",
         "recorte_de": "oin-gloin.jpg"
-      }
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "gloin",
       "nome": "Glóin",
       "ator": "Peter Hambleton",
       "obra": "The Hobbit: An Unexpected Journey (2012)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of Peter Hambleton as Glóin in The Hobbit: An Unexpected Journey (2012). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the dwarf shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as Peter Hambleton playing Glóin in The Hobbit films by Peter Jackson. Proud dwarf with a big mane of bushy RED-AUBURN hair and a huge red-auburn beard woven with many braids and metal beads, ruddy face, dark armored coat. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
         "arquivo": "fontes-imagens/referencias/gloin.png",
         "imagem": "https://www.filmbuffonline.com/FBOLNewsreel/wordpress/wp-content/uploads/2011/07/GloinOin.jpg",
         "pagina": "https://www.filmbuffonline.com/FBOLNewsreel/wordpress/2011/07/08/more-hobbit-dwarfs-this-time-oin-and-gloin/",
         "recorte_de": "oin-gloin.jpg"
-      }
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "bofur",
       "nome": "Bofur",
       "ator": "James Nesbitt",
       "obra": "The Hobbit: An Unexpected Journey (2012)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of James Nesbitt as Bofur in The Hobbit: An Unexpected Journey (2012). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the dwarf shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as James Nesbitt playing Bofur in The Hobbit films by Peter Jackson. Friendly dwarf wearing a floppy fur-lined aviator-style hat with ear flaps, dark hair in two long braids, a braided dark moustache, cheerful smiling face, knitted fingerless gloves. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
         "arquivo": "fontes-imagens/referencias/bofur.png",
         "imagem": "https://www.slashfilm.com/img/gallery/photo-the-hobbit-bofur-bombur-bifur/intro-import.jpg",
         "pagina": "https://www.slashfilm.com/photo-the-hobbit-bofur-bombur-bifur",
         "recorte_de": "bombur-bofur-bifur.jpg"
-      }
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "bifur",
       "nome": "Bifur",
       "ator": "William Kircher",
       "obra": "The Hobbit: An Unexpected Journey (2012)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of William Kircher as Bifur in The Hobbit: An Unexpected Journey (2012). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the dwarf shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as William Kircher playing Bifur in The Hobbit films by Peter Jackson. Wild-looking dwarf with bushy black hair streaked with grey standing on end, a scar on the forehead, a grey-black beard woven into elaborate braids, intense eyes, dark coat. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
         "arquivo": "fontes-imagens/referencias/bifur.png",
         "imagem": "https://www.slashfilm.com/img/gallery/photo-the-hobbit-bofur-bombur-bifur/intro-import.jpg",
         "pagina": "https://www.slashfilm.com/photo-the-hobbit-bofur-bombur-bifur",
         "recorte_de": "bombur-bofur-bifur.jpg"
-      }
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "thranduil",
       "nome": "Thranduil",
       "ator": "Lee Pace",
       "obra": "The Hobbit: The Desolation of Smaug (2013)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of Lee Pace as Thranduil in The Hobbit: The Desolation of Smaug (2013). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the elf king shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as Lee Pace playing Thranduil in The Hobbit films by Peter Jackson. He is a CLEAN-SHAVEN elf with no beard and no stubble, smooth ageless skin, sharp dark eyebrows, visible pointed elf ears, very long straight platinum-white hair, a crown of autumn branches and red berries, silver-embroidered dark robe. Cold, haughty regal look. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
-        "arquivo": "fontes-imagens/referencias/thranduil.jpg",
+        "arquivo": "fontes-imagens/referencias/thranduil.png",
         "imagem": "https://www.filmbuffonline.com/FBOLNewsreel/wordpress/wp-content/uploads/2012/08/ThranduilHeader.jpg",
-        "pagina": "https://www.filmbuffonline.com/FBOLNewsreel/wordpress/2012/08/30/first-look-lee-pace-as-the-hobbits-thranduil/"
-      }
+        "pagina": "https://www.filmbuffonline.com/FBOLNewsreel/wordpress/2012/08/30/first-look-lee-pace-as-the-hobbits-thranduil/",
+        "recorte_de": "thranduil.jpg"
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "celebrimbor",
       "nome": "Celebrimbor",
       "ator": "Charles Edwards",
       "obra": "The Lord of the Rings: The Rings of Power (Amazon, 2022–2024)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of Charles Edwards as Celebrimbor in The Lord of the Rings: The Rings of Power (Amazon, 2022–2024). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the elf smith shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as Charles Edwards playing Celebrimbor in The Lord of the Rings: The Rings of Power. He is a CLEAN-SHAVEN elf with no beard and no stubble, short swept-back wavy light-brown hair greying at the temples, visible pointed elf ears, lined thoughtful face, high-collared embroidered green tunic. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
-        "arquivo": "fontes-imagens/referencias/celebrimbor.jpg",
+        "arquivo": "fontes-imagens/referencias/celebrimbor.png",
         "imagem": "https://cdn.mos.cms.futurecdn.net/FhYNTDmaSKk3cXki7CUmKM-1479-80.jpg",
-        "pagina": "https://whattowatch.com/news/celebrimbor-wants-to-be-remembered-says-the-rings-of-power-star-charles-edwards"
-      }
+        "pagina": "https://whattowatch.com/news/celebrimbor-wants-to-be-remembered-says-the-rings-of-power-star-charles-edwards",
+        "recorte_de": "celebrimbor.jpg"
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "finrod",
       "nome": "Finrod Felagund",
       "ator": "Will Fletcher",
       "obra": "The Lord of the Rings: The Rings of Power (Amazon, 2022–2024)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of Will Fletcher as Finrod Felagund in The Lord of the Rings: The Rings of Power (Amazon, 2022–2024). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the young elf shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as Will Fletcher playing Finrod Felagund in The Lord of the Rings: The Rings of Power. He is a CLEAN-SHAVEN youthful elf with no beard and no stubble, smooth skin, short golden-blond hair, visible pointed elf ears, a gentle warm smile, a simple white linen tunic. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
-        "arquivo": "fontes-imagens/referencias/finrod.jpg",
+        "arquivo": "fontes-imagens/referencias/finrod.png",
         "imagem": "https://www.looper.com/img/gallery/the-rings-of-power-who-plays-galadriels-brother-finrod/l-intro-1683726598.jpg",
-        "pagina": "https://looper.com/1281805/the-rings-of-power-who-plays-galadriels-brother-finrod"
-      }
+        "pagina": "https://looper.com/1281805/the-rings-of-power-who-plays-galadriels-brother-finrod",
+        "recorte_de": "finrod.jpg"
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "tar-miriel",
       "nome": "Tar-Míriel",
       "ator": "Cynthia Addai-Robinson",
       "obra": "The Lord of the Rings: The Rings of Power (Amazon, 2022–2024)",
-      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of Cynthia Addai-Robinson as Tar-Míriel in The Lord of the Rings: The Rings of Power (Amazon, 2022–2024). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the queen shown in image 1, keeping her exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as Cynthia Addai-Robinson playing Tar-Míriel in The Lord of the Rings: The Rings of Power. She is a Black woman with dark brown skin, long dark braided hair, a radiant crown of golden sun rays with pearl and sapphire pendants, regal Numenorean blue and gold gown. Composed, regal look. A WOMAN, no beard. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
       "referencia": {
-        "arquivo": "fontes-imagens/referencias/tar-miriel.jpg",
+        "arquivo": "fontes-imagens/referencias/tar-miriel.png",
         "imagem": "https://www.looper.com/img/gallery/why-queen-regent-miriel-from-the-lord-of-the-rings-the-rings-of-power-looks-so-familiar/l-intro-1662669808.jpg",
-        "pagina": "https://www.looper.com/999624/why-queen-regent-miriel-from-the-lord-of-the-rings-the-rings-of-power-looks-so-familiar"
-      }
+        "pagina": "https://www.looper.com/999624/why-queen-regent-miriel-from-the-lord-of-the-rings-the-rings-of-power-looks-so-familiar",
+        "recorte_de": "tar-miriel.jpg"
+      },
+      "nota_revisao": "Prompt individual: o modelo genérico produzia o mesmo rosto barbado para todos e ignorava a maquiagem do filme/série."
     },
     {
       "id": "arpharazon",
@@ -213,6 +232,58 @@
         "arquivo": "fontes-imagens/referencias/arpharazon.jpg",
         "imagem": "http://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/51ce6099e4b0d911b4489b79/62f3e4d767dfcc5b641062a3/1660241192352/Screenshot%252B%2525282301%252529.jpg?format=1500w",
         "pagina": "https://geektyrant.com/news/new-photo-and-description-of-pharazn-of-nmenor-in-amazons-the-lord-of-the-rings-the-rings-of-power"
+      }
+    },
+    {
+      "id": "gilgalad",
+      "nome": "Gil-galad",
+      "ator": "Benjamin Walker",
+      "obra": "The Lord of the Rings: The Rings of Power (Amazon, 2022–2024)",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the elf king shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth and expression as Benjamin Walker playing Gil-galad in The Lord of the Rings: The Rings of Power. He is a CLEAN-SHAVEN elf with no beard and no stubble, smooth skin, visible pointed elf ears, long straight dark hair, wearing a tall crown of golden metal leaves rising from his head and a golden robe at the shoulders. Calm, regal expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no text, no watermark, no vignette or circular frame.",
+      "referencia": {
+        "arquivo": "fontes-imagens/referencias/gilgalad.png",
+        "pagina": "https://www.cheatsheet.com/news/the-lord-of-the-rings-the-rings-of-power-star-benjamin-walker-looks-familiar.html",
+        "recorte_de": "gilgalad-c.jpg"
+      },
+      "decisao": "Escolha explícita do usuário: Gil-galad segue Os Anéis de Poder; Isildur segue o prólogo de A Sociedade do Anel."
+    },
+    {
+      "id": "isildur",
+      "nome": "Isildur",
+      "ator": "Harry Sinclair",
+      "obra": "The Lord of the Rings: The Fellowship of the Ring (2001)",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the fictional character shown in image 1, for OpenArda's Tolkien character encyclopedia. Preserve the recognizable face, hair, beard and makeup of Harry Sinclair as Isildur in The Lord of the Rings: The Fellowship of the Ring (2001). Calm neutral expression, natural skin texture, soft neutral window light with a subtle warm rim, simple muted warm charcoal-brown blurred background, costume visible at the shoulders. Frame the whole head centrally with margin for a circular crop; face large enough for a 36-pixel avatar. Exactly one person; leave out any weapons, other people and the background of image 1. No text, letters or watermark.",
+      "referencia": {
+        "arquivo": "fontes-imagens/referencias/isildur.png",
+        "pagina": "https://cultureslate.com/explained/who-is-isildur-everything-you-need-to-know-about-the-future-king",
+        "recorte_de": "isildur-c.jpg"
+      },
+      "decisao": "Escolha explícita do usuário: Gil-galad segue Os Anéis de Poder; Isildur segue o prólogo de A Sociedade do Anel."
+    },
+    {
+      "id": "thorin",
+      "nome": "Thorin",
+      "ator": "Richard Armitage",
+      "obra": "The Hobbit films by Peter Jackson (2012-2014)",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the dwarf king shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as Richard Armitage playing Thorin in The Hobbit films by Peter Jackson (2012-2014). Noble brooding dwarf with long dark-brown hair streaked with grey, a short dark trimmed beard, heavy brow, intense blue-grey eyes, a dark fur-collared coat with a blue undertunic. No crown. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
+      "referencia": {
+        "arquivo": "fontes-imagens/referencias/thorin.png",
+        "recorte_de": "thorin.jpg",
+        "imagem": "https://www.looper.com/img/gallery/heres-why-thorin-from-the-hobbit-looks-so-familiar/l-intro-1612538400.jpg",
+        "pagina": "https://www.looper.com/327796/heres-why-thorin-from-the-hobbit-looks-so-familiar"
+      }
+    },
+    {
+      "id": "bard",
+      "nome": "Bard",
+      "ator": "Luke Evans",
+      "obra": "The Hobbit: The Desolation of Smaug (2013)",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the bowman of Lake-town shown in image 1, keeping his exact face: the same facial structure, eyes, nose, mouth, makeup and prosthetics as Luke Evans playing Bard in The Hobbit: The Desolation of Smaug (2013). Man with long dark wavy hair, a thin dark moustache and short goatee beard, dark eyes, weathered brown leather coat with fur collar. Calm expression. Soft neutral window light, muted warm charcoal-brown blurred background, 85mm portrait, face centered and large, square frame filled edge to edge. Exactly one person, no weapons, no text, no watermark, no vignette or circular frame.",
+      "referencia": {
+        "arquivo": "fontes-imagens/referencias/bard.png",
+        "recorte_de": "bard.jpg",
+        "imagem": "https://static0.moviewebimages.com/wordpress/wp-content/uploads/article/3Lu262OX2CfVdYz2SVxLJu3j2kgyqs.jpg?w=1200&h=675&fit=crop",
+        "pagina": "https://movieweb.com/luke-evans-talks-bard-the-bowman-in-the-hobbit-the-desolation-of-smaug-exclusive/"
       }
     }
   ]

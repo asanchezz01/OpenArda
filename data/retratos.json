@@ -1726,7 +1726,13 @@
         "local": "Quenta, caps. 4 e 10. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Elu Thingol"
+    "alt": "Retrato artístico de Elu Thingol",
+    "imagem": "retratos/thingol.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 93125762263993
+    }
   },
   {
     "id": "melian",
@@ -1841,7 +1847,13 @@
         "local": "Quenta, cap. 22. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Dior Eluchíl"
+    "alt": "Retrato artístico de Dior Eluchíl",
+    "imagem": "retratos/dior.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 148644659113268
+    }
   },
   {
     "id": "nimloth",
@@ -2187,7 +2199,7 @@
     "inferido": [
       "Cabelo, olhos e a armadura dourada são interpretação; a armadura segue o visual dos filmes.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na interpretação de Benjamin Walker em The Lord of the Rings: The Rings of Power (Amazon); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2195,16 +2207,19 @@
         "local": "Dos Anéis de Poder. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Gil-galad",
-    "referencia_cinematografica_pendente": {
-      "ator": "Mark Ferguson",
-      "filme": "The Lord of the Rings: The Fellowship of the Ring (2001)"
-    },
+    "alt": "Retrato de Gil-galad; reconstrução artística com referência à caracterização de Benjamin Walker.",
     "imagem": "retratos/gilgalad.webp",
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 108353680165355
+      "seed": 235572652672076
+    },
+    "referencia_cinematografica": {
+      "ator": "Benjamin Walker",
+      "obra": "The Lord of the Rings: The Rings of Power (Amazon)",
+      "epoca": "Lindon, Segunda Era",
+      "consulta": "https://www.cheatsheet.com/news/the-lord-of-the-rings-the-rings-of-power-star-benjamin-walker-looks-familiar.html",
+      "nota": "Escolha explícita do usuário: a série tem prioridade para Gil-galad, embora ele apareça brevemente no prólogo de A Sociedade do Anel."
     }
   },
   {
@@ -2273,7 +2288,7 @@
     "inferido": [
       "Cores inferidas dos Dúnedain.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na interpretação de Harry Sinclair em The Lord of the Rings: The Fellowship of the Ring (2001); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2281,16 +2296,18 @@
         "local": "Dos Anéis de Poder. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Isildur",
-    "referencia_cinematografica_pendente": {
-      "ator": "Harry Sinclair",
-      "filme": "The Lord of the Rings: The Fellowship of the Ring (2001)"
-    },
+    "alt": "Retrato de Isildur; reconstrução artística com referência à caracterização de Harry Sinclair.",
     "imagem": "retratos/isildur.webp",
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 260146133549812
+      "seed": 191447524305785
+    },
+    "referencia_cinematografica": {
+      "ator": "Harry Sinclair",
+      "obra": "The Lord of the Rings: The Fellowship of the Ring (2001)",
+      "epoca": "Fim da Segunda Era (prólogo)",
+      "consulta": "https://cultureslate.com/explained/who-is-isildur-everything-you-need-to-know-about-the-future-king"
     }
   },
   {
@@ -2333,7 +2350,13 @@
         "local": "Akallabêth. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Ar-Pharazôn"
+    "alt": "Retrato artístico de Ar-Pharazôn",
+    "imagem": "retratos/arpharazon.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 153616894477658
+    }
   },
   {
     "id": "amandil",
@@ -3220,7 +3243,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Manwë"
+    "alt": "Retrato artístico de Manwë",
+    "imagem": "retratos/manwe.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 189950077087795
+    }
   },
   {
     "id": "varda",
@@ -3239,7 +3268,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Varda"
+    "alt": "Retrato artístico de Varda",
+    "imagem": "retratos/varda.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 107536470044719
+    }
   },
   {
     "id": "ulmo",
@@ -3257,7 +3292,13 @@
         "local": "Valaquenta; Contos Inacabados, De Tuor e sua chegada a Gondolin. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Ulmo"
+    "alt": "Retrato artístico de Ulmo",
+    "imagem": "retratos/ulmo.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 42188220694458
+    }
   },
   {
     "id": "aule",
@@ -3276,7 +3317,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Aulë"
+    "alt": "Retrato artístico de Aulë",
+    "imagem": "retratos/aule.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 150975054513110
+    }
   },
   {
     "id": "yavanna",
@@ -3295,7 +3342,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Yavanna"
+    "alt": "Retrato artístico de Yavanna",
+    "imagem": "retratos/yavanna.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 178973179467841
+    }
   },
   {
     "id": "mandos",
@@ -3314,7 +3367,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Mandos"
+    "alt": "Retrato artístico de Mandos",
+    "imagem": "retratos/mandos.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 120021638818980
+    }
   },
   {
     "id": "vaire",
@@ -3333,7 +3392,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Vairë"
+    "alt": "Retrato artístico de Vairë",
+    "imagem": "retratos/vaire.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 280997336290717
+    }
   },
   {
     "id": "irmo",
@@ -3352,7 +3417,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Irmo"
+    "alt": "Retrato artístico de Irmo",
+    "imagem": "retratos/irmo.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 242494833171950
+    }
   },
   {
     "id": "este",
@@ -3371,7 +3442,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Estë"
+    "alt": "Retrato artístico de Estë",
+    "imagem": "retratos/este.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 158649147183568
+    }
   },
   {
     "id": "nienna",
@@ -3390,7 +3467,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Nienna"
+    "alt": "Retrato artístico de Nienna",
+    "imagem": "retratos/nienna.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 223121532124516
+    }
   },
   {
     "id": "orome",
@@ -3409,7 +3492,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Oromë"
+    "alt": "Retrato artístico de Oromë",
+    "imagem": "retratos/orome.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 145858723525422
+    }
   },
   {
     "id": "vana",
@@ -3428,7 +3517,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Vána"
+    "alt": "Retrato artístico de Vána",
+    "imagem": "retratos/vana.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 193473926383565
+    }
   },
   {
     "id": "tulkas",
@@ -3446,7 +3541,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Tulkas"
+    "alt": "Retrato artístico de Tulkas",
+    "imagem": "retratos/tulkas.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 275767414687394
+    }
   },
   {
     "id": "nessa",
@@ -3465,7 +3566,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Nessa"
+    "alt": "Retrato artístico de Nessa",
+    "imagem": "retratos/nessa.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 104916255435799
+    }
   },
   {
     "id": "morgoth",
@@ -3484,7 +3591,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Morgoth"
+    "alt": "Retrato artístico de Morgoth",
+    "imagem": "retratos/morgoth.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 16839455777368
+    }
   },
   {
     "id": "eonwe",
@@ -3503,7 +3616,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Eönwë"
+    "alt": "Retrato artístico de Eönwë",
+    "imagem": "retratos/eonwe.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 75705948341818
+    }
   },
   {
     "id": "osse",
@@ -3522,7 +3641,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Ossë"
+    "alt": "Retrato artístico de Ossë",
+    "imagem": "retratos/osse.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 31740511203365
+    }
   },
   {
     "id": "uinen",
@@ -3541,7 +3666,13 @@
         "local": "Valaquenta. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Uinen"
+    "alt": "Retrato artístico de Uinen",
+    "imagem": "retratos/uinen.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 114345487000063
+    }
   },
   {
     "id": "radagast",
@@ -3682,7 +3813,13 @@
         "local": "Parte II, cap. 4. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Galathil"
+    "alt": "Retrato artístico de Galathil",
+    "imagem": "retratos/galathil.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 165520579073860
+    }
   },
   {
     "id": "elured",
@@ -3796,7 +3933,13 @@
         "local": "Parte II, cap. 4. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Amroth"
+    "alt": "Retrato artístico de Amroth",
+    "imagem": "retratos/amroth.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 125908349648412
+    }
   },
   {
     "id": "findis",
