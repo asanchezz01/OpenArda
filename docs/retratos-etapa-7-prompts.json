@@ -33,13 +33,14 @@
       "id": "manwe",
       "nome": "Manwë",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult MAN, larger than life in bearing but with a natural, believable masculine face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Manwë Súlimo, Elder King of Arda and Lord of the Breath of Arda: a majestic, ageless kingly figure with long silver-white hair, piercing clear blue eyes, a serene noble face, a robe of deep sapphire blue, a few white feathers at the collar. Wise, calm, all-seeing expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a MAN of breathtaking, idealized, ageless masculine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: a vast luminous sky above the clouds with great eagles gliding far away, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Manwë Súlimo, Elder King of Arda, Lord of the Breath of Arda: long silver-white hair flowing on the wind, piercing radiant sapphire-blue eyes, a tall crown of white-gold rising like wings, robes of sapphire blue and white with silver embroidery, white eagle feathers at the shoulders. Serene, all-seeing, kingly expression. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "Rei Antigo de Arda, senhor dos ventos e do ar; habita Ilmarin, no Taniquetil."
       ],
       "inferido": [
         "Vestes azuis e penas de águia são interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -47,13 +48,14 @@
       "id": "varda",
       "nome": "Varda",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult WOMAN, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Varda Elentári, Queen of the Stars: a woman of overwhelming, luminous beauty, long dark hair with tiny points of silver light like stars woven in it, eyes deep as the night sky, a gown of midnight blue with silver. Serene, radiant, compassionate expression; a soft light seems to come from her face. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a WOMAN of breathtaking, idealized, ageless feminine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: a deep violet and midnight-blue starfield with bright constellations, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Varda Elentári, Queen of the Stars: long midnight-black hair strewn with tiny glittering points of starlight, eyes deep as the night sky shining with silver light, a delicate silver diadem set with a single brilliant star on the brow, a gown of midnight blue and violet woven with silver. The light of Ilúvatar shines in her face: serene, radiant, compassionate. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "Rainha das Estrelas, esposa de Manwë; a luz de Ilúvatar ainda vive em seu rosto."
       ],
       "inferido": [
         "Cabelo e vestes são interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -61,12 +63,13 @@
       "id": "ulmo",
       "nome": "Ulmo",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult MAN, larger than life in bearing but with a natural, believable masculine face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Ulmo, Lord of Waters, as he appeared to Tuor: a towering, ancient, kingly figure with long dark hair and beard flowing like water, deep sea-grey eyes, a tall helm shaped like the crest of a breaking wave, a coat of mail shimmering like scales of silver and deep green. Grave, mighty, compassionate expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a MAN of breathtaking, idealized, ageless masculine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: the deep ocean with shafts of sunlight and swirling currents of water, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Ulmo, Lord of Waters, as he appeared to Tuor: long dark hair and beard streaming like water and sea-foam, deep sea-green eyes glowing with inner light, a tall helm shaped like the crest of a breaking wave, a coat of mail shimmering like silver and deep green fish scales, a dark green mantle with flecks of foam. Mighty, grave, compassionate expression. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "Senhor das Águas; apareceu a Tuor com elmo como uma onda e cota de malha prateada e verde-escura."
       ],
       "inferido": [
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -74,13 +77,14 @@
       "id": "aule",
       "nome": "Aulë",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult MAN, larger than life in bearing but with a natural, believable masculine face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Aulë the Smith, maker of the Dwarves: a broad, powerful craftsman with short dark hair and a short dark beard, strong weathered face, intense dark eyes, a leather smith's apron over a dark tunic. Focused, patient, creative expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a MAN of breathtaking, idealized, ageless masculine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: a great forge glowing with molten gold, sparks drifting in the air, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Aulë the Smith, maker of mountains: short dark-brown hair and a short well-groomed dark beard, deep amber eyes reflecting firelight, broad powerful shoulders, a dark leather smith apron over a tunic of deep bronze and gold, a simple circlet of hammered gold. Proud, creative, focused expression; molten light on his face. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "O Ferreiro, senhor das substâncias da terra; criou os Anões."
       ],
       "inferido": [
         "Aparência é interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -88,13 +92,14 @@
       "id": "yavanna",
       "nome": "Yavanna",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult WOMAN, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Yavanna Kementári, Giver of Fruits: a tall woman robed in green, with long hair the colour of ripe wheat, warm earth-brown eyes, a crown of green leaves and small flowers. Warm, nurturing, ancient expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a WOMAN of breathtaking, idealized, ageless feminine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: a golden harvest field and ancient sunlit trees heavy with fruit, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Yavanna Kementári, Giver of Fruits, Queen of the Earth: long flowing auburn-gold hair, warm green eyes, a crown of golden wheat ears, leaves and small flowers, a gown of deep green embroidered with golden leaves and vines. Warm, nurturing, powerful expression; golden sunlight on her skin. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "A Doadora de Frutos, esposa de Aulë; em forma de mulher, alta e vestida de verde."
       ],
       "inferido": [
         "Cabelo e coroa de folhas são interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -102,13 +107,14 @@
       "id": "mandos",
       "nome": "Mandos",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult MAN, larger than life in bearing but with a natural, believable masculine face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Námo, called Mandos, Keeper of the Houses of the Dead and Doomsman of the Valar: a tall, austere figure with long black hair, pale stern face, deep grey eyes that seem to see all fates, a hooded robe of black and dark grey. Solemn, implacable, just expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a MAN of breathtaking, idealized, ageless masculine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: vast dark stone halls with cold blue-grey mist and pale ghostly light, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Námo, called Mandos, Doomsman of the Valar, keeper of the Houses of the Dead: very tall and austere, long straight black hair, a pale flawless face, piercing cold grey eyes that glow faintly silver, a high-collared hooded robe of black and deep grey with silver trim, a simple iron circlet. Grave, impassive, inexorable expression. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "Námo, o Juiz dos Valar e guardião das Casas dos Mortos."
       ],
       "inferido": [
         "Aparência é interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -116,13 +122,14 @@
       "id": "vaire",
       "nome": "Vairë",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult WOMAN, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Vairë the Weaver, wife of Mandos: a calm woman with long dark hair bound back, dark thoughtful eyes, a robe of muted woven grey and blue patterns. Quiet, contemplative expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a WOMAN of breathtaking, idealized, ageless feminine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: great halls hung with glowing woven tapestries of history, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Vairë the Weaver, spouse of Mandos: long dark hair bound with silver threads, calm grey eyes shining softly, a gown of silver-grey and deep blue woven with luminous threads, a fine silver net over her hair. Calm, wise, timeless expression. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "A Tecelã, que tece as histórias do tempo em tapeçarias nas Casas de Mandos."
       ],
       "inferido": [
         "Aparência é interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -130,13 +137,14 @@
       "id": "irmo",
       "nome": "Irmo",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult MAN, larger than life in bearing but with a natural, believable masculine face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Irmo, called Lórien, master of visions and dreams: a gentle, dreamy figure with long soft brown hair, half-lidded misty grey eyes, a robe of muted lavender and silver-grey. Peaceful, dreamy expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a MAN of breathtaking, idealized, ageless masculine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: the silver-blue dreamlike Gardens of Lórien with misty pale trees and drifting lights, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Irmo, called Lórien, master of visions and dreams: long pale silver-blue hair drifting as if underwater, dreamy luminous violet-grey eyes, a robe of pale lilac and silver, a circlet of silver leaves. Gentle, otherworldly, enigmatic expression. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "Senhor das visões e dos sonhos, dos jardins de Lórien."
       ],
       "inferido": [
         "Aparência é interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -144,13 +152,14 @@
       "id": "este",
       "nome": "Estë",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult WOMAN, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Estë the Gentle, healer of hurts and weariness: a soft-featured woman with long pale hair, calm grey eyes, wearing grey raiment. Gentle, restful expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a WOMAN of breathtaking, idealized, ageless feminine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: a tranquil silver lake on an island of tall trees under soft dawn light, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Estë the Gentle, healer of hurts and weariness: long pale-gold hair, soft grey eyes glowing with gentle light, a gown of soft dove-grey and white, a thin silver circlet. Serene, restful, healing expression. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "A Gentil, curadora das dores e do cansaço; veste cinza."
       ],
       "inferido": [
         "Feições e cabelo são interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -158,13 +167,14 @@
       "id": "nienna",
       "nome": "Nienna",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult WOMAN, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Nienna, Lady of Mercy and of mourning: a woman with a pale sorrowful face, long dark hair under a grey hood, eyes glistening with tears. Compassionate, grieving, wise expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a WOMAN of breathtaking, idealized, ageless feminine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: a misty grey sea-shore at dusk with soft silver light breaking through clouds, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Nienna, Lady of Pity and Mourning: long dark hair under a translucent silver-grey veil and hood, deep grey eyes glistening with a single bright tear of light, a flowing robe of grey and silver. Profoundly compassionate, sorrowful yet strong expression. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "Senhora da piedade e do luto, que chora pelas feridas de Arda."
       ],
       "inferido": [
         "Capuz e cabelo são interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -172,13 +182,14 @@
       "id": "orome",
       "nome": "Oromë",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult MAN, larger than life in bearing but with a natural, believable masculine face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Oromë the Great Rider, huntsman of the Valar: a mighty, vigorous man with long brown hair, a short beard, fierce bright eyes, a green and brown hunting cloak with a great silver-bound horn on a strap. Bold, keen, joyful expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a MAN of breathtaking, idealized, ageless masculine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: an ancient sunlit forest with golden light between the trees, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Oromë the Great, Huntsman of the Valar: long dark-brown hair flowing back, bright fierce green-gold eyes, a short dark beard, a dark green hunting cloak with a golden clasp over golden-brown leather and bronze, a great horn of silver and gold on a strap across the chest. Fierce, joyful, mighty expression. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "O Grande Cavaleiro, caçador; tocava a trompa Valaróma."
       ],
       "inferido": [
         "Feições são interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -186,13 +197,14 @@
       "id": "vana",
       "nome": "Vána",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult WOMAN, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Vána the Ever-young, younger sister of Yavanna: a youthful radiant woman with golden hair crowned with spring flowers, bright warm eyes, a light green and white gown. Joyful, fresh expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a WOMAN of breathtaking, idealized, ageless feminine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: a garden of blossoming golden flowers with morning sun, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Vána the Ever-young: long golden hair crowned with fresh spring flowers, bright joyful green eyes, a gown of pale green and white embroidered with flowers. Radiant, joyful smile; youthful divine beauty. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "A Sempre-jovem; as flores se abrem quando ela passa."
       ],
       "inferido": [
         "Aparência é interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -200,12 +212,13 @@
       "id": "tulkas",
       "nome": "Tulkas",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult MAN, larger than life in bearing but with a natural, believable masculine face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Tulkas the Strong, champion of the Valar: a huge, muscular man with golden hair and a golden beard, ruddy skin, laughing eyes, bare powerful shoulders. Boisterous, laughing, fearless expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a MAN of breathtaking, idealized, ageless masculine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: a blaze of golden sunlight and drifting embers, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Tulkas Astaldo, the Valiant, greatest in strength: thick golden hair and a short golden beard, laughing bright golden eyes, bare powerful bronze shoulders and a simple golden torc around the neck. Radiant, fearless, laughing expression, light pouring from him like the sun. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "O mais forte dos Valar; cabelo e barba dourados, pele corada; ri mesmo em combate."
       ],
       "inferido": [
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -213,13 +226,14 @@
       "id": "nessa",
       "nome": "Nessa",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult WOMAN, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Nessa the swift, sister of Oromë and wife of Tulkas: a lithe young woman with long chestnut hair loose as if in motion, bright quick eyes, a light dress of soft green. Lively, playful expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a WOMAN of breathtaking, idealized, ageless feminine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: a sunlit meadow at the edge of a forest with deer running far away, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Nessa, sister of Oromë, swift as an arrow, lover of dance: long chestnut hair flying in the wind, bright green eyes, a light dress of pale green and gold, a garland of leaves in her hair. Joyful, lively, radiant expression. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "Veloz como uma flecha; ama os cervos e a dança."
       ],
       "inferido": [
         "Aparência é interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -227,13 +241,14 @@
       "id": "morgoth",
       "nome": "Morgoth",
       "epoca": "Angband, Primeira Era",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult MAN, larger than life in bearing but with a natural, believable masculine face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Morgoth Bauglir, the Dark Lord, in the dark form he took in Middle-earth: a towering, terrible figure with long black hair, a pale proud cruel face marked by pain, burning dark eyes, an iron crown set with three brilliant white jewels, black armour. Malevolent, tormented expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a MAN of breathtaking, idealized, ageless masculine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: a dark throne hall of black iron with smoke and the red glow of fires below, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Morgoth Bauglir, the Dark Lord, mightiest of the Powers, fallen: a terrible dark beauty, very pale flawless proud face with three faint scars across one cheek, long straight black hair, burning eyes with a smouldering red glow, a massive spiked crown of black iron in which three Silmarils blaze with pure white holy light, illuminating his face from above, black armour with sharp plates. Cold, overwhelming, malevolent majesty. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "Melkor, o Inimigo; usava uma coroa de ferro com as três Silmarils, que lhe queimavam as mãos."
       ],
       "inferido": [
         "Feições são interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -241,13 +256,14 @@
       "id": "eonwe",
       "nome": "Eönwë",
       "epoca": "A Guerra da Ira, Primeira Era",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult MAN, larger than life in bearing but with a natural, believable masculine face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Eönwë, herald of Manwë and banner-bearer of the Valar, a Maia: a tall, radiant warrior with long golden hair, clear blue-grey eyes, a noble youthful face, white and gold armour. Commanding, fair, solemn expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a MAN of breathtaking, idealized, ageless masculine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: a bright sky of gold and white clouds, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Eönwë, herald and banner-bearer of Manwë, mightiest in arms of the Maiar: long platinum-blond hair, luminous silver-blue eyes, a silver winged helm with white eagle feathers, gleaming silver-white armour with gold filigree. Noble, fierce, shining expression. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "Arauto de Manwë, comandou a hoste dos Valar na Guerra da Ira."
       ],
       "inferido": [
         "Aparência é interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -255,13 +271,14 @@
       "id": "osse",
       "nome": "Ossë",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult MAN, larger than life in bearing but with a natural, believable masculine face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Ossë, Maia of the waves and the shores: a wild-looking man with long sea-green streaked hair tangled like seaweed, a short rough beard, stormy grey eyes, a cloak like grey-green sea foam. Restless, fierce, mischievous expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a MAN of breathtaking, idealized, ageless masculine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: a wild stormy sea with huge breaking waves and flying spray, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Ossë, Maia of the waves: long wild sea-green hair streaming with sea-foam, stormy blue-green eyes glowing, a strong face, a cloak of dark teal like the sea with silver shell clasps, pearls in his hair. Fierce, untamed expression. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "Maia das ondas e das costas, vassalo de Ulmo; amigo dos Teleri."
       ],
       "inferido": [
         "Aparência é interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -269,13 +286,14 @@
       "id": "uinen",
       "nome": "Uinen",
       "epoca": "Valinor, nos Anos das Árvores",
-      "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one immortal godlike being in the bodily form of a majestic adult WOMAN, larger than life in bearing but with a natural, believable face; no glowing effects unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Uinen, Lady of the Seas, wife of Ossë, a Maia: a calm beautiful woman with very long flowing hair like dark water spreading around her, deep blue-green eyes, a gown like calm sea water. Serene, protective expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+      "prompt": "Photorealistic cinematic fantasy portrait, head and shoulders, for OpenArda's Tolkien genealogy. Exactly one divine being, one of the mighty Powers who rule the world, in the bodily form of a WOMAN of breathtaking, idealized, ageless feminine beauty: flawless luminous skin, noble sculpted features, no wrinkles, in the prime of life. Supreme power and majesty: a faint radiant light emanates from the skin and the eyes, a soft glowing aura of light behind the head, hair stirred by a supernatural wind, a commanding, awe-inspiring gaze straight at the viewer. Dramatic cinematic lighting with a strong glowing rim light. Background: calm luminous turquoise water with soft shafts of light from above, softly out of focus. Centered square frame filled edge to edge, the entire head visible, face large and sharp. Exactly one person, no weapons held, no text, no watermark, no border or vignette. Uinen, Lady of the Seas: very long dark hair spreading like waves and woven with pearls and strands of seaweed, luminous sea-green eyes, a gown of shimmering blue-green like calm water, a fine circlet of pearls. Serene, calming expression. Preserve the specified hair, eyes and dress; make each face unique.",
       "documentado": [
         "Senhora dos Mares, cujo cabelo se espalha por todas as águas."
       ],
       "inferido": [
         "Feições são interpretação.",
         "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+        "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
         "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
       ]
     },
@@ -321,5 +339,107 @@
       ]
     }
   ],
-  "nota_revisao": "A primeira rodada descrevia o sujeito como \"Ainu\", que o modelo leu como o povo indígena do Japão; a moldura foi reescrita sem o termo e com o gênero explícito."
+  "nota_revisao": "A primeira rodada descrevia o sujeito como \"Ainu\", que o modelo leu como o povo indígena do Japão; a moldura foi reescrita sem o termo e com o gênero explícito.",
+  "nota_revisao_2": "Segunda revisão a pedido do usuário: os rostos estavam simplórios para deuses. Prompts reescritos com motivos recorrentes em fan arts (DeviantArt): beleza idealizada sem idade, luz própria e aura, cabelo ao vento sobrenatural, coroas luminosas e fundo do elemento de cada Vala. As fan arts serviram só para pesquisar motivos; nenhuma imagem de artista foi enviada ao modelo.",
+  "referencias_fan_art": [
+    "https://www.deviantart.com/alvarofernag/art/Morgoth-returns-through-the-Door-of-Night-1122830666",
+    "https://www.deviantart.com/amenen/art/Namo-Mandos-ChKA-441637657",
+    "https://www.deviantart.com/anastasiyacemetery/art/Melkor-Namo-Mandos-709895248",
+    "https://www.deviantart.com/anede/art/Orome-361854864",
+    "https://www.deviantart.com/argamenax/art/Tulkas-548857642",
+    "https://www.deviantart.com/arinvens/art/Silmarillion---Yavanna-Kementari-517978195",
+    "https://www.deviantart.com/arwendeluhtiene/art/Mandos-the-Unyielding-964296719",
+    "https://www.deviantart.com/aylatha/art/Orome-585969521",
+    "https://www.deviantart.com/aylatha/art/The-Noldor-557188220",
+    "https://www.deviantart.com/babypixie/art/Mandos-39502642",
+    "https://www.deviantart.com/bogi380/art/Fingolfin-Before-the-Iron-Gates-1340195922",
+    "https://www.deviantart.com/bogi380/art/Seven-Wounds-for-the-Dark-Lord-1301442578",
+    "https://www.deviantart.com/bogi380/art/Turin-at-the-Grave-of-Finduilas-1340195894",
+    "https://www.deviantart.com/cappi-ka/art/Manwe-929817551",
+    "https://www.deviantart.com/celebenarinya/art/Manwe-and-Eonwe-1280235742",
+    "https://www.deviantart.com/cssmuse/art/Manwe-651033603",
+    "https://www.deviantart.com/darthcrotalus/art/Aule-and-Yavanna-481259069",
+    "https://www.deviantart.com/debba59/art/Tol-Eressea-Moving-Day-1329818498",
+    "https://www.deviantart.com/diamonheart/art/Aule-creates-the-Seven-Fathers-of-the-dwarves-1371847439",
+    "https://www.deviantart.com/diamonheart/art/Aule-wants-to-erase-his-creation-1371848764",
+    "https://www.deviantart.com/diamonheart/art/Eru-Iluvatar-1371346566",
+    "https://www.deviantart.com/diamonheart/art/Irmo-1371087819",
+    "https://www.deviantart.com/diamonheart/art/Manwe-1371077550",
+    "https://www.deviantart.com/diamonheart/art/Melkor-Morgoth-1369910849",
+    "https://www.deviantart.com/diamonheart/art/Melkor-challenges-the-theme-of-Iluvatar-1371089374",
+    "https://www.deviantart.com/diamonheart/art/Melkor-during-the-Music-of-the-Ainur-1369905231",
+    "https://www.deviantart.com/diamonheart/art/Nienna-1371262989",
+    "https://www.deviantart.com/diamonheart/art/Orome-1371263129",
+    "https://www.deviantart.com/diamonheart/art/Tulkas-1371084915",
+    "https://www.deviantart.com/diamonheart/art/Vaire-1371263326",
+    "https://www.deviantart.com/diamonheart12/art/Feanor-creates-the-Silmarils-1376996513",
+    "https://www.deviantart.com/diamonheart12/art/Mandos-pronounces-doom-on-the-Noldor-1376996865",
+    "https://www.deviantart.com/edarlein/art/Manwe-106309244",
+    "https://www.deviantart.com/ekukanova/art/Namo-Mandos-614061683",
+    "https://www.deviantart.com/enanoakd/art/Genealogy-of-the-Ainur-548183957",
+    "https://www.deviantart.com/evissomiros/art/Dark-Lord-Melkor-1375863503",
+    "https://www.deviantart.com/evissomiros/art/Melkor-Morgoth-1193051787",
+    "https://www.deviantart.com/fallenrazziel/art/Irmo-Lorien-and-Namo-Mandos-44042597",
+    "https://www.deviantart.com/helgadream/art/Manwe-Varda-769301422",
+    "https://www.deviantart.com/huny-montuny/art/MANWE-1298319850",
+    "https://www.deviantart.com/huny-montuny/art/MANWE-SPIRITUAL-1306557357",
+    "https://www.deviantart.com/huny-montuny/art/TULKAS-1302212396",
+    "https://www.deviantart.com/jakedrakeart/art/Taniquetil-927658687",
+    "https://www.deviantart.com/jankalateckova/art/Manwe-670411774",
+    "https://www.deviantart.com/jankalateckova/art/Tulkas-642255975",
+    "https://www.deviantart.com/jayeybee/art/Eonwe-Sketch-667540204",
+    "https://www.deviantart.com/juliet999/art/Maiar-series--Osse-and-Uinen-774231419",
+    "https://www.deviantart.com/katekaz/art/Eight-of-Hearts-170407676",
+    "https://www.deviantart.com/katekaz/art/Jack-of-Hearts-170408435",
+    "https://www.deviantart.com/kimberly80/art/Osse-and-Uinen-495539993",
+    "https://www.deviantart.com/kuliszu/art/Manwe-154575090",
+    "https://www.deviantart.com/kuliszu/art/Valar---Mandos-811569035",
+    "https://www.deviantart.com/kuliszu/art/Valar---Melkor-829218398",
+    "https://www.deviantart.com/kuraigeijutsu/art/Eonwe---Herald-of-Manwe-824323967",
+    "https://www.deviantart.com/lelia/art/VARDA-Elentari-494428534",
+    "https://www.deviantart.com/lelia/art/Varda-Elentari-587217026",
+    "https://www.deviantart.com/lil-dragon-knight/art/Eonwe-1389516979",
+    "https://www.deviantart.com/lil-dragon-knight/art/Morgoth-1250133912",
+    "https://www.deviantart.com/lucifers-uke/art/Aleron-and-the-Maia-2--COLLAB-163128534",
+    "https://www.deviantart.com/madlore/art/Manwe-775907169",
+    "https://www.deviantart.com/mathiasmoor/art/Manwe---Tolkien-World-980474779",
+    "https://www.deviantart.com/maureval/art/Ainulindale---Ulmo-279981825",
+    "https://www.deviantart.com/moreagaara/art/Aleron-and-the-Maia-2--COLLAB-163127197",
+    "https://www.deviantart.com/mrssandy/art/Varda-Elentari-617019666",
+    "https://www.deviantart.com/nenril-tf/art/Varda-562823114",
+    "https://www.deviantart.com/numediteur/art/Irmo-1128552514",
+    "https://www.deviantart.com/numediteur/art/Orome-1086279527",
+    "https://www.deviantart.com/nyeni/art/Manwe-and-Melko-1053145643",
+    "https://www.deviantart.com/orthilde/art/Osse-and-Uinen-760217533",
+    "https://www.deviantart.com/queenfire/art/Osse-and-Uinen-227127293",
+    "https://www.deviantart.com/raphi-kun/art/Tagtraum-I-Yavanna-Kementari-2088960",
+    "https://www.deviantart.com/rspbliterature/art/New-RwBY-story-Prologue-Idea-737023057",
+    "https://www.deviantart.com/sarkaskorpikova/art/Irmo-in-the-gardens-of-Lorien-646883553",
+    "https://www.deviantart.com/sarkaskorpikova/art/Namo-Mandos-1211929602",
+    "https://www.deviantart.com/sepide-donne/art/Luthien-Singing-Before-Morgoth-1201239606",
+    "https://www.deviantart.com/serinityainferno/art/Uinen-and-Osse-469703474",
+    "https://www.deviantart.com/simonmoberg/art/Tulkas-champion-of-the-Valar-1380514283",
+    "https://www.deviantart.com/sleepwalking-dreamer/art/Forgotten-Lands---Chapter-2-5419711",
+    "https://www.deviantart.com/spring-fantasy/art/Vala-Ulmo-385897837",
+    "https://www.deviantart.com/steamey/art/Earendil-and-Elwing-500529919",
+    "https://www.deviantart.com/steamey/art/Osse-and-Uinen-392583769",
+    "https://www.deviantart.com/stfeanor/art/Doom-of-Mandos-Noldor-1185863256",
+    "https://www.deviantart.com/stfeanor/art/Melkor-before-Manwe-1187046902",
+    "https://www.deviantart.com/stfeanor/art/Taniquetil-1185885085",
+    "https://www.deviantart.com/suzuranart/art/Ilwie-with-Eonwe-the-herald-of-Manwe-750669313",
+    "https://www.deviantart.com/talon74/art/Aule---Smith-and-Master-of-Crafts-1327720640",
+    "https://www.deviantart.com/talon74/art/Manwe-Sulimo---Sky-1327501816",
+    "https://www.deviantart.com/talon74/art/Tulkas-Astaldo---Strength-1327706698",
+    "https://www.deviantart.com/talon74/art/Varda-Elentari---Queen-of-the-Stars-1327702202",
+    "https://www.deviantart.com/talon74/art/Yavanna-Kementari---Queen-of-the-Earth-and-Plants-1327503387",
+    "https://www.deviantart.com/tanmorna/art/Yavanna-Kementari-559116877",
+    "https://www.deviantart.com/tcmvisualworld/art/Manwe-1372871163",
+    "https://www.deviantart.com/tcmvisualworld/art/Tulkas-1373597192",
+    "https://www.deviantart.com/tuuliky/art/Lord-of-the-Eagles-261100937",
+    "https://www.deviantart.com/whittingtonrhett/art/The-Valar---Tolkien-Artwork-327663085",
+    "https://www.deviantart.com/yukimiyasawa/art/Chibi-Vala-Ulmo-347089004",
+    "https://www.deviantart.com/yukimiyasawa/art/Silmarillion---Vala-Ulmo-344408423",
+    "https://www.deviantart.com/zhaana/art/Yavanna-Kementari-192780816",
+    "https://www.deviantart.com/zombiegrrll/art/Yavanna-Kementari-955432545"
+  ]
 }

@@ -313,7 +313,8 @@
     ],
     "inferido": [
       "Cabelos escuros, olhos cinzentos e semelhança com Curufin derivam da referência do pai; não foi localizada descrição física individual nas fontes consultadas.",
-      "Rosto próprio, com expressão mais aberta; idade aparente e traje de artífice são interpretação artística."
+      "Rosto próprio, com expressão mais aberta; idade aparente e traje de artífice são interpretação artística.",
+      "Aparência facial baseada na caracterização de Charles Edwards em The Lord of the Rings: The Rings of Power (Amazon, 2022–2024); não é descrição física literal de Tolkien."
     ],
     "nota_versao": "Há tradições alternativas para sua origem. Este retrato segue a descendência de Curufin registrada em linhagens.json, sem atribuir a essa filiação cores de cabelo ou olhos explicitamente documentadas.",
     "fontes": [
@@ -329,7 +330,17 @@
       }
     ],
     "imagem": "retratos/celebrimbor.webp",
-    "alt": "Retrato realista de Celebrimbor; interpretação artística baseada nas referências literárias."
+    "alt": "Retrato de Celebrimbor; reconstrução artística com referência à caracterização de Charles Edwards.",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 148393737669183
+    },
+    "referencia_cinematografica": {
+      "ator": "Charles Edwards",
+      "obra": "The Lord of the Rings: The Rings of Power (Amazon, 2022–2024)",
+      "consulta": "https://whattowatch.com/news/celebrimbor-wants-to-be-remembered-says-the-rings-of-power-star-charles-edwards"
+    }
   },
   {
     "id": "galadriel",
@@ -1496,7 +1507,8 @@
     ],
     "inferido": [
       "Olhos azuis, sorriso discreto e diferenças faciais em relação ao pai são reconstrução.",
-      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Aparência facial baseada na caracterização de Will Fletcher em The Lord of the Rings: The Rings of Power (Amazon, 2022–2024); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -1506,11 +1518,16 @@
       }
     ],
     "imagem": "retratos/finrod.webp",
-    "alt": "Retrato artístico de Finrod Felagund",
+    "alt": "Retrato de Finrod Felagund; reconstrução artística com referência à caracterização de Will Fletcher.",
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 216992723825288
+      "seed": 214422308614875
+    },
+    "referencia_cinematografica": {
+      "ator": "Will Fletcher",
+      "obra": "The Lord of the Rings: The Rings of Power (Amazon, 2022–2024)",
+      "consulta": "https://looper.com/1281805/the-rings-of-power-who-plays-galadriels-brother-finrod"
     }
   },
   {
@@ -2230,7 +2247,7 @@
     ],
     "inferido": [
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Rosto original: a busca autorizada por fotos de cena do intérprete não encontrou imagem utilizável (resolução baixa, logotipo ou outro personagem); retrato feito por descrição."
     ],
     "fontes": [
       {
@@ -2259,7 +2276,7 @@
     "inferido": [
       "Cabelo escuro e olhos cinzentos, comuns aos Dúnedain.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Rosto original: a busca autorizada por fotos de cena do intérprete não encontrou imagem utilizável (resolução baixa, logotipo ou outro personagem); retrato feito por descrição."
     ],
     "fontes": [
       {
@@ -2342,7 +2359,8 @@
     ],
     "inferido": [
       "O cabelo dourado interpreta o título; a coroa e as vestes são interpretação.",
-      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Aparência facial baseada na caracterização de Trystan Gravelle em The Lord of the Rings: The Rings of Power (Amazon, 2022–2024); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2350,12 +2368,17 @@
         "local": "Akallabêth. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Ar-Pharazôn",
+    "alt": "Retrato de Ar-Pharazôn; reconstrução artística com referência à caracterização de Trystan Gravelle.",
     "imagem": "retratos/arpharazon.webp",
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
       "seed": 153616894477658
+    },
+    "referencia_cinematografica": {
+      "ator": "Trystan Gravelle",
+      "obra": "The Lord of the Rings: The Rings of Power (Amazon, 2022–2024)",
+      "consulta": "https://geektyrant.com/news/new-photo-and-description-of-pharazn-of-nmenor-in-amazons-the-lord-of-the-rings-the-rings-of-power"
     }
   },
   {
@@ -2654,7 +2677,8 @@
     ],
     "inferido": [
       "Cabelo dourado e olhos são interpretação.",
-      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
+      "Aparência facial baseada na caracterização de Cynthia Addai-Robinson em The Lord of the Rings: The Rings of Power (Amazon, 2022–2024); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2662,7 +2686,18 @@
         "local": "Akallabêth. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Tar-Míriel"
+    "alt": "Retrato de Tar-Míriel; reconstrução artística com referência à caracterização de Cynthia Addai-Robinson.",
+    "imagem": "retratos/tar-miriel.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 268985618997706
+    },
+    "referencia_cinematografica": {
+      "ator": "Cynthia Addai-Robinson",
+      "obra": "The Lord of the Rings: The Rings of Power (Amazon, 2022–2024)",
+      "consulta": "https://www.looper.com/999624/why-queen-regent-miriel-from-the-lord-of-the-rings-the-rings-of-power-looks-so-familiar"
+    }
   },
   {
     "id": "thorin",
@@ -2673,7 +2708,7 @@
     "inferido": [
       "Feições e cor do cabelo não descritas são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na caracterização de Richard Armitage em The Hobbit films by Peter Jackson (2012-2014); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2681,16 +2716,17 @@
         "local": "cap. 1. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Thorin Escudo de Carvalho",
-    "referencia_cinematografica_pendente": {
-      "ator": "Richard Armitage",
-      "filme": "The Hobbit (2012–2014)"
-    },
+    "alt": "Retrato de Thorin Escudo de Carvalho; reconstrução artística com referência à caracterização de Richard Armitage.",
     "imagem": "retratos/thorin.webp",
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 160322053848494
+      "seed": 7032260189269
+    },
+    "referencia_cinematografica": {
+      "ator": "Richard Armitage",
+      "obra": "The Hobbit films by Peter Jackson (2012-2014)",
+      "consulta": "https://www.looper.com/327796/heres-why-thorin-from-the-hobbit-looks-so-familiar"
     }
   },
   {
@@ -2702,7 +2738,7 @@
     "inferido": [
       "Feições e cor do cabelo não descritas são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na caracterização de Ken Stott em The Hobbit: An Unexpected Journey (2012); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2710,10 +2746,17 @@
         "local": "cap. 1. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Balin",
-    "referencia_cinematografica_pendente": {
+    "alt": "Retrato de Balin; reconstrução artística com referência à caracterização de Ken Stott.",
+    "imagem": "retratos/balin.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 33554777118658
+    },
+    "referencia_cinematografica": {
       "ator": "Ken Stott",
-      "filme": "The Hobbit (2012–2014)"
+      "obra": "The Hobbit: An Unexpected Journey (2012)",
+      "consulta": "https://www.slashfilm.com/beard-fetishists-rejoice-hobbit-dwarves-revealed-photo"
     }
   },
   {
@@ -2725,7 +2768,7 @@
     "inferido": [
       "Feições e cor do cabelo não descritas são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na caracterização de Graham McTavish em The Hobbit: An Unexpected Journey (2012); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2733,10 +2776,17 @@
         "local": "cap. 1. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Dwalin",
-    "referencia_cinematografica_pendente": {
+    "alt": "Retrato de Dwalin; reconstrução artística com referência à caracterização de Graham McTavish.",
+    "imagem": "retratos/dwalin.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 79926444165677
+    },
+    "referencia_cinematografica": {
       "ator": "Graham McTavish",
-      "filme": "The Hobbit (2012–2014)"
+      "obra": "The Hobbit: An Unexpected Journey (2012)",
+      "consulta": "https://www.slashfilm.com/beard-fetishists-rejoice-hobbit-dwarves-revealed-photo"
     }
   },
   {
@@ -2748,7 +2798,7 @@
     "inferido": [
       "Feições e cor do cabelo não descritas são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na caracterização de Dean O'Gorman em The Hobbit: An Unexpected Journey (2012); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2756,10 +2806,17 @@
         "local": "cap. 1. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Fíli",
-    "referencia_cinematografica_pendente": {
+    "alt": "Retrato de Fíli; reconstrução artística com referência à caracterização de Dean O'Gorman.",
+    "imagem": "retratos/fili.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 140179159687961
+    },
+    "referencia_cinematografica": {
       "ator": "Dean O'Gorman",
-      "filme": "The Hobbit (2012–2014)"
+      "obra": "The Hobbit: An Unexpected Journey (2012)",
+      "consulta": "https://www.slashfilm.com/the-hobbit-photo-dwarves-fili-kili"
     }
   },
   {
@@ -2771,7 +2828,7 @@
     "inferido": [
       "Feições e cor do cabelo não descritas são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na caracterização de Aidan Turner em The Hobbit: An Unexpected Journey (2012); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2779,10 +2836,17 @@
         "local": "cap. 1. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Kíli",
-    "referencia_cinematografica_pendente": {
+    "alt": "Retrato de Kíli; reconstrução artística com referência à caracterização de Aidan Turner.",
+    "imagem": "retratos/kili.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 117808820167199
+    },
+    "referencia_cinematografica": {
       "ator": "Aidan Turner",
-      "filme": "The Hobbit (2012–2014)"
+      "obra": "The Hobbit: An Unexpected Journey (2012)",
+      "consulta": "https://www.slashfilm.com/the-hobbit-photo-dwarves-fili-kili"
     }
   },
   {
@@ -2795,7 +2859,7 @@
       "Barba castanho-avermelhada é interpretação.",
       "Feições e cor do cabelo não descritas são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na caracterização de Peter Hambleton em The Hobbit: An Unexpected Journey (2012); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2803,10 +2867,17 @@
         "local": "cap. 1. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Glóin",
-    "referencia_cinematografica_pendente": {
+    "alt": "Retrato de Glóin; reconstrução artística com referência à caracterização de Peter Hambleton.",
+    "imagem": "retratos/gloin.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 54751346970322
+    },
+    "referencia_cinematografica": {
       "ator": "Peter Hambleton",
-      "filme": "The Hobbit (2012–2014)"
+      "obra": "The Hobbit: An Unexpected Journey (2012)",
+      "consulta": "https://www.filmbuffonline.com/FBOLNewsreel/wordpress/2011/07/08/more-hobbit-dwarfs-this-time-oin-and-gloin/"
     }
   },
   {
@@ -2818,7 +2889,7 @@
     "inferido": [
       "Feições e cor do cabelo não descritas são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na caracterização de John Callen em The Hobbit: An Unexpected Journey (2012); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2826,10 +2897,17 @@
         "local": "cap. 1. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Óin",
-    "referencia_cinematografica_pendente": {
+    "alt": "Retrato de Óin; reconstrução artística com referência à caracterização de John Callen.",
+    "imagem": "retratos/oin.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 137180319372219
+    },
+    "referencia_cinematografica": {
       "ator": "John Callen",
-      "filme": "The Hobbit (2012–2014)"
+      "obra": "The Hobbit: An Unexpected Journey (2012)",
+      "consulta": "https://www.filmbuffonline.com/FBOLNewsreel/wordpress/2011/07/08/more-hobbit-dwarfs-this-time-oin-and-gloin/"
     }
   },
   {
@@ -2841,7 +2919,7 @@
     "inferido": [
       "Feições e cor do cabelo não descritas são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na caracterização de Mark Hadlow em The Hobbit: An Unexpected Journey (2012); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2849,10 +2927,17 @@
         "local": "cap. 1. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Dori",
-    "referencia_cinematografica_pendente": {
+    "alt": "Retrato de Dori; reconstrução artística com referência à caracterização de Mark Hadlow.",
+    "imagem": "retratos/dori.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 925639001688
+    },
+    "referencia_cinematografica": {
       "ator": "Mark Hadlow",
-      "filme": "The Hobbit (2012–2014)"
+      "obra": "The Hobbit: An Unexpected Journey (2012)",
+      "consulta": "https://www.slashfilm.com/dwarves-dori-nori-ori-peter-jacksons-hobbit"
     }
   },
   {
@@ -2864,7 +2949,7 @@
     "inferido": [
       "Feições e cor do cabelo não descritas são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na caracterização de Jed Brophy em The Hobbit: An Unexpected Journey (2012); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2872,10 +2957,17 @@
         "local": "cap. 1. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Nori",
-    "referencia_cinematografica_pendente": {
+    "alt": "Retrato de Nori; reconstrução artística com referência à caracterização de Jed Brophy.",
+    "imagem": "retratos/nori.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 140593916202671
+    },
+    "referencia_cinematografica": {
       "ator": "Jed Brophy",
-      "filme": "The Hobbit (2012–2014)"
+      "obra": "The Hobbit: An Unexpected Journey (2012)",
+      "consulta": "https://www.slashfilm.com/dwarves-dori-nori-ori-peter-jacksons-hobbit"
     }
   },
   {
@@ -2887,7 +2979,7 @@
     "inferido": [
       "Feições e cor do cabelo não descritas são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na caracterização de Adam Brown em The Hobbit: An Unexpected Journey (2012); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2895,10 +2987,17 @@
         "local": "cap. 1. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Ori",
-    "referencia_cinematografica_pendente": {
+    "alt": "Retrato de Ori; reconstrução artística com referência à caracterização de Adam Brown.",
+    "imagem": "retratos/ori.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 134681919082888
+    },
+    "referencia_cinematografica": {
       "ator": "Adam Brown",
-      "filme": "The Hobbit (2012–2014)"
+      "obra": "The Hobbit: An Unexpected Journey (2012)",
+      "consulta": "https://www.slashfilm.com/dwarves-dori-nori-ori-peter-jacksons-hobbit"
     }
   },
   {
@@ -2911,7 +3010,7 @@
       "A cicatriz é interpretação.",
       "Feições e cor do cabelo não descritas são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na caracterização de William Kircher em The Hobbit: An Unexpected Journey (2012); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2919,10 +3018,17 @@
         "local": "cap. 1. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Bifur",
-    "referencia_cinematografica_pendente": {
+    "alt": "Retrato de Bifur; reconstrução artística com referência à caracterização de William Kircher.",
+    "imagem": "retratos/bifur.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 229324717178026
+    },
+    "referencia_cinematografica": {
       "ator": "William Kircher",
-      "filme": "The Hobbit (2012–2014)"
+      "obra": "The Hobbit: An Unexpected Journey (2012)",
+      "consulta": "https://www.slashfilm.com/photo-the-hobbit-bofur-bombur-bifur"
     }
   },
   {
@@ -2934,7 +3040,7 @@
     "inferido": [
       "Feições e cor do cabelo não descritas são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na caracterização de James Nesbitt em The Hobbit: An Unexpected Journey (2012); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -2942,10 +3048,17 @@
         "local": "cap. 1. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Bofur",
-    "referencia_cinematografica_pendente": {
+    "alt": "Retrato de Bofur; reconstrução artística com referência à caracterização de James Nesbitt.",
+    "imagem": "retratos/bofur.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 141758646471525
+    },
+    "referencia_cinematografica": {
       "ator": "James Nesbitt",
-      "filme": "The Hobbit (2012–2014)"
+      "obra": "The Hobbit: An Unexpected Journey (2012)",
+      "consulta": "https://www.slashfilm.com/photo-the-hobbit-bofur-bombur-bifur"
     }
   },
   {
@@ -2957,7 +3070,7 @@
     "inferido": [
       "Feições e cor do cabelo não descritas são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Rosto original: a busca autorizada por fotos de cena do intérprete não encontrou imagem utilizável (resolução baixa, logotipo ou outro personagem); retrato feito por descrição."
     ],
     "fontes": [
       {
@@ -2986,7 +3099,7 @@
     "inferido": [
       "Cor da barba e armadura são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Rosto original: a busca autorizada por fotos de cena do intérprete não encontrou imagem utilizável (resolução baixa, logotipo ou outro personagem); retrato feito por descrição."
     ],
     "fontes": [
       {
@@ -3015,7 +3128,7 @@
     "inferido": [
       "Cabelo e olhos escuros são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na caracterização de Luke Evans em The Hobbit: The Desolation of Smaug (2013); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -3023,16 +3136,17 @@
         "local": "cap. 14. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Bard",
-    "referencia_cinematografica_pendente": {
-      "ator": "Luke Evans",
-      "filme": "The Hobbit (2012–2014)"
-    },
+    "alt": "Retrato de Bard; reconstrução artística com referência à caracterização de Luke Evans.",
     "imagem": "retratos/bard.webp",
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 61478210331786
+      "seed": 253967142788772
+    },
+    "referencia_cinematografica": {
+      "ator": "Luke Evans",
+      "obra": "The Hobbit: The Desolation of Smaug (2013)",
+      "consulta": "https://movieweb.com/luke-evans-talks-bard-the-bowman-in-the-hobbit-the-desolation-of-smaug-exclusive/"
     }
   },
   {
@@ -3044,7 +3158,7 @@
     "inferido": [
       "Olhos e vestes são interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Aparência facial baseada na caracterização de Lee Pace em The Hobbit: The Desolation of Smaug (2013); não é descrição física literal de Tolkien."
     ],
     "fontes": [
       {
@@ -3052,10 +3166,17 @@
         "local": "cap. 8. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Thranduil",
-    "referencia_cinematografica_pendente": {
+    "alt": "Retrato de Thranduil; reconstrução artística com referência à caracterização de Lee Pace.",
+    "imagem": "retratos/thranduil.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 137641229346311
+    },
+    "referencia_cinematografica": {
       "ator": "Lee Pace",
-      "filme": "The Hobbit (2012–2014)"
+      "obra": "The Hobbit: The Desolation of Smaug (2013)",
+      "consulta": "https://www.filmbuffonline.com/FBOLNewsreel/wordpress/2012/08/30/first-look-lee-pace-as-the-hobbits-thranduil/"
     }
   },
   {
@@ -3066,7 +3187,7 @@
     ],
     "inferido": [
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Rosto original: a busca autorizada por fotos de cena do intérprete não encontrou imagem utilizável (resolução baixa, logotipo ou outro personagem); retrato feito por descrição."
     ],
     "fontes": [
       {
@@ -3119,7 +3240,7 @@
     "inferido": [
       "Aparência não descrita; interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Rosto original: a busca autorizada por fotos de cena do intérprete não encontrou imagem utilizável (resolução baixa, logotipo ou outro personagem); retrato feito por descrição."
     ],
     "fontes": [
       {
@@ -3148,7 +3269,7 @@
     "inferido": [
       "Cor da barba é interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Rosto original: a busca autorizada por fotos de cena do intérprete não encontrou imagem utilizável (resolução baixa, logotipo ou outro personagem); retrato feito por descrição."
     ],
     "fontes": [
       {
@@ -3177,7 +3298,7 @@
     "inferido": [
       "Aparência não descrita; o elmo de ferro é interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Rosto original: a busca autorizada por fotos de cena do intérprete não encontrou imagem utilizável (resolução baixa, logotipo ou outro personagem); retrato feito por descrição."
     ],
     "fontes": [
       {
@@ -3206,7 +3327,7 @@
     "inferido": [
       "Aparência não descrita; interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Rosto original: a busca autorizada por fotos de cena do intérprete não encontrou imagem utilizável (resolução baixa, logotipo ou outro personagem); retrato feito por descrição."
     ],
     "fontes": [
       {
@@ -3683,7 +3804,7 @@
     "inferido": [
       "Aparência não descrita em detalhe; interpretação.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística.",
-      "Rosto original: a referência facial do intérprete nos filmes de Peter Jackson (preferência do AGENTS.md) não foi aplicada, porque exige baixar fotos de referência; pendente de autorização."
+      "Rosto original: a busca autorizada por fotos de cena do intérprete não encontrou imagem utilizável (resolução baixa, logotipo ou outro personagem); retrato feito por descrição."
     ],
     "fontes": [
       {

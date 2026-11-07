@@ -8,11 +8,11 @@ Atualizado em **7 de novembro de 2026**. Plano de produção para o OpenArda, co
 
 ## Ponto de partida e objetivo
 
-O catálogo local contém **103 personagens** em [data/linhagens.json](../data/linhagens.json). Há **58 retratos criados e cadastrados na interface** em [data/retratos.json](../data/retratos.json): 14 das etapas 0 e 1, 24 da etapa 2 e 20 da etapa 3. O build, os testes de renderização e o carregamento dos arquivos foram validados; a conferência visual da página no navegador continua pendente por falha da automação. Veja as entregas da [etapa 1](RETRATOS-ETAPA-1.md), da [etapa 2](RETRATOS-ETAPA-2.md) e da [etapa 3](RETRATOS-ETAPA-3.md).
+O catálogo local contém **155 personagens** em [data/linhagens.json](../data/linhagens.json) e **150 retratos** em [data/retratos.json](../data/retratos.json): todas as etapas de 0 a 8 estão entregues. Veja as entregas da [etapa 1](RETRATOS-ETAPA-1.md), da [etapa 2](RETRATOS-ETAPA-2.md), da [etapa 3](RETRATOS-ETAPA-3.md) e das [etapas 4 a 8, com a revisão pelos atores](RETRATOS-ETAPAS-4-8.md).
 
-O plano contempla **150 personagens únicos**, incluindo os 75 cadastrados no ponto de partida. São **92 personagens ainda sem retrato neste plano**. O catálogo também pode crescer com elos genealógicos fora desta seleção. A lista é uma seleção editorial para a biblioteca inicial, não um inventário de todos os personagens de Tolkien. Versões de um mesmo personagem e a extensão de criaturas não entram nessa contagem.
+O plano contempla **150 personagens únicos**, incluindo os 75 cadastrados no ponto de partida. Os 150 têm retrato. O catálogo também pode crescer com elos genealógicos fora desta seleção. A lista é uma seleção editorial para a biblioteca inicial, não um inventário de todos os personagens de Tolkien. Versões de um mesmo personagem e a extensão de criaturas não entram nessa contagem.
 
-**Expansão atual:** a etapa 2 tem **24/24 retratos integrados**, com Gandalf concluído pela API local; a etapa 3 tem **20/20**. Os 37 retratos existentes antes desta entrega foram preservados. O próximo lote do plano é a etapa 4, Doriath e os Grandes Contos.
+**Regra dos intérpretes:** os filmes de Peter Jackson (*O Senhor dos Anéis* e *O Hobbit*) têm prioridade como referência facial; personagens que só aparecem em *Os Anéis de Poder* usam o ator da série. **Exceção pedida pelo usuário:** Gil-galad segue Benjamin Walker (série). Os Valar e Maiar não têm intérprete: seguem motivos recorrentes de fan arts (beleza sem idade, luz própria, elemento de cada um).
 
 ## Ordem das entregas
 
@@ -24,11 +24,11 @@ As etapas indicam prioridade, sem datas prometidas. Dividir cada etapa em lotes 
 | 1 | Completar a família imediata | 5 | 14 | Integrados; build validado; conferência visual da página pendente |
 | 2 | Protagonistas de O Senhor dos Anéis | 24 | 38 | 24 integrados e verificados automaticamente; conferência visual da página pendente |
 | 3 | Casa de Finwë, Gondolin e Nargothrond | 20 | 58 | 20 integrados e verificados automaticamente; conferência visual da página pendente |
-| 4 | Doriath e os Grandes Contos | 20 | 78 | Planejado |
-| 5 | Segunda Era e herdeiros de Númenor | 19 | 97 | Planejado |
-| 6 | O Hobbit e a linhagem de Durin | 22 | 119 | Planejado |
-| 7 | Valar e outras figuras de Aman e da Terra-média | 21 | 140 | Planejado |
-| 8 | Completar os elos genealógicos | 10 | 150 | Planejado |
+| 4 | Doriath e os Grandes Contos | 20 | 78 | 20 integrados; Thingol e Dior refeitos |
+| 5 | Segunda Era e herdeiros de Númenor | 19 | 97 | 19 integrados; Gil-galad, Isildur, Celebrimbor, Míriel e Ar-Pharazôn com referência dos atores |
+| 6 | O Hobbit e a linhagem de Durin | 22 | 119 | 22 integrados; 14 com referência dos filmes de O Hobbit |
+| 7 | Valar e outras figuras de Aman e da Terra-média | 21 | 140 | 21 integrados; Valar e Maiar refeitos duas vezes (gênero, depois aparência divina) |
+| 8 | Completar os elos genealógicos | 10 | 150 | 10 integrados; Galathil e Amroth refeitos |
 
 Com a etapa 2, a biblioteca alcançou 38 retratos; com a etapa 3, 58. O próximo marco é chegar a 78 até a etapa 4. As etapas seguintes ampliam épocas, povos e completam as lacunas das árvores.
 
