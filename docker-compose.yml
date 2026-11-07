@@ -1,0 +1,16 @@
+# VPS: o Nginx Proxy Manager termina o HTTPS de openarda.hopecash.tech e encaminha
+# para openarda-web:80 pela rede hopecash_proxy. Nenhuma porta fica publicada no host.
+name: openarda
+
+services:
+  web:
+    image: openarda-web:latest
+    build: .
+    container_name: openarda-web
+    restart: unless-stopped
+    networks: [proxy]
+
+networks:
+  proxy:
+    external: true
+    name: hopecash_proxy

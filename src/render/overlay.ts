@@ -17,9 +17,10 @@ export interface Camadas {
   nomes: boolean;
   marcos: boolean;
   grade: boolean;
+  detalhes: boolean;
 }
 
-export const CAMADAS_PADRAO: Camadas = { reinos: true, rios: true, estradas: true, certeza: false, vestigios: true, rotas: true, nomes: true, marcos: false, grade: false };
+export const CAMADAS_PADRAO: Camadas = { reinos: true, rios: true, estradas: true, certeza: false, vestigios: true, rotas: true, nomes: true, marcos: false, grade: false, detalhes: true };
 
 const PX = 256;
 

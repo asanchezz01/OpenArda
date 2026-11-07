@@ -6,6 +6,7 @@ import { Camera } from './render/camera';
 import { Ceu } from './render/sky';
 import { aplicarIluminacao, criarUniformesCeu, luzDasArvores, regimeDe, type UniformesCeu } from './render/lighting';
 import { Rotulos } from './render/labels';
+import { DetalhesReinos } from './render/detalhes';
 import { Sobreposicao, CAMADAS_PADRAO, type Camadas } from './render/overlay';
 import { criarUniformesGlobais, type UniformesGlobais } from './terrain/material';
 import { PoolWorkers, SistemaTerreno } from './terrain/tiles';
@@ -45,6 +46,7 @@ export class App {
   private estrada: THREE.Mesh;
   private brilhos!: Record<'illuin' | 'ormal' | 'telperion' | 'laurelin', THREE.Sprite>;
   private cena = new THREE.Scene();
+  private detalhes = new DetalhesReinos();
   private modelos = new Map<string, ModeloTerreno>();
   private ouvintes: Ouvinte[] = [];
   private relogio = new THREE.Clock();
@@ -90,6 +92,7 @@ export class App {
     host.appendChild(this.renderer.domElement);
 
     this.camera = new Camera(this.renderer.domElement, host.clientWidth / host.clientHeight);
+    this.cena.add(this.detalhes.grupo);
     this.camera.reduzirMovimento = this.reduzirMovimento;
     const nw = Math.max(1, Math.min(4, (navigator.hardwareConcurrency || 4) - 1));
     this.pool = new PoolWorkers(nw);
@@ -626,6 +629,7 @@ export class App {
       r.render(this.ceu.cena, this.ceu.camera);
       this.A.sistema.grupo.visible = lado === this.A;
       this.B.sistema.grupo.visible = lado === this.B;
+      this.detalhes.atualizar(lado.t, cam, this.modeloDe(lado), lado.uniformes, this.camadas.detalhes && this.caminhoReto < 0.01);
       r.clearDepth();
       r.render(this.cena, cam);
     };

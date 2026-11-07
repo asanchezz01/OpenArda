@@ -9,6 +9,7 @@ import { fichaAqui, fichaEvento, fichaFonte, fichaFontes, fichaLugar, fichaMarco
 import { esc, guardar, h, ler, listaFontes } from './util';
 import { lerLink, montarLink } from './url';
 import { regimeDe } from '../render/lighting';
+import { faseGondolin, VISTA_GONDOLIN } from '../core/detalhes';
 
 export class Interface {
   private app: App;
@@ -57,11 +58,13 @@ export class Interface {
       <div class="menu-atalhos">
         <button type="button" data-acao="jornadas">Seguir uma jornada</button>
         <button type="button" data-acao="eras">Escolher uma era</button>
+        <button type="button" data-acao="gondolin-3d">Visitar Gondolin em 3D</button>
         <button type="button" data-acao="fontes">Fontes e método</button>
       </div>
       <h2>Camadas</h2>
       ${chk('nomes', 'Nomes')}
       ${chk('reinos', 'Reinos e fronteiras', 'domínio, ocupação, influência')}
+      ${chk('detalhes', 'Detalhes dos reinos em 3D', 'Gondolin: aproxime para ver a cidade e suas ruínas')}
       ${chk('rios', 'Rios')}
       ${chk('estradas', 'Estradas')}
       ${chk('vestigios', 'Lugares desaparecidos', 'antigas posições e contornos')}
@@ -212,6 +215,11 @@ export class Interface {
     };
     a.aoEventosCruzados = (evs) => this.eventosCruzados(evs);
     a.ouvir((m) => {
+      if (m === 'camadas') {
+        this.camadasEl.querySelectorAll<HTMLInputElement>('[data-camada]').forEach((el) => {
+          el.checked = a.camadas[el.dataset.camada as keyof typeof a.camadas];
+        });
+      }
       if (m === 'selecao' || m === 'tempo' || m === 'comparar' || m === 'jornada' || m === 'trava' || m === 'caminho-reto') {
         this.atualizarPainel();
         this.atualizarJornada();
@@ -376,6 +384,25 @@ export class Interface {
     const a = this.app;
     const tNum = (v?: string) => (v != null && v !== '' ? Number(v) : null);
     switch (acao) {
+      case 'gondolin-3d': {
+        if (a.travado) {
+          this.aviso('Enquadramento fixo: destrave para visitar Gondolin em 3D.');
+          break;
+        }
+        a.sairJornada();
+        a.sairCaminhoReto();
+        a.definirCamada('detalhes', true);
+        if (!faseGondolin(a.t)) a.definirTempo(tempo.cursor('PE:400'));
+        this.fecharInicio();
+        this.camadasEl.hidden = true;
+        document.getElementById('btn-camadas')!.setAttribute('aria-expanded', 'false');
+        this.fecharPainel();
+        const viewport = a.retanguloDe(a.ladoAtual());
+        a.voar({ ...VISTA_GONDOLIN, d: VISTA_GONDOLIN.d / Math.min(1, viewport.width / viewport.height) });
+        a.renderer.domElement.focus({ preventScroll: true });
+        this.aviso('Gondolin em 3D · Reconstrução artística. A linha do tempo alterna construção, cidade íntegra e ruínas.', 7000);
+        break;
+      }
       case 'sel':
         this.abrir(d.sel, d.sel.startsWith('lugar:') || d.sel.startsWith('reino:'));
         break;

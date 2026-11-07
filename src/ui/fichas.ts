@@ -119,6 +119,8 @@ export function fichaLugar(app: App, l: Lugar): string {
   </header>
   <p class="resumo">${esc(l.resumo)}</p>`;
 
+  if (l.id === 'gondolin') html += detalheGondolin();
+
   if (l.id === 'ezellohar') {
     const f = app.faseArvores();
     html += `<section class="bloco arvores">
@@ -221,6 +223,7 @@ export function fichaReino(app: App, r: Reino): string {
     <dt>Período de existência</dt><dd>${esc(r.periodo_texto)}</dd>
     ${r.governantes?.length ? `<dt>Governantes</dt><dd>${r.governantes.map((g) => `${esc(g.nome)}${g.nota ? ` <span class="nota">(${esc(g.nota)})</span>` : ''}`).join('<br>')}</dd>` : ''}
   </dl>
+  ${r.id === 'gondolin' ? detalheGondolin() : ''}
   <section class="bloco"><h3>Origem</h3><p>${esc(r.origem)}</p>${fund ? `<p><button type="button" class="link" data-acao="evento" data-id="${fund.id}">${esc(fund.titulo)}</button> <span class="data">${esc(tempo.dataEvento(fund))}</span></p>` : ''}</section>
   <section class="bloco"><h3>Principais transformações</h3><ol class="fases">${r.transformacoes
     .map((x) => {
@@ -259,6 +262,16 @@ export function fichaReino(app: App, r: Reino): string {
   html += `<section class="bloco"><h3>Fontes</h3>${listaFontes(r.fontes)}${r.territorios.flatMap((x) => x.fontes ?? []).length ? listaFontes(r.territorios.flatMap((x) => x.fontes ?? [])) : ''}</section>
   <div class="acoes rodape"><button type="button" data-acao="voar" data-x="${r.em[0]}" data-y="${r.em[1]}" data-d="900">Ir para ${esc(r.nome)}</button><button type="button" data-acao="compartilhar">Copiar link desta vista</button></div>`;
   return html;
+}
+
+function detalheGondolin(): string {
+  return `<section class="bloco destaque">
+    <h3>Gondolin em 3D</h3>
+    <p>Explore as muralhas, os bairros, as fontes e a Torre do Rei sobre Amon Gwareth. Glingal e Belthil aparecem no pátio de Turgon.</p>
+    <p class="nota">Reconstrução artística: traçado urbano, escala, arquitetura e ruínas são interpretativos. Os sete portões de Orfalch Echor ficam nas montanhas e ainda não estão modelados.</p>
+    <div class="acoes"><button type="button" class="primario" data-acao="gondolin-3d">Explorar cidade em 3D</button></div>
+    <p class="nota">52–115 P.E.: em construção · 116–509: íntegra · 510–586: ruínas. A partir de 587, a cidade fica submersa e o modelo é ocultado. Fora desses períodos, a visita abre em 400 P.E.</p>
+  </section>`;
 }
 
 export function fichaEvento(app: App, e: Evento): string {

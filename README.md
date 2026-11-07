@@ -23,6 +23,8 @@ A pasta `dist/` é estática e pode ser publicada em qualquer servidor de arquiv
 
 ## O que já dá para fazer
 
+- **Detalhes dos reinos em 3D — Gondolin.** Em *Camadas e legenda*, escolha *Visitar Gondolin em 3D*. A cidade aparece sobre Amon Gwareth com muralhas, torres, bairros, jardins e fontes. A linha do tempo mostra obras (52–115 P.E.), a cidade íntegra (116–509), ruínas (510–586) e a submersão a partir de 587. A comparação entre épocas também inclui os modelos. A arquitetura é uma reconstrução artística. Veja o [roadmap dos principais reinos](docs/ROADMAP-REINOS-3D.md).
+
 - **Abertura em Aman, nos Anos das Árvores.** A câmera mostra a costa de Aman em vista oblíqua, com Tol Eressëa em primeiro plano e as Pelóri ao fundo. Você controla a câmera desde o primeiro instante. O cartão de abertura oferece três ações: *Explorar livremente*, *Escolher uma era* e *Seguir uma jornada*.
 - **Luz das Duas Árvores.** Telperion (prata) e Laurelin (ouro) alternam num ciclo de 12 horas, com uma hora de mistura em cada troca. O controle "Hora das Árvores" fica na linha do tempo. Para cada ponto de Aman, o atlas calcula se a luz chega até ele percorrendo o relevo na direção de Ezellohar. Por isso ela passa pela Calacirya, ilumina a margem oeste de Tol Eressëa e deixa Araman e Avathar na sombra das Pelóri. Toque em Ezellohar para alternar entre o florescimento e o escurecimento.
 - **Câmera.** Orbitar, inclinar, girar, aproximar no cursor ou com pinça, e voar até um destino buscado, em arco, como num globo virtual.
