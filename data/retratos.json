@@ -2199,6 +2199,12 @@
     "referencia_cinematografica_pendente": {
       "ator": "Mark Ferguson",
       "filme": "The Lord of the Rings: The Fellowship of the Ring (2001)"
+    },
+    "imagem": "retratos/gilgalad.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 108353680165355
     }
   },
   {
@@ -2221,6 +2227,12 @@
     "referencia_cinematografica_pendente": {
       "ator": "Michael Elsworth",
       "filme": "The Lord of the Rings: The Fellowship of the Ring (2001)"
+    },
+    "imagem": "retratos/cirdan.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 179773614146439
     }
   },
   {
@@ -2244,6 +2256,12 @@
     "referencia_cinematografica_pendente": {
       "ator": "Peter McKenzie",
       "filme": "The Lord of the Rings: The Fellowship of the Ring (2001)"
+    },
+    "imagem": "retratos/elendil.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 59580530471750
     }
   },
   {
@@ -2267,6 +2285,12 @@
     "referencia_cinematografica_pendente": {
       "ator": "Harry Sinclair",
       "filme": "The Lord of the Rings: The Fellowship of the Ring (2001)"
+    },
+    "imagem": "retratos/isildur.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 260146133549812
     }
   },
   {
@@ -2285,7 +2309,13 @@
         "local": "I (iv). Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Anárion"
+    "alt": "Retrato artístico de Anárion",
+    "imagem": "retratos/anarion.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 213639794608100
+    }
   },
   {
     "id": "arpharazon",
@@ -2321,7 +2351,13 @@
         "local": "Akallabêth. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Amandil"
+    "alt": "Retrato artístico de Amandil",
+    "imagem": "retratos/amandil.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 157525648630080
+    }
   },
   {
     "id": "meneldil",
@@ -2339,7 +2375,13 @@
         "local": "I (iv). Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Meneldil"
+    "alt": "Retrato artístico de Meneldil",
+    "imagem": "retratos/meneldil.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 270374381755179
+    }
   },
   {
     "id": "valandil",
@@ -2357,7 +2399,13 @@
         "local": "I (iii). Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Valandil"
+    "alt": "Retrato artístico de Valandil",
+    "imagem": "retratos/valandil.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 142954593901670
+    }
   },
   {
     "id": "arathorn",
@@ -2375,7 +2423,13 @@
         "local": "I (v). Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Arathorn II"
+    "alt": "Retrato artístico de Arathorn II",
+    "imagem": "retratos/arathorn.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 233790141961222
+    }
   },
   {
     "id": "gilraen",
@@ -2393,7 +2447,13 @@
         "local": "I (v). Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Gilraen"
+    "alt": "Retrato artístico de Gilraen",
+    "imagem": "retratos/gilraen.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 140890734663553
+    }
   },
   {
     "id": "celebrian",
@@ -2411,7 +2471,13 @@
         "local": "I (v). Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Celebrían"
+    "alt": "Retrato artístico de Celebrían",
+    "imagem": "retratos/celebrian.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 215886877380153
+    }
   },
   {
     "id": "elladan",
@@ -2429,7 +2495,13 @@
         "local": "O Retorno do Rei, Livro V, cap. 2. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Elladan"
+    "alt": "Retrato artístico de Elladan",
+    "imagem": "retratos/elladan.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 157497495221830
+    }
   },
   {
     "id": "elrohir",
@@ -2447,7 +2519,13 @@
         "local": "O Retorno do Rei, Livro V, cap. 2. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Elrohir"
+    "alt": "Retrato artístico de Elrohir",
+    "imagem": "retratos/elrohir.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 23295659235011
+    }
   },
   {
     "id": "eldarion",
@@ -2465,7 +2543,13 @@
         "local": "I (v). Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Eldarion"
+    "alt": "Retrato artístico de Eldarion",
+    "imagem": "retratos/eldarion.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 173319894504604
+    }
   },
   {
     "id": "tar-aldarion",
@@ -2483,7 +2567,13 @@
         "local": "Parte II, cap. 2. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Tar-Aldarion"
+    "alt": "Retrato artístico de Tar-Aldarion",
+    "imagem": "retratos/tar-aldarion.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 164348417487576
+    }
   },
   {
     "id": "erendis",
@@ -2501,7 +2591,13 @@
         "local": "Parte II, cap. 2. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Erendis"
+    "alt": "Retrato artístico de Erendis",
+    "imagem": "retratos/erendis.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 245407073318749
+    }
   },
   {
     "id": "tar-ancalime",
@@ -2519,7 +2615,13 @@
         "local": "Parte II, cap. 2. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Tar-Ancalimë"
+    "alt": "Retrato artístico de Tar-Ancalimë",
+    "imagem": "retratos/tar-ancalime.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 178444698181152
+    }
   },
   {
     "id": "tar-miriel",
@@ -2560,6 +2662,12 @@
     "referencia_cinematografica_pendente": {
       "ator": "Richard Armitage",
       "filme": "The Hobbit (2012–2014)"
+    },
+    "imagem": "retratos/thorin.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 160322053848494
     }
   },
   {
@@ -2838,6 +2946,12 @@
     "referencia_cinematografica_pendente": {
       "ator": "Stephen Hunter",
       "filme": "The Hobbit (2012–2014)"
+    },
+    "imagem": "retratos/bombur.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 157573035897987
     }
   },
   {
@@ -2861,6 +2975,12 @@
     "referencia_cinematografica_pendente": {
       "ator": "Billy Connolly",
       "filme": "The Hobbit (2012–2014)"
+    },
+    "imagem": "retratos/dain.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 156277454183356
     }
   },
   {
@@ -2884,6 +3004,12 @@
     "referencia_cinematografica_pendente": {
       "ator": "Luke Evans",
       "filme": "The Hobbit (2012–2014)"
+    },
+    "imagem": "retratos/bard.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 61478210331786
     }
   },
   {
@@ -2929,6 +3055,12 @@
     "referencia_cinematografica_pendente": {
       "ator": "Mikael Persbrandt",
       "filme": "The Hobbit (2012–2014)"
+    },
+    "imagem": "retratos/beorn.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 160355322512383
     }
   },
   {
@@ -2947,7 +3079,13 @@
         "local": "III O Povo de Durin. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Durin, o Imortal"
+    "alt": "Retrato artístico de Durin, o Imortal",
+    "imagem": "retratos/durin.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 244997291679235
+    }
   },
   {
     "id": "thror",
@@ -2970,6 +3108,12 @@
     "referencia_cinematografica_pendente": {
       "ator": "Jeffrey Thomas",
       "filme": "The Hobbit (2012–2014)"
+    },
+    "imagem": "retratos/thror.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 122231480070852
     }
   },
   {
@@ -2993,6 +3137,12 @@
     "referencia_cinematografica_pendente": {
       "ator": "Michael Mizrahi",
       "filme": "The Hobbit (2012–2014)"
+    },
+    "imagem": "retratos/thrain.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 139032978866169
     }
   },
   {
@@ -3016,6 +3166,12 @@
     "referencia_cinematografica_pendente": {
       "ator": "Manu Bennett",
       "filme": "The Hobbit (2012–2014)"
+    },
+    "imagem": "retratos/azog.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 15950833140506
     }
   },
   {
@@ -3039,6 +3195,12 @@
     "referencia_cinematografica_pendente": {
       "ator": "John Tui",
       "filme": "The Hobbit (2012–2014)"
+    },
+    "imagem": "retratos/bolg.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 3885827372988
     }
   },
   {
@@ -3402,6 +3564,12 @@
     "referencia_cinematografica_pendente": {
       "ator": "Sylvester McCoy",
       "filme": "The Hobbit (2012–2014)"
+    },
+    "imagem": "retratos/radagast.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 246123898343519
     }
   },
   {
@@ -3419,7 +3587,13 @@
         "local": "A Sociedade do Anel, Livro I, cap. 6. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Tom Bombadil"
+    "alt": "Retrato artístico de Tom Bombadil",
+    "imagem": "retratos/tom-bombadil.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 264661429069698
+    }
   },
   {
     "id": "fruta-douro",
@@ -3436,7 +3610,13 @@
         "local": "A Sociedade do Anel, Livro I, cap. 7. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Fruta d'Ouro"
+    "alt": "Retrato artístico de Fruta d'Ouro",
+    "imagem": "retratos/fruta-douro.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 232699468415840
+    }
   },
   {
     "id": "elmo",
@@ -3454,7 +3634,13 @@
         "local": "Parte II, cap. 4. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Elmo"
+    "alt": "Retrato artístico de Elmo",
+    "imagem": "retratos/elmo.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 128833409745410
+    }
   },
   {
     "id": "galadhon",
@@ -3472,7 +3658,13 @@
         "local": "Parte II, cap. 4. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Galadhon"
+    "alt": "Retrato artístico de Galadhon",
+    "imagem": "retratos/galadhon.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 148624260980695
+    }
   },
   {
     "id": "galathil",
@@ -3508,7 +3700,13 @@
         "local": "Quenta, cap. 22. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Eluréd"
+    "alt": "Retrato artístico de Eluréd",
+    "imagem": "retratos/elured.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 253556121062293
+    }
   },
   {
     "id": "elurin",
@@ -3526,7 +3724,13 @@
         "local": "Quenta, cap. 22. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Elurín"
+    "alt": "Retrato artístico de Elurín",
+    "imagem": "retratos/elurin.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 104484432337417
+    }
   },
   {
     "id": "galdor",
@@ -3544,7 +3748,13 @@
         "local": "Quenta, cap. 18. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Galdor"
+    "alt": "Retrato artístico de Galdor",
+    "imagem": "retratos/galdor.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 22938630010162
+    }
   },
   {
     "id": "amdir",
@@ -3562,7 +3772,13 @@
         "local": "Parte II, cap. 4. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Amdír"
+    "alt": "Retrato artístico de Amdír",
+    "imagem": "retratos/amdir.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 26785479195560
+    }
   },
   {
     "id": "amroth",
@@ -3598,7 +3814,13 @@
         "local": "The Shibboleth of Fëanor. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Findis"
+    "alt": "Retrato artístico de Findis",
+    "imagem": "retratos/findis.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 119372047441984
+    }
   },
   {
     "id": "lalwen",
@@ -3616,6 +3838,12 @@
         "local": "The Shibboleth of Fëanor. Consulta por conhecimento prévio da obra."
       }
     ],
-    "alt": "Retrato artístico de Írimë (Lalwen)"
+    "alt": "Retrato artístico de Írimë (Lalwen)",
+    "imagem": "retratos/lalwen.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 206239933412592
+    }
   }
 ]

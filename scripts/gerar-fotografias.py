@@ -31,6 +31,7 @@ PUBLICO = ROOT / 'public' / 'fotografias'
 CADASTRO = ROOT / 'data' / 'fotografias.json'
 FINAL = {'pasta': 'fotografias', 'tamanho': (1536, 1024), 'kib': 250, 'qualidades': (82, 76, 70)}
 RETRATOS = False
+FORCAR = False
 
 
 def modo_retratos():
@@ -63,7 +64,8 @@ def carregar(etapa):
     if RETRATOS:  # prompts completos por personagem, no formato das etapas anteriores dos retratos
         dados = json.loads((ROOT / 'docs' / f'retratos-etapa-{etapa}-prompts.json').read_text(encoding='utf-8'))
         largura, altura = dados.get('geracao', {}).get('resolucao', [1024, 1024])
-        return {p['id']: {'prompt': p['prompt'], 'tamanho': (largura, altura)} for p in dados['personagens']}
+        return {p['id']: {'prompt': p['prompt'], 'tamanho': (largura, altura),
+                          'referencia': ROOT / p['referencia']['arquivo'] if p.get('referencia') else None} for p in dados['personagens']}
     arq = ROOT / 'docs' / f'fotografias-etapa-{etapa}-prompts.json'
     dados = json.loads(arq.read_text(encoding='utf-8'))
     largura, altura = dados['tamanho']
@@ -109,9 +111,9 @@ def chamar(url, caminho, dados=None, cabecalhos=None, prazo=60):
         return r.read()
 
 
-def grafo(prompt, largura, altura, semente, prefixo):
-    """FLUX.2 klein de texto para imagem (mesmos nós dos modelos oficiais do ComfyUI)."""
-    return {
+def grafo(prompt, largura, altura, semente, prefixo, referencia=None):
+    """FLUX.2 klein de texto para imagem; com referência, a imagem entra como ReferenceLatent (fluxo de edição do HopeGym)."""
+    g = {
         'unet': {'class_type': 'UNETLoader', 'inputs': {'unet_name': MODELO['unet'], 'weight_dtype': 'default'}},
         'clip': {'class_type': 'CLIPLoader', 'inputs': {'clip_name': MODELO['clip'], 'type': 'flux2'}},
         'vae': {'class_type': 'VAELoader', 'inputs': {'vae_name': 'flux2-vae.safetensors'}},
@@ -128,12 +130,34 @@ def grafo(prompt, largura, altura, semente, prefixo):
         'decode': {'class_type': 'VAEDecode', 'inputs': {'samples': ['sample', 0], 'vae': ['vae', 0]}},
         'save': {'class_type': 'SaveImage', 'inputs': {'images': ['decode', 0], 'filename_prefix': prefixo}},
     }
+    if referencia:
+        g['ref_load'] = {'class_type': 'LoadImage', 'inputs': {'image': referencia}}
+        g['ref_scale'] = {'class_type': 'ImageScaleToTotalPixels', 'inputs': {'image': ['ref_load', 0], 'upscale_method': 'lanczos', 'megapixels': 1.0, 'resolution_steps': 1}}
+        g['ref_enc'] = {'class_type': 'VAEEncode', 'inputs': {'pixels': ['ref_scale', 0], 'vae': ['vae', 0]}}
+        g['pos_ref'] = {'class_type': 'ReferenceLatent', 'inputs': {'conditioning': ['pos', 0], 'latent': ['ref_enc', 0]}}
+        g['neg_ref'] = {'class_type': 'ReferenceLatent', 'inputs': {'conditioning': ['neg', 0], 'latent': ['ref_enc', 0]}}
+        g['guider']['inputs']['positive'] = ['pos_ref', 0]
+        g['guider']['inputs']['negative'] = ['neg_ref', 0]
+    return g
+
+
+def enviar(url, caminho):
+    """Envia a imagem de referência ao ComfyUI e devolve o nome no servidor."""
+    limite = uuid.uuid4().hex
+    nome = f'openarda-{caminho.stem}-{uuid.uuid4().hex[:8]}{caminho.suffix}'
+    crlf = chr(13) + chr(10)
+    corpo = b''.join([
+        f'--{limite}{crlf}Content-Disposition: form-data; name="overwrite"{crlf}{crlf}true{crlf}'.encode(),
+        f'--{limite}{crlf}Content-Disposition: form-data; name="image"; filename="{nome}"{crlf}Content-Type: application/octet-stream{crlf}{crlf}'.encode(),
+        caminho.read_bytes(), f'{crlf}--{limite}--{crlf}'.encode()])
+    return json.loads(chamar(url, '/upload/image', corpo, {'Content-Type': f'multipart/form-data; boundary={limite}'}))['name']
 
 
 def gerar_comfy(url, foto_id, foto, saida):
     semente = random.randrange(2**48)
     largura, altura = foto['tamanho']
-    corpo = json.dumps({'prompt': grafo(foto['prompt'], largura, altura, semente, f'openarda/{foto_id}'), 'client_id': uuid.uuid4().hex}).encode()
+    ref = enviar(url, foto['referencia']) if foto.get('referencia') else None
+    corpo = json.dumps({'prompt': grafo(foto['prompt'], largura, altura, semente, f'openarda/{foto_id}', ref), 'client_id': uuid.uuid4().hex}).encode()
     try:
         pid = json.loads(chamar(url, '/prompt', corpo, {'Content-Type': 'application/json'}))['prompt_id']
     except urllib.error.HTTPError as e:
@@ -151,7 +175,8 @@ def gerar_comfy(url, foto_id, foto, saida):
     img = item['outputs']['save']['images'][0]
     consulta = urllib.parse.urlencode({'filename': img['filename'], 'subfolder': img['subfolder'], 'type': img['type']})
     saida.write_bytes(chamar(url, f'/view?{consulta}'))
-    return {'motor': 'comfyui', 'servidor': url, 'modelo': MODELO['unet'], 'semente': semente, 'segundos': round(time.time() - inicio)}
+    return {'motor': 'comfyui', 'servidor': url, 'modelo': MODELO['unet'], 'semente': semente, 'segundos': round(time.time() - inicio),
+            **({'referencia': str(foto['referencia'].relative_to(ROOT))} if foto.get('referencia') else {})}
 
 
 def comfy_disponiveis():
@@ -211,7 +236,7 @@ def gerar(fotos, ids, n_variacoes, motor):
     tarefas = []
     for foto_id in ids:
         pasta(foto_id).mkdir(parents=True, exist_ok=True)
-        if aprovada(foto_id):
+        if aprovada(foto_id) and not FORCAR:  # --forcar: gera de novo sem apagar o aprovado até a nova aprovação
             continue
         faltam = n_variacoes - len(variacoes(foto_id))
         tarefas += [foto_id] * max(0, faltam)
@@ -341,6 +366,10 @@ def main():
             return valor
         return padrao
 
+    global FORCAR
+    if '--forcar' in args:
+        args.remove('--forcar')
+        FORCAR = True
     if '--retratos' in args:
         args.remove('--retratos')
         modo_retratos()
