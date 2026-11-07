@@ -2,6 +2,8 @@
 
 Atualizado em **7 de novembro de 2026**. Plano de produção para o OpenArda, começando pela família de Fëanor e expandindo para os personagens centrais de *O Silmarillion*, *O Hobbit*, *O Senhor dos Anéis* e textos complementares do legendário.
 
+**Preferência visual do usuário para a etapa 2 e seguintes:** usar os rostos dos atores dos filmes dirigidos por Peter Jackson como referência sempre que houver uma interpretação correspondente. Essa preferência também está registrada em [AGENTS.md](../AGENTS.md) para orientar as próximas sessões de trabalho. Substitui a orientação anterior que evitava semelhança com atores; os prompts e retratos das etapas já entregues permanecem como histórico.
+
 ## Ponto de partida e objetivo
 
 O catálogo local contém **75 personagens** em [data/linhagens.json](../data/linhagens.json). Há **14 retratos criados e cadastrados na interface** em [data/retratos.json](../data/retratos.json), cobrindo as etapas 0 e 1. A etapa 1 foi validada por testes de renderização, build e carregamento dos arquivos; a conferência visual da página no navegador continua pendente por falha da automação. Veja a [entrega da etapa 1](RETRATOS-ETAPA-1.md).
@@ -44,7 +46,7 @@ Até a etapa 2, a biblioteca terá 38 personagens; até a etapa 4, 78. Esses sã
 
 **Personagens (24):** Galadriel; Celeborn; Elrond; Arwen; Aragorn II Elessar; Frodo; Samwise Gamgi; Meriadoc Brandebuque; Peregrin Tûk; Gandalf; Legolas; Gimli; Boromir; Bilbo; Faramir; Denethor II; Théoden; Éomer; Éowyn; Saruman; Gollum/Sméagol; Sauron; Rei-bruxo de Angmar; Gríma Língua de Cobra.
 
-**Entrega:** Oferecer cedo os rostos mais reconhecíveis da narrativa da Terceira Era.
+**Entrega:** Oferecer cedo os rostos mais reconhecíveis da narrativa da Terceira Era, com semelhança facial aos intérpretes dos filmes de Peter Jackson. Antes de cada lote, conferir ator, personagem, filme e fase de vida representada.
 
 ### Etapa 3 — Casa de Finwë, Gondolin e Nargothrond
 
@@ -102,14 +104,18 @@ O lote **Finwë → Míriel → Indis → Mahtan → Celebrimbor** foi criado pr
 2. **Levantar características explícitas.** Registrar cabelo, olhos, pele, idade aparente, barba, cicatrizes e traços particulares somente quando sustentados pela passagem consultada. Citar obra, capítulo/seção, edição e página quando disponível; não inventar referências.
 3. **Separar descrição de inferência.** Na falta de descrição individual, usar variações dos parentes com ligação documentada. Se nenhum parente fornecer base suficiente, registrar a escolha como reconstrução artística. “Não localizado nas fontes consultadas” é diferente de “Tolkien nunca descreveu”.
 4. **Tratar divergências.** Manter a narrativa genealógica do projeto, que segue o *Silmarillion* publicado, e identificar complementos ou versões alternativas. Uma mudança de ascendência entre versões não deve ser aplicada silenciosamente só para justificar uma aparência.
-5. **Gerar e revisar em família.** Usar as imagens aprovadas como referência, mantendo semelhanças reconhecíveis e diferenças individuais. Adoção, tutela, casamento e pertencer ao mesmo povo não demonstram parentesco biológico; não derivar o rosto de Elrond do de Maglor por sua criação.
-6. **Registrar a decisão.** Reutilizar os campos existentes de características documentadas, inferidas, fontes e notas de versão em `data/retratos.json`, além de guardar os prompts e as imagens de referência.
+5. **Escolher a referência facial e revisar em família.** Quando houver interpretação nos filmes dirigidos por Peter Jackson, priorizar o ator caracterizado como o personagem. Usar as imagens dos parentes para orientar semelhanças sem apagar essa identidade. Sem interpretação correspondente, seguir as fontes e os parentes aprovados. Adoção, tutela, casamento e pertencer ao mesmo povo não demonstram parentesco biológico; não derivar o rosto de Elrond do de Maglor por sua criação.
+6. **Registrar a decisão.** Reutilizar os campos existentes de características documentadas, inferidas, fontes e notas de versão em `data/retratos.json`, além de guardar os prompts e as imagens de referência. Para referências cinematográficas, registrar no documento do lote o ator, o personagem, o filme, a época visual e a origem da imagem consultada. Distinguir essa base das características descritas por Tolkien.
 
 A pesquisa deve partir das obras e consultar Tolkien Gateway ou Encyclopedia of Arda para localizar remissões. Priorizar *O Senhor dos Anéis* e apêndices, *O Hobbit*, *O Silmarillion* e *Contos Inacabados*; conforme o personagem, consultar *Os Filhos de Húrin*, *Beren e Lúthien*, *A Queda de Gondolin*, *The History of Middle-earth*, *The Nature of Middle-earth*, cartas e notas linguísticas. Registrar se a obra foi consultada diretamente ou apenas por fonte secundária.
 
 ## Direção visual comum
 
-Preservar a direção dos nove retratos de Fëanor: realismo fotográfico, textura de pele natural, iluminação suave, fundo discreto e enquadramento que funcione em miniatura. Produzir primeiro **um retrato principal por personagem**, com geometria facial própria, sem usar o rosto de um ator como definição do personagem.
+Preservar a direção dos nove retratos de Fëanor: realismo fotográfico, textura de pele natural, iluminação suave, fundo discreto e enquadramento que funcione em miniatura. Produzir primeiro **um retrato principal por personagem**, usando, a partir da etapa 2, o rosto do ator que o interpretou nos filmes dirigidos por Peter Jackson sempre que houver correspondência. Buscar semelhança reconhecível com a caracterização da época do filme, em vez de usar automaticamente uma fotografia recente do ator.
+
+As características literárias continuam registradas com suas fontes. Quando a caracterização cinematográfica trouxer escolhas próprias, identificá-las como referência dos filmes. Para personagens sem interpretação nesses filmes, manter a reconstrução literária e familiar, sem atribuir atores por associação ou importar automaticamente o elenco de outras adaptações.
+
+Personagens com próteses, CGI, rosto oculto ou invisível exigem referência à aparência que têm na tela. O rosto humano de quem fez voz ou captura de movimento não substitui automaticamente a identidade visual do personagem. Uma mudança de ator entre fases da vida deve acompanhar a época escolhida para o retrato.
 
 As semelhanças familiares devem orientar os traços, sem impor a mesma cor de cabelo, a mesma idade aparente ou o mesmo formato de rosto a toda a família. Não aplicar olhos cinzentos, cabelo longo ou um único tom de pele como regra automática de todos os elfos, homens ou outros povos.
 
@@ -121,7 +127,7 @@ Comparar cada lote com os parentes e com personagens sem parentesco. Conferir a 
 | --- | --- |
 | Celegorm | Preservar o retrato atual e sua nota de versão sobre cabelo dourado; novas fontes não devem apagar a decisão registrada. |
 | Amrod e Amras | Preservar a distinção visual e a nota sobre versões dos gêmeos; semelhança não exige duplicar a imagem. |
-| Legolas | Não tratar o cabelo loiro das adaptações como descrição individual confirmada. Se a escolha vier de Thranduil, identificá-la como inferência por parentesco. [Referência](https://tolkiengateway.net/wiki/Elven_characteristics). |
+| Legolas | Usar o intérprete dos filmes de Jackson como referência facial. Se mantido o cabelo loiro da caracterização, identificá-lo como escolha cinematográfica, sem apresentá-lo como descrição individual confirmada por Tolkien. [Referência](https://tolkiengateway.net/wiki/Elven_characteristics). |
 | Galadriel | Preservar o dourado com prata descrito para o cabelo, em vez de reduzi-lo a loiro genérico. [Referência](https://tolkiengateway.net/wiki/Hair_of_Galadriel). |
 | Sauron | Escolher a manifestação e a época antes de gerar; Annatar e o Senhor do Escuro não são identidades diferentes no catálogo. Não adotar automaticamente o Olho cinematográfico como único retrato. [Referência](https://tolkiengateway.net/wiki/Sauron#Physical_form). |
 | Gandalf | Manter uma identidade facial entre o Cinzento e o Branco; uma segunda imagem só entra quando a interface puder mostrar a diferença temporal. |
@@ -140,7 +146,7 @@ Reutilizar o fluxo já iniciado no projeto, sem criar um gerador ou serviço de 
 | Passo | Entrega verificável |
 | --- | --- |
 | Pesquisa | Ficha de cada personagem com identidade, época, características, fontes e decisões de versão. |
-| Briefing visual | Prompt por personagem, referências familiares e diferenças que devem ser preservadas. |
+| Briefing visual | Prompt por personagem, referência do ator e da caracterização nos filmes de Jackson quando houver correspondência, referências familiares e diferenças que devem ser preservadas. |
 | Geração | Uma imagem principal por personagem; refazer apenas imagens com defeito ou desacordo com o briefing. |
 | Preparação | Arquivo final WebP de 512 × 512; preservar a imagem de origem e registrar o prompt usado. |
 | Cadastro | Entrada em `data/retratos.json` ligada ao ID correto de `data/linhagens.json`. Novos personagens recebem ficha e fontes antes de aparecerem na árvore; parentes desconhecidos podem permanecer ausentes. |
@@ -158,6 +164,7 @@ Usar **100 KiB por WebP** como alvo inicial de otimização, conferindo a qualid
 - Todos os personagens do lote têm imagem, cadastro e época de referência definidos.
 - Cada característica foi classificada como documentada, inferida ou reconstrução artística; divergências relevantes têm nota.
 - Os parentes apresentam semelhanças coerentes, com rostos distintos e sem contradizer características explícitas.
+- Quando houver interpretação nos filmes dirigidos por Peter Jackson, a referência facial e a caracterização usadas estão registradas; diferenças entre livro e filme são identificadas pela origem.
 - Nomes alternativos não duplicam personagens e nenhum vínculo genealógico foi inventado para justificar o retrato.
 - As imagens funcionam em miniatura e na ficha, com texto alternativo e carregamento correto.
 - A integração passa pelas verificações do projeto pertinentes aos arquivos alterados. A pesquisa e a criação da imagem, isoladamente, não bastam para marcar a integração como concluída.
