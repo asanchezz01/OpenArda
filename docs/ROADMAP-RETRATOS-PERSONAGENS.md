@@ -4,23 +4,25 @@ Atualizado em **7 de novembro de 2026**. Plano de produção para o OpenArda, co
 
 **Preferência visual do usuário para a etapa 2 e seguintes:** usar os rostos dos atores dos filmes dirigidos por Peter Jackson como referência sempre que houver uma interpretação correspondente. Essa preferência também está registrada em [AGENTS.md](../AGENTS.md) para orientar as próximas sessões de trabalho. Substitui a orientação anterior que evitava semelhança com atores; os prompts e retratos das etapas já entregues permanecem como histórico.
 
+**Preferência de geração atualizada pelo usuário:** usar primeiro a API local configurada no HopeGym (ComfyUI). Se ela estiver indisponível, preferir a API de imagens do GPT. Reutilizar a configuração/cliente existente, sem acrescentar um serviço de geração ao OpenArda nem alterar os dados do HopeGym. Registrar modelo, seed, prompt, referências consultadas e referências efetivamente enviadas à API. Conferir os familiares lado a lado: se a referência induzir cópias do mesmo rosto, usar um briefing textual dos traços e revisar a variação antes de integrar.
+
 ## Ponto de partida e objetivo
 
-O catálogo local contém **75 personagens** em [data/linhagens.json](../data/linhagens.json). Há **14 retratos criados e cadastrados na interface** em [data/retratos.json](../data/retratos.json), cobrindo as etapas 0 e 1. A etapa 1 foi validada por testes de renderização, build e carregamento dos arquivos; a conferência visual da página no navegador continua pendente por falha da automação. Veja a [entrega da etapa 1](RETRATOS-ETAPA-1.md).
+O catálogo local contém **99 personagens** em [data/linhagens.json](../data/linhagens.json). Há **37 retratos criados e cadastrados na interface** em [data/retratos.json](../data/retratos.json): 14 das etapas 0 e 1 e 23 da etapa 2. O build, os testes de renderização e o carregamento dos arquivos foram validados; a conferência visual da página no navegador continua pendente por falha da automação. Veja as entregas da [etapa 1](RETRATOS-ETAPA-1.md) e da [etapa 2](RETRATOS-ETAPA-2.md).
 
-O plano contempla **150 personagens únicos**, incluindo todos os 75 já cadastrados. São **136 personagens ainda sem retrato neste plano**. A lista é uma seleção editorial para a biblioteca inicial, não um inventário de todos os personagens de Tolkien. Versões de um mesmo personagem e a extensão de criaturas não entram nessa contagem.
+O plano contempla **150 personagens únicos**, incluindo os 75 cadastrados no ponto de partida. São **113 personagens ainda sem retrato neste plano**, incluindo Gandalf. O catálogo também pode crescer com elos genealógicos fora desta seleção. A lista é uma seleção editorial para a biblioteca inicial, não um inventário de todos os personagens de Tolkien. Versões de um mesmo personagem e a extensão de criaturas não entram nessa contagem.
 
-**Primeira entrega de expansão realizada:** Finwë, Míriel Serindë, Indis, Mahtan e Celebrimbor. A próxima etapa prioriza os protagonistas de *O Senhor dos Anéis* antes dos elos genealógicos secundários.
+**Expansão atual:** as etapas 0 e 1 foram preservadas; a etapa 2 tem **23 de 24 retratos integrados**, com os atores de Peter Jackson como referência. Gandalf permanece pendente após recusas na geração, inclusive na tentativa pela API autorizada pelo usuário.
 
 ## Ordem das entregas
 
 As etapas indicam prioridade, sem datas prometidas. Dividir cada etapa em lotes de **4 a 6 personagens**, entregando os aprovados antes de iniciar o lote seguinte. A qualidade e a pesquisa do lote determinam o avanço.
 
-| Etapa | Escopo | Personagens na etapa | Total acumulado | Situação |
+| Etapa | Escopo | Personagens na etapa | Total acumulado previsto | Situação |
 | --- | --- | ---: | ---: | --- |
 | 0 | Fëanor e os sete filhos | 9 | 9 | Criados e cadastrados na interface |
 | 1 | Completar a família imediata | 5 | 14 | Integrados; build validado; conferência visual da página pendente |
-| 2 | Protagonistas de O Senhor dos Anéis | 24 | 38 | Planejado |
+| 2 | Protagonistas de O Senhor dos Anéis | 24 | 38 | 23 integrados e verificados automaticamente; Gandalf pendente; conferência visual da página pendente |
 | 3 | Casa de Finwë, Gondolin e Nargothrond | 20 | 58 | Planejado |
 | 4 | Doriath e os Grandes Contos | 20 | 78 | Planejado |
 | 5 | Segunda Era e herdeiros de Númenor | 19 | 97 | Planejado |
@@ -46,7 +48,7 @@ Até a etapa 2, a biblioteca terá 38 personagens; até a etapa 4, 78. Esses sã
 
 **Personagens (24):** Galadriel; Celeborn; Elrond; Arwen; Aragorn II Elessar; Frodo; Samwise Gamgi; Meriadoc Brandebuque; Peregrin Tûk; Gandalf; Legolas; Gimli; Boromir; Bilbo; Faramir; Denethor II; Théoden; Éomer; Éowyn; Saruman; Gollum/Sméagol; Sauron; Rei-bruxo de Angmar; Gríma Língua de Cobra.
 
-**Entrega:** Oferecer cedo os rostos mais reconhecíveis da narrativa da Terceira Era, com semelhança facial aos intérpretes dos filmes de Peter Jackson. Antes de cada lote, conferir ator, personagem, filme e fase de vida representada.
+**Entrega parcial realizada:** 24 personagens pesquisados, 23 retratos criados e 23 integrados/verificados automaticamente, com atores, filmes, épocas e diferenças literárias registrados. Todos os novos WebP têm 512 × 512 e menos de 100 KiB. A etapa não está concluída: Gandalf ainda não tem imagem, e a conferência visual da página depende da recuperação da automação do navegador. Consulte a [galeria e as notas da etapa 2](RETRATOS-ETAPA-2.md) e os [prompts utilizados](retratos-etapa-2-prompts.json).
 
 ### Etapa 3 — Casa de Finwë, Gondolin e Nargothrond
 
@@ -181,7 +183,7 @@ Outros nomes, como Nimrodel, Haldir, os Magos Azuis e Khamûl, podem entrar conf
 
 Este documento organiza a produção e registra a pesquisa inicial do próximo lote e de alguns casos sensíveis. **A aparência dos 150 personagens ainda não foi pesquisada individualmente**, e a presença na lista não significa que um retrato foi criado.
 
-A etapa 1 agora tem cinco novas imagens integradas pelo padrão existente, sem alteração do layout das fichas. Datas e custos das etapas restantes dependem da capacidade de produção, das revisões e das consultas às fontes.
+As etapas 0 e 1 têm 14 imagens preservadas, e a etapa 2 acrescentou 23 pelo padrão existente. Gandalf e a conferência visual da página permanecem pendentes. Datas e custos das etapas restantes dependem da capacidade de produção, das revisões e das consultas às fontes.
 
 Referência do trabalho já realizado: [galeria e notas dos retratos de Fëanor](RETRATOS-FEANOR.md).
 

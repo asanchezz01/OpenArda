@@ -15,6 +15,7 @@ import {
   reinadosDe,
   retratoDe,
   senhorioDoReino,
+  senhoriosDoLugar,
   senhoriosEm,
   senhoriosFora,
   totalDescendentes,
@@ -64,6 +65,21 @@ export function blocoGovernoReino(app: App, reinoId: string): string | null {
     ${sucessao(s, app.t)}
     <p class="nota">Toque num nome para abrir a árvore genealógica.</p>
   </section>`;
+}
+
+/** Quem governa uma cidade ou fortaleza nesta época, com a sucessão e links para as árvores. */
+export function blocoGovernoLugar(app: App, lugarId: string, reinoId?: string): string | null {
+  const t = app.t;
+  const lista = senhoriosDoLugar(lugarId, reinoId, t);
+  if (!lista.length) return null;
+  return `<section class="bloco"><h3>Quem governa nesta época</h3><ul class="senhorios">${lista
+    .map((s) => {
+      const g = governoEm(s, t);
+      return `<li><div class="senhorio-cab"><strong>${nomeComLink(s)}</strong><span class="nota">${esc(s.titulo)}</span></div>
+        ${g ? `<p class="governante">${COROA}${quem(g, 'link forte')} <span class="nota">${esc(periodo(g))}${g.nota ? ` · ${esc(g.nota)}` : ''}</span></p>` : `<p class="nota">Ninguém governava em ${esc(tempo.rotulo(t).principal)}.</p>`}
+        ${s.governos.length > 1 ? `<details><summary>Sucessão</summary>${sucessao(s, t)}</details>` : ''}</li>`;
+    })
+    .join('')}</ul><p class="nota">Toque num nome para abrir a árvore genealógica.</p></section>`;
 }
 
 /** Lista de senhorios com seus governantes no instante atual. */

@@ -1,7 +1,7 @@
 // Valida a integridade dos dados do atlas: ids únicos, referências cruzadas,
 // referências temporais, fontes existentes e campos obrigatórios.
 // Uso: npm run validate
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 
 const ler = (n) => JSON.parse(readFileSync(new URL(`../data/${n}.json`, import.meta.url), 'utf8'));
 const terreno = ler('terreno');
@@ -175,7 +175,7 @@ const linhagens = ler('linhagens');
 const retratos = ler('retratos');
 const idPessoas = ids(linhagens.pessoas, 'pessoas');
 ids(linhagens.senhorios, 'senhorios');
-const POVOS = new Set(['noldor', 'sindar', 'teleri', 'vanyar', 'maia', 'edain', 'meio', 'dunedain']);
+const POVOS = new Set(['noldor', 'sindar', 'teleri', 'vanyar', 'maia', 'edain', 'meio', 'dunedain', 'hobbit', 'anao', 'homem']);
 for (const p of linhagens.pessoas) {
   const onde = `pessoa ${p.id}`;
   if (!POVOS.has(p.povo)) erro(`${onde}: povo inválido "${p.povo}"`);
@@ -187,6 +187,7 @@ for (const p of linhagens.pessoas) {
 for (const s of linhagens.senhorios) {
   const onde = `senhorio ${s.id}`;
   if (s.reino && !idReinos.has(s.reino)) erro(`${onde}: reino desconhecido "${s.reino}"`);
+  for (const lu of s.lugares ?? []) if (!idLugares.has(lu)) erro(`${onde}: lugar desconhecido "${lu}"`);
   if (!s.reino && !s.nome) erro(`${onde}: sem nome nem reino`);
   if (!s.governos?.length) erro(`${onde}: sem governos`);
   for (const g of s.governos ?? []) {
@@ -197,7 +198,10 @@ for (const s of linhagens.senhorios) {
   }
   verificarFontes(s.fontes, onde);
 }
-for (const r of retratos) if (!idPessoas.has(r.id)) avisos.push(`retrato ${r.id}: sem pessoa em linhagens.json`);
+for (const r of retratos) {
+  if (!idPessoas.has(r.id)) avisos.push(`retrato ${r.id}: sem pessoa em linhagens.json`);
+  if (!r.imagem || !existsSync(new URL(`../public/${r.imagem}`, import.meta.url))) erro(`retrato ${r.id}: arquivo de imagem ausente`);
+}
 
 // fontes: lacunas registradas explicitamente
 for (const f of fontes) if (f.acesso === 'lacuna' && !/LACUNA/.test(f.nota)) avisos.push(`fonte ${f.id}: acesso "lacuna" sem nota explicando a lacuna`);

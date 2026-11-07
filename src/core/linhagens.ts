@@ -6,7 +6,7 @@ import retratosJson from '../../data/retratos.json';
 import type { FonteRef, TempoRef } from './types';
 import { reinoPorId, tempo } from './data';
 
-export type Povo = 'noldor' | 'sindar' | 'teleri' | 'vanyar' | 'maia' | 'edain' | 'meio' | 'dunedain';
+export type Povo = 'noldor' | 'sindar' | 'teleri' | 'vanyar' | 'maia' | 'edain' | 'meio' | 'dunedain' | 'hobbit' | 'anao' | 'homem';
 
 export const NOME_POVO: Record<Povo, string> = {
   noldor: 'Noldor',
@@ -17,6 +17,9 @@ export const NOME_POVO: Record<Povo, string> = {
   edain: 'Edain',
   meio: 'Meio-Elfo',
   dunedain: 'Dúnedain',
+  hobbit: 'Hobbits',
+  anao: 'Anões',
+  homem: 'Homens',
 };
 
 export interface Pessoa {
@@ -44,6 +47,8 @@ export interface Senhorio {
   id: string;
   nome?: string;
   reino?: string; // id em data/reinos.json
+  lugares?: string[]; // cidades e fortalezas governadas, além das do reino
+  substitui?: boolean; // enquanto governa, a cidade deixa de mostrar o governante do reino (ex.: Minas Morgul)
   onde?: string;
   titulo: string;
   governos: Governo[];
@@ -65,6 +70,17 @@ const retratoPorId = new Map((retratosJson as unknown as Retrato[]).map((r) => [
 export const retratoDe = (id: string) => retratoPorId.get(id);
 export const nomeSenhorio = (s: Senhorio) => s.nome ?? reinoPorId.get(s.reino ?? '')?.nome ?? s.id;
 export const senhorioDoReino = (reinoId: string) => senhorios.find((s) => s.reino === reinoId);
+
+/** Senhorios de uma cidade: os ligados a ela pelo nome e o do reino a que pertence. */
+export function senhoriosDoLugar(lugarId: string, reinoId: string | undefined, t: number): Senhorio[] {
+  const proprios = senhorios.filter((s) => s.lugares?.includes(lugarId));
+  const doReino = reinoId ? senhorioDoReino(reinoId) : undefined;
+  const sobrepoe = proprios.some((s) => s.substitui && governoEm(s, t));
+  const todos = doReino && !sobrepoe && !proprios.includes(doReino) ? [...proprios, doReino] : proprios;
+  // sem governo na época, um senhorio só aparece se não houver outro (para mostrar a sucessão de uma cidade caída)
+  const ativos = todos.filter((s) => governoEm(s, t));
+  return ativos.length ? ativos : todos;
+}
 
 const valido = (g: Governo, t: number) => tempo.valido(t, g.de, g.ate);
 export const governoEm = (s: Senhorio, t: number) => s.governos.find((g) => valido(g, t));

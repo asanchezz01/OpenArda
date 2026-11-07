@@ -22,7 +22,7 @@ import {
 } from '../core/data';
 import { pontoNoPoligonoPts } from '../terrain/model';
 import { esc, listaFontes, seloCert, NOME_CERT } from './util';
-import { blocoGovernoReino } from './linhagens';
+import { blocoGovernoLugar, blocoGovernoReino } from './linhagens';
 
 const NOME_STATUS: Record<string, string> = {
   ativo: 'Existe nesta época',
@@ -119,9 +119,11 @@ export function fichaLugar(app: App, l: Lugar): string {
     <p>${statusChip(st, nota)} ${seloCert(l.cert, true)}</p>
   </header>
   <p class="resumo">${esc(l.resumo)}</p>`;
+  html += blocoGovernoLugar(app, l.id, l.reino) ?? '';
 
   if (l.id === 'gondolin') html += detalheGondolin();
   if (l.id === 'minas-anor') html += detalheMinasTirith();
+  if (l.id === 'edoras') html += detalheEdoras();
 
   if (l.id === 'ezellohar') {
     const f = app.faseArvores();
@@ -227,7 +229,7 @@ export function fichaReino(app: App, r: Reino): string {
     ${r.governantes?.length && !governo ? `<dt>Governantes</dt><dd>${r.governantes.map((g) => `${esc(g.nome)}${g.nota ? ` <span class="nota">(${esc(g.nota)})</span>` : ''}`).join('<br>')}</dd>` : ''}
   </dl>
   ${governo ?? ''}
-  ${r.id === 'gondolin' ? detalheGondolin() : r.id === 'gondor' ? detalheMinasTirith() : ''}
+  ${r.id === 'gondolin' ? detalheGondolin() : r.id === 'gondor' ? detalheMinasTirith() : r.id === 'rohan' ? detalheEdoras() : ''}
   <section class="bloco"><h3>Origem</h3><p>${esc(r.origem)}</p>${fund ? `<p><button type="button" class="link" data-acao="evento" data-id="${fund.id}">${esc(fund.titulo)}</button> <span class="data">${esc(tempo.dataEvento(fund))}</span></p>` : ''}</section>
   <section class="bloco"><h3>Principais transformações</h3><ol class="fases">${r.transformacoes
     .map((x) => {
@@ -295,6 +297,16 @@ function detalheMinasTirith(): string {
     'diâmetro, casas e ruas são interpretativos; as alturas (700 pés até a Cidadela, 50 braças da Torre) seguem O Senhor dos Anéis. A forma de Minas Anor na Segunda Era não é descrita, e o modelo usa a mesma cidade em todas as épocas. O Rammas Echor e Osgiliath ainda não estão modelados.',
     'minas-tirith-3d',
     '3320 S.E.–1 T.E.: sem a Árvore Branca · 2–1635 T.E.: Árvore viva · 1636–1639: morta na peste · 1640–2871: replantada · 2872–3018: Árvore Morta · a partir de 3019: a muda de Elessar. Antes de 3320 S.E., a visita abre em 3018 T.E.',
+  );
+}
+
+function detalheEdoras(): string {
+  return detalhe3d(
+    'Edoras em 3D',
+    'Suba o caminho calçado, com o canal de água ao lado, desde o portão até a escada de pedra e o terraço verde de Meduseld, o salão de telhado dourado. Fosso, muralha e cerca de espinhos cercam a colina; as casas de madeira se espalham pela encosta.',
+    'o tamanho da colina, o número e a forma das casas e a posição do portão são interpretativos. Os túmulos dos reis seguem o Livro III (nove a oeste do caminho, os da segunda linhagem a leste) e aparecem conforme os anos de morte do Apêndice A.',
+    'edoras-3d',
+    'A partir de 2569 T.E., quando Brego conclui Meduseld. Em 2758 a colina aparece coberta pelo Longo Inverno. Os túmulos crescem a cada rei: 9 a oeste até 2759, e a leste de Fréaláf (2798) a Théoden (3019). Antes de 2569 T.E., a visita abre em 3018 T.E.',
   );
 }
 

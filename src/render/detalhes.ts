@@ -1,11 +1,12 @@
 import * as THREE from 'three';
 import type { Globo } from './globo';
-import { faseGondolin, faseMinasTirith, GONDOLIN, MINAS_TIRITH } from '../core/detalhes';
+import { EDORAS, faseEdoras, faseGondolin, faseMinasTirith, GONDOLIN, MINAS_TIRITH } from '../core/detalhes';
 import type { Lugar } from '../core/types';
 import type { ModeloTerreno } from '../terrain/model';
 import type { UniformesGlobais } from '../terrain/material';
 import { criarGondolin } from './gondolin';
 import { criarMinasTirith } from './minas-tirith';
+import { criarEdoras } from './edoras';
 
 interface Sitio {
   lugar: Lugar;
@@ -20,6 +21,7 @@ interface Sitio {
 const SITIOS: Sitio[] = [
   { lugar: GONDOLIN, fase: faseGondolin, criar: criarGondolin as Sitio['criar'], profundos: ['Amon Gwareth', 'Escadaria'], raio: 0 },
   { lugar: MINAS_TIRITH, fase: faseMinasTirith, criar: criarMinasTirith as Sitio['criar'], profundos: ['Rocha'], raio: 0.65 },
+  { lugar: EDORAS, fase: faseEdoras, criar: criarEdoras, profundos: ['Base'], raio: 0 },
 ];
 
 export class DetalhesReinos {

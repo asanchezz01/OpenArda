@@ -10,10 +10,11 @@ import { fichaLinhagem, fichaSenhorios, htmlArvoreTela } from './linhagens';
 import { esc, guardar, h, ler, listaFontes } from './util';
 import { lerLink, montarLink } from './url';
 import { regimeDe } from '../render/lighting';
-import { faseGondolin, faseMinasTirith, VISTA_GONDOLIN, VISTA_MINAS_TIRITH } from '../core/detalhes';
+import { faseEdoras, faseGondolin, faseMinasTirith, VISTA_EDORAS, VISTA_GONDOLIN, VISTA_MINAS_TIRITH } from '../core/detalhes';
 
 const VISITAS_3D: Record<string, { nome: string; fase: (t: number) => string | null; vista: Vista; padrao: string; aviso: string }> = {
   'gondolin-3d': { nome: 'Gondolin', fase: faseGondolin, vista: VISTA_GONDOLIN, padrao: 'PE:400', aviso: 'Gondolin em 3D · Reconstrução artística. A linha do tempo alterna construção, cidade íntegra e ruínas.' },
+  'edoras-3d': { nome: 'Edoras', fase: faseEdoras, vista: VISTA_EDORAS, padrao: 'TE:3018', aviso: 'Edoras em 3D · Reconstrução artística. A colina, as muralhas e Meduseld seguem a descrição; a linha do tempo mostra os túmulos dos reis e o Longo Inverno.' },
   'minas-tirith-3d': { nome: 'Minas Tirith', fase: faseMinasTirith, vista: VISTA_MINAS_TIRITH, padrao: 'TE:3018', aviso: 'Minas Tirith em 3D · Reconstrução artística. Os sete níveis seguem a descrição; a linha do tempo mostra a Árvore Branca ausente, viva ou morta.' },
 };
 
@@ -71,12 +72,13 @@ export class Interface {
         <button type="button" data-acao="linhagens">Linhagens e governantes</button>
         <button type="button" data-acao="gondolin-3d">Visitar Gondolin em 3D</button>
         <button type="button" data-acao="minas-tirith-3d">Visitar Minas Tirith em 3D</button>
+        <button type="button" data-acao="edoras-3d">Visitar Edoras em 3D</button>
         <button type="button" data-acao="fontes">Fontes e método</button>
       </div>
       <h2>Camadas</h2>
       ${chk('nomes', 'Nomes')}
       ${chk('reinos', 'Reinos e fronteiras', 'domínio, ocupação, influência')}
-      ${chk('detalhes', 'Detalhes dos reinos em 3D', 'Gondolin e Minas Tirith: aproxime para ver as cidades')}
+      ${chk('detalhes', 'Detalhes dos reinos em 3D', 'Gondolin, Minas Tirith e Edoras: aproxime para ver as cidades')}
       ${chk('rios', 'Rios')}
       ${chk('estradas', 'Estradas')}
       ${chk('vestigios', 'Lugares desaparecidos', 'antigas posições e contornos')}
@@ -429,7 +431,8 @@ export class Interface {
     const tNum = (v?: string) => (v != null && v !== '' ? Number(v) : null);
     switch (acao) {
       case 'gondolin-3d':
-      case 'minas-tirith-3d': {
+      case 'minas-tirith-3d':
+      case 'edoras-3d': {
         const v = VISITAS_3D[acao];
         if (a.travado) {
           this.aviso(`Enquadramento fixo: destrave para visitar ${v.nome} em 3D.`);

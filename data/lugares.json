@@ -103,7 +103,22 @@
   { "id": "bri", "nome": "Bri", "outros_nomes": ["Bree"], "tipo": "cidade", "em": [830, -170], "posto": 4, "de": "TE:1", "resumo": "Aldeia de Homens e Hobbits no cruzamento da Grande Estrada Leste com a Estrada Norte-Sul.", "fontes": [{ "fonte": "sda", "local": "Livro I, cap. 9" }], "cert": "descrito" },
   { "id": "condado", "nome": "O Condado", "outros_nomes": ["Shire", "Hobbiton"], "tipo": "regiao", "regiao": true, "em": [625, -185], "posto": 2, "de": "TE:1601", "resumo": "A terra dos Hobbits entre as Colinas das Torres e o Baranduin.", "reino": "condado", "eventos": ["te-condado", "te-guerra-anel", "qe-edito"], "fontes": [{ "fonte": "sda", "local": "Prólogo" }], "cert": "descrito" },
   { "id": "carn-dum", "nome": "Carn Dûm", "tipo": "fortaleza", "em": [1200, 400], "posto": 3, "de": "TE:1300", "fases": [{ "de": "TE:1300", "status": "ativo" }, { "de": "TE:1975", "status": "ruina", "evento": "te-fornost" }], "resumo": "A fortaleza do Rei-bruxo em Angmar.", "reino": "angmar", "eventos": ["te-angmar", "te-fornost"], "fontes": [{ "fonte": "sda-apA", "local": "I (iii)" }], "cert": "inferido" },
-  { "id": "edoras", "nome": "Edoras", "tipo": "cidade", "em": [1452, -832], "posto": 2, "de": "TE:2569", "resumo": "A corte dos reis de Rohan, com o salão dourado de Meduseld, ao pé das Ered Nimrais.", "reino": "rohan", "eventos": ["te-rohan"], "fontes": [{ "fonte": "sda", "local": "Livro III, cap. 6" }, { "fonte": "sda-apA", "local": "II" }], "cert": "descrito" },
+  { "id": "edoras", "nome": "Edoras", "outros_nomes": ["Cortes de Rohan", "Meduseld"], "tipo": "cidade", "em": [1452, -832], "posto": 2, "de": "TE:2569",
+    "fases": [
+      { "de": "TE:2569", "status": "ativo", "nota": "Brego, filho de Eorl, conclui o salão de Meduseld." },
+      { "de": "TE:2758", "status": "ativo", "nota": "Invasão dos Terrapardenses: Wulf ocupa Meduseld. Em novembro começa o Longo Inverno, que dura cinco meses. O ano todo aparece com neve, porque a linha do tempo não separa meses." },
+      { "de": "TE:2759", "status": "ativo", "evento": "te-helm", "nota": "Na primavera, Fréaláf retoma Edoras, mata Wulf e torna-se rei." }
+    ],
+    "aspectos": [
+      { "aspecto": "Colina verde à saída do Vale Harrow, junto ao Riacho de Neve, ao pé das Ered Nimrais", "cert": "descrito" },
+      { "aspecto": "Fosso, muralha forte e cerca de espinhos em volta da colina", "cert": "descrito" },
+      { "aspecto": "Meduseld no alto, sobre um terraço verde, com o telhado que parece de ouro; escada de pedra até o terraço", "cert": "descrito" },
+      { "aspecto": "Caminho calçado de pedras que sobe a colina, com um canal de água ao lado", "cert": "descrito" },
+      { "aspecto": "Túmulos dos reis ao lado do caminho: nove da primeira linhagem a oeste e, a leste, os da segunda, que crescem a cada rei morto (datas do Apêndice A)", "cert": "inferido" },
+      { "aspecto": "Tamanho da colina, número, forma e posição das casas, posição do portão", "cert": "artistico" }
+    ],
+    "vista": { "d": 40, "rumo": 200, "inclinacao": 60 },
+    "resumo": "A corte dos reis de Rohan, com o salão dourado de Meduseld, ao pé das Ered Nimrais.", "reino": "rohan", "eventos": ["te-rohan", "te-helm"], "fontes": [{ "fonte": "sda", "local": "Livro III, cap. 6; Livro VI, cap. 6" }, { "fonte": "sda-apA", "local": "II A Casa de Eorl" }], "cert": "descrito" },
   { "id": "calenardhon", "nome": "Calenardhon", "tipo": "regiao", "regiao": true, "em": [1450, -720], "posto": 3, "de": "SE:3320", "ate": "TE:2510", "resumo": "A província setentrional de Gondor entre o Isen e o Anduin, quase despovoada depois da peste e das invasões. Em 2510 T.E. foi entregue a Eorl e passou a ser Rohan.", "reino": "gondor", "eventos": ["te-rohan"], "fontes": [{ "fonte": "ci", "local": "'Cirion e Eorl'" }], "cert": "descrito" },
   { "id": "isengard", "nome": "Isengard", "outros_nomes": ["Angrenost", "Orthanc"], "tipo": "fortaleza", "em": [1172, -708], "posto": 3, "de": "TE:1", "resumo": "Fortaleza de Gondor na ponta sul das Montanhas Nevoentas, com a torre de Orthanc. Saruman a recebeu em 2759 T.E.", "eventos": ["te-helm"], "fontes": [{ "fonte": "sda", "local": "Livro III, cap. 8" }], "cert": "descrito" },
   { "id": "abismo-de-helm", "nome": "Abismo de Helm", "outros_nomes": ["Forte da Trombeta", "Aglarond"], "tipo": "fortaleza", "em": [1296, -808], "posto": 4, "de": "TE:1", "resumo": "Desfiladeiro das Ered Nimrais com a fortaleza do Forte da Trombeta e as cavernas de Aglarond.", "eventos": ["te-helm"], "fontes": [{ "fonte": "sda", "local": "Livro III, cap. 7" }], "cert": "descrito" },

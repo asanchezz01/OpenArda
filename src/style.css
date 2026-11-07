@@ -1513,6 +1513,9 @@ details summary {
 .povo-edain { --povo: #e08a72; }
 .povo-meio { --povo: #d6a4cd; }
 .povo-dunedain { --povo: #aab3c8; }
+.povo-hobbit { --povo: #b8cb7c; }
+.povo-anao { --povo: #d7ae77; }
+.povo-homem { --povo: #c89b83; }
 .povo-sinal {
   display: inline-block;
   width: 8px;

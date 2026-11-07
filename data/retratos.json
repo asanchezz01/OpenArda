@@ -330,5 +330,1239 @@
     ],
     "imagem": "retratos/celebrimbor.webp",
     "alt": "Retrato realista de Celebrimbor; interpretação artística baseada nas referências literárias."
+  },
+  {
+    "id": "galadriel",
+    "nome": "Galadriel",
+    "documentado": [
+      "Filha de Finarfin e Eärwen e senhora de Lothlórien.",
+      "Cabelo dourado com reflexos prateados; veste branca na chegada da Sociedade a Lórien."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Cate Blanchett; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Cate Blanchett",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Lórien, Guerra do Anel",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Galadriel"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: Cate Blanchett como Galadriel",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      {
+        "obra": "Tolkien — consulta por fonte secundária",
+        "local": "A Sociedade do Anel, O Espelho de Galadriel; Contos Inacabados, A História de Galadriel e Celeborn.",
+        "consulta": "https://tolkiengateway.net/wiki/Galadriel"
+      }
+    ],
+    "imagem": "retratos/galadriel.webp",
+    "alt": "Retrato de Galadriel; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "celeborn",
+    "nome": "Celeborn",
+    "documentado": [
+      "Senhor de Lothlórien com Galadriel.",
+      "Cabelo longo e prateado; veste branca na chegada da Sociedade a Lórien."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Marton Csokas; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Marton Csokas",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Lórien, Guerra do Anel",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Celeborn"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: Marton Csokas como Celeborn",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      {
+        "obra": "Tolkien — consulta por fonte secundária",
+        "local": "A Sociedade do Anel, O Espelho de Galadriel.",
+        "consulta": "https://tolkiengateway.net/wiki/Celeborn"
+      }
+    ],
+    "imagem": "retratos/celeborn.webp",
+    "alt": "Retrato de Celeborn; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "elrond",
+    "nome": "Elrond",
+    "documentado": [
+      "Filho de Eärendil e Elwing e senhor de Imladris.",
+      "Cabelo escuro e olhos cinzentos."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Hugo Weaving; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Hugo Weaving",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Imladris, Conselho de Elrond",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Elrond"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: Hugo Weaving como Elrond",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      {
+        "obra": "Tolkien — consulta por fonte secundária",
+        "local": "A Sociedade do Anel, Muitos Encontros.",
+        "consulta": "https://tolkiengateway.net/wiki/Elrond"
+      }
+    ],
+    "imagem": "retratos/elrond.webp",
+    "alt": "Retrato de Elrond; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "arwen",
+    "nome": "Arwen Undómiel",
+    "documentado": [
+      "Filha de Elrond e Celebrían.",
+      "Cabelo escuro e olhos cinzentos."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Liv Tyler; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Liv Tyler",
+      "filme": "The Lord of the Rings: The Return of the King",
+      "ano": 2003,
+      "epoca": "Imladris, Guerra do Anel",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Arwen"
+      },
+      {
+        "obra": "The Lord of the Rings: The Return of the King",
+        "local": "Elenco e caracterização: Liv Tyler como Arwen Undómiel",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King"
+      },
+      {
+        "obra": "Tolkien — consulta por fonte secundária",
+        "local": "A Sociedade do Anel, Muitos Encontros.",
+        "consulta": "https://tolkiengateway.net/wiki/Arwen"
+      }
+    ],
+    "imagem": "retratos/arwen.webp",
+    "alt": "Retrato de Arwen Undómiel; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "aragorn",
+    "nome": "Aragorn II Elessar",
+    "documentado": [
+      "Herdeiro de Isildur e futuro rei do Reino Reunido.",
+      "Cabelo escuro com fios grisalhos, rosto pálido e olhos cinzentos ao aparecer como Passolargo."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Viggo Mortensen; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Viggo Mortensen",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Passolargo, Guerra do Anel",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Aragorn"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: Viggo Mortensen como Aragorn II Elessar",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      {
+        "obra": "Tolkien — consulta por fonte secundária",
+        "local": "A Sociedade do Anel, Passolargo.",
+        "consulta": "https://tolkiengateway.net/wiki/Aragorn"
+      }
+    ],
+    "imagem": "retratos/aragorn.webp",
+    "alt": "Retrato de Aragorn II Elessar; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "frodo",
+    "nome": "Frodo Bolseiro",
+    "documentado": [
+      "Hobbit do Condado e portador do Um Anel.",
+      "Na carta de Gandalf, tem faces coradas, queixo fendido e é mais alto que alguns hobbits."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Elijah Wood; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Elijah Wood",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Condado e início da Sociedade",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Frodo_Baggins"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: Elijah Wood como Frodo Bolseiro",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      {
+        "obra": "Tolkien — consulta por fonte secundária",
+        "local": "A Sociedade do Anel, Passolargo; descrição na carta de Gandalf a Carrapicho.",
+        "consulta": "https://tolkiengateway.net/wiki/Frodo_Baggins"
+      }
+    ],
+    "imagem": "retratos/frodo.webp",
+    "alt": "Retrato de Frodo Bolseiro; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "sam",
+    "nome": "Samwise Gamgi",
+    "documentado": [
+      "Hobbit do Condado e companheiro de Frodo.",
+      "Olhos castanhos; mãos descritas como morenas em passagens da jornada."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Sean Astin; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Sean Astin",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Sociedade, Guerra do Anel",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Samwise_Gamgee"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: Sean Astin como Samwise Gamgi",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      {
+        "obra": "Tolkien — consulta por fonte secundária",
+        "local": "Tolkien Gateway, seção Characteristics, com remissões a O Senhor dos Anéis.",
+        "consulta": "https://tolkiengateway.net/wiki/Samwise_Gamgee"
+      }
+    ],
+    "imagem": "retratos/sam.webp",
+    "alt": "Retrato de Samwise Gamgi; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "merry",
+    "nome": "Meriadoc Brandebuque",
+    "documentado": [
+      "Hobbit da Sociedade que auxilia Éowyn contra o Rei-bruxo.",
+      "Cabelo castanho e encaracolado."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Dominic Monaghan; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Dominic Monaghan",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Sociedade, Guerra do Anel",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Meriadoc_Brandybuck"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: Dominic Monaghan como Meriadoc Brandebuque",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      {
+        "obra": "Tolkien — consulta por fonte secundária",
+        "local": "Tolkien Gateway, Physical Description, com remissões a O Senhor dos Anéis.",
+        "consulta": "https://tolkiengateway.net/wiki/Meriadoc_Brandybuck"
+      }
+    ],
+    "imagem": "retratos/merry.webp",
+    "alt": "Retrato de Meriadoc Brandebuque; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "pippin",
+    "nome": "Peregrin Tûk",
+    "documentado": [
+      "Hobbit da Sociedade e servidor de Gondor.",
+      "Cabelo descrito como quase dourado."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Billy Boyd; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Billy Boyd",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Sociedade, Guerra do Anel",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Peregrin_Took"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: Billy Boyd como Peregrin Tûk",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      {
+        "obra": "Tolkien — consulta por fonte secundária",
+        "local": "Tolkien Gateway, Physical Description; remissão [2] da página de Peregrin Took.",
+        "consulta": "https://tolkiengateway.net/wiki/Peregrin_Took"
+      }
+    ],
+    "imagem": "retratos/pippin.webp",
+    "alt": "Retrato de Peregrin Tûk; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "legolas",
+    "nome": "Legolas",
+    "documentado": [
+      "Filho de Thranduil e integrante da Sociedade."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Orlando Bloom; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Orlando Bloom",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Sociedade, Guerra do Anel",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Legolas"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: Orlando Bloom como Legolas",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      }
+    ],
+    "imagem": "retratos/legolas.webp",
+    "alt": "Retrato de Legolas; reconstrução artística com referência à caracterização dos filmes de Peter Jackson.",
+    "nota_versao": "O cabelo loiro segue a caracterização de Orlando Bloom; não foi localizado, nas fontes consultadas, um enunciado inequívoco de Tolkien sobre a cor individual do cabelo de Legolas."
+  },
+  {
+    "id": "gimli",
+    "nome": "Gimli",
+    "documentado": [
+      "Anão, filho de Glóin e integrante da Sociedade.",
+      "Olhos escuros; usa cota de anéis de aço e cobertura de ferro e couro."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de John Rhys-Davies; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "John Rhys-Davies",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Sociedade, Guerra do Anel",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Gimli"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: John Rhys-Davies como Gimli",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      {
+        "obra": "Tolkien — consulta por fonte secundária",
+        "local": "Tolkien Gateway, Physical Description, com remissões a O Senhor dos Anéis.",
+        "consulta": "https://tolkiengateway.net/wiki/Gimli"
+      }
+    ],
+    "imagem": "retratos/gimli.webp",
+    "alt": "Retrato de Gimli; reconstrução artística com referência à caracterização dos filmes de Peter Jackson.",
+    "nota_versao": "A barba, o cabelo ruivo e a estrutura facial seguem a caracterização com próteses de John Rhys-Davies."
+  },
+  {
+    "id": "boromir",
+    "nome": "Boromir",
+    "documentado": [
+      "Filho de Denethor e irmão de Faramir."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Sean Bean; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Sean Bean",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Sociedade, antes de Amon Hen",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Boromir"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: Sean Bean como Boromir",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      }
+    ],
+    "imagem": "retratos/boromir.webp",
+    "alt": "Retrato de Boromir; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "bilbo",
+    "nome": "Bilbo Bolseiro",
+    "documentado": [
+      "Hobbit da jornada a Erebor e antigo portador do Anel."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Ian Holm; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Ian Holm",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Bilbo idoso, festa de aniversário",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Bilbo_Baggins"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: Ian Holm como Bilbo Bolseiro",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      }
+    ],
+    "imagem": "retratos/bilbo.webp",
+    "alt": "Retrato de Bilbo Bolseiro; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "faramir",
+    "nome": "Faramir",
+    "documentado": [
+      "Filho de Denethor e irmão de Boromir."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de David Wenham; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "David Wenham",
+      "filme": "The Lord of the Rings: The Two Towers",
+      "ano": 2002,
+      "epoca": "Capitão de Gondor, Guerra do Anel",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Faramir"
+      },
+      {
+        "obra": "The Lord of the Rings: The Two Towers",
+        "local": "Elenco e caracterização: David Wenham como Faramir",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+      }
+    ],
+    "imagem": "retratos/faramir.webp",
+    "alt": "Retrato de Faramir; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "denethor",
+    "nome": "Denethor II",
+    "documentado": [
+      "Regente Governante de Gondor e pai de Boromir e Faramir."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de John Noble; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "John Noble",
+      "filme": "The Lord of the Rings: The Return of the King",
+      "ano": 2003,
+      "epoca": "Regente de Gondor, Guerra do Anel",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Denethor"
+      },
+      {
+        "obra": "The Lord of the Rings: The Return of the King",
+        "local": "Elenco e caracterização: John Noble como Denethor II",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King"
+      }
+    ],
+    "imagem": "retratos/denethor.webp",
+    "alt": "Retrato de Denethor II; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "theoden",
+    "nome": "Théoden",
+    "documentado": [
+      "Rei de Rohan durante a Guerra do Anel."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Bernard Hill; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Bernard Hill",
+      "filme": "The Lord of the Rings: The Two Towers",
+      "ano": 2002,
+      "epoca": "Rei de Rohan após a libertação",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Th%C3%A9oden"
+      },
+      {
+        "obra": "The Lord of the Rings: The Two Towers",
+        "local": "Elenco e caracterização: Bernard Hill como Théoden",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+      }
+    ],
+    "imagem": "retratos/theoden.webp",
+    "alt": "Retrato de Théoden; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "eomer",
+    "nome": "Éomer",
+    "documentado": [
+      "Sobrinho de Théoden e irmão de Éowyn."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Karl Urban; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Karl Urban",
+      "filme": "The Lord of the Rings: The Two Towers",
+      "ano": 2002,
+      "epoca": "Cavaleiro de Rohan, Guerra do Anel",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/%C3%89omer"
+      },
+      {
+        "obra": "The Lord of the Rings: The Two Towers",
+        "local": "Elenco e caracterização: Karl Urban como Éomer",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+      }
+    ],
+    "imagem": "retratos/eomer.webp",
+    "alt": "Retrato de Éomer; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "eowyn",
+    "nome": "Éowyn",
+    "documentado": [
+      "Irmã de Éomer e sobrinha de Théoden."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Miranda Otto; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Miranda Otto",
+      "filme": "The Lord of the Rings: The Return of the King",
+      "ano": 2003,
+      "epoca": "Éowyn, Guerra do Anel",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/%C3%89owyn"
+      },
+      {
+        "obra": "The Lord of the Rings: The Return of the King",
+        "local": "Elenco e caracterização: Miranda Otto como Éowyn",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King"
+      }
+    ],
+    "imagem": "retratos/eowyn.webp",
+    "alt": "Retrato de Éowyn; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "saruman",
+    "nome": "Saruman",
+    "documentado": [
+      "Um dos Istari, estabelecido em Isengard."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Christopher Lee; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Christopher Lee",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Saruman, o Branco, em Isengard",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Saruman"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: Christopher Lee como Saruman",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      }
+    ],
+    "imagem": "retratos/saruman.webp",
+    "alt": "Retrato de Saruman; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "gollum",
+    "nome": "Gollum / Sméagol",
+    "documentado": [
+      "Sméagol, de origem hobbit, transformado pela posse do Um Anel."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Andy Serkis; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "nota_versao": "Retrato da forma transformada de Gollum, baseada no personagem digital interpretado por Andy Serkis; não representa o rosto humano do ator.",
+    "referencia_cinematografica": {
+      "ator": "Andy Serkis",
+      "filme": "The Lord of the Rings: The Two Towers",
+      "ano": 2002,
+      "epoca": "Gollum transformado, Guerra do Anel",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Gollum"
+      },
+      {
+        "obra": "The Lord of the Rings: The Two Towers",
+        "local": "Elenco e caracterização: Andy Serkis como Gollum / Sméagol",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+      }
+    ],
+    "imagem": "retratos/gollum.webp",
+    "alt": "Retrato de Gollum / Sméagol; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "grima",
+    "nome": "Gríma Língua de Cobra",
+    "documentado": [
+      "Conselheiro de Théoden e servidor de Saruman."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Brad Dourif; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Brad Dourif",
+      "filme": "The Lord of the Rings: The Two Towers",
+      "ano": 2002,
+      "epoca": "Meduseld, As Duas Torres",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Gr%C3%ADma"
+      },
+      {
+        "obra": "The Lord of the Rings: The Two Towers",
+        "local": "Elenco e caracterização: Brad Dourif como Gríma Língua de Cobra",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+      }
+    ],
+    "imagem": "retratos/grima.webp",
+    "alt": "Retrato de Gríma Língua de Cobra; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "sauron",
+    "nome": "Sauron",
+    "documentado": [
+      "Maia, antigo servidor de Morgoth e criador do Um Anel."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Sala Baker; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "nota_versao": "Escolhida a armadura da Última Aliança do prólogo de 2001, na Segunda Era; o retrato não afirma que essa seja sua forma corporal na Terceira Era. O rosto de Sala Baker permanece oculto.",
+    "referencia_cinematografica": {
+      "ator": "Sala Baker",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Última Aliança, prólogo cinematográfico",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Sauron"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: Sala Baker como Sauron",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      }
+    ],
+    "imagem": "retratos/sauron.webp",
+    "alt": "Retrato de Sauron; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "rei-bruxo",
+    "nome": "Rei-bruxo de Angmar",
+    "documentado": [
+      "Senhor dos Nazgûl, um dos Homens transformados pelos Nove Anéis."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Lawrence Makoare; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "nota_versao": "Representação com elmo e rosto invisível do Pelennor; não foi criado um rosto humano para o espectro interpretado corporalmente por Lawrence Makoare.",
+    "referencia_cinematografica": {
+      "ator": "Lawrence Makoare",
+      "filme": "The Lord of the Rings: The Return of the King",
+      "ano": 2003,
+      "epoca": "Pelennor, O Retorno do Rei",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Witch-king"
+      },
+      {
+        "obra": "The Lord of the Rings: The Return of the King",
+        "local": "Elenco e caracterização: Lawrence Makoare como Rei-bruxo de Angmar",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King"
+      }
+    ],
+    "imagem": "retratos/rei-bruxo.webp",
+    "alt": "Retrato de Rei-bruxo de Angmar; reconstrução artística com referência à caracterização dos filmes de Peter Jackson."
+  },
+  {
+    "id": "gandalf",
+    "nome": "Gandalf",
+    "documentado": [
+      "Um dos Istari; conhecido como Mithrandir.",
+      "Aparência envelhecida, sobrancelhas espessas, cabelo branco comprido e barba prateada."
+    ],
+    "inferido": [
+      "Aparência facial e caracterização baseadas na interpretação cinematográfica de Ian McKellen; não são apresentadas como descrição física literal de Tolkien.",
+      "Enquadramento, iluminação e acabamento são reconstrução artística."
+    ],
+    "referencia_cinematografica": {
+      "ator": "Ian McKellen",
+      "filme": "The Lord of the Rings: The Fellowship of the Ring",
+      "ano": 2001,
+      "epoca": "Gandalf, o Cinzento, antes de Moria",
+      "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+    },
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Identidade e parentescos conforme a ficha em linhagens.json e suas fontes.",
+        "consulta": "https://tolkiengateway.net/wiki/Gandalf"
+      },
+      {
+        "obra": "The Lord of the Rings: The Fellowship of the Ring",
+        "local": "Elenco e caracterização: Ian McKellen como Gandalf",
+        "consulta": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      {
+        "obra": "Tolkien — consulta por fonte secundária",
+        "local": "A Sociedade do Anel, Muitos Encontros.",
+        "consulta": "https://tolkiengateway.net/wiki/Gandalf"
+      }
+    ],
+    "imagem": "retratos/gandalf.webp",
+    "alt": "Retrato de Gandalf; reconstrução artística com referência à caracterização dos filmes de Peter Jackson.",
+    "nota_versao": "Representa Gandalf, o Cinzento, com o rosto de Ian McKellen na fase da Sociedade do Anel. Os olhos claros seguem o intérprete.",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 207095924886834
+    }
+  },
+  {
+    "id": "fingolfin",
+    "nome": "Fingolfin",
+    "documentado": [
+      "Filho de Finwë e Indis.",
+      "Cabelo longo e escuro; armadura prateada no combate com Morgoth."
+    ],
+    "inferido": [
+      "Olhos azul-acinzentados e estrutura facial combinam variações dos pais, sem descrição individual desses traços nas fontes consultadas.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "The Nature of Middle-earth, II.IV Hair; O Silmarillion, Quenta, cap. 18; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Fingolfin"
+      }
+    ],
+    "imagem": "retratos/fingolfin.webp",
+    "alt": "Retrato artístico de Fingolfin",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 280017809333906
+    }
+  },
+  {
+    "id": "finarfin",
+    "nome": "Finarfin",
+    "documentado": [
+      "Filho de Finwë e Indis.",
+      "Cabelo dourado herdado dos Vanyar de Indis."
+    ],
+    "inferido": [
+      "Olhos azul-acinzentados, nariz e contorno facial são variações dos pais.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "The Peoples of Middle-earth, The Shibboleth of Fëanor; O Silmarillion, Quenta, cap. 5; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Finarfin"
+      }
+    ],
+    "imagem": "retratos/finarfin.webp",
+    "alt": "Retrato artístico de Finarfin",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 82667631271838
+    }
+  },
+  {
+    "id": "olwe",
+    "nome": "Olwë",
+    "documentado": [
+      "Senhor dos Teleri de Alqualondë e pai de Eärwen.",
+      "Cabelo longo e branco e olhos azuis."
+    ],
+    "inferido": [
+      "Rosto próprio construído com ecos discretos da parentela Teleri e da neta Galadriel; idade aparente e traje são artísticos.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "Morgoth's Ring, The Later Quenta Silmarillion, Of the Coming of the Elves, §27, p. 163; O Silmarillion, Quenta, caps. 3 e 5; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Olw%C3%AB"
+      }
+    ],
+    "imagem": "retratos/olwe.webp",
+    "alt": "Retrato artístico de Olwë",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 128960341813137
+    }
+  },
+  {
+    "id": "earwen",
+    "nome": "Eärwen",
+    "documentado": [
+      "Filha de Olwë e esposa de Finarfin.",
+      "Cabelo prateado comparado à luz das estrelas."
+    ],
+    "inferido": [
+      "Olhos azuis e semelhança facial com Olwë e Galadriel são reconstrução familiar.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "Contos Inacabados, A História de Galadriel e Celeborn; O Silmarillion, Quenta, cap. 5; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/E%C3%A4rwen"
+      }
+    ],
+    "imagem": "retratos/earwen.webp",
+    "alt": "Retrato artístico de Eärwen",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 42758221293687
+    }
+  },
+  {
+    "id": "anaire",
+    "nome": "Anairë",
+    "documentado": [
+      "Noldo, esposa de Fingolfin e mãe de Fingon, Turgon e Aredhel; permaneceu em Aman."
+    ],
+    "inferido": [
+      "Sem descrição física individual localizada: cabelo negro, olhos cinza-esverdeados, pele e feições são escolhas artísticas que orientarão os filhos; não foi presumido parentesco com Indis.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "The Peoples of Middle-earth, The Shibboleth of Fëanor, pp. 344–345; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Anair%C3%AB"
+      }
+    ],
+    "imagem": "retratos/anaire.webp",
+    "alt": "Retrato artístico de Anairë",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 227746713605562
+    }
+  },
+  {
+    "id": "fingon",
+    "nome": "Fingon",
+    "documentado": [
+      "Filho de Fingolfin e Anairë.",
+      "Cabelo longo e escuro em grandes tranças entretecidas de ouro."
+    ],
+    "inferido": [
+      "Olhos cinza-esverdeados e feições combinam variações dos pais.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "The Peoples of Middle-earth, The Shibboleth of Fëanor; O Silmarillion, Quenta, caps. 13 e 20; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Fingon"
+      }
+    ],
+    "imagem": "retratos/fingon.webp",
+    "alt": "Retrato artístico de Fingon",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 34522332179032
+    }
+  },
+  {
+    "id": "turgon",
+    "nome": "Turgon",
+    "documentado": [
+      "Filho de Fingolfin e Anairë, esposo de Elenwë e pai de Idril.",
+      "Estatura excepcional, superada por Thingol."
+    ],
+    "inferido": [
+      "Cabelo negro, olhos cinzentos e rosto reservado são reconstrução a partir dos pais; a estatura não é demonstrada pelo recorte.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "Contos Inacabados, De Tuor e sua chegada a Gondolin; The Peoples of Middle-earth, The Shibboleth of Fëanor; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Turgon"
+      }
+    ],
+    "imagem": "retratos/turgon.webp",
+    "alt": "Retrato artístico de Turgon",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 155687753004812
+    }
+  },
+  {
+    "id": "elenwe",
+    "nome": "Elenwë",
+    "documentado": [
+      "Vanya, esposa de Turgon e mãe de Idril.",
+      "Cabelo dourado transmitido à filha."
+    ],
+    "inferido": [
+      "Olhos azuis, rosto e traje foram reconstruídos; Indis serve apenas ao estilo e à paleta, sem parentesco presumido.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "The Peoples of Middle-earth, The Shibboleth of Fëanor; O Silmarillion, Quenta, cap. 15; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Elenw%C3%AB"
+      }
+    ],
+    "imagem": "retratos/elenwe.webp",
+    "alt": "Retrato artístico de Elenwë",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 144672573407268
+    }
+  },
+  {
+    "id": "aredhel",
+    "nome": "Aredhel",
+    "documentado": [
+      "Filha de Fingolfin e Anairë.",
+      "Cabelo escuro, pele pálida e vestes prateadas e brancas."
+    ],
+    "inferido": [
+      "Olhos avelã claros e geometria facial são variações familiares.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "O Silmarillion, Quenta, caps. 5 e 16; Morgoth's Ring, Later Quenta; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Aredhel"
+      }
+    ],
+    "imagem": "retratos/aredhel.webp",
+    "alt": "Retrato artístico de Aredhel",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 196082968386320
+    }
+  },
+  {
+    "id": "idril",
+    "nome": "Idril Celebrindal",
+    "documentado": [
+      "Filha de Turgon e Elenwë.",
+      "Cabelo dourado comparado ao ouro de Laurelin."
+    ],
+    "inferido": [
+      "Olhos azul-acinzentados e feições combinam os pais, com rosto próprio.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "O Silmarillion, Quenta, cap. 15; Contos Inacabados, De Tuor e sua chegada a Gondolin; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Idril"
+      }
+    ],
+    "imagem": "retratos/idril.webp",
+    "alt": "Retrato artístico de Idril Celebrindal",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 16812946941186
+    }
+  },
+  {
+    "id": "eol",
+    "nome": "Eöl",
+    "documentado": [
+      "Ferreiro de Nan Elmoth, parente de Thingol e pai de Maeglin.",
+      "Cabelo escuro; porte encurvado pelo trabalho da forja e uso de galvorn nas viagens."
+    ],
+    "inferido": [
+      "Olhos cinzentos e rosto comprido e severo são artísticos; Fingolfin é referência de estilo, sem parentesco próximo presumido.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "O Silmarillion, Quenta, cap. 16; descrição física em Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/E%C3%B6l"
+      }
+    ],
+    "imagem": "retratos/eol.webp",
+    "alt": "Retrato artístico de Eöl",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 276757411327885
+    }
+  },
+  {
+    "id": "maeglin",
+    "nome": "Maeglin",
+    "documentado": [
+      "Filho de Eöl e Aredhel, semelhante em rosto e forma à parentela Noldor da mãe.",
+      "Cabelo negro e olhos escuros."
+    ],
+    "inferido": [
+      "Detalhes do nariz, da mandíbula e da expressão combinam variações dos pais.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "O Silmarillion, Quenta, cap. 16; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Maeglin"
+      }
+    ],
+    "imagem": "retratos/maeglin.webp",
+    "alt": "Retrato artístico de Maeglin",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 169427900477634
+    }
+  },
+  {
+    "id": "finrod",
+    "nome": "Finrod Felagund",
+    "documentado": [
+      "Filho de Finarfin e Eärwen.",
+      "Rosto e cabelo dourado semelhantes aos do pai."
+    ],
+    "inferido": [
+      "Olhos azuis, sorriso discreto e diferenças faciais em relação ao pai são reconstrução.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "The Peoples of Middle-earth, The Shibboleth of Fëanor; O Silmarillion, Quenta, caps. 17 e 19; consulta por Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Finrod"
+      }
+    ],
+    "imagem": "retratos/finrod.webp",
+    "alt": "Retrato artístico de Finrod Felagund",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 216992723825288
+    }
+  },
+  {
+    "id": "orodreth",
+    "nome": "Orodreth",
+    "documentado": [
+      "O catálogo segue O Silmarillion publicado: filho de Finarfin e Eärwen, irmão de Finrod e pai de Finduilas."
+    ],
+    "inferido": [
+      "Sem cor individual de cabelo localizada nas fontes consultadas: loiro acinzentado escuro, olhos cinza-esverdeados e rosto próprio são variações da família.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "O Silmarillion, Quenta, caps. 5, 19 e 21; versões alternativas em Tolkien Gateway.",
+        "consulta": "https://tolkiengateway.net/wiki/Orodreth"
+      }
+    ],
+    "imagem": "retratos/orodreth.webp",
+    "alt": "Retrato artístico de Orodreth",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 271382862718357
+    },
+    "nota_versao": "Preservada a genealogia do Silmarillion publicado. Textos tardios fazem Orodreth filho de Angrod; essa alternativa não foi aplicada silenciosamente à árvore."
+  },
+  {
+    "id": "finduilas",
+    "nome": "Finduilas de Nargothrond",
+    "documentado": [
+      "Filha de Orodreth; é a princesa de Nargothrond, não Finduilas de Dol Amroth.",
+      "Cabelo dourado registrado no índice consultado."
+    ],
+    "inferido": [
+      "Olhos cinza-esverdeados, formato de rosto e penteado variam os parentes da genealogia adotada.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Obras de Tolkien — consulta por fonte secundária",
+        "local": "O Silmarillion, Quenta, cap. 21 para identidade; descrição física em Tolkien Gateway, sem cotejo direto.",
+        "consulta": "https://tolkiengateway.net/wiki/Finduilas"
+      }
+    ],
+    "imagem": "retratos/finduilas.webp",
+    "alt": "Retrato artístico de Finduilas de Nargothrond",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 187916164630057
+    }
   }
 ]

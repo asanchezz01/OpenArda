@@ -58,15 +58,40 @@ As fronteiras vêm das novas fases de `minas-anor` em `data/lugares.json`; cada 
 - Minas Ithil/Minas Morgul, reutilizando a estrutura de sítios.
 - Inspeção em celulares reais.
 
+## Terceira entrega: Rohan — Edoras
+
+**Implementado nesta versão:** Edoras na saída do Vale Harrow, ao pé das Ered Nimrais. A colina verde é cercada por fosso, muralha e cerca de espinhos. O caminho calçado sobe do portão com um canal de água ao lado até a escada de pedra e o terraço verde, onde fica Meduseld, o salão de madeira com telhado dourado. Há casas de madeira com telhado de palha pela encosta e túmulos dos reis com flores de simbelmynë ao lado do caminho, fora do portão.
+
+| Período do atlas | Representação |
+| --- | --- |
+| Antes de 2569 T.E. | Sem cidade |
+| 2569–2757 T.E. | Cidade de Brego; túmulos da primeira linhagem a oeste do caminho |
+| 2758 T.E. | Longo Inverno: colina e telhados cobertos de neve (Wulf ocupa Meduseld) |
+| 2759 T.E. em diante | Nove túmulos a oeste; a leste, um túmulo por rei da segunda linhagem, de Fréaláf (2798) a Théoden (3019) |
+
+As fases vêm de `edoras` em `data/lugares.json`. O número de túmulos sai dos anos de morte dos reis no Apêndice A (`REIS_ROHAN` em `src/core/detalhes.ts`), e a divisão em nove a oeste e os da segunda linhagem a leste segue o Livro III, cap. 6. Cada combinação de neve e túmulos gera um modelo, criado uma vez e reutilizado.
+
+**Como visitar:** **Camadas e legenda → Visitar Edoras em 3D**, ou a ficha de Edoras ou de Rohan → **Explorar cidade em 3D**. Antes de 2569 T.E., a visita abre em 3018 T.E.
+
+**Interpretação visual:** são descritos a colina, o fosso, a muralha, a cerca de espinhos, o caminho calçado com o canal, a escada, o terraço, o telhado dourado e os túmulos dos dois lados do caminho. São artísticos o tamanho da colina (cerca de 1 km de diâmetro e 80 m de altura), o número e a forma das casas, as dimensões de Meduseld e o portão ao norte. Como a linha do tempo não separa meses, o ano de 2758 inteiro aparece com neve, embora o Longo Inverno tenha começado em novembro.
+
+**Implantação:** o sítio fica na altura do terreno no centro. A base sob a colina é um talude esticado com o exagero do relevo; em encosta ele aparece como aterro, em vez de deixar a cidade flutuando. Na neve, o talude também fica branco.
+
+### Próximos detalhes de Rohan
+
+- O Abismo de Helm e o Forte da Trombeta, com o Muro de Helm e Aglarond.
+- Fazer o talude acompanhar o terreno em volta, em vez de usar uma cor única.
+- Inspeção em celulares reais.
+
 ## Ordem de expansão
 
-Esta é uma ordem de implementação, sem datas prometidas. Gondolin e Minas Tirith já têm arquitetura 3D; os demais itens estão planejados.
+Esta é uma ordem de implementação, sem datas prometidas. Gondolin, Minas Tirith e Edoras já têm arquitetura 3D; os demais itens estão planejados.
 
 | Ordem | Reino / domínio | Primeiro local | Entrega visual e temporal | Dependência principal |
 | --- | --- | --- | --- | --- |
 | 1 | **Gondolin** | Gondolin | **Versão inicial implementada**; depois, passagem e sete portões | Validar e refinar a primeira cidade |
 | 2 | **Gondor** | Minas Anor / Minas Tirith | **Versão inicial implementada** (cidadela, níveis, muralhas e relação com Mindolluin); depois, Osgiliath e suas ruínas | Definir versões por época a partir das fases dos lugares |
-| 3 | Rohan | Edoras | Colina, paliçada, habitações e Meduseld | Arquitetura de madeira e implantação no relevo |
+| 3 | **Rohan** | Edoras | **Versão inicial implementada** (colina, fosso, muralha, Meduseld, túmulos e Longo Inverno); depois, o Abismo de Helm | Arquitetura de madeira e implantação no relevo |
 | 4 | Númenor | Armenelos; depois Rómenna | Centro régio, vias e porto; desaparecimento na Queda | Relacionar os assentamentos à geografia da ilha |
 | 5 | Doriath | Menegroth | Entrada, ponte e representação dos salões subterrâneos | Definir um modo de corte que permita ver o interior |
 | 6 | Nargothrond | Nargothrond | Portas, salões, ponte e ruínas junto ao Narog | Reutilizar o modo subterrâneo e datar a ponte |

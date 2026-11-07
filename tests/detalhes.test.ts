@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 import { describe, expect, it, vi } from 'vitest';
 import { estadoTerreno, lugarPorId, tempo, terreno } from '../src/core/data';
-import { ARVORE_MINAS_TIRITH, faseGondolin, faseMinasTirith, MINAS_TIRITH, VISTA_GONDOLIN, VISTA_MINAS_TIRITH } from '../src/core/detalhes';
+import { ARVORE_MINAS_TIRITH, EDORAS, estadoEdoras, faseEdoras, faseGondolin, faseMinasTirith, MINAS_TIRITH, VISTA_EDORAS, VISTA_GONDOLIN, VISTA_MINAS_TIRITH } from '../src/core/detalhes';
+import { criarEdoras, perfilEdoras } from '../src/render/edoras';
 import { criarGondolin } from '../src/render/gondolin';
 import { criarMinasTirith } from '../src/render/minas-tirith';
 import { DetalhesReinos } from '../src/render/detalhes';
@@ -235,6 +236,68 @@ describe('Minas Tirith', () => {
       expect(app.voar.mock.calls[0][0]).toMatchObject({ x: MINAS_TIRITH.em[0], y: MINAS_TIRITH.em[1], d: VISTA_MINAS_TIRITH.d });
     } finally {
       vi.unstubAllGlobals();
+    }
+  });
+});
+
+describe('Edoras', () => {
+  it.each([
+    [2568, null],
+    [2569, { inverno: false, oeste: 1, leste: 0 }],
+    [2570, { inverno: false, oeste: 2, leste: 0 }],
+    [2758, { inverno: true, oeste: 8, leste: 0 }],
+    [2759, { inverno: false, oeste: 9, leste: 0 }],
+    [2798, { inverno: false, oeste: 9, leste: 1 }],
+    [3018, { inverno: false, oeste: 9, leste: 7 }],
+    [3019, { inverno: false, oeste: 9, leste: 8 }],
+  ])('em %i T.E. mostra a neve e os túmulos certos', (ano, estado) => {
+    expect(estadoEdoras(tempo.tAno('TE', ano))).toEqual(estado);
+  });
+
+  it('tem todos os túmulos na Quarta Era e nenhuma cidade antes de Brego', () => {
+    expect(faseEdoras(tempo.tAno('QE', 50))).toBe('verao-9-8');
+    expect(faseEdoras(tempo.tAno('TE', 2510))).toBeNull();
+    expect(EDORAS.fases!.map((f) => f.de)).toEqual(['TE:2569', 'TE:2758', 'TE:2759']);
+  });
+
+  it('gera a colina, as muralhas, Meduseld e os túmulos de forma reproduzível', () => {
+    const instancias = (g: THREE.Group) => g.children.filter((c): c is THREE.InstancedMesh => c instanceof THREE.InstancedMesh);
+    const total = (f: string) => instancias(criarEdoras(f)).reduce((n, m) => n + m.count, 0);
+    const a = criarEdoras('verao-9-7');
+    expect(instancias(a).map((m) => Array.from(m.instanceMatrix.array))).toEqual(instancias(criarEdoras('verao-9-7')).map((m) => Array.from(m.instanceMatrix.array)));
+    expect(total('verao-9-7')).toBeGreaterThan(500);
+    expect(a.children.filter((c) => c instanceof THREE.Mesh).length).toBeLessThan(30);
+    const box = new THREE.Box3().setFromObject(a);
+    expect([...box.min.toArray(), ...box.max.toArray()].every(Number.isFinite)).toBe(true);
+    // Meduseld é o ponto mais alto: telhado acima do terraço no alto da colina
+    expect(box.max.z).toBeGreaterThan(perfilEdoras(0) + 0.02);
+    expect(new THREE.Box3().setFromObject(a.getObjectByName('Base')!).min.z).toBeCloseTo(-0.8);
+    // cada rei morto acrescenta um túmulo (monte + flores)
+    expect(total('verao-9-8') - total('verao-9-7')).toBe(6);
+  });
+
+  it('assenta a cidade no relevo, estica só a base e some antes de 2569', () => {
+    const te = tempo.tAno('TE', 3018);
+    const relevo = new ModeloTerreno(estadoTerreno(te).feicoes, terreno.cadeias, terreno.limites);
+    const u = criarUniformesGlobais();
+    const camera = new THREE.PerspectiveCamera();
+    camera.position.set(VISTA_EDORAS.x + 2, VISTA_EDORAS.y, 3);
+    const camada = new DetalhesReinos();
+    camada.atualizar(te, camera, relevo, u, true);
+    const visiveis = camada.grupo.children.filter((c) => c instanceof THREE.Group && c.visible);
+    expect(visiveis.map((c) => c.name)).toEqual(['Edoras: verao-9-7']);
+    u.uExag.value = 4;
+    camada.atualizar(te, camera, relevo, u, true);
+    expect(visiveis[0].getObjectByName('Base')!.scale.z).toBe(4);
+    camada.atualizar(tempo.tAno('TE', 2500), camera, relevo, u, true);
+    expect(camada.grupo.visible).toBe(false);
+  });
+
+  it('aparece nas fichas de Edoras e de Rohan', () => {
+    const app = { t: tempo.tAno('TE', 3018) } as App;
+    for (const html of [fichaLugar(app, EDORAS), fichaReino(app, reinoPorId.get('rohan')!)]) {
+      expect(html).toContain('data-acao="edoras-3d"');
+      expect(html).toContain('Reconstrução artística');
     }
   });
 });

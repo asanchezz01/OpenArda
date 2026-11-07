@@ -1,4 +1,4 @@
-import { faseAtual, lugarPorId, statusLugar } from './data';
+import { faseAtual, lugarPorId, statusLugar, tempo } from './data';
 import type { Vista } from './types';
 
 export type FaseGondolin = 'construcao' | 'integra' | 'ruinas';
@@ -38,4 +38,39 @@ export const ARVORE_MINAS_TIRITH: Record<string, FaseMinasTirith> = {
 export function faseMinasTirith(t: number): FaseMinasTirith | null {
   const f = faseAtual(MINAS_TIRITH, t);
   return f ? ARVORE_MINAS_TIRITH[f.de] : null;
+}
+
+/**
+ * Edoras: a arquitetura não muda, mas o Longo Inverno cobre a colina de neve e os
+ * túmulos dos reis crescem ao lado do caminho, nove da primeira linhagem a oeste
+ * e os da segunda a leste (O Senhor dos Anéis, Livro III, cap. 6).
+ */
+export const EDORAS = lugarPorId.get('edoras')!;
+export const VISTA_EDORAS: Vista = { x: EDORAS.em[0], y: EDORAS.em[1], d: 2.6, rumo: 200, inclinacao: 62 };
+
+/** Ano da morte de cada rei (Apêndice A, II). */
+export const REIS_ROHAN = {
+  primeira: [['Eorl', 2545], ['Brego', 2570], ['Aldor', 2645], ['Fréa', 2659], ['Fréawine', 2680], ['Goldwine', 2699], ['Déor', 2718], ['Gram', 2741], ['Helm', 2759]],
+  segunda: [['Fréaláf', 2798], ['Brytta', 2842], ['Walda', 2851], ['Folca', 2864], ['Folcwine', 2903], ['Fengel', 2953], ['Thengel', 2980], ['Théoden', 3019]],
+} as const;
+
+export interface EstadoEdoras {
+  inverno: boolean;
+  oeste: number; // túmulos da primeira linhagem
+  leste: number; // túmulos da segunda linhagem
+}
+
+export function estadoEdoras(t: number): EstadoEdoras | null {
+  const f = faseAtual(EDORAS, t);
+  if (!f) return null;
+  // na Quarta Era todos os túmulos já existem
+  const ano = tempo.eraDe(t).id === 'TE' ? tempo.anoDe(t)! : Infinity;
+  const mortos = (linha: readonly (readonly [string, number])[]) => linha.filter(([, a]) => a <= ano).length;
+  return { inverno: f.de === 'TE:2758', oeste: mortos(REIS_ROHAN.primeira), leste: mortos(REIS_ROHAN.segunda) };
+}
+
+/** Chave do modelo: um por combinação de neve e túmulos. */
+export function faseEdoras(t: number): string | null {
+  const e = estadoEdoras(t);
+  return e ? `${e.inverno ? 'inverno' : 'verao'}-${e.oeste}-${e.leste}` : null;
 }

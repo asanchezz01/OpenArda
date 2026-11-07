@@ -1,0 +1,524 @@
+{
+  "etapa": 2,
+  "atualizado": "2026-11-07",
+  "status": "24 de 24 retratos integrados; conferência visual da página pendente",
+  "direcao": "Priorizar os atores caracterizados nos filmes de Peter Jackson, usando uma nova composição fotográfica coerente com o OpenArda.",
+  "pesquisa": "Consulta por fonte secundária a Tolkien Gateway; não houve consulta direta às edições dos livros.",
+  "personagens": [
+    {
+      "id": "galadriel",
+      "nome": "Galadriel",
+      "ator": "Cate Blanchett",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Lórien, Guerra do Anel",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Cate Blanchett as Galadriel circa 2001: ageless elven woman, long luminous pale-gold hair subtly touched with silver, pale blue eyes, high cheekbones and strong finely shaped nose, calm powerful gaze, ivory gown and slender silver elven circlet.",
+      "referencia": {
+        "id": "galadriel",
+        "url": "https://www.moma.org/d/assets/W1siZiIsIjIwMTUvMTAvMjAvM29majFhbG5jYV8xMzA5MTYuanBnIl0sWyJwIiwiY29udmVydCIsIi1xdWFsaXR5IDkwIC1yZXNpemUgNzc1eDUyNV4gLWdyYXZpdHkgQ2VudGVyIC1jcm9wIDc3NXg1MjUrMCswIl1d/130916.jpg?sha=098c491650c8808a",
+        "pagina": "https://www.moma.org/calendar/events/1526"
+      },
+      "arquivo": "public/retratos/galadriel.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-f2e286bb-fc4a-4fb8-b31c-634faeec1efb.png"
+    },
+    {
+      "id": "celeborn",
+      "nome": "Celeborn",
+      "ator": "Marton Csokas",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Lórien, Guerra do Anel",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Marton Csokas as Celeborn circa 2001: adult elven lord, long straight silver hair, recognizable broad sculpted face, calm dignified gaze, pale grey-blue eyes, muted grey-silver elven robe and fine silver circlet. Not Thranduil or Legolas.",
+      "referencia": {
+        "id": "celeborn",
+        "url": "https://m.media-amazon.com/images/M/MV5BNWViOTM5ZmEtMzFkMC00NmE0LTk2OTUtNzMwYWFlZGMyYjdiXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg",
+        "pagina": "https://www.imdb.com/title/tt0120737/mediaviewer/rm1792861184/"
+      },
+      "arquivo": "public/retratos/celeborn.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-7f238ce9-f240-47e3-b0d4-e7d4fbfbc219.png"
+    },
+    {
+      "id": "elrond",
+      "nome": "Elrond",
+      "ator": "Hugo Weaving",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Imladris, Conselho de Elrond",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Hugo Weaving as Elrond circa 2001: ageless elven lord, recognizable long strong face, pronounced forehead and arched brows, long dark brown hair swept back, grey-blue eyes, solemn thoughtful expression, dark burgundy robe and slender silver circlet.",
+      "referencia": {
+        "id": "elrond",
+        "url": "https://m.media-amazon.com/images/M/MV5BMjIzNTAxNDk3N15BMl5BanBnXkFtZTcwOTgwMjk2Mw%40%40._V1_.jpg",
+        "pagina": "https://www.imdb.com/media/rm2578022400/tt0120737"
+      },
+      "arquivo": "public/retratos/elrond.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-6f29c4dc-af72-439a-aa90-1cf1f782496a.png"
+    },
+    {
+      "id": "arwen",
+      "nome": "Arwen Undómiel",
+      "ator": "Liv Tyler",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Return of the King",
+        "ano": 2003,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King"
+      },
+      "epoca": "Imladris, Guerra do Anel",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Liv Tyler as Arwen in the 2001–2003 trilogy: recognizable long oval face, full natural lips, pale skin, grey-blue eyes, long nearly black hair, subtle pointed ears, composed hopeful gaze, deep blue elven gown, no wedding crown.",
+      "referencia": {
+        "id": "arwen",
+        "url": "https://m.media-amazon.com/images/M/MV5BYjkzYzI3N2UtMzY5ZS00NTkxLTkzYjctNzAwYWIyOWU3ODFmXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg",
+        "pagina": "https://www.imdb.com/title/tt0167260/mediaviewer/rm1245822209/"
+      },
+      "arquivo": "public/retratos/arwen.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-34eaaecb-db75-4373-85c2-c7153abbfef4.png"
+    },
+    {
+      "id": "aragorn",
+      "nome": "Aragorn II Elessar",
+      "ator": "Viggo Mortensen",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Passolargo, Guerra do Anel",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the adult fictional character in the reference image, for the OpenArda character encyclopedia. Preserve the recognizable facial features of Viggo Mortensen in the role of Aragorn II Elessar in Peter Jackson's 2001 film. Calm neutral expression, natural skin texture, soft warm studio light, simple dark blurred background, period costume visible at the collar. Frame the whole head centrally with margin for a small avatar. No text or watermark.",
+      "referencia": {
+        "id": "aragorn",
+        "url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/11/10/15/lord-of-the-rings-aragorn-viggo-mortensen-1.v1.jpg?fit=crop&height=1200&width=1200",
+        "pagina": "https://www.independent.co.uk/arts-entertainment/films/news/lotr-viggo-mortensen-leo-woodall-b2934355.html"
+      },
+      "arquivo": "public/retratos/aragorn.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-8398df50-38a2-4d0f-840e-316e818fac38.png"
+    },
+    {
+      "id": "frodo",
+      "nome": "Frodo Bolseiro",
+      "ator": "Elijah Wood",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Condado e início da Sociedade",
+      "prompt": "Create a new square photographic head-and-shoulders portrait of the adult fictional character in the reference image, for the OpenArda character encyclopedia. Preserve the recognizable facial features of Elijah Wood in the role of Frodo Bolseiro in Peter Jackson's 2001 film. Calm neutral expression, natural skin texture, soft warm studio light, simple dark blurred background, period costume visible at the collar. Frame the whole head centrally with margin for a small avatar. No text or watermark.",
+      "referencia": {
+        "id": "frodo",
+        "url": "https://m.media-amazon.com/images/M/MV5BYmNkNmEyNWItYjM4ZS00MWEyLThiNjQtMjA1OGRjNWIwY2QwXkEyXkFqcGc%40._V1_.jpg",
+        "pagina": "https://www.imdb.com/title/tt0120737/mediaviewer/rm2297981696"
+      },
+      "arquivo": "public/retratos/frodo.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-99d64a76-85bf-4ef1-8d33-209667331dfd.png"
+    },
+    {
+      "id": "sam",
+      "nome": "Samwise Gamgi",
+      "ator": "Sean Astin",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Sociedade, Guerra do Anel",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Sean Astin as Samwise Gamgee circa 2001: adult hobbit with recognizable round warm face, sturdy cheeks, short curly light-brown hair, hazel eyes, subtly pointed ears, earnest kind expression, plain beige shirt, brown waistcoat and travelling cloak, no beard.",
+      "referencia": {
+        "id": "sam",
+        "url": "https://www.looper.com/img/gallery/how-old-is-each-member-of-the-fellowship-of-the-ring/sam-is-a-respectable-young-adult-1595881983.jpg",
+        "pagina": "https://www.looper.com/230806/how-old-is-each-member-of-the-fellowship-of-the-ring/"
+      },
+      "arquivo": "public/retratos/sam.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-8d008001-eb1c-4f13-8f5c-3685aab8aa31.png"
+    },
+    {
+      "id": "merry",
+      "nome": "Meriadoc Brandebuque",
+      "ator": "Dominic Monaghan",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Sociedade, Guerra do Anel",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Dominic Monaghan as Merry circa 2001: recognizable adult hobbit face, gently angular broad cheeks, short wavy chestnut hair, clear light eyes, lightly mischievous but attentive expression, mustard-brown waistcoat and restrained grey-green travelling cloak, no beard.",
+      "referencia": {
+        "id": "merry",
+        "url": "https://parade.com/.image/ar_100%3A130%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto%3Agood%2Cw_700/MjAyODg4NDE2MDU1MDEwMzE2/dominic-monaghan-then.jpg",
+        "pagina": "https://parade.com/movies/lord-of-the-rings-cast-where-are-they-now"
+      },
+      "arquivo": "public/retratos/merry.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-a8f3e043-d13d-4f21-bb24-9cc74d3e7268.png"
+    },
+    {
+      "id": "pippin",
+      "nome": "Peregrin Tûk",
+      "ator": "Billy Boyd",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Sociedade, Guerra do Anel",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Billy Boyd as Pippin circa 2001: recognizable adult hobbit with fine narrow face, high cheekbones, short tousled light-auburn curly hair, green-grey eyes and curious warm expression, muted blue-brown rustic clothes and travelling cloak, no beard.",
+      "referencia": {
+        "id": "pippin",
+        "url": "https://i.pinimg.com/originals/53/88/ce/5388ced455feb0cfefbab4dd60aa9d36.jpg",
+        "pagina": "https://ar.pinterest.com/pin/710724384926408460/"
+      },
+      "arquivo": "public/retratos/pippin.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-c79d13a1-39c5-47b5-a759-37e057321a23.png"
+    },
+    {
+      "id": "gandalf",
+      "nome": "Gandalf",
+      "ator": "Ian McKellen",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Gandalf, o Cinzento, antes de Moria",
+      "prompt": "Create a new square photographic portrait of the adult fictional character shown in the reference, Gandalf, as portrayed by Ian McKellen in the original Peter Jackson films. Preserve the recognizable facial features and period hair. Head and shoulders centered with room around the head, neutral calm expression, realistic skin texture, softly lit against a plain dark warm-brown blurred background. The portrait is for a Tolkien character encyclopedia. No text, borders or watermark.",
+      "referencia": {
+        "id": "gandalf",
+        "url": "https://i.pinimg.com/originals/ba/70/4a/ba704a25e52491a2322e377545564355.jpg",
+        "pagina": "https://www.pinterest.com/pin/31032684904607376/"
+      },
+      "arquivo": "public/retratos/gandalf.webp",
+      "geracao": "criado e integrado pela API local do HopeGym",
+      "tentativa_sem_imagem_de_entrada": {
+        "prompt": "Create an original photographic head-and-shoulders portrait of Gandalf the Grey from The Lord of the Rings, with the recognizable face of Ian McKellen in Peter Jackson's 2001 film. He is an elderly adult with a long silver-grey beard, long grey hair, expressive eyebrows, calm kind eyes and a simple grey wool robe. Center him on a softly blurred warm charcoal background with gentle window lighting and realistic natural skin. Square composition with head fully visible and safe space for a circular avatar crop. No lettering, frame or watermark.",
+        "resultado": "recusada pelo sistema de segurança"
+      },
+      "historico_geracao": "pendente: três recusas na ferramenta de imagens (uma sem imagem de entrada) e uma recusa na API autorizada",
+      "resolucao_local": {
+        "prompt": "Create an original realistic head-and-shoulders portrait of Gandalf the Grey, with Ian McKellen's recognizable face from Peter Jackson's 2001 The Fellowship of the Ring. Image 1 is the sole character identity reference: preserve his facial structure, expressive eyebrows, long grey hair and beard, and blue eyes. Image 2 is only a reference for soft lighting, muted warm charcoal-brown background and photographic finish; do not copy its person's face or dark hair. Exactly one elderly adult man, grey wool cloak, calm wise expression looking toward camera, no staff or pipe. Square composition, whole head and beard visible, small safe margin for circular avatar, head occupies about 65 percent of image height. Natural detailed skin, understated cinematic photograph, no painting, lettering, border or watermark.",
+        "modelo": {
+          "unet": "flux-2-klein-9b-fp8.safetensors",
+          "clip": "qwen_3_8b_fp8mixed.safetensors",
+          "steps": 4,
+          "cfg": 1
+        },
+        "seed": 207095924886834,
+        "arquivo_original": "output/imagegen/etapa3/gandalf.png",
+        "referencias": [
+          "Fotografia cinematográfica registrada anteriormente",
+          "public/retratos/aragorn.webp — estilo, não identidade"
+        ]
+      }
+    },
+    {
+      "id": "legolas",
+      "nome": "Legolas",
+      "ator": "Orlando Bloom",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Sociedade, Guerra do Anel",
+      "prompt": "Create a new square photographic portrait of the adult fictional character shown in the reference, Legolas, as portrayed by Orlando Bloom in the original Peter Jackson films. Preserve the recognizable facial features and period hair. Head and shoulders centered with room around the head, neutral calm expression, realistic skin texture, softly lit against a plain dark warm-brown blurred background. The portrait is for a Tolkien character encyclopedia. No text, borders or watermark.",
+      "referencia": {
+        "id": "legolas",
+        "url": "https://www.elfenomeno.com/imag/prensa_tv/revistaaccion_legolas.jpg",
+        "pagina": "https://www.elfenomeno.com/en/info/ver/2713/photo-of-legolas-in-action-magazine"
+      },
+      "arquivo": "public/retratos/legolas.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-79d4f3e6-7023-4983-b13c-d692729a6665.png"
+    },
+    {
+      "id": "gimli",
+      "nome": "Gimli",
+      "ator": "John Rhys-Davies",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Sociedade, Guerra do Anel",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: John Rhys-Davies in Gimli's dwarf prosthetic makeup circa 2001, NOT the actor without makeup: broad prominent dwarf nose, heavy reddish brows, warm eyes, long thick copper-red and brown braided beard and moustache, weathered face, dark russet hair, simple dwarven leather and metal collar, head without helmet for facial clarity.",
+      "referencia": {
+        "id": "gimli",
+        "url": "https://imagez.tmz.com/image/a1/1by1/2020/09/15/a1db93415c0d49cd9bffcd2c5b812703_xl.jpg",
+        "pagina": "https://www.tmz.com/2020/09/16/john-rhys-davies-gimli-lord-of-the-rings-then-and-now-photos/"
+      },
+      "arquivo": "public/retratos/gimli.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-52116aa2-b54f-4b77-9a49-5f85f0852e51.png"
+    },
+    {
+      "id": "boromir",
+      "nome": "Boromir",
+      "ator": "Sean Bean",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Sociedade, antes de Amon Hen",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Sean Bean as Boromir circa 2001: recognizable adult warrior, shoulder-length straight light-brown hair, short sandy-brown beard, grey-green eyes, proud but thoughtful expression, maroon tunic with dark worn leather and discreet Gondorian detail, no helmet.",
+      "referencia": {
+        "id": "boromir",
+        "url": "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/UXVYEII47ZGSXGJZY7EF4Z2YZA.png",
+        "pagina": "https://www.infobae.com/entretenimiento/2026/02/17/vestuario-epico-mas-de-2000-metros-de-montana-y-un-reto-fuera-del-guion-asi-sean-bean-llevo-a-boromir-a-su-final-en-el-senor-de-los-anillos/"
+      },
+      "arquivo": "public/retratos/boromir.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-c8daca20-3171-42f6-8783-989e730969d4.png"
+    },
+    {
+      "id": "bilbo",
+      "nome": "Bilbo Bolseiro",
+      "ator": "Ian Holm",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Bilbo idoso, festa de aniversário",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Ian Holm as older Bilbo in Fellowship of the Ring circa 2001: recognizable elderly hobbit face, kindly creased eyes and smiling mouth, short curly grey-brown hair, subtle pointed ears, burgundy patterned waistcoat and cream shirt. NOT Martin Freeman or young Bilbo.",
+      "referencia": {
+        "id": "bilbo",
+        "url": "https://cdn.moviepilot.de/files/e3af9cba2b8229bbe75b8afb2eee16455934155d06e71e5e5c232abfe7ed/fill/992/477/bilbo.jpg",
+        "pagina": "https://www.moviepilot.de/news/bilbo-aus-der-herr-der-ringe-schauspieler-ian-holm-ist-tot-1127820"
+      },
+      "arquivo": "public/retratos/bilbo.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-3daa2bb7-19af-4e3d-8f49-b306e4bedd33.png"
+    },
+    {
+      "id": "faramir",
+      "nome": "Faramir",
+      "ator": "David Wenham",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Two Towers",
+        "ano": 2002,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+      },
+      "epoca": "Capitão de Gondor, Guerra do Anel",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: David Wenham as Faramir circa 2002: recognizable adult face, shoulder-length auburn-brown hair, short matching beard, blue-grey eyes, thoughtful compassionate gaze, dark green ranger cloak and modest Gondorian leather collar. Maintain likeness distinct from Sean Bean's Boromir.",
+      "referencia": {
+        "id": "faramir",
+        "url": "https://cdn.moviepilot.de/files/7c84b98901fbfdb7382bfc226d437afcfa2659da5c538f9bf41d69a1e00f/copyright/der-herr-der-ringe-die-zwei-turme-mit-david-wenham.jpg",
+        "pagina": "https://www.moviepilot.de/people/david-wenham"
+      },
+      "arquivo": "public/retratos/faramir.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-27c36afb-6e33-493f-8244-c8672e6d9c3d.png"
+    },
+    {
+      "id": "denethor",
+      "nome": "Denethor II",
+      "ator": "John Noble",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Return of the King",
+        "ano": 2003,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King"
+      },
+      "epoca": "Regente de Gondor, Guerra do Anel",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: John Noble as Denethor circa 2003: recognizable stern mature face, deep set dark eyes, strongly arched brows, long dark hair streaked with grey, clean-shaven, lined cheeks and controlled grave expression, dark black brocaded robe and fur-trimmed collar, no crown, not a caricature.",
+      "referencia": {
+        "id": "denethor",
+        "url": "https://easyfairsassets.com/sites/328/2024/07/John_Noble_LordOfTheRings.png",
+        "pagina": "https://www.facts.be/en/"
+      },
+      "arquivo": "public/retratos/denethor.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-b6335267-c361-48dc-ba6c-2d25716d6d7a.png"
+    },
+    {
+      "id": "theoden",
+      "nome": "Théoden",
+      "ator": "Bernard Hill",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Two Towers",
+        "ano": 2002,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+      },
+      "epoca": "Rei de Rohan após a libertação",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Bernard Hill as restored King Theoden circa 2002: recognizable mature face, long dirty-blond and silver hair, neatly trimmed fair beard, clear blue eyes, dignified alert expression, dark green cloak and restrained Rohan leather armor, no helmet. Not the enchanted decrepit version.",
+      "referencia": {
+        "id": "theoden",
+        "url": "https://img-s1.onedio.com/id-6640d24ff1d737a518a808f0/rev-0/w-600/h-459/f-jpg/s-09bed92271d73657c73fbc4b4d5ee12d4e9f393a.jpg",
+        "pagina": "https://onedio.co/content/mourning-the-loss-of-a-legend-bernard-hill-king-theoden-in-the-lord-of-the-rings-passes-away-at-79-27143"
+      },
+      "arquivo": "public/retratos/theoden.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-0489d9a7-fff1-4665-9e18-8c84307692e1.png"
+    },
+    {
+      "id": "eomer",
+      "nome": "Éomer",
+      "ator": "Karl Urban",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Two Towers",
+        "ano": 2002,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+      },
+      "epoca": "Cavaleiro de Rohan, Guerra do Anel",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Karl Urban as Eomer circa 2002: recognizable adult rider face, strong straight nose and jaw, shoulder-length dark golden-blond hair, sandy short beard and moustache, focused pale eyes, brown-green Rohan riding armor with modest horse motif, no helmet.",
+      "referencia": {
+        "id": "eomer",
+        "url": "https://i.pinimg.com/originals/83/da/3b/83da3b836121f9547dd062068a15f680.jpg",
+        "pagina": "https://www.pinterest.com/pin/1125968637432028/"
+      },
+      "arquivo": "public/retratos/eomer.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-5f8759b5-a318-4f79-be4f-ad0a0f38b899.png"
+    },
+    {
+      "id": "eowyn",
+      "nome": "Éowyn",
+      "ator": "Miranda Otto",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Return of the King",
+        "ano": 2003,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King"
+      },
+      "epoca": "Éowyn, Guerra do Anel",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Miranda Otto as Eowyn circa 2003: recognizable adult woman's face, long pale golden-blond hair, grey-blue eyes, clear fair skin, resolute composed expression, simple cream and muted green Rohan gown, natural skin, no helmet, not modern glam.",
+      "referencia": {
+        "id": "eowyn",
+        "url": "https://iv1.lisimg.com/image/7937260/740full-miranda-otto.jpg",
+        "pagina": "https://www.listal.com/viewimage/7937260"
+      },
+      "arquivo": "public/retratos/eowyn.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-f1a990e2-f911-43c4-b03a-cdb836015c02.png"
+    },
+    {
+      "id": "saruman",
+      "nome": "Saruman",
+      "ator": "Christopher Lee",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Saruman, o Branco, em Isengard",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Christopher Lee as Saruman circa 2001: recognizable long imposing mature face, deep dark eyes under strong arched brows, long straight white hair and long white beard, severe intelligent expression, plain ivory-white robes, no colorful aura or staff in frame.",
+      "referencia": {
+        "id": "saruman",
+        "url": "https://jrrtolkien.fr/images/film-les-deux-tours-avatar-saroumane.webp",
+        "pagina": "https://jrrtolkien.fr/galerie/film-les-deux-tours-avatar-saroumane.html"
+      },
+      "arquivo": "public/retratos/saruman.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-223eae65-535a-4f7f-8640-8dbd8c016d2b.png"
+    },
+    {
+      "id": "gollum",
+      "nome": "Gollum / Sméagol",
+      "ator": "Andy Serkis",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Two Towers",
+        "ano": 2002,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+      },
+      "epoca": "Gollum transformado, Guerra do Anel",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Gollum's actual CGI character appearance in Peter Jackson's Two Towers, performed by Andy Serkis; NOT Andy Serkis's ordinary human face and NOT pre-transformation Smeagol. Gaunt pale greyish skin, very large blue eyes, sparse thin dark hair, distinctive long narrow face, anxious watchful expression, thin neck and hunched bare shoulders. Photoreal creature portrait, non-graphic, no exaggerated horror.",
+      "referencia": {
+        "id": "gollum",
+        "url": "https://m.media-amazon.com/images/M/MV5BYjc2NjQ5ZWItZjM5MC00NTcxLTljZWEtMzdlZjg0YjM3NTkyXkEyXkFqcGc%40._V1_.jpg",
+        "pagina": "https://www.imdb.com/title/tt0167261/characters/nm0785227/"
+      },
+      "arquivo": "public/retratos/gollum.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-a9dfbc66-60fb-4c3c-834e-af0c15b7f028.png"
+    },
+    {
+      "id": "sauron",
+      "nome": "Sauron",
+      "ator": "Sala Baker",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "ano": 2001,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+      },
+      "epoca": "Última Aliança, prólogo cinematográfico",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Sauron's fully armored appearance from the 2001 Fellowship prologue, physically performed by Sala Baker. Helmet and upper shoulders portrait, imposing dark forged metal helmet with tall angular spikes, narrow shadowed eye slits, blackened etched armor, muted dark backdrop. NO visible human actor face, no invented exposed skin, no giant floating Eye, no bright flames, no text. Keep the full iconic helmet inside safe frame.",
+      "referencia": {
+        "id": "sauron",
+        "url": "https://i.blogs.es/277f82/sauron-1-/840_560.jpeg",
+        "pagina": "https://www.3djuegos.com/tv-series/noticias/te-diste-cuenta-tienes-vista-elfo-paras-senor-anillos-minuto-1-54-descubriras-sauron-referencias-oscuras-nunca-vistas-pelicula"
+      },
+      "arquivo": "public/retratos/sauron.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-0c8aaf17-5fe2-4e88-9481-cd8dfa43d4a0.png",
+      "ajuste_de_enquadramento": {
+        "prompt": "Edit this generated portrait only to correct its framing. Pull the camera back substantially and show the ENTIRE helmet including the top tips of every spike. Add generous background above the highest tip and on each side: at least 10 percent empty margin above and 8 percent side margin. The present image cuts off the highest spikes; reconstruct those tips naturally inside the picture. Keep the same recognizable character helmet design, dark empty face opening, armor, photographic materials, soft lighting and warm charcoal-brown blurred background. Center a smaller head-and-shoulders figure for a square encyclopedia avatar. No visible skin or human face, no text, no border, no watermark. Do not crop any helmet spike.",
+        "entrada": "exec-845d93f0-bab0-4869-a2c9-37640c538205.png",
+        "objetivo": "Manter todas as pontas do elmo dentro do quadro."
+      }
+    },
+    {
+      "id": "rei-bruxo",
+      "nome": "Rei-bruxo de Angmar",
+      "ator": "Lawrence Makoare",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Return of the King",
+        "ano": 2003,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King"
+      },
+      "epoca": "Pelennor, O Retorno do Rei",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Witch-king of Angmar's actual helmeted appearance in Return of the King 2003, physically performed by Lawrence Makoare. Dark hood and weathered iron crown-helmet with high thin spikes, long central nasal metal strip, open triangular areas revealing ONLY black emptiness, no skin, no human face, no visible eyes, no skull. Head and shoulders of black robes and armor, subdued photographic lighting and dark neutral background.",
+      "referencia": {
+        "id": "rei-bruxo",
+        "url": "https://m.media-amazon.com/images/M/MV5BOWNiOTRlNzYtMDFjYS00MTU2LTlhNjAtOTgxZDAyNmEwZWY2XkEyXkFqcGc%40._V1_.jpg",
+        "pagina": "https://m.imdb.com/title/tt0167260/mediaviewer/rm372153345/"
+      },
+      "arquivo": "public/retratos/rei-bruxo.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-52a7652b-40a0-4d7f-b7d7-16f0024567cb.png",
+      "ajuste_de_enquadramento": {
+        "prompt": "Edit this generated portrait only to correct its framing. Pull the camera back substantially and show the ENTIRE helmet including the top tips of every spike. Add generous background above the highest tip and on each side: at least 10 percent empty margin above and 8 percent side margin. The present image cuts off the highest spikes; reconstruct those tips naturally inside the picture. Keep the same recognizable character helmet design, dark empty face opening, armor, photographic materials, soft lighting and warm charcoal-brown blurred background. Center a smaller head-and-shoulders figure for a square encyclopedia avatar. No visible skin or human face, no text, no border, no watermark. Do not crop any helmet spike.",
+        "entrada": "exec-71e8751b-d18f-4f8a-acf0-81c732f64ea5.png",
+        "objetivo": "Manter todas as pontas do elmo dentro do quadro."
+      }
+    },
+    {
+      "id": "grima",
+      "nome": "Gríma Língua de Cobra",
+      "ator": "Brad Dourif",
+      "filme": {
+        "titulo": "The Lord of the Rings: The Two Towers",
+        "ano": 2002,
+        "fonte": "https://tolkiengateway.net/wiki/The_Lord_of_the_Rings:_The_Two_Towers"
+      },
+      "epoca": "Meduseld, As Duas Torres",
+      "prompt": "Photorealistic natural portrait for OpenArda's Tolkien family-tree interface, matching the existing realistic portrait series. Exactly one character, square 1024x1024, head and shoulders centered, eyes and mouth clearly readable when reduced to 36 or 96 pixels, safe margin for circular crop. Preserve the recognizable facial likeness and film-era characterization of the named actor in Peter Jackson's original 2001–2003 films, not their present-day appearance. When an input image is supplied it is the CHARACTER IDENTITY reference, not a target to copy the entire frame. Create a fresh photographic portrait and composition, soft neutral window light with subtle warm rim light, natural detailed skin or plausible material texture, muted charcoal-brown softly blurred background, 85mm portrait lens. No captions, text, logos, watermarks, frames, extra characters or weapons. Specific literary traits and cinematic choices are documented separately.\nSubject: Brad Dourif as Grima Wormtongue circa 2002: recognizable pale adult face with receding long greasy straight black hair, thin very pale eyebrows, piercing pale blue eyes, hollow cheeks, narrow mouth, wary calculating expression, dark worn nobleman's robe, clean-shaven. Keep believable skin, not a monster caricature.",
+      "referencia": {
+        "id": "grima",
+        "url": "https://conteudo.imguol.com.br/c/entretenimento/2d/2020/07/23/brad-dourif-como-grima-lingua-de-cobra-em-o-senhor-dos-aneis-1595522422666_v2_750x421.jpg",
+        "pagina": "https://entretenimento.uol.com.br/noticias/redacao/2020/07/23/chucky-dublador-classico-do-brinquedo-assassino-retornara-para-serie.htm"
+      },
+      "arquivo": "public/retratos/grima.webp",
+      "geracao": "criado e integrado",
+      "original_gerado": "exec-0819abc1-c062-44de-8c31-51e1a284abe8.png"
+    }
+  ],
+  "contagem": {
+    "pesquisados": 24,
+    "retratos_criados": 24,
+    "integrados_e_verificados_automaticamente": 24,
+    "conferencia_visual_da_pagina": "pendente por indisponibilidade da automação do navegador"
+  }
+}
