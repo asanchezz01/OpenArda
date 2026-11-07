@@ -35,6 +35,26 @@ const periodo = (g: Governo) => textoPeriodo(g.de, g.ate);
 const botaoArvore = (id: string) =>
   `<button type="button" class="abrir-arvore" data-acao="arvore-tela" data-id="${esc(id)}" title="Abrir árvore genealógica" aria-label="Abrir árvore genealógica de ${nome(id)}">${ICONE_ARVORE}</button>`;
 
+function foto(id: string, tamanho: number): string {
+  const r = retratoDe(id);
+  if (!r) return '';
+  return `<button type="button" class="retrato-ampliar" data-acao="retrato" data-id="${esc(id)}" aria-label="Ampliar retrato de ${nome(id)}" aria-haspopup="dialog" title="Ampliar retrato">
+    <img src="${esc(r.imagem)}" alt="${tamanho === 36 ? '' : esc(r.alt)}" width="${tamanho}" height="${tamanho}"${tamanho === 36 ? ' loading="lazy"' : ''}></button>`;
+}
+
+/** Quadro ampliado; o dialog nativo cuida do foco e do fechamento por Esc. */
+export function htmlRetrato(id: string): string {
+  const p = pessoaPorId.get(id);
+  const r = retratoDe(id);
+  if (!p || !r) return '';
+  return `<button type="button" class="retrato-fechar" data-fechar-retrato aria-label="Fechar retrato (Esc)" autofocus>
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+    <figure class="retrato-quadro">
+      <div class="retrato-moldura"><img src="${esc(r.imagem)}" alt="${esc(r.alt)}" width="512" height="512"></div>
+      <figcaption><h2 id="retrato-nome">${esc(p.nome)}</h2>${p.epiteto ? `<p>${esc(p.epiteto)}</p>` : ''}<small>Interpretação artística</small></figcaption>
+    </figure>`;
+}
+
 function quem(g: Governo, cls = 'link'): string {
   if (g.quem?.length) return g.quem.map((id) => abrir(id, nome(id), cls)).join(' e ');
   return `<span class="rotulo-sucessao">${esc(g.rotulo ?? '')}</span>`;
@@ -110,7 +130,7 @@ function cartao(app: App, id: string, foco: string, conjuge: string | null, extr
   const r = retratoDe(id);
   const agora = reinaEm(id, app.t);
   return `<div class="pessoa povo-${p.povo}${id === foco ? ' foco' : ''}">
-    <div class="pessoa-cab">${r ? `<img src="${esc(r.imagem)}" alt="" width="36" height="36" loading="lazy">` : '<i class="povo-sinal" aria-hidden="true"></i>'}
+    <div class="pessoa-cab">${r ? foto(id, 36) : '<i class="povo-sinal" aria-hidden="true"></i>'}
       <div>${abrir(id, nome(id), 'pessoa-nome')}${p.epiteto ? `<span class="pessoa-ep">${esc(p.epiteto)}</span>` : ''}</div>${botaoArvore(id)}</div>
     ${p.datas ? `<span class="data">${esc(p.datas)}</span>` : ''}
     ${agora.map((x) => `<span class="reina">${COROA}${esc(nomeSenhorio(x.s))}</span>`).join('')}
@@ -158,7 +178,7 @@ export function htmlArvoreTela(app: App, id: string): string {
   if (!p) return '';
   const r = retratoDe(id);
   return `<header class="arvore-tela-cab">
-      ${r ? `<img src="${esc(r.imagem)}" alt="${esc(r.alt)}" width="56" height="56">` : ''}
+      ${r ? foto(id, 56) : ''}
       <div class="arvore-tela-titulo"><p class="tipo">Árvore genealógica · ${esc(NOME_POVO[p.povo])} · ${esc(tempo.rotulo(app.t).principal)}</p><h2 id="arvore-tela-nome">${esc(p.nome)}</h2>${p.epiteto ? `<p class="outros">${esc(p.epiteto)}</p>` : ''}</div>
       <button type="button" class="fechar" data-fechar-arvore aria-label="Fechar árvore genealógica (Esc)">×</button>
     </header>
@@ -178,7 +198,7 @@ export function fichaLinhagem(app: App, id: string): string {
   const irmaos = irmaosDe(id);
   const opcoes = [...pessoas].sort((a, b) => a.nome.localeCompare(b.nome, 'pt')).map((x) => `<option value="${esc(x.id)}"${x.id === id ? ' selected' : ''}>${esc(x.nome)}</option>`).join('');
   return `<header class="ficha-cab linhagem-cab">
-      ${r ? `<figure><img src="${esc(r.imagem)}" alt="${esc(r.alt)}" width="96" height="96"><figcaption>interpretação artística</figcaption></figure>` : ''}
+      ${r ? `<figure>${foto(id, 96)}<figcaption>interpretação artística</figcaption></figure>` : ''}
       <div><p class="tipo"><i class="povo-sinal povo-${p.povo}" aria-hidden="true"></i>Linhagem · ${esc(NOME_POVO[p.povo])}</p>
       <h2>${esc(p.nome)}</h2>
       ${p.epiteto || p.datas ? `<p class="outros">${[p.epiteto, p.datas].filter(Boolean).map((x) => esc(x!)).join(' · ')}</p>` : ''}

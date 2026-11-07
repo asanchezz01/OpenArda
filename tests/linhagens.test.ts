@@ -16,6 +16,10 @@ describe('linhagens', () => {
     expect(html).toContain(`src="${retrato.imagem}" alt="${retrato.alt}" width="96" height="96"`);
     expect(html).toContain(`src="${retrato.imagem}" alt="" width="36" height="36" loading="lazy"`);
     expect(htmlArvoreTela(app, id)).toContain(`src="${retrato.imagem}" alt="${retrato.alt}" width="56" height="56"`);
+    for (const tela of [html, htmlArvoreTela(app, id)]) {
+      expect(tela).toContain(`data-acao="retrato" data-id="${id}"`);
+      expect(tela).toContain('aria-haspopup="dialog"');
+    }
   });
 
   it('cobre os 24 retratos integrados da etapa 2, preservando a origem cinematográfica', () => {

@@ -23,6 +23,8 @@ import {
 import { pontoNoPoligonoPts } from '../terrain/model';
 import { esc, listaFontes, seloCert, NOME_CERT } from './util';
 import { blocoGovernoLugar, blocoGovernoReino } from './linhagens';
+import { blocoFotoFicha } from './fotografias';
+import { fotosDoLugar, fotosDoReino } from '../core/fotografias';
 
 const NOME_STATUS: Record<string, string> = {
   ativo: 'Existe nesta época',
@@ -119,6 +121,7 @@ export function fichaLugar(app: App, l: Lugar): string {
     <p>${statusChip(st, nota)} ${seloCert(l.cert, true)}</p>
   </header>
   <p class="resumo">${esc(l.resumo)}</p>`;
+  html += blocoFotoFicha(fotosDoLugar(l.id, t));
   html += blocoGovernoLugar(app, l.id, l.reino) ?? '';
 
   if (l.id === 'gondolin') html += detalheGondolin();
@@ -228,6 +231,7 @@ export function fichaReino(app: App, r: Reino): string {
     <dt>Período de existência</dt><dd>${esc(r.periodo_texto)}</dd>
     ${r.governantes?.length && !governo ? `<dt>Governantes</dt><dd>${r.governantes.map((g) => `${esc(g.nome)}${g.nota ? ` <span class="nota">(${esc(g.nota)})</span>` : ''}`).join('<br>')}</dd>` : ''}
   </dl>
+  ${blocoFotoFicha(fotosDoReino(r.id, t))}
   ${governo ?? ''}
   ${r.id === 'gondolin' ? detalheGondolin() : r.id === 'gondor' ? detalheMinasTirith() : r.id === 'rohan' ? detalheEdoras() : ''}
   <section class="bloco"><h3>Origem</h3><p>${esc(r.origem)}</p>${fund ? `<p><button type="button" class="link" data-acao="evento" data-id="${fund.id}">${esc(fund.titulo)}</button> <span class="data">${esc(tempo.dataEvento(fund))}</span></p>` : ''}</section>

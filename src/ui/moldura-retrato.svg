@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="none">
+  <defs>
+    <linearGradient id="ouro" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#513017"/><stop offset=".18" stop-color="#d4b36b"/>
+      <stop offset=".36" stop-color="#8b5d2b"/><stop offset=".54" stop-color="#ecd295"/>
+      <stop offset=".74" stop-color="#98662d"/><stop offset="1" stop-color="#3c2413"/>
+    </linearGradient>
+    <linearGradient id="folha" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f1d69b"/><stop offset=".45" stop-color="#bd904c"/><stop offset="1" stop-color="#5d381b"/>
+    </linearGradient>
+    <pattern id="perolas" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="4.5" fill="url(#folha)" stroke="#50351e" stroke-width="1.5"/>
+    </pattern>
+    <g id="arabesco" stroke="#58361c" stroke-width="2" fill="url(#folha)">
+      <path d="M0 34C24 3 62 6 74 29C85 51 61 68 44 54C30 42 42 25 54 31C65 37 51 48 48 40C55 65 86 53 100 35C121 8 148 5 164 32C143 18 128 34 119 44C95 73 57 79 31 61C17 51 12 42 0 34Z"/>
+      <path d="M70 31C58 20 50 4 58 0C77 6 86 18 82 34C96 23 106 9 103 2C120 13 115 33 97 46Z"/>
+      <path d="M4 33C13 17 18 8 33 9C29 28 21 36 4 33ZM125 44C139 42 154 47 158 61C141 63 127 58 125 44Z"/>
+      <path d="M23 32C48 11 71 27 74 39M48 58C76 66 94 49 109 31" fill="none" stroke="#efd39a" stroke-width="1.5"/>
+    </g>
+    <g id="bordo">
+      <use href="#arabesco" x="168" y="44"/><use href="#arabesco" x="334" y="44"/>
+      <use href="#arabesco" x="500" y="44"/><use href="#arabesco" x="666" y="44"/>
+    </g>
+    <g id="canto" fill="url(#folha)" stroke="#57351a" stroke-width="2.5">
+      <path d="M18 18C63 12 101 31 111 64C116 82 105 104 86 105C65 106 55 85 67 71C76 60 94 66 90 78C86 89 73 81 80 76C64 79 74 99 88 94C107 86 101 60 85 49C65 35 40 38 18 18Z"/>
+      <path d="M18 18C12 63 31 101 64 111C82 116 104 105 105 86C106 65 85 55 71 67C60 76 66 94 78 90C89 86 81 73 76 80C79 64 99 74 94 88C86 107 60 101 49 85C35 65 38 40 18 18Z"/>
+      <path d="M38 39C42 18 60 18 75 28C72 41 54 48 38 39ZM39 38C18 42 18 60 28 75C41 72 48 54 39 38Z"/>
+      <path d="M53 53C80 37 103 38 121 56C101 68 80 69 53 53ZM53 53C37 80 38 103 56 121C68 101 69 80 53 53Z"/>
+      <path d="M36 36C55 35 72 48 83 63M36 36C35 55 48 72 63 83" fill="none" stroke="#f0d59a" stroke-width="2"/>
+      <circle cx="63" cy="63" r="11" fill="url(#ouro)"/>
+      <path d="m63 46 5 12 12 5-12 5-5 12-5-12-12-5 12-5Z"/>
+    </g>
+  </defs>
+  <rect x="17" y="17" width="966" height="966" stroke="#201309" stroke-width="34"/>
+  <rect x="25" y="25" width="950" height="950" stroke="url(#ouro)" stroke-width="30"/>
+  <rect x="43" y="43" width="914" height="914" stroke="#f0d59a" stroke-width="3"/>
+  <rect x="83" y="83" width="834" height="834" stroke="#352010" stroke-width="74"/>
+  <rect x="83" y="83" width="834" height="834" stroke="url(#ouro)" stroke-width="68"/>
+  <use href="#bordo"/><use href="#bordo" transform="rotate(90 500 500)"/>
+  <use href="#bordo" transform="rotate(180 500 500)"/><use href="#bordo" transform="rotate(270 500 500)"/>
+  <rect x="119" y="119" width="762" height="762" stroke="#382211" stroke-width="16"/>
+  <rect x="119" y="119" width="762" height="762" stroke="url(#perolas)" stroke-width="12"/>
+  <rect x="130" y="130" width="740" height="740" stroke="#1a130d" stroke-width="10"/>
+  <rect x="135" y="135" width="730" height="730" stroke="#d6b575" stroke-width="3"/>
+  <use href="#canto"/><use href="#canto" transform="rotate(90 500 500)"/>
+  <use href="#canto" transform="rotate(180 500 500)"/><use href="#canto" transform="rotate(270 500 500)"/>
+</svg>

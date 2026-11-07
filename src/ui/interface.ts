@@ -6,7 +6,8 @@ import { eras, jornadas, lugarPorId, reinoPorId, tempo } from '../core/data';
 import { Busca } from './busca';
 import { LinhaTempo } from './linha';
 import { fichaAqui, fichaEvento, fichaFonte, fichaFontes, fichaLugar, fichaMarco, fichaReino } from './fichas';
-import { fichaLinhagem, fichaSenhorios, htmlArvoreTela } from './linhagens';
+import { fichaLinhagem, fichaSenhorios, htmlArvoreTela, htmlRetrato } from './linhagens';
+import { htmlPainelFotos, htmlVisualizador } from './fotografias';
 import { esc, guardar, h, ler, listaFontes } from './util';
 import { lerLink, montarLink } from './url';
 import { regimeDe } from '../render/lighting';
@@ -33,8 +34,14 @@ export class Interface {
   private inicio!: HTMLElement;
   private carregando!: HTMLElement;
   private arvoreTela!: HTMLElement;
+  private retratoTela!: HTMLDialogElement;
   private arvoreTelaId = '';
   private arvoreTelaFocoAntes: HTMLElement | null = null;
+  private fotosTela!: HTMLElement;
+  /** '' fechado; 'painel' na grade; ou o id da foto aberta no visualizador. */
+  private fotosAberto = '';
+  private fotosTodas = false;
+  private fotosFocoAntes: HTMLElement | null = null;
   private conteudoAtual = '';
   private urlTimer = 0;
 
@@ -56,6 +63,7 @@ export class Interface {
       <nav class="topo-acoes">
         <button type="button" data-acao="jornadas" title="Jornadas guiadas (J)">Jornadas</button>
         <button type="button" data-acao="linhagens" title="Árvores genealógicas e governantes desta época">Linhagens</button>
+        <button type="button" data-acao="fotografias" title="Fotografias dos reinos e lugares desta época">Fotografias</button>
         <button type="button" data-acao="fontes" title="Fontes e método">Fontes</button>
         <button type="button" data-acao="compartilhar" class="icone" aria-label="Copiar link desta vista" title="Copiar link desta vista">⤴</button>
       </nav>`;
@@ -70,6 +78,7 @@ export class Interface {
         <button type="button" data-acao="jornadas">Seguir uma jornada</button>
         <button type="button" data-acao="eras">Escolher uma era</button>
         <button type="button" data-acao="linhagens">Linhagens e governantes</button>
+        <button type="button" data-acao="fotografias">Fotografias dos lugares</button>
         <button type="button" data-acao="gondolin-3d">Visitar Gondolin em 3D</button>
         <button type="button" data-acao="minas-tirith-3d">Visitar Minas Tirith em 3D</button>
         <button type="button" data-acao="edoras-3d">Visitar Edoras em 3D</button>
@@ -145,6 +154,11 @@ export class Interface {
     this.arvoreTela = h('section', { id: 'arvore-tela', hidden: '', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'arvore-tela-nome', tabindex: '-1' });
     raiz.appendChild(this.arvoreTela);
 
+    this.retratoTela = h('dialog', { id: 'retrato-tela', 'aria-labelledby': 'retrato-nome' }) as HTMLDialogElement;
+    raiz.appendChild(this.retratoTela);
+    this.fotosTela = h('section', { id: 'fotos-tela', class: 'tela-cheia', hidden: '', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'fotos-tela-titulo', tabindex: '-1' });
+    raiz.appendChild(this.fotosTela);
+
     this.linha = new LinhaTempo(this.app, raiz);
     // a altura real da linha do tempo posiciona os controles acima dela
     const ro = new ResizeObserver(() => raiz.style.setProperty('--lt-h', `${this.linha.el.offsetHeight}px`));
@@ -167,7 +181,27 @@ export class Interface {
       this.executar(acao, dados);
     });
     this.painel.querySelector('.fechar')!.addEventListener('click', () => this.fecharPainel());
+    this.retratoTela.addEventListener('click', (e) => {
+      if (e.target === this.retratoTela || (e.target as Element).closest('[data-fechar-retrato]')) this.retratoTela.close();
+    });
+    this.retratoTela.addEventListener('close', () => { this.retratoTela.innerHTML = ''; });
     // dentro da tela cheia, um nome recentraliza a árvore em vez de abrir a ficha atrás dela
+    this.fotosTela.addEventListener('click', (e) => {
+      const alvo = e.target as HTMLElement;
+      if (alvo.closest('[data-fechar-fotos]')) {
+        e.stopPropagation();
+        this.fecharFotos();
+        return;
+      }
+      // "Ver no mapa" e "Ir a esta época" fecham o painel e seguem para a ação normal
+      const acao = alvo.closest<HTMLElement>('[data-acao]')?.dataset.acao;
+      if (acao === 'sel' || acao === 'tempo') this.fecharFotos();
+    });
+    this.fotosTela.addEventListener('change', (e) => {
+      if ((e.target as HTMLElement).id !== 'fotos-todas') return;
+      this.fotosTodas = (e.target as HTMLInputElement).checked;
+      this.abrirFotos('painel');
+    });
     this.arvoreTela.addEventListener('click', (e) => {
       const alvo = e.target as HTMLElement;
       if (alvo.closest('[data-fechar-arvore]')) {
@@ -553,8 +587,18 @@ export class Interface {
         this.abrirEras();
         this.camadasEl.hidden = true;
         break;
+      case 'fotografias':
+        this.camadasEl.hidden = true;
+        this.abrirFotos('painel');
+        break;
+      case 'foto':
+        this.abrirFotos(d.id);
+        break;
       case 'arvore-tela':
         this.abrirArvoreTela(d.id);
+        break;
+      case 'retrato':
+        this.abrirRetrato(d.id);
         break;
       case 'linhagens':
         this.abrir('linhagens');
@@ -628,6 +672,13 @@ export class Interface {
   }
 
   // ---------- árvore em tela cheia ----------
+  private abrirRetrato(id: string) {
+    const html = htmlRetrato(id);
+    if (!html || this.retratoTela.open) return;
+    this.retratoTela.innerHTML = html;
+    this.retratoTela.showModal();
+  }
+
   private abrirArvoreTela(id: string) {
     const html = htmlArvoreTela(this.app, id);
     if (!html) return;
@@ -639,6 +690,29 @@ export class Interface {
     const rol = this.arvoreTela.querySelector<HTMLElement>('.arvore-rolagem')!;
     rol.scrollLeft = (rol.scrollWidth - rol.clientWidth) / 2;
     this.arvoreTela.querySelector<HTMLElement>('[data-fechar-arvore]')!.focus({ preventScroll: true });
+  }
+
+  // ---------- fotografias em tela cheia ----------
+  private abrirFotos(alvo: string) {
+    const html = alvo === 'painel' ? htmlPainelFotos(this.app, this.fotosTodas) : htmlVisualizador(this.app, alvo);
+    if (!html) return;
+    if (this.fotosTela.hidden) this.fotosFocoAntes = document.activeElement as HTMLElement | null;
+    this.fotosAberto = alvo;
+    this.fotosTela.innerHTML = html;
+    this.fotosTela.hidden = false;
+    this.fotosTela.classList.toggle('visualizador', alvo !== 'painel');
+    this.fotosTela.scrollTop = 0;
+    this.fotosTela.querySelector<HTMLElement>('[data-fechar-fotos]')!.focus({ preventScroll: true });
+  }
+
+  private fecharFotos() {
+    if (this.fotosTela.hidden) return;
+    this.fotosTela.hidden = true;
+    this.fotosTela.innerHTML = '';
+    this.fotosAberto = '';
+    const voltar = this.fotosFocoAntes;
+    this.fotosFocoAntes = null;
+    if (voltar && document.contains(voltar)) voltar.focus({ preventScroll: true });
   }
 
   private fecharArvoreTela() {
@@ -782,7 +856,21 @@ export class Interface {
   private teclado(e: KeyboardEvent) {
     const alvo = e.target as HTMLElement;
     if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
+    // O dialog mantém o teclado no retrato; Esc nativo não fecha a árvore atrás.
+    if (this.retratoTela.open) return;
     // com a árvore em tela cheia, o teclado não move o mapa; Esc fecha
+    // com as fotografias abertas: Esc fecha (ou volta à grade), setas passam de foto
+    if (this.fotosAberto) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        if (this.fotosAberto !== 'painel' && this.fotosTela.querySelector('[data-acao="fotografias"]')) this.abrirFotos('painel');
+        else this.fecharFotos();
+      } else if (this.fotosAberto !== 'painel' && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+        e.preventDefault();
+        this.fotosTela.querySelectorAll<HTMLElement>('.foto-nav')[e.key === 'ArrowLeft' ? 0 : 1]?.click();
+      }
+      return;
+    }
     if (this.arvoreTelaId) {
       if (e.key === 'Escape') {
         e.preventDefault();

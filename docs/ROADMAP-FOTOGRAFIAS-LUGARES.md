@@ -17,13 +17,51 @@ As imagens são **interpretações geradas por IA**. Elas seguem o que Tolkien d
   - a árvore em tela cheia, cujo padrão de camada sobre o mapa serve para a galeria;
   - os detalhes em 3D ([ROADMAP-REINOS-3D.md](ROADMAP-REINOS-3D.md)), com as mesmas fases temporais.
 
+## Entrega da etapa 1
+
+**Painel:** implementado conforme a seção abaixo. Os arquivos são:
+- `src/core/fotografias.ts` (seleção por época, foto de outra época, foto da capital do reino);
+- `src/ui/fotografias.ts` (destaque nas fichas, grade e visualizador);
+- o botão **Fotografias** e a camada `#fotos-tela` em `src/ui/interface.ts`;
+- as verificações em `scripts/validate-data.mjs`;
+- `tests/fotografias.test.ts`.
+
+O `npm run build` passa com 157 testes. A conferência visual no navegador ficou pendente, porque a automação do navegador estava desconectada.
+
+**Geração:** feita com `scripts/gerar-fotografias.py`, pelo mesmo caminho do projeto HopeGym:
+- **Motor local:** ComfyUI em `10.1.4.150`, portas 8188 e 8189 (uma GPU cada), com FLUX.2 klein 9B. Foram cerca de 10 s por imagem, e 32 imagens no total, incluindo as refeitas.
+- **Fallback:** a OpenAI (`gpt-image-2`, chave em `OPENAI_API_KEY` ou `../secret-gpt.txt`) não foi necessária.
+- **Licença:** o 9B usa a licença FLUX Non-Commercial, a mesma aceita no HopeGym. Para uso comercial, gere com `COMFY_MODEL=distilled` (4B, Apache 2.0).
+
+```
+python scripts/gerar-fotografias.py                 # gera 3 variações de cada foto pendente
+python scripts/gerar-fotografias.py status
+python scripts/gerar-fotografias.py aprovar <id> <n> [--espelhar]
+python scripts/gerar-fotografias.py refazer <id>
+```
+
+As variações ficam em `fontes-imagens/` (fora do git). Os prompts usados estão em [fotografias-etapa-1-prompts.json](fotografias-etapa-1-prompts.json), que passa a ser a referência. Os de Minas Tirith, Valfenda e Argonath foram reescritos depois da primeira revisão, então diferem dos rascunhos abaixo.
+
+**Revisão:** o FLUX.2 klein destilado ignora o prompt negativo (cfg 1). As correções funcionaram com instruções positivas.
+
+| Foto | Variação aprovada | Observação |
+| --- | --- | --- |
+| Minas Tirith | 2ª rodada, v3 | Na 1ª rodada a proa ficava ao lado da cidade. A v4 da 2ª rodada tinha marca d'água e foi reprovada. |
+| Edoras | v3 | 281 KiB, acima do alvo de 250 KiB mesmo com qualidade 70. |
+| Gondolin | v2 | — |
+| Valfenda | 2ª rodada, v1 | Na 1ª rodada a casa era um solar vitoriano na borda da garganta. A versão aprovada é a mais fraca do lote: arquitetura gótica genérica. Candidata a refazer. |
+| Caras Galadhon | v3 | — |
+| Portas de Durin | v2 | A v1 tinha figuras humanas. |
+| Argonath | v2, espelhada | O modelo ergueu a mão direita nas três variações. A imagem foi espelhada, e a estátua da esquerda continua sem o machado, o que está registrado no cadastro. |
+| Tirion | v2 | — |
+
 ## Ordem das entregas
 
 As etapas indicam prioridade, sem datas prometidas. Cada etapa é produzida em lotes de **4 a 6 fotos**, com revisão antes do lote seguinte. A primeira etapa inclui o painel; as demais só acrescentam imagens e dados.
 
 | Etapa | Escopo | Fotos | Total | Situação |
 | --- | --- | ---: | ---: | --- |
-| 1 | Painel + vitrine: os lugares mais conhecidos, uma época cada | 8 | 8 | Prompts prontos (abaixo) |
+| 1 | Painel + vitrine: os lugares mais conhecidos, uma época cada | 8 | 8 | **Entregue**: 8 fotos aprovadas e integradas; conferência no navegador pendente |
 | 2 | Antes e depois: os mesmos lugares em outras fases | 12 | 20 | Âncoras definidas |
 | 3 | Beleriand e a Primeira Era | 12 | 32 | Âncoras definidas |
 | 4 | Aman e Númenor | 10 | 42 | Âncoras definidas |
@@ -399,4 +437,4 @@ Florestas, cordilheiras, mares e regiões que hoje só existem como áreas no ma
 
 ## Limites deste roadmap
 
-Os prompts da etapa 1 estão prontos, mas **nenhuma imagem foi gerada**. O painel ainda não existe no código, e as âncoras das etapas 2 a 4 precisam ser conferidas nas edições antes de virar prompt. As fontes listadas foram indicadas a partir de conhecimento prévio das obras e índices; não equivalem a consulta direta ao livro. Custo e prazo dependem da API escolhida e são medidos no primeiro lote.
+A etapa 1 está entregue. As âncoras das etapas 2 a 4 ainda precisam ser conferidas nas edições antes de virar prompt. As fontes listadas foram indicadas a partir de conhecimento prévio das obras e índices; não equivalem a consulta direta ao livro. Custo e prazo dependem da API escolhida e são medidos no primeiro lote.

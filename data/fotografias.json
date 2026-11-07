@@ -1,0 +1,284 @@
+[
+  {
+    "id": "minas-anor-te3018",
+    "lugar": "minas-anor",
+    "quando": "TE:3018",
+    "de": "TE:2698",
+    "titulo": "Minas Tirith ao amanhecer, vista do Pelennor",
+    "documentado": [
+      "Sete níveis escavados na colina, cada um com muralha e portão; portões em direções alternadas",
+      "Proa de rocha que divide os círculos até o topo",
+      "Cidadela a 700 pés da planície, com a Torre Branca",
+      "Muralha externa negra; o Mindolluin atrás e o Pelennor à frente"
+    ],
+    "inferido": [
+      "Vista do leste ao amanhecer: a cidade fica voltada para o Anduin, e o sol nasce sobre Mordor"
+    ],
+    "artistico": [
+      "Casas, ruas, vegetação e nuvens",
+      "Proporções exatas entre os níveis"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro V, cap. 1"
+      },
+      {
+        "fonte": "sda-apB",
+        "local": "A Terceira Era, ano 2698"
+      }
+    ],
+    "alt": "Cidade de pedra branca em sete níveis murados na encosta de uma montanha escura, com uma torre branca no topo, iluminada pelo sol da manhã e vista de uma planície verde.",
+    "imagem": "fotografias/minas-anor-te3018.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 55266342888597,
+      "segundos": 9
+    }
+  },
+  {
+    "id": "edoras-te3018",
+    "lugar": "edoras",
+    "quando": "TE:3018",
+    "de": "TE:2759",
+    "titulo": "Edoras e o salão dourado de Meduseld",
+    "documentado": [
+      "Colina verde junto a um riacho, ao pé das montanhas nevadas",
+      "Fosso, muralha forte e cerca de espinhos",
+      "Meduseld no alto, sobre um terraço verde, com o telhado que parece de ouro",
+      "Túmulos dos reis ao lado do caminho, cobertos de flores brancas de simbelmynë"
+    ],
+    "inferido": [
+      "Vista do norte, pelo caminho entre os túmulos, com as Ered Nimrais ao fundo"
+    ],
+    "artistico": [
+      "Tamanho da colina, número de casas e forma exata do salão"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro III, cap. 6"
+      }
+    ],
+    "alt": "Colina verde murada com casas de madeira e, no topo, um longo salão de telhado dourado; montanhas nevadas ao fundo e túmulos cobertos de flores brancas ao lado do caminho.",
+    "imagem": "fotografias/edoras-te3018.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 275707146256017,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "gondolin-pe400",
+    "lugar": "gondolin",
+    "quando": "PE:400",
+    "titulo": "Gondolin vista das Echoriath",
+    "documentado": [
+      "Cidade branca sobre a colina de Amon Gwareth, no meio da planície de Tumladen",
+      "Anel de montanhas que cerca o vale por completo",
+      "Muralhas brancas, escadarias, fontes e a Torre do Rei"
+    ],
+    "inferido": [
+      "Vista de quem sai da passagem secreta nas montanhas, como Tuor ao chegar"
+    ],
+    "artistico": [
+      "Planta da cidade, volumes e a forma da torre"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, caps. 15 e 23"
+      },
+      {
+        "fonte": "ci",
+        "local": "De Tuor e sua chegada a Gondolin"
+      }
+    ],
+    "alt": "Cidade branca sobre uma colina no centro de uma planície verde e redonda, cercada por montanhas nevadas, vista do alto da encosta ao amanhecer.",
+    "imagem": "fotografias/gondolin-pe400.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 241668738706110,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "imladris-te3018",
+    "lugar": "imladris",
+    "quando": "TE:3018",
+    "titulo": "Valfenda no outono",
+    "documentado": [
+      "Vale estreito e escondido que surge de repente no planalto, com descida íngreme",
+      "O rio Bruinen no fundo e cachoeiras nas encostas",
+      "Pinheiros e outras árvores nas encostas; a casa de Elrond no fundo do vale"
+    ],
+    "inferido": [
+      "Outono, pela data do Conselho de Elrond (outubro de 3018)"
+    ],
+    "artistico": [
+      "Arquitetura e jardins da casa"
+    ],
+    "fontes": [
+      {
+        "fonte": "hobbit",
+        "local": "cap. 3"
+      },
+      {
+        "fonte": "sda",
+        "local": "Livro II, cap. 1"
+      }
+    ],
+    "alt": "Vale estreito e profundo com árvores de outono, cachoeiras e um rio no fundo; uma grande casa de pedra e madeira com janelas iluminadas ao entardecer.",
+    "imagem": "fotografias/imladris-te3018.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 126515848571056,
+      "segundos": 11
+    }
+  },
+  {
+    "id": "lothlorien-te3019",
+    "lugar": "lothlorien",
+    "quando": "TE:3019",
+    "de": "TE:1981",
+    "ate": "TE:3021",
+    "titulo": "Caras Galadhon ao anoitecer",
+    "documentado": [
+      "Mallorns de casca lisa cinza-prateada, com folhas douradas que ficam nas árvores no inverno",
+      "Caras Galadhon numa colina com as maiores árvores, cercada por um fosso e um muro verde",
+      "Uma ponte branca até a entrada; lâmpadas nas árvores ao anoitecer"
+    ],
+    "inferido": [
+      "Inverno, quando a Sociedade chega a Lórien (janeiro de 3019)"
+    ],
+    "artistico": [
+      "Forma das plataformas e das escadas nas árvores"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro II, caps. 6 e 7"
+      }
+    ],
+    "alt": "Bosque de árvores gigantes de tronco prateado e copas douradas sobre uma colina cercada por um muro verde, com pequenas lâmpadas acesas entre os galhos ao anoitecer.",
+    "imagem": "fotografias/lothlorien-te3019.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 198816551199641,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "khazad-dum-te3019",
+    "lugar": "khazad-dum",
+    "quando": "TE:3019",
+    "titulo": "As Portas de Durin ao luar",
+    "documentado": [
+      "As portas numa parede de rocha lisa, invisíveis a não ser pelo desenho de prata ao luar",
+      "Árvores, coroa com estrelas, martelo e bigorna e uma estrela no desenho",
+      "Dois azevinhos dos lados; um lago escuro e parado diante da parede"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Textura da rocha; a inscrição aparece como ornamento ilegível"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro II, cap. 4"
+      }
+    ],
+    "alt": "Parede de rocha à noite com o contorno de portas desenhado em linhas de prata brilhante, dois azevinhos dos lados e um lago escuro refletindo a lua.",
+    "imagem": "fotografias/khazad-dum-te3019.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 225498817047077,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "argonath-te3019",
+    "lugar": "argonath",
+    "quando": "TE:3019",
+    "titulo": "O Argonath visto do rio",
+    "documentado": [
+      "Duas estátuas imensas de reis, esculpidas em pináculos de rocha dos dois lados do Anduin",
+      "A mão esquerda erguida com a palma para fora, em advertência; um machado na mão direita",
+      "Elmos e coroas gastos pelo tempo; o rio estreito e rápido entre penhascos"
+    ],
+    "inferido": [
+      "Vista de um barco élfico, como a da Sociedade ao passar pelas estátuas"
+    ],
+    "artistico": [
+      "Rostos, roupas e o desgaste da pedra",
+      "Imagem espelhada na horizontal para que a mão erguida seja a esquerda; a estátua da esquerda aparece sem o machado"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro II, cap. 9"
+      }
+    ],
+    "alt": "Duas estátuas colossais de reis coroados esculpidas na rocha dos dois lados de um rio estreito, com a mão esquerda erguida, vistas da proa de um pequeno barco.",
+    "imagem": "fotografias/argonath-te3019.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 138896086938074,
+      "segundos": 10,
+      "espelhada": true
+    }
+  },
+  {
+    "id": "tirion-aa",
+    "lugar": "tirion",
+    "quando": "AA:#aa-silmarils",
+    "ate": "AA:#aa-escurecimento",
+    "titulo": "Tirion sob a luz das Árvores",
+    "documentado": [
+      "Muralhas e terraços brancos no alto de Túna, na fenda da Calacirya",
+      "A torre Mindon Eldaliéva, com uma lâmpada de prata que brilha longe sobre o mar",
+      "A luz das Duas Árvores passa pela Calacirya até a baía; não há Sol nem Lua"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura da cidade e vegetação da colina"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, caps. 1 e 5"
+      }
+    ],
+    "alt": "Cidade de muralhas brancas numa colina dentro de uma fenda entre montanhas imensas, com uma torre altíssima de lâmpada prateada, sob uma luz de prata e ouro e um céu estrelado, vista do mar.",
+    "imagem": "fotografias/tirion-aa.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 139459336022217,
+      "segundos": 10
+    }
+  }
+]

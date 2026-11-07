@@ -203,6 +203,21 @@ for (const r of retratos) {
   if (!r.imagem || !existsSync(new URL(`../public/${r.imagem}`, import.meta.url))) erro(`retrato ${r.id}: arquivo de imagem ausente`);
 }
 
+// fotografias (docs/ROADMAP-FOTOGRAFIAS-LUGARES.md)
+const fotografias = ler('fotografias');
+ids(fotografias, 'fotografias');
+for (const f of fotografias) {
+  const onde = `fotografia ${f.id}`;
+  if (!idLugares.has(f.lugar)) erro(`${onde}: lugar desconhecido "${f.lugar}"`);
+  verificarTempo(f.quando, onde);
+  verificarTempo(f.de, onde);
+  verificarTempo(f.ate, onde);
+  if (!f.fontes?.length) erro(`${onde}: sem fontes`);
+  verificarFontes(f.fontes, onde);
+  if (!f.alt || !f.titulo) erro(`${onde}: sem título ou texto alternativo`);
+  if (f.imagem && !existsSync(new URL(`../public/${f.imagem}`, import.meta.url))) erro(`${onde}: arquivo ausente public/${f.imagem}`);
+}
+
 // fontes: lacunas registradas explicitamente
 for (const f of fontes) if (f.acesso === 'lacuna' && !/LACUNA/.test(f.nota)) avisos.push(`fonte ${f.id}: acesso "lacuna" sem nota explicando a lacuna`);
 

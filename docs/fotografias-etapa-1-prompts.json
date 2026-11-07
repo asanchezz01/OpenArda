@@ -1,0 +1,43 @@
+{
+  "etapa": 1,
+  "roadmap": "docs/ROADMAP-FOTOGRAFIAS-LUGARES.md",
+  "tamanho": [
+    1536,
+    1024
+  ],
+  "estilo": "Photorealistic landscape photograph of an imagined place, as if taken on location in the real world. Full-frame camera, natural lens, 3:2 landscape. Realistic geology, vegetation, weather, water and stone. Pre-industrial world: no modern buildings, roads, vehicles, power lines, contrails, plastic or modern clothing. People, if any, only as small distant figures in simple pre-modern dress. No text, letters, logos, signatures, watermarks or frames. No visible magic glow unless the scene describes a light source. Not in the style of any specific artist, illustrator, film or game.",
+  "fotos": [
+    {
+      "id": "minas-anor-te3018",
+      "prompt": "A great fortified city of white stone built into the eastern face of a mountain spur at sunrise. Seven concentric tiers climb the hill, each ringed by its own white wall with a gate, the gates of successive tiers offset to alternate sides. Through the middle of the city runs a huge natural ridge of bare grey rock shaped like the bow of a ship, pointing straight at the viewer: it starts above the lowest tier, climbs to the summit and cuts every ring wall in two, the white tiers wrapping around it on both sides. On the summit a citadel about 700 feet above the plain, crowned by one slender, very tall square white stone tower with battlements and a silver pinnacle. The outermost wall at the foot of the hill is black, smooth and unscalable. Behind the city rises a dark, massive mountain with purple shadows. Foreground: a wide green plain with a few stone farmsteads and poplars and a distant low outer wall around the fields. Viewpoint from the plain to the east, looking west, low morning sun lighting the white stone. Calm, clear early-spring air."
+    },
+    {
+      "id": "edoras-te3018",
+      "prompt": "A hill-town of wooden halls on an isolated green hill at the mouth of a mountain valley. The hill is ringed by a ditch, a strong earthen and stone wall and a fence of thorns. Timber houses with thatched roofs climb its slopes. On the summit, on a raised green terrace reached by a stone stair, stands one long great hall of carved timber whose thatched roof gleams like gold in the sun, visible from far away. Behind rise high snow-capped mountains; a clear, cold stream runs past the hill. Foreground: a road leading to the gates between two rows of grassy burial mounds, their slopes sprinkled with small white star-like flowers. Viewpoint on the road among the mounds, looking south toward the hill and the mountains, bright morning, wind in the grass."
+    },
+    {
+      "id": "gondolin-pe400",
+      "prompt": "A hidden white city on a rocky hill rising from the middle of a wide, perfectly round green plain, entirely enclosed by a ring of steep, snow-capped mountains with no visible pass. The city is pale white stone with high walls, many stairs, terraces, fountains catching the light and one tall white tower at its heart. The plain is green meadow with a few groves and streams. Viewpoint from high on the inner slope of the encircling mountains, as if just emerging from a hidden ravine, looking down and across the plain toward the city at dawn, the sun rising over the eastern peaks."
+    },
+    {
+      "id": "imladris-te3018",
+      "prompt": "A deep, narrow hidden valley opening suddenly below the edge of a bare upland moor. Steep slopes covered with pines and autumn-coloured broadleaf trees, several waterfalls falling from the valley sides and a fast river in a rocky bed far below. Down at the bottom of the valley, beside the river, stands an ancient Elven house: long, low and graceful, of pale stone and dark carved wood, with tall pointed arched windows, open colonnades, wide balconies and terraced gardens stepping down to the water, its windows lit warmly in the dusk; medieval, timeless architecture without chimneys. Viewpoint from the rim of the valley at the top of a steep winding path, looking down at the house far below in late autumn, golden evening light and mist over the river."
+    },
+    {
+      "id": "lothlorien-te3019",
+      "prompt": "A city built in a grove of gigantic smooth-barked trees on a low hill. The trees have pale silver-grey trunks rising like pillars and crowns of golden leaves, still on the branches in winter, with a carpet of fallen gold on the ground. Around the hill runs a deep green ditch and a high green earthen wall with a single white bridge leading to the entrance. High among the branches, wooden platforms and white ladders; at dusk, many small lamps of silver, green and gold glow among the leaves. Viewpoint outside the green wall at twilight, looking up at the hill of trees, cool winter air, soft mist."
+    },
+    {
+      "id": "khazad-dum-te3019",
+      "prompt": "A sheer, smooth cliff face at the foot of great mountains at night under a bright moon. In the cliff, the outline of tall closed doors, invisible as stone except for delicate glowing silver tracery drawn on the rock: an arch, two trees, a crown above seven stars, a hammer and anvil and a central star, plus decorative abstract script that is not legible. Two old holly trees stand at either side of the doors. In front, a dark, still, stagnant lake fills the hollow, reflecting the moonlight. Viewpoint from the shore of the lake, cold, silent, slightly ominous atmosphere, no figures."
+    },
+    {
+      "id": "argonath-te3019",
+      "prompt": "Two colossal ancient stone statues of crowned kings, tall as towers, carved from pinnacles of rock standing in a great river on either side of a narrow gorge. Each statue raises only its left arm, the open palm facing outward toward the viewer as a stern warning; its right arm hangs lowered and the right hand grips a great axe. The statues are carved directly out of the rock pinnacles they stand on, their feet merging into the living stone with no pedestal. Helmets and crowns are weathered and cracked, stained by ages of rain. The river runs swift and deep between sheer cliffs and the water is empty. Viewpoint low on the water, from the bow of a small grey boat approaching the statues, looking up at them under an overcast sky, spray and mist."
+    },
+    {
+      "id": "tirion-aa",
+      "prompt": "A city of white walls and terraces on a green hill rising inside a deep cleft between immense mountains, seen from the sea. At the city's summit, one very slender, very tall white tower with a silver lamp burning at its top, its beam reaching far over the water. There is no sun and no moon: the light comes from beyond the mountains through the cleft, a soft mingling of silver and pale gold that falls on the city and spills out across a calm bay, while the sky above is deep blue with bright stars. Viewpoint from the water of the bay, looking west into the cleft. Serene, luminous, timeless."
+    }
+  ]
+}
