@@ -4,11 +4,11 @@ Atualizado em **7 de novembro de 2026**. Plano de produção para o OpenArda, co
 
 ## Ponto de partida e objetivo
 
-O catálogo local contém **75 personagens** em [data/linhagens.json](../data/linhagens.json). Há **9 retratos criados** em [data/retratos.json](../data/retratos.json), cuja integração na árvore está em andamento pelo usuário. Criação de imagem e integração são estados distintos; este roadmap não considera a integração concluída.
+O catálogo local contém **75 personagens** em [data/linhagens.json](../data/linhagens.json). Há **14 retratos criados e cadastrados na interface** em [data/retratos.json](../data/retratos.json), cobrindo as etapas 0 e 1. A etapa 1 foi validada por testes de renderização, build e carregamento dos arquivos; a conferência visual da página no navegador continua pendente por falha da automação. Veja a [entrega da etapa 1](RETRATOS-ETAPA-1.md).
 
-O plano contempla **150 personagens únicos**, incluindo todos os 75 já cadastrados. São **141 personagens ainda sem retrato neste plano**. A lista é uma seleção editorial para a biblioteca inicial, não um inventário de todos os personagens de Tolkien. Versões de um mesmo personagem e a extensão de criaturas não entram nessa contagem.
+O plano contempla **150 personagens únicos**, incluindo todos os 75 já cadastrados. São **136 personagens ainda sem retrato neste plano**. A lista é uma seleção editorial para a biblioteca inicial, não um inventário de todos os personagens de Tolkien. Versões de um mesmo personagem e a extensão de criaturas não entram nessa contagem.
 
-**Primeira entrega de expansão:** Finwë, Míriel Serindë, Indis, Mahtan e Celebrimbor. Depois, priorizar os protagonistas de *O Senhor dos Anéis* antes dos elos genealógicos secundários.
+**Primeira entrega de expansão realizada:** Finwë, Míriel Serindë, Indis, Mahtan e Celebrimbor. A próxima etapa prioriza os protagonistas de *O Senhor dos Anéis* antes dos elos genealógicos secundários.
 
 ## Ordem das entregas
 
@@ -16,8 +16,8 @@ As etapas indicam prioridade, sem datas prometidas. Dividir cada etapa em lotes 
 
 | Etapa | Escopo | Personagens na etapa | Total acumulado | Situação |
 | --- | --- | ---: | ---: | --- |
-| 0 | Fëanor e os sete filhos | 9 | 9 | Criados; integração em andamento |
-| 1 | Completar a família imediata | 5 | 14 | Planejado |
+| 0 | Fëanor e os sete filhos | 9 | 9 | Criados e cadastrados na interface |
+| 1 | Completar a família imediata | 5 | 14 | Integrados; build validado; conferência visual da página pendente |
 | 2 | Protagonistas de O Senhor dos Anéis | 24 | 38 | Planejado |
 | 3 | Casa de Finwë, Gondolin e Nargothrond | 20 | 58 | Planejado |
 | 4 | Doriath e os Grandes Contos | 20 | 78 | Planejado |
@@ -38,7 +38,7 @@ Até a etapa 2, a biblioteca terá 38 personagens; até a etapa 4, 78. Esses sã
 
 **Personagens (5):** Finwë; Míriel Serindë; Indis; Mahtan; Celebrimbor.
 
-**Entrega:** Fechar a ascendência imediata de Fëanor e a descendência de Curufin.
+**Entrega realizada:** cinco retratos gerados e integrados pelo cadastro existente, com fontes, inferências e notas de versão. Os testes verificam a imagem na ficha e no cartão de cada personagem; o build e o carregamento dos arquivos passaram. Conferência visual da página pendente por indisponibilidade da automação do navegador.
 
 ### Etapa 2 — Protagonistas de O Senhor dos Anéis
 
@@ -82,9 +82,9 @@ Até a etapa 2, a biblioteca terá 38 personagens; até a etapa 4, 78. Esses sã
 
 **Entrega:** Fechar os retratos do catálogo genealógico atual e acrescentar as duas filhas de Indis.
 
-## Próximo lote: pesquisa inicial dos cinco rostos
+## Etapa 1 entregue: pesquisa dos cinco rostos
 
-As informações abaixo foram conferidas em índices especializados, que remetem aos textos de Tolkien. Ainda é necessário registrar a edição e a passagem utilizadas na ficha de produção. Consulta por remissão não equivale a consulta direta ao livro.
+As informações abaixo foram conferidas em índices especializados, que remetem aos textos de Tolkien. As passagens e decisões adotadas estão em data/retratos.json e na documentação da etapa 1. Consulta por remissão não equivale a consulta direta ao livro.
 
 | Personagem | Base para a criação | Dependência ou decisão antes de gerar |
 | --- | --- | --- |
@@ -94,7 +94,7 @@ As informações abaixo foram conferidas em índices especializados, que remetem
 | Mahtan | Cabelo castanho-avermelhado, barba e diadema de cobre. [Referência](https://tolkiengateway.net/wiki/Mahtan). | Usar Nerdanel, Maedhros e os gêmeos como referências familiares; preservar a barba descrita, sem aplicar uma regra genérica de elfos imberbes. |
 | Celebrimbor | A linha Curufin → Celebrimbor é a adotada no catálogo do projeto. [Referência para pesquisa](https://tolkiengateway.net/wiki/Celebrimbor). | Partir do retrato de Curufin; características físicas não localizadas na pesquisa devem ficar como inferidas, com nota sobre variantes de origem quando pertinentes. |
 
-A ordem sugerida dentro do lote é **Finwë → Míriel → Indis → Mahtan → Celebrimbor**. Como os parentes de referência já têm retrato, nenhuma dessas criações exige refazer os nove rostos existentes.
+O lote **Finwë → Míriel → Indis → Mahtan → Celebrimbor** foi criado preservando os nove rostos anteriores. Míriel usa a tradição de cabelo prateado, com a alternativa escura registrada; a semelhança de Celebrimbor com Curufin é identificada como inferência. Os prompts completos estão em [retratos-etapa-1-prompts.json](retratos-etapa-1-prompts.json).
 
 ## Como pesquisar e decidir a aparência
 
@@ -174,7 +174,7 @@ Outros nomes, como Nimrodel, Haldir, os Magos Azuis e Khamûl, podem entrar conf
 
 Este documento organiza a produção e registra a pesquisa inicial do próximo lote e de alguns casos sensíveis. **A aparência dos 150 personagens ainda não foi pesquisada individualmente**, e a presença na lista não significa que um retrato foi criado.
 
-Nesta entrega não foram geradas novas imagens, alteradas as fichas ou modificada a integração que está em andamento. Datas e custos dependem da capacidade de produção, das revisões e das consultas às fontes; devem ser estimados após o próximo lote de cinco rostos.
+A etapa 1 agora tem cinco novas imagens integradas pelo padrão existente, sem alteração do layout das fichas. Datas e custos das etapas restantes dependem da capacidade de produção, das revisões e das consultas às fontes.
 
 Referência do trabalho já realizado: [galeria e notas dos retratos de Fëanor](RETRATOS-FEANOR.md).
 

@@ -1,0 +1,61 @@
+{
+  "ferramenta": "image_gen integrada",
+  "data": "2026-11-07",
+  "retratos": [
+    {
+      "id": "finwe",
+      "nome": "Finwë",
+      "prompt": "Use case: photorealistic-natural. Create one realistic photographic portrait for OpenArda, matching the supplied family-tree portrait series. Square image, head and shoulders, centered face and entire hairline and chin within the central area, safe for square and circular 36px/96px avatars. Exactly one adult elf, subtly pointed ears, realistic skin pores, natural anatomy, soft neutral window light with a subtle warm rim, muted charcoal-brown blurred background, 85mm portrait lens. Restrained ancient elven clothing, no modern items, no text, no watermark, no border, no glowing eyes, no illustration, no celebrity or actor resemblance. Match lighting and photographic realism of references while creating a distinct person.\nSubject: Finwe, first king of the Noldor and father of Feanor. Reference image shows his ADULT SON Feanor; infer a convincing family resemblance, never copy the exact face. Long black hair and bright blue-grey eyes are literary descriptions. Ageless mature adult male, apparent early forties, clean-shaven, fair skin, calm thoughtful and noble expression, tall proud bearing. Slightly broader jaw, fuller cheekbones and softer brow than Feanor, similar long straight nose and arched dark brows. Dark elegant plain robe with a small silver clasp; no giant crown or bulky armor. Facial geometry, apparent age and clothing are artistic choices.",
+      "referencias_visuais": [
+        "public/retratos/feanor/feanor.webp"
+      ],
+      "referencias_papel": "Referência familiar e de estilo.",
+      "original": "exec-c4a40470-a594-4d4b-a8ff-b9d37720c7ca.png",
+      "imagem": "public/retratos/finwe.webp"
+    },
+    {
+      "id": "miriel",
+      "nome": "Míriel Serindë",
+      "prompt": "Use case: photorealistic-natural. Create one realistic photographic portrait for OpenArda, matching the supplied family-tree portrait series. Square image, head and shoulders, centered face and entire hairline and chin within the central area, safe for square and circular 36px/96px avatars. Exactly one adult elf, subtly pointed ears, realistic skin pores, natural anatomy, soft neutral window light with a subtle warm rim, muted charcoal-brown blurred background, 85mm portrait lens. Restrained ancient elven clothing, no modern items, no text, no watermark, no border, no glowing eyes, no illustration, no celebrity or actor resemblance. Match lighting and photographic realism of references while creating a distinct person.\nSubject: Miriel Serinde, the elven mother of Feanor and an exceptional embroiderer. Reference shows her ADULT SON Feanor; subtly echo his fine straight nose, high cheekbones and expressive strong brows in a distinct female face. Choose the silver-haired literary tradition: long naturally silver hair, not blond, not white from old age; dark eyes, here dark brown. Slender graceful woman, ageless apparent early thirties, fair skin, gentle but quietly resolute expression. Natural unretouched skin, no makeup glamour. Pale grey linen robe with very fine restrained embroidery at collar, no tiara. Silver hair follows one Tolkien textual version; a different version has dark hair. Do not mix the two hair colours or add death imagery.",
+      "referencias_visuais": [
+        "public/retratos/feanor/feanor.webp"
+      ],
+      "referencias_papel": "Referência familiar e de estilo.",
+      "original": "exec-630a9e74-1a4e-4c95-a010-ad8321603bde.png",
+      "imagem": "public/retratos/miriel.webp"
+    },
+    {
+      "id": "indis",
+      "nome": "Indis",
+      "prompt": "Use case: photorealistic-natural. Create one realistic photographic portrait for OpenArda, matching the supplied family-tree portrait series. Square image, head and shoulders, centered face and entire hairline and chin within the central area, safe for square and circular 36px/96px avatars. Exactly one adult elf, subtly pointed ears, realistic skin pores, natural anatomy, soft neutral window light with a subtle warm rim, muted charcoal-brown blurred background, 85mm portrait lens. Restrained ancient elven clothing, no modern items, no text, no watermark, no border, no glowing eyes, no illustration, no celebrity or actor resemblance. Match lighting and photographic realism of references while creating a distinct person.\nSubject: Indis the Vanya, second wife of Finwe, golden-haired and tall. Reference image is Nerdanel, used ONLY for photographic lighting, framing and realism, NOT identity and NOT familial resemblance: these women are not blood relatives. Create a distinct luminous golden-haired adult elven woman, apparent early thirties and ageless. Long natural warm golden-blond hair partly swept back, clear pale complexion, calm assured and kind expression, oval face, softly angular cheekbones, delicate straight nose, naturally arched brows. Grey-blue eyes are an artistic choice, not recorded individual fact. Restrained cream robe with a discreet gold fastener, no extravagant crown. Keep natural skin texture; no makeup-advert look.",
+      "referencias_visuais": [
+        "public/retratos/feanor/nerdanel.webp"
+      ],
+      "referencias_papel": "Somente estilo e iluminação; não indica parentesco.",
+      "original": "exec-695ebc83-2e9e-4f7d-ab1a-f02836d1a0d1.png",
+      "imagem": "public/retratos/indis.webp"
+    },
+    {
+      "id": "mahtan",
+      "nome": "Mahtan",
+      "prompt": "Use case: photorealistic-natural. Create one realistic photographic portrait for OpenArda, matching the supplied family-tree portrait series. Square image, head and shoulders, centered face and entire hairline and chin within the central area, safe for square and circular 36px/96px avatars. Exactly one adult elf, subtly pointed ears, realistic skin pores, natural anatomy, soft neutral window light with a subtle warm rim, muted charcoal-brown blurred background, 85mm portrait lens. Restrained ancient elven clothing, no modern items, no text, no watermark, no border, no glowing eyes, no illustration, no celebrity or actor resemblance. Match lighting and photographic realism of references while creating a distinct person.\nSubject: Mahtan, the Noldorin master smith and father of Nerdanel. Reference image shows his ADULT DAUGHTER Nerdanel; subtly carry her broad strong cheekbones, straight nose with a slightly rounded tip, warm ruddy complexion and full brows into a distinct mature male face. Literary traits: long reddish-brown hair with copper glints, a real full beard, simple copper circlet. Beard must be visible and naturally auburn, not grey; this elf is not an elderly dwarf. Ageless adult male with apparent forties, strong sculpted face and steady kind intelligent gaze. Brown eyes are an artistic choice. Dark brown linen work clothes and simple leather apron at shoulders. Fine natural skin texture, no grime caricature, no hammer or extra objects.",
+      "referencias_visuais": [
+        "public/retratos/feanor/nerdanel.webp"
+      ],
+      "referencias_papel": "Referência familiar e de estilo.",
+      "original": "exec-1763435f-9d64-4411-96d9-a5ca25023a49.png",
+      "imagem": "public/retratos/mahtan.webp"
+    },
+    {
+      "id": "celebrimbor",
+      "nome": "Celebrimbor",
+      "prompt": "Use case: photorealistic-natural. Create one realistic photographic portrait for OpenArda, matching the supplied family-tree portrait series. Square image, head and shoulders, centered face and entire hairline and chin within the central area, safe for square and circular 36px/96px avatars. Exactly one adult elf, subtly pointed ears, realistic skin pores, natural anatomy, soft neutral window light with a subtle warm rim, muted charcoal-brown blurred background, 85mm portrait lens. Restrained ancient elven clothing, no modern items, no text, no watermark, no border, no glowing eyes, no illustration, no celebrity or actor resemblance. Match lighting and photographic realism of references while creating a distinct person.\nSubject: Celebrimbor, adult Noldorin jewelsmith, son of Curufin and grandson of Feanor. Reference image shows his FATHER Curufin. Create a distinct son with plausible family resemblance: high cheekbones and fine straight nose, but subtly broader forehead, softer jaw, more open and thoughtful expression. Long dark-brown almost-black hair, grey eyes and fair skin are artistic inferences from his father and Noldorin kin, not a directly recorded individual physical description. Ageless adult apparent early thirties, clean-shaven. Simple charcoal-blue artisan tunic with one small restrained silver clasp, no giant crown or rings floating. Natural skin and humanly plausible anatomy, realistic elven ears.",
+      "referencias_visuais": [
+        "public/retratos/feanor/curufin.webp"
+      ],
+      "referencias_papel": "Referência familiar e de estilo.",
+      "original": "exec-6bf48587-3e68-444a-893a-519f66285d69.png",
+      "imagem": "public/retratos/celebrimbor.webp"
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 
 import * as THREE from 'three';
 import type { Vista } from '../core/types';
+import type { Globo } from './globo';
 
 export interface EstadoCamera extends Vista {}
 
@@ -14,7 +15,7 @@ export interface Retangulo {
 }
 
 const D_MIN = 1.2;
-const D_MAX = 14000;
+const D_MAX = 22000; // longe o bastante para ver o globo inteiro depois da Queda
 const INCL_MAX = 84;
 
 function angDiff(a: number, b: number) {
@@ -29,10 +30,13 @@ export class Camera {
   aoMudar?: () => void;
   aoInteragir?: () => void;
   aoToque?: (sx: number, sy: number) => void;
+  aoAplicar?: (x: number, y: number) => void;
   bloqueada = false;
   reduzirMovimento = false;
   /** Área da tela onde a cena é desenhada para um ponto (na comparação, a metade que o contém). */
   viewport: (sx: number, sy: number) => Retangulo = () => this.el.getBoundingClientRect();
+  /** Forma do mundo sob um ponto da tela (na comparação, cada metade tem a sua). */
+  globo: (sx: number, sy: number) => Globo | null = () => null;
   private vpFixo: Retangulo | null = null;
   private toquePendente = 0;
   private ultimoTipo = 'mouse';
@@ -95,6 +99,8 @@ export class Camera {
     this.cam.far = Math.max(20000, s.d * 60);
     this.cam.updateProjectionMatrix();
     this.cam.updateMatrixWorld();
+    // o globo gira com o alvo: precisa acompanhar cada passo do arrasto, não só cada quadro
+    this.aoAplicar?.(s.x, s.y);
   }
 
   get zAlvo() {
@@ -198,6 +204,8 @@ export class Camera {
   /** Interseção do raio da tela com o plano do chão (z = altura do alvo). */
   chao(sx: number, sy: number, z = this.alvoZSuave): THREE.Vector3 | null {
     this.ray.setFromCamera(this.ndc(sx, sy), this.cam);
+    const g = this.globo(sx, sy);
+    if (g?.ativo) return g.interceptar(this.ray.ray, z);
     const d = this.ray.ray.direction;
     const o = this.ray.ray.origin;
     if (Math.abs(d.z) < 1e-6) return null;

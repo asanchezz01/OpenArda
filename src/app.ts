@@ -6,6 +6,7 @@ import { Camera } from './render/camera';
 import { Ceu } from './render/sky';
 import { aplicarIluminacao, criarUniformesCeu, luzDasArvores, regimeDe, type UniformesCeu } from './render/lighting';
 import { Rotulos } from './render/labels';
+import { Globo } from './render/globo';
 import { DetalhesReinos } from './render/detalhes';
 import { Sobreposicao, CAMADAS_PADRAO, type Camadas } from './render/overlay';
 import { criarUniformesGlobais, type UniformesGlobais } from './terrain/material';
@@ -24,6 +25,7 @@ export interface Lado {
   modelo: ModeloTerreno | null;
   assinaturaModelo: string;
   rotulos: Rotulos;
+  globo: Globo;
 }
 
 type Ouvinte = (motivo: string) => void;
@@ -52,6 +54,9 @@ export class App {
   private relogio = new THREE.Clock();
   private tempoDebounce = 0;
   private readonly tVeu = tempo.cursor('PE:400');
+  /** A partir da Queda de Númenor o mundo é redondo (Akallabêth). */
+  private readonly tQueda = tempo.fronteira('SE:3319', Infinity);
+  private oceano: THREE.Mesh<THREE.SphereGeometry, THREE.ShaderMaterial>;
   private pendenteTerreno = false;
 
   hora = 3.5;
@@ -101,7 +106,7 @@ export class App {
       const uniformes = criarUniformesGlobais();
       const sistema = new SistemaTerreno(this.pool, uniformes, { luzArvores: luz });
       this.cena.add(sistema.grupo);
-      return { t: 0, sistema, uniformes, ceu: criarUniformesCeu(), modelo: null, assinaturaModelo: '', rotulos: new Rotulos(rotHost) };
+      return { t: 0, sistema, uniformes, ceu: criarUniformesCeu(), modelo: null, assinaturaModelo: '', rotulos: new Rotulos(rotHost), globo: new Globo() };
     };
     const rotA = document.createElement('div');
     rotA.className = 'camada-rotulos lado-a';
@@ -151,6 +156,44 @@ export class App {
     this.brilhos = { illuin: brilho(0xfff1c8), ormal: brilho(0xffe2b0), telperion: brilho(0xc8d8ff), laurelin: brilho(0xffc760) };
     this.camera.alturaEm = (x, y) => this.alturaEm(x, y, this.A);
     this.camera.viewport = (sx, sy) => this.retanguloDe(this.ladoDaTela(sx, sy));
+    this.camera.globo = (sx, sy) => this.ladoDaTela(sx, sy).globo;
+    this.camera.aoAplicar = (x, y) => {
+      for (const l of [this.A, this.B]) l.globo.atualizar(l.globo.k, x, y);
+    };
+    // o mar que cobre o resto da esfera, além da área do mapa
+    this.oceano = new THREE.Mesh(
+      new THREE.SphereGeometry(1, 128, 96),
+      new THREE.ShaderMaterial({
+        uniforms: { uSky: { value: new THREE.Color() }, uSunColor: { value: new THREE.Color() }, uSunDir: { value: new THREE.Vector3() }, uFogColor: { value: new THREE.Color() }, uFogDensity: { value: 0 } },
+        vertexShader: /* glsl */ `
+          varying vec3 vN; varying float vDist; varying vec3 vV;
+          void main(){
+            vN = normalize(mat3(modelMatrix) * normal);
+            vec4 w = modelMatrix * vec4(position, 1.0);
+            vV = normalize(cameraPosition - w.xyz);
+            vec4 mv = viewMatrix * w; vDist = -mv.z;
+            gl_Position = projectionMatrix * mv;
+          }`,
+        fragmentShader: /* glsl */ `
+          uniform vec3 uSky; uniform vec3 uSunColor; uniform vec3 uSunDir; uniform vec3 uFogColor; uniform float uFogDensity;
+          varying vec3 vN; varying float vDist; varying vec3 vV;
+          vec3 lin(vec3 c){ return pow(c, vec3(2.2)); }
+          void main(){
+            // mesma cor do mar profundo dos ladrilhos, com a luz no referencial local (o mapa é iluminado como plano)
+            vec3 col = lin(vec3(0.04, 0.11, 0.22)) * (uSky * 0.55 + uSunColor * 0.45 * max(uSunDir.z, 0.0));
+            float fog = 1.0 - exp(-pow(vDist * uFogDensity, 1.25));
+            col = mix(col, lin(uFogColor), clamp(fog, 0.0, 1.0));
+            float fres = pow(1.0 - max(dot(vN, vV), 0.0), 5.0);
+            col += lin(uSky) * fres * 0.45; // halo da atmosfera na borda do globo
+            gl_FragColor = vec4(col, 1.0);
+            #include <tonemapping_fragment>
+            #include <colorspace_fragment>
+          }`,
+      }),
+    );
+    this.oceano.frustumCulled = false;
+    this.oceano.visible = false;
+    this.cena.add(this.oceano);
     this.camera.aoToque = (sx, sy) => this.tocar(sx, sy);
     window.addEventListener('resize', () => this.redimensionar());
     this.A.sistema.aoMudarRelevo = () => this.emitir('relevo');
@@ -202,8 +245,13 @@ export class App {
     let t = 0;
     const maxT = this.camera.estado.d * 30;
     let passo = Math.max(0.05, this.camera.estado.d * 0.01);
+    // ponto da grade (x, y, altura) de uma posição ao longo do raio; no globo, desfaz a curvatura
+    const naGrade = (tt: number) => {
+      const g = lado.globo.doMundo(ray.origin.clone().addScaledVector(ray.direction, tt));
+      return new THREE.Vector3(g.x, g.y, g.h);
+    };
     for (let k = 0; k < 400 && t < maxT; k++) {
-      const p = ray.origin.clone().addScaledVector(ray.direction, t);
+      const p = naGrade(t);
       const hz = Math.max(0, m.altura(p.x, p.y)) * exag;
       if (p.z <= hz) {
         // refino binário
@@ -211,11 +259,11 @@ export class App {
           b = t;
         for (let i = 0; i < 12; i++) {
           const c = (a + b) / 2;
-          const q = ray.origin.clone().addScaledVector(ray.direction, c);
+          const q = naGrade(c);
           if (q.z <= Math.max(0, m.altura(q.x, q.y)) * exag) b = c;
           else a = c;
         }
-        return ray.origin.clone().addScaledVector(ray.direction, b);
+        return naGrade(b);
       }
       passo = Math.max(0.05, Math.min(this.camera.estado.d * 0.05, (p.z - hz) * 0.5));
       t += passo;
@@ -524,6 +572,13 @@ export class App {
       this.veu.grupo.visible = false;
     }
     const alvo = new THREE.Vector2(this.camera.estado.x, this.camera.estado.y);
+    // depois da Queda o mundo se curva até virar esfera; o Caminho Reto tem sua própria curvatura
+    for (const lado of [this.A, this.B]) {
+      const k = lado.t >= this.tQueda && this.caminhoRetoAlvo === 0 && this.caminhoReto < 0.01 ? 1 : 0;
+      let kk = lado.globo.k + (k - lado.globo.k) * Math.min(1, dt * (this.reduzirMovimento ? 30 : 1.6));
+      if (Math.abs(kk - k) < 0.002) kk = k;
+      lado.globo.atualizar(kk, alvo.x, alvo.y, lado.uniformes);
+    }
     // em escala continental o relevo é realçado para destacar as cordilheiras
     const D = this.camera.estado.d;
     const fatorEscala = 1 + 1.4 * THREE.MathUtils.smoothstep(D, 350, 3500);
@@ -595,8 +650,8 @@ export class App {
     // terreno
     const bias = window.innerWidth < 700 ? 0.8 : 1;
     this.A.sistema.bias = this.B.sistema.bias = bias;
-    this.A.sistema.atualizar(cam, this.camera.zAlvo);
-    if (this.comparando) this.B.sistema.atualizar(cam, this.camera.zAlvo);
+    this.A.sistema.atualizar(cam, this.camera.zAlvo, this.A.globo);
+    if (this.comparando) this.B.sistema.atualizar(cam, this.camera.zAlvo, this.B.globo);
     this.sobreposicao.costas = this.modeloDe(this.A)?.costas ?? [];
     this.sobreposicao.sigCostas = this.A.assinaturaModelo;
     this.sobreposicao.atualizar(this.A.sistema.visiveis, this.A.t, (tile, tex) => this.A.sistema.definirOverlay(tile, tex));
@@ -625,11 +680,12 @@ export class App {
       r.setScissor(x, y, w, h);
       r.setScissorTest(true);
       this.ceuUniformes(lado);
-      this.ceu.atualizar(cam);
+      this.ceu.atualizar(cam, lado.globo.k * THREE.MathUtils.smoothstep(this.camera.estado.d, 1500, 9000));
+      this.posicionarOceano(lado);
       r.render(this.ceu.cena, this.ceu.camera);
       this.A.sistema.grupo.visible = lado === this.A;
       this.B.sistema.grupo.visible = lado === this.B;
-      this.detalhes.atualizar(lado.t, cam, this.modeloDe(lado), lado.uniformes, this.camadas.detalhes && this.caminhoReto < 0.01);
+      this.detalhes.atualizar(lado.t, cam, this.modeloDe(lado), lado.uniformes, this.camadas.detalhes && this.caminhoReto < 0.01, lado.globo);
       r.clearDepth();
       r.render(this.cena, cam);
     };
@@ -643,26 +699,42 @@ export class App {
     const sig = (l: Lado) => l.sistema.assinatura + ':' + l.uniformes.uExag.value;
     if (!this.comparando) {
       desenhar(this.A, 0, 0, W, H);
-      this.A.rotulos.atualizar(cam, W, H, 0, this.A.t, this.camera.estado.d, (x, y) => this.alturaEm(x, y, this.A), sig(this.A), opRot, this.realce);
+      this.A.rotulos.atualizar(cam, W, H, 0, this.A.t, this.camera.estado.d, (x, y) => this.alturaEm(x, y, this.A), sig(this.A), opRot, this.realce, this.A.globo);
     } else if (this.divisaoVertical()) {
       const w2 = Math.floor(W / 2);
       desenhar(this.A, 0, 0, w2, H);
       desenhar(this.B, w2, 0, W - w2, H);
-      this.A.rotulos.atualizar(cam, w2, H, 0, this.A.t, this.camera.estado.d, (x, y) => this.alturaEm(x, y, this.A), sig(this.A), opRot, this.realce);
-      this.B.rotulos.atualizar(cam, W - w2, H, w2, this.B.t, this.camera.estado.d, (x, y) => this.alturaEm(x, y, this.B), sig(this.B), opRot, this.realce);
+      this.A.rotulos.atualizar(cam, w2, H, 0, this.A.t, this.camera.estado.d, (x, y) => this.alturaEm(x, y, this.A), sig(this.A), opRot, this.realce, this.A.globo);
+      this.B.rotulos.atualizar(cam, W - w2, H, w2, this.B.t, this.camera.estado.d, (x, y) => this.alturaEm(x, y, this.B), sig(this.B), opRot, this.realce, this.B.globo);
     } else {
       const h2 = Math.floor(H / 2);
       desenhar(this.A, 0, h2, W, H - h2);
       desenhar(this.B, 0, 0, W, h2);
-      this.A.rotulos.atualizar(cam, W, H - h2, 0, this.A.t, this.camera.estado.d, (x, y) => this.alturaEm(x, y, this.A), sig(this.A), opRot, this.realce);
+      this.A.rotulos.atualizar(cam, W, H - h2, 0, this.A.t, this.camera.estado.d, (x, y) => this.alturaEm(x, y, this.A), sig(this.A), opRot, this.realce, this.A.globo);
       this.B.rotulos.raiz.style.transform = `translateY(${H - h2}px)`;
-      this.B.rotulos.atualizar(cam, W, h2, 0, this.B.t, this.camera.estado.d, (x, y) => this.alturaEm(x, y, this.B), sig(this.B), opRot, this.realce);
+      this.B.rotulos.atualizar(cam, W, h2, 0, this.B.t, this.camera.estado.d, (x, y) => this.alturaEm(x, y, this.B), sig(this.B), opRot, this.realce, this.B.globo);
     }
     if (!this.comparando || this.divisaoVertical()) this.B.rotulos.raiz.style.transform = '';
     r.setScissorTest(false);
     this.A.sistema.grupo.visible = true;
     this.B.sistema.grupo.visible = this.comparando;
     this.emitir('quadro');
+  }
+
+  private posicionarOceano(lado: Lado) {
+    const g = lado.globo;
+    this.oceano.visible = g.ativo;
+    if (!g.ativo) return;
+    // um pouco abaixo do nível do mar dos ladrilhos, com folga que cresce com a distância (precisão de profundidade)
+    const folga = 0.02 + this.camera.estado.d * 2e-5;
+    g.centro(this.oceano.position);
+    this.oceano.scale.setScalar(g.R - folga);
+    const u = this.oceano.material.uniforms;
+    u.uSky.value.copy(lado.uniformes.uSky.value);
+    u.uSunColor.value.copy(lado.uniformes.uSunColor.value);
+    u.uSunDir.value.copy(lado.uniformes.uSunDir.value);
+    u.uFogColor.value.copy(lado.uniformes.uFogColor.value);
+    u.uFogDensity.value = lado.uniformes.uFogDensity.value;
   }
 
   private ceuUniformes(lado: Lado) {

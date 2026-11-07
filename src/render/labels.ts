@@ -1,6 +1,7 @@
 // Nomes discretos sobre o mapa, com prioridade por escala e sem sobreposição.
 
 import * as THREE from 'three';
+import type { Globo } from './globo';
 import type { Lugar, Reino } from '../core/types';
 import { lugares, reinos, statusLugar, ativo, terreno } from '../core/data';
 
@@ -87,6 +88,7 @@ export class Rotulos {
     sigTerreno: string,
     op: OpcoesRotulos,
     realcar: Set<string>,
+    globo?: Globo,
   ) {
     const usados: [number, number, number, number][] = [];
     const ocupa = (x: number, y: number, w: number, h: number) => {
@@ -99,7 +101,9 @@ export class Rotulos {
         rot.z = alturaEm(x, y);
         rot.zSig = sigTerreno;
       }
-      this.v.set(x, y, rot.z! + 0.02);
+      if (globo) globo.paraMundo(x, y, rot.z! + 0.02, this.v);
+      else this.v.set(x, y, rot.z! + 0.02);
+      if (globo && !globo.visivel(this.v, cam.position)) return null;
       const dist = this.v.distanceTo(cam.position);
       this.v.project(cam);
       if (this.v.z > 1 || this.v.z < -1 || Math.abs(this.v.x) > 1.1 || Math.abs(this.v.y) > 1.1) return null;

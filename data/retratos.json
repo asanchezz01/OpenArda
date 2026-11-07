@@ -202,5 +202,133 @@
     ],
     "imagem": "retratos/feanor/amras.webp",
     "alt": "Retrato realista de Amras; interpretação artística baseada nas referências literárias."
+  },
+  {
+    "id": "finwe",
+    "nome": "Finwë",
+    "documentado": [
+      "Cabelos negros e longos.",
+      "Olhos azul-acinzentados brilhantes."
+    ],
+    "inferido": [
+      "Semelhança familiar com Fëanor, com rosto mais amplo e expressão serena.",
+      "Idade aparente, geometria facial, roupa e iluminação são escolhas artísticas."
+    ],
+    "fontes": [
+      {
+        "obra": "The Peoples of Middle-earth",
+        "local": "The Shibboleth of Fëanor, notas, nota 19",
+        "consulta": "https://tolkiengateway.net/wiki/Finw%C3%AB"
+      },
+      {
+        "obra": "The Nature of Middle-earth",
+        "local": "Parte II, IV: Hair, p. 186",
+        "consulta": "https://tolkiengateway.net/wiki/Finw%C3%AB"
+      }
+    ],
+    "imagem": "retratos/finwe.webp",
+    "alt": "Retrato realista de Finwë; interpretação artística baseada nas referências literárias."
+  },
+  {
+    "id": "miriel",
+    "nome": "Míriel Serindë",
+    "documentado": [
+      "Cabelos prateados e olhos escuros na versão de Morgoth’s Ring.",
+      "Bordadeira de habilidade excepcional."
+    ],
+    "inferido": [
+      "Nariz, maçãs do rosto e sobrancelhas variam traços de Fëanor como referência familiar.",
+      "O tom castanho dos olhos, a idade aparente e a roupa são escolhas artísticas."
+    ],
+    "nota_versao": "O retrato adota o cabelo prateado de Morgoth’s Ring. The Nature of Middle-earth, Parte II, IV: Hair, p. 186, descreve cabelos longos e escuros; essa alternativa não foi misturada à imagem escolhida.",
+    "fontes": [
+      {
+        "obra": "Morgoth’s Ring",
+        "local": "The Later Quenta Silmarillion, primeira fase, cap. 6, §46b, p. 185",
+        "consulta": "https://tolkiengateway.net/wiki/M%C3%ADriel"
+      },
+      {
+        "obra": "The Nature of Middle-earth",
+        "local": "Parte II, IV: Hair, p. 186 (versão alternativa de cabelo escuro)",
+        "consulta": "https://tolkiengateway.net/wiki/M%C3%ADriel"
+      }
+    ],
+    "imagem": "retratos/miriel.webp",
+    "alt": "Retrato realista de Míriel Serindë; interpretação artística baseada nas referências literárias."
+  },
+  {
+    "id": "indis",
+    "nome": "Indis",
+    "documentado": [
+      "Cabelos dourados e porte alto.",
+      "Vanya e segunda esposa de Finwë."
+    ],
+    "inferido": [
+      "Olhos azul-acinzentados, anatomia facial, idade aparente e roupa são interpretação artística; não foi localizada uma descrição individual dessa cor dos olhos.",
+      "Nerdanel foi usada somente como referência de iluminação e acabamento, sem inferir parentesco entre elas."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta Silmarillion, cap. 6: Of Fëanor and the Unchaining of Melkor",
+        "consulta": "https://tolkiengateway.net/wiki/Indis"
+      }
+    ],
+    "imagem": "retratos/indis.webp",
+    "alt": "Retrato realista de Indis; interpretação artística baseada nas referências literárias."
+  },
+  {
+    "id": "mahtan",
+    "nome": "Mahtan",
+    "documentado": [
+      "Cabelos castanho-avermelhados com reflexos de cobre.",
+      "Barba, excepcional entre os Elfos.",
+      "Uso de um diadema de cobre."
+    ],
+    "inferido": [
+      "Feições e tez corada variam as de sua filha Nerdanel como referência familiar.",
+      "Olhos castanhos, idade aparente e roupa de trabalho são escolhas artísticas."
+    ],
+    "fontes": [
+      {
+        "obra": "The Peoples of Middle-earth",
+        "local": "The Shibboleth of Fëanor, nomes dos filhos de Fëanor e nota 61",
+        "consulta": "https://tolkiengateway.net/wiki/Mahtan"
+      },
+      {
+        "obra": "Vinyar Tengwar 41",
+        "local": "From The Shibboleth of Fëanor, p. 9 (barba)",
+        "consulta": "https://tolkiengateway.net/wiki/Mahtan"
+      }
+    ],
+    "imagem": "retratos/mahtan.webp",
+    "alt": "Retrato realista de Mahtan; interpretação artística baseada nas referências literárias."
+  },
+  {
+    "id": "celebrimbor",
+    "nome": "Celebrimbor",
+    "documentado": [
+      "Filho de Curufin e neto de Fëanor na tradição adotada pelo catálogo.",
+      "Mestre dos artífices de Eregion e criador dos Três Anéis."
+    ],
+    "inferido": [
+      "Cabelos escuros, olhos cinzentos e semelhança com Curufin derivam da referência do pai; não foi localizada descrição física individual nas fontes consultadas.",
+      "Rosto próprio, com expressão mais aberta; idade aparente e traje de artífice são interpretação artística."
+    ],
+    "nota_versao": "Há tradições alternativas para sua origem. Este retrato segue a descendência de Curufin registrada em linhagens.json, sem atribuir a essa filiação cores de cabelo ou olhos explicitamente documentadas.",
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Dos Anéis de Poder e da Terceira Era",
+        "consulta": "https://tolkiengateway.net/wiki/Celebrimbor"
+      },
+      {
+        "obra": "Contos Inacabados",
+        "local": "A História de Galadriel e Celeborn e suas notas (versões de origem)",
+        "consulta": "https://tolkiengateway.net/wiki/Celebrimbor"
+      }
+    ],
+    "imagem": "retratos/celebrimbor.webp",
+    "alt": "Retrato realista de Celebrimbor; interpretação artística baseada nas referências literárias."
   }
 ]

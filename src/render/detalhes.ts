@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import type { Globo } from './globo';
 import { faseGondolin, faseMinasTirith, GONDOLIN, MINAS_TIRITH } from '../core/detalhes';
 import type { Lugar } from '../core/types';
 import type { ModeloTerreno } from '../terrain/model';
@@ -50,7 +51,7 @@ export class DetalhesReinos {
   }
 
   /** Chamada para cada viewport: a comparação usa o estado e o relevo daquele lado. */
-  atualizar(t: number, camera: THREE.Camera, terreno: ModeloTerreno | null, u: UniformesGlobais, habilitado: boolean) {
+  atualizar(t: number, camera: THREE.Camera, terreno: ModeloTerreno | null, u: UniformesGlobais, habilitado: boolean, globo?: Globo) {
     this.grupo.visible = false;
     if (!habilitado || !terreno) return;
     for (const modelo of this.modelos.values()) modelo.visible = false;
@@ -58,7 +59,9 @@ export class DetalhesReinos {
       const fase = s.fase(t);
       if (!fase) continue;
       const h = this.altura(s, terreno);
-      this.centro.set(s.lugar.em[0], s.lugar.em[1], h * u.uExag.value + 0.035);
+      // ponytail: no globo só a posição é curvada; a inclinação do modelo (< 1,5° a 150 km do alvo) é ignorada
+      if (globo) globo.paraMundo(s.lugar.em[0], s.lugar.em[1], h * u.uExag.value + 0.035, this.centro);
+      else this.centro.set(s.lugar.em[0], s.lugar.em[1], h * u.uExag.value + 0.035);
       if (h <= 0 || camera.position.distanceToSquared(this.centro) > 150 * 150) continue;
       const chave = `${s.lugar.id}:${fase}`;
       let cidade = this.modelos.get(chave);

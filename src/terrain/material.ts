@@ -2,6 +2,7 @@
 // Duas Árvores (com visibilidade calculada pelo relevo), Lâmpadas, Sol e névoa.
 
 import * as THREE from 'three';
+import { CENTRO } from '../render/globo';
 
 export interface UniformesGlobais {
   uExag: { value: number };
@@ -20,6 +21,10 @@ export interface UniformesGlobais {
   uFogDensity: { value: number };
   uTime: { value: number };
   uCurv: { value: THREE.Vector3 };
+  uGlobo: { value: THREE.Vector4 }; // alvo x, y, raio, ativo (ver render/globo.ts)
+  uGloboC: { value: THREE.Vector2 };
+  uGloboN: { value: THREE.Vector3 };
+  uGloboQ: { value: THREE.Matrix3 };
   uVeil: { value: number };
   uCertShow: { value: number };
   uSnowLine: { value: number };
@@ -45,6 +50,10 @@ export function criarUniformesGlobais(): UniformesGlobais {
     uFogDensity: { value: 0.00035 },
     uTime: { value: 0 },
     uCurv: { value: new THREE.Vector3(0, 0, 0) },
+    uGlobo: { value: new THREE.Vector4(0, 0, 1, 0) },
+    uGloboC: { value: CENTRO.clone() },
+    uGloboN: { value: new THREE.Vector3(0, 0, 1) },
+    uGloboQ: { value: new THREE.Matrix3() },
     uVeil: { value: 0 },
     uCertShow: { value: 0 },
     uSnowLine: { value: 2.6 },
@@ -62,6 +71,10 @@ uniform float uExag;
 uniform float uMorph;
 uniform float uSkirt;
 uniform vec3 uCurv;
+uniform vec4 uGlobo;
+uniform vec2 uGloboC;
+uniform vec3 uGloboN;
+uniform mat3 uGloboQ;
 attribute vec2 aH;
 attribute vec2 aW;
 attribute vec2 aG;
@@ -77,6 +90,17 @@ varying vec2 vG;
 varying vec4 vB;
 varying vec4 vE;
 varying float vDist;
+// mundo redondo: mesma conta de Globo.paraMundo
+vec3 globo(vec2 xy, float h) {
+  if (uGlobo.w < 0.5) return vec3(xy, h);
+  float R = uGlobo.z;
+  vec2 d = xy - uGloboC;
+  float s = length(d);
+  vec2 u = s > 1e-6 ? d / s : vec2(1.0, 0.0);
+  float th = s / R;
+  vec3 m = vec3(sin(th) * u, cos(th));
+  return uGloboQ * (R * (m - uGloboN) + h * m) + vec3(uGlobo.xy, 0.0);
+}
 void main() {
   float h = mix(aH.y, aH.x, uMorph);
   float w = mix(aW.y, aW.x, uMorph);
@@ -86,7 +110,7 @@ void main() {
   z -= aSkirt * uSkirt;
   vec2 d = xy - uCurv.xy;
   z -= dot(d, d) * uCurv.z * 0.5;
-  vec3 p = vec3(xy, z);
+  vec3 p = globo(xy, z);
   vWorld = vec3(xy, surf * uExag);
   vH = h;
   vW = w;

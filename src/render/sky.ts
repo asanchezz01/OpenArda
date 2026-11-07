@@ -16,6 +16,7 @@ export class Ceu {
         ...u,
         uInvProj: { value: new THREE.Matrix4() },
         uCamMat: { value: new THREE.Matrix4() },
+        uEspaco: { value: 0 },
       },
       depthTest: false,
       depthWrite: false,
@@ -27,7 +28,7 @@ export class Ceu {
         uniform mat4 uInvProj; uniform mat4 uCamMat;
         uniform vec3 uZenith; uniform vec3 uHorizon; uniform float uStars;
         uniform vec3 uGlowColor; uniform vec3 uGlowDir; uniform vec3 uSunDir; uniform vec3 uSunColor;
-        uniform float uSunDisk; uniform float uFlash; uniform float uTime;
+        uniform float uSunDisk; uniform float uFlash; uniform float uTime; uniform float uEspaco;
         varying vec2 vNdc;
         float h(vec3 p){ return fract(sin(dot(p, vec3(12.9898,78.233,45.164))) * 43758.5453); }
         void main(){
@@ -44,7 +45,11 @@ export class Ceu {
           float s = max(dot(dir, uSunDir), 0.0);
           col += uSunColor * (pow(s, 900.0) * 6.0 + pow(s, 12.0) * 0.12) * uSunDisk;
           // estrelas
-          if (uStars > 0.01 && e > -0.02) {
+          // longe do globo, o fundo vira espaço estrelado em todas as direções
+          col = mix(col, vec3(0.0015, 0.002, 0.005), uEspaco);
+          float est = max(uStars, uEspaco);
+          float acima = mix(smoothstep(-0.02, 0.15, e), 1.0, uEspaco);
+          if (est > 0.01 && (e > -0.02 || uEspaco > 0.01)) {
             vec3 q = dir * 380.0;
             vec3 c = floor(q);
             float r = h(c);
@@ -52,7 +57,7 @@ export class Ceu {
               vec3 f = fract(q) - 0.5;
               float d = length(f);
               float tw = 0.75 + 0.25 * sin(uTime * (1.0 + r * 5.0) + r * 40.0);
-              col += vec3(0.85, 0.9, 1.0) * smoothstep(0.35, 0.0, d) * uStars * tw * smoothstep(-0.02, 0.15, e) * (r - 0.9965) * 300.0;
+              col += vec3(0.85, 0.9, 1.0) * smoothstep(0.35, 0.0, d) * est * tw * acima * (r - 0.9965) * 300.0;
             }
           }
           col += vec3(uFlash * 0.25);
@@ -65,7 +70,8 @@ export class Ceu {
     mesh.frustumCulled = false;
     this.cena.add(mesh);
   }
-  atualizar(cam: THREE.PerspectiveCamera) {
+  atualizar(cam: THREE.PerspectiveCamera, espaco = 0) {
+    this.mat.uniforms.uEspaco.value = espaco;
     this.mat.uniforms.uInvProj.value.copy(cam.projectionMatrixInverse);
     this.mat.uniforms.uCamMat.value.copy(cam.matrixWorld);
   }

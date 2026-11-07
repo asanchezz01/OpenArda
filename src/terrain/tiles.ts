@@ -6,11 +6,14 @@ import * as THREE from 'three';
 import type { Feicao } from '../core/types';
 import { terreno } from '../core/data';
 import { criarMaterialTile, type UniformesGlobais } from './material';
+import type { Globo } from '../render/globo';
 import TerrainWorker from './terrain.worker.ts?worker';
 
 const RES = 48;
 const N = RES + 1;
 const RAIZ = 2500;
+// ponytail: cantos, meios das bordas e centro bastam para a caixa de um ladrilho curvado; ladrilhos raiz (2500 km) ficam um pouco folgados
+const CANTOS = [[0, 0], [1, 0], [0, 1], [1, 1], [0.5, 0], [0, 0.5], [1, 0.5], [0.5, 1], [0.5, 0.5]];
 const NIVEL_MAX = 7;
 
 export interface DadosTile {
@@ -213,6 +216,7 @@ export class SistemaTerreno {
   private frustum = new THREE.Frustum();
   private mat = new THREE.Matrix4();
   private box = new THREE.Box3();
+  private ponto = new THREE.Vector3();
   private raizes: No[] = [];
   private quadro = 0;
   visiveis: Tile[] = [];
@@ -388,7 +392,7 @@ export class SistemaTerreno {
   }
 
   /** Seleciona os ladrilhos para a câmera e pede os que faltam. */
-  atualizar(camera: THREE.PerspectiveCamera, alvoZ = 0) {
+  atualizar(camera: THREE.PerspectiveCamera, alvoZ = 0, globo?: Globo) {
     this.quadro++;
     this.mat.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
     this.frustum.setFromProjectionMatrix(this.mat);
@@ -397,13 +401,28 @@ export class SistemaTerreno {
     const desejados: No[] = [];
     const visitar = (n: No) => {
       if (!this.naRegiao(n)) return;
-      this.box.min.set(n.x0, n.y0, -5);
-      this.box.max.set(n.x0 + n.tam, n.y0 + n.tam, 10 * exag + 2);
-      if (n.nivel > 0 && !this.frustum.intersectsBox(this.box)) return;
-      const dx = Math.max(n.x0 - cam.x, 0, cam.x - (n.x0 + n.tam));
-      const dy = Math.max(n.y0 - cam.y, 0, cam.y - (n.y0 + n.tam));
-      const dz = Math.max(0, cam.z - alvoZ);
-      const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+      let dist: number;
+      if (globo?.ativo) {
+        // no globo, a caixa é a dos cantos e do centro do ladrilho já curvados
+        this.box.makeEmpty();
+        let algumVisivel = false;
+        for (const [fx, fy] of CANTOS)
+          for (const h of [-5, 10 * exag + 2]) {
+            globo.paraMundo(n.x0 + fx * n.tam, n.y0 + fy * n.tam, h, this.ponto);
+            this.box.expandByPoint(this.ponto);
+            if (h > 0 && globo.visivel(this.ponto, cam)) algumVisivel = true;
+          }
+        if (n.nivel > 0 && (!algumVisivel || !this.frustum.intersectsBox(this.box))) return;
+        dist = this.box.distanceToPoint(cam);
+      } else {
+        this.box.min.set(n.x0, n.y0, -5);
+        this.box.max.set(n.x0 + n.tam, n.y0 + n.tam, 10 * exag + 2);
+        if (n.nivel > 0 && !this.frustum.intersectsBox(this.box)) return;
+        const dx = Math.max(n.x0 - cam.x, 0, cam.x - (n.x0 + n.tam));
+        const dy = Math.max(n.y0 - cam.y, 0, cam.y - (n.y0 + n.tam));
+        const dz = Math.max(0, cam.z - alvoZ);
+        dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+      }
       if (n.nivel < NIVEL_MAX && dist < n.tam * 1.55 * this.bias) {
         for (const f of this.filhos(n)) visitar(f);
       } else desejados.push(n);

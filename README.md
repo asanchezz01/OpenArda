@@ -49,6 +49,7 @@ A pasta `dist/` é estática e pode ser publicada em qualquer servidor de arquiv
   - Buscar Númenor depois da Queda oferece a *antiga posição no oceano* e a *ilha durante sua existência*.
 - **Links compartilháveis.** O endereço guarda o local, o período, o enquadramento, a seleção, a trava, a comparação e a jornada em curso.
 - **Jornadas completas:** *Aman sob a luz das Duas Árvores*, *Beleriand antes e depois da Guerra da Ira* e *Númenor antes e depois da Queda*.
+- **O mundo redondo depois da Queda.** A partir de 3319 S.E. o mapa se curva até virar um globo, como conta a Akallabêth. A navegação passa a ser como num globo virtual: arrastar gira a esfera, e ao afastar a câmera aparece o planeta inteiro contra o espaço. O raio adotado é o da Terra (6.371 km), porque depois da Queda o mundo é a Terra e a escala do atlas já segue distâncias reais. Tolkien não dá esse número. A Grade de Arda continua sendo a referência: o mapa é projetado na esfera e gira para que o ponto central da vista fique sempre no topo (`src/render/globo.ts`).
 - **Modo narrativo *Seguir o Caminho Reto*.** Depois da Queda, o mundo se curva para baixo enquanto uma estrada de luz segue reta até Aman, mostrada como terra velada. Quem navega pela superfície do mundo não encontra mais Aman.
 
 | | |
