@@ -6,7 +6,7 @@ import { eras, jornadas, lugarPorId, reinoPorId, tempo } from '../core/data';
 import { Busca } from './busca';
 import { LinhaTempo } from './linha';
 import { fichaAqui, fichaEvento, fichaFonte, fichaFontes, fichaLugar, fichaMarco, fichaReino } from './fichas';
-import { fichaLinhagem, fichaSenhorios } from './linhagens';
+import { fichaLinhagem, fichaSenhorios, htmlArvoreTela } from './linhagens';
 import { esc, guardar, h, ler, listaFontes } from './util';
 import { lerLink, montarLink } from './url';
 import { regimeDe } from '../render/lighting';
@@ -31,6 +31,9 @@ export class Interface {
   private camadasEl!: HTMLElement;
   private inicio!: HTMLElement;
   private carregando!: HTMLElement;
+  private arvoreTela!: HTMLElement;
+  private arvoreTelaId = '';
+  private arvoreTelaFocoAntes: HTMLElement | null = null;
   private conteudoAtual = '';
   private urlTimer = 0;
 
@@ -136,6 +139,10 @@ export class Interface {
       <p class="dica"><span class="so-toque">Um dedo arrasta · pinça aproxima · dois dedos giram e inclinam · toque duplo e arraste aproxima com uma mão.</span><span class="so-mouse">Arraste para mover · roda para aproximar · botão direito (ou Ctrl) para girar e inclinar.</span></p>`;
     raiz.appendChild(this.inicio);
 
+    // árvore genealógica em tela cheia, sobre o mapa e os painéis
+    this.arvoreTela = h('section', { id: 'arvore-tela', hidden: '', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'arvore-tela-nome', tabindex: '-1' });
+    raiz.appendChild(this.arvoreTela);
+
     this.linha = new LinhaTempo(this.app, raiz);
     // a altura real da linha do tempo posiciona os controles acima dela
     const ro = new ResizeObserver(() => raiz.style.setProperty('--lt-h', `${this.linha.el.offsetHeight}px`));
@@ -158,6 +165,22 @@ export class Interface {
       this.executar(acao, dados);
     });
     this.painel.querySelector('.fechar')!.addEventListener('click', () => this.fecharPainel());
+    // dentro da tela cheia, um nome recentraliza a árvore em vez de abrir a ficha atrás dela
+    this.arvoreTela.addEventListener('click', (e) => {
+      const alvo = e.target as HTMLElement;
+      if (alvo.closest('[data-fechar-arvore]')) {
+        e.stopPropagation();
+        this.fecharArvoreTela();
+        return;
+      }
+      const b = alvo.closest<HTMLElement>('[data-sel], [data-acao="arvore-tela"]');
+      if (!b) return;
+      const sel = b.dataset.sel ?? '';
+      if (b.dataset.acao === 'arvore-tela' || sel.startsWith('linhagem:')) {
+        e.stopPropagation();
+        this.abrirArvoreTela(b.dataset.id ?? sel.slice(9));
+      } else this.fecharArvoreTela(); // um reino: fecha e deixa a ficha do reino abrir
+    });
     this.conteudo.addEventListener('change', (e) => {
       const el = e.target as HTMLSelectElement;
       if (el.id === 'linhagem-ir') this.abrir('linhagem:' + el.value);
@@ -527,6 +550,9 @@ export class Interface {
         this.abrirEras();
         this.camadasEl.hidden = true;
         break;
+      case 'arvore-tela':
+        this.abrirArvoreTela(d.id);
+        break;
       case 'linhagens':
         this.abrir('linhagens');
         this.camadasEl.hidden = true;
@@ -596,6 +622,31 @@ export class Interface {
       .map((j) => `<li><button type="button" data-acao="jornada" data-id="${j.id}"><strong>${esc(j.titulo)}</strong><span>${esc(j.subtitulo)}</span><span class="data">${j.passos.length} paradas</span></button></li>`)
       .join('')}</ul>
     <section class="bloco"><h3>Seguir o Caminho Reto</h3><p>Depois da Queda de Númenor, Aman não está mais na superfície do mundo. Este modo narrativo mostra, segundo a Akallabêth, como a estrada reta continua enquanto o mundo se curva.</p><div class="acoes"><button type="button" data-acao="caminho-reto">Seguir o Caminho Reto</button></div></section>`;
+  }
+
+  // ---------- árvore em tela cheia ----------
+  private abrirArvoreTela(id: string) {
+    const html = htmlArvoreTela(this.app, id);
+    if (!html) return;
+    if (this.arvoreTela.hidden) this.arvoreTelaFocoAntes = document.activeElement as HTMLElement | null;
+    this.arvoreTelaId = id;
+    this.arvoreTela.innerHTML = html;
+    this.arvoreTela.hidden = false;
+    document.body.classList.add('arvore-tela-aberta');
+    const rol = this.arvoreTela.querySelector<HTMLElement>('.arvore-rolagem')!;
+    rol.scrollLeft = (rol.scrollWidth - rol.clientWidth) / 2;
+    this.arvoreTela.querySelector<HTMLElement>('[data-fechar-arvore]')!.focus({ preventScroll: true });
+  }
+
+  private fecharArvoreTela() {
+    if (this.arvoreTela.hidden) return;
+    this.arvoreTela.hidden = true;
+    this.arvoreTela.innerHTML = '';
+    this.arvoreTelaId = '';
+    document.body.classList.remove('arvore-tela-aberta');
+    const voltar = this.arvoreTelaFocoAntes;
+    this.arvoreTelaFocoAntes = null;
+    if (voltar && document.contains(voltar)) voltar.focus({ preventScroll: true });
   }
 
   // ---------- jornada ----------
@@ -728,6 +779,14 @@ export class Interface {
   private teclado(e: KeyboardEvent) {
     const alvo = e.target as HTMLElement;
     if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
+    // com a árvore em tela cheia, o teclado não move o mapa; Esc fecha
+    if (this.arvoreTelaId) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        this.fecharArvoreTela();
+      }
+      return;
+    }
     if (alvo.closest('input, select, textarea')) {
       if (e.key === 'Escape') (alvo as HTMLInputElement).blur();
       return;
