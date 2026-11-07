@@ -3356,6 +3356,7 @@
     "inferido": [
       "Vestes azuis e penas de águia são interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3369,7 +3370,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 189950077087795
+      "seed": 219776939706702
     }
   },
   {
@@ -3381,6 +3382,7 @@
     "inferido": [
       "Cabelo e vestes são interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3394,7 +3396,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 107536470044719
+      "seed": 211936589072577
     }
   },
   {
@@ -3405,6 +3407,7 @@
     ],
     "inferido": [
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3418,7 +3421,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 42188220694458
+      "seed": 167472117602812
     }
   },
   {
@@ -3430,6 +3433,7 @@
     "inferido": [
       "Aparência é interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3443,7 +3447,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 150975054513110
+      "seed": 134407259815017
     }
   },
   {
@@ -3455,6 +3459,7 @@
     "inferido": [
       "Cabelo e coroa de folhas são interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3468,7 +3473,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 178973179467841
+      "seed": 61957978077522
     }
   },
   {
@@ -3480,6 +3485,7 @@
     "inferido": [
       "Aparência é interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3493,7 +3499,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 120021638818980
+      "seed": 62327041108793
     }
   },
   {
@@ -3505,6 +3511,7 @@
     "inferido": [
       "Aparência é interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3518,7 +3525,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 280997336290717
+      "seed": 99427533059269
     }
   },
   {
@@ -3530,6 +3537,7 @@
     "inferido": [
       "Aparência é interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3543,7 +3551,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 242494833171950
+      "seed": 238631871157473
     }
   },
   {
@@ -3555,6 +3563,7 @@
     "inferido": [
       "Feições e cabelo são interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3568,7 +3577,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 158649147183568
+      "seed": 170666200360880
     }
   },
   {
@@ -3580,6 +3589,7 @@
     "inferido": [
       "Capuz e cabelo são interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3593,7 +3603,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 223121532124516
+      "seed": 13056835608761
     }
   },
   {
@@ -3605,6 +3615,7 @@
     "inferido": [
       "Feições são interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3618,7 +3629,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 145858723525422
+      "seed": 235828866564236
     }
   },
   {
@@ -3630,6 +3641,7 @@
     "inferido": [
       "Aparência é interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3643,7 +3655,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 193473926383565
+      "seed": 176024075963832
     }
   },
   {
@@ -3654,6 +3666,7 @@
     ],
     "inferido": [
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3667,7 +3680,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 275767414687394
+      "seed": 31365763954503
     }
   },
   {
@@ -3679,6 +3692,7 @@
     "inferido": [
       "Aparência é interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3692,7 +3706,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 104916255435799
+      "seed": 197361360803987
     }
   },
   {
@@ -3704,6 +3718,7 @@
     "inferido": [
       "Feições são interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3717,7 +3732,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 16839455777368
+      "seed": 111431633105831
     }
   },
   {
@@ -3729,6 +3744,7 @@
     "inferido": [
       "Aparência é interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3742,7 +3758,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 75705948341818
+      "seed": 74998633955869
     }
   },
   {
@@ -3754,6 +3770,7 @@
     "inferido": [
       "Aparência é interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3767,7 +3784,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 31740511203365
+      "seed": 215570355163111
     }
   },
   {
@@ -3779,6 +3796,7 @@
     "inferido": [
       "Feições são interpretação.",
       "Os Ainur não têm forma fixa: o retrato mostra uma manifestação possível, não uma aparência documentada.",
+      "A aparência divina (luz própria, aura, beleza idealizada sem idade, cenário do elemento) segue motivos recorrentes em fan arts dos Valar; é interpretação artística.",
       "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
     ],
     "fontes": [
@@ -3792,7 +3810,7 @@
     "geracao": {
       "provedor": "ComfyUI local",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "seed": 114345487000063
+      "seed": 230198272660764
     }
   },
   {
