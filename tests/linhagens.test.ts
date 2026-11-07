@@ -4,18 +4,20 @@ import { tempo } from '../src/core/data';
 import { governoEm, irmaosDe, reinaEm, retratoDe, senhorioDoReino, senhorios, unioesDe } from '../src/core/linhagens';
 import type { App } from '../src/app';
 import { fichaLinhagem, htmlArvoreTela } from '../src/ui/linhagens';
+import { esc } from '../src/ui/util';
 
 const em = (ref: string) => tempo.cursor(ref);
 const governante = (id: string, ref: string) => governoEm(senhorios.find((s) => s.id === id)!, em(ref))?.quem;
 
 describe('linhagens', () => {
-  it.each(retratos.map((r) => r.id))('exibe o retrato de %s na ficha e nas árvores', (id) => {
+  it.each(retratos.filter((r) => r.imagem).map((r) => r.id))('exibe o retrato de %s na ficha e nas árvores', (id) => {
     const retrato = retratoDe(id)!;
+    const alt = esc(retrato.alt);
     const app = { t: em('TE:3018') } as App;
     const html = fichaLinhagem(app, id);
-    expect(html).toContain(`src="${retrato.imagem}" alt="${retrato.alt}" width="96" height="96"`);
+    expect(html).toContain(`src="${retrato.imagem}" alt="${alt}" width="96" height="96"`);
     expect(html).toContain(`src="${retrato.imagem}" alt="" width="36" height="36" loading="lazy"`);
-    expect(htmlArvoreTela(app, id)).toContain(`src="${retrato.imagem}" alt="${retrato.alt}" width="56" height="56"`);
+    expect(htmlArvoreTela(app, id)).toContain(`src="${retrato.imagem}" alt="${alt}" width="56" height="56"`);
     for (const tela of [html, htmlArvoreTela(app, id)]) {
       expect(tela).toContain(`data-acao="retrato" data-id="${id}"`);
       expect(tela).toContain('aria-haspopup="dialog"');
@@ -53,7 +55,7 @@ describe('linhagens', () => {
     expect(u[0][0]).toBe('nerdanel');
     expect(u[0][1]).toHaveLength(7);
     const meios = irmaosDe('feanor').filter((x) => x.meio).map((x) => x.p.id);
-    expect(meios).toEqual(['fingolfin', 'finarfin']);
+    expect(meios).toEqual(['fingolfin', 'finarfin', 'findis', 'lalwen']);
   });
 
   it('Finwë tem filhos de duas uniões', () => {

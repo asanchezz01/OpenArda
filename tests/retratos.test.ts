@@ -20,12 +20,12 @@ describe('retratos ampliados', () => {
     expect(html).toContain('id="retrato-nome">Fëanor</h2>');
     expect(html).toContain('aria-label="Fechar retrato (Esc)" autofocus');
     expect(htmlRetrato('desconhecido')).toBe('');
-    expect(htmlRetrato('beren')).toBe('');
+    expect(htmlRetrato('eorl')).toBe('');
   });
 
   it('abre o dialog nativo somente para um retrato disponível', () => {
     const { ui, dialog } = visualizador();
-    ui.abrirRetrato('beren');
+    ui.abrirRetrato('eorl');
     expect(dialog.showModal).not.toHaveBeenCalled();
     ui.abrirRetrato('feanor');
     expect(dialog.showModal).toHaveBeenCalledOnce();
