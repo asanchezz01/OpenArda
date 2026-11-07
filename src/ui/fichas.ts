@@ -120,6 +120,7 @@ export function fichaLugar(app: App, l: Lugar): string {
   <p class="resumo">${esc(l.resumo)}</p>`;
 
   if (l.id === 'gondolin') html += detalheGondolin();
+  if (l.id === 'minas-anor') html += detalheMinasTirith();
 
   if (l.id === 'ezellohar') {
     const f = app.faseArvores();
@@ -223,7 +224,7 @@ export function fichaReino(app: App, r: Reino): string {
     <dt>Período de existência</dt><dd>${esc(r.periodo_texto)}</dd>
     ${r.governantes?.length ? `<dt>Governantes</dt><dd>${r.governantes.map((g) => `${esc(g.nome)}${g.nota ? ` <span class="nota">(${esc(g.nota)})</span>` : ''}`).join('<br>')}</dd>` : ''}
   </dl>
-  ${r.id === 'gondolin' ? detalheGondolin() : ''}
+  ${r.id === 'gondolin' ? detalheGondolin() : r.id === 'gondor' ? detalheMinasTirith() : ''}
   <section class="bloco"><h3>Origem</h3><p>${esc(r.origem)}</p>${fund ? `<p><button type="button" class="link" data-acao="evento" data-id="${fund.id}">${esc(fund.titulo)}</button> <span class="data">${esc(tempo.dataEvento(fund))}</span></p>` : ''}</section>
   <section class="bloco"><h3>Principais transformações</h3><ol class="fases">${r.transformacoes
     .map((x) => {
@@ -264,14 +265,34 @@ export function fichaReino(app: App, r: Reino): string {
   return html;
 }
 
-function detalheGondolin(): string {
+function detalhe3d(titulo: string, texto: string, ressalva: string, acao: string, periodos: string): string {
   return `<section class="bloco destaque">
-    <h3>Gondolin em 3D</h3>
-    <p>Explore as muralhas, os bairros, as fontes e a Torre do Rei sobre Amon Gwareth. Glingal e Belthil aparecem no pátio de Turgon.</p>
-    <p class="nota">Reconstrução artística: traçado urbano, escala, arquitetura e ruínas são interpretativos. Os sete portões de Orfalch Echor ficam nas montanhas e ainda não estão modelados.</p>
-    <div class="acoes"><button type="button" class="primario" data-acao="gondolin-3d">Explorar cidade em 3D</button></div>
-    <p class="nota">52–115 P.E.: em construção · 116–509: íntegra · 510–586: ruínas. A partir de 587, a cidade fica submersa e o modelo é ocultado. Fora desses períodos, a visita abre em 400 P.E.</p>
+    <h3>${titulo}</h3>
+    <p>${texto}</p>
+    <p class="nota">Reconstrução artística: ${ressalva}</p>
+    <div class="acoes"><button type="button" class="primario" data-acao="${acao}">Explorar cidade em 3D</button></div>
+    <p class="nota">${periodos}</p>
   </section>`;
+}
+
+function detalheGondolin(): string {
+  return detalhe3d(
+    'Gondolin em 3D',
+    'Explore as muralhas, os bairros, as fontes e a Torre do Rei sobre Amon Gwareth. Glingal e Belthil aparecem no pátio de Turgon.',
+    'traçado urbano, escala, arquitetura e ruínas são interpretativos. Os sete portões de Orfalch Echor ficam nas montanhas e ainda não estão modelados.',
+    'gondolin-3d',
+    '52–115 P.E.: em construção · 116–509: íntegra · 510–586: ruínas. A partir de 587, a cidade fica submersa e o modelo é ocultado. Fora desses períodos, a visita abre em 400 P.E.',
+  );
+}
+
+function detalheMinasTirith(): string {
+  return detalhe3d(
+    'Minas Tirith em 3D',
+    'Explore os sete níveis com seus portões alternados, a muralha externa negra, a proa de pedra que divide os círculos e a Cidadela com a Fonte, a Árvore Branca e a Torre de Ecthelion. O ombro do Mindolluin, com Rath Dínen, liga a cidade à montanha.',
+    'diâmetro, casas e ruas são interpretativos; as alturas (700 pés até a Cidadela, 50 braças da Torre) seguem O Senhor dos Anéis. A forma de Minas Anor na Segunda Era não é descrita, e o modelo usa a mesma cidade em todas as épocas. O Rammas Echor e Osgiliath ainda não estão modelados.',
+    'minas-tirith-3d',
+    '3320 S.E.–1 T.E.: sem a Árvore Branca · 2–1635 T.E.: Árvore viva · 1636–1639: morta na peste · 1640–2871: replantada · 2872–3018: Árvore Morta · a partir de 3019: a muda de Elessar. Antes de 3320 S.E., a visita abre em 3018 T.E.',
+  );
 }
 
 export function fichaEvento(app: App, e: Evento): string {

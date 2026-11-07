@@ -29,14 +29,43 @@ As fronteiras temporais vêm de `data/lugares.json`. A comparação entre época
 - Estudar um recorte do vale com aproximação gradual de detalhes e perfis de desempenho em celulares reais.
 - Refinar a implantação após cotejar as descrições de Tolkien; manter as dimensões não documentadas como artísticas.
 
+## Segunda entrega: Gondor — Minas Tirith
+
+**Implementado nesta versão:** Minas Anor/Minas Tirith na encosta do Mindolluin, com sete níveis escavados na colina, uma muralha e um portão por nível (o Grande Portão a leste, os demais alternando entre sul e norte), muralha externa negra, a proa de rocha que divide os círculos e sobe até a Cidadela, o Pátio da Fonte, a Árvore Branca, a Torre de Ecthelion e o ombro que liga a cidade à montanha, com as casas de Rath Dínen.
+
+| Período do atlas | Representação |
+| --- | --- |
+| Antes de 3320 S.E. | Sem cidade |
+| 3320 S.E.–1 T.E. | Cidade sem a Árvore Branca |
+| 2–1635 T.E. | Árvore viva (muda plantada por Isildur) |
+| 1636–1639 T.E. | Árvore morta na Grande Peste |
+| 1640–2871 T.E. | Árvore replantada por Tarondor |
+| 2872–3018 T.E. | Árvore Morta mantida no pátio |
+| A partir de 3019 T.E. | Muda plantada por Elessar |
+
+As fronteiras vêm das novas fases de `minas-anor` em `data/lugares.json`; cada fase tem um estado da Árvore em `ARVORE_MINAS_TIRITH`, e um teste exige que as duas listas coincidam. A troca de nome (2002 T.E.) e a reconstrução da Torre Branca (2698 T.E.) aparecem na ficha, sem mudar o modelo.
+
+**Como visitar:** **Camadas e legenda → Visitar Minas Tirith em 3D**, ou a ficha de Minas Anor ou de Gondor → **Explorar cidade em 3D**. Antes de 3320 S.E., a visita abre em 3018 T.E.
+
+**Interpretação visual:** seguem *O Senhor dos Anéis* (Livro V, cap. 1) os sete níveis com portões alternados, a muralha externa negra, a proa de rocha, os 700 pés da Cidadela sobre a planície e as 50 braças da Torre. O diâmetro, as casas e as ruas são artísticos. A forma de Minas Anor na Segunda Era não é descrita: o modelo usa a mesma cidade em todas as épocas. O cerco de 3019 não é representado, porque a linha do tempo não separa meses dentro de um ano.
+
+**Implantação:** o chão é amostrado no centro e num raio de 650 m; a cidade fica no ponto mais alto, e a rocha da colina e do ombro (abaixo do primeiro círculo) acompanha o exagero do relevo. A camada de detalhes agora é uma lista de sítios em `src/render/detalhes.ts`; as peças repetidas usam `src/render/lotes.ts`, compartilhado com Gondolin.
+
+### Próximos detalhes de Gondor
+
+- Osgiliath dos dois lados do Anduin, com a ponte e as ruínas de 1437 T.E. em diante.
+- O Rammas Echor em volta do Pelennor, numa escala acima da cidade.
+- Minas Ithil/Minas Morgul, reutilizando a estrutura de sítios.
+- Inspeção em celulares reais.
+
 ## Ordem de expansão
 
-Esta é uma ordem de implementação, sem datas prometidas. Só Gondolin tem arquitetura 3D nesta entrega; os demais itens estão planejados.
+Esta é uma ordem de implementação, sem datas prometidas. Gondolin e Minas Tirith já têm arquitetura 3D; os demais itens estão planejados.
 
 | Ordem | Reino / domínio | Primeiro local | Entrega visual e temporal | Dependência principal |
 | --- | --- | --- | --- | --- |
 | 1 | **Gondolin** | Gondolin | **Versão inicial implementada**; depois, passagem e sete portões | Validar e refinar a primeira cidade |
-| 2 | Gondor | Minas Anor / Minas Tirith | Cidadela, níveis, muralhas e relação com Mindolluin; depois, Osgiliath e suas ruínas | Definir versões por época a partir das fases dos lugares |
+| 2 | **Gondor** | Minas Anor / Minas Tirith | **Versão inicial implementada** (cidadela, níveis, muralhas e relação com Mindolluin); depois, Osgiliath e suas ruínas | Definir versões por época a partir das fases dos lugares |
 | 3 | Rohan | Edoras | Colina, paliçada, habitações e Meduseld | Arquitetura de madeira e implantação no relevo |
 | 4 | Númenor | Armenelos; depois Rómenna | Centro régio, vias e porto; desaparecimento na Queda | Relacionar os assentamentos à geografia da ilha |
 | 5 | Doriath | Menegroth | Entrada, ponte e representação dos salões subterrâneos | Definir um modo de corte que permita ver o interior |

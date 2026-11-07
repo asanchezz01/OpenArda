@@ -1,8 +1,9 @@
 import * as THREE from 'three';
 import { describe, expect, it, vi } from 'vitest';
 import { estadoTerreno, lugarPorId, tempo, terreno } from '../src/core/data';
-import { faseGondolin, VISTA_GONDOLIN } from '../src/core/detalhes';
+import { ARVORE_MINAS_TIRITH, faseGondolin, faseMinasTirith, MINAS_TIRITH, VISTA_GONDOLIN, VISTA_MINAS_TIRITH } from '../src/core/detalhes';
 import { criarGondolin } from '../src/render/gondolin';
+import { criarMinasTirith } from '../src/render/minas-tirith';
 import { DetalhesReinos } from '../src/render/detalhes';
 import { ModeloTerreno } from '../src/terrain/model';
 import { criarUniformesGlobais } from '../src/terrain/material';
@@ -155,5 +156,85 @@ describe('atalho para a cidade', () => {
     const ui = { app: { travado: true }, aviso };
     Interface.prototype.executar.call(ui as unknown as Interface, 'gondolin-3d', {});
     expect(aviso).toHaveBeenCalledWith(expect.stringContaining('destrave'));
+  });
+});
+
+describe('Minas Tirith', () => {
+  it.each([
+    ['SE', 3319, null], ['SE', 3320, 'sem-arvore'], ['TE', 1, 'sem-arvore'], ['TE', 2, 'arvore-viva'],
+    ['TE', 1635, 'arvore-viva'], ['TE', 1636, 'arvore-morta'], ['TE', 1639, 'arvore-morta'], ['TE', 1640, 'arvore-viva'],
+    ['TE', 2871, 'arvore-viva'], ['TE', 2872, 'arvore-morta'], ['TE', 3018, 'arvore-morta'], ['TE', 3019, 'arvore-viva'], ['QE', 100, 'arvore-viva'],
+  ])('mostra a Árvore Branca certa em %s %i', (era, ano, fase) => {
+    expect(faseMinasTirith(tempo.tAno(era as string, ano as number))).toBe(fase);
+  });
+
+  it('cobre todas as fases do lugar', () => {
+    expect(MINAS_TIRITH.fases!.map((f) => f.de)).toEqual(Object.keys(ARVORE_MINAS_TIRITH));
+  });
+
+  it('gera sete níveis reproduzíveis, com a Cidadela a 700 pés e a Torre de 50 braças', () => {
+    const viva = criarMinasTirith('arvore-viva');
+    const outra = criarMinasTirith('arvore-viva');
+    const instancias = (g: THREE.Group) => g.children.filter((c): c is THREE.InstancedMesh => c instanceof THREE.InstancedMesh);
+    expect(instancias(viva).map((m) => Array.from(m.instanceMatrix.array))).toEqual(instancias(outra).map((m) => Array.from(m.instanceMatrix.array)));
+    expect(instancias(viva).reduce((n, m) => n + m.count, 0)).toBeGreaterThan(500);
+    expect(viva.children.filter((c) => c instanceof THREE.Mesh).length).toBeLessThan(30);
+    const box = new THREE.Box3().setFromObject(viva);
+    expect([...box.min.toArray(), ...box.max.toArray()].every(Number.isFinite)).toBe(true);
+    expect(box.max.z).toBeCloseTo((600 + 300) * 0.0003048, 4);
+    const proa = new THREE.Box3().setFromObject(viva.getObjectByName('Proa')!);
+    expect(proa.max.z).toBeCloseTo(700 * 0.0003048, 4);
+    expect(new THREE.Box3().setFromObject(viva.getObjectByName('Rocha')!).min.z).toBeCloseTo(-0.8);
+    const total = (f: Parameters<typeof criarMinasTirith>[0]) => instancias(criarMinasTirith(f)).reduce((n, m) => n + m.count, 0);
+    expect(total('sem-arvore')).toBeLessThan(total('arvore-viva'));
+    expect(total('arvore-viva')).toBeLessThan(total('arvore-morta'));
+  });
+
+  it('assenta a cidade no ponto mais alto do entorno e estica só a rocha', () => {
+    const te = tempo.tAno('TE', 3018);
+    const relevo = new ModeloTerreno(estadoTerreno(te).feicoes, terreno.cadeias, terreno.limites);
+    const u = criarUniformesGlobais();
+    const camera = new THREE.PerspectiveCamera();
+    camera.position.set(VISTA_MINAS_TIRITH.x + 3, VISTA_MINAS_TIRITH.y, 6);
+    const camada = new DetalhesReinos();
+    camada.atualizar(te, camera, relevo, u, true);
+    const visiveis = camada.grupo.children.filter((c) => c instanceof THREE.Group && c.visible);
+    expect(visiveis.map((c) => c.name)).toEqual(['Minas Tirith: arvore-morta']);
+    const cidade = visiveis[0];
+    const h = relevo.altura(VISTA_MINAS_TIRITH.x, VISTA_MINAS_TIRITH.y);
+    expect(cidade.position.z).toBeGreaterThanOrEqual(h * u.uExag.value + 0.035);
+    u.uExag.value = 5;
+    camada.atualizar(te, camera, relevo, u, true);
+    expect(cidade.getObjectByName('Rocha')!.scale.z).toBe(5);
+    expect(cidade.scale.z).toBe(1);
+    camada.atualizar(tempo.tAno('SE', 3000), camera, relevo, u, true);
+    expect(camada.grupo.visible).toBe(false);
+  });
+
+  it('aparece nas fichas de Minas Anor e de Gondor', () => {
+    const app = { t: tempo.tAno('TE', 3018) } as App;
+    for (const html of [fichaLugar(app, MINAS_TIRITH), fichaReino(app, reinoPorId.get('gondor')!)]) {
+      expect(html).toContain('data-acao="minas-tirith-3d"');
+      expect(html).toContain('Reconstrução artística');
+    }
+  });
+
+  it.each([['SE', 3000, true], ['TE', 3018, false]])('o atalho a partir de %s %i só muda a época se não houver cidade', (era, ano, muda) => {
+    vi.stubGlobal('document', { getElementById: () => ({ setAttribute: vi.fn() }) });
+    const app = {
+      t: tempo.tAno(era as string, ano as number), travado: false,
+      sairJornada: vi.fn(), sairCaminhoReto: vi.fn(), definirCamada: vi.fn(), definirTempo: vi.fn(),
+      ladoAtual: vi.fn(), retanguloDe: () => ({ width: 1280, height: 800 }),
+      voar: vi.fn(), renderer: { domElement: { focus: vi.fn() } },
+    };
+    const ui = { app, fecharInicio: vi.fn(), fecharPainel: vi.fn(), camadasEl: { hidden: false }, aviso: vi.fn() };
+    try {
+      Interface.prototype.executar.call(ui as unknown as Interface, 'minas-tirith-3d', {});
+      if (muda) expect(app.definirTempo).toHaveBeenCalledWith(tempo.tAno('TE', 3018));
+      else expect(app.definirTempo).not.toHaveBeenCalled();
+      expect(app.voar.mock.calls[0][0]).toMatchObject({ x: MINAS_TIRITH.em[0], y: MINAS_TIRITH.em[1], d: VISTA_MINAS_TIRITH.d });
+    } finally {
+      vi.unstubAllGlobals();
+    }
   });
 });

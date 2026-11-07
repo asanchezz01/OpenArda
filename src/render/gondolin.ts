@@ -2,6 +2,7 @@
 import * as THREE from 'three';
 import type { FaseGondolin } from '../core/detalhes';
 import { rng } from '../terrain/noise';
+import { criarLotes } from './lotes';
 
 export function criarGondolin(fase: FaseGondolin): THREE.Group {
   const cidade = new THREE.Group();
@@ -20,26 +21,11 @@ export function criarGondolin(fase: FaseGondolin): THREE.Group {
   const agua = material(0x72bdc4);
   const ouro = material(0xd9ad54);
   const prata = material(0xcadce2);
-  const caixa = new THREE.BoxGeometry(1, 1, 1);
+  const { caixa, peca, bloco, finalizar } = criarLotes();
   const cilindro = new THREE.CylinderGeometry(1, 1, 1, 12).rotateX(Math.PI / 2);
   const cone = new THREE.ConeGeometry(1, 1, 12).rotateX(Math.PI / 2);
   const copa = new THREE.IcosahedronGeometry(1, 1);
-  const lotes = new Map<string, { geo: THREE.BufferGeometry; mat: THREE.Material; matrizes: THREE.Matrix4[] }>();
   const transform = new THREE.Object3D();
-
-  function peca(geo: THREE.BufferGeometry, mat: THREE.Material, x: number, y: number, z: number, sx: number, sy: number, sz: number, ang = 0) {
-    const chave = geo.uuid + mat.uuid;
-    if (!lotes.has(chave)) lotes.set(chave, { geo, mat, matrizes: [] });
-    transform.position.set(x, y, z);
-    transform.scale.set(sx, sy, sz);
-    transform.rotation.set(0, 0, ang);
-    transform.updateMatrix();
-    lotes.get(chave)!.matrizes.push(transform.matrix.clone());
-  }
-
-  function bloco(mat: THREE.Material, x: number, y: number, w: number, d: number, h: number, z = 0, ang = 0) {
-    peca(caixa, mat, x, y, z + h / 2, w, d, h, ang);
-  }
 
   function torre(x: number, y: number, r: number, altura: number, z = 0) {
     const h = altura * (ruinas ? 0.2 + rand() * 0.25 : obra ? 0.45 : 1);
@@ -171,12 +157,6 @@ export function criarGondolin(fase: FaseGondolin): THREE.Group {
     }
   }
 
-  // Uma chamada de desenho por combinação de geometria/material, não por edifício.
-  for (const { geo, mat, matrizes } of lotes.values()) {
-    const mesh = new THREE.InstancedMesh(geo, mat, matrizes.length);
-    matrizes.forEach((m, i) => mesh.setMatrixAt(i, m));
-    mesh.computeBoundingSphere();
-    cidade.add(mesh);
-  }
+  finalizar(cidade);
   return cidade;
 }

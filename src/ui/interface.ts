@@ -9,7 +9,12 @@ import { fichaAqui, fichaEvento, fichaFonte, fichaFontes, fichaLugar, fichaMarco
 import { esc, guardar, h, ler, listaFontes } from './util';
 import { lerLink, montarLink } from './url';
 import { regimeDe } from '../render/lighting';
-import { faseGondolin, VISTA_GONDOLIN } from '../core/detalhes';
+import { faseGondolin, faseMinasTirith, VISTA_GONDOLIN, VISTA_MINAS_TIRITH } from '../core/detalhes';
+
+const VISITAS_3D: Record<string, { nome: string; fase: (t: number) => string | null; vista: Vista; padrao: string; aviso: string }> = {
+  'gondolin-3d': { nome: 'Gondolin', fase: faseGondolin, vista: VISTA_GONDOLIN, padrao: 'PE:400', aviso: 'Gondolin em 3D · Reconstrução artística. A linha do tempo alterna construção, cidade íntegra e ruínas.' },
+  'minas-tirith-3d': { nome: 'Minas Tirith', fase: faseMinasTirith, vista: VISTA_MINAS_TIRITH, padrao: 'TE:3018', aviso: 'Minas Tirith em 3D · Reconstrução artística. Os sete níveis seguem a descrição; a linha do tempo mostra a Árvore Branca ausente, viva ou morta.' },
+};
 
 export class Interface {
   private app: App;
@@ -59,12 +64,13 @@ export class Interface {
         <button type="button" data-acao="jornadas">Seguir uma jornada</button>
         <button type="button" data-acao="eras">Escolher uma era</button>
         <button type="button" data-acao="gondolin-3d">Visitar Gondolin em 3D</button>
+        <button type="button" data-acao="minas-tirith-3d">Visitar Minas Tirith em 3D</button>
         <button type="button" data-acao="fontes">Fontes e método</button>
       </div>
       <h2>Camadas</h2>
       ${chk('nomes', 'Nomes')}
       ${chk('reinos', 'Reinos e fronteiras', 'domínio, ocupação, influência')}
-      ${chk('detalhes', 'Detalhes dos reinos em 3D', 'Gondolin: aproxime para ver a cidade e suas ruínas')}
+      ${chk('detalhes', 'Detalhes dos reinos em 3D', 'Gondolin e Minas Tirith: aproxime para ver as cidades')}
       ${chk('rios', 'Rios')}
       ${chk('estradas', 'Estradas')}
       ${chk('vestigios', 'Lugares desaparecidos', 'antigas posições e contornos')}
@@ -384,23 +390,25 @@ export class Interface {
     const a = this.app;
     const tNum = (v?: string) => (v != null && v !== '' ? Number(v) : null);
     switch (acao) {
-      case 'gondolin-3d': {
+      case 'gondolin-3d':
+      case 'minas-tirith-3d': {
+        const v = VISITAS_3D[acao];
         if (a.travado) {
-          this.aviso('Enquadramento fixo: destrave para visitar Gondolin em 3D.');
+          this.aviso(`Enquadramento fixo: destrave para visitar ${v.nome} em 3D.`);
           break;
         }
         a.sairJornada();
         a.sairCaminhoReto();
         a.definirCamada('detalhes', true);
-        if (!faseGondolin(a.t)) a.definirTempo(tempo.cursor('PE:400'));
+        if (!v.fase(a.t)) a.definirTempo(tempo.cursor(v.padrao));
         this.fecharInicio();
         this.camadasEl.hidden = true;
         document.getElementById('btn-camadas')!.setAttribute('aria-expanded', 'false');
         this.fecharPainel();
         const viewport = a.retanguloDe(a.ladoAtual());
-        a.voar({ ...VISTA_GONDOLIN, d: VISTA_GONDOLIN.d / Math.min(1, viewport.width / viewport.height) });
+        a.voar({ ...v.vista, d: v.vista.d / Math.min(1, viewport.width / viewport.height) });
         a.renderer.domElement.focus({ preventScroll: true });
-        this.aviso('Gondolin em 3D · Reconstrução artística. A linha do tempo alterna construção, cidade íntegra e ruínas.', 7000);
+        this.aviso(v.aviso, 7000);
         break;
       }
       case 'sel':
