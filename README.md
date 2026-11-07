@@ -26,6 +26,7 @@ A pasta `dist/` é estática e pode ser publicada em qualquer servidor de arquiv
 - **Detalhes dos reinos em 3D — Gondolin.** Em *Camadas e legenda*, escolha *Visitar Gondolin em 3D*. A cidade aparece sobre Amon Gwareth com muralhas, torres, bairros, jardins e fontes. A linha do tempo mostra obras (52–115 P.E.), a cidade íntegra (116–509), ruínas (510–586) e a submersão a partir de 587. A comparação entre épocas também inclui os modelos. A arquitetura é uma reconstrução artística.
 - **Detalhes dos reinos em 3D — Minas Tirith.** Em *Camadas e legenda*, escolha *Visitar Minas Tirith em 3D*. Os sete níveis, a muralha negra, os portões alternados, a proa de rocha, a Cidadela e a Torre Branca ficam na encosta do Mindolluin. A linha do tempo mostra a Árvore Branca ausente (antes de 2 T.E.), viva ou morta, conforme as fases do lugar. Veja o [roadmap dos principais reinos](docs/ROADMAP-REINOS-3D.md).
 
+- **Linhagens e governantes.** O botão *Linhagens* (ou *Linhagens e governantes*, no menu ☰) mostra quem governava cada senhorio no momento da linha do tempo. Basta mover o tempo para ver a sucessão mudar: Nargothrond passa de Finrod a Orodreth, e o Alto Reinado dos Noldor vai de Finwë a Gil-galad. Tocar num governante abre a árvore genealógica dele, a começar por Fëanor: ascendência, irmãos e três gerações de descendência. A coroa marca quem reina na época atual, e os retratos de `data/retratos.json` aparecem nos cartões. A ficha de cada reino do mapa ligado a um senhorio também passa a mostrar o governante da época.
 - **Abertura em Aman, nos Anos das Árvores.** A câmera mostra a costa de Aman em vista oblíqua, com Tol Eressëa em primeiro plano e as Pelóri ao fundo. Você controla a câmera desde o primeiro instante. O cartão de abertura oferece três ações: *Explorar livremente*, *Escolher uma era* e *Seguir uma jornada*.
 - **Luz das Duas Árvores.** Telperion (prata) e Laurelin (ouro) alternam num ciclo de 12 horas, com uma hora de mistura em cada troca. O controle "Hora das Árvores" fica na linha do tempo. Para cada ponto de Aman, o atlas calcula se a luz chega até ele percorrendo o relevo na direção de Ezellohar. Por isso ela passa pela Calacirya, ilumina a margem oeste de Tol Eressëa e deixa Araman e Avathar na sombra das Pelóri. Toque em Ezellohar para alternar entre o florescimento e o escurecimento.
 - **Câmera.** Orbitar, inclinar, girar, aproximar no cursor ou com pinça, e voar até um destino buscado, em arco, como num globo virtual.
@@ -82,9 +83,12 @@ data/                 dados separados do código (JSON)
   reinos.json         reinos com capitais, povos, transformações e territórios por período
   fontes.json         obras, mapas, estudos e índices, com o estado de acesso (inclusive lacunas)
   jornadas.json       percursos guiados
+  linhagens.json      pessoas (pais, povo, fontes) e governantes de cada senhorio por período
+  retratos.json       retratos, com o que é descrito e o que é interpretação
 src/
   core/time.ts        linha do tempo unificada (anos e sequências), referências temporais
   core/data.ts        carga dos dados, validade por período, estados de lugares e territórios
+  core/linhagens.ts   parentescos, uniões, ascendência e governante de cada senhorio no instante t
   terrain/model.ts    função de relevo: costas fractais, distâncias, montanhas, rios, biomas
   terrain/terrain.worker.ts  geração de ladrilhos e da visibilidade da luz das Árvores
   terrain/tiles.ts    quadtree com carregamento progressivo e transição (morph) entre eras

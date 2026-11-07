@@ -6,6 +6,7 @@ import { eras, jornadas, lugarPorId, reinoPorId, tempo } from '../core/data';
 import { Busca } from './busca';
 import { LinhaTempo } from './linha';
 import { fichaAqui, fichaEvento, fichaFonte, fichaFontes, fichaLugar, fichaMarco, fichaReino } from './fichas';
+import { fichaLinhagem, fichaSenhorios } from './linhagens';
 import { esc, guardar, h, ler, listaFontes } from './util';
 import { lerLink, montarLink } from './url';
 import { regimeDe } from '../render/lighting';
@@ -50,6 +51,7 @@ export class Interface {
       </div>
       <nav class="topo-acoes">
         <button type="button" data-acao="jornadas" title="Jornadas guiadas (J)">Jornadas</button>
+        <button type="button" data-acao="linhagens" title="Árvores genealógicas e governantes desta época">Linhagens</button>
         <button type="button" data-acao="fontes" title="Fontes e método">Fontes</button>
         <button type="button" data-acao="compartilhar" class="icone" aria-label="Copiar link desta vista" title="Copiar link desta vista">⤴</button>
       </nav>`;
@@ -63,6 +65,7 @@ export class Interface {
       <div class="menu-atalhos">
         <button type="button" data-acao="jornadas">Seguir uma jornada</button>
         <button type="button" data-acao="eras">Escolher uma era</button>
+        <button type="button" data-acao="linhagens">Linhagens e governantes</button>
         <button type="button" data-acao="gondolin-3d">Visitar Gondolin em 3D</button>
         <button type="button" data-acao="minas-tirith-3d">Visitar Minas Tirith em 3D</button>
         <button type="button" data-acao="fontes">Fontes e método</button>
@@ -155,6 +158,10 @@ export class Interface {
       this.executar(acao, dados);
     });
     this.painel.querySelector('.fechar')!.addEventListener('click', () => this.fecharPainel());
+    this.conteudo.addEventListener('change', (e) => {
+      const el = e.target as HTMLSelectElement;
+      if (el.id === 'linhagem-ir') this.abrir('linhagem:' + el.value);
+    });
     // folha inferior arrastável no celular
     const alca = this.painel.querySelector('.alca') as HTMLElement;
     let y0 = 0;
@@ -288,7 +295,7 @@ export class Interface {
   // ---------- painel ----------
   abrir(sel: string, voar = false) {
     const a = this.app;
-    if (sel === 'fontes' || sel === 'jornadas' || sel === 'eras' || sel.startsWith('fonte:') || sel.startsWith('aqui:')) {
+    if (sel === 'fontes' || sel === 'jornadas' || sel === 'eras' || sel === 'linhagens' || sel.startsWith('fonte:') || sel.startsWith('aqui:')) {
       this.conteudoAtual = sel;
       if (sel.startsWith('aqui:')) a.selecionar(null);
       this.renderPainel();
@@ -356,14 +363,22 @@ export class Interface {
     else if (tipo === 'marco') html = fichaMarco(id);
     else if (tipo === 'jornadas') html = this.htmlJornadas();
     else if (tipo === 'eras') html = this.htmlEras();
+    else if (tipo === 'linhagem') html = fichaLinhagem(a, id);
+    else if (tipo === 'linhagens') html = fichaSenhorios(a);
     if (!html) return;
     this.ultimoRenderPainel = performance.now();
     const top = this.conteudo.scrollTop;
+    const arvoreX = this.conteudo.querySelector('.arvore-rolagem')?.scrollLeft;
+    const largo = tipo === 'linhagem';
+    this.painel.classList.toggle('largo', largo);
+    document.body.classList.toggle('painel-largo', largo);
     const abertos = manterScroll ? [...this.conteudo.querySelectorAll('details[open] summary')].map((x) => x.textContent) : [];
     this.conteudo.innerHTML = html;
     if (abertos.length) this.conteudo.querySelectorAll('details').forEach((d) => abertos.includes(d.querySelector('summary')?.textContent ?? null) && (d.open = true));
     this.painel.hidden = false;
     document.body.classList.add('painel-aberto');
+    const rol = this.conteudo.querySelector<HTMLElement>('.arvore-rolagem');
+    if (rol) rol.scrollLeft = manterScroll && arvoreX != null ? arvoreX : (rol.scrollWidth - rol.clientWidth) / 2;
     if (manterScroll) this.conteudo.scrollTop = top;
     else {
       this.conteudo.scrollTop = 0;
@@ -379,8 +394,8 @@ export class Interface {
     this.painelFocoAntes = null;
     if (voltar && this.painel.contains(document.activeElement) && document.contains(voltar)) voltar.focus({ preventScroll: true });
     this.painel.hidden = true;
-    this.painel.classList.remove('expandido');
-    document.body.classList.remove('painel-aberto');
+    this.painel.classList.remove('expandido', 'largo');
+    document.body.classList.remove('painel-aberto', 'painel-largo');
     this.conteudoAtual = '';
     this.app.selecionar(null);
   }
@@ -510,6 +525,10 @@ export class Interface {
         break;
       case 'eras':
         this.abrirEras();
+        this.camadasEl.hidden = true;
+        break;
+      case 'linhagens':
+        this.abrir('linhagens');
         this.camadasEl.hidden = true;
         break;
       case 'jornada':

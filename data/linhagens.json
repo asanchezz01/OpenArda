@@ -1,0 +1,196 @@
+{
+  "nota": "Parentescos e governantes por período. 'pais' lista pai e mãe; o primeiro é a linha principal. 'elo' indica que várias gerações foram omitidas entre a pessoa e pais[0]. Governos usam as referências temporais do atlas, com início incluído e fim excluído. Quando os escritos divergem, segue-se O Silmarillion publicado.",
+  "pessoas": [
+    { "id": "finwe", "nome": "Finwë", "epiteto": "Primeiro Rei dos Noldor", "povo": "noldor", "datas": "morto no Escurecimento de Valinor", "resumo": "Conduziu os Noldor de Cuiviénen a Aman. Foi morto por Morgoth em Formenos, na noite em que as Silmarils foram roubadas.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 5–9" }] },
+    { "id": "miriel", "nome": "Míriel Serindë", "epiteto": "a Bordadeira", "povo": "noldor", "fem": true, "resumo": "Primeira esposa de Finwë. Exausta depois do nascimento de Fëanor, seu espírito partiu para os Salões de Mandos.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 6" }] },
+    { "id": "indis", "nome": "Indis", "epiteto": "a Bela", "povo": "vanyar", "fem": true, "resumo": "Vanya, parente de Ingwë. Segunda esposa de Finwë e mãe de Fingolfin e Finarfin.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 6" }] },
+    { "id": "mahtan", "nome": "Mahtan", "epiteto": "o Ferreiro", "povo": "noldor", "resumo": "Grande ferreiro dos Noldor, querido de Aulë. Ensinou a Fëanor muito do seu ofício.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 6" }] },
+    { "id": "nerdanel", "nome": "Nerdanel", "epiteto": "a Sábia", "povo": "noldor", "fem": true, "pais": ["mahtan"], "resumo": "Esposa de Fëanor. Afastou-se dele antes da rebelião e não seguiu para o exílio.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 6" }] },
+    { "id": "feanor", "nome": "Fëanor", "epiteto": "Curufinwë, Espírito de Fogo", "povo": "noldor", "pais": ["finwe", "miriel"], "datas": "morto na Batalha sob as Estrelas", "resumo": "O mais hábil dos Noldor, criador das Silmarils. Depois da morte de Finwë, fez o Juramento com os sete filhos e levou os Noldor à Terra-média, onde morreu ferido por Balrogs.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 6–13" }] },
+    { "id": "maedhros", "nome": "Maedhros", "epiteto": "o Alto", "povo": "noldor", "pais": ["feanor", "nerdanel"], "datas": "† 587 P.E.", "resumo": "Primogênito de Fëanor. Resgatado de Thangorodrim por Fingon, cedeu o título de rei a Fingolfin e guardou a Marca de Himring. No fim, atirou-se num abismo de fogo com uma Silmaril.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 13 e 24" }] },
+    { "id": "maglor", "nome": "Maglor", "epiteto": "o Cantor", "povo": "noldor", "pais": ["feanor", "nerdanel"], "datas": "vaga à beira-mar", "resumo": "Poderoso cantor. Guardou a Brecha que leva seu nome e, ao fim da Primeira Era, lançou sua Silmaril ao mar.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 14 e 24" }] },
+    { "id": "celegorm", "nome": "Celegorm", "epiteto": "o Belo", "povo": "noldor", "pais": ["feanor", "nerdanel"], "datas": "† 506 P.E.", "resumo": "Caçador e senhor de Huan. Com Curufin governou Himlad e depois traiu Finrod em Nargothrond. Morreu no ataque a Doriath.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 14, 19 e 22" }] },
+    { "id": "caranthir", "nome": "Caranthir", "epiteto": "o Moreno", "povo": "noldor", "pais": ["feanor", "nerdanel"], "datas": "† 506 P.E.", "resumo": "O mais áspero dos irmãos. Governou Thargelion, junto ao lago Helevorn, e comerciava com os Anões.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 14 e 22" }] },
+    { "id": "curufin", "nome": "Curufin", "epiteto": "o Hábil", "povo": "noldor", "pais": ["feanor", "nerdanel"], "datas": "† 506 P.E.", "resumo": "O filho que mais herdou a habilidade do pai. Celebrimbor, seu filho, o renegou depois da traição contra Finrod.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 14 e 19" }] },
+    { "id": "amrod", "nome": "Amrod", "epiteto": "o Caçador", "povo": "noldor", "pais": ["feanor", "nerdanel"], "datas": "† 538 P.E.", "resumo": "Gêmeo de Amras. Os dois caçavam nas florestas do Beleriand Oriental e morreram no ataque aos Portos do Sirion.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 14 e 24" }] },
+    { "id": "amras", "nome": "Amras", "epiteto": "o Caçador", "povo": "noldor", "pais": ["feanor", "nerdanel"], "datas": "† 538 P.E.", "resumo": "Gêmeo de Amrod, com quem dividiu o senhorio do Beleriand Oriental.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 14 e 24" }] },
+    { "id": "celebrimbor", "nome": "Celebrimbor", "epiteto": "Mão de Prata", "povo": "noldor", "pais": ["curufin"], "datas": "† 1697 S.E.", "resumo": "Senhor de Eregion e mestre dos Gwaith-i-Mírdain. Forjou sozinho os Três Anéis dos Elfos e foi morto por Sauron.", "fontes": [{ "fonte": "silm", "local": "Dos Anéis de Poder" }, { "fonte": "ci", "local": "Parte II, cap. 4" }] },
+    { "id": "fingolfin", "nome": "Fingolfin", "epiteto": "Nolofinwë, Alto Rei", "povo": "noldor", "pais": ["finwe", "indis"], "datas": "† 455 P.E.", "resumo": "Atravessou o Helcaraxë e tornou-se Alto Rei dos Noldor em Hithlum. Depois da Dagor Bragollach, desafiou Morgoth em combate singular diante de Angband.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 13 e 18" }] },
+    { "id": "finarfin", "nome": "Finarfin", "epiteto": "Arafinwë, o Sábio", "povo": "noldor", "pais": ["finwe", "indis"], "resumo": "Voltou atrás depois do Fratricídio de Alqualondë, recebeu o perdão dos Valar e governou os Noldor que ficaram em Tirion. Comandou a hoste de Valinor na Guerra da Ira.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 9 e 24" }] },
+    { "id": "olwe", "nome": "Olwë", "epiteto": "Senhor de Alqualondë", "povo": "teleri", "resumo": "Irmão de Thingol. Seu povo foi massacrado pelos seguidores de Fëanor no Fratricídio de Alqualondë.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 3, 5 e 9" }] },
+    { "id": "earwen", "nome": "Eärwen", "epiteto": "Donzela-cisne de Alqualondë", "povo": "teleri", "fem": true, "pais": ["olwe"], "resumo": "Filha de Olwë. Por ela, os filhos de Finarfin eram parentes de Thingol e foram recebidos em Doriath.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 5 e 15" }] },
+    { "id": "fingon", "nome": "Fingon", "epiteto": "o Valente", "povo": "noldor", "pais": ["fingolfin"], "datas": "† 472 P.E.", "resumo": "Resgatou Maedhros de Thangorodrim com a ajuda de Thorondor. Alto Rei depois de Fingolfin, caiu diante de Gothmog na Nirnaeth Arnoediad.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 13 e 20" }] },
+    { "id": "turgon", "nome": "Turgon", "epiteto": "Rei de Gondolin", "povo": "noldor", "pais": ["fingolfin"], "datas": "† 510 P.E.", "resumo": "Guiado por Ulmo, ergueu a cidade oculta de Gondolin. Alto Rei depois de Fingon, morreu na queda da cidade.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 15 e 23" }] },
+    { "id": "elenwe", "nome": "Elenwë", "povo": "vanyar", "fem": true, "datas": "morta no Helcaraxë", "resumo": "Esposa de Turgon. Pereceu na travessia do Gelo Pungente.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 15" }] },
+    { "id": "aredhel", "nome": "Aredhel", "epiteto": "Ar-Feiniel, a Branca", "povo": "noldor", "fem": true, "pais": ["fingolfin"], "datas": "morta em Gondolin", "resumo": "Deixou Gondolin, perdeu-se em Nan Elmoth e casou-se com Eöl. Morreu atingida pelo dardo envenenado que o marido lançou contra o filho.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 16" }] },
+    { "id": "idril", "nome": "Idril Celebrindal", "epiteto": "Pé-de-Prata", "povo": "noldor", "fem": true, "pais": ["turgon", "elenwe"], "resumo": "Filha de Turgon. Desconfiou de Maeglin e preparou a passagem secreta que salvou os sobreviventes de Gondolin. Navegou para o Oeste com Tuor.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 23" }] },
+    { "id": "eol", "nome": "Eöl", "epiteto": "o Elfo Sombrio", "povo": "sindar", "datas": "executado em Gondolin", "resumo": "Ferreiro de Nan Elmoth, parente de Thingol. Forjou as espadas Anglachel e Anguirel.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 16" }] },
+    { "id": "maeglin", "nome": "Maeglin", "epiteto": "Lómion, Filho do Crepúsculo", "povo": "noldor", "pais": ["eol", "aredhel"], "datas": "† 510 P.E.", "resumo": "Sobrinho de Turgon. Por cobiça de Idril e sob ameaça de Morgoth, traiu Gondolin. Tuor o lançou dos muros da cidade.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 16 e 23" }] },
+    { "id": "gilgalad", "nome": "Gil-galad", "epiteto": "Ereinion, último Alto Rei", "povo": "noldor", "pais": ["fingon"], "datas": "† 3441 S.E.", "resumo": "Último Alto Rei dos Noldor na Terra-média e senhor de Lindon. Liderou a Última Aliança com Elendil e morreu derrubando Sauron. Em escritos tardios, Tolkien o fez filho de Orodreth.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 18; Dos Anéis de Poder" }] },
+    { "id": "finrod", "nome": "Finrod Felagund", "epiteto": "Senhor das Cavernas", "povo": "noldor", "pais": ["finarfin", "earwen"], "datas": "† 465 P.E.", "resumo": "Fundou Nargothrond com a ajuda dos Anões e foi o primeiro dos Eldar a encontrar os Homens. Morreu nos calabouços de Tol-in-Gaurhoth defendendo Beren.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 13, 17 e 19" }] },
+    { "id": "orodreth", "nome": "Orodreth", "povo": "noldor", "pais": ["finarfin", "earwen"], "datas": "† 495 P.E.", "resumo": "Guardou a torre de Minas Tirith em Tol Sirion e sucedeu Finrod em Nargothrond. Caiu na Batalha de Tumhalad, antes de Glaurung destruir o reino.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 15, 19 e 21" }] },
+    { "id": "angrod", "nome": "Angrod", "povo": "noldor", "pais": ["finarfin", "earwen"], "datas": "† 455 P.E.", "resumo": "Com Aegnor guardou o planalto de Dorthonion diante de Angband. Morreu na Dagor Bragollach.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 13 e 18" }] },
+    { "id": "aegnor", "nome": "Aegnor", "epiteto": "o Feroz", "povo": "noldor", "pais": ["finarfin", "earwen"], "datas": "† 455 P.E.", "resumo": "Guardou Dorthonion com o irmão Angrod e caiu com ele na Dagor Bragollach.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 13 e 18" }] },
+    { "id": "galadriel", "nome": "Galadriel", "epiteto": "Senhora de Lórien", "povo": "noldor", "fem": true, "pais": ["finarfin", "earwen"], "datas": "partiu em 3021 T.E.", "resumo": "Única filha de Finarfin e a última dos líderes do exílio a permanecer na Terra-média. Portadora de Nenya, governou Lothlórien com Celeborn.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 5" }, { "fonte": "ci", "local": "Parte II, cap. 4" }] },
+    { "id": "finduilas", "nome": "Finduilas", "povo": "noldor", "fem": true, "pais": ["orodreth"], "datas": "† 495 P.E.", "resumo": "Prometida a Gwindor, apaixonou-se por Túrin. Capturada no saque de Nargothrond, foi morta pelos Orcs nas Travessias do Teiglin.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 21" }] },
+    { "id": "elmo", "nome": "Elmo", "povo": "sindar", "resumo": "Irmão mais novo de Thingol e de Olwë.", "fontes": [{ "fonte": "ci", "local": "Parte II, cap. 4" }] },
+    { "id": "galadhon", "nome": "Galadhon", "povo": "sindar", "pais": ["elmo"], "resumo": "Filho de Elmo e pai de Celeborn e Galathil.", "fontes": [{ "fonte": "ci", "local": "Parte II, cap. 4" }] },
+    { "id": "celeborn", "nome": "Celeborn", "epiteto": "o Sábio", "povo": "sindar", "pais": ["galadhon"], "resumo": "Parente de Thingol e senhor de Lothlórien com Galadriel. Depois da partida dela, fundou a Lórien Oriental e mais tarde foi viver em Imladris com os filhos de Elrond.", "fontes": [{ "fonte": "ci", "local": "Parte II, cap. 4" }, { "fonte": "sda-apB", "local": "Terceira Era, fim" }] },
+    { "id": "galathil", "nome": "Galathil", "povo": "sindar", "pais": ["galadhon"], "resumo": "Irmão de Celeborn e pai de Nimloth.", "fontes": [{ "fonte": "ci", "local": "Parte II, cap. 4" }] },
+    { "id": "nimloth", "nome": "Nimloth", "povo": "sindar", "fem": true, "pais": ["galathil"], "datas": "† 506 P.E.", "resumo": "Esposa de Dior e parente de Celeborn. Morreu no ataque dos filhos de Fëanor a Menegroth.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 22" }] },
+    { "id": "thingol", "nome": "Elu Thingol", "epiteto": "Rei Manto-gris", "povo": "sindar", "datas": "† 503 P.E.", "resumo": "Senhor de todos os Sindar. Pediu uma Silmaril como preço pela mão de Lúthien e foi morto pelos Anões de Nogrod por causa do Nauglamír.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 4, 19 e 22" }] },
+    { "id": "melian", "nome": "Melian", "epiteto": "a Maia", "povo": "maia", "fem": true, "resumo": "Maia do séquito de Yavanna e Vána. Seu Cinturão protegeu Doriath por séculos; deixou a Terra-média depois da morte de Thingol.", "fontes": [{ "fonte": "silm", "local": "Valaquenta; Quenta, caps. 4 e 22" }] },
+    { "id": "luthien", "nome": "Lúthien Tinúviel", "epiteto": "a mais bela dos Filhos de Ilúvatar", "povo": "sindar", "fem": true, "pais": ["thingol", "melian"], "resumo": "Filha de um Elfo e de uma Maia. Com Beren arrancou uma Silmaril da coroa de Morgoth e escolheu a mortalidade por amor.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 19" }] },
+    { "id": "barahir", "nome": "Barahir", "povo": "edain", "datas": "† 460 P.E.", "resumo": "Da Casa de Bëor. Salvou Finrod na Dagor Bragollach e recebeu dele o anel que viria a ser o Anel de Barahir.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 18" }] },
+    { "id": "beren", "nome": "Beren Erchamion", "epiteto": "o Maneta", "povo": "edain", "pais": ["barahir"], "resumo": "Recuperou uma Silmaril com Lúthien e foi o único dos Homens a voltar dos Salões de Mandos.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 19" }] },
+    { "id": "dior", "nome": "Dior Eluchíl", "epiteto": "Herdeiro de Thingol", "povo": "meio", "pais": ["beren", "luthien"], "datas": "† 506 P.E.", "resumo": "Rei de Doriath depois de Thingol. Usava a Silmaril e foi morto pelos filhos de Fëanor no segundo fratricídio.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 22" }] },
+    { "id": "elwing", "nome": "Elwing", "epiteto": "a Branca", "povo": "meio", "fem": true, "pais": ["dior", "nimloth"], "resumo": "Escapou de Doriath com a Silmaril e depois do ataque aos Portos do Sirion. Ulmo a transformou em ave marinha para que levasse a joia até Eärendil.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 22 e 24" }] },
+    { "id": "elured", "nome": "Eluréd", "povo": "meio", "pais": ["dior", "nimloth"], "datas": "perdido em 506 P.E.", "resumo": "Gêmeo de Elurín. Abandonados na floresta pelos servos de Celegorm, nunca foram encontrados.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 22" }] },
+    { "id": "elurin", "nome": "Elurín", "povo": "meio", "pais": ["dior", "nimloth"], "datas": "perdido em 506 P.E.", "resumo": "Gêmeo de Eluréd, abandonado na floresta depois da ruína de Doriath.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 22" }] },
+    { "id": "galdor", "nome": "Galdor", "epiteto": "o Alto", "povo": "edain", "datas": "† 462 P.E.", "resumo": "Senhor de Dor-lómin, da Casa de Hador. Morreu defendendo Eithel Sirion.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 18" }] },
+    { "id": "hurin", "nome": "Húrin Thalion", "epiteto": "o Firme", "povo": "edain", "pais": ["galdor"], "resumo": "Capturado na Nirnaeth Arnoediad, foi amaldiçoado por Morgoth a ver a ruína dos próprios filhos.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 20 e 21" }] },
+    { "id": "morwen", "nome": "Morwen Eledhwen", "povo": "edain", "fem": true, "resumo": "Da Casa de Bëor. Morreu ao lado de Húrin, junto ao túmulo dos filhos.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 21 e 22" }] },
+    { "id": "turin", "nome": "Túrin Turambar", "epiteto": "Mestre do Destino", "povo": "edain", "pais": ["hurin", "morwen"], "datas": "† 501 P.E.", "resumo": "Matou Glaurung, mas, ao descobrir que se casara com a própria irmã, lançou-se sobre a espada Gurthang.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 21" }] },
+    { "id": "nienor", "nome": "Niënor Níniel", "povo": "edain", "fem": true, "pais": ["hurin", "morwen"], "datas": "† 501 P.E.", "resumo": "Enfeitiçada por Glaurung, esqueceu quem era e casou-se com Túrin. Ao recuperar a memória, atirou-se em Cabed-en-Aras.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 21" }] },
+    { "id": "huor", "nome": "Huor", "povo": "edain", "pais": ["galdor"], "datas": "† 472 P.E.", "resumo": "Irmão de Húrin. Viveu um tempo em Gondolin e caiu na Nirnaeth Arnoediad cobrindo a retirada de Turgon.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 18 e 20" }] },
+    { "id": "rian", "nome": "Rían", "povo": "edain", "fem": true, "resumo": "Esposa de Huor. Morreu de luto sobre o Monte dos Mortos.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 20" }] },
+    { "id": "tuor", "nome": "Tuor", "epiteto": "Mensageiro de Ulmo", "povo": "edain", "pais": ["huor", "rian"], "resumo": "Levou a mensagem de Ulmo a Gondolin e casou-se com Idril. Diz-se que foi o único Homem contado entre os Eldar.", "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 23 e 24" }] },
+    { "id": "earendil", "nome": "Eärendil", "epiteto": "o Marinheiro", "povo": "meio", "pais": ["tuor", "idril"], "datas": "nasc. 503 P.E.", "resumo": "Navegou até Valinor com a Silmaril e pediu o perdão dos Valar para Elfos e Homens. Percorre os céus como a Estrela da Tarde.", "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 24" }] },
+    { "id": "elrond", "nome": "Elrond", "epiteto": "Meio-Elfo", "povo": "meio", "pais": ["earendil", "elwing"], "datas": "532 P.E. – partiu em 3021 T.E.", "resumo": "Escolheu o destino dos Elfos. Arauto de Gil-galad, fundou Imladris em 1697 S.E. e guardou Vilya, o Anel do Ar.", "fontes": [{ "fonte": "silm", "local": "Dos Anéis de Poder" }, { "fonte": "sda-apA" }] },
+    { "id": "elros", "nome": "Elros Tar-Minyatur", "epiteto": "Primeiro Rei de Númenor", "povo": "meio", "pais": ["earendil", "elwing"], "datas": "532 P.E. – 442 S.E.", "resumo": "Escolheu o destino dos Homens e tornou-se o primeiro Rei de Númenor. Viveu quinhentos anos.", "fontes": [{ "fonte": "sda-apA", "local": "I (i)" }, { "fonte": "ci", "local": "Parte II, cap. 3" }] },
+    { "id": "celebrian", "nome": "Celebrían", "povo": "sindar", "fem": true, "pais": ["celeborn", "galadriel"], "datas": "partiu em 2510 T.E.", "resumo": "Esposa de Elrond. Capturada e ferida por Orcs no Passo do Chifre-vermelho, partiu para o Oeste.", "fontes": [{ "fonte": "sda-apA", "local": "I (v)" }, { "fonte": "sda-apB" }] },
+    { "id": "elladan", "nome": "Elladan", "povo": "meio", "pais": ["elrond", "celebrian"], "resumo": "Gêmeo de Elrohir. Cavalgou com os Dúnedain do Norte e lutou na Guerra do Anel.", "fontes": [{ "fonte": "sda", "local": "O Retorno do Rei, livro V" }] },
+    { "id": "elrohir", "nome": "Elrohir", "povo": "meio", "pais": ["elrond", "celebrian"], "resumo": "Gêmeo de Elladan. Seguiu Aragorn pelas Sendas dos Mortos.", "fontes": [{ "fonte": "sda", "local": "O Retorno do Rei, livro V" }] },
+    { "id": "arwen", "nome": "Arwen Undómiel", "epiteto": "Estrela Vespertina", "povo": "meio", "fem": true, "pais": ["elrond", "celebrian"], "datas": "241 T.E. – 121 Q.E.", "resumo": "Escolheu a mortalidade para se casar com Aragorn. Morreu em Cerin Amroth, na Lórien já abandonada.", "fontes": [{ "fonte": "sda-apA", "local": "I (v)" }] },
+    { "id": "arpharazon", "nome": "Ar-Pharazôn", "epiteto": "o Dourado", "povo": "dunedain", "pais": ["elros"], "elo": "via os Reis de Númenor", "datas": "† 3319 S.E.", "resumo": "Último e mais poderoso Rei de Númenor. Seduzido por Sauron, desembarcou em Aman e provocou a Queda de Númenor.", "fontes": [{ "fonte": "silm", "local": "Akallabêth" }] },
+    { "id": "amandil", "nome": "Amandil", "epiteto": "Senhor de Andúnië", "povo": "dunedain", "pais": ["elros"], "elo": "via os Senhores de Andúnië", "resumo": "Líder dos Fiéis. Partiu rumo ao Oeste para pedir a misericórdia dos Valar e nunca mais foi visto.", "fontes": [{ "fonte": "silm", "local": "Akallabêth" }] },
+    { "id": "elendil", "nome": "Elendil", "epiteto": "o Alto", "povo": "dunedain", "pais": ["amandil"], "datas": "† 3441 S.E.", "resumo": "Escapou da Queda de Númenor com nove navios e fundou Arnor e Gondor. Morreu ao lado de Gil-galad derrubando Sauron.", "fontes": [{ "fonte": "silm", "local": "Akallabêth; Dos Anéis de Poder" }] },
+    { "id": "isildur", "nome": "Isildur", "povo": "dunedain", "pais": ["elendil"], "datas": "† 2 T.E.", "resumo": "Salvou um fruto da Árvore Branca e cortou o Um Anel da mão de Sauron. Recusou-se a destruí-lo e morreu nos Campos de Lis.", "fontes": [{ "fonte": "silm", "local": "Dos Anéis de Poder" }, { "fonte": "ci", "local": "Parte III, cap. 1" }] },
+    { "id": "anarion", "nome": "Anárion", "povo": "dunedain", "pais": ["elendil"], "datas": "† 3440 S.E.", "resumo": "Governou Gondor com o irmão a partir de Osgiliath. Morreu no cerco de Barad-dûr.", "fontes": [{ "fonte": "sda-apA", "local": "I (iv)" }] },
+    { "id": "meneldil", "nome": "Meneldil", "povo": "dunedain", "pais": ["anarion"], "datas": "† 158 T.E.", "resumo": "Sobrinho de Isildur, que lhe entregou o governo de Gondor antes de partir para o norte.", "fontes": [{ "fonte": "sda-apA", "local": "I (iv)" }] },
+    { "id": "valandil", "nome": "Valandil", "povo": "dunedain", "pais": ["isildur"], "datas": "† 249 T.E.", "resumo": "Filho mais novo de Isildur, criado em Imladris. Tornou-se Rei de Arnor.", "fontes": [{ "fonte": "sda-apA", "local": "I (iii)" }] },
+    { "id": "arathorn", "nome": "Arathorn II", "epiteto": "Chefe dos Dúnedain", "povo": "dunedain", "pais": ["valandil"], "elo": "via os Reis de Arnor e Arthedain e os Chefes dos Dúnedain", "datas": "† 2933 T.E.", "resumo": "Décimo quinto Chefe dos Dúnedain do Norte. Morreu atingido por uma flecha órquica.", "fontes": [{ "fonte": "sda-apA", "local": "I (iii) e (v)" }] },
+    { "id": "gilraen", "nome": "Gilraen", "epiteto": "a Bela", "povo": "dunedain", "fem": true, "datas": "† 3007 T.E.", "resumo": "Mãe de Aragorn. Criou o filho em Imladris, sob a guarda de Elrond.", "fontes": [{ "fonte": "sda-apA", "local": "I (v)" }] },
+    { "id": "aragorn", "nome": "Aragorn II Elessar", "epiteto": "Rei de Arnor e Gondor", "povo": "dunedain", "pais": ["arathorn", "gilraen"], "datas": "2931 T.E. – 120 Q.E.", "resumo": "Herdeiro de Isildur em linha direta. Depois da Guerra do Anel, reunificou Arnor e Gondor e casou-se com Arwen.", "fontes": [{ "fonte": "sda-apA", "local": "I (v)" }] },
+    { "id": "eldarion", "nome": "Eldarion", "povo": "dunedain", "pais": ["aragorn", "arwen"], "resumo": "Filho de Aragorn e Arwen. Herdou o Reino Reunido.", "fontes": [{ "fonte": "sda-apA", "local": "I (v)" }] },
+    { "id": "cirdan", "nome": "Círdan", "epiteto": "o Armador", "povo": "teleri", "resumo": "Senhor das Falas e depois dos Portos Cinzentos. Guardou o anel Narya e o entregou a Gandalf.", "fontes": [{ "fonte": "silm", "local": "Dos Anéis de Poder" }, { "fonte": "sda-apB" }] },
+    { "id": "amdir", "nome": "Amdír", "povo": "sindar", "datas": "† 3434 S.E.", "resumo": "Rei de Lórinand. Caiu na Batalha de Dagorlad, durante a Última Aliança.", "fontes": [{ "fonte": "ci", "local": "Parte II, cap. 4" }] },
+    { "id": "amroth", "nome": "Amroth", "povo": "sindar", "pais": ["amdir"], "datas": "† 1981 T.E.", "resumo": "Rei de Lórien. Afogou-se na Baía de Belfalas enquanto esperava por Nimrodel.", "fontes": [{ "fonte": "ci", "local": "Parte II, cap. 4" }, { "fonte": "sda", "local": "A Sociedade do Anel, livro II, cap. 6" }] }
+  ],
+  "senhorios": [
+    { "id": "alto-rei-noldor", "nome": "Alto Reinado dos Noldor", "onde": "Título supremo dos Noldor, em Aman e depois na Terra-média", "titulo": "Alto Rei", "governos": [
+      { "ate": "AA:#aa-escurecimento", "quem": ["finwe"] },
+      { "de": "AA:#aa-escurecimento", "ate": "PE:1", "quem": ["feanor"], "nota": "proclamou-se rei depois da morte de Finwë" },
+      { "de": "PE:1", "ate": "PE:455", "quem": ["fingolfin"], "nota": "Maedhros renunciou ao título em seu favor" },
+      { "de": "PE:455", "ate": "PE:472", "quem": ["fingon"] },
+      { "de": "PE:472", "ate": "PE:510", "quem": ["turgon"] },
+      { "de": "PE:510", "ate": "SE:3441", "quem": ["gilgalad"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 9, 13, 18, 20 e 24" }] },
+    { "id": "tirion", "nome": "Tirion", "onde": "Túna, em Eldamar", "titulo": "Rei dos Noldor em Aman", "governos": [
+      { "de": "AA:#aa-tirion", "ate": "AA:#aa-escurecimento", "quem": ["finwe"] },
+      { "de": "AA:#aa-escurecimento", "quem": ["finarfin"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 5 e 9" }] },
+    { "id": "alqualonde", "nome": "Alqualondë", "onde": "O Porto dos Cisnes, em Eldamar", "titulo": "Senhor dos Teleri", "governos": [
+      { "de": "AA:#aa-alqualonde", "quem": ["olwe"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 5" }] },
+    { "id": "doriath", "reino": "doriath", "titulo": "Rei", "governos": [
+      { "de": "AA:#aa-thingol", "ate": "PE:503", "quem": ["thingol"] },
+      { "de": "PE:503", "ate": "PE:506", "quem": ["dior"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 4 e 22" }] },
+    { "id": "falas", "reino": "falas", "titulo": "Senhor dos Portos", "governos": [
+      { "de": "AA:#aa-thingol", "ate": "PE:473", "quem": ["cirdan"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 10" }] },
+    { "id": "hithlum", "reino": "hithlum", "titulo": "Rei", "governos": [
+      { "de": "PE:1", "ate": "PE:455", "quem": ["fingolfin"] },
+      { "de": "PE:455", "ate": "PE:472", "quem": ["fingon"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 13 e 18" }] },
+    { "id": "marcha-maedhros", "reino": "marcha-maedhros", "titulo": "Senhor", "governos": [
+      { "de": "PE:60", "ate": "PE:472", "quem": ["maedhros"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 14" }] },
+    { "id": "brecha-maglor", "nome": "Brecha de Maglor", "onde": "Entre Himring e as Montanhas Azuis", "titulo": "Senhor", "governos": [
+      { "de": "PE:60", "ate": "PE:455", "quem": ["maglor"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 14" }] },
+    { "id": "himlad", "nome": "Himlad", "onde": "Planície junto ao Passo do Aglon", "titulo": "Senhores", "governos": [
+      { "de": "PE:60", "ate": "PE:455", "quem": ["celegorm", "curufin"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 14" }] },
+    { "id": "thargelion", "nome": "Thargelion", "onde": "Junto ao lago Helevorn", "titulo": "Senhor", "governos": [
+      { "de": "PE:60", "ate": "PE:455", "quem": ["caranthir"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 14" }] },
+    { "id": "beleriand-oriental", "nome": "Beleriand Oriental", "onde": "Florestas ao sul de Himring, até o Gelion", "titulo": "Senhores", "governos": [
+      { "de": "PE:60", "ate": "PE:455", "quem": ["amrod", "amras"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 14" }] },
+    { "id": "dorthonion", "reino": "dorthonion", "titulo": "Senhores", "governos": [
+      { "de": "PE:60", "ate": "PE:455", "quem": ["angrod", "aegnor"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, cap. 14" }] },
+    { "id": "tol-sirion", "nome": "Minas Tirith de Tol Sirion", "onde": "Torre na ilha do Sirion", "titulo": "Guardião", "governos": [
+      { "de": "PE:60", "ate": "PE:457", "quem": ["orodreth"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 15 e 18" }] },
+    { "id": "nargothrond", "reino": "nargothrond", "titulo": "Rei", "governos": [
+      { "de": "PE:102", "ate": "PE:465", "quem": ["finrod"] },
+      { "de": "PE:465", "ate": "PE:495", "quem": ["orodreth"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 13, 19 e 21" }] },
+    { "id": "gondolin", "reino": "gondolin", "titulo": "Rei", "governos": [
+      { "de": "PE:116", "ate": "PE:510", "quem": ["turgon"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 15 e 23" }] },
+    { "id": "portos-sirion", "nome": "Portos do Sirion", "onde": "Foz do Sirion", "titulo": "Senhores", "governos": [
+      { "de": "PE:511", "ate": "PE:525", "quem": ["tuor"], "nota": "início e fim aproximados" },
+      { "de": "PE:525", "ate": "PE:538", "quem": ["earendil", "elwing"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 23 e 24" }] },
+    { "id": "balar", "nome": "Ilha de Balar", "onde": "Refúgio dos Elfos depois da queda das Falas", "titulo": "Senhor", "governos": [
+      { "de": "PE:473", "ate": "PE:510", "quem": ["cirdan"] },
+      { "de": "PE:510", "ate": "SE:1", "quem": ["gilgalad"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Quenta, caps. 20 e 24" }] },
+    { "id": "lindon", "reino": "lindon", "titulo": "Rei", "governos": [
+      { "de": "SE:1", "ate": "SE:3441", "quem": ["gilgalad"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Dos Anéis de Poder" }] },
+    { "id": "mithlond", "nome": "Portos Cinzentos", "onde": "Mithlond, no Golfo de Lhûn", "titulo": "Senhor dos Portos", "governos": [
+      { "de": "SE:1", "quem": ["cirdan"] }
+    ], "fontes": [{ "fonte": "silm", "local": "Dos Anéis de Poder" }, { "fonte": "sda-apB" }] },
+    { "id": "numenor", "reino": "numenor", "titulo": "Rei", "governos": [
+      { "de": "SE:32", "ate": "SE:442", "quem": ["elros"] },
+      { "de": "SE:442", "ate": "SE:3255", "rotulo": "Sucessores de Elros, Reis e Rainhas de Númenor" },
+      { "de": "SE:3255", "ate": "SE:3319", "quem": ["arpharazon"] }
+    ], "fontes": [{ "fonte": "sda-apA", "local": "I (i)" }, { "fonte": "silm", "local": "Akallabêth" }] },
+    { "id": "eregion", "reino": "eregion", "titulo": "Senhor", "governos": [
+      { "de": "SE:750", "ate": "SE:1697", "quem": ["celebrimbor"] }
+    ], "fontes": [{ "fonte": "ci", "local": "Parte II, cap. 4" }] },
+    { "id": "imladris", "nome": "Imladris", "onde": "Valfenda", "titulo": "Senhor", "governos": [
+      { "de": "SE:1697", "ate": "TE:3021", "quem": ["elrond"] },
+      { "de": "TE:3021", "quem": ["elladan", "elrohir"], "nota": "com Celeborn, segundo o Apêndice B" }
+    ], "fontes": [{ "fonte": "sda-apB" }] },
+    { "id": "lorien", "nome": "Lothlórien", "onde": "Lórinand, a Terra Dourada", "titulo": "Senhores", "governos": [
+      { "de": "SE:1400", "ate": "SE:3434", "quem": ["amdir"], "nota": "início incerto" },
+      { "de": "SE:3434", "ate": "TE:1981", "quem": ["amroth"] },
+      { "de": "TE:1981", "ate": "TE:3021", "quem": ["galadriel", "celeborn"] },
+      { "de": "TE:3021", "quem": ["celeborn"], "nota": "na Lórien Oriental" }
+    ], "fontes": [{ "fonte": "ci", "local": "Parte II, cap. 4" }, { "fonte": "sda-apB" }] },
+    { "id": "arnor", "reino": "arnor", "titulo": "Rei", "governos": [
+      { "de": "SE:3320", "ate": "SE:3441", "quem": ["elendil"], "nota": "Grande Rei" },
+      { "de": "SE:3441", "ate": "TE:2", "quem": ["isildur"] },
+      { "de": "TE:2", "ate": "TE:249", "quem": ["valandil"] },
+      { "de": "TE:249", "ate": "TE:861", "rotulo": "Reis de Arnor, até Eärendur" }
+    ], "fontes": [{ "fonte": "sda-apA", "local": "I (iii)" }] },
+    { "id": "arthedain", "reino": "arthedain", "titulo": "Rei", "governos": [
+      { "de": "TE:861", "ate": "TE:1974", "rotulo": "Reis de Arthedain, de Amlaith a Arvedui" }
+    ], "fontes": [{ "fonte": "sda-apA", "local": "I (iii)" }] },
+    { "id": "dunedain-norte", "nome": "Dúnedain do Norte", "onde": "Errantes de Eriador, herdeiros de Arnor", "titulo": "Chefe", "governos": [
+      { "de": "TE:1974", "ate": "TE:2930", "rotulo": "Chefes dos Dúnedain, de Aranarth a Arador" },
+      { "de": "TE:2930", "ate": "TE:2933", "quem": ["arathorn"] },
+      { "de": "TE:2933", "ate": "TE:3019", "quem": ["aragorn"] }
+    ], "fontes": [{ "fonte": "sda-apA", "local": "I (iii) e (v)" }] },
+    { "id": "gondor", "reino": "gondor", "titulo": "Rei ou Regente", "governos": [
+      { "de": "SE:3320", "ate": "SE:3440", "quem": ["isildur", "anarion"] },
+      { "de": "SE:3440", "ate": "TE:2", "quem": ["isildur"] },
+      { "de": "TE:2", "ate": "TE:158", "quem": ["meneldil"] },
+      { "de": "TE:158", "ate": "TE:2050", "rotulo": "Reis de Gondor da linhagem de Anárion, até Eärnur" },
+      { "de": "TE:2050", "ate": "TE:2984", "rotulo": "Regentes Governantes da Casa de Húrin" },
+      { "de": "TE:2984", "ate": "TE:3019", "rotulo": "Denethor II, Regente Governante" },
+      { "de": "TE:3019", "ate": "QE:120", "quem": ["aragorn"] },
+      { "de": "QE:120", "quem": ["eldarion"] }
+    ], "fontes": [{ "fonte": "sda-apA", "local": "I (iv)" }] },
+    { "id": "reino-reunido", "reino": "reino-reunido", "titulo": "Rei", "governos": [
+      { "de": "TE:3019", "ate": "QE:120", "quem": ["aragorn"] },
+      { "de": "QE:120", "quem": ["eldarion"] }
+    ], "fontes": [{ "fonte": "sda-apA", "local": "I (v)" }] }
+  ]
+}

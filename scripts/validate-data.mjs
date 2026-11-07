@@ -170,6 +170,35 @@ for (const j of jornadas) {
   });
 }
 
+// linhagens
+const linhagens = ler('linhagens');
+const retratos = ler('retratos');
+const idPessoas = ids(linhagens.pessoas, 'pessoas');
+ids(linhagens.senhorios, 'senhorios');
+const POVOS = new Set(['noldor', 'sindar', 'teleri', 'vanyar', 'maia', 'edain', 'meio', 'dunedain']);
+for (const p of linhagens.pessoas) {
+  const onde = `pessoa ${p.id}`;
+  if (!POVOS.has(p.povo)) erro(`${onde}: povo inválido "${p.povo}"`);
+  for (const q of p.pais ?? []) if (!idPessoas.has(q) || q === p.id) erro(`${onde}: genitor inválido "${q}"`);
+  if (p.elo && !p.pais?.length) erro(`${onde}: "elo" sem pais`);
+  if (!p.fontes?.length) erro(`${onde}: sem fontes`);
+  verificarFontes(p.fontes, onde);
+}
+for (const s of linhagens.senhorios) {
+  const onde = `senhorio ${s.id}`;
+  if (s.reino && !idReinos.has(s.reino)) erro(`${onde}: reino desconhecido "${s.reino}"`);
+  if (!s.reino && !s.nome) erro(`${onde}: sem nome nem reino`);
+  if (!s.governos?.length) erro(`${onde}: sem governos`);
+  for (const g of s.governos ?? []) {
+    verificarTempo(g.de, onde);
+    verificarTempo(g.ate, onde);
+    if (!g.quem?.length && !g.rotulo) erro(`${onde}: governo sem "quem" nem "rotulo"`);
+    for (const q of g.quem ?? []) if (!idPessoas.has(q)) erro(`${onde}: pessoa desconhecida "${q}"`);
+  }
+  verificarFontes(s.fontes, onde);
+}
+for (const r of retratos) if (!idPessoas.has(r.id)) avisos.push(`retrato ${r.id}: sem pessoa em linhagens.json`);
+
 // fontes: lacunas registradas explicitamente
 for (const f of fontes) if (f.acesso === 'lacuna' && !/LACUNA/.test(f.nota)) avisos.push(`fonte ${f.id}: acesso "lacuna" sem nota explicando a lacuna`);
 

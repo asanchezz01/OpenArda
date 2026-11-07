@@ -22,6 +22,7 @@ import {
 } from '../core/data';
 import { pontoNoPoligonoPts } from '../terrain/model';
 import { esc, listaFontes, seloCert, NOME_CERT } from './util';
+import { blocoGovernoReino } from './linhagens';
 
 const NOME_STATUS: Record<string, string> = {
   ativo: 'Existe nesta época',
@@ -212,6 +213,7 @@ export function fichaReino(app: App, r: Reino): string {
     })
     .join('<br>');
   const fund = r.evento_fundacao ? tempo.evento(r.evento_fundacao) : undefined;
+  const governo = blocoGovernoReino(app, r.id);
   let html = `<header class="ficha-cab">
     <p class="tipo"><span class="amostra" style="background:${esc(r.cor)}"></span>${esc(r.tipo)}</p>
     <h2>${esc(r.nome)}</h2>
@@ -222,8 +224,9 @@ export function fichaReino(app: App, r: Reino): string {
     <dt>Capital</dt><dd>${caps || '<span class="nota">sem capital registrada</span>'}</dd>
     <dt>Povos</dt><dd>${r.povos.map(esc).join('; ')}</dd>
     <dt>Período de existência</dt><dd>${esc(r.periodo_texto)}</dd>
-    ${r.governantes?.length ? `<dt>Governantes</dt><dd>${r.governantes.map((g) => `${esc(g.nome)}${g.nota ? ` <span class="nota">(${esc(g.nota)})</span>` : ''}`).join('<br>')}</dd>` : ''}
+    ${r.governantes?.length && !governo ? `<dt>Governantes</dt><dd>${r.governantes.map((g) => `${esc(g.nome)}${g.nota ? ` <span class="nota">(${esc(g.nota)})</span>` : ''}`).join('<br>')}</dd>` : ''}
   </dl>
+  ${governo ?? ''}
   ${r.id === 'gondolin' ? detalheGondolin() : r.id === 'gondor' ? detalheMinasTirith() : ''}
   <section class="bloco"><h3>Origem</h3><p>${esc(r.origem)}</p>${fund ? `<p><button type="button" class="link" data-acao="evento" data-id="${fund.id}">${esc(fund.titulo)}</button> <span class="data">${esc(tempo.dataEvento(fund))}</span></p>` : ''}</section>
   <section class="bloco"><h3>Principais transformações</h3><ol class="fases">${r.transformacoes

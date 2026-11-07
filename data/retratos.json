@@ -1,0 +1,206 @@
+[
+  {
+    "id": "feanor",
+    "nome": "Fëanor",
+    "documentado": [
+      "Cabelos longos e escuros.",
+      "Beleza e vigor excepcionais."
+    ],
+    "inferido": [
+      "Olhos cinzentos a partir da descrição geral dos Noldor.",
+      "Geometria facial, idade aparente, roupa e expressão são interpretação artística."
+    ],
+    "fontes": [
+      {
+        "obra": "The Nature of Middle-earth",
+        "local": "Parte II, IV: Hair, p. 186",
+        "consulta": "https://tolkiengateway.net/wiki/F%C3%ABanor"
+      },
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta Silmarillion, capítulos 6 e 11",
+        "consulta": "https://tolkiengateway.net/wiki/F%C3%ABanor"
+      }
+    ],
+    "imagem": "retratos/feanor/feanor.webp",
+    "alt": "Retrato realista de Fëanor; interpretação artística baseada nas referências literárias."
+  },
+  {
+    "id": "nerdanel",
+    "nome": "Nerdanel",
+    "documentado": [
+      "Cabelo castanho e tez corada.",
+      "Escultora de vontade firme e temperamento paciente."
+    ],
+    "inferido": [
+      "Olhos cinzentos pela linhagem Noldor.",
+      "Traços do rosto e roupa de artesã são interpretação artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Vinyar Tengwar 41",
+        "local": "From The Shibboleth of Fëanor, p. 9",
+        "consulta": "https://tolkiengateway.net/wiki/Nerdanel"
+      },
+      {
+        "obra": "Morgoth’s Ring",
+        "local": "The Later Quenta Silmarillion, p. 272",
+        "consulta": "https://tolkiengateway.net/wiki/Nerdanel"
+      }
+    ],
+    "imagem": "retratos/feanor/nerdanel.webp",
+    "alt": "Retrato realista de Nerdanel; interpretação artística baseada nas referências literárias."
+  },
+  {
+    "id": "maedhros",
+    "nome": "Maedhros",
+    "documentado": [
+      "Cabelo ruivo acobreado herdado da linhagem de Mahtan.",
+      "Porte alto e boa proporção corporal.",
+      "Uso de um diadema de cobre."
+    ],
+    "inferido": [
+      "Olhos cinzentos pela linhagem Noldor.",
+      "Feições combinando os dois pais; não foram acrescentadas cicatrizes sem descrição."
+    ],
+    "fontes": [
+      {
+        "obra": "The Peoples of Middle-earth",
+        "local": "The Shibboleth of Fëanor, pp. 352–353 e notas, p. 366",
+        "consulta": "https://tolkiengateway.net/wiki/Maedhros"
+      }
+    ],
+    "imagem": "retratos/feanor/maedhros.webp",
+    "alt": "Retrato realista de Maedhros; interpretação artística baseada nas referências literárias."
+  },
+  {
+    "id": "maglor",
+    "nome": "Maglor",
+    "documentado": [
+      "Cantor e músico; filho de Fëanor e Nerdanel."
+    ],
+    "inferido": [
+      "Cabelos escuros e olhos cinzentos derivados de Fëanor e da descrição geral dos Noldor; não foi localizada descrição individual dessas cores nas referências consultadas.",
+      "Rosto com variações mais suaves das feições dos pais."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Of Eldamar and the Princes of the Eldalië",
+        "consulta": "https://tolkiengateway.net/wiki/Maglor"
+      },
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Apêndice F, On Translation (características gerais dos Noldor)",
+        "consulta": "https://tolkiengateway.net/wiki/Noldor"
+      }
+    ],
+    "imagem": "retratos/feanor/maglor.webp",
+    "alt": "Retrato realista de Maglor; interpretação artística baseada nas referências literárias."
+  },
+  {
+    "id": "celegorm",
+    "nome": "Celegorm",
+    "documentado": [
+      "Caçador associado a Oromë.",
+      "Cabelo longo dourado descrito na Quenta Silmarillion de 1937."
+    ],
+    "inferido": [
+      "Olhos cinzentos pela linhagem Noldor; rosto e roupa interpretativos."
+    ],
+    "nota_versao": "O retrato escolhe a versão antiga de cabelo dourado. Christopher Tolkien suprimiu esse detalhe no Silmarillion publicado; não deve ser apresentado como descrição inequívoca dessa edição.",
+    "fontes": [
+      {
+        "obra": "The Lost Road and Other Writings",
+        "local": "Quenta Silmarillion, comentários editoriais sobre Of Beren and Lúthien",
+        "consulta": "https://tolkiengateway.net/wiki/Celegorm"
+      }
+    ],
+    "imagem": "retratos/feanor/celegorm.webp",
+    "alt": "Retrato realista de Celegorm; interpretação artística baseada nas referências literárias."
+  },
+  {
+    "id": "caranthir",
+    "nome": "Caranthir",
+    "documentado": [
+      "Cabelos negros como Finwë.",
+      "Tez corada como a de Nerdanel."
+    ],
+    "inferido": [
+      "Olhos cinzentos pela linhagem Noldor.",
+      "Feições variam a estrutura dos pais."
+    ],
+    "fontes": [
+      {
+        "obra": "The Peoples of Middle-earth",
+        "local": "The Shibboleth of Fëanor, The names of the Sons of Fëanor",
+        "consulta": "https://tolkiengateway.net/wiki/Caranthir"
+      }
+    ],
+    "imagem": "retratos/feanor/caranthir.webp",
+    "alt": "Retrato realista de Caranthir; interpretação artística baseada nas referências literárias."
+  },
+  {
+    "id": "curufin",
+    "nome": "Curufin",
+    "documentado": [
+      "Grande semelhança facial com Fëanor."
+    ],
+    "inferido": [
+      "Cabelos negros e olhos cinzentos seguindo o pai e a linhagem Noldor.",
+      "Pequenas diferenças na expressão e na idade aparente distinguem o filho."
+    ],
+    "fontes": [
+      {
+        "obra": "The Peoples of Middle-earth",
+        "local": "The Shibboleth of Fëanor, The names of the Sons of Fëanor",
+        "consulta": "https://tolkiengateway.net/wiki/Curufin"
+      }
+    ],
+    "imagem": "retratos/feanor/curufin.webp",
+    "alt": "Retrato realista de Curufin; interpretação artística baseada nas referências literárias."
+  },
+  {
+    "id": "amrod",
+    "nome": "Amrod",
+    "documentado": [
+      "Um dos gêmeos ruivos, semelhantes em rosto.",
+      "A descrição tardia diz que o cabelo do gêmeo mais velho escureceu."
+    ],
+    "inferido": [
+      "Aplicada a Amrod a tonalidade castanho-avermelhada mais escura, seguindo a ordem de nascimento predominante no Silmarillion publicado.",
+      "Olhos cinzentos e estrutura facial derivados dos pais e dos Noldor."
+    ],
+    "nota_versao": "Textos tardios variam a ordem e o destino dos gêmeos; a aplicação dos tons aos nomes é uma escolha editorial, não uma certeza comum a todas as versões.",
+    "fontes": [
+      {
+        "obra": "The Peoples of Middle-earth",
+        "local": "The Shibboleth of Fëanor, pp. 352–355",
+        "consulta": "https://tolkiengateway.net/wiki/Amrod"
+      }
+    ],
+    "imagem": "retratos/feanor/amrod.webp",
+    "alt": "Retrato realista de Amrod; interpretação artística baseada nas referências literárias."
+  },
+  {
+    "id": "amras",
+    "nome": "Amras",
+    "documentado": [
+      "Um dos gêmeos ruivos, semelhantes em rosto."
+    ],
+    "inferido": [
+      "Adotado ruivo acobreado mais claro que Amrod, segundo a mesma escolha editorial.",
+      "Olhos cinzentos e traços familiares inferidos; o retrato de Amrod serviu como referência visual."
+    ],
+    "nota_versao": "A atribuição do tom mais claro a Amras acompanha a ordem predominante no Silmarillion publicado; versões tardias variam a ordem dos gêmeos.",
+    "fontes": [
+      {
+        "obra": "The Peoples of Middle-earth",
+        "local": "The Shibboleth of Fëanor, pp. 352–355",
+        "consulta": "https://tolkiengateway.net/wiki/Amras"
+      }
+    ],
+    "imagem": "retratos/feanor/amras.webp",
+    "alt": "Retrato realista de Amras; interpretação artística baseada nas referências literárias."
+  }
+]

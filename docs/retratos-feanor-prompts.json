@@ -1,0 +1,69 @@
+{
+  "ferramenta": "image_gen integrada",
+  "data": "2026-11-07",
+  "estilo": "Photorealistic natural portrait for a Tolkien family-tree avatar. Square 1024x1024 composition, one fictional adult Noldorin elf, head and shoulders, head centered with all hairline and chin inside a safe central 70% circular crop, subtle pointed ears, clean-shaven men, no actor resemblance. Believable skin pores, realistic eyes, natural anatomy, restrained ancient elven clothing, muted charcoal-brown softly blurred background, soft neutral window light with faint warm side light, 85mm lens photographic realism, no glowing eyes, no illustration, no text, no watermark, no frame.",
+  "retratos": [
+    {
+      "id": "feanor",
+      "name": "Fëanor",
+      "traits": "Adult male elf with long very dark nearly black hair, pale skin and intense grey eyes (eye colour is an inference from Noldor). Strikingly beautiful, strong, proud face: high defined cheekbones, straight fine prominent nose, arched dark eyebrows, sharp jaw, slightly narrow eyes, stern penetrating expression. Apparent age 35, ageless rather than elderly. Dark restrained robe with subtle copper clasp. His specific facial geometry is artistic interpretation and will be shared with Curufin.",
+      "referencias_visuais": []
+    },
+    {
+      "id": "nerdanel",
+      "name": "Nerdanel",
+      "traits": "Adult female elven sculptor, brown hair (NOT bright red), ruddy warm fair complexion with naturally flushed cheeks. Strong, grounded, intelligent and patient face, broad cheekbones, straight nose with gently rounded tip, full natural eyebrows, grey eyes as inference from Noldor. Apparent age 35, ageless, no glamour makeup, no ornate tiara, brown linen and simple artisan clothing. Hair tied loosely back with a few strands, naturally practical appearance.",
+      "referencias_visuais": []
+    },
+    {
+      "id": "maedhros",
+      "name": "Maedhros",
+      "traits": "Adult male elf with long copper-red auburn hair, tall elegant bearing, unusually well-proportioned beautiful face, pale skin, grey eyes as an inference from Noldor. Apparent age 30. Mix of father Feanor's high cheekbones, straight fine prominent nose and defined jaw with mother Nerdanel's broader warm features. Thin copper circlet, restrained deep brown robe. Calm gravity. Healthy portrait without invented scars.",
+      "referencias_visuais": []
+    },
+    {
+      "id": "maglor",
+      "name": "Maglor",
+      "traits": "Adult male elven musician. No precise hair/eye colour is recorded in the consulted sources: infer long dark-brown almost-black hair and grey eyes from father Feanor and Noldor, with mother Nerdanel's softer cheeks and warm complexion. Apparent age 30, contemplative expression, oval face, high cheekbones, long straight nose, natural dark brows, subtle androgynous elven beauty, charcoal robe. Distinct from his sharper-faced father and Curufin.",
+      "referencias_visuais": []
+    },
+    {
+      "id": "celegorm",
+      "name": "Celegorm",
+      "traits": "Adult male elven hunter, long pale golden-blond hair following the explicit early Tolkien Quenta Silmarillion tradition (variant clearly documented, not an absolute canon claim). Fair complexion, grey eyes inferred from Noldor, confident bold expression, broad athletic face, father Feanor's fine straight prominent nose and high cheekbones but slightly broader jaw and relaxed mouth. Apparent age 30. Dark moss green cloak, no animal or weapons in frame.",
+      "referencias_visuais": []
+    },
+    {
+      "id": "caranthir",
+      "name": "Caranthir",
+      "traits": "Adult male elf, long black hair like grandfather Finwe, ruddy complexion inherited from mother Nerdanel. Grey eyes inferred from Noldor. Strong broad angular cheeks, mother Nerdanel's straight nose with slightly rounded tip, heavy dark brows, firm jaw, proud serious expression with natural red cheeks; healthy warm skin, not monstrous. Apparent age 30. Restrained burgundy-brown garment.",
+      "referencias_visuais": []
+    },
+    {
+      "id": "curufin",
+      "name": "Curufin",
+      "traits": "Adult male elf who very closely resembles his father Feanor in face: high defined cheekbones, straight fine prominent nose, arched dark eyebrows, sharp jaw, slightly narrow grey eyes (grey inferred from Noldor). Long black hair, fair complexion, apparent age 28, slightly younger and more calculating than Feanor with restrained confident mouth. Ancient charcoal artisan robe with modest copper clasp, no beard.",
+      "referencias_visuais": [
+        "feanor",
+        "nerdanel"
+      ]
+    },
+    {
+      "id": "amrod",
+      "name": "Amrod",
+      "traits": "Adult male elf, one of the youngest twin sons, long dark auburn reddish-brown hair, darker than twin Amras as in Tolkien's late description of the elder twin. Apparent age 24, grey eyes inferred from Noldor. Match twin Amras's narrow oval face, high cheeks, fine straight nose with gently rounded tip, soft angular jaw and gently arched brows; combine Feanor's facial structure and Nerdanel's warm fair complexion. Calm alert expression, simple russet-brown cloak. No scars or age lines.",
+      "referencias_visuais": [
+        "feanor",
+        "nerdanel"
+      ]
+    },
+    {
+      "id": "amras",
+      "name": "Amras",
+      "traits": "Adult male elf, one of the youngest twin sons, long bright copper-auburn red hair, lighter than twin Amrod. Apparent age 24, grey eyes inferred from Noldor. Match twin Amrod's narrow oval face, high cheeks, fine straight nose with gently rounded tip, soft angular jaw and gently arched brows; combine Feanor's facial structure and Nerdanel's warm fair complexion. Slightly gentler expression, simple muted forest green cloak. No scars or age lines.",
+      "referencias_visuais": [
+        "amrod"
+      ]
+    }
+  ]
+}
