@@ -1,0 +1,33 @@
+name: Deploy to VPS
+
+# A cada push na main, a VPS puxa o código e reconstrói a imagem. O build roda validate + tsc +
+# vitest; se algo falhar, o container antigo continua no ar e este job falha.
+# A chave VPS_SSH_KEY só executa /usr/local/bin/openarda-deploy (comando forçado no
+# authorized_keys): não abre shell, então vazá-la não dá acesso à VPS.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: openarda-vps-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Publicar na VPS
+        env:
+          KEY: ${{ secrets.VPS_SSH_KEY }}
+          KNOWN: ${{ secrets.VPS_KNOWN_HOSTS }}
+          HOST: ${{ secrets.VPS_HOST }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+          printf '%s\n' "$KNOWN" > ~/.ssh/known_hosts
+          ssh -i ~/.ssh/deploy -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes "root@$HOST"
+
+      - name: Conferir o site público
+        run: curl -fsS -o /dev/null -w '%{http_code}\n' https://openarda.hopecash.tech/
