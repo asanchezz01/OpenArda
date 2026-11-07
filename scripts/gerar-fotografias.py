@@ -5,6 +5,7 @@
     python scripts/gerar-fotografias.py status               # variações e aprovação de cada foto
     python scripts/gerar-fotografias.py aprovar <id> <n> [--espelhar]   # vN.png -> public/fotografias/<id>.webp
     python scripts/gerar-fotografias.py refazer <id>         # descarta as variações e gera de novo
+    python scripts/gerar-fotografias.py folha                # folhas de revisão em fontes-imagens/_folhas/
 
 Opções: --etapa N (padrão 1), --variacoes N (padrão 3), --motor auto|comfy|gpt.
 
@@ -277,6 +278,29 @@ def refazer(foto_id):
     print(f'{foto_id}: variações descartadas; rode "gerar {foto_id}".')
 
 
+def folha(fotos, etapa, por_folha=4):
+    """Uma linha por foto com as variações lado a lado, numeradas, para revisar o lote de uma vez."""
+    from PIL import Image, ImageDraw
+    destino = FONTES / '_folhas'
+    destino.mkdir(parents=True, exist_ok=True)
+    pendentes = [f for f in fotos if variacoes(f) and not aprovada(f)]
+    largura, altura = 512, 341
+    for k in range(0, len(pendentes), por_folha):
+        grupo = pendentes[k:k + por_folha]
+        colunas = max(len(variacoes(f)) for f in grupo)
+        img = Image.new('RGB', (largura * colunas, (altura + 24) * len(grupo)), 'black')
+        desenho = ImageDraw.Draw(img)
+        for i, foto_id in enumerate(grupo):
+            y = i * (altura + 24)
+            desenho.text((6, y + 4), foto_id, fill='white')
+            for j, v in enumerate(variacoes(foto_id)):
+                img.paste(Image.open(v).convert('RGB').resize((largura, altura)), (j * largura, y + 24))
+                desenho.text((j * largura + 6, y + 30), v.stem, fill='yellow')
+        saida = destino / f'etapa{etapa}-{k // por_folha + 1:02}.jpg'
+        img.save(saida, quality=80)
+        print(saida.relative_to(ROOT))
+
+
 def status(fotos):
     cadastrados = {f['id'] for f in cadastro()} if CADASTRO.exists() else set()
     for foto_id in fotos:
@@ -300,9 +324,11 @@ def main():
     n_variacoes = int(opcao('--variacoes', '3'))
     motor = opcao('--motor', 'auto')
     fotos = carregar(etapa)
-    comando = args.pop(0) if args and args[0] in ('gerar', 'status', 'aprovar', 'refazer') else 'gerar'
+    comando = args.pop(0) if args and args[0] in ('gerar', 'status', 'aprovar', 'refazer', 'folha') else 'gerar'
     if comando == 'status':
         return status(fotos)
+    if comando == 'folha':
+        return folha(list(fotos), etapa)
     if comando == 'aprovar':
         espelhar = '--espelhar' in args
         args = [a for a in args if a != '--espelhar']

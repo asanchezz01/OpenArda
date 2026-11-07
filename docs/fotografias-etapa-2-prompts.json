@@ -1,0 +1,59 @@
+{
+  "etapa": 2,
+  "roadmap": "docs/ROADMAP-FOTOGRAFIAS-LUGARES.md",
+  "tamanho": [
+    1536,
+    1024
+  ],
+  "estilo": "Photorealistic landscape photograph of an imagined place, as if taken on location in the real world. Full-frame camera, natural lens, 3:2 landscape. Realistic geology, vegetation, weather, water and stone. Pre-industrial world: no modern buildings, roads, vehicles, power lines, contrails, plastic or modern clothing. People, if any, only as small distant figures in simple pre-modern dress. No text, letters, logos, signatures, watermarks or frames. No visible magic glow unless the scene describes a light source. Not in the style of any specific artist, illustrator, film or game.",
+  "fotos": [
+    {
+      "id": "gondolin-pe510",
+      "prompt": "The ruins of a once-white city on a rocky hill in the middle of a round green plain ringed by snow-capped mountains, the morning after its destruction. Broken white walls, collapsed stairs, a tall white tower snapped in half, blackened stone, dry fountains, and grey smoke drifting from the ruins across the plain; the grass around the hill is scorched. Viewpoint from the inner slope of the encircling mountains looking down at the ruined city, cold grey dawn light, silence, no figures."
+    },
+    {
+      "id": "edoras-te2758",
+      "prompt": "A hill-town of wooden halls on an isolated hill at the mouth of a mountain valley, buried in deep winter snow. The hill is ringed by a wall and a fence half drowned in snowdrifts; timber houses with snow-laden thatched roofs climb its slopes. On the summit stands one long great hall whose roof shows only glints of gold beneath the snow. Behind rise high white mountains; the stream below is frozen. Heavy grey sky, falling snow, smoke rising from a few chimney holes, a bitter and silent landscape, no figures in the foreground."
+    },
+    {
+      "id": "isengard-te2700",
+      "prompt": "A vast circle of sheer natural rock walls at the southern end of a range of mountains, enclosing a wide green plain. Inside the circle, gardens, orchards, avenues of trees and streams running down from the mountains. At the center rises a single black tower about five hundred feet tall, made of four huge many-sided pillars of black, gleaming, unbreakable stone fused together, opening near the top into four sharp horns around a flat summit. Viewpoint from the high ground at the southern entrance, looking north into the green circle in clear afternoon light."
+    },
+    {
+      "id": "isengard-te3018",
+      "prompt": "A vast circle of sheer rock walls enclosing a plain that has become a wasteland of industry: all trees cut down, the ground covered with paved roads, iron posts and chains, and countless round pits and shafts from which smoke and steam rise, the glow of forges deep below. At the center stands the same single black tower about five hundred feet tall, four many-sided pillars of gleaming black stone fused together and opening into four sharp horns at the top. Grey polluted haze, smoke drifting over the ring wall, late afternoon light, no figures visible."
+    },
+    {
+      "id": "isengard-te3019",
+      "prompt": "A vast circle of sheer rock walls whose broken southern gate lets a river pour in: the whole plain inside is flooded, a wide lake of muddy water with steam and bubbles rising where it has filled pits and furnaces, wreckage of iron and stone sticking out of the water. At the center the single black tower about five hundred feet tall stands untouched, four many-sided pillars of gleaming black stone fused into one and opening into four sharp horns at the top. Calm grey sky after rain, reflections on the water, no figures."
+    },
+    {
+      "id": "osgiliath-te1000",
+      "prompt": "A great ancient capital city of white and grey stone built on both banks of a wide river, joined by a massive stone bridge lined with towers and houses. On the river stands a large domed building whose dome glitters faintly in the light. Palaces, colonnades, quays and towers stretch along both banks; boats on the water. Viewpoint from a hill on the western bank in the late afternoon, looking east across the city and the river toward a distant range of dark mountains."
+    },
+    {
+      "id": "osgiliath-te3018",
+      "prompt": "The ruins of a great ancient city on both banks of a wide river: roofless palaces, broken colonnades and toppled towers overgrown with weeds and young trees, empty streets. The great stone bridge across the river is broken: its middle section has collapsed, leaving a wide gap of open water between two stumps of arches, with fallen masonry in the river. Overcast sky, cold light, a deserted and dangerous place, no people."
+    },
+    {
+      "id": "minas-ithil-te1000",
+      "prompt": "A white walled city with a tall slender tower of white stone, built on a shoulder of rock high in a deep mountain valley among dark mountains, under a bright full moon. The walls and the tower gleam silver in the moonlight; a stone road and a bridge cross a stream in the valley below, whose meadows are green. Viewpoint from the valley floor looking up at the city at night, cool blue and silver light, peaceful, no figures."
+    },
+    {
+      "id": "minas-morgul-te3018",
+      "prompt": "A walled city and a tall tower of pale stone high in a dark mountain valley at night, glowing with a sickly, cold, pale greenish light that comes from the stone itself, a light that illuminates nothing. The top of the tower turns slowly. A stone bridge crosses a dark stream below; the meadows on either side are full of pale luminous white flowers with a rotten sweetness. Black mountains around, a dead silent valley, ominous and eerie, no figures."
+    },
+    {
+      "id": "barad-dur-te3018",
+      "prompt": "Seen from far across a vast barren plain of grey ash and pits, a colossal, intact dark fortress rising on a spur of black mountains: tower upon tower and battlement upon battlement of black stone and iron, solid and immeasurably strong, its upper heights lost in a heavy cloud of smoke and darkness. The fortress itself is not burning and not damaged; a dull red glow from distant fires lights the undersides of the clouds. The plain is dead and pocked with craters. Menacing, enormous in scale, no figures."
+    },
+    {
+      "id": "armenelos-se3000",
+      "prompt": "A great royal city of white stone, palaces, towers and gardens on a rolling green plain in the middle of an island, under a bright sky. In a courtyard of the king a single white tree stands in flower. Behind the city rises a tall solitary mountain with steep green slopes and a flat bare summit. Viewpoint from a hillside outside the city in the morning, warm sunlight, majestic and prosperous, small distant figures."
+    },
+    {
+      "id": "numenor-se3319",
+      "prompt": "A cataclysm at sea: a gigantic wave, green and cold and crowned with foam, rising like a mountain over a coastal city of white towers on an island, while the land itself tilts and sinks. Behind, a tall solitary mountain collapses with fire and smoke. The sky is black with storm clouds torn by lightning; rain and wind lash the scene. Viewpoint from the sea at a distance, overwhelming scale, no visible people."
+    }
+  ]
+}

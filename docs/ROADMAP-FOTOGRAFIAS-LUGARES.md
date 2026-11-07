@@ -55,6 +55,28 @@ As variações ficam em `fontes-imagens/` (fora do git). Os prompts usados estã
 | Argonath | v2, espelhada | O modelo ergueu a mão direita nas três variações. A imagem foi espelhada, e a estátua da esquerda continua sem o machado, o que está registrado no cadastro. |
 | Tirion | v2 | — |
 
+## Entrega das etapas 2 a 6
+
+As **67 fotos** foram geradas pelo mesmo fluxo da etapa 1, todas no ComfyUI local, sem uso da OpenAI. Cada foto teve 3 variações, e as reprovadas foram refeitas com o prompt reescrito.
+- **Prompts usados:** `docs/fotografias-etapa-N-prompts.json`.
+- **Descrições:** o que é descrito, inferido e artístico de cada foto está em `data/fotografias.json`.
+- **Âncoras das etapas 5 e 6:** foram definidas na própria entrega e estão nesses arquivos, com fonte.
+- **Revisão:** o comando `folha` monta as folhas de revisão em `fontes-imagens/_folhas/`.
+
+| Etapa | Reprovadas na 1ª rodada | Motivo | Correção no prompt |
+| --- | --- | --- | --- |
+| 2 | Osgiliath em ruínas | Ponte inteira, mas ela foi derrubada em 3018 | Pedir o vão aberto no meio da ponte |
+| 2 | Barad-dûr | A fortaleza aparecia em chamas, como se já estivesse sendo destruída | Pedir a fortaleza intacta e o brilho vermelho só nas nuvens |
+| 4 | Alqualondë | Cisnes de verdade em vez de navios em forma de cisne; vilas com postes de luz | Pedir navios de madeira com proa de cisne, "navios, não aves" |
+| 5 | Bri | A estrada molhada parecia asfalto; um poste de luz | Pedir estrada de terra com lama e luz de velas |
+| 6 | As Ered Nimrais e os faróis | Os faróis pareciam erupções vulcânicas | Pedir fogueiras pequenas nos morros mais baixos, "montanhas não vulcânicas" |
+| 6 | Tol Eressëa | Amurada de aço de um barco moderno no enquadramento | Vista rente à água, sem barco no quadro |
+
+Problemas conhecidos nas aprovadas, registrados nos campos "artístico" quando afetam a leitura:
+- **Arquitetura genérica:** às vezes neoclássica ou de castelo europeu (Vinyamar, Armenelos, Dol Amroth).
+- **Luz dos Anos das Árvores:** em Taniquetil e em Valmar ela parece luz de fim de tarde. Não há sol visível, mas a diferença é sutil.
+- **Tamanho dos arquivos:** cinco fotos de floresta ou detalhe fino ficaram entre 280 e 392 KiB (Condado, Isengard verde, Doriath, Ossiriand, Brethil), acima do alvo de 250 KiB.
+
 ## Ordem das entregas
 
 As etapas indicam prioridade, sem datas prometidas. Cada etapa é produzida em lotes de **4 a 6 fotos**, com revisão antes do lote seguinte. A primeira etapa inclui o painel; as demais só acrescentam imagens e dados.
@@ -62,11 +84,11 @@ As etapas indicam prioridade, sem datas prometidas. Cada etapa é produzida em l
 | Etapa | Escopo | Fotos | Total | Situação |
 | --- | --- | ---: | ---: | --- |
 | 1 | Painel + vitrine: os lugares mais conhecidos, uma época cada | 8 | 8 | **Entregue**: 8 fotos aprovadas e integradas; conferência no navegador pendente |
-| 2 | Antes e depois: os mesmos lugares em outras fases | 12 | 20 | Âncoras definidas |
-| 3 | Beleriand e a Primeira Era | 12 | 32 | Âncoras definidas |
-| 4 | Aman e Númenor | 10 | 42 | Âncoras definidas |
-| 5 | Terceira Era: reinos e lugares restantes | 18 | 60 | Lista definida |
-| 6 | Regiões e paisagens (florestas, montanhas, mares) | ~15 | ~75 | A planejar |
+| 2 | Antes e depois: os mesmos lugares em outras fases | 12 | 20 | **Entregue** |
+| 3 | Beleriand e a Primeira Era | 12 | 32 | **Entregue** |
+| 4 | Aman e Númenor | 10 | 42 | **Entregue** |
+| 5 | Terceira Era: reinos e lugares restantes | 18 | 60 | **Entregue** |
+| 6 | Regiões e paisagens (florestas, montanhas, mares) | 15 | 75 | **Entregue** |
 
 "Âncoras" são as características que o prompt deve conter, com fonte. O prompt final de cada etapa é escrito e revisado no início dela, no mesmo formato da etapa 1.
 
@@ -437,4 +459,4 @@ Florestas, cordilheiras, mares e regiões que hoje só existem como áreas no ma
 
 ## Limites deste roadmap
 
-A etapa 1 está entregue. As âncoras das etapas 2 a 4 ainda precisam ser conferidas nas edições antes de virar prompt. As fontes listadas foram indicadas a partir de conhecimento prévio das obras e índices; não equivalem a consulta direta ao livro. Custo e prazo dependem da API escolhida e são medidos no primeiro lote.
+As seis etapas estão entregues: 75 fotos de 75 lugares e épocas. As fontes foram indicadas a partir de conhecimento prévio das obras e índices, e precisam de cotejo com as edições. Fotos mais fracas, como Valfenda, podem ser refeitas com `refazer` e `aprovar` sem mexer no código. As fontes listadas foram indicadas a partir de conhecimento prévio das obras e índices; não equivalem a consulta direta ao livro. Custo e prazo dependem da API escolhida e são medidos no primeiro lote.

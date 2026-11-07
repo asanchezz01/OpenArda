@@ -280,5 +280,2076 @@
       "semente": 139459336022217,
       "segundos": 10
     }
+  },
+  {
+    "id": "gondolin-pe510",
+    "lugar": "gondolin",
+    "quando": "PE:510",
+    "titulo": "Gondolin depois da queda",
+    "documentado": [
+      "A cidade branca sobre a colina no meio de Tumladen, destruída pelo ataque de Morgoth",
+      "Muralhas e a Torre do Rei derrubadas; o anel de montanhas ao redor"
+    ],
+    "inferido": [
+      "O dia seguinte ao ataque, com fumaça e sem combatentes"
+    ],
+    "artistico": [
+      "Grau e forma da destruição"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 23"
+      }
+    ],
+    "alt": "Ruínas fumegantes de uma cidade branca sobre uma colina no meio de uma planície redonda cercada de montanhas nevadas.",
+    "imagem": "fotografias/gondolin-pe510.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 60002123234145,
+      "segundos": 16
+    }
+  },
+  {
+    "id": "edoras-te2758",
+    "lugar": "edoras",
+    "quando": "TE:2758",
+    "titulo": "Edoras no Longo Inverno",
+    "documentado": [
+      "O Longo Inverno, de novembro de 2758 a março de 2759, cobriu Rohan de neve",
+      "Wulf, dos Terrapardenses, ocupava Meduseld"
+    ],
+    "inferido": [
+      "A cidade sob a neve; o ano todo aparece assim porque a linha do tempo não separa meses"
+    ],
+    "artistico": [
+      "Aparência da cidade sob a neve"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda-apA",
+        "local": "II A Casa de Eorl"
+      }
+    ],
+    "alt": "Cidade de madeira numa colina coberta de neve funda, com um salão comprido no topo e montanhas brancas atrás, sob neve caindo.",
+    "imagem": "fotografias/edoras-te2758.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 200974276386605,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "isengard-te2700",
+    "lugar": "isengard",
+    "quando": "TE:2700",
+    "ate": "TE:2953",
+    "titulo": "Isengard antes de Saruman",
+    "documentado": [
+      "O Círculo de Isengard, muralha de rocha natural com uma entrada",
+      "Orthanc: torre negra de 500 pés, quatro pilares de pedra inquebrável fundidos, com chifres no topo",
+      "Antes de Saruman, o interior era verde, com avenidas e pomares"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Traçado dos jardins e das avenidas"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro III, cap. 8"
+      }
+    ],
+    "alt": "Torre negra de pilares fundidos com quatro pontas no topo, no centro de um círculo de rocha cheio de jardins e árvores.",
+    "imagem": "fotografias/isengard-te2700.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 189204933782603,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "isengard-te3018",
+    "lugar": "isengard",
+    "quando": "TE:3018",
+    "de": "TE:2953",
+    "ate": "TE:3019",
+    "titulo": "Isengard industrial",
+    "documentado": [
+      "Saruman derrubou as árvores e cobriu o Círculo de poços, forjas e fornalhas",
+      "Orthanc permaneceu intacta no centro"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Disposição dos poços e das estruturas"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro III, cap. 8"
+      }
+    ],
+    "alt": "Círculo de rocha cheio de poços fumegantes e chão calçado sem árvores, com a torre negra de Orthanc no centro.",
+    "imagem": "fotografias/isengard-te3018.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 280718917248622,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "isengard-te3019",
+    "lugar": "isengard",
+    "quando": "TE:3019",
+    "de": "TE:3019",
+    "titulo": "Isengard inundada pelos Ents",
+    "documentado": [
+      "Os Ents desviaram o Isen e inundaram o Círculo",
+      "Os poços soltaram vapor; Orthanc resistiu intacta"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Nível da água e destroços"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro III, caps. 8 e 9"
+      }
+    ],
+    "alt": "Círculo de rocha inundado com vapor subindo da água e a torre negra de Orthanc intacta no centro.",
+    "imagem": "fotografias/isengard-te3019.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 94740030478322,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "osgiliath-te1000",
+    "lugar": "osgiliath",
+    "quando": "TE:1000",
+    "titulo": "Osgiliath em seu auge",
+    "documentado": [
+      "Capital de Gondor dos dois lados do Anduin, ligada por uma grande ponte de pedra",
+      "A Cúpula das Estrelas, onde ficava a palantír principal"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura da cidade e da cúpula"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda-apA",
+        "local": "I (iv)"
+      }
+    ],
+    "alt": "Grande cidade de pedra dos dois lados de um rio largo, ligada por uma ponte de pedra com torres e uma cúpula sobre o rio.",
+    "imagem": "fotografias/osgiliath-te1000.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 26811452603258,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "osgiliath-te3018",
+    "lugar": "osgiliath",
+    "quando": "TE:3018",
+    "titulo": "As ruínas de Osgiliath",
+    "documentado": [
+      "Osgiliath arruinada desde a Contenda e a Peste, depois abandonada",
+      "A ponte foi derrubada por Gondor em 3018"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Estado das ruínas"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda-apA",
+        "local": "I (iv)"
+      },
+      {
+        "fonte": "sda",
+        "local": "Livro II, cap. 2"
+      }
+    ],
+    "alt": "Ruínas de uma grande cidade dos dois lados de um rio, com palácios sem teto e uma ponte de pedra partida no meio.",
+    "imagem": "fotografias/osgiliath-te3018.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 186908515175190,
+      "segundos": 16
+    }
+  },
+  {
+    "id": "minas-ithil-te1000",
+    "lugar": "minas-ithil",
+    "quando": "TE:1000",
+    "titulo": "Minas Ithil, a Torre da Lua",
+    "documentado": [
+      "Cidade de Isildur no vale das Ephel Dúath, a Torre da Lua, irmã de Minas Anor"
+    ],
+    "inferido": [
+      "Vista noturna, ao luar, pelo nome da cidade"
+    ],
+    "artistico": [
+      "Arquitetura da cidade e da torre"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda-apA",
+        "local": "I (iv)"
+      }
+    ],
+    "alt": "Cidade murada branca com uma torre esguia num vale de montanhas escuras, brilhando prateada sob a lua cheia.",
+    "imagem": "fotografias/minas-ithil-te1000.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 162845471007817,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "minas-morgul-te3018",
+    "lugar": "minas-ithil",
+    "quando": "TE:3018",
+    "titulo": "Minas Morgul",
+    "documentado": [
+      "As muralhas e a torre brilham com uma luz pálida, de cadáver",
+      "O andar mais alto da torre gira lentamente",
+      "Ponte sobre o rio Morgulduin; flores brancas luminosas nos prados do vale"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Forma exata da cidade e da torre"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro IV, cap. 8"
+      }
+    ],
+    "alt": "Cidade e torre de pedra pálida brilhando com luz esverdeada doentia num vale escuro, com flores brancas luminosas e uma ponte sobre um riacho.",
+    "imagem": "fotografias/minas-morgul-te3018.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 281462041441347,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "barad-dur-te3018",
+    "lugar": "barad-dur",
+    "quando": "TE:3018",
+    "titulo": "Barad-dûr",
+    "documentado": [
+      "A Torre Escura, de ferro e pedra, torre sobre torre e ameia sobre ameia",
+      "Num esporão das Ered Lithui, sobre a planície de Gorgoroth, envolta em nuvens"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Forma da fortaleza; o Olho não é mostrado"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro VI, caps. 2 e 3"
+      }
+    ],
+    "alt": "Fortaleza negra colossal de torres sobrepostas num esporão de montanhas, envolta em nuvens escuras sobre uma planície de cinzas.",
+    "imagem": "fotografias/barad-dur-te3018.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 216984487846000,
+      "segundos": 9
+    }
+  },
+  {
+    "id": "armenelos-se3000",
+    "lugar": "armenelos",
+    "quando": "SE:3000",
+    "titulo": "Armenelos, a cidade dos reis",
+    "documentado": [
+      "A cidade dos reis no centro de Númenor, perto do Meneltarma",
+      "Nimloth, a Árvore Branca, crescia no pátio do rei"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura e traçado da cidade"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Akallabêth"
+      },
+      {
+        "fonte": "ci",
+        "local": "Parte II, cap. 1"
+      }
+    ],
+    "alt": "Cidade real de pedra branca numa planície verde, com uma árvore branca florida num pátio e uma montanha solitária ao fundo.",
+    "imagem": "fotografias/armenelos-se3000.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 182077098926869,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "numenor-se3319",
+    "lugar": "numenor",
+    "quando": "SE:3319",
+    "de": "SE:3319",
+    "ate": "SE:3320",
+    "titulo": "A Queda de Númenor",
+    "documentado": [
+      "A terra afundou e uma onda imensa, verde e fria, coroada de espuma, engoliu a ilha",
+      "Tempestade, raios e escuridão acompanharam a Queda"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Composição da cena e a cidade retratada"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Akallabêth"
+      }
+    ],
+    "alt": "Onda gigantesca verde e espumante prestes a engolir uma cidade de torres brancas numa ilha, sob céu negro de tempestade.",
+    "imagem": "fotografias/numenor-se3319.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 215964975155508,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "menegroth-pe400",
+    "lugar": "menegroth",
+    "quando": "PE:400",
+    "titulo": "A entrada de Menegroth",
+    "documentado": [
+      "As Mil Cavernas, palácio de Thingol escavado numa colina na floresta",
+      "Uma ponte sobre o rio Esgalduin dava acesso às portas",
+      "Os salões tinham pilares esculpidos como faias"
+    ],
+    "inferido": [
+      "Os pilares em forma de faia aparecem também na entrada"
+    ],
+    "artistico": [
+      "Forma da colina e do portão"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 10"
+      }
+    ],
+    "alt": "Portão esculpido numa colina rochosa dentro de uma floresta de faias gigantes, alcançado por uma ponte de pedra sobre um rio.",
+    "imagem": "fotografias/menegroth-pe400.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 13373293388872,
+      "segundos": 18
+    }
+  },
+  {
+    "id": "nargothrond-pe400",
+    "lugar": "nargothrond",
+    "quando": "PE:400",
+    "ate": "PE:490",
+    "titulo": "As portas de Nargothrond",
+    "documentado": [
+      "Cavernas fortificadas sob as encostas de Taur-en-Faroth, junto ao rio Narog",
+      "Portas na margem do rio"
+    ],
+    "inferido": [
+      "Antes da ponte construída a conselho de Túrin, por isso a foto vale até c. 490 P.E."
+    ],
+    "artistico": [
+      "Forma das portas e do terraço"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, caps. 13 e 21"
+      }
+    ],
+    "alt": "Grandes portas de pedra esculpidas num penhasco acima de um rio encaixado numa garganta, com floresta no alto.",
+    "imagem": "fotografias/nargothrond-pe400.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 79777513887225,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "angband-pe400",
+    "lugar": "angband",
+    "quando": "PE:400",
+    "ate": "PE:455",
+    "titulo": "Thangorodrim e o Cerco de Angband",
+    "documentado": [
+      "Os três picos de Thangorodrim, feitos da escória das escavações, sobre os portões de Angband",
+      "Fumaça escura saindo dos picos",
+      "Durante o Cerco, a planície de Ard-galen era verde"
+    ],
+    "inferido": [
+      "Os acampamentos dos Noldor que mantinham o Cerco"
+    ],
+    "artistico": [
+      "Forma dos picos e do portão"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, caps. 9 e 13"
+      }
+    ],
+    "alt": "Três picos negros e fumegantes erguidos diante de montanhas escuras, vistos de longe através de uma vasta planície verde.",
+    "imagem": "fotografias/angband-pe400.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 203113978179241,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "himring-pe400",
+    "lugar": "himring",
+    "quando": "PE:400",
+    "titulo": "Himring, a Sempre-Fria",
+    "documentado": [
+      "Colina larga de ombros amplos e topo nu, a Sempre-Fria",
+      "Fortaleza de Maedhros no alto"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Forma da fortaleza"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 14"
+      }
+    ],
+    "alt": "Colina larga de topo nu coroada por uma fortaleza de pedra, sobre uma charneca fria e cinzenta.",
+    "imagem": "fotografias/himring-pe400.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 226251049744425,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "tol-sirion-pe400",
+    "lugar": "tol-sirion",
+    "quando": "PE:400",
+    "titulo": "Minas Tirith de Tol Sirion",
+    "documentado": [
+      "A torre de vigia construída por Finrod na ilha do Sirion, no passo entre as montanhas"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura da torre"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, caps. 15 e 18"
+      }
+    ],
+    "alt": "Torre branca esguia numa ilha rochosa no meio de um rio, num passo estreito entre montanhas.",
+    "imagem": "fotografias/tol-sirion-pe400.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 162689783690114,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "portos-sirion-pe530",
+    "lugar": "portos-sirion",
+    "quando": "PE:530",
+    "titulo": "Os Portos do Sirion",
+    "documentado": [
+      "O refúgio dos sobreviventes de Gondolin e de Doriath na foz do Sirion",
+      "Eärendil construiu navios ali"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura e forma dos navios"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, caps. 23 e 24"
+      }
+    ],
+    "alt": "Pequeno porto de pedra e madeira entre juncos e canais na foz de um grande rio, com navios brancos atracados.",
+    "imagem": "fotografias/portos-sirion-pe530.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 91455856583210,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "brithombar-pe400",
+    "lugar": "brithombar",
+    "quando": "PE:400",
+    "titulo": "Brithombar",
+    "documentado": [
+      "Um dos portos amuralhados de Círdan nas Falas"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura do porto e dos navios"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, caps. 10 e 20"
+      }
+    ],
+    "alt": "Porto amuralhado de pedra cinzenta numa costa rochosa, com torres na entrada e navios à vela.",
+    "imagem": "fotografias/brithombar-pe400.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 267052829624780,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "vinyamar-pe60",
+    "lugar": "vinyamar",
+    "quando": "PE:60",
+    "titulo": "Vinyamar",
+    "documentado": [
+      "Casa de Turgon em Nevrast, sob o Monte Taras, junto ao mar"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura dos salões"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 13"
+      },
+      {
+        "fonte": "ci",
+        "local": "De Tuor e sua chegada a Gondolin"
+      }
+    ],
+    "alt": "Salões de pedra nas encostas de uma montanha à beira-mar, voltados para uma baía ao pôr do sol.",
+    "imagem": "fotografias/vinyamar-pe60.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 226358403745495,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "anfauglith-pe460",
+    "lugar": "anfauglith",
+    "quando": "PE:460",
+    "titulo": "Anfauglith, a Poeira Sufocante",
+    "documentado": [
+      "Na Dagor Bragollach, rios de fogo transformaram Ard-galen num deserto de cinzas, a Anfauglith"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Aspecto exato da planície"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 18"
+      }
+    ],
+    "alt": "Planície deserta de cinzas e poeira com tocos queimados, e três picos fumegantes ao longe.",
+    "imagem": "fotografias/anfauglith-pe460.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 65798353205713,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "nan-elmoth-pe300",
+    "lugar": "nan-elmoth",
+    "quando": "PE:300",
+    "titulo": "Nan Elmoth",
+    "documentado": [
+      "A floresta das árvores mais altas e escuras de Beleriand, onde vivia Eöl"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Espécies e aparência das árvores"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 16"
+      }
+    ],
+    "alt": "Interior de uma floresta escura de árvores altíssimas, com pouca luz chegando ao chão coberto de musgo.",
+    "imagem": "fotografias/nan-elmoth-pe300.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 60794861137063,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "cabed-en-aras-pe501",
+    "lugar": "cabed-en-aras",
+    "quando": "PE:501",
+    "titulo": "Cabed-en-Aras",
+    "documentado": [
+      "A garganta do rio Teiglin, tão estreita num ponto que um cervo a saltava",
+      "Na borda da floresta de Brethil"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Profundidade e forma da garganta"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 21"
+      }
+    ],
+    "alt": "Garganta rochosa estreita e profunda com um rio rugindo no fundo, cercada por floresta escura.",
+    "imagem": "fotografias/cabed-en-aras-pe501.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 190410128096446,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "doriath-pe400",
+    "lugar": "doriath",
+    "quando": "PE:400",
+    "titulo": "As florestas de Doriath",
+    "documentado": [
+      "O reino de Thingol, nas florestas de Neldoreth e Region, protegido pelo Cinturão de Melian",
+      "Faias em Neldoreth"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Estação do ano e flores"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, caps. 10 e 14"
+      }
+    ],
+    "alt": "Floresta antiga de faias gigantes na primavera, com raios de sol, flores brancas no chão e um riacho.",
+    "imagem": "fotografias/doriath-pe400.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 236942880128898,
+      "segundos": 11
+    }
+  },
+  {
+    "id": "ezellohar-aa",
+    "lugar": "ezellohar",
+    "quando": "AA:#aa-silmarils",
+    "titulo": "As Duas Árvores em Ezellohar",
+    "documentado": [
+      "Telperion: folhas verde-escuras, prateadas por baixo, e orvalho de luz prateada",
+      "Laurelin: folhas verde-claras com bordas douradas, flores amarelas como chamas e chuva dourada",
+      "No monte verde Ezellohar, diante dos portões de Valmar"
+    ],
+    "inferido": [
+      "O momento em que as duas luzes se misturam"
+    ],
+    "artistico": [
+      "Tamanho e forma das árvores"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 1"
+      }
+    ],
+    "alt": "Duas árvores enormes e luminosas num monte verde, uma de luz prateada e outra de luz dourada, sob céu estrelado.",
+    "imagem": "fotografias/ezellohar-aa.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 66268573081576,
+      "segundos": 16
+    }
+  },
+  {
+    "id": "ezellohar-escurecimento",
+    "lugar": "ezellohar",
+    "quando": "AA:#aa-escurecimento",
+    "titulo": "O Escurecimento de Valinor",
+    "documentado": [
+      "Morgoth e Ungoliant mataram as Árvores; a Não-Luz de Ungoliant cobriu Valinor"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Aparência das árvores mortas"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 8"
+      }
+    ],
+    "alt": "Duas árvores enormes mortas e enegrecidas num monte, envoltas por uma névoa negra e espessa.",
+    "imagem": "fotografias/ezellohar-escurecimento.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 152925461449492,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "valmar-aa",
+    "lugar": "valmar",
+    "quando": "AA:#aa-silmarils",
+    "de": "AA:#aa-arvores",
+    "ate": "AA:#aa-escurecimento",
+    "titulo": "Valmar dos muitos sinos",
+    "documentado": [
+      "A cidade dos Valar, Valmar dos muitos sinos, na planície de Valinor",
+      "Diante dela, Ezellohar com as Duas Árvores"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura da cidade"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Valaquenta; Quenta, cap. 1"
+      }
+    ],
+    "alt": "Cidade de pedra clara com cúpulas e campanários numa planície, sob luz prateada e dourada e céu estrelado.",
+    "imagem": "fotografias/valmar-aa.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 226392185840751,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "taniquetil-aa",
+    "lugar": "taniquetil",
+    "quando": "AA:#aa-silmarils",
+    "de": "AA:#aa-arvores",
+    "ate": "AA:#aa-escurecimento",
+    "titulo": "Taniquetil",
+    "documentado": [
+      "A montanha mais alta da Terra, de neves eternas, com os salões de Manwë e Varda (Ilmarin) no topo"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Forma da montanha e dos salões"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Valaquenta"
+      }
+    ],
+    "alt": "Montanha imensa coberta de neve com pequenos salões brancos no topo, sob luz prateada e dourada e estrelas.",
+    "imagem": "fotografias/taniquetil-aa.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 176805509529454,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "alqualonde-aa",
+    "lugar": "alqualonde",
+    "quando": "AA:#aa-silmarils",
+    "ate": "AA:#aa-fratricidio",
+    "titulo": "Alqualondë, o Porto dos Cisnes",
+    "documentado": [
+      "O porto dos Teleri, com a entrada num arco de rocha esculpido pelo mar",
+      "Navios em forma de cisne, com bicos de ouro e olhos de ouro e azeviche",
+      "Pérolas nas praias e nos salões"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura dos salões"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 5"
+      }
+    ],
+    "alt": "Porto além de um arco de rocha natural, com navios brancos em forma de cisne e salões iluminados sob o céu estrelado.",
+    "imagem": "fotografias/alqualonde-aa.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 144729308025339,
+      "segundos": 18
+    }
+  },
+  {
+    "id": "avallone-aa",
+    "lugar": "avallone",
+    "quando": "AA:#aa-silmarils",
+    "ate": "AA:#aa-escurecimento",
+    "titulo": "Avallónë em Tol Eressëa",
+    "documentado": [
+      "O porto de Tol Eressëa voltado para o leste, com uma torre branca vista de longe"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura do porto"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 5; Akallabêth"
+      }
+    ],
+    "alt": "Porto de torres brancas numa ilha verde à beira de um mar calmo, sob céu estrelado com brilho prateado e dourado a oeste.",
+    "imagem": "fotografias/avallone-aa.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 120633901313802,
+      "segundos": 9
+    }
+  },
+  {
+    "id": "pelori-aa",
+    "lugar": "pelori",
+    "quando": "AA:#aa-silmarils",
+    "de": "AA:#aa-arvores",
+    "ate": "AA:#aa-escurecimento",
+    "titulo": "As Pelóri",
+    "documentado": [
+      "As montanhas de Aman, mais altas do lado do mar, erguidas pelos Valar",
+      "A Calacirya, única fenda por onde a luz das Árvores chegava ao mar"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Forma das montanhas"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, caps. 1 e 5"
+      }
+    ],
+    "alt": "Muralha imensa de montanhas íngremes saindo do mar, com uma única fenda por onde passa luz prateada e dourada, sob céu estrelado.",
+    "imagem": "fotografias/pelori-aa.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 257424824625483,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "helcaraxe-aa",
+    "lugar": "helcaraxe",
+    "quando": "AA:#aa-helcaraxe",
+    "titulo": "O Helcaraxë",
+    "documentado": [
+      "O Gelo Pungente entre Araman e a Terra-média, de gelo que range e névoas mortais",
+      "Fingolfin o atravessou com seu povo, e muitos morreram"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Aspecto do gelo"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 9"
+      }
+    ],
+    "alt": "Gelo marinho quebrado e cristas de gelo sob névoa e céu estrelado, com uma fila de pequenos viajantes ao longe.",
+    "imagem": "fotografias/helcaraxe-aa.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 246396871164506,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "romenna-se3000",
+    "lugar": "romenna",
+    "quando": "SE:3000",
+    "titulo": "Rómenna",
+    "documentado": [
+      "O grande porto oriental de Númenor, refúgio dos Fiéis nos últimos tempos"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura do porto e dos navios"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Akallabêth"
+      },
+      {
+        "fonte": "ci",
+        "local": "Parte II, cap. 1"
+      }
+    ],
+    "alt": "Porto de pedra branca numa baía abrigada, com navios de mastros altos e colinas verdes atrás, ao sol da manhã.",
+    "imagem": "fotografias/romenna-se3000.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 123976343885509,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "meneltarma-se3000",
+    "lugar": "meneltarma",
+    "quando": "SE:3000",
+    "titulo": "O Meneltarma",
+    "documentado": [
+      "A montanha no centro de Númenor, o Pilar do Céu",
+      "Uma estrada em espiral até o topo, onde ficava o santuário de Eru, sem construção"
+    ],
+    "inferido": [
+      "As águias de Manwë guardavam o cume"
+    ],
+    "artistico": [
+      "Forma da montanha"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Akallabêth"
+      },
+      {
+        "fonte": "ci",
+        "local": "Parte II, cap. 1"
+      }
+    ],
+    "alt": "Montanha solitária com estrada em espiral até um topo plano e gramado, com águias voando, no meio de uma ilha.",
+    "imagem": "fotografias/meneltarma-se3000.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 43344818974574,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "condado-te3001",
+    "lugar": "condado",
+    "quando": "TE:3001",
+    "titulo": "Vila dos Hobbits",
+    "documentado": [
+      "A Colina com tocas de porta redonda, entre elas Bolsão",
+      "O Água, o moinho e as sebes do Condado"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Disposição das tocas e das casas"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro I, cap. 1"
+      },
+      {
+        "fonte": "hobbit",
+        "local": "cap. 1"
+      }
+    ],
+    "alt": "Colinas verdes com casas de portas redondas escavadas na encosta, jardins floridos e um moinho junto a um riacho.",
+    "imagem": "fotografias/condado-te3001.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 235402114059250,
+      "segundos": 18
+    }
+  },
+  {
+    "id": "bri-te3018",
+    "lugar": "bri",
+    "quando": "TE:3018",
+    "titulo": "Bri",
+    "documentado": [
+      "A aldeia de Homens e Hobbits na encosta da colina de Bri, cercada por fosso e sebe com portões",
+      "A estalagem do Pônei Saltitante"
+    ],
+    "inferido": [
+      "Outono, quando os hobbits passam por Bri"
+    ],
+    "artistico": [
+      "Arquitetura das casas e da estalagem"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro I, cap. 9"
+      }
+    ],
+    "alt": "Aldeia de casas de pedra numa encosta, cercada por fosso e sebe, com uma grande estalagem iluminada ao entardecer.",
+    "imagem": "fotografias/bri-te3018.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 243876849939218,
+      "segundos": 18
+    }
+  },
+  {
+    "id": "erebor-te3018",
+    "lugar": "erebor",
+    "quando": "TE:3018",
+    "de": "TE:2941",
+    "titulo": "Erebor e Valle",
+    "documentado": [
+      "A Montanha Solitária, com o Portão da Frente de onde sai o Rio Corrente",
+      "A cidade de Valle no vale, reconstruída depois da morte de Smaug"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura de Valle e do portão"
+    ],
+    "fontes": [
+      {
+        "fonte": "hobbit",
+        "local": "caps. 1, 11 e 19"
+      },
+      {
+        "fonte": "sda-apA",
+        "local": "III"
+      }
+    ],
+    "alt": "Montanha solitária com um portão de onde sai um rio que corre por um vale até uma cidade de pedra reconstruída.",
+    "imagem": "fotografias/erebor-te3018.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 225697743046009,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "esgaroth-te3018",
+    "lugar": "esgaroth",
+    "quando": "TE:3018",
+    "titulo": "Esgaroth, a Cidade do Lago",
+    "documentado": [
+      "Cidade construída sobre estacas no Lago Longo, ligada à margem por uma ponte",
+      "A Montanha Solitária ao norte"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura das casas"
+    ],
+    "fontes": [
+      {
+        "fonte": "hobbit",
+        "local": "caps. 10 e 14"
+      }
+    ],
+    "alt": "Cidade de casas de madeira sobre estacas num lago, ligada à margem por uma ponte longa, com uma montanha solitária ao fundo.",
+    "imagem": "fotografias/esgaroth-te3018.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 11066609027240,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "floresta-trevas-te3018",
+    "lugar": "floresta-trevas",
+    "quando": "TE:3018",
+    "titulo": "A Floresta das Trevas",
+    "documentado": [
+      "Floresta densa e escura, com teias de aranha, esquilos negros e uma trilha estreita"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Espécies e composição da floresta"
+    ],
+    "fontes": [
+      {
+        "fonte": "hobbit",
+        "local": "cap. 8"
+      }
+    ],
+    "alt": "Interior de uma floresta escura e fechada, com troncos enormes, teias de aranha e uma trilha estreita sumindo na sombra.",
+    "imagem": "fotografias/floresta-trevas-te3018.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 45930352314161,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "dol-guldur-te2850",
+    "lugar": "dol-guldur",
+    "quando": "TE:2850",
+    "titulo": "Dol Guldur",
+    "documentado": [
+      "A Colina da Feitiçaria no sul da Floresta das Trevas, fortaleza do Necromante"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura da fortaleza, pouco descrita"
+    ],
+    "fontes": [
+      {
+        "fonte": "hobbit",
+        "local": "caps. 7 e 19"
+      },
+      {
+        "fonte": "sda-apB"
+      }
+    ],
+    "alt": "Colina escura e sem árvores com uma fortaleza de pedra negra no topo, saindo de uma floresta sombria sob névoa.",
+    "imagem": "fotografias/dol-guldur-te2850.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 938081880465,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "fangorn-te3019",
+    "lugar": "fangorn",
+    "quando": "TE:3019",
+    "titulo": "A Floresta de Fangorn",
+    "documentado": [
+      "Floresta antiquíssima de árvores retorcidas cobertas de líquen, ao pé das Montanhas Nevoentas",
+      "O rio Entágua nasce nela"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Composição e espécies"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro III, cap. 4"
+      }
+    ],
+    "alt": "Floresta antiquíssima de árvores retorcidas cobertas de líquen, com um riacho claro numa clareira.",
+    "imagem": "fotografias/fangorn-te3019.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 101206907461303,
+      "segundos": 11
+    }
+  },
+  {
+    "id": "abismo-de-helm-te3018",
+    "lugar": "abismo-de-helm",
+    "quando": "TE:3018",
+    "titulo": "O Abismo de Helm",
+    "documentado": [
+      "O Forte da Trombeta num esporão de rocha na entrada do Abismo",
+      "O Muro do Abismo atravessa a garganta, com um bueiro para o riacho",
+      "As cavernas de Aglarond no fundo"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Proporções do forte e do muro"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro III, cap. 7"
+      }
+    ],
+    "alt": "Fortaleza de pedra cinzenta com uma torre num esporão de rocha e um muro alto atravessando a entrada de uma garganta nas montanhas.",
+    "imagem": "fotografias/abismo-de-helm-te3018.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 13490282137197,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "pelargir-te3018",
+    "lugar": "pelargir",
+    "quando": "TE:3018",
+    "titulo": "Pelargir",
+    "documentado": [
+      "O antigo porto de Gondor no Anduin, perto do delta"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura do porto e dos navios"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda-apA",
+        "local": "I (iv)"
+      },
+      {
+        "fonte": "sda",
+        "local": "Livro V, cap. 9"
+      }
+    ],
+    "alt": "Porto antigo de pedra cinzenta num rio largo, com cais longos e muitos navios de mastros altos.",
+    "imagem": "fotografias/pelargir-te3018.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 169629644233523,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "dol-amroth-te3018",
+    "lugar": "dol-amroth",
+    "quando": "TE:3018",
+    "titulo": "Dol Amroth",
+    "documentado": [
+      "A fortaleza dos príncipes de Dol Amroth num promontório no litoral de Belfalas, com o cisne como emblema"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura do castelo"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda-apA",
+        "local": "I (iv)"
+      },
+      {
+        "fonte": "ci",
+        "local": "Parte II, cap. 4"
+      }
+    ],
+    "alt": "Castelo de torres altas num promontório rochoso sobre o mar, com cisnes na água junto à costa.",
+    "imagem": "fotografias/dol-amroth-te3018.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 216320231888372,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "annuminas-te100",
+    "lugar": "annuminas",
+    "quando": "TE:100",
+    "titulo": "Annúminas",
+    "documentado": [
+      "A primeira capital de Arnor, junto ao lago Nenuial (Evendim)"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura da cidade"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda-apA",
+        "local": "I (iii)"
+      }
+    ],
+    "alt": "Cidade de torres brancas às margens de um lago calmo cercado de colinas verdes, refletida na água.",
+    "imagem": "fotografias/annuminas-te100.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 100571120097766,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "fornost-te1500",
+    "lugar": "fornost",
+    "quando": "TE:1500",
+    "titulo": "Fornost Erain",
+    "documentado": [
+      "Fornost, a Norbury dos Reis, capital de Arthedain nas Colinas do Norte"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura da cidade"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda-apA",
+        "local": "I (iii)"
+      }
+    ],
+    "alt": "Cidade murada de pedra cinzenta com uma cidadela no alto de colinas verdes ondulantes.",
+    "imagem": "fotografias/fornost-te1500.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 11832566041489,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "amon-sul-te1000",
+    "lugar": "amon-sul",
+    "quando": "TE:1000",
+    "titulo": "Amon Sûl",
+    "documentado": [
+      "A grande torre de vigia no Topo do Vento, onde ficava a palantír principal do Norte"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura da torre"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro I, cap. 11"
+      },
+      {
+        "fonte": "sda-apA",
+        "local": "I (iii)"
+      }
+    ],
+    "alt": "Torre redonda de pedra no topo plano de uma colina alta e nua, com vista ampla sobre terras selvagens.",
+    "imagem": "fotografias/amon-sul-te1000.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 30926922549588,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "carn-dum-te1600",
+    "lugar": "carn-dum",
+    "quando": "TE:1600",
+    "titulo": "Carn Dûm",
+    "documentado": [
+      "A fortaleza do Rei-bruxo de Angmar, no extremo norte das Montanhas Nevoentas"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura e implantação, quase não descritas"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda-apA",
+        "local": "I (iii)"
+      }
+    ],
+    "alt": "Fortaleza de pedra escura nos penhascos de montanhas nevadas, sobre uma planície gelada e árida.",
+    "imagem": "fotografias/carn-dum-te1600.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 89349244538292,
+      "segundos": 11
+    }
+  },
+  {
+    "id": "orodruin-te3018",
+    "lugar": "orodruin",
+    "quando": "TE:3018",
+    "titulo": "Orodruin, a Montanha da Perdição",
+    "documentado": [
+      "Montanha vulcânica solitária no planalto de Gorgoroth, com um cone sobre uma base larga",
+      "Uma estrada sobe até a abertura do Sammath Naur"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Forma exata do cone"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro VI, cap. 3"
+      }
+    ],
+    "alt": "Montanha vulcânica solitária fumegando sobre um planalto de cinzas, com uma estrada subindo até uma abertura no cone.",
+    "imagem": "fotografias/orodruin-te3018.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 232724813714087,
+      "segundos": 11
+    }
+  },
+  {
+    "id": "rauros-te3019",
+    "lugar": "rauros",
+    "quando": "TE:3019",
+    "titulo": "Rauros e Tol Brandir",
+    "documentado": [
+      "As cachoeiras de Rauros no fim do lago Nen Hithoel",
+      "A ilha íngreme de Tol Brandir no meio do lago",
+      "Os montes Amon Hen e Amon Lhaw nas margens"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Proporções do lago e das cachoeiras"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro II, cap. 9"
+      }
+    ],
+    "alt": "Lago entre colinas com uma ilha de rocha íngreme no meio e uma grande cachoeira ao fundo.",
+    "imagem": "fotografias/rauros-te3019.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 124041203957851,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "emyn-beraid-te3018",
+    "lugar": "emyn-beraid",
+    "quando": "TE:3018",
+    "titulo": "As Torres Brancas",
+    "documentado": [
+      "As Emyn Beraid com três torres brancas; Elostirion, a mais alta, guardava uma palantír voltada para o Oeste"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura das torres"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Prólogo"
+      },
+      {
+        "fonte": "silm",
+        "local": "Dos Anéis de Poder"
+      }
+    ],
+    "alt": "Três torres brancas esguias no alto de colinas verdes, com o mar ao longe sob o pôr do sol.",
+    "imagem": "fotografias/emyn-beraid-te3018.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 132018757985190,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "mithlond-te3021",
+    "lugar": "mithlond",
+    "quando": "TE:3021",
+    "titulo": "Os Portos Cinzentos",
+    "documentado": [
+      "Os Portos Cinzentos de Círdan no Golfo de Lhûn, de onde os navios partiam para o Oeste",
+      "O navio branco em que partem os Portadores dos Anéis em 3021 T.E."
+    ],
+    "inferido": [],
+    "artistico": [
+      "Arquitetura dos portos"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro VI, cap. 9"
+      }
+    ],
+    "alt": "Portos de pedra cinzenta num golfo, com um navio branco de velas içadas pronto para partir ao entardecer.",
+    "imagem": "fotografias/mithlond-te3021.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 7673582113778,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "hithaeglir-te3018",
+    "lugar": "hithaeglir",
+    "quando": "TE:3018",
+    "titulo": "As Montanhas Nevoentas",
+    "documentado": [
+      "A grande cordilheira da Terra-média",
+      "Caradhras, o Chifre Vermelho, de pedra avermelhada, entre Celebdil e Fanuidhol"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Forma dos picos"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro II, cap. 3"
+      }
+    ],
+    "alt": "Longa cordilheira de picos nevados com névoa nos vales, com um pico de pedra avermelhada no centro.",
+    "imagem": "fotografias/hithaeglir-te3018.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 235352240708874,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "ered-nimrais-te3019",
+    "lugar": "ered-nimrais",
+    "quando": "TE:3019",
+    "titulo": "As Montanhas Brancas e os faróis",
+    "documentado": [
+      "As Ered Nimrais, de neves eternas",
+      "A cadeia de faróis de Gondor acesos nos cumes"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Forma dos picos e dos faróis"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro V, cap. 1"
+      }
+    ],
+    "alt": "Cordilheira de montanhas nevadas ao entardecer com fogueiras de sinalização acesas em vários cumes.",
+    "imagem": "fotografias/ered-nimrais-te3019.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 3620398084141,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "belegaer-te3019",
+    "lugar": "belegaer",
+    "quando": "TE:3019",
+    "titulo": "O Grande Mar",
+    "documentado": [
+      "Belegaer, o Grande Mar a oeste da Terra-média"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Toda a composição"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 1"
+      }
+    ],
+    "alt": "Oceano aberto visto do alto de falésias ao pôr do sol, com uma vela branca solitária no horizonte.",
+    "imagem": "fotografias/belegaer-te3019.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 48796358085974,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "mar-rhun-te3018",
+    "lugar": "mar-rhun",
+    "quando": "TE:3018",
+    "titulo": "O Mar de Rhûn",
+    "documentado": [
+      "O mar interior no leste da Terra-média"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Paisagem quase não descrita"
+    ],
+    "fontes": [
+      {
+        "fonte": "map-sda"
+      }
+    ],
+    "alt": "Grande mar interior de margens baixas e juncos, sob um céu amplo.",
+    "imagem": "fotografias/mar-rhun-te3018.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 212732219917468,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "ered-luin-pe400",
+    "lugar": "ered-luin",
+    "quando": "PE:400",
+    "titulo": "As Montanhas Azuis",
+    "documentado": [
+      "As Ered Luin, lar dos Anões de Nogrod e Belegost na Primeira Era"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Forma dos picos"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 10"
+      }
+    ],
+    "alt": "Cordilheira de montanhas azuladas pela névoa acima de vales verdes e florestas.",
+    "imagem": "fotografias/ered-luin-pe400.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 95651461835571,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "rio-anduin-te3018",
+    "lugar": "rio-anduin",
+    "quando": "TE:3018",
+    "titulo": "O Grande Rio",
+    "documentado": [
+      "O Anduin, o Grande Rio, que corre do norte até o mar"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Trecho representado"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro II, cap. 9"
+      }
+    ],
+    "alt": "Rio largo e caudaloso entre margens arborizadas, com ilhotas e pequenos barcos ao longe.",
+    "imagem": "fotografias/rio-anduin-te3018.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 156815092050205,
+      "segundos": 9
+    }
+  },
+  {
+    "id": "mordor-te3018",
+    "lugar": "mordor",
+    "quando": "TE:3018",
+    "titulo": "O planalto de Gorgoroth",
+    "documentado": [
+      "Gorgoroth, o planalto de cinzas e poços cercado pelas montanhas de Mordor"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Composição da paisagem"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro VI, cap. 2"
+      }
+    ],
+    "alt": "Planalto de cinzas e rocha negra cheio de crateras, cercado por montanhas escuras, com um vulcão fumegando ao longe.",
+    "imagem": "fotografias/mordor-te3018.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 93946465135914,
+      "segundos": 9
+    }
+  },
+  {
+    "id": "dagorlad-te3018",
+    "lugar": "dagorlad",
+    "quando": "TE:3018",
+    "titulo": "Dagorlad e os Pântanos Mortos",
+    "documentado": [
+      "A Planície da Batalha, árida desde a Última Aliança",
+      "Os Pântanos Mortos, com luzes pálidas sobre as águas"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Composição da paisagem"
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro IV, cap. 2"
+      }
+    ],
+    "alt": "Planície árida diante de montanhas escuras, com um pântano de águas paradas e luzes pálidas sobre a névoa.",
+    "imagem": "fotografias/dagorlad-te3018.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 123692480087387,
+      "segundos": 9
+    }
+  },
+  {
+    "id": "campos-de-lis-te2",
+    "lugar": "campos-de-lis",
+    "quando": "TE:2",
+    "titulo": "Os Campos de Lis",
+    "documentado": [
+      "Os Campos de Lis, pântanos de íris amarelas junto ao Anduin, onde Isildur morreu e o Anel se perdeu"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Composição da paisagem"
+    ],
+    "fontes": [
+      {
+        "fonte": "ci",
+        "local": "Parte III, cap. 1"
+      }
+    ],
+    "alt": "Pântano largo coberto de íris amarelas e juncos junto a um grande rio, ao entardecer.",
+    "imagem": "fotografias/campos-de-lis-te2.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 217834405160598,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "ossiriand-pe400",
+    "lugar": "ossiriand",
+    "quando": "PE:400",
+    "titulo": "Ossiriand, a Terra das Sete Rios",
+    "documentado": [
+      "A Terra dos Sete Rios, verde e arborizada, entre o Gelion e as Ered Luin",
+      "Lar dos Laiquendi, os Elfos Verdes"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Composição da paisagem"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 14"
+      }
+    ],
+    "alt": "Terra verde de bosques e prados cortada por rios claros que descem de montanhas azuis.",
+    "imagem": "fotografias/ossiriand-pe400.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 129195944223114,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "hithlum-pe400",
+    "lugar": "hithlum",
+    "quando": "PE:400",
+    "titulo": "Hithlum, a Terra da Névoa",
+    "documentado": [
+      "A Terra da Névoa, cercada pelas Ered Wethrin e pelas Ered Lómin, com o lago Mithrim"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Composição da paisagem"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, caps. 13 e 14"
+      }
+    ],
+    "alt": "Terra fria e enevoada de campos e lagos cercada por montanhas altas.",
+    "imagem": "fotografias/hithlum-pe400.webp",
+    "geracao": {
+      "n": 3,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 247679007105895,
+      "segundos": 8
+    }
+  },
+  {
+    "id": "dorthonion-pe400",
+    "lugar": "dorthonion",
+    "quando": "PE:400",
+    "titulo": "Dorthonion, a Terra dos Pinheiros",
+    "documentado": [
+      "O planalto coberto de grandes pinheiros, ao norte de Beleriand"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Composição da paisagem"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 14"
+      }
+    ],
+    "alt": "Planalto coberto de pinheiros altos e escuros, com lagos e charnecas entre os bosques.",
+    "imagem": "fotografias/dorthonion-pe400.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 258127197787533,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "brethil-pe400",
+    "lugar": "brethil",
+    "quando": "PE:400",
+    "titulo": "A Floresta de Brethil",
+    "documentado": [
+      "A floresta entre o Teiglin e o Sirion, onde vivia o povo de Haleth"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Composição e moradias"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 17"
+      }
+    ],
+    "alt": "Floresta de árvores altas com luz filtrada, samambaias e casas de madeira numa clareira.",
+    "imagem": "fotografias/brethil-pe400.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 120608999454236,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "tol-eressea-se3000",
+    "lugar": "tol-eressea",
+    "quando": "SE:3000",
+    "titulo": "Tol Eressëa, a Ilha Solitária",
+    "documentado": [
+      "A ilha dos Eldar na baía de Eldamar, com o porto de Avallónë voltado para o leste"
+    ],
+    "inferido": [
+      "As Pelóri visíveis ao fundo, no horizonte"
+    ],
+    "artistico": [
+      "Composição da paisagem"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 5; Akallabêth"
+      }
+    ],
+    "alt": "Ilha verde com praias brancas e um porto de torres brancas, vista do mar, com montanhas imensas ao fundo.",
+    "imagem": "fotografias/tol-eressea-se3000.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 110607140238679,
+      "segundos": 10
+    }
+  },
+  {
+    "id": "cuivienen-aa",
+    "lugar": "cuivienen",
+    "quando": "AA:#aa-despertar",
+    "titulo": "Cuiviénen, a Água do Despertar",
+    "documentado": [
+      "A baía onde os Elfos despertaram, sob as estrelas, antes do Sol e da Lua"
+    ],
+    "inferido": [],
+    "artistico": [
+      "Toda a paisagem"
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 3"
+      }
+    ],
+    "alt": "Baía tranquila de um grande lago à noite, cercada de colinas escuras, refletindo um céu repleto de estrelas.",
+    "imagem": "fotografias/cuivienen-aa.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-07",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 29693655517049,
+      "segundos": 10
+    }
   }
 ]

@@ -1,0 +1,83 @@
+{
+  "etapa": 5,
+  "roadmap": "docs/ROADMAP-FOTOGRAFIAS-LUGARES.md",
+  "tamanho": [
+    1536,
+    1024
+  ],
+  "estilo": "Photorealistic landscape photograph of an imagined place, as if taken on location in the real world. Full-frame camera, natural lens, 3:2 landscape. Realistic geology, vegetation, weather, water and stone. Pre-industrial world: no modern buildings, roads, vehicles, power lines, contrails, plastic or modern clothing. People, if any, only as small distant figures in simple pre-modern dress. No text, letters, logos, signatures, watermarks or frames. No visible magic glow unless the scene describes a light source. Not in the style of any specific artist, illustrator, film or game.",
+  "fotos": [
+    {
+      "id": "condado-te3001",
+      "prompt": "A gentle rural landscape of rolling green hills, hedgerows, gardens and fields. Into the side of a grassy hill are built small homes with perfectly round green and yellow doors and round windows, with neat flower gardens and smoking chimneys poking out of the turf. At the foot of the hill a small river with an old stone mill and a bridge, a lane winding between hedges. Warm late-summer afternoon, peaceful and homely, small distant figures of short people."
+    },
+    {
+      "id": "bri-te3018",
+      "prompt": "A medieval village of grey stone houses with slate and thatched roofs on the western slope of a hill at a crossroads, surrounded by a deep ditch and a thick hedge, with a heavy wooden gate across a muddy dirt road. The largest building, a three-storey inn of stone and dark timber with many small lit windows, stands where the road bends. Autumn evening drizzle, puddles in the mud of the unpaved road, misty grey sky, warm candlelight in the windows, no street lamps, small distant figures."
+    },
+    {
+      "id": "erebor-te3018",
+      "prompt": "A great solitary mountain standing alone on a wide plain, its long ridges spreading south. From a great gate in its southern face a river flows out and down a valley, where a rebuilt town of stone with walls, towers and bridges lies along the river. Green fields around, morning light on the mountain slopes, prosperous and peaceful, small distant figures."
+    },
+    {
+      "id": "esgaroth-te3018",
+      "prompt": "A town of wooden houses built on stilts and piles out on the still water of a long lake, connected to the shore by a long wooden bridge, with boats and market quays. Far beyond the lake, a great solitary mountain on the horizon. Calm morning mist over the water, smoke from chimneys, reflections, small distant figures."
+    },
+    {
+      "id": "floresta-trevas-te3018",
+      "prompt": "Inside a vast, dark, oppressive forest: huge old oak and beech trunks crowded close together, tangled undergrowth, gnarled roots, thick grey cobwebs stretched between the branches, a narrow overgrown path vanishing into gloom, black squirrels on a branch. Almost no light reaches the ground; stale, heavy, silent air. No people."
+    },
+    {
+      "id": "dol-guldur-te2850",
+      "prompt": "A bare, treeless dark hill rising out of a gloomy forest, crowned by a grim fortress of black stone with jagged towers and walls. Dead trees around the hill, a thick dark haze hanging over it, grey sky. Viewpoint from the forest edge looking up at the hill, sinister and silent, no figures."
+    },
+    {
+      "id": "fangorn-te3019",
+      "prompt": "An ancient, primeval forest on the slopes below mountains: immensely old trees with gnarled trunks and long trailing beards of grey-green lichen, roots twisted over mossy rocks, a clear stream running through a glade, dim green light, a feeling of great age and watchfulness. No people."
+    },
+    {
+      "id": "abismo-de-helm-te3018",
+      "prompt": "A deep gorge cutting into high mountains. At its mouth, a fortress of grey stone with a tall tower stands on a spur of rock, and from the fortress a high stone wall runs across the whole width of the gorge mouth, with a culvert where a stream flows out beneath it. Behind the wall the gorge narrows into cliffs and caverns. Late afternoon light, green slopes below, no figures in the foreground."
+    },
+    {
+      "id": "pelargir-te3018",
+      "prompt": "An old port city of grey stone on a great wide river near its delta, with long quays, warehouses, towers and many tall-masted sailing ships moored along the riverbank. Flat green lands around, a hazy sky and warm southern light, gulls, small distant figures."
+    },
+    {
+      "id": "dol-amroth-te3018",
+      "prompt": "A noble castle of white and grey stone with tall towers on a rocky promontory jutting into a bright sea, waves breaking on the rocks below, swans on the water near the shore. Green coastal hills behind, clear sunny day, wind, a proud seaside stronghold, no text or banners with letters."
+    },
+    {
+      "id": "annuminas-te100",
+      "prompt": "A royal city of white stone with tall towers on the shore of a long, still lake surrounded by low green hills in the north. Reflections of the towers in the water, a calm sunny morning, gardens down to the shore. Viewpoint from across the lake, small distant figures."
+    },
+    {
+      "id": "fornost-te1500",
+      "prompt": "A walled city of grey stone with a fortified citadel on the top of a long range of rolling green downs in the north, roads leading up to its gates, bare hills around. Cold clear afternoon, wind over the grass, small distant figures."
+    },
+    {
+      "id": "amon-sul-te1000",
+      "prompt": "A tall round stone watchtower standing on the flat summit of a high bare hill, the southern end of a line of hills, with a wide view over empty wild lands. A ring of stone walls around the summit. Windy, clear evening, long shadows, no figures in the foreground."
+    },
+    {
+      "id": "carn-dum-te1600",
+      "prompt": "A grim fortress of dark stone built into the cliffs at the northern end of a range of snowy mountains, overlooking a cold barren land. Sharp black towers, walls merging into the rock, snow and ice, a sullen grey sky. Viewpoint from the frozen plain below, hostile and remote, no figures."
+    },
+    {
+      "id": "orodruin-te3018",
+      "prompt": "A lone volcanic mountain standing on a barren plateau of ash and black rock: a huge ash cone on a broad base, smoking from its summit, with red glow of lava on its flanks. A road built of stone winds up its side to an opening in the cone. The sky is dark with ash clouds, the plain grey and dead. Desolate and terrifying, no figures."
+    },
+    {
+      "id": "rauros-te3019",
+      "prompt": "A long lake between wooded hills; in the middle of the lake rises a sheer, steep island of rock like a stone pillar, unclimbable. At the far end of the lake, the water pours over a great waterfall with a thunderous roar and a cloud of spray. A green hill stands on each side of the lake. Morning light, mist, grandeur, no figures."
+    },
+    {
+      "id": "emyn-beraid-te3018",
+      "prompt": "Three slender white stone towers standing on the crest of low green hills, the tallest one in the middle; from the hills the land falls westward toward the distant sea, a silver line on the horizon. Golden sunset over the sea, peaceful, timeless, no figures."
+    },
+    {
+      "id": "mithlond-te3021",
+      "prompt": "Grey stone havens at the head of a long gulf of the sea between hills, with quays and a pale grey harbour building. A single tall white ship with sails set lies at the quay, ready to depart into the west. Grey evening light over the water turning silver toward the horizon, quiet and melancholy, small distant figures."
+    }
+  ]
+}

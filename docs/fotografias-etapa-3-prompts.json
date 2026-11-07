@@ -1,0 +1,59 @@
+{
+  "etapa": 3,
+  "roadmap": "docs/ROADMAP-FOTOGRAFIAS-LUGARES.md",
+  "tamanho": [
+    1536,
+    1024
+  ],
+  "estilo": "Photorealistic landscape photograph of an imagined place, as if taken on location in the real world. Full-frame camera, natural lens, 3:2 landscape. Realistic geology, vegetation, weather, water and stone. Pre-industrial world: no modern buildings, roads, vehicles, power lines, contrails, plastic or modern clothing. People, if any, only as small distant figures in simple pre-modern dress. No text, letters, logos, signatures, watermarks or frames. No visible magic glow unless the scene describes a light source. Not in the style of any specific artist, illustrator, film or game.",
+  "fotos": [
+    {
+      "id": "menegroth-pe400",
+      "prompt": "In a deep ancient forest of enormous beech trees, a rocky hill rises beside a swift clear river. A single arched stone bridge crosses the river to a great carved gateway set into the face of the hill: tall doors of stone flanked by pillars carved like the grey trunks of beech trees, with branches and leaves sculpted above. Soft green light filtering through the beech canopy, mist over the water, a hidden, guarded and serene royal dwelling, no figures."
+    },
+    {
+      "id": "nargothrond-pe400",
+      "prompt": "A deep river gorge between high forested cliffs. On the western side, carved into the sheer rock face above the rushing river, stand great stone doors of a hidden underground stronghold, with a narrow terrace and steps cut in the cliff before them; no bridge crosses the river. Above the cliffs, a dense highland forest. Late afternoon light slanting into the gorge, spray over the rapids, majestic and secretive, no figures."
+    },
+    {
+      "id": "angband-pe400",
+      "prompt": "Across a vast, wide green grassland plain, a dark wall of jagged northern mountains, and in front of them three enormous black volcanic peaks of slag and rubble towering far above everything, belching dark smoke into a leaden sky. At their feet, a gigantic gate in the rock. Far in the foreground, on the green plain, a line of distant encampments and watch-fires of a besieging army. Cold northern light, ominous and vast in scale."
+    },
+    {
+      "id": "himring-pe400",
+      "prompt": "A broad, wide-shouldered hill with a bare, treeless top rising alone above rolling grey-green moorland, crowned by a strong stone fortress with walls and towers. Cold wind, low clouds and frost on the grass, a pale northern sky. Viewpoint from the moor below, looking up at the hill fortress in the morning, austere and vigilant, small distant figures on the walls."
+    },
+    {
+      "id": "tol-sirion-pe400",
+      "prompt": "A narrow mountain pass with a wide river flowing through it between two ranges of dark mountains. In the middle of the river, a rocky island crowned by a tall, slender watchtower of white stone with a walled courtyard, guarding the pass. Pines on the slopes, mist on the water, clear morning light, no bridge, no figures."
+    },
+    {
+      "id": "portos-sirion-pe530",
+      "prompt": "A small haven town of stone and timber on low islands among reeds and channels at the wide mouth of a great river where it meets the sea. Graceful white ships with high swan-like prows are moored at wooden quays; gulls over the water, marshes and sandbanks around. Soft evening light, a refuge at the edge of the world, small distant figures."
+    },
+    {
+      "id": "brithombar-pe400",
+      "prompt": "A walled harbour town of grey stone on a rocky coast at the mouth of a small river, with a strong sea wall, towers at the harbour entrance and elegant grey sailing ships inside. Waves on the rocks, a wide grey sea, clouds and sun breaking through. Viewpoint from a headland near the harbour, no figures in the foreground."
+    },
+    {
+      "id": "vinyamar-pe60",
+      "prompt": "Noble halls of white and grey stone built on the lower slopes of a great mountain beside the sea, with terraces and a long colonnaded hall facing west over a wide bay. Green coastal hills, the sound of waves, gulls, a clear blue sea at sunset. Viewpoint from the shore below, looking up at the halls, calm and dignified, small distant figures."
+    },
+    {
+      "id": "anfauglith-pe460",
+      "prompt": "A vast plain that was once green grassland, now a desert of grey ash, black cinders and choking dust after rivers of fire swept over it. Dead blackened stumps, cracked ground, wisps of smoke, a dust storm on the horizon. Far to the north, three dark smoking peaks under a heavy brown sky. Desolate, lifeless, oppressive."
+    },
+    {
+      "id": "nan-elmoth-pe300",
+      "prompt": "Inside an ancient forest of the tallest and darkest trees, huge black trunks rising into a canopy so dense that almost no daylight reaches the ground. Deep shadow, moss, silence, faint shafts of grey light, a few pale flowers on the dark floor. Mysterious, still, oppressive and beautiful, no figures."
+    },
+    {
+      "id": "cabed-en-aras-pe501",
+      "prompt": "A deep, narrow rocky gorge through which a river roars far below, so narrow at one point that a deer could leap across, its rims edged by dense dark forest. Dramatic cliffs, wet rock, mist rising from the torrent, overcast twilight. Viewpoint from the forest edge on the rim, looking across the narrowest point of the gorge, no figures."
+    },
+    {
+      "id": "doriath-pe400",
+      "prompt": "An immense ancient beech forest in spring: smooth grey trunks like pillars, fresh green leaves, sunlight in shafts through a high canopy, a carpet of white flowers on the forest floor and a clear stream winding between the trees. Deep, peaceful, enchanted-feeling but completely natural. No figures."
+    }
+  ]
+}

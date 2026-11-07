@@ -2284,3 +2284,9 @@ details summary {
     font-size: 21px;
   }
 }
+.fotos-era {
+  font-family: var(--serif);
+  font-size: 19px;
+  margin: 22px 0 0;
+  color: #f3e2b5;
+}

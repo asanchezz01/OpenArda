@@ -1,0 +1,51 @@
+{
+  "etapa": 4,
+  "roadmap": "docs/ROADMAP-FOTOGRAFIAS-LUGARES.md",
+  "tamanho": [
+    1536,
+    1024
+  ],
+  "estilo": "Photorealistic landscape photograph of an imagined place, as if taken on location in the real world. Full-frame camera, natural lens, 3:2 landscape. Realistic geology, vegetation, weather, water and stone. Pre-industrial world: no modern buildings, roads, vehicles, power lines, contrails, plastic or modern clothing. People, if any, only as small distant figures in simple pre-modern dress. No text, letters, logos, signatures, watermarks or frames. No visible magic glow unless the scene describes a light source. Not in the style of any specific artist, illustrator, film or game.",
+  "fotos": [
+    {
+      "id": "ezellohar-aa",
+      "prompt": "On a low green mound in a wide luminous plain stand two enormous radiant trees. One has dark green leaves that are shining silver beneath, white blossoms, and drips a dew of silver light; the other has fresh pale-green leaves edged with gold, hanging clusters of yellow flame-like flowers, and sheds a warm golden light like falling rain. Their mingled silver and golden light floods the meadow and the distant white walls of a city. There is no sun and no moon; the sky is deep blue with stars. Serene, sacred, glowing but natural-looking."
+    },
+    {
+      "id": "ezellohar-escurecimento",
+      "prompt": "On a low mound in a wide plain stand two enormous dead trees, black, withered and broken, their bark split and their leaves gone. A thick, unnatural black mist creeps over the ground and swallows the distance, a darkness that seems to have substance. Only a few faint stars show through; the far-off white walls of a city are barely visible. Desolate, silent, grief-stricken, cold."
+    },
+    {
+      "id": "valmar-aa",
+      "prompt": "A great city of golden-white stone with domes, towers and bell towers on a wide fertile plain, surrounded by orchards and meadows. Many bells hang in open belfries. Near the city gates rises a low green mound with two radiant trees, one silver and one gold. There is no sun and no moon in the sky: the only light is a soft mingling of silver and pale gold coming from the west, and the sky above is deep blue with stars. Peaceful, timeless, majestic, small distant figures."
+    },
+    {
+      "id": "taniquetil-aa",
+      "prompt": "The highest mountain in the world, an immense snow-covered peak rising far above a range of great mountains, its summit catching the light, with tiny white halls visible on the very top. Below, green foothills and a plain. There is no sun and no moon in the sky: the only light is a soft mingling of silver and pale gold coming from the west, and the sky above is deep blue with stars. Sublime, awe-inspiring scale, crystal-clear air."
+    },
+    {
+      "id": "alqualonde-aa",
+      "prompt": "A haven on a rocky coast where the sea passes through a great natural arch of living rock into a calm harbour. Moored in the harbour are several large wooden sailing ships with tall masts and white sails, whose hulls and high curved prows are carved and painted in the shape of white swans, with golden beaks and golden eyes on the prows; they are ships, not birds. Ancient elegant halls of pale stone with arched windows and soft lamplight line the shore; the beach glitters with pearls. Starlit night sky, a faint silver-gold glow from the west, no sun and no moon, no modern lamp posts."
+    },
+    {
+      "id": "avallone-aa",
+      "prompt": "A haven city of white towers on the eastern shore of a green island, facing a calm sea, with a tall white tower at the harbour and graceful ships. Behind the island, far to the west, a faint glow of silver and gold light spreads over the horizon. The sky is deep blue and full of stars; there is no sun and no moon. Viewpoint from the sea at night, serene and luminous."
+    },
+    {
+      "id": "pelori-aa",
+      "prompt": "An immense wall of mountains rising sheer from the sea, the highest and steepest mountains in the world, their eastern faces dark cliffs dropping straight into the water, their peaks crowned with snow. A single deep cleft breaks the wall, and through it a soft silver and golden light pours out over the sea. The sky above is deep blue with stars; there is no sun and no moon. Viewpoint from the sea, overwhelming scale."
+    },
+    {
+      "id": "helcaraxe-aa",
+      "prompt": "A frozen strait in the far north: jagged grinding sea-ice, pressure ridges, cracked floes and dark lanes of freezing water, icebergs half hidden in freezing fog, under a black starry sky with no sun and no moon. Far away, a long line of tiny travellers with faint lights crossing the ice. Bitter cold, hostile, immense."
+    },
+    {
+      "id": "romenna-se3000",
+      "prompt": "A busy harbour city of white stone at the head of a long sheltered bay on the eastern coast of an island, with tall-masted ships at stone quays, warehouses and towers, green hills behind. Morning sun from the east over the sea, gulls, a prosperous seafaring city, small distant figures."
+    },
+    {
+      "id": "meneltarma-se3000",
+      "prompt": "A tall solitary mountain rising from a green plain in the middle of an island, its lower slopes grassy, its upper slopes steep. A road winds in a spiral around the mountain up to a wide flat summit of green turf, open to the sky, with no building at all. Eagles circle above the summit. Clear bright day, the sea visible on the horizon, majestic and sacred, no figures."
+    }
+  ]
+}

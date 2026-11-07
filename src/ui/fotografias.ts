@@ -24,6 +24,20 @@ export function blocoFotoFicha(info: FotosDoLugar): string {
   </section>`;
 }
 
+const cartaoGrade = (f: Foto) =>
+  `<li><button type="button" data-acao="foto" data-id="${esc(f.id)}"><img src="${esc(f.imagem!)}" alt="${esc(f.alt)}" width="1536" height="1024" loading="lazy"><span class="fotos-nome">${esc(lugarPorId.get(f.lugar)?.nome ?? f.lugar)}</span><span class="nota">${esc(f.titulo)} · ${esc(quando(f))}</span></button></li>`;
+
+/** Agrupa por era, na ordem da linha do tempo. */
+function porEra(lista: Foto[]): [string, Foto[]][] {
+  const grupos = new Map<string, Foto[]>();
+  for (const f of lista) {
+    const era = tempo.eraDe(momento(f)).nome;
+    if (!grupos.has(era)) grupos.set(era, []);
+    grupos.get(era)!.push(f);
+  }
+  return [...grupos];
+}
+
 /** Grade do painel: os lugares fotografados que existem na época atual (ou todas as épocas). */
 export function htmlPainelFotos(app: App, todas: boolean): string {
   const lista = fotosEm(todas ? null : app.t);
@@ -36,9 +50,9 @@ export function htmlPainelFotos(app: App, todas: boolean): string {
     <p class="nota">${SELO}. Cada foto vale para a época do lugar; mova a linha do tempo para ver outras.</p>
     ${
       lista.length
-        ? `<ul class="fotos-grade">${lista
-            .map((f) => `<li><button type="button" data-acao="foto" data-id="${esc(f.id)}"><img src="${esc(f.imagem!)}" alt="${esc(f.alt)}" width="1536" height="1024" loading="lazy"><span class="fotos-nome">${esc(lugarPorId.get(f.lugar)?.nome ?? f.lugar)}</span><span class="nota">${esc(f.titulo)} · ${esc(quando(f))}</span></button></li>`)
-            .join('')}</ul>`
+        ? porEra(lista)
+            .map(([era, fs]) => `${todas ? `<h3 class="fotos-era">${esc(era)}</h3>` : ''}<ul class="fotos-grade">${fs.map(cartaoGrade).join('')}</ul>`)
+            .join('')
         : `<p class="fotos-vazio">Nenhum lugar fotografado existe em ${esc(epoca)}. Marque <strong>Todas as épocas</strong> ou mova a linha do tempo.</p>`
     }`;
 }

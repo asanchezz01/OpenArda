@@ -1,0 +1,71 @@
+{
+  "etapa": 6,
+  "roadmap": "docs/ROADMAP-FOTOGRAFIAS-LUGARES.md",
+  "tamanho": [
+    1536,
+    1024
+  ],
+  "estilo": "Photorealistic landscape photograph of an imagined place, as if taken on location in the real world. Full-frame camera, natural lens, 3:2 landscape. Realistic geology, vegetation, weather, water and stone. Pre-industrial world: no modern buildings, roads, vehicles, power lines, contrails, plastic or modern clothing. People, if any, only as small distant figures in simple pre-modern dress. No text, letters, logos, signatures, watermarks or frames. No visible magic glow unless the scene describes a light source. Not in the style of any specific artist, illustrator, film or game.",
+  "fotos": [
+    {
+      "id": "hithaeglir-te3018",
+      "prompt": "A long, high mountain range stretching north to south, jagged peaks covered with snow, glaciers and dark rock. In the center, three great peaks, one of them of dull red stone with a snow cap. Mist clinging to the valleys, a cold clear winter day, vast scale, no figures."
+    },
+    {
+      "id": "ered-nimrais-te3019",
+      "prompt": "A long range of tall snow-capped mountains running east to west above green foothills and plains, at dusk. In front of the high mountains, on the rounded tops of several lower green and rocky foothills spaced along the range, small bright bonfires of stacked wood are burning one after another into the distance as signal beacons, each a single point of orange flame with a thin plume of smoke. The mountains themselves are calm and snowy, not volcanic, with no lava. Dramatic twilight sky, vast scale, no figures in the foreground."
+    },
+    {
+      "id": "belegaer-te3019",
+      "prompt": "A vast open ocean seen from high sea cliffs at sunset looking west: endless rolling grey-green waves, a golden path of light on the water, seabirds, a single distant white sail on the horizon. Immense, lonely, beautiful, evoking longing."
+    },
+    {
+      "id": "mar-rhun-te3018",
+      "prompt": "A great inland sea in a remote eastern land: a wide grey-blue expanse of water stretching to the horizon, low flat shores of grass and reeds, scattered trees, a distant line of hills. Wide open sky with high clouds, quiet and remote, no figures."
+    },
+    {
+      "id": "ered-luin-pe400",
+      "prompt": "A long range of steep mountains with a bluish tint in the haze, rising above forested foothills and green valleys with rivers. Clear morning light, distant snow on the highest peaks, vast scale, no figures."
+    },
+    {
+      "id": "rio-anduin-te3018",
+      "prompt": "A great wide river flowing between wooded banks and low hills, broad and powerful, its water grey-green and swift, with islets, reed beds and sandbanks. Autumn colours on the trees, overcast sky, a sense of a long journey downstream, a few small grey boats far away."
+    },
+    {
+      "id": "mordor-te3018",
+      "prompt": "A vast plateau of dead grey ash and black rock enclosed by jagged dark mountain walls, pocked with pits and craters, crossed by a few dusty roads and rows of crude camps. Smoke and fumes everywhere, a lone volcano smoking in the distance, a brown-red sky without sun. Utterly lifeless, no foreground figures."
+    },
+    {
+      "id": "dagorlad-te3018",
+      "prompt": "A bleak, barren plain before dark mountains, bare earth and stones where nothing grows. On its edge, a wide stagnant marsh of dead water, rotting reeds and mist, with pale faint lights hovering above the pools. Grey sky, dead silence, haunting and desolate, no figures."
+    },
+    {
+      "id": "campos-de-lis-te2",
+      "prompt": "A wide marshland beside a great river, full of tall yellow iris flowers and reeds, pools of still water and channels, a forested line of distant mountains to the east. Late summer evening light, golden, peaceful and melancholic, no figures."
+    },
+    {
+      "id": "ossiriand-pe400",
+      "prompt": "A green and beautiful land of woods and meadows crossed by several clear rivers flowing down from a range of blue mountains in the east. Elms and oaks in leaf, spring flowers, birdsong, gentle sunlight, wild and unspoiled, no figures."
+    },
+    {
+      "id": "hithlum-pe400",
+      "prompt": "A cold, misty northern land of grey-green grassland, lakes and rocky hills enclosed by a wall of high mountains. Low clouds and drifting mist cover everything, a large pale lake in the foreground, a cool damp morning, austere beauty, no figures."
+    },
+    {
+      "id": "dorthonion-pe400",
+      "prompt": "A high forested highland of tall dark pine trees on rolling slopes, with tarns and heather moors between the woods and steep cliffs on its northern edge. Cool clear air, sunlight through the pines, wild and majestic, no figures."
+    },
+    {
+      "id": "brethil-pe400",
+      "prompt": "A broad forest of tall trees between two rivers, mixed woodland with birches and oaks, dappled sunlight, ferns, a narrow path and a few modest wooden houses of foresters in a clearing. Peaceful, green, natural, small distant figures."
+    },
+    {
+      "id": "tol-eressea-se3000",
+      "prompt": "A beautiful green island far out in a calm blue sea, with gentle hills, white beaches and a small haven of white stone towers on its eastern shore. Far behind the island, the faint outline of immense mountains rises on the western horizon. Viewpoint low over the open water, nothing else in the frame: only sea, island, sky and gulls. Bright clear morning sun, serene and otherworldly."
+    },
+    {
+      "id": "cuivienen-aa",
+      "prompt": "A quiet bay of a great inland lake in the far east of a wild land at night, under a sky blazing with countless brilliant stars; there is no sun and no moon. Dark wooded hills and mountains around the bay, the starlight reflected on the still water. Pristine, ancient, untouched by people, magical but natural."
+    }
+  ]
+}
