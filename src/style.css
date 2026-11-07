@@ -518,7 +518,7 @@ kbd {
     box-shadow: 0 0 0 1.5px rgba(20, 14, 6, 0.85), 0 0 0 14px rgba(240, 207, 126, 0);
   }
 }
-#app.sem-nomes .rotulo:not(.selecionado):not(.realce) {
+#mapa.sem-nomes .rotulo:not(.selecionado):not(.realce) {
   display: none;
 }
 
@@ -1278,7 +1278,7 @@ details summary {
   border-color: var(--ouro);
   background: rgba(217, 184, 108, 0.12);
 }
-#app.comparando::after {
+#mapa.comparando::after {
   content: '';
   position: absolute;
   top: 0;
@@ -1291,7 +1291,7 @@ details summary {
   pointer-events: none;
   z-index: 6;
 }
-#app.comparando.divisao-horizontal::after {
+#mapa.comparando.divisao-horizontal::after {
   top: 50%;
   bottom: auto;
   left: 0;
@@ -1488,4 +1488,18 @@ details summary {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* na comparação, os rótulos de cada lado ficam na sua metade */
+#mapa.comparando .lado-a {
+  clip-path: inset(0 50% 0 0);
+}
+#mapa.comparando .lado-b {
+  clip-path: inset(0 0 0 50%);
+}
+#mapa.comparando.divisao-horizontal .lado-a {
+  clip-path: inset(0 0 50% 0);
+}
+#mapa.comparando.divisao-horizontal .lado-b {
+  clip-path: inset(50% 0 0 0);
 }

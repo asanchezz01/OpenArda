@@ -31,7 +31,7 @@ self.onmessage = (ev: MessageEvent<MsgModelo | MsgTile>) => {
     if (!modelos.has(m.assinatura)) {
       modelos.set(m.assinatura, new ModeloTerreno(m.feicoes, m.cadeias, m.limites));
       ordem.push(m.assinatura);
-      while (ordem.length > 6) modelos.delete(ordem.shift()!);
+      while (ordem.length > 10) modelos.delete(ordem.shift()!);
     }
     return;
   }

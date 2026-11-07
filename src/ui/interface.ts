@@ -249,6 +249,7 @@ export class Interface {
   aplicarLink(l: ReturnType<typeof lerLink>) {
     const a = this.app;
     if (!l.jornada && a.jornada) a.sairJornada();
+    if (!l.jornada && a.emCaminhoReto) a.sairCaminhoReto();
     if (l.comparar) a.comparar(l.comparar[0], l.comparar[1]);
     else {
       if (a.comparando) a.sairComparar();
@@ -283,6 +284,7 @@ export class Interface {
     this.conteudoAtual = sel;
     this.renderPainel();
     if (voar) {
+      if (a.travado) this.aviso('Enquadramento fixo: a câmera fica onde está. Destrave (🔒) para voar até lá.');
       const [tipo, id] = sel.split(':');
       if (tipo === 'lugar') {
         const l = lugarPorId.get(id);
@@ -305,8 +307,16 @@ export class Interface {
     return out;
   }
 
+  private painelAgendado = 0;
+  private ultimoRenderPainel = 0;
+  /** Redesenha a ficha aberta no máximo ~6 vezes por segundo (reprodução e arrasto do tempo). */
   private atualizarPainel() {
-    if (!this.painel.hidden && this.conteudoAtual) this.renderPainel(true);
+    if (this.painel.hidden || !this.conteudoAtual || this.painelAgendado) return;
+    const espera = Math.max(0, 160 - (performance.now() - this.ultimoRenderPainel));
+    this.painelAgendado = window.setTimeout(() => {
+      this.painelAgendado = 0;
+      if (!this.painel.hidden && this.conteudoAtual) this.renderPainel(true);
+    }, espera);
   }
 
   private renderPainel(manterScroll = false) {
@@ -333,15 +343,27 @@ export class Interface {
     else if (tipo === 'jornadas') html = this.htmlJornadas();
     else if (tipo === 'eras') html = this.htmlEras();
     if (!html) return;
+    this.ultimoRenderPainel = performance.now();
     const top = this.conteudo.scrollTop;
+    const abertos = manterScroll ? [...this.conteudo.querySelectorAll('details[open] summary')].map((x) => x.textContent) : [];
     this.conteudo.innerHTML = html;
+    if (abertos.length) this.conteudo.querySelectorAll('details').forEach((d) => abertos.includes(d.querySelector('summary')?.textContent ?? null) && (d.open = true));
     this.painel.hidden = false;
     document.body.classList.add('painel-aberto');
     if (manterScroll) this.conteudo.scrollTop = top;
-    else this.conteudo.scrollTop = 0;
+    else {
+      this.conteudo.scrollTop = 0;
+      // leva o foco do teclado à ficha recém-aberta
+      if (!this.painelFocoAntes) this.painelFocoAntes = document.activeElement as HTMLElement | null;
+      if (!matchMedia('(pointer: coarse)').matches) this.conteudo.focus({ preventScroll: true });
+    }
   }
+  private painelFocoAntes: HTMLElement | null = null;
 
   fecharPainel() {
+    const voltar = this.painelFocoAntes;
+    this.painelFocoAntes = null;
+    if (voltar && this.painel.contains(document.activeElement) && document.contains(voltar)) voltar.focus({ preventScroll: true });
     this.painel.hidden = true;
     this.painel.classList.remove('expandido');
     document.body.classList.remove('painel-aberto');
@@ -651,10 +673,14 @@ export class Interface {
   // ---------- teclado ----------
   private teclado(e: KeyboardEvent) {
     const alvo = e.target as HTMLElement;
+    if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
     if (alvo.closest('input, select, textarea')) {
       if (e.key === 'Escape') (alvo as HTMLInputElement).blur();
       return;
     }
+    // o trilho do tempo já trata as setas; botões já tratam Espaço e Enter
+    if (alvo.closest('[role="slider"]') && e.key.startsWith('Arrow')) return;
+    if (alvo.closest('button, a, summary') && (e.key === ' ' || e.key === 'Enter')) return;
     const a = this.app;
     const s = a.camera.estado;
     const passo = s.d * 0.12;

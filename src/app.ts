@@ -41,6 +41,7 @@ export class App {
   readonly B: Lado;
   private veu: SistemaTerreno;
   private veuUniformes: UniformesGlobais;
+  private veuCeu = criarUniformesCeu();
   private estrada: THREE.Mesh;
   private brilhos!: Record<'illuin' | 'ormal' | 'telperion' | 'laurelin', THREE.Sprite>;
   private cena = new THREE.Scene();
@@ -48,6 +49,7 @@ export class App {
   private ouvintes: Ouvinte[] = [];
   private relogio = new THREE.Clock();
   private tempoDebounce = 0;
+  private readonly tVeu = tempo.cursor('PE:400');
   private pendenteTerreno = false;
 
   hora = 3.5;
@@ -145,6 +147,7 @@ export class App {
     };
     this.brilhos = { illuin: brilho(0xfff1c8), ormal: brilho(0xffe2b0), telperion: brilho(0xc8d8ff), laurelin: brilho(0xffc760) };
     this.camera.alturaEm = (x, y) => this.alturaEm(x, y, this.A);
+    this.camera.viewport = (sx, sy) => this.retanguloDe(this.ladoDaTela(sx, sy));
     this.camera.aoToque = (sx, sy) => this.tocar(sx, sy);
     window.addEventListener('resize', () => this.redimensionar());
     this.A.sistema.aoMudarRelevo = () => this.emitir('relevo');
@@ -188,7 +191,7 @@ export class App {
 
   /** Ponto do mundo sob a tela (ray-march no relevo). */
   pontoEm(sx: number, sy: number): THREE.Vector3 | null {
-    const lado = this.ladoDaTela(sx);
+    const lado = this.ladoDaTela(sx, sy);
     const ray = this.camera.raio(sx, sy);
     const m = this.modeloDe(lado);
     if (!m) return this.camera.chao(sx, sy, 0);
@@ -217,11 +220,24 @@ export class App {
     return this.camera.chao(sx, sy, 0);
   }
 
-  ladoDaTela(sx: number): Lado {
+  /** Na comparação, a metade da tela que contém o ponto (esquerda/acima = A). */
+  ladoDaTela(sx: number, sy: number): Lado {
     if (!this.comparando) return this.A;
     const r = this.host.getBoundingClientRect();
-    if (this.divisaoVertical()) return sx - r.left < r.width / 2 ? this.A : this.B;
-    return this.A;
+    if (this.divisaoVertical()) return sx - r.left < Math.floor(r.width / 2) ? this.A : this.B;
+    return sy - r.top < r.height - Math.floor(r.height / 2) ? this.A : this.B;
+  }
+
+  /** Retângulo da tela (em coordenadas do cliente) onde um lado é desenhado. */
+  retanguloDe(lado: Lado): { left: number; top: number; width: number; height: number } {
+    const r = this.host.getBoundingClientRect();
+    if (!this.comparando) return r;
+    if (this.divisaoVertical()) {
+      const w2 = Math.floor(r.width / 2);
+      return lado === this.A ? { left: r.left, top: r.top, width: w2, height: r.height } : { left: r.left + w2, top: r.top, width: r.width - w2, height: r.height };
+    }
+    const hB = Math.floor(r.height / 2);
+    return lado === this.A ? { left: r.left, top: r.top, width: r.width, height: r.height - hB } : { left: r.left, top: r.top + r.height - hB, width: r.width, height: hB };
   }
 
   divisaoVertical() {
@@ -276,8 +292,8 @@ export class App {
   }
 
   // ---------- câmera ----------
-  voar(v: Partial<Vista>, forcar = false): Promise<void> {
-    if (this.travado && !forcar) return Promise.resolve();
+  voar(v: Partial<Vista>, forcar = false): Promise<boolean> {
+    if (this.travado && !forcar) return Promise.resolve(false);
     return this.camera.voar(v);
   }
 
@@ -356,7 +372,8 @@ export class App {
   iniciarJornada(id: string, passo = 0) {
     const j = jornadas.find((x) => x.id === id);
     if (!j) return;
-    this.jornada = { j, passo };
+    // o passo pode vir de um link editado à mão
+    this.jornada = { j, passo: Math.max(0, Math.min(j.passos.length - 1, Math.floor(passo) || 0)) };
     this.aplicarPasso();
   }
 
@@ -388,6 +405,7 @@ export class App {
   }
 
   sairJornada() {
+    if (this.jornada?.j.passos[this.jornada.passo]?.modo === 'caminho-reto') this.sairCaminhoReto();
     this.jornada = null;
     this.horaAuto = true;
     this.emitir('jornada');
@@ -404,9 +422,13 @@ export class App {
     const ini = { x: -2440, y: -560, d: 160, rumo: 285, inclinacao: 78 };
     const meio = { x: -2900, y: -320, d: 320, rumo: 290, inclinacao: 80 };
     const fim = { x: -3300, y: -120, d: 240, rumo: 270, inclinacao: 72 };
-    this.camera.voar(ini, this.reduzirMovimento ? 0 : 2200).then(() =>
-      this.camera.voar(meio, this.reduzirMovimento ? 0 : 6000).then(() => this.camera.voar(fim, this.reduzirMovimento ? 0 : 5000)),
-    );
+    // a sequência para se o visitante assumir a câmera no meio do caminho
+    const r = this.reduzirMovimento;
+    void (async () => {
+      if (!(await this.camera.voar(ini, r ? 0 : 2200))) return;
+      if (!(await this.camera.voar(meio, r ? 0 : 6000))) return;
+      await this.camera.voar(fim, r ? 0 : 5000);
+    })();
     this.emitir('caminho-reto');
   }
 
@@ -424,7 +446,7 @@ export class App {
     const p = this.pontoEm(sx, sy);
     if (!p) return;
     if (this.comparando) {
-      const lado = this.ladoDaTela(sx);
+      const lado = this.ladoDaTela(sx, sy);
       this.ladoAtivo = lado === this.A ? 'A' : 'B';
       this.emitir('tempo');
     }
@@ -522,7 +544,7 @@ export class App {
     // Aman velada
     if (this.veu.grupo.visible) {
       const u = this.veuUniformes;
-      aplicarIluminacao(u, criarUniformesCeu(), { t: tempo.cursor('PE:400'), hora: 0, alvo, tempestade: 0, relampago: 0, veu: 1 });
+      aplicarIluminacao(u, this.veuCeu, { t: this.tVeu, hora: 0, alvo, tempestade: 0, relampago: 0, veu: 1 });
       u.uVeil.value = Math.min(1, this.caminhoReto * 1.4);
       u.uFogColor.value.setRGB(0.62, 0.58, 0.5);
       u.uFogDensity.value = 0.00012;
@@ -573,9 +595,11 @@ export class App {
     this.A.sistema.atualizar(cam, this.camera.zAlvo);
     if (this.comparando) this.B.sistema.atualizar(cam, this.camera.zAlvo);
     this.sobreposicao.costas = this.modeloDe(this.A)?.costas ?? [];
+    this.sobreposicao.sigCostas = this.A.assinaturaModelo;
     this.sobreposicao.atualizar(this.A.sistema.visiveis, this.A.t, (tile, tex) => this.A.sistema.definirOverlay(tile, tex));
     if (this.comparando) {
       this.sobreposicaoB.costas = this.modeloDe(this.B)?.costas ?? [];
+      this.sobreposicaoB.sigCostas = this.B.assinaturaModelo;
       this.sobreposicaoB.atualizar(this.B.sistema.visiveis, this.B.t, (tile, tex) => this.B.sistema.definirOverlay(tile, tex), 4);
     }
 

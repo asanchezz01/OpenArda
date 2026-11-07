@@ -14,7 +14,8 @@ Requer Node.js 18 ou mais recente e um navegador com WebGL 2.
 npm install
 npm run dev        # servidor de desenvolvimento (http://localhost:5173)
 npm run validate   # valida a integridade dos dados em data/
-npm run build      # valida, verifica tipos e gera a versão estática em dist/
+npm test           # testes da linha do tempo, dos estados por período e do relevo
+npm run build      # valida, verifica tipos, roda os testes e gera a versão estática em dist/
 npm run preview    # serve a versão gerada
 ```
 
@@ -87,6 +88,7 @@ src/
   terrain/material.ts shader: biomas, água, neve, luz do Sol, das Árvores e das Lâmpadas, névoa
   render/             câmera, céu, iluminação por período, camadas vetoriais, rótulos
   ui/                 linha do tempo, busca, fichas, painel, camadas, jornadas, links
+tests/                testes (Vitest): tempo, estados dos lugares e reinos, relevo por período
 scripts/
   validate-data.mjs   verificação de ids, referências cruzadas, tempos e fontes
   formatar-dados.mjs  formata terreno.json com uma feição por linha

@@ -15,6 +15,7 @@ import {
   lugarContem,
   lugarPorId,
   reinoPorId,
+  faseAtual,
   fontePorId,
   nomeEra,
   ativo,
@@ -141,9 +142,8 @@ export function fichaLugar(app: App, l: Lugar): string {
       ${st !== 'futuro' && l.depois ? `<p>${esc(l.depois)}</p>` : ''}
       ${
         st !== 'futuro'
-          ? evs
-              .filter((e) => tempo.tEvento(e) <= t + 1e-9)
-              .slice(-2)
+          ? [...new Set([...(faseAtual(l, t)?.evento ? [tempo.evento(faseAtual(l, t)!.evento!)!] : []), ...evs.filter((e) => tempo.tEvento(e) <= t + 1e-9).reverse()])]
+              .slice(0, 2)
               .map((e) => `<p><button type="button" class="link" data-acao="evento" data-id="${e.id}">${esc(e.titulo)}</button> <span class="data">${esc(tempo.dataEvento(e))}</span></p>`)
               .join('')
           : `<p>Período: ${esc(textoPeriodo(l.de, l.ate))}.</p>`
@@ -310,9 +310,18 @@ export function fichaAqui(app: App, x: number, y: number, raio: number): { html:
     })
     .sort((p, q) => q.posto - p.posto);
   const futuros = perto.filter((p) => p.st === 'futuro').slice(0, 3);
-  const regioes = lugares.filter((l) => l.regiao && statusLugar(l, t)[0] !== 'futuro' && (lugarContem(l, x, y) || Math.hypot(l.em[0] - x, l.em[1] - y) < raio * 2.2));
-  // escolha direta: um lugar desaparecido grande (ex.: Númenor depois da Queda)
-  const principalSumido = sumidos.find((l) => lugarContem(l, x, y)) ?? null;
+  const ativoAgora = (l: Lugar) => ['ativo', 'oculto', 'ruina', 'destruido', 'abandonado'].includes(statusLugar(l, t)[0]);
+  const regioes = lugares.filter((l) => l.regiao && ativoAgora(l) && (lugarContem(l, x, y) || Math.hypot(l.em[0] - x, l.em[1] - y) < raio * 2.2));
+  // o lugar desaparecido mais específico: um ponto próximo vence uma ilha, que vence uma região inteira
+  const dist = (l: Lugar) => Math.hypot(l.em[0] - x, l.em[1] - y);
+  const pontoAtivo = agora.length && agora[0].d < raio * 0.45 ? agora[0] : null;
+  const pontoSumido = sumidos.filter((l) => !l.regiao && !lugarContem(l, x, y) && dist(l) < raio * 0.45).sort((p, q) => dist(p) - dist(q))[0];
+  const principalSumido =
+    (pontoSumido && !(pontoAtivo && pontoAtivo.d <= dist(pontoSumido) + 1) ? pontoSumido : undefined) ??
+    sumidos.find((l) => !l.regiao && lugarContem(l, x, y)) ??
+    // uma região inteira desaparecida só é o assunto principal se não houver lugar vivo no ponto
+    (pontoAtivo ? undefined : sumidos.find((l) => lugarContem(l, x, y))) ??
+    null;
   const ilhaOuRegiao = lugares.find((l) => (l.tipo === 'ilha' || l.regiao) && l.posto <= 2 && ['ativo', 'oculto'].includes(statusLugar(l, t)[0]) && lugarContem(l, x, y));
   const principal = principalSumido ?? (agora.length && agora[0].d < raio * 0.5 ? agora[0].l : null) ?? ilhaOuRegiao ?? null;
   let html = `<header class="ficha-cab"><p class="tipo">Consulta no mapa · GA ${Math.round(x)} L, ${Math.round(y)} N km</p>
@@ -321,7 +330,8 @@ export function fichaAqui(app: App, x: number, y: number, raio: number): { html:
   if (principalSumido) {
     const l = principalSumido;
     const evs = (l.eventos ?? []).map((id) => tempo.evento(id)!).filter((e) => e && tempo.tEvento(e) <= t + 1e-9);
-    const fim = evs.slice(-1)[0];
+    const evFase = faseAtual(l, t)?.evento;
+    const fim = (evFase ? tempo.evento(evFase) : undefined) ?? evs.slice(-1)[0];
     const ult = ultimoMomento(l);
     html += `<section class="bloco destaque"><h3>O que aconteceu com este lugar?</h3>
       <p><strong>Aqui ficava ${esc(l.nome)}.</strong> ${esc(l.depois ?? '')}</p>

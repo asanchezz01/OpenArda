@@ -75,9 +75,19 @@ export class LinhaDoTempo {
     return i + k / Math.max(1, n);
   }
 
-  /** Converte uma referência temporal numa fronteira do eixo t. */
+  private memo = new Map<string, number>();
+
+  /** Converte uma referência temporal numa fronteira do eixo t (memorizada: é chamada a cada quadro). */
   fronteira(ref: TempoRef | undefined, padrao: number): number {
     if (ref == null) return padrao;
+    const m = this.memo.get(ref);
+    if (m !== undefined) return m;
+    const v = this.calcularFronteira(ref);
+    this.memo.set(ref, v);
+    return v;
+  }
+
+  private calcularFronteira(ref: TempoRef): number {
     if (ref === '-inf') return -Infinity;
     if (ref === '+inf') return Infinity;
     const m = ref.match(/^(?:([A-Z]{2}):)?(#?)(.+)$/);

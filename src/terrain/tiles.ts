@@ -22,14 +22,22 @@ export interface DadosTile {
   vis: Float32Array;
 }
 
-type Resolver = (d: DadosTile) => void;
+type Resolver = (d: DadosTile | null) => void;
+
+interface Pedido {
+  msg: Record<string, unknown>;
+  res: Resolver;
+  prio: number;
+  cancelado: () => boolean;
+}
 
 export class PoolWorkers {
   private workers: Worker[] = [];
   private ocupados: number[] = [];
-  private fila: { msg: unknown; res: Resolver; prio: number; cancelado: () => boolean }[] = [];
-  private pend = new Map<number, Resolver>();
-  private modelosEnviados = new Set<string>();
+  private fila: Pedido[] = [];
+  private pend = new Map<number, Pedido>();
+  // feições de cada período, para reenviar o modelo se um worker o tiver descartado
+  private modelos = new Map<string, Feicao[]>();
   private prox = 1;
   constructor(n: number) {
     for (let i = 0; i < n; i++) {
@@ -37,22 +45,40 @@ export class PoolWorkers {
       w.onmessage = (ev) => {
         const d = ev.data;
         this.ocupados[i]--;
-        const r = this.pend.get(d.id);
+        const p = this.pend.get(d.id);
         this.pend.delete(d.id);
-        if (r && d.tipo === 'tile') r(d as DadosTile);
+        if (p) {
+          if (d.tipo === 'tile') p.res(d as DadosTile);
+          else if (d.tipo === 'erro' && typeof p.msg.assinatura === 'string' && this.modelos.has(p.msg.assinatura)) {
+            // o worker descartou o modelo deste período: reenvia e tenta de novo
+            this.enviarModelo(w, p.msg.assinatura);
+            this.fila.push(p);
+          } else p.res(null);
+        }
         this.bombear();
+      };
+      w.onerror = () => {
+        // falha inesperada no worker: libera os pedidos para não travar o carregamento
+        for (const [id, p] of this.pend) {
+          this.pend.delete(id);
+          p.res(null);
+        }
+        this.ocupados[i] = 0;
       };
       this.workers.push(w);
       this.ocupados.push(0);
     }
   }
-  garantirModelo(assinatura: string, feicoes: Feicao[]) {
-    if (this.modelosEnviados.has(assinatura)) return;
-    this.modelosEnviados.add(assinatura);
-    const msg = { tipo: 'modelo', assinatura, feicoes, cadeias: terreno.cadeias, limites: terreno.limites };
-    for (const w of this.workers) w.postMessage(msg);
+  private enviarModelo(w: Worker, assinatura: string) {
+    w.postMessage({ tipo: 'modelo', assinatura, feicoes: this.modelos.get(assinatura), cadeias: terreno.cadeias, limites: terreno.limites });
   }
-  pedir(msg: Record<string, unknown>, prio: number, cancelado: () => boolean): Promise<DadosTile> {
+  garantirModelo(assinatura: string, feicoes: Feicao[]) {
+    if (this.modelos.has(assinatura)) return;
+    this.modelos.set(assinatura, feicoes);
+    for (const w of this.workers) this.enviarModelo(w, assinatura);
+  }
+  /** Resolve com os dados do ladrilho, ou null se o pedido foi cancelado. */
+  pedir(msg: Record<string, unknown>, prio: number, cancelado: () => boolean): Promise<DadosTile | null> {
     return new Promise((res) => {
       this.fila.push({ msg, res, prio, cancelado });
       this.bombear();
@@ -63,15 +89,19 @@ export class PoolWorkers {
   }
   private bombear() {
     if (!this.fila.length) return;
-    this.fila = this.fila.filter((f) => !f.cancelado());
+    this.fila = this.fila.filter((f) => {
+      if (!f.cancelado()) return true;
+      f.res(null);
+      return false;
+    });
     this.fila.sort((a, b) => a.prio - b.prio);
     for (let i = 0; i < this.workers.length && this.fila.length; i++) {
       while (this.ocupados[i] < 2 && this.fila.length) {
         const item = this.fila.shift()!;
         const id = this.prox++;
-        this.pend.set(id, item.res);
+        this.pend.set(id, item);
         this.ocupados[i]++;
-        this.workers[i].postMessage({ ...(item.msg as object), id });
+        this.workers[i].postMessage({ ...item.msg, id });
       }
     }
   }
@@ -252,12 +282,24 @@ export class SistemaTerreno {
     const luz = this.opcoes.luzArvores?.() ?? null;
     const assin = t.assinatura;
     this.pool
-      .pedir({ tipo: 'tile', assinatura: assin, x0: t.x0, y0: t.y0, tamanho: t.tam, res: RES, luz }, prio, () => !this.tiles.has(t.chave) || (this.quadro - t.usado > 90 && t.nivel > 1))
+      .pedir({ tipo: 'tile', assinatura: assin, x0: t.x0, y0: t.y0, tamanho: t.tam, res: RES, luz }, prio, () => this.obsoleto(t))
       .then((d) => {
         if (!this.tiles.has(t.chave)) return;
+        if (!d) {
+          // cancelado na fila: pode ser pedido de novo se voltar a ser útil
+          t.pedido = false;
+          return;
+        }
         t.dados = d;
         this.criarMesh(t);
       });
+  }
+
+  /** Pedido que não vale mais a pena: ladrilho descartado, fora de vista há muito, ou de um período já abandonado. */
+  private obsoleto(t: Tile): boolean {
+    if (!this.tiles.has(t.chave)) return true;
+    if (t.assinatura !== this.assinaturaAlvo && t.assinatura !== this.assinaturaExibida) return true;
+    return this.quadro - t.usado > 90 && t.nivel > 1;
   }
 
   /** Amostra altura/água de um ladrilho já pronto (ou ancestral) de outra assinatura. */

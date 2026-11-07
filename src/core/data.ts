@@ -7,7 +7,7 @@ import lugaresJson from '../../data/lugares.json';
 import reinosJson from '../../data/reinos.json';
 import fontesJson from '../../data/fontes.json';
 import jornadasJson from '../../data/jornadas.json';
-import type { DadosTerreno, Era, Evento, Feicao, Fonte, Jornada, Lugar, Pt, Reino, StatusLugar, Territorio } from './types';
+import type { DadosTerreno, Era, Evento, FaseLugar, Feicao, Fonte, Jornada, Lugar, Pt, Reino, StatusLugar, Territorio } from './types';
 import { LinhaDoTempo } from './time';
 import { resolverContorno, pontoNoPoligonoPts } from '../terrain/model';
 import { hashString } from '../terrain/noise';
@@ -26,6 +26,28 @@ export const tempo = new LinhaDoTempo(eras, eventos);
 // Árvores; feições de detalhe da Terra-média sem data surgem depois da queda das
 // Lâmpadas (a geografia dos Anos das Lâmpadas é só esquemática).
 for (const l of lugares) if (l.de == null) l.de = 'AA:inicio';
+
+// Destino dos lugares que somem nas duas grandes catástrofes: em vez de "já não
+// existe", o atlas diz o que aconteceu (submerso na Guerra da Ira; submerso ou
+// retirado do mundo na Queda de Númenor) e aponta o acontecimento.
+const CATASTROFES: Record<string, { evento: string; status: (l: Lugar) => StatusLugar }> = {
+  'PE:587': { evento: 'pe-ruina-beleriand', status: () => 'submerso' },
+  'SE:3319': { evento: 'se-queda', status: (l) => (l.em[0] < -2900 ? 'removido' : 'submerso') },
+};
+for (const l of lugares) {
+  const c = l.ate ? CATASTROFES[l.ate] : undefined;
+  if (c && !l.fases?.length) {
+    l.fases = [
+      { de: l.de!, status: 'ativo' },
+      { de: l.ate!, status: c.status(l), evento: c.evento },
+    ];
+    delete l.ate;
+  }
+  for (const f of l.fases ?? []) {
+    const cf = CATASTROFES[f.de];
+    if (cf && !f.evento && (f.status === 'submerso' || f.status === 'removido')) f.evento = cf.evento;
+  }
+}
 const DETALHE = new Set(['rio', 'floresta', 'bioma', 'cordilheira', 'pico', 'planalto', 'lago', 'gelo', 'estrada', 'bacia', 'passo']);
 for (const f of terreno.feicoes) if (f.de == null && f.ate == null && DETALHE.has(f.tipo) && f.grupo !== 'aman') f.de = 'AL:#al-aman';
 
@@ -118,6 +140,13 @@ export function assinaturaPolitica(t: number): string {
 }
 
 /** Status de um lugar em t: [status, fase]. 'inexistente' antes da origem. */
+/** Fase em que o lugar está no instante t (com o acontecimento que a abriu, se houver). */
+export function faseAtual(l: Lugar, t: number): FaseLugar | undefined {
+  let atual: FaseLugar | undefined;
+  for (const f of l.fases ?? []) if (t >= tempo.fronteira(f.de, -Infinity)) atual = f;
+  return atual;
+}
+
 export function statusLugar(l: Lugar, t: number): [StatusLugar | 'futuro' | 'ausente', string | undefined] {
   const de = tempo.fronteira(l.de, -Infinity);
   if (t < de) return ['futuro', undefined];

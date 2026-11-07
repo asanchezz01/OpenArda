@@ -6,6 +6,13 @@ import type { Vista } from '../core/types';
 
 export interface EstadoCamera extends Vista {}
 
+export interface Retangulo {
+  left: number;
+  top: number;
+  width: number;
+  height: number;
+}
+
 const D_MIN = 1.2;
 const D_MAX = 14000;
 const INCL_MAX = 84;
@@ -24,7 +31,12 @@ export class Camera {
   aoToque?: (sx: number, sy: number) => void;
   bloqueada = false;
   reduzirMovimento = false;
-  private voo: { de: EstadoCamera; para: EstadoCamera; t0: number; dur: number; b: number; resolver: () => void } | null = null;
+  /** Área da tela onde a cena é desenhada para um ponto (na comparação, a metade que o contém). */
+  viewport: (sx: number, sy: number) => Retangulo = () => this.el.getBoundingClientRect();
+  private vpFixo: Retangulo | null = null;
+  private toquePendente = 0;
+  private ultimoTipo = 'mouse';
+  private voo: { de: EstadoCamera; para: EstadoCamera; t0: number; dur: number; b: number; resolver: (completo: boolean) => void } | null = null;
   private alvoZSuave = 0;
   private el: HTMLElement;
   private ponteiros = new Map<number, { x: number; y: number; x0: number; y0: number; t0: number; botao: number }>();
@@ -47,6 +59,9 @@ export class Camera {
     el.addEventListener('wheel', this.onWheel, { passive: false });
     el.addEventListener('contextmenu', (e) => e.preventDefault());
     el.addEventListener('dblclick', (e) => {
+      // o toque duplo no celular é tratado em onDown/onUp
+      if (this.ultimoTipo === 'touch') return;
+      this.cancelarToque();
       if (this.bloqueada) return;
       this.zoomEm(e.clientX, e.clientY, e.shiftKey || e.altKey ? 2 : 0.45, true);
     });
@@ -101,8 +116,11 @@ export class Camera {
     s.y = Math.min(2600, Math.max(-3000, s.y));
   }
 
-  /** Voo suave até um destino; o arco sobe para mostrar o caminho. */
-  voar(para: Partial<EstadoCamera>, duracao?: number): Promise<void> {
+  /**
+   * Voo suave até um destino; o arco sobe para mostrar o caminho.
+   * A promessa resolve com true se o voo chegou ao fim e false se foi interrompido.
+   */
+  voar(para: Partial<EstadoCamera>, duracao?: number): Promise<boolean> {
     const de = { ...this.estado };
     const alvo = { ...de, ...para };
     alvo.d = Math.min(D_MAX, Math.max(D_MIN, alvo.d));
@@ -111,13 +129,13 @@ export class Camera {
     const b = Math.max(0, Math.log(Math.max(dm, 1)) - Math.max(Math.log(de.d), Math.log(alvo.d)));
     let dur = duracao ?? Math.min(4500, Math.max(1200, 1000 + 900 * Math.log2(1 + dist / Math.max(1, Math.min(de.d, alvo.d)))));
     if (this.reduzirMovimento) dur = 0;
-    this.voo?.resolver();
+    this.voo?.resolver(false);
     if (dur <= 0) {
       this.estado = alvo;
       this.limitar();
       this.voo = null;
       this.aoMudar?.();
-      return Promise.resolve();
+      return Promise.resolve(true);
     }
     return new Promise((resolver) => {
       this.voo = { de, para: alvo, t0: performance.now(), dur, b, resolver };
@@ -126,9 +144,19 @@ export class Camera {
 
   pararVoo() {
     if (this.voo) {
-      this.voo.resolver();
+      this.voo.resolver(false);
       this.voo = null;
     }
+  }
+
+  private cancelarToque() {
+    clearTimeout(this.toquePendente);
+    this.toquePendente = 0;
+  }
+
+  private ndc(sx: number, sy: number): THREE.Vector2 {
+    const r = this.vpFixo ?? this.viewport(sx, sy);
+    return new THREE.Vector2(((sx - r.left) / r.width) * 2 - 1, -((sy - r.top) / r.height) * 2 + 1);
   }
 
   tick(dt: number) {
@@ -149,7 +177,7 @@ export class Camera {
         this.estado = { ...v.para };
         this.limitar();
         this.voo = null;
-        v.resolver();
+        v.resolver(true);
       }
       this.aoMudar?.();
     } else if (!this.arrasto && !this.gesto2 && (Math.abs(this.vel.x) > 0.001 || Math.abs(this.vel.y) > 0.001)) {
@@ -169,9 +197,7 @@ export class Camera {
 
   /** Interseção do raio da tela com o plano do chão (z = altura do alvo). */
   chao(sx: number, sy: number, z = this.alvoZSuave): THREE.Vector3 | null {
-    const r = this.el.getBoundingClientRect();
-    const ndc = new THREE.Vector2(((sx - r.left) / r.width) * 2 - 1, -((sy - r.top) / r.height) * 2 + 1);
-    this.ray.setFromCamera(ndc, this.cam);
+    this.ray.setFromCamera(this.ndc(sx, sy), this.cam);
     const d = this.ray.ray.direction;
     const o = this.ray.ray.origin;
     if (Math.abs(d.z) < 1e-6) return null;
@@ -184,9 +210,7 @@ export class Camera {
 
   /** Raio da tela em coordenadas do mundo (para o ray-march no terreno). */
   raio(sx: number, sy: number): THREE.Ray {
-    const r = this.el.getBoundingClientRect();
-    const ndc = new THREE.Vector2(((sx - r.left) / r.width) * 2 - 1, -((sy - r.top) / r.height) * 2 + 1);
-    this.ray.setFromCamera(ndc, this.cam);
+    this.ray.setFromCamera(this.ndc(sx, sy), this.cam);
     return this.ray.ray.clone();
   }
 
@@ -203,6 +227,9 @@ export class Camera {
 
   private onDown = (e: PointerEvent) => {
     this.el.setPointerCapture(e.pointerId);
+    this.ultimoTipo = e.pointerType;
+    // a câmera continua usando a mesma metade da tela durante todo o gesto
+    if (this.ponteiros.size === 0) this.vpFixo = this.viewport(e.clientX, e.clientY);
     this.pararVoo();
     this.vel.x = this.vel.y = 0;
     this.moveu = false;
@@ -213,6 +240,8 @@ export class Camera {
       const agora = performance.now();
       const dt = agora - this.ultimoToque.t;
       const perto = Math.hypot(e.clientX - this.ultimoToque.x, e.clientY - this.ultimoToque.y) < 40;
+      // um segundo toque logo após o primeiro: não é consulta, é toque duplo
+      if (dt < 320 && perto) this.cancelarToque();
       const orbita = e.button === 2 || e.button === 1 || e.ctrlKey || e.shiftKey;
       const g = this.chao(e.clientX, e.clientY);
       if (e.pointerType === 'touch' && dt < 320 && perto) {
@@ -332,16 +361,30 @@ export class Camera {
     this.ponteiros.delete(e.pointerId);
     if (this.ponteiros.size < 2) this.gesto2 = null;
     if (this.ponteiros.size === 0) {
-      const tocou = p && !this.moveu && performance.now() - p.t0 < 400;
-      if (this.arrasto?.tipo === 'zoom1' && tocou && !this.bloqueada) {
+      const tocou = !!p && !this.moveu && performance.now() - p.t0 < 400 && p.botao === 0;
+      const duplo = this.arrasto?.tipo === 'zoom1';
+      if (duplo && tocou && !this.bloqueada) {
         // toque duplo sem arrastar: aproxima
         this.zoomEm(e.clientX, e.clientY, 0.45, true);
+        this.ultimoToque = { t: 0, x: 0, y: 0 };
       } else if (tocou) {
-        this.aoToque?.(e.clientX, e.clientY);
+        // espera um instante para distinguir o toque simples do toque duplo
+        const x = e.clientX,
+          y = e.clientY;
+        const vp = this.vpFixo;
+        this.cancelarToque();
+        this.toquePendente = window.setTimeout(() => {
+          this.toquePendente = 0;
+          const antes = this.vpFixo;
+          this.vpFixo = vp;
+          this.aoToque?.(x, y);
+          this.vpFixo = antes;
+        }, 260);
+        this.ultimoToque = { t: performance.now(), x, y };
       }
       if (performance.now() - this.ultimoMov > 80) this.vel.x = this.vel.y = 0;
       this.arrasto = null;
-      if (p && tocou) this.ultimoToque = { t: performance.now(), x: e.clientX, y: e.clientY };
+      this.vpFixo = null;
     }
   };
 
@@ -349,6 +392,7 @@ export class Camera {
     e.preventDefault();
     if (this.bloqueada) return;
     this.pararVoo();
+    this.cancelarToque();
     const delta = e.deltaMode === 1 ? e.deltaY * 30 : e.deltaY;
     this.zoomEm(e.clientX, e.clientY, Math.exp(delta * 0.0016));
   };

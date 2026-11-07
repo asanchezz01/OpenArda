@@ -63,6 +63,28 @@ function cruza(bb: [number, number, number, number], x0: number, y0: number, t: 
   return !(bb[0] > x0 + t + m || bb[2] < x0 - m || bb[1] > y0 + t + m || bb[3] < y0 - m);
 }
 
+/** Trechos de costa com caixa delimitadora, para desenhar só o que cruza cada ladrilho. */
+interface Trecho {
+  pts: Pt[];
+  bb: [number, number, number, number];
+}
+const trechosCache = new WeakMap<Pt[][], Trecho[]>();
+function trechosDe(costas: Pt[][]): Trecho[] {
+  let t = trechosCache.get(costas);
+  if (!t) {
+    t = [];
+    for (const poli of costas) {
+      const fechado = [...poli, poli[0]];
+      for (let i = 0; i < fechado.length - 1; i += 192) {
+        const pts = fechado.slice(i, Math.min(fechado.length, i + 193));
+        t.push({ pts, bb: bboxPts(pts) });
+      }
+    }
+    trechosCache.set(costas, t);
+  }
+  return t;
+}
+
 let hachura: CanvasPattern | null = null;
 let hachuraCert: CanvasPattern | null = null;
 function padroes(ctx: CanvasRenderingContext2D) {
@@ -100,6 +122,8 @@ export class Sobreposicao {
   camadas: Camadas = { ...CAMADAS_PADRAO };
   selecionado: string | null = null;
   costas: Pt[][] = [];
+  /** Assinatura do relevo de onde vêm as costas (entra na chave do cache). */
+  sigCostas = '';
   private cache = new Map<string, Entrada>();
   private quadro = 0;
   private canvasLivres: HTMLCanvasElement[] = [];
@@ -115,7 +139,7 @@ export class Sobreposicao {
       if (this.assinaturaCache.size > 400) this.assinaturaCache.clear();
       this.assinaturaCache.set(k, s);
     }
-    return s + JSON.stringify(this.camadas) + (this.selecionado ?? '') + this.costas.length;
+    return s + JSON.stringify(this.camadas) + (this.selecionado ?? '') + this.sigCostas;
   }
 
   /** Atualiza as texturas dos ladrilhos visíveis, com orçamento de tempo. */
@@ -171,7 +195,7 @@ export class Sobreposicao {
     const rs = c.rios ? rios(t).filter((r) => nivel >= ((r.ordem ?? 2) === 1 ? 1 : (r.ordem ?? 2) === 2 ? 3 : 4) && cruza(bboxPts(r.pts!), x0, y0, tam, margem)) : [];
     const es = c.estradas && nivel >= 3 ? estradasAtivas(t).filter((r) => cruza(bboxPts(r.pts!), x0, y0, tam, margem)) : [];
     const zonas = c.certeza ? terreno.feicoes.filter((f) => f.tipo === 'zona' && f.nivel === 'artistico' && ativo(f.id, f.de, f.ate, t) && f.contorno) : [];
-    const costas = nivel <= 4 ? this.costas.filter((p) => cruza(bboxPts(p), x0, y0, tam, margem)) : [];
+    const costas = nivel <= 4 ? trechosDe(this.costas).filter((p) => cruza(p.bb, x0, y0, tam, margem)) : [];
     const vest = c.vestigios
       ? lugares.filter((l) => {
           const st = statusLugar(l, t)[0];
@@ -220,7 +244,7 @@ export class Sobreposicao {
       ctx.strokeStyle = nivel <= 2 ? 'rgba(244,232,200,0.55)' : 'rgba(244,232,200,0.32)';
       ctx.lineWidth = px(nivel <= 1 ? 1.6 : 1.1);
       for (const p of costas) {
-        poligono(ctx, p);
+        poligono(ctx, p.pts, false);
         ctx.stroke();
       }
     }
