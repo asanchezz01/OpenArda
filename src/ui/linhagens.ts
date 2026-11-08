@@ -23,9 +23,10 @@ import {
   unioesDe,
   type Governo,
   type Pessoa,
+  type Povo,
   type Senhorio,
 } from '../core/linhagens';
-import { esc, listaFontes } from './util';
+import { esc, listaFontes, miniatura } from './util';
 
 const PROFUNDIDADE = 3; // gerações de descendência abaixo da pessoa em foco
 const ICONE_ARVORE = '<svg class="icone-arvore" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v4M8 5.5H3.5v3M8 5.5h4.5v3M8 5.5v3M3.5 8.5v2M12.5 8.5v2M8 8.5v2" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="2" r="1.6" fill="currentColor"/><circle cx="3.5" cy="12.5" r="1.6" fill="currentColor"/><circle cx="8" cy="12.5" r="1.6" fill="currentColor"/><circle cx="12.5" cy="12.5" r="1.6" fill="currentColor"/></svg>';
@@ -37,11 +38,11 @@ const periodo = (g: Governo) => textoPeriodo(g.de, g.ate);
 const botaoArvore = (id: string) =>
   `<button type="button" class="abrir-arvore" data-acao="arvore-tela" data-id="${esc(id)}" title="Abrir árvore genealógica" aria-label="Abrir árvore genealógica de ${nome(id)}">${ICONE_ARVORE}</button>`;
 
-function foto(id: string, tamanho: number): string {
+function foto(id: string, tamanho: number, adiar = tamanho === 36): string {
   const r = retratoDe(id);
   if (!r) return '';
   return `<button type="button" class="retrato-ampliar" data-acao="retrato" data-id="${esc(id)}" aria-label="Ampliar retrato de ${nome(id)}" aria-haspopup="dialog" title="Ampliar retrato">
-    <img src="${esc(r.imagem)}" alt="${tamanho === 36 ? '' : esc(r.alt)}" width="${tamanho}" height="${tamanho}"${tamanho === 36 ? ' loading="lazy"' : ''}></button>`;
+    <img src="${esc(miniatura(r.imagem))}" alt="${tamanho === 36 ? '' : esc(r.alt)}" width="${tamanho}" height="${tamanho}" decoding="async"${adiar ? ' loading="lazy"' : ''}></button>`;
 }
 
 /** Quadro ampliado; o dialog nativo cuida do foco e do fechamento por Esc. */
@@ -141,7 +142,7 @@ function cartaoPoder(p: Pessoa): string {
   const com = p.casa?.map((q) => chip(q)).join(' ');
   const servico = p.servo_de?.map((q) => chip(q)).join(' ');
   return `<div class="valar-cartao povo-${p.povo}">
-    ${r ? foto(p.id, 96) : `<button type="button" class="valar-sem-retrato" data-acao="sel" data-sel="linhagem:${esc(p.id)}" aria-label="Abrir ficha de ${esc(p.nome)}"><i class="povo-sinal" aria-hidden="true"></i>${esc(p.nome[0] ?? '')}</button>`}
+    ${r ? foto(p.id, 96, true) : `<button type="button" class="valar-sem-retrato" data-acao="sel" data-sel="linhagem:${esc(p.id)}" aria-label="Abrir ficha de ${esc(p.nome)}"><i class="povo-sinal" aria-hidden="true"></i>${esc(p.nome[0] ?? '')}</button>`}
     <div class="valar-cartao-corpo">
       <strong class="pessoa-nome">${esc(p.nome)}</strong>
       ${p.epiteto ? `<span class="pessoa-ep">${esc(p.epiteto)}</span>` : ''}
@@ -153,12 +154,14 @@ function cartaoPoder(p: Pessoa): string {
 
 /** Galeria dos Valar e Maiar: os retratos, casais, séquito e caminho para as árvores. */
 export function fichaValar(app: App): string {
-  const grupo = (povo: 'vala' | 'maia') => pessoas.filter((p) => p.povo === povo);
+  const grupo = (povo: Povo) => pessoas.filter((p) => p.povo === povo);
+  const unico = grupo('ainu');
   const valar = grupo('vala');
   const maior = grupo('maia');
   const cartoes = (lista: Pessoa[]) => `<div class="valar-grade">${lista.map(cartaoPoder).join('')}</div>`;
-  return `<header class="ficha-cab"><p class="tipo">Linhagens · ${esc(NOME_POVO.vala)} e ${esc(NOME_POVO.maia)}</p><h2>Valar e Maiar</h2>
-    <p class="nota">Os Poderes de Ilúvatar: Valar, os que ampararam a Terra desde o Primeiro Dia, e Maiar, seus servos. Toque num retrato para ampliá-lo, num nome para abrir a ficha.</p></header>
+  return `<header class="ficha-cab"><p class="tipo">Linhagens · ${esc(NOME_POVO.ainu)}, ${esc(NOME_POVO.vala)} e ${esc(NOME_POVO.maia)}</p><h2>Valar e Maiar</h2>
+    <p class="nota">Eru, o Único, pai dos Valar; os Valar, que ampararam a Terra desde o Primeiro Dia; e os Maiar, seus servos. Toque num retrato para ampliá-lo, num nome para abrir a ficha.</p></header>
+    <section class="bloco"><h3>Eru, o Único</h3>${cartoes(unico)}</section>
     <section class="bloco"><h3>Valar</h3>${cartoes(valar)}</section>
     <section class="bloco"><h3>Maiar</h3>${cartoes(maior)}</section>
     <section class="bloco"><h3>Fontes</h3><p class="nota">As ligações de casa, irmãos, senhor e séquito seguem a Valaquenta, em O Silmarillion. Os retratos são interpretações artísticas.</p></section>

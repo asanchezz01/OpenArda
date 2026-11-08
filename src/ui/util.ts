@@ -1,5 +1,10 @@
 import type { Certeza, FonteRef } from '../core/types';
 import { fontePorId } from '../core/data';
+import miniaturas from '../../data/miniaturas.json';
+
+export function miniatura(imagem: string): string {
+  return (miniaturas as Record<string, string>)[imagem] ?? imagem;
+}
 
 export function esc(s: string): string {
   return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);

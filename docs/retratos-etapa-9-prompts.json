@@ -1,0 +1,46 @@
+{
+  "etapa": 9,
+  "titulo": "Eru, o Único",
+  "data": "2026-11-07",
+  "prioridade_geracao": [
+    "API local ComfyUI (10.1.4.150), como no HopeGym",
+    "API de imagens da OpenAI se a local estiver indisponível"
+  ],
+  "geracao": {
+    "api": "ComfyUI local",
+    "script": "scripts/gerar-fotografias.py --retratos",
+    "modelo": {
+      "unet": "flux-2-klein-9b-fp8.safetensors",
+      "clip": "qwen_3_8b_fp8mixed.safetensors",
+      "steps": 4,
+      "cfg": 1
+    },
+    "resolucao": [
+      1024,
+      1024
+    ],
+    "webp": {
+      "resolucao": [
+        512,
+        512
+      ],
+      "alvo_kib": 100
+    }
+  },
+  "pesquisa": "Eru (Ilúvatar) não é um dos Valar nem um Maia: é o Todo-Poderoso, anterior a tudo o que é. As fontes descrevem sua natureza, não sua aparência; o retrato é, portanto, inteiramente interpretação artística da luz de Ilúvatar.",
+  "personagens": [
+    {
+      "id": "eru",
+      "nome": "Eru",
+      "epoca": "antes de toda a Música dos Ainur, e sempre",
+      "prompt": "Photorealistic cinematic portrait for OpenArda's Tolkien genealogy. Exactly one presence: Eru Ilúvatar, The One, the supreme Being who made the Ainur and whose will sang the Ainos — beyond all created forms, no ordinary body. Where a face might be expected, show only a serene, ageless androgynous countenance half-formed out of pure radiance: eyes without lids gazing with infinite compassion and boundless knowledge, no hair, no hands, no garments, the outline of the face dissolving at its edges into light. A blazing corona of white-gold radiance surrounds the head and fades outward into the depths of the creation: a few distant first stars, the first light of the world, the Music made visible. The light itself is the subject; immense, calm, all-embracing majesty, no menace. Dramatic soft celestial lighting, gentle volumetric rays, sense of infinite depth. Centered square frame filled edge to edge, no background floor or landscape. Exactly one face, no other beings, no text, no watermark, no border or vignette, no crown, no symbols. Preserve the described appearance; make this figure unique and unmistakably supreme.",
+      "documentado": [
+        "Eru Ilúvatar, o Único; fez os Ainur, propôs-lhes o tema da Grande Música e deu existência ao Mundo com a palavra Eä."
+      ],
+      "inferido": [
+        "Rosto entrevisto na luz: as fontes não descrevem aparência; interpretação artística.",
+        "Coroa radiante dourada-branca e fundo de primeiras estrelas: interpretação."
+      ]
+    }
+  ]
+}

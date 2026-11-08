@@ -169,6 +169,15 @@ export class Interface {
 
   private ligar() {
     const a = this.app;
+    const atividade = () => a.definirAtividadeInterface(
+      !this.fotosTela.hidden || !this.arvoreTela.hidden || this.retratoTela.open,
+      !this.painel.hidden || !this.camadasEl.hidden,
+    );
+    const visibilidade = new MutationObserver(atividade);
+    for (const el of [this.fotosTela, this.arvoreTela, this.retratoTela, this.painel, this.camadasEl]) {
+      visibilidade.observe(el, { attributes: true, attributeFilter: ['hidden', 'open'] });
+    }
+    atividade();
     this.busca.aoAcao = (acao, dados) => this.executar(acao, dados);
     this.linha.aoEscolherEra = (id) => this.escolherEra(id);
     this.linha.aoComparar = () => this.alternarComparar();

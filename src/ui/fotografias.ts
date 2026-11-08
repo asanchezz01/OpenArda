@@ -3,7 +3,7 @@
 import type { App } from '../app';
 import { lugarPorId, tempo } from '../core/data';
 import { fotos, fotosEm, momento, validade, type Foto, type FotosDoLugar } from '../core/fotografias';
-import { esc, listaFontes } from './util';
+import { esc, listaFontes, miniatura } from './util';
 
 const SELO = 'Imagem gerada por IA · interpretação a partir de Tolkien';
 const quando = (f: Foto) => tempo.rotulo(momento(f)).principal;
@@ -16,16 +16,16 @@ export function blocoFotoFicha(info: FotosDoLugar): string {
   const outras = info.todas.filter((x) => x !== f);
   return `<section class="foto-ficha">
     <button type="button" class="foto-abrir" data-acao="foto" data-id="${esc(f.id)}" aria-label="Ampliar: ${esc(f.titulo)}">
-      <img src="${esc(f.imagem!)}" alt="${esc(f.alt)}" width="1536" height="1024" loading="lazy">
+      <img src="${esc(miniatura(f.imagem!))}" alt="${esc(f.alt)}" width="1536" height="1024" loading="lazy" decoding="async">
     </button>
     <p class="foto-legenda"><strong>${esc(f.titulo)}</strong> · ${esc(quando(f))}<span class="selo-ia">${SELO}</span></p>
     ${info.outraEpoca ? `<p class="nota">Ainda não há foto desta época. <button type="button" class="link" data-acao="tempo" data-t="${momento(f)}">Ver em ${esc(quando(f))}</button></p>` : ''}
-    ${outras.length ? `<div class="foto-epocas">${outras.map((x) => `<button type="button" data-acao="foto" data-id="${esc(x.id)}" title="${esc(x.titulo)} · ${esc(quando(x))}"><img src="${esc(x.imagem!)}" alt="" width="96" height="64" loading="lazy"><span>${esc(quando(x))}</span></button>`).join('')}</div>` : ''}
+    ${outras.length ? `<div class="foto-epocas">${outras.map((x) => `<button type="button" data-acao="foto" data-id="${esc(x.id)}" title="${esc(x.titulo)} · ${esc(quando(x))}"><img src="${esc(miniatura(x.imagem!))}" alt="" width="96" height="64" loading="lazy" decoding="async"><span>${esc(quando(x))}</span></button>`).join('')}</div>` : ''}
   </section>`;
 }
 
 const cartaoGrade = (f: Foto) =>
-  `<li><button type="button" data-acao="foto" data-id="${esc(f.id)}"><img src="${esc(f.imagem!)}" alt="${esc(f.alt)}" width="1536" height="1024" loading="lazy"><span class="fotos-nome">${esc(lugarPorId.get(f.lugar)?.nome ?? f.lugar)}</span><span class="nota">${esc(f.titulo)} · ${esc(quando(f))}</span></button></li>`;
+  `<li><button type="button" data-acao="foto" data-id="${esc(f.id)}"><img src="${esc(miniatura(f.imagem!))}" alt="${esc(f.alt)}" width="1536" height="1024" loading="lazy" decoding="async"><span class="fotos-nome">${esc(lugarPorId.get(f.lugar)?.nome ?? f.lugar)}</span><span class="nota">${esc(f.titulo)} · ${esc(quando(f))}</span></button></li>`;
 
 /** Agrupa por era, na ordem da linha do tempo. */
 function porEra(lista: Foto[]): [string, Foto[]][] {

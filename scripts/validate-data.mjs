@@ -175,7 +175,7 @@ const linhagens = ler('linhagens');
 const retratos = ler('retratos');
 const idPessoas = ids(linhagens.pessoas, 'pessoas');
 ids(linhagens.senhorios, 'senhorios');
-const POVOS = new Set(['noldor', 'sindar', 'teleri', 'vanyar', 'maia', 'edain', 'meio', 'dunedain', 'hobbit', 'anao', 'homem', 'vala', 'orc']);
+const POVOS = new Set(['noldor', 'sindar', 'teleri', 'vanyar', 'maia', 'edain', 'meio', 'dunedain', 'hobbit', 'anao', 'homem', 'vala', 'ainu', 'orc']);
 for (const p of linhagens.pessoas) {
   const onde = `pessoa ${p.id}`;
   if (!POVOS.has(p.povo)) erro(`${onde}: povo inválido "${p.povo}"`);
@@ -218,6 +218,12 @@ for (const f of fotografias) {
   verificarFontes(f.fontes, onde);
   if (!f.alt || !f.titulo) erro(`${onde}: sem título ou texto alternativo`);
   if (f.imagem && !existsSync(new URL(`../public/${f.imagem}`, import.meta.url))) erro(`${onde}: arquivo ausente public/${f.imagem}`);
+}
+
+// Miniaturas são publicadas junto com o manifesto; imagens novas podem usar o original.
+for (const [original, miniatura] of Object.entries(ler('miniaturas'))) {
+  if (!existsSync(new URL(`../public/${original}`, import.meta.url))) erro(`miniatura: original ausente ${original}`);
+  if (!existsSync(new URL(`../public/${miniatura}`, import.meta.url))) erro(`miniatura: arquivo ausente ${miniatura}`);
 }
 
 // fontes: lacunas registradas explicitamente

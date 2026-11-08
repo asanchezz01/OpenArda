@@ -4,6 +4,7 @@ import { fotos, fotosDoLugar, fotosDoReino, fotosEm, momento, validade } from '.
 import type { App } from '../src/app';
 import { fichaLugar, fichaReino } from '../src/ui/fichas';
 import { htmlPainelFotos, htmlVisualizador } from '../src/ui/fotografias';
+import { miniatura } from '../src/ui/util';
 
 const em = (ref: string) => tempo.cursor(ref);
 
@@ -64,10 +65,11 @@ describe('fotografias dos lugares', () => {
   it('fichas e visualizador mostram a foto, o selo de IA e o que é descrito', () => {
     const app = { t: em('TE:3018') } as App;
     const ficha = fichaLugar(app, lugarPorId.get('minas-anor')!);
-    expect(ficha).toContain('src="fotografias/minas-anor-te3018.webp"');
+    expect(ficha).toContain(`src="${miniatura('fotografias/minas-anor-te3018.webp')}"`);
     expect(ficha).toContain('Imagem gerada por IA');
-    expect(fichaReino(app, reinoPorId.get('rohan')!)).toContain('fotografias/edoras-te3018.webp');
+    expect(fichaReino(app, reinoPorId.get('rohan')!)).toContain(miniatura('fotografias/edoras-te3018.webp'));
     const v = htmlVisualizador(app, 'gondolin-pe400');
+    expect(v).toContain('src="fotografias/gondolin-pe400.webp"');
     expect(v).toContain('Descrito por Tolkien');
     expect(v).toContain('data-acao="tempo"'); // em 3018 T.E. a foto é de outra época
     expect(htmlVisualizador({ t: em('PE:400') } as App, 'gondolin-pe400')).not.toContain('data-acao="tempo"');

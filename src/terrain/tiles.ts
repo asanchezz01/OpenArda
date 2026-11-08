@@ -42,6 +42,7 @@ export class PoolWorkers {
   // feições de cada período, para reenviar o modelo se um worker o tiver descartado
   private modelos = new Map<string, Feicao[]>();
   private prox = 1;
+  private pausado = false;
   constructor(n: number) {
     for (let i = 0; i < n; i++) {
       const w = new TerrainWorker();
@@ -90,8 +91,12 @@ export class PoolWorkers {
   get pendentes() {
     return this.fila.length + this.pend.size;
   }
+  definirPausado(pausado: boolean) {
+    this.pausado = pausado;
+    if (!pausado) this.bombear();
+  }
   private bombear() {
-    if (!this.fila.length) return;
+    if (this.pausado || !this.fila.length) return;
     this.fila = this.fila.filter((f) => {
       if (!f.cancelado()) return true;
       f.res(null);

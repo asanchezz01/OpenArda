@@ -6,7 +6,7 @@ import retratosJson from '../../data/retratos.json';
 import type { FonteRef, TempoRef } from './types';
 import { reinoPorId, tempo } from './data';
 
-export type Povo = 'noldor' | 'sindar' | 'teleri' | 'vanyar' | 'maia' | 'edain' | 'meio' | 'dunedain' | 'hobbit' | 'anao' | 'homem' | 'vala' | 'orc';
+export type Povo = 'noldor' | 'sindar' | 'teleri' | 'vanyar' | 'maia' | 'edain' | 'meio' | 'dunedain' | 'hobbit' | 'anao' | 'homem' | 'vala' | 'ainu' | 'orc';
 
 export const NOME_POVO: Record<Povo, string> = {
   noldor: 'Noldor',
@@ -21,6 +21,7 @@ export const NOME_POVO: Record<Povo, string> = {
   anao: 'Anões',
   homem: 'Homens',
   vala: 'Valar',
+  ainu: 'Ainur',
   orc: 'Orcs',
 };
 
@@ -34,7 +35,7 @@ export interface Pessoa {
   fem?: boolean;
   datas?: string;
   casa?: string[]; // cônjuge registrado nas fontes (união sem filhos)
-  irmaos?: string[]; // irmãos nomeados sem pais registrados
+  irmaos?: string[]; // irmãos nomeados sem pais registrados (ou com Eru como pai)
   servo_de?: string[]; // Valar/Maia a quem o Maia atende
   resumo: string;
   fontes: FonteRef[];
@@ -167,10 +168,11 @@ export function ascendencia(id: string, geracoes = 3): { pais: string[]; elo?: s
   return linhas;
 }
 
-/** Irmãos e meios-irmãos. Ligações com gerações omitidas não contam como irmandade. */
+/** Irmãos e meios-irmãos. Ligações com gerações omitidas não contam como irmandade.
+ *  Eru não gera irmandade: os Valar são prole do seu pensamento; os irmãos deles vêm de `irmaos`. */
 export function irmaosDe(id: string): { p: Pessoa; meio: boolean }[] {
   const eu = pessoaPorId.get(id);
-  if (!eu?.pais?.length || eu.elo) return [];
+  if (!eu?.pais?.length || eu.elo || eu.pais.some((q) => pessoaPorId.get(q)?.povo === 'ainu')) return [];
   const meus = eu.pais;
   return pessoas
     .filter((p) => p.id !== id && !p.elo && paisDe(p).some((q) => meus.includes(q)))

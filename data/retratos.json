@@ -4127,5 +4127,30 @@
       "modelo": "flux-2-klein-9b-fp8.safetensors",
       "seed": 206239933412592
     }
+  },
+  {
+    "id": "eru",
+    "nome": "Eru",
+    "documentado": [
+      "Eru Ilúvatar, o Único; fez os Ainur, prole do seu pensamento, propôs-lhes o tema da Grande Música e deu existência ao Mundo com a palavra Eä."
+    ],
+    "inferido": [
+      "As fontes o descrevem sem forma fixa; o rosto entrevisto na luz, a coroa radiante e o pano de fundo estelar são interpretação artística.",
+      "Eru não tem aparência documentada: o retrato mostra uma manifestação possível, não uma descrição da obra.",
+      "Iluminação, enquadramento e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Ainulindalë; Valaquenta. Consulta por conhecimento prévio da obra."
+      }
+    ],
+    "alt": "Retrato artístico de Eru Ilúvatar, o Único",
+    "imagem": "retratos/eru.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 90863783289698
+    }
   }
 ]

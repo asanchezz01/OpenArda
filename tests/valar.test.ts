@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import retratos from '../data/retratos.json';
 import { tempo } from '../src/core/data';
-import { governoEm, pessoaPorId, pessoas, sequitoDe, senhorioDoReino } from '../src/core/linhagens';
+import { governoEm, irmaosDe, pessoaPorId, pessoas, sequitoDe, senhorioDoReino } from '../src/core/linhagens';
 import type { App } from '../src/app';
 import { blocoGovernoReino, fichaLinhagem, fichaSenhorios, fichaValar } from '../src/ui/linhagens';
 
@@ -37,6 +37,8 @@ describe('Valar e Maiar', () => {
     expect(pessoaPorId.get('varda')?.casa).toEqual(['manwe']);
     expect(pessoaPorId.get('nienna')?.irmaos).toEqual(['mandos', 'irmo']);
     expect(pessoaPorId.get('orome')?.irmaos).toEqual(['nessa']);
+    expect(pessoaPorId.get('manwe')?.pais).toEqual(['eru']);
+    expect(irmaosDe('manwe')).toEqual([]); // pai comum em Eru não faz dos Valar irmãos
     expect(pessoaPorId.get('osse')?.servo_de).toEqual(['ulmo']);
     expect(sequitoDe('manwe').map((p) => p.id)).toEqual(['eonwe']);
   });

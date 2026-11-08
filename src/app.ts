@@ -101,12 +101,12 @@ export class App {
     this.camera.reduzirMovimento = this.reduzirMovimento;
     const nw = Math.max(1, Math.min(4, (navigator.hardwareConcurrency || 4) - 1));
     this.pool = new PoolWorkers(nw);
-    const luz = () => EZELLOHAR;
     const mk = (rotHost: HTMLElement): Lado => {
       const uniformes = criarUniformesGlobais();
-      const sistema = new SistemaTerreno(this.pool, uniformes, { luzArvores: luz });
+      const sistema = new SistemaTerreno(this.pool, uniformes, { luzArvores: () => regimeDe(lado.t) === 'arvores' ? EZELLOHAR : null });
       this.cena.add(sistema.grupo);
-      return { t: 0, sistema, uniformes, ceu: criarUniformesCeu(), modelo: null, assinaturaModelo: '', rotulos: new Rotulos(rotHost), globo: new Globo() };
+      const lado: Lado = { t: 0, sistema, uniformes, ceu: criarUniformesCeu(), modelo: null, assinaturaModelo: '', rotulos: new Rotulos(rotHost), globo: new Globo() };
+      return lado;
     };
     const rotA = document.createElement('div');
     rotA.className = 'camada-rotulos lado-a';
@@ -196,17 +196,29 @@ export class App {
     this.cena.add(this.oceano);
     this.camera.aoToque = (sx, sy) => this.tocar(sx, sy);
     window.addEventListener('resize', () => this.redimensionar());
+    document.addEventListener('visibilitychange', () => {
+      this.pool.definirPausado(document.hidden || this.mapaCoberto);
+      this.relogio.getDelta();
+      this.emaQuadro = 16;
+      this.deltaRender = 0;
+    });
     this.A.sistema.aoMudarRelevo = () => this.emitir('relevo');
   }
 
   // ---------- consultas ----------
+  private estadoRelevo(t: number) {
+    const est = estadoTerreno(t);
+    // A geometria pode ser a mesma antes e depois do fim da luz das Árvores.
+    return { ...est, assinatura: est.assinatura + (regimeDe(t) === 'arvores' ? ':arvores' : '') };
+  }
+
   modeloDe(lado: Lado): ModeloTerreno | null {
     const sig = lado.sistema.assinatura || '';
     if (lado.assinaturaModelo === sig && lado.modelo) return lado.modelo;
     if (!sig) return null;
     let m = this.modelos.get(sig);
     if (!m) {
-      const est = estadoTerreno(lado.t);
+      const est = this.estadoRelevo(lado.t);
       if (est.assinatura !== sig) {
         // a assinatura exibida ainda é a anterior; usa o estado alvo quando pronto
         return lado.modelo;
@@ -330,7 +342,7 @@ export class App {
     const dur = this.reduzirMovimento ? 600 : 2600;
     for (const l of [this.A, this.B]) {
       if (l === this.B && !this.comparando) continue;
-      const est = estadoTerreno(l.t);
+      const est = this.estadoRelevo(l.t);
       l.sistema.definirEstado(est.assinatura, est.feicoes, est.feicoes.length ? dur : dur);
     }
   }
@@ -529,6 +541,21 @@ export class App {
     requestAnimationFrame(loop);
   }
 
+  private mapaCoberto = false;
+  private interfaceAberta = false;
+  private ultimoRender = 0;
+  private deltaRender = 0;
+
+  definirAtividadeInterface(coberto: boolean, aberta: boolean) {
+    if (this.mapaCoberto === coberto && this.interfaceAberta === aberta) return;
+    this.mapaCoberto = coberto;
+    this.interfaceAberta = aberta;
+    this.deltaRender = 0;
+    this.ultimoRender = 0;
+    this.emaQuadro = 16;
+    this.pool.definirPausado(coberto || document.hidden);
+  }
+
   // resolução dinâmica: mantém a fluidez em aparelhos modestos
   private emaQuadro = 16;
   private ultimoAjuste = 0;
@@ -538,11 +565,10 @@ export class App {
     if (this.resolucaoFixa) return;
     this.emaQuadro = this.emaQuadro * 0.92 + dtReal * 1000 * 0.08;
     const agora = performance.now();
-    if (agora - this.ultimoAjuste < 2500) return;
     const pr = this.renderer.getPixelRatio();
     let novo = pr;
-    if (this.emaQuadro > 48 && pr > 0.6) novo = Math.max(0.6, pr * 0.8);
-    else if (this.emaQuadro < 20 && pr < this.prMax) novo = Math.min(this.prMax, pr * 1.2);
+    if (this.emaQuadro > 22 && agora - this.ultimoAjuste >= 1000 && pr > 0.6) novo = Math.max(0.6, pr * 0.8);
+    else if (this.emaQuadro < 17.5 && agora - this.ultimoAjuste >= 4000 && !this.carregando && !this.interfaceAberta && pr < this.prMax) novo = Math.min(this.prMax, pr * 1.2);
     if (Math.abs(novo - pr) > 0.01) {
       this.renderer.setPixelRatio(novo);
       this.renderer.setSize(this.host.clientWidth, this.host.clientHeight);
@@ -552,13 +578,25 @@ export class App {
 
   private quadro() {
     const dtReal = this.relogio.getDelta();
-    if (!this.carregando) this.ajustarResolucao(dtReal);
-    const dt = Math.min(0.1, dtReal);
-    const agora = performance.now() / 1000;
+    const dtSim = Math.min(0.1, dtReal);
     if (this.horaAuto && regimeDe(this.t) === 'arvores') {
-      this.hora = (this.hora + dt * (this.reduzirMovimento ? 0.08 : 0.25)) % 12;
+      this.hora = (this.hora + dtSim * (this.reduzirMovimento ? 0.08 : 0.25)) % 12;
     }
-    this.camera.tick(dt);
+    this.camera.tick(dtSim);
+    if (this.mapaCoberto || document.hidden) {
+      this.deltaRender = 0;
+      // A reprodução da linha do tempo continua mesmo com o mapa encoberto.
+      this.emitir('quadro');
+      return;
+    }
+    this.ajustarResolucao(dtReal);
+    this.deltaRender += dtReal;
+    const agoraMs = performance.now();
+    if (this.interfaceAberta && agoraMs - this.ultimoRender < 1000 / 30 - 0.5) return;
+    this.ultimoRender = agoraMs;
+    const dt = Math.min(0.1, this.deltaRender);
+    this.deltaRender = 0;
+    const agora = agoraMs / 1000;
     this.camera.ajustarAspecto(this.aspectoVista());
     this.camera.aplicar();
     const cam = this.camera.cam;
