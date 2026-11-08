@@ -126,9 +126,40 @@ As fronteiras vêm das novas fases de `armenelos` e `romenna` em `data/lugares.j
 - Andúnië, no oeste, e a Grande Armada.
 - Decidir se o marcador de Rómenna deve ir para a costa (revisão cartográfica).
 
+## Quinta entrega: Doriath — Menegroth
+
+**Implementado nesta versão:** as Mil Cavernas de Thingol e Melian, numa colina rochosa da floresta de faias, na margem sul do Esgalduin. O exterior segue a fotografia aprovada [A entrada de Menegroth](../public/fotografias/menegroth-pe400.webp): uma única ponte de pedra em arco sobre o rio, o caminho calçado e o portal cavado na encosta, com faias e colunas em relevo, portas de madeira e degraus. A colina tem topo musgoso, afloramentos de rocha e árvores.
+
+**Modo de corte:** um setor de 80° da colina, voltado para a câmera da visita, fica aberto como numa maquete em corte. A rocha do setor é uma laje cortada na altura do teto dos salões. Os salões e corredores são furos reais da extrusão, e as paredes dos furos são as paredes escavadas. Acima do teto, as faces da seção fecham a colina. Pelo corte se veem o salão do trono, com duas fileiras de pilares em forma de faia, lanternas de ouro, piso de pedras de muitas cores e os tronos de Thingol e Melian num estrado de mármore; o salão da fonte, com a bacia de mármore e a fonte de prata; a câmara do tesouro; e os corredores iluminados.
+
+![Menegroth em 400 P.E.: colina na floresta, o corte com os salões, o portal, a ponte e o Esgalduin](capturas/11-menegroth-3d.png)
+
+| Período do atlas | Representação |
+| --- | --- |
+| Antes da fundação (Anos das Árvores) | Sem salões |
+| Fundação até 502 P.E. | Salões íntegros, lanternas acesas |
+| c. 503 P.E. | Saqueada pelos Anões: sem lanternas, tesouro e tronos; escombros |
+| 504–505 P.E. | Restaurada por Dior |
+| 506–586 P.E. | Destruída pelos filhos de Fëanor: portas arrombadas, pilares caídos, fonte seca, mais escombros |
+| A partir de 587 P.E. | Modelo ocultado com o afundamento de Beleriand |
+
+As fases vêm de `menegroth` em `data/lugares.json` (`FASES_MENEGROTH`), e um teste exige que coincidam.
+
+**Como visitar:** em **Camadas e legenda**, escolha **Visitar Menegroth em 3D**. Também é possível abrir a ficha de Menegroth ou de Doriath e escolher **Explorar cidade em 3D**. Durante a existência dos salões, a visita preserva a época, inclusive nos Anos das Árvores, sob a luz de Telperion e Laurelin. Fora dela, abre em 400 P.E.
+
+**Interpretação visual:** *O Silmarillion* (cap. 10) descreve a ponte única, os pilares esculpidos como as faias de Oromë, com tronco, galhos e folhas, as lanternas de ouro, as fontes de prata, as bacias de mármore e os pisos de pedras de muitas cores. A forma da colina, a planta e o número de salões, o portal e o corte são artísticos. O Cinturão de Melian não é representado.
+
+**Implantação:** o marcador de Menegroth no mapa fica a cerca de 5 km do traçado do Esgalduin. O modelo é assentado em `COLINA_MENEGROTH`, na margem sul. A curva do rio no modelo coincide com um vértice do traçado do atlas (um teste confere), e o trecho em 3D segue as duas pernas desse traçado até a borda da base. As peças compartilhadas com Númenor (torres, telhados, árvores, navios) ficam em `src/render/oficina.ts`.
+
+### Próximos detalhes de Doriath
+
+- Uma alternância do corte (aberto ou fechado) na ficha da visita.
+- O Cinturão de Melian como efeito de névoa nas bordas do reino.
+- Decidir se o marcador de Menegroth deve ir para a margem do rio (revisão cartográfica).
+
 ## Ordem de expansão
 
-Esta é uma ordem de implementação, sem datas prometidas. Gondolin, Minas Tirith, Edoras, Armenelos e Rómenna já têm arquitetura 3D; os demais itens estão planejados.
+Esta é uma ordem de implementação, sem datas prometidas. Gondolin, Minas Tirith, Edoras, Armenelos, Rómenna e Menegroth já têm arquitetura 3D; os demais itens estão planejados.
 
 | Ordem | Reino / domínio | Primeiro local | Entrega visual e temporal | Dependência principal |
 | --- | --- | --- | --- | --- |
@@ -136,7 +167,7 @@ Esta é uma ordem de implementação, sem datas prometidas. Gondolin, Minas Tiri
 | 2 | **Gondor** | Minas Anor / Minas Tirith | **Versão inicial implementada** (cidadela, níveis, muralhas e relação com Mindolluin); depois, Osgiliath e suas ruínas | Definir versões por época a partir das fases dos lugares |
 | 3 | **Rohan** | Edoras | **Versão inicial implementada** (colina, fosso, muralha, Meduseld, túmulos e Longo Inverno); depois, o Abismo de Helm | Arquitetura de madeira e implantação no relevo |
 | 4 | **Númenor** | Armenelos e Rómenna | **Versão inicial implementada** (paço, Nimloth, Templo, porto e frotas por época; desaparecimento na Queda); depois, o Meneltarma e Andúnië | Relacionar os assentamentos à geografia da ilha |
-| 5 | Doriath | Menegroth | Entrada, ponte e representação dos salões subterrâneos | Definir um modo de corte que permita ver o interior |
+| 5 | **Doriath** | Menegroth | **Versão inicial implementada** (entrada, ponte, salões subterrâneos em corte, saque e destruição); depois, o Cinturão de Melian | O modo de corte foi definido: setor aberto da colina |
 | 6 | Nargothrond | Nargothrond | Portas, salões, ponte e ruínas junto ao Narog | Reutilizar o modo subterrâneo e datar a ponte |
 | 7 | Lindon e Eregion | Mithlond; depois Ost-in-Edhil | Cais, navios estáticos e oficinas; ruínas de Eregion | Acrescentar a cidade de Ost-in-Edhil aos dados com fontes próprias |
 | 8 | Arnor e Arthedain | Annúminas e Fornost | Capitais em atividade e ruínas por período | Separar os períodos de cada capital |

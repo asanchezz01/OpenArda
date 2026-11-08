@@ -3,6 +3,8 @@ import { describe, expect, it, vi } from 'vitest';
 import { estadoTerreno, lugarPorId, tempo, terreno } from '../src/core/data';
 import { ARVORE_MINAS_TIRITH, EDORAS, estadoEdoras, faseEdoras, faseGondolin, faseMinasTirith, MINAS_TIRITH, VISTA_EDORAS, VISTA_GONDOLIN, VISTA_MINAS_TIRITH } from '../src/core/detalhes';
 import { ARMENELOS, CAIS_ROMENNA, FASES_ARMENELOS, FASES_ROMENNA, faseArmenelos, faseRomenna, ROMENNA, VISTA_ARMENELOS, VISTA_ROMENNA } from '../src/core/detalhes';
+import { COLINA_MENEGROTH, FASES_MENEGROTH, faseMenegroth, MENEGROTH, VISTA_MENEGROTH } from '../src/core/detalhes';
+import { criarMenegroth, distanciaRio, PORTAO, RIO } from '../src/render/menegroth';
 import { alturaColina, casco, criarArmenelos, criarRomenna, naviosRomenna, TEMPLO } from '../src/render/numenor';
 import { criarEdoras, perfilEdoras } from '../src/render/edoras';
 import { criarGondolin } from '../src/render/gondolin';
@@ -401,5 +403,64 @@ describe('Númenor: Armenelos e Rómenna', () => {
     const reino = fichaReino(app, reinoPorId.get('numenor')!);
     expect(reino).toContain('data-acao="armenelos-3d"');
     expect(reino).toContain('data-acao="romenna-3d"');
+  });
+});
+
+describe('Menegroth', () => {
+  const instancias = (g: THREE.Object3D) => g.children.filter((c): c is THREE.InstancedMesh => c instanceof THREE.InstancedMesh);
+  const lanternasAcesas = (g: THREE.Object3D) =>
+    instancias(g).filter((m) => (m.material as THREE.MeshStandardMaterial).emissiveIntensity > 0 && (m.material as THREE.MeshStandardMaterial).emissive.getHex() !== 0).reduce((n, m) => n + m.count, 0);
+
+  it.each([
+    ['PE', 400, 'integra'], ['PE', 502, 'integra'], ['PE', 503, 'saqueada'], ['PE', 504, 'integra'],
+    ['PE', 506, 'destruida'], ['PE', 586, 'destruida'], ['PE', 587, null], ['SE', 10, null],
+  ] as const)('em %s %i está %s', (era, ano, fase) => {
+    expect(faseMenegroth(tempo.tAno(era, ano))).toBe(fase);
+  });
+
+  it('existe desde a fundação nos Anos das Árvores, com as fases de data/lugares.json', () => {
+    expect(faseMenegroth(tempo.cursor('AA:#aa-menegroth'))).toBe('integra');
+    expect(MENEGROTH.fases!.map((f) => f.de)).toEqual([...Object.keys(FASES_MENEGROTH), 'PE:587']);
+  });
+
+  it('o modelo fica na margem do Esgalduin do atlas, com a ponte na curva e as portas voltadas para ela', () => {
+    const esgalduin = terreno.feicoes.find((f) => f.id === 'rio-esgalduin')!.pts!;
+    const curva = [COLINA_MENEGROTH[0] + RIO.curva[0], COLINA_MENEGROTH[1] + RIO.curva[1]];
+    expect(esgalduin.some(([x, y]) => Math.hypot(x - curva[0], y - curva[1]) < 1e-9)).toBe(true);
+    expect(distanciaRio(...RIO.curva)).toBe(0);
+    expect(distanciaRio(0, 0)).toBeGreaterThan(0.45); // a colina não toca o rio
+    expect(PORTAO).toBeCloseTo(Math.atan2(RIO.curva[1], RIO.curva[0]));
+  });
+
+  it('gera o corte, os salões e as lanternas; saque e destruição apagam as luzes', () => {
+    const integra = criarMenegroth('integra');
+    expect(instancias(integra).map((m) => Array.from(m.instanceMatrix.array))).toEqual(instancias(criarMenegroth('integra')).map((m) => Array.from(m.instanceMatrix.array)));
+    expect(integra.getObjectByName('Corte')).toBeTruthy();
+    const box = new THREE.Box3().setFromObject(integra);
+    expect([...box.min.toArray(), ...box.max.toArray()].every(Number.isFinite)).toBe(true);
+    expect(lanternasAcesas(integra)).toBeGreaterThan(20);
+    expect(lanternasAcesas(criarMenegroth('saqueada'))).toBe(0);
+    expect(lanternasAcesas(criarMenegroth('destruida'))).toBe(0);
+  });
+
+  it('aparece perto da câmera e some quando Beleriand afunda', () => {
+    const te = tempo.tAno('PE', 400);
+    const relevo = new ModeloTerreno(estadoTerreno(te).feicoes, terreno.cadeias, terreno.limites);
+    const camera = new THREE.PerspectiveCamera();
+    camera.position.set(VISTA_MENEGROTH.x + 1, VISTA_MENEGROTH.y, 2);
+    const camada = new DetalhesReinos();
+    const u = criarUniformesGlobais();
+    camada.atualizar(te, camera, relevo, u, true);
+    const modelo = camada.grupo.children.find((c) => c.name === 'Menegroth: integra')!;
+    expect(modelo.visible).toBe(true);
+    expect(modelo.position.x).toBe(COLINA_MENEGROTH[0]);
+    camada.atualizar(tempo.tAno('PE', 587), camera, relevo, u, true);
+    expect(camada.grupo.visible).toBe(false);
+  });
+
+  it('aparece nas fichas de Menegroth e de Doriath', () => {
+    const app = { t: tempo.tAno('PE', 400) } as App;
+    expect(fichaLugar(app, MENEGROTH)).toContain('data-acao="menegroth-3d"');
+    expect(fichaReino(app, reinoPorId.get('doriath')!)).toContain('data-acao="menegroth-3d"');
   });
 });

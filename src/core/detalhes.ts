@@ -103,3 +103,20 @@ export function faseRomenna(t: number): FaseRomenna | null {
   const f = faseAtual(ROMENNA, t);
   return f ? FASES_ROMENNA[f.de] ?? null : null;
 }
+
+/**
+ * Menegroth: os salões de Thingol, saqueados pelos Anões (c. 503), restaurados por Dior e
+ * destruídos pelos filhos de Fëanor em 506; afundam com Beleriand em 587.
+ */
+export type FaseMenegroth = 'integra' | 'saqueada' | 'destruida';
+
+export const MENEGROTH = lugarPorId.get('menegroth')!;
+/** O marcador fica ~5 km do traçado do Esgalduin; o modelo é assentado na margem sul, junto à curva do rio. */
+export const COLINA_MENEGROTH: [number, number] = [-168.7, -114.42];
+export const VISTA_MENEGROTH: Vista = { x: COLINA_MENEGROTH[0] - 0.02, y: COLINA_MENEGROTH[1] + 0.06, d: 1.3, rumo: 250, inclinacao: 58 };
+export const FASES_MENEGROTH: Record<string, FaseMenegroth> = { 'AA:#aa-menegroth': 'integra', 'PE:503': 'saqueada', 'PE:504': 'integra', 'PE:506': 'destruida' };
+
+export function faseMenegroth(t: number): FaseMenegroth | null {
+  const f = faseAtual(MENEGROTH, t);
+  return f ? FASES_MENEGROTH[f.de] ?? null : null;
+}
