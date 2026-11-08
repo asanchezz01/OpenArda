@@ -34,7 +34,7 @@
     "cor": "#c98f5a",
     "descricao": "Anos do Sol. Os Noldor travam a guerra contra Morgoth em Beleriand. Doriath, Nargothrond e Gondolin florescem e caem; a Guerra da Ira encerra a era e afunda grande parte de Beleriand.",
     "nota_datas": "Os anos da Primeira Era vêm dos Anais Cinzentos e do Conto dos Anos (The History of Middle-earth, vol. XI). O Silmarillion publicado quase não traz anos, por isso essas datas aparecem marcadas como 'inferido'.",
-    "vista": { "x": -330, "y": -130, "d": 1300, "rumo": 0, "inclinacao": 50 },
+    "vista": {"x": -314, "y": -27, "d": 1300, "rumo": 0, "inclinacao": 50},
     "cursor_padrao": "PE:400"
   },
   {
@@ -62,7 +62,7 @@
     "cor": "#8fb07a",
     "descricao": "Os reinos no exílio se dividem e declinam; Rohan surge nas antigas terras de Gondor; a era termina com a Guerra do Anel.",
     "nota_datas": "Anos dos Apêndices A e B de O Senhor dos Anéis.",
-    "vista": { "x": 1300, "y": -500, "d": 2400, "rumo": 0, "inclinacao": 40 },
+    "vista": {"x": 1309, "y": -789, "d": 2400, "rumo": 0, "inclinacao": 40},
     "cursor_padrao": "TE:1000"
   },
   {
@@ -76,7 +76,7 @@
     "cor": "#c9b98f",
     "descricao": "O Reino Reunido sob Elessar. O atlas cobre os primeiros anos da era, até a morte do rei em 120 Q.E.",
     "nota_datas": "Anos do Apêndice B ('Acontecimentos posteriores'), convertidos do Registro do Condado (1422 R.C. = 1 Q.E.).",
-    "vista": { "x": 1500, "y": -600, "d": 2200, "rumo": 0, "inclinacao": 40 },
+    "vista": {"x": 1425, "y": -930, "d": 2200, "rumo": 0, "inclinacao": 40},
     "cursor_padrao": "QE:6"
   }
 ]

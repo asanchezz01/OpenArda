@@ -35,8 +35,8 @@ interface Rota {
 
 export const ROTAS: Rota[] = [
   { id: 'armada', de: 'SE:3310', ate: 'SE:3319', cor: '#c0504d', rotulo: 'Rota da Grande Armada (Akallabêth)', pts: [[-2565, -581], [-2565, -517], [-2700, -420], [-2950, -230], [-3150, -40], [-3300, 30], [-3440, 0]] },
-  { id: 'elendil', de: 'SE:3319', ate: 'SE:3330', cor: '#e7d9a8', rotulo: 'Navios de Elendil até Lindon', pts: [[-2133, -737], [-2006, -780], [-1860, -800], [-1500, -600], [-700, -420], [30, -280], [335, -232]] },
-  { id: 'filhos', de: 'SE:3319', ate: 'SE:3330', cor: '#e7d9a8', rotulo: 'Navios de Isildur e Anárion até o Anduin', pts: [[-2133, -737], [-2006, -780], [-1860, -800], [-1200, -1000], [0, -1150], [900, -1250], [1500, -1250], [1810, -1185], [1902, -1082]] },
+  { id: 'elendil', de: 'SE:3319', ate: 'SE:3330', cor: '#e7d9a8', rotulo: 'Navios de Elendil até Lindon', pts: [[-2133, -737], [-2006, -780], [-1860, -800], [-1500, -600], [-700, -420], [96, -467], [183, -437], [373, -418]] },
+  { id: 'filhos', de: 'SE:3319', ate: 'SE:3330', cor: '#e7d9a8', rotulo: 'Navios de Isildur e Anárion até o Anduin', pts: [[-2133, -737], [-2006, -780], [-1860, -800], [-1200, -1200], [-300, -1700], [500, -1800], [1100, -1800], [1470, -1660], [1546, -1583], [1605, -1575], [1659, -1540]] },
   { id: 'interdicao', de: 'SE:32', ate: 'SE:3319', cor: '#9bc1e6', rotulo: 'Limite aproximado da Interdição dos Valar', pts: [[-2700, -100], [-2760, -500], [-2780, -900], [-2720, -1300]] },
 ];
 

@@ -23,6 +23,8 @@ A pasta `dist/` é estática e pode ser publicada em qualquer servidor de arquiv
 
 ## O que já dá para fazer
 
+- **Cartografia revisada com o LotrProject.** Costas, montanhas, rios, lagos, florestas e posições de lugares da Terra-média e de Beleriand foram conferidos nos mapas de referência. Estradas, territórios, rotas e vistas das jornadas acompanham o novo alinhamento. Veja o [método, a cobertura e os limites da revisão](docs/REVISAO-CARTOGRAFICA.md).
+
 - **Detalhes dos reinos em 3D — Gondolin.** Em *Camadas e legenda*, escolha *Visitar Gondolin em 3D*. A cidade aparece sobre Amon Gwareth com muralhas, torres, bairros, jardins e fontes. A linha do tempo mostra obras (52–115 P.E.), a cidade íntegra (116–509), ruínas (510–586) e a submersão a partir de 587. A comparação entre épocas também inclui os modelos. A arquitetura é uma reconstrução artística.
 - **Detalhes dos reinos em 3D — Minas Tirith.** Em *Camadas e legenda*, escolha *Visitar Minas Tirith em 3D*. Os sete níveis, a muralha negra, os portões alternados, a proa de rocha, a Cidadela e a Torre Branca ficam na encosta do Mindolluin. A linha do tempo mostra a Árvore Branca ausente (antes de 2 T.E.), viva ou morta, conforme as fases do lugar. Veja o [roadmap dos principais reinos](docs/ROADMAP-REINOS-3D.md).
 - **Detalhes dos reinos em 3D — Edoras.** Em *Camadas e legenda*, escolha *Visitar Edoras em 3D*. A colina verde aparece com fosso, muralha e cerca de espinhos, o caminho calçado com o canal de água, a escada, o terraço e Meduseld com o telhado dourado. A linha do tempo mostra os túmulos dos reis crescendo a cada morte do Apêndice A e a neve do Longo Inverno em 2758 T.E.

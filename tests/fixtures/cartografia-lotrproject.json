@@ -1,0 +1,127 @@
+{
+  "terra-media": {
+    "url": "http://lotrproject.com/map/",
+    "origem": [
+      264,
+      -700.5
+    ],
+    "escala": 1.0168735713856452,
+    "pontos": [
+      {
+        "lugar": "mithlond",
+        "em": [
+          628,
+          -1107.5
+        ]
+      },
+      {
+        "lugar": "imladris",
+        "em": [
+          1509.5,
+          -1072.5
+        ]
+      },
+      {
+        "lugar": "khazad-dum",
+        "em": [
+          1494.5,
+          -1295.5
+        ]
+      },
+      {
+        "lugar": "edoras",
+        "em": [
+          1554.5,
+          -1825
+        ]
+      },
+      {
+        "lugar": "minas-anor",
+        "em": [
+          1967,
+          -2020.5
+        ]
+      },
+      {
+        "lugar": "erebor",
+        "em": [
+          2052,
+          -880.5
+        ]
+      },
+      {
+        "lugar": "osgiliath",
+        "em": [
+          1995.5,
+          -2015
+        ]
+      },
+      {
+        "lugar": "pelargir",
+        "em": [
+          1895,
+          -2214.5
+        ]
+      },
+      {
+        "lugar": "dol-amroth",
+        "em": [
+          1499,
+          -2177.5
+        ]
+      }
+    ]
+  },
+  "beleriand": {
+    "url": "http://lotrproject.com/map/beleriand/",
+    "origem": [
+      2193,
+      -478.5
+    ],
+    "escala": 0.35,
+    "pontos": [
+      {
+        "lugar": "gondolin",
+        "em": [
+          1314,
+          -503.5
+        ]
+      },
+      {
+        "lugar": "menegroth",
+        "em": [
+          1717.5,
+          -815
+        ]
+      },
+      {
+        "lugar": "nargothrond",
+        "em": [
+          995,
+          -1075
+        ]
+      },
+      {
+        "lugar": "vinyamar",
+        "em": [
+          211,
+          -689
+        ]
+      },
+      {
+        "lugar": "himring",
+        "em": [
+          2193,
+          -478.5
+        ]
+      },
+      {
+        "lugar": "brithombar",
+        "em": [
+          327.5,
+          -1114.5
+        ]
+      }
+    ]
+  }
+}
