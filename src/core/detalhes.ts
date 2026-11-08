@@ -74,3 +74,32 @@ export function faseEdoras(t: number): string | null {
   const e = estadoEdoras(t);
   return e ? `${e.inverno ? 'inverno' : 'verao'}-${e.oeste}-${e.leste}` : null;
 }
+
+/**
+ * Armenelos: Nimloth cresce no pátio do rei até que Sauron convence Ar-Pharazôn a derrubá-la
+ * e a erguer o Templo na colina no meio da cidade (Akallabêth; data inferida em se-nimloth).
+ */
+export type FaseArmenelos = 'nimloth' | 'templo';
+
+export const ARMENELOS = lugarPorId.get('armenelos')!;
+export const VISTA_ARMENELOS: Vista = { x: ARMENELOS.em[0] + 0.15, y: ARMENELOS.em[1], d: 2.4, rumo: 255, inclinacao: 58 };
+export const FASES_ARMENELOS: Record<string, FaseArmenelos> = { 'SE:32': 'nimloth', 'SE:3263': 'templo' };
+
+export function faseArmenelos(t: number): FaseArmenelos | null {
+  const f = faseAtual(ARMENELOS, t);
+  return f ? FASES_ARMENELOS[f.de] ?? null : null;
+}
+
+/** Rómenna: barcos de pesca; navios de alto-mar a partir de 600 S.E.; os nove navios dos Fiéis no fim. */
+export type FaseRomenna = 'barcos' | 'navios' | 'fieis';
+
+export const ROMENNA = lugarPorId.get('romenna')!;
+/** O marcador do atlas fica ~12 km terra adentro; o porto é assentado no fundo da baía, junto à água. */
+export const CAIS_ROMENNA: [number, number] = [-2125.15, -732];
+export const VISTA_ROMENNA: Vista = { x: CAIS_ROMENNA[0] + 0.25, y: CAIS_ROMENNA[1] - 0.05, d: 2.2, rumo: 262, inclinacao: 60 };
+export const FASES_ROMENNA: Record<string, FaseRomenna> = { 'SE:32': 'barcos', 'SE:600': 'navios', 'SE:3310': 'fieis' };
+
+export function faseRomenna(t: number): FaseRomenna | null {
+  const f = faseAtual(ROMENNA, t);
+  return f ? FASES_ROMENNA[f.de] ?? null : null;
+}

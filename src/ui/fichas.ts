@@ -127,6 +127,8 @@ export function fichaLugar(app: App, l: Lugar): string {
   if (l.id === 'gondolin') html += detalheGondolin();
   if (l.id === 'minas-anor') html += detalheMinasTirith();
   if (l.id === 'edoras') html += detalheEdoras();
+  if (l.id === 'armenelos') html += detalheArmenelos();
+  if (l.id === 'romenna') html += detalheRomenna();
 
   if (l.id === 'ezellohar') {
     const f = app.faseArvores();
@@ -233,7 +235,7 @@ export function fichaReino(app: App, r: Reino): string {
   </dl>
   ${blocoFotoFicha(fotosDoReino(r.id, t))}
   ${governo ?? ''}
-  ${r.id === 'gondolin' ? detalheGondolin() : r.id === 'gondor' ? detalheMinasTirith() : r.id === 'rohan' ? detalheEdoras() : ''}
+  ${r.id === 'gondolin' ? detalheGondolin() : r.id === 'gondor' ? detalheMinasTirith() : r.id === 'rohan' ? detalheEdoras() : r.id === 'numenor' ? detalheArmenelos() + detalheRomenna() : ''}
   <section class="bloco"><h3>Origem</h3><p>${esc(r.origem)}</p>${fund ? `<p><button type="button" class="link" data-acao="evento" data-id="${fund.id}">${esc(fund.titulo)}</button> <span class="data">${esc(tempo.dataEvento(fund))}</span></p>` : ''}</section>
   <section class="bloco"><h3>Principais transformações</h3><ol class="fases">${r.transformacoes
     .map((x) => {
@@ -311,6 +313,26 @@ function detalheEdoras(): string {
     'o tamanho da colina, o número e a forma das casas e a posição do portão são interpretativos. Os túmulos dos reis seguem o Livro III (nove a oeste do caminho, os da segunda linhagem a leste) e aparecem conforme os anos de morte do Apêndice A.',
     'edoras-3d',
     'A partir de 2569 T.E., quando Brego conclui Meduseld. Em 2758 a colina aparece coberta pelo Longo Inverno. Os túmulos crescem a cada rei: 9 a oeste até 2759, e a leste de Fréaláf (2798) a Théoden (3019). Antes de 2569 T.E., a visita abre em 3018 T.E.',
+  );
+}
+
+function detalheArmenelos(): string {
+  return detalhe3d(
+    'Armenelos em 3D',
+    'Atravesse a muralha branca até o pátio do rei, onde Nimloth floresce entre canteiros, diante do paço de alas em U, com a cúpula dourada e a Torre do Rei. Os bairros se espalham em anéis em volta da colina ajardinada no meio da cidade.',
+    'traçado, paço, casas e jardins são interpretativos, inspirados na fotografia da cidade. São descritos Nimloth no pátio do rei e o Templo de Melkor na colina, circular, com 500 pés de diâmetro e de altura e cúpula de prata que enegreceu com a fumaça (Akallabêth).',
+    'armenelos-3d',
+    '32–3262 S.E.: Nimloth no pátio do rei · a partir de c. 3263: a Árvore derrubada e o Templo de Sauron na colina (o ano não é dado; o atlas o infere). Em 3319 a cidade afunda com a ilha e o modelo é ocultado. Fora desses períodos, a visita abre em 3000 S.E.',
+  );
+}
+
+function detalheRomenna(): string {
+  return detalhe3d(
+    'Rómenna em 3D',
+    'Desça ao grande porto no fundo da baía: o cais de pedra em V, os armazéns de madeira, os molhes com faróis, os píeres e as casas e torres que sobem até a cidadela, com terraços de vinhas atrás.',
+    'traçado, cidadela, faróis e navios são interpretativos, inspirados na fotografia do porto. O marcador de Rómenna no mapa fica cerca de 12 km terra adentro; o modelo é assentado no fundo da baía, onde a costa do atlas encontra o mar. A ilha de Tol Uinen e a torre Calmindon ainda não estão modeladas.',
+    'romenna-3d',
+    '32–599 S.E.: barcos de pesca · 600–3309: navios de alto-mar · 3310–3318: os nove navios dos Fiéis (quatro de Elendil, três de Isildur e dois de Anárion). Em 3319 o porto afunda com a ilha. Fora desses períodos, a visita abre em 3000 S.E.',
   );
 }
 

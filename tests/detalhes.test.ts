@@ -50,6 +50,33 @@ describe('geometria de Gondolin', () => {
     expect(base.geometry.boundingBox!.max.z).toBeCloseTo(0);
     expect(base.geometry.boundingBox!.min.z).toBeCloseTo(-0.8);
   });
+
+  it('mantém o caminho central livre e sobe aos três terraços por patamares distintos', () => {
+    const cidade = criarGondolin('integra');
+    cidade.updateMatrixWorld(true);
+    const raio = new THREE.Raycaster();
+    for (const [y, z] of [[-2.53, 0.03], [-2.0, 0.25], [-1.42, 0.48], [-0.86, 0.72]]) {
+      raio.set(new THREE.Vector3(0, y, 4), new THREE.Vector3(0, 0, -1));
+      expect(raio.intersectObject(cidade, true)[0].point.z).toBeCloseTo(z, 2);
+    }
+  });
+
+  it('inclui cúpulas, arcadas e janelas detalhadas dentro do orçamento de geometria', () => {
+    const cidade = criarGondolin('integra');
+    const meshes = cidade.children.filter((c): c is THREE.Mesh => c instanceof THREE.Mesh);
+    const nome = (n: string) => meshes.filter((m) => m.geometry.name === n);
+    expect(nome('Cúpulas').length).toBeGreaterThan(0);
+    expect(nome('Arcadas de pedra').length).toBeGreaterThan(0);
+    expect(nome('Janelas em arco').some((m) => m instanceof THREE.InstancedMesh && m.count > 500)).toBe(true);
+    const triangulos = meshes.reduce((n, m) => n + (m.geometry.index?.count ?? m.geometry.getAttribute('position').count) / 3 * (m instanceof THREE.InstancedMesh ? m.count : 1), 0);
+    expect(triangulos).toBeLessThan(200_000);
+    expect(meshes.length).toBeLessThan(30);
+    expect(cidade.children.some((c) => c instanceof THREE.Light)).toBe(false);
+    for (const fase of ['construcao', 'ruinas'] as const) {
+      const inacabada = criarGondolin(fase);
+      expect(inacabada.children.some((c) => c instanceof THREE.Mesh && c.geometry.name === 'Cúpulas')).toBe(false);
+    }
+  });
 });
 
 describe('camada 3D integrada ao terreno', () => {
