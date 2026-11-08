@@ -181,7 +181,8 @@ export function criarArmenelos(fase: FaseArmenelos): THREE.Group {
   const { peca, bloco, rand } = o;
   const branca = material(0xf3f0e7);
   const pedra = material(0xe2dccd);
-  const ardosia = material(0x5b6570);
+  const ardosia = material(0x76808b);
+  const ardosias = [ardosia, material(0x8b9196), material(0x6c7480)];
   const ouro = material(0xd9b24c, { metalness: 0.7, roughness: 0.35 });
   const sombra = material(0x2d333b);
   const relva = material(0x6e8e44);
@@ -265,10 +266,10 @@ export function criarArmenelos(fase: FaseArmenelos): THREE.Group {
       const a = ((k + rand() * 0.3 + (anel % 2) * 0.5) * Math.PI * 2) / m;
       const x = COLINA.x + Math.cos(a) * r, y = COLINA.y + Math.sin(a) * r;
       const w = 0.014 + rand() * 0.01, d = 0.011 + rand() * 0.005, h = 0.008 + rand() * 0.01, sorte = rand(), extra = rand();
-      if (!livre(x, y)) continue;
+      if (!livre(x, y) || k % 9 === 0) continue; // vielas radiais
       if (sorte < 0.1) o.arvore(tronco, folhas, x, y, 0.001, 0.01 + extra * 0.006);
       else if (sorte > 0.955) o.torreQuadrada(sorte > 0.98 ? branca : pedra, ardosia, ouro, x, y, 0.001, 0.012, 0.024 + extra * 0.012, a);
-      else o.casa(sorte > 0.8 ? branca : pedra, ardosia, x, y, 0.001, w, d, h, a + Math.PI / 2);
+      else o.casa(sorte > 0.8 ? branca : pedra, ardosias[Math.floor(extra * 3)], x, y, 0.001, w, d, h, a + Math.PI / 2);
     }
   }
   for (let k = 0; k < 70; k++) {
@@ -332,13 +333,13 @@ export function criarArmenelos(fase: FaseArmenelos): THREE.Group {
   const [nx, ny] = NIMLOTH;
   if (!templo) {
     const flores = material(0xfbfbf5, { emissive: 0x3a3a36 });
-    peca(cilindro, material(0xd6d9db), nx, ny, 0.0085, 0.0024, 0.0024, 0.015);
-    peca(copa, flores, nx, ny, 0.022, 0.014, 0.014, 0.0095);
-    for (let k = 0; k < 7; k++) {
-      const a = (k * Math.PI * 2) / 7;
-      peca(copa, flores, nx + Math.cos(a) * 0.012, ny + Math.sin(a) * 0.012, 0.017 + (k % 2) * 0.003, 0.009, 0.009, 0.007);
+    peca(cilindro, material(0xd6d9db), nx, ny, 0.012, 0.0035, 0.0035, 0.022);
+    peca(copa, flores, nx, ny, 0.032, 0.021, 0.021, 0.014);
+    for (let k = 0; k < 8; k++) {
+      const a = (k * Math.PI * 2) / 8;
+      peca(copa, flores, nx + Math.cos(a) * 0.018, ny + Math.sin(a) * 0.018, 0.025 + (k % 2) * 0.004, 0.013, 0.013, 0.01);
     }
-    peca(copa, flores, nx, ny, 0.03, 0.0085, 0.0085, 0.0065);
+    peca(copa, flores, nx, ny, 0.044, 0.013, 0.013, 0.01);
   } else {
     peca(cilindro, material(0x2a2522), nx, ny, 0.0035, 0.0028, 0.0028, 0.003);
   }
@@ -360,6 +361,26 @@ export function criarArmenelos(fase: FaseArmenelos): THREE.Group {
       o.arvore(tronco, folhas, cx + Math.cos(a) * 0.078, cy + Math.sin(a) * 0.078, zt - 0.001, 0.012);
       if (k % 2) bloco(canteiros[k % 4], cx + Math.cos(a) * 0.035, cy + Math.sin(a) * 0.035, 0.016, 0.006, 0.0022, zt, a);
     }
+    // bosques e pavilhões pela encosta, fora dos caminhos; um anel de canteiros a meia altura
+    for (let k = 0; k < 90; k++) {
+      const a = rand() * Math.PI * 2, r = 0.1 + rand() * 0.13, s = rand();
+      if (Math.abs(Math.sin(2 * a)) < 0.12) continue;
+      const x = cx + Math.cos(a) * r, y = cy + Math.sin(a) * r;
+      o.arvore(tronco, s > 0.5 ? folhas : sebe, x, y, alturaColina(x, y), 0.009 + s * 0.007);
+    }
+    for (let k = 0; k < 8; k++) {
+      const a = ((k + 0.5) * Math.PI) / 4, r = 0.165;
+      const x = cx + Math.cos(a) * r, y = cy + Math.sin(a) * r, z = alturaColina(x, y);
+      for (let c = 0; c < 6; c++) peca(cilindro, branca, x + Math.cos((c * Math.PI) / 3) * 0.006, y + Math.sin((c * Math.PI) / 3) * 0.006, z + 0.004, 0.0008, 0.0008, 0.008);
+      peca(cilindro, branca, x, y, z + 0.0085, 0.0075, 0.0075, 0.0012);
+      peca(cupula, ouro, x, y, z + 0.009, 0.0068, 0.0068, 0.005);
+    }
+    for (let k = 0; k < 48; k++) {
+      const a = ((k + 0.5) * Math.PI * 2) / 48, r = 0.13;
+      if (k % 6 === 5) continue;
+      const x = cx + Math.cos(a) * r, y = cy + Math.sin(a) * r;
+      bloco(canteiros[k % 4], x, y, 0.005, 0.014, 0.0024, alturaColina(x, y), a);
+    }
     for (let q = 0; q < 4; q++) {
       const a = (q * Math.PI) / 2;
       for (let r = 0.06; r < COLINA.r; r += 0.008) {
@@ -373,7 +394,7 @@ export function criarArmenelos(fase: FaseArmenelos): THREE.Group {
     const escura = material(0x8f8a82);
     const nervura = material(0xa39e94);
     const negra = material(0x2a2b30, { metalness: 0.75, roughness: 0.35 });
-    const fumaca = material(0x3c3c3e, { transparent: true, opacity: 0.45, depthWrite: false });
+    const fumaca = material(0x6e6c6a, { transparent: true, opacity: 0.22, depthWrite: false });
     peca(cilindro, nervura, cx, cy, zt + 0.001, 0.094, 0.094, 0.002);
     peca(cilindro, escura, cx, cy, zt + HT / 2, RT, RT, HT);
     for (let k = 0; k < 32; k++) {
@@ -388,9 +409,9 @@ export function criarArmenelos(fase: FaseArmenelos): THREE.Group {
     }
     peca(cupula, negra, cx, cy, zt + HT, RT, RT, RT * 0.82);
     peca(cilindro, negra, cx, cy, zt + HT + RT * 0.82 + 0.004, 0.009, 0.009, 0.008);
-    for (let k = 0; k < 14; k++) {
-      const r = 0.011 + k * 0.0035;
-      peca(copa, fumaca, cx + k * 0.007, cy + k * 0.0025, zt + HT + RT * 0.82 + 0.014 + k * 0.018, r, r, r * 0.8);
+    for (let k = 0; k < 11; k++) {
+      const r = 0.014 + k * 0.006;
+      peca(copa, fumaca, cx + k * k * 0.0012, cy + k * 0.003, zt + HT + RT * 0.82 + 0.016 + k * 0.026, r, r * 0.9, r * 0.7);
     }
   }
 
@@ -405,7 +426,7 @@ export function criarArmenelos(fase: FaseArmenelos): THREE.Group {
  * x = 0,15 + 1,55·y ao norte e x = 0,15 + 0,55·|y| ao sul (km, a partir do ponto de assentamento).
  */
 export const caisX = (y: number) => 0.15 + (y >= 0 ? 1.55 * y : -0.55 * y);
-const Y_N = 0.55, Y_S = -0.7, OESTE = -0.9;
+const Y_N = 0.55, Y_S = -0.7, OESTE = -0.8;
 const APICE: [number, number] = [0.15, 0];
 
 function braco(fx: number, fy: number, terra: 1 | -1) {
@@ -456,7 +477,8 @@ export function criarRomenna(fase: FaseRomenna): THREE.Group {
     contorno.push(new THREE.Vector2(caisX(y), y));
   }
   contorno.push(new THREE.Vector2(OESTE, Y_N), new THREE.Vector2(OESTE, Y_S));
-  const base = new THREE.Mesh(new THREE.ExtrudeGeometry(new THREE.Shape(contorno), { depth: 0.8, bevelEnabled: false }).translate(0, 0, -0.8), cais);
+  // grupos da extrusão: 0 = tampas (relva), 1 = faces (a muralha do cais voltada para o mar)
+  const base = new THREE.Mesh(new THREE.ExtrudeGeometry(new THREE.Shape(contorno), { depth: 0.8, bevelEnabled: false }).translate(0, 0, -0.8), [material(0x6f8c45), cais]);
   base.name = 'Base';
   cidade.add(base);
 
@@ -467,7 +489,10 @@ export function criarRomenna(fase: FaseRomenna): THREE.Group {
   const doNorte = (x: number, y: number) => bis[0] * (y - APICE[1]) - bis[1] * (x - APICE[0]) <= 0;
 
   // Passeio do cais: parapeito, frades de amarração, guindastes; armazéns de madeira com toldos.
+  const calcada = material(0xcfc7b3);
   for (const b of [norte, sul]) {
+    const [mx, my] = b.ponto((b.L - 0.12) / 2, 0.035);
+    bloco(calcada, mx, my, b.L - 0.02, 0.07, 0.0008, 0, b.ang);
     for (let t = 0.004; t < b.L - 0.004; t += 0.012) {
       const [x, y] = b.ponto(t, 0.002);
       bloco(cais, x, y, 0.0125, 0.0018, 0.0022, 0, b.ang);
@@ -503,18 +528,21 @@ export function criarRomenna(fase: FaseRomenna): THREE.Group {
     TORRES.some(([tx, ty]) => Math.hypot(x - tx, y - ty) < 0.022) ||
     Math.abs(y - CIDADELA.y) < 0.012 && x > CIDADELA.x && x < 0.0; // rua da cidadela ao cais
   for (const b of [norte, sul])
-    for (let faixa = 0; faixa < 32; faixa++) {
+    for (let faixa = 0; faixa < 20; faixa++) {
       if (faixa % 3 === 2) continue;
-      const d = 0.085 + faixa * 0.026;
+      const d0 = 0.085 + faixa * 0.026;
       for (let t = -0.6; t < b.L; t += 0.023) {
+        const d = d0 + (rand() - 0.5) * 0.008;
         const [x, y] = b.ponto(t + rand() * 0.005, d);
-        const w = 0.015 + rand() * 0.008, p = 0.011 + rand() * 0.005, h = 0.009 + rand() * 0.011, sorte = rand(), extra = rand();
-        if (x < -0.73 || y > Y_N - 0.03 || y < Y_S + 0.03 || x > caisX(y) - 0.075) continue;
+        const w = 0.012 + rand() * 0.014, p = 0.01 + rand() * 0.007, h = 0.008 + rand() * 0.013, sorte = rand(), extra = rand(), raro = rand();
+        if (x < -0.7 || y > Y_N - 0.04 || y < Y_S + 0.04 || x > caisX(y) - 0.075) continue;
         if (doNorte(x, y) !== (b === norte) || ocupado(x, y)) continue;
+        if (Math.abs(((t + 0.1) % 0.17) - 0.085) > 0.075) continue; // ruas transversais
+        if (raro < (d - 0.16) / 0.42) { if (raro < 0.08 + (d - 0.16) / 2.4) o.arvore(tronco, folhas, x, y, 0, 0.008 + extra * 0.007); continue; } // rareia para o interior
         if (sorte < 0.08) o.arvore(tronco, folhas, x, y, 0, 0.009 + extra * 0.005);
         else if (sorte > 0.965) o.torreQuadrada(pedra, ardosia, ouro, x, y, 0, 0.012, 0.026 + extra * 0.012, b.ang);
         else {
-          o.casa(sorte > 0.75 ? clara : pedra, ardosia, x, y, 0, w, p, h, b.ang, sorte > 0.4);
+          o.casa(sorte > 0.75 ? clara : pedra, ardosia, x, y, 0, w, p, h, b.ang + (extra - 0.5) * 0.14, sorte > 0.4);
           if (h > 0.014) {
             const [jx, jy] = o.giro(b.ang, 0, -p / 2 - 0.0002);
             o.janelas(sombra, x + jx - Math.cos(b.ang) * w * 0.35, y + jy - Math.sin(b.ang) * w * 0.35, x + jx + Math.cos(b.ang) * w * 0.35, y + jy + Math.sin(b.ang) * w * 0.35, 0.002, 2, 0.006, 0.0055, 0.003);

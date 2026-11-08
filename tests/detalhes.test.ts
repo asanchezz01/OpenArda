@@ -2,6 +2,8 @@ import * as THREE from 'three';
 import { describe, expect, it, vi } from 'vitest';
 import { estadoTerreno, lugarPorId, tempo, terreno } from '../src/core/data';
 import { ARVORE_MINAS_TIRITH, EDORAS, estadoEdoras, faseEdoras, faseGondolin, faseMinasTirith, MINAS_TIRITH, VISTA_EDORAS, VISTA_GONDOLIN, VISTA_MINAS_TIRITH } from '../src/core/detalhes';
+import { ARMENELOS, CAIS_ROMENNA, FASES_ARMENELOS, FASES_ROMENNA, faseArmenelos, faseRomenna, ROMENNA, VISTA_ARMENELOS, VISTA_ROMENNA } from '../src/core/detalhes';
+import { alturaColina, casco, criarArmenelos, criarRomenna, naviosRomenna, TEMPLO } from '../src/render/numenor';
 import { criarEdoras, perfilEdoras } from '../src/render/edoras';
 import { criarGondolin } from '../src/render/gondolin';
 import { criarMinasTirith } from '../src/render/minas-tirith';
@@ -326,5 +328,78 @@ describe('Edoras', () => {
       expect(html).toContain('data-acao="edoras-3d"');
       expect(html).toContain('Reconstrução artística');
     }
+  });
+});
+
+describe('Númenor: Armenelos e Rómenna', () => {
+  const instancias = (g: THREE.Object3D) => g.children.filter((c): c is THREE.InstancedMesh => c instanceof THREE.InstancedMesh);
+  const relevo = () => new ModeloTerreno(estadoTerreno(tempo.tAno('SE', 3000)).feicoes, terreno.cadeias, terreno.limites);
+
+  it.each([
+    [31, null, null], [32, 'nimloth', 'barcos'], [599, 'nimloth', 'barcos'], [600, 'nimloth', 'navios'],
+    [3262, 'nimloth', 'navios'], [3263, 'templo', 'navios'], [3309, 'templo', 'navios'], [3310, 'templo', 'fieis'],
+    [3318, 'templo', 'fieis'], [3319, null, null],
+  ])('em %i S.E. mostra Armenelos %s e Rómenna %s', (ano, armenelos, romenna) => {
+    expect(faseArmenelos(tempo.tAno('SE', ano))).toBe(armenelos);
+    expect(faseRomenna(tempo.tAno('SE', ano))).toBe(romenna);
+  });
+
+  it('as fases vêm de data/lugares.json e somem com a Queda', () => {
+    expect(ARMENELOS.fases!.map((f) => f.de)).toEqual([...Object.keys(FASES_ARMENELOS), 'SE:3319']);
+    expect(ROMENNA.fases!.map((f) => f.de)).toEqual([...Object.keys(FASES_ROMENNA), 'SE:3319']);
+    expect(faseArmenelos(tempo.tAno('TE', 1))).toBeNull();
+  });
+
+  it('Armenelos: Nimloth no pátio e, depois, o Templo de 500 pés na colina', () => {
+    const nimloth = criarArmenelos('nimloth');
+    const templo = criarArmenelos('templo');
+    expect(instancias(nimloth).map((m) => Array.from(m.instanceMatrix.array))).toEqual(instancias(criarArmenelos('nimloth')).map((m) => Array.from(m.instanceMatrix.array)));
+    expect(instancias(nimloth).reduce((n, m) => n + m.count, 0)).toBeGreaterThan(3000);
+    const alto = (g: THREE.Object3D) => new THREE.Box3().setFromObject(g).max.z;
+    expect(alto(nimloth)).toBeLessThan(0.15); // a Torre do Rei é o ponto mais alto
+    expect(alto(templo)).toBeGreaterThan(alturaColina(-0.12, 0) + TEMPLO.altura);
+    expect(TEMPLO.altura).toBeCloseTo(0.1524, 4);
+    expect(new THREE.Box3().setFromObject(nimloth.getObjectByName('Base')!).min.z).toBeCloseTo(-0.8);
+  });
+
+  it('Rómenna: os navios mudam com a época, nove dos Fiéis no fim', () => {
+    expect(naviosRomenna('barcos').ancorados).toHaveLength(0);
+    expect(naviosRomenna('navios').ancorados.length).toBeGreaterThan(3);
+    expect(naviosRomenna('fieis').ancorados).toHaveLength(9);
+    const cascos = (f: 'barcos' | 'navios' | 'fieis') => instancias(criarRomenna(f).getObjectByName('Mar')!).filter((m) => m.geometry === casco).reduce((n, m) => n + m.count, 0);
+    const { ancorados, aVela, barcos } = naviosRomenna('fieis');
+    expect(cascos('fieis')).toBe(ancorados.length + aVela.length + barcos);
+  });
+
+  it('o porto fica em terra, com o mar logo a leste, e os navios no nível da água', () => {
+    const m = relevo();
+    const [x, y] = CAIS_ROMENNA;
+    expect(m.altura(x, y)).toBeGreaterThan(0);
+    expect(m.altura(x + 0.4, y)).toBeLessThanOrEqual(0);
+    for (const [nx, ny] of naviosRomenna('fieis').ancorados) expect(m.altura(x + nx, y + ny)).toBeLessThanOrEqual(0);
+    const te = tempo.tAno('SE', 3315);
+    const u = criarUniformesGlobais();
+    const camera = new THREE.PerspectiveCamera();
+    camera.position.set(VISTA_ROMENNA.x + 1, VISTA_ROMENNA.y, 2);
+    const camada = new DetalhesReinos();
+    camada.atualizar(te, camera, m, u, true);
+    const porto = camada.grupo.children.find((c) => c.name === 'Rómenna: fieis')!;
+    expect(porto.visible).toBe(true);
+    expect(porto.position.x).toBe(x);
+    expect(porto.position.z + porto.getObjectByName('Mar')!.position.z).toBeCloseTo(0);
+    camera.position.set(VISTA_ARMENELOS.x, VISTA_ARMENELOS.y, 2);
+    camada.atualizar(te, camera, m, u, true);
+    expect(camada.grupo.children.find((c) => c.name === 'Armenelos: templo')?.visible).toBe(true);
+    camada.atualizar(tempo.tAno('SE', 3319), camera, m, u, true);
+    expect(camada.grupo.visible).toBe(false);
+  });
+
+  it('aparece nas fichas de Armenelos, Rómenna e Númenor', () => {
+    const app = { t: tempo.tAno('SE', 3000) } as App;
+    expect(fichaLugar(app, ARMENELOS)).toContain('data-acao="armenelos-3d"');
+    expect(fichaLugar(app, ROMENNA)).toContain('data-acao="romenna-3d"');
+    const reino = fichaReino(app, reinoPorId.get('numenor')!);
+    expect(reino).toContain('data-acao="armenelos-3d"');
+    expect(reino).toContain('data-acao="romenna-3d"');
   });
 });

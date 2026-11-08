@@ -91,16 +91,51 @@ As fases vêm de `edoras` em `data/lugares.json`. O número de túmulos sai dos 
 - Fazer o talude acompanhar o terreno em volta, em vez de usar uma cor única.
 - Inspeção em celulares reais.
 
+## Quarta entrega: Númenor — Armenelos e Rómenna
+
+**Implementado nesta versão:** as duas cidades seguem as fotografias aprovadas [Armenelos, a cidade dos reis](../public/fotografias/armenelos-se3000.webp) e [Rómenna](../public/fotografias/romenna-se3000.webp): pedra branca, telhados de ardósia, torres com coruchéus e finais dourados.
+
+- **Armenelos:** uma muralha branca com ameias, torres redondas e quatro portões. As avenidas arborizadas partem dos portões, e os bairros se organizam em anéis, cortados por vielas, em volta da colina central. A colina tem jardins, fonte, pavilhões de cúpula dourada e bosques. A leste fica o paço do rei: corpo principal com pavilhão de cúpula dourada, alas em U, torres de canto, fileiras de janelas e a Torre do Rei. No meio do pátio, Nimloth floresce entre canteiros e sebes.
+- **Rómenna:** o cais de pedra acompanha a costa do atlas no fundo da baía, em forma de V. Há passeio com parapeito, frades de amarração, guindastes e armazéns de madeira com toldos. Molhes com faróis fecham o porto, e píeres de madeira avançam sobre a água. As casas e torres de pedra rareiam terra adentro até a cidadela, que tem muralha, torre de menagem e salão. Atrás ficam os terraços de vinhas. Navios e barcos ficam no nível do mar.
+
+![Armenelos em 3000 S.E.: muralha, bairros em anéis, colina ajardinada, paço com cúpula dourada e Nimloth no pátio](capturas/09-armenelos-3d.png)
+
+![Rómenna em 3315 S.E.: cais em V, armazéns, molhes com faróis e os nove navios dos Fiéis](capturas/10-romenna-3d.png)
+
+| Período do atlas | Armenelos | Rómenna |
+| --- | --- | --- |
+| Antes de 32 S.E. | Sem cidade | Sem porto |
+| 32–599 S.E. | Nimloth no pátio do rei | Barcos de pesca |
+| 600–3262 S.E. | Nimloth no pátio do rei | Navios de alto-mar ancorados e um entrando a vela |
+| c. 3263–3309 S.E. | Toco de Nimloth; Templo de Melkor na colina | Navios de alto-mar |
+| 3310–3318 S.E. | Templo de Melkor | Os nove navios dos Fiéis: quatro de Elendil, três de Isildur e dois de Anárion |
+| A partir de 3319 S.E. | Modelo ocultado com a Queda | Modelo ocultado com a Queda |
+
+As fronteiras vêm das novas fases de `armenelos` e `romenna` em `data/lugares.json` (`FASES_ARMENELOS` e `FASES_ROMENNA` em `src/core/detalhes.ts`), e um teste exige que coincidam. O ano do Templo (c. 3263) é o mesmo inferido no acontecimento `se-nimloth`, pois a Akallabêth não o dá. A ligação dos navios de Elendil a Rómenna em 3310 também é inferida: a partir do ano da Grande Armada.
+
+**Como visitar:** em **Camadas e legenda**, escolha **Visitar Armenelos em 3D** ou **Visitar Rómenna em 3D**. Também é possível abrir a ficha de Armenelos, de Rómenna ou de Númenor e escolher **Explorar cidade em 3D**. Fora do período das cidades, a visita abre em 3000 S.E.
+
+**Interpretação visual:** a Akallabêth descreve Nimloth no pátio do rei e o Templo na colina no meio da cidade. O Templo era circular, com 500 pés de diâmetro na base e 500 pés de altura até a cúpula de prata, que logo enegreceu com a fumaça. O modelo usa essas medidas e mostra a cúpula já escura. O porto no fundo de uma baía voltada para a Terra-média e a partida dos Fiéis vêm de *Contos Inacabados* e da Akallabêth. Traçado, paço, jardins, casas, cidadela, faróis e navios são artísticos.
+
+**Implantação:** Armenelos fica sobre uma base em talude, como Edoras. O marcador de Rómenna no mapa fica cerca de 12 km terra adentro. Por isso, o porto é assentado em `CAIS_ROMENNA`, no fundo da baía, onde a costa do atlas encontra o mar, e fica mais perto do chão (`folga`), para o cais não flutuar. A extrusão da terra tem relva no topo e a muralha do cais nas faces. O grupo `Mar` é recolocado a cada quadro no nível da água, abaixo do chão da cidade.
+
+### Próximos detalhes de Númenor
+
+- Tol Uinen e a torre Calmindon, na baía de Rómenna.
+- O Meneltarma: a estrada em espiral e o santuário aberto no cume, reutilizando a fotografia `meneltarma-se3000`.
+- Andúnië, no oeste, e a Grande Armada.
+- Decidir se o marcador de Rómenna deve ir para a costa (revisão cartográfica).
+
 ## Ordem de expansão
 
-Esta é uma ordem de implementação, sem datas prometidas. Gondolin, Minas Tirith e Edoras já têm arquitetura 3D; os demais itens estão planejados.
+Esta é uma ordem de implementação, sem datas prometidas. Gondolin, Minas Tirith, Edoras, Armenelos e Rómenna já têm arquitetura 3D; os demais itens estão planejados.
 
 | Ordem | Reino / domínio | Primeiro local | Entrega visual e temporal | Dependência principal |
 | --- | --- | --- | --- | --- |
 | 1 | **Gondolin** | Gondolin | **Versão inicial implementada**; depois, passagem e sete portões | Validar e refinar a primeira cidade |
 | 2 | **Gondor** | Minas Anor / Minas Tirith | **Versão inicial implementada** (cidadela, níveis, muralhas e relação com Mindolluin); depois, Osgiliath e suas ruínas | Definir versões por época a partir das fases dos lugares |
 | 3 | **Rohan** | Edoras | **Versão inicial implementada** (colina, fosso, muralha, Meduseld, túmulos e Longo Inverno); depois, o Abismo de Helm | Arquitetura de madeira e implantação no relevo |
-| 4 | Númenor | Armenelos; depois Rómenna | Centro régio, vias e porto; desaparecimento na Queda | Relacionar os assentamentos à geografia da ilha |
+| 4 | **Númenor** | Armenelos e Rómenna | **Versão inicial implementada** (paço, Nimloth, Templo, porto e frotas por época; desaparecimento na Queda); depois, o Meneltarma e Andúnië | Relacionar os assentamentos à geografia da ilha |
 | 5 | Doriath | Menegroth | Entrada, ponte e representação dos salões subterrâneos | Definir um modo de corte que permita ver o interior |
 | 6 | Nargothrond | Nargothrond | Portas, salões, ponte e ruínas junto ao Narog | Reutilizar o modo subterrâneo e datar a ponte |
 | 7 | Lindon e Eregion | Mithlond; depois Ost-in-Edhil | Cais, navios estáticos e oficinas; ruínas de Eregion | Acrescentar a cidade de Ost-in-Edhil aos dados com fontes próprias |
