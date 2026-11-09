@@ -209,7 +209,6 @@ export class Interface {
     this.retratoTela.addEventListener('close', () => { this.retratoTela.innerHTML = ''; });
     this.fotosTela.addEventListener('cancel', (e) => { e.preventDefault(); this.fecharFotos(); });
     this.arvoreTela.addEventListener('cancel', (e) => { e.preventDefault(); this.fecharArvoreTela(); });
-    // dentro da tela cheia, um nome recentraliza a árvore em vez de abrir a ficha atrás dela
     this.fotosTela.addEventListener('click', (e) => {
       const alvo = e.target as HTMLElement;
       if (alvo.closest('[data-fechar-fotos]')) {
@@ -235,11 +234,10 @@ export class Interface {
       }
       const b = alvo.closest<HTMLElement>('[data-sel], [data-acao="arvore-tela"]');
       if (!b) return;
-      const sel = b.dataset.sel ?? '';
-      if (b.dataset.acao === 'arvore-tela' || sel.startsWith('linhagem:')) {
+      if (b.dataset.acao === 'arvore-tela') {
         e.stopPropagation();
-        this.abrirArvoreTela(b.dataset.id ?? sel.slice(9));
-      } else this.fecharArvoreTela(); // um reino: fecha e deixa a ficha do reino abrir
+        this.abrirArvoreTela(b.dataset.id!);
+      } else this.fecharArvoreTela();
     });
     this.conteudo.addEventListener('change', (e) => {
       const el = e.target as HTMLSelectElement;

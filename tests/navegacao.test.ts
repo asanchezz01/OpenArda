@@ -2,6 +2,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi, type MockInstance } from 'vitest';
 import type { App } from '../src/app';
 import { eras, jornadas, tempo } from '../src/core/data';
+import { pessoaPorId } from '../src/core/linhagens';
 import { Interface } from '../src/ui/interface';
 import { norm } from '../src/ui/util';
 
@@ -184,6 +185,48 @@ describe('fichas, telas cheias e jornadas', () => {
     expect(el<HTMLDialogElement>('#arvore-tela').open).toBe(false);
     expect(el('#painel').hidden).toBe(false);
     expect(document.activeElement).toBe(gatilho);
+  });
+
+  it.each([
+    ['maedhros', '.pessoa-nome'],
+    ['finwe', '.chip-pessoa'],
+    ['nerdanel', '.conjuge button'],
+  ])('abre a ficha completa de %s ao clicar no nome da árvore em tela cheia', (id, seletor) => {
+    ui.abrir('linhagem:feanor');
+    el<HTMLButtonElement>('#painel [data-acao="arvore-tela"]').click();
+    const pessoa = pessoaPorId.get(id)!;
+    const nome = el<HTMLButtonElement>(`#arvore-tela ${seletor}[data-sel="linhagem:${id}"]`);
+    app.selecionar = vi.fn();
+    nome.focus();
+    nome.click();
+    expect(el<HTMLDialogElement>('#arvore-tela').open).toBe(false);
+    expect(app.selecionar).toHaveBeenCalledOnce();
+    expect(app.selecionar).toHaveBeenCalledWith('linhagem:' + id);
+    expect(el('#painel h2').textContent).toBe(pessoa.nome);
+    expect(el('#painel .resumo').textContent).toBe(pessoa.resumo);
+    for (const dado of [pessoa.epiteto, pessoa.datas].filter(Boolean)) expect(el('#painel').textContent).toContain(dado);
+    expect(el('#painel .tipo').textContent).toContain('Personagem');
+    const secoes = [...document.querySelectorAll('#painel h3')].map((h) => h.textContent);
+    expect(secoes).toEqual(expect.arrayContaining(['Reinos que governou', 'Ascendência', 'Descendência', 'Fontes']));
+    expect(document.activeElement).toBe(el('.painel-conteudo'));
+    el<HTMLButtonElement>('[data-acao="voltar-ficha"]').click();
+    expect(el('#painel h2').textContent).toBe('Fëanor');
+  });
+
+  it('mantém o ícone de árvore para centralizar a genealogia em outro personagem', () => {
+    ui.abrir('linhagem:feanor');
+    el<HTMLButtonElement>('#painel [data-acao="arvore-tela"]').click();
+    el<HTMLButtonElement>('#arvore-tela [data-acao="arvore-tela"][data-id="maedhros"]').click();
+    expect(el<HTMLDialogElement>('#arvore-tela').open).toBe(true);
+    expect(el('#arvore-tela-nome').textContent).toBe('Maedhros');
+    expect(el('#painel h2').textContent).toBe('Fëanor');
+  });
+
+  it('abre a ficha ao clicar no nome da árvore embutida no painel', () => {
+    ui.abrir('linhagem:feanor');
+    el<HTMLButtonElement>('#painel .pessoa-nome[data-sel="linhagem:maedhros"]').click();
+    expect(el('#painel h2').textContent).toBe('Maedhros');
+    expect(el('#painel .resumo').textContent).toBe(pessoaPorId.get('maedhros')!.resumo);
   });
 
   it('abre a fonte de uma fotografia à frente, com retorno à ficha anterior', () => {

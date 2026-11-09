@@ -91,7 +91,7 @@ export function blocoGovernoReino(app: App, reinoId: string): string | null {
     ${g ? `<p class="governante">${COROA}${quem(g, 'link forte')} <span class="nota">${esc(s.titulo)} · ${esc(periodo(g))}${g.nota ? ` · ${esc(g.nota)}` : ''}</span></p>` : `<p class="nota">Ninguém governava ${esc(nomeSenhorio(s))} em ${esc(tempo.rotulo(app.t).principal)}.</p>`}
     ${sucessao(s, app.t)}
     ${ePoder ? `<p><button type="button" class="link" data-acao="sel" data-sel="valar">Ver os Valar e Maiar</button></p>` : ''}
-    <p class="nota">Toque num nome para abrir a árvore genealógica.</p>
+    <p class="nota">Toque num nome para abrir a ficha completa do personagem.</p>
   </section>`;
 }
 
@@ -107,7 +107,7 @@ export function blocoGovernoLugar(app: App, lugarId: string, reinoId?: string): 
         ${g ? `<p class="governante">${COROA}${quem(g, 'link forte')} <span class="nota">${esc(periodo(g))}${g.nota ? ` · ${esc(g.nota)}` : ''}</span></p>` : `<p class="nota">Ninguém governava em ${esc(tempo.rotulo(t).principal)}.</p>`}
         ${s.governos.length > 1 ? `<details><summary>Sucessão</summary>${sucessao(s, t)}</details>` : ''}</li>`;
     })
-    .join('')}</ul><p class="nota">Toque num nome para abrir a árvore genealógica.</p></section>`;
+    .join('')}</ul><p class="nota">Toque num nome para abrir a ficha completa do personagem.</p></section>`;
 }
 
 /** Lista de senhorios com seus governantes no instante atual. */
@@ -116,7 +116,7 @@ export function fichaSenhorios(app: App): string {
   const vivos = senhoriosEm(t);
   const { caidos, futuros } = senhoriosFora(t);
   return `<header class="ficha-cab"><p class="tipo">Linhagens · ${esc(tempo.rotulo(t).principal)}</p><h2>Quem governava</h2>
-    <p class="nota">Mova a linha do tempo para ver a sucessão. Toque num governante para abrir sua árvore genealógica.</p></header>
+    <p class="nota">Mova a linha do tempo para ver a sucessão. Toque num governante para abrir sua ficha completa.</p></header>
     ${
       vivos.length
         ? `<ul class="senhorios">${vivos
@@ -130,7 +130,7 @@ export function fichaSenhorios(app: App): string {
     }
     ${caidos.length ? `<p class="nota"><strong>Já caídos ou extintos:</strong> ${caidos.map((s) => esc(nomeSenhorio(s))).join(', ')}</p>` : ''}
     ${futuros.length ? `<p class="nota"><strong>Ainda por surgir:</strong> ${futuros.map((s) => esc(nomeSenhorio(s))).join(', ')}</p>` : ''}
-    <section class="bloco"><h3>Abrir uma árvore</h3><p>${abrir('feanor', 'Fëanor')} · ${abrir('finwe', 'Finwë')} · ${abrir('thingol', 'Elu Thingol')} · ${abrir('elendil', 'Elendil')} · ${abrir('aragorn', 'Aragorn')}</p></section>
+    <section class="bloco"><h3>Consultar um personagem</h3><p>${abrir('feanor', 'Fëanor')} · ${abrir('finwe', 'Finwë')} · ${abrir('thingol', 'Elu Thingol')} · ${abrir('elendil', 'Elendil')} · ${abrir('aragorn', 'Aragorn')}</p></section>
     <section class="bloco"><h3>Valar e Maiar</h3>
       <p class="nota">Os Poderes que ampararam Arda desde o Primeiro Dia, com seus retratos e laços: cônjuge, irmãos, senhor e séquito.</p>
       <p><button type="button" class="link forte" data-acao="sel" data-sel="valar">Ver os Valar e Maiar</button></p>
@@ -242,10 +242,10 @@ export function htmlArvoreTela(app: App, id: string): string {
     ${blocosFamilia(id)}
     ${legendaPovos()}
     <div class="arvore-rolagem arvore-tela-rolagem"><div class="arvore"><ul>${no(app, id, id, 0, null, 6)}</ul></div></div>
-    <p class="nota arvore-tela-nota">Toque num nome para centralizar a árvore nele. A coroa marca quem governa em ${esc(tempo.rotulo(app.t).principal)}.</p>`;
+    <p class="nota arvore-tela-nota">Toque num nome para abrir a ficha completa do personagem. Use o ícone de árvore para explorar a família dele. A coroa marca quem governa em ${esc(tempo.rotulo(app.t).principal)}.</p>`;
 }
 
-/** Árvore genealógica centrada numa pessoa. */
+/** Ficha completa do personagem, com os dados e relações cadastrados. */
 export function fichaLinhagem(app: App, id: string): string {
   const p = pessoaPorId.get(id);
   if (!p) return '';
@@ -256,7 +256,7 @@ export function fichaLinhagem(app: App, id: string): string {
   const opcoes = [...pessoas].sort((a, b) => a.nome.localeCompare(b.nome, 'pt')).map((x) => `<option value="${esc(x.id)}"${x.id === id ? ' selected' : ''}>${esc(x.nome)}</option>`).join('');
   return `<header class="ficha-cab linhagem-cab">
       ${r ? `<figure>${foto(id, 96)}<figcaption>interpretação artística</figcaption></figure>` : ''}
-      <div><p class="tipo"><i class="povo-sinal povo-${p.povo}" aria-hidden="true"></i>Linhagem · ${esc(NOME_POVO[p.povo])}</p>
+      <div><p class="tipo"><i class="povo-sinal povo-${p.povo}" aria-hidden="true"></i>Personagem · ${esc(NOME_POVO[p.povo])}</p>
       <h2>${esc(p.nome)}</h2>
       ${p.epiteto || p.datas ? `<p class="outros">${[p.epiteto, p.datas].filter(Boolean).map((x) => esc(x!)).join(' · ')}</p>` : ''}
       <button type="button" class="abrir-arvore com-texto" data-acao="arvore-tela" data-id="${esc(id)}">${ICONE_ARVORE}Abrir árvore genealógica</button></div>

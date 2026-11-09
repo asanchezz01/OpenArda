@@ -27,7 +27,7 @@ A busca encontra lugares, reinos, personagens e acontecimentos. Ao focá-la, apa
 
 No celular, a linha do tempo continua acessível com uma ficha aberta. **Alterar data** permite digitar um ano, escolher um acontecimento ou saltar para o anterior/próximo. Os controles **Fixar** e **Comparar** mantêm seus nomes visíveis. Em telas baixas, os controles secundários da linha ficam recolhidos.
 
-O menu reúne as seções do atlas e os atalhos em **Cidades em 3D**. Fotografias e árvores genealógicas usam diálogos nativos, com fechamento por `Esc` e retorno do foco. A última parada de uma jornada oferece **Concluir jornada**.
+O menu reúne as seções do atlas e os atalhos em **Cidades em 3D**. Fotografias e árvores genealógicas usam diálogos nativos, com fechamento por `Esc` e retorno do foco. Na árvore, tocar no nome abre a ficha completa do personagem com as informações cadastradas; o ícone de árvore centraliza a genealogia nele. A última parada de uma jornada oferece **Concluir jornada**.
 
 Veja o [registro da revisão de UX, verificações e pendências](docs/REVISAO-UX.md).
 
