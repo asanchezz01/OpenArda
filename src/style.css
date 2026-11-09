@@ -45,6 +45,36 @@ button {
   cursor: pointer;
 }
 
+:where(button, a, input, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--ouro);
+  color: var(--fundo-solido);
+}
+
+input { caret-color: var(--ouro-forte); }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:where(#camadas, #busca-res, .painel-conteudo, #fotos-tela, .arvore-rolagem, .lt-editor) {
+  scrollbar-width: thin;
+  scrollbar-color: var(--tinta-suave) var(--fundo-solido);
+  overscroll-behavior: contain;
+}
+
 #app {
   position: fixed;
   inset: 0;
@@ -64,6 +94,10 @@ button {
   outline: none;
   touch-action: none;
 }
+.mapa-canvas:focus-visible {
+  outline: 3px solid var(--ouro-forte);
+  outline-offset: -6px;
+}
 
 /* ---------- topo ---------- */
 #topo {
@@ -82,6 +116,9 @@ button {
   pointer-events: auto;
 }
 .icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -113,6 +150,7 @@ button {
   flex: 1 1 auto;
   max-width: 520px;
   margin: 0 auto;
+  min-width: 0;
 }
 #busca-campo {
   width: 100%;
@@ -122,19 +160,28 @@ button {
   background: var(--fundo);
   color: var(--tinta);
   padding: 0 18px;
-  font-size: 15px;
+  font-size: 16px;
   outline: none;
 }
 #busca-campo:focus {
   border-color: var(--ouro);
   box-shadow: 0 0 0 3px rgba(217, 184, 108, 0.2);
 }
+#busca-campo::placeholder {
+  color: var(--tinta-suave);
+  opacity: 1;
+}
+.busca-dica {
+  margin: 8px 10px 0;
+  font-size: 13px;
+  color: var(--ouro);
+}
 #busca-res {
   position: absolute;
   top: 50px;
   left: 0;
   right: 0;
-  max-height: min(70vh, 560px);
+  max-height: min(60dvh, 560px);
   overflow: auto;
   background: var(--fundo-solido);
   border: 1px solid var(--linha);
@@ -179,7 +226,7 @@ button {
   background: rgba(255, 255, 255, 0.04);
   border-radius: 18px;
   padding: 8px 14px;
-  min-height: 36px;
+  min-height: 44px;
   font-size: 14px;
 }
 .destino:hover,
@@ -239,6 +286,43 @@ button {
   background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
   padding: 10px 12px;
+  min-height: 44px;
+}
+.menu-cab {
+  position: sticky;
+  top: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--fundo-solido);
+  padding: 8px 0;
+  z-index: 1;
+}
+#camadas .menu-cab h2 {
+  margin: 0;
+  font-size: 22px;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--tinta);
+}
+.menu-cab .fechar {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 24px;
+}
+.menu-cidades {
+  margin-top: 12px;
+  border-block: 1px solid var(--linha);
+}
+.menu-cidades summary {
+  cursor: pointer;
+  padding: 12px 0;
+  min-height: 44px;
+  color: var(--ouro);
 }
 #camadas h2 {
   font-family: var(--serif);
@@ -252,15 +336,17 @@ button {
 .chk {
   display: flex;
   gap: 10px;
-  align-items: flex-start;
+  align-items: center;
   padding: 6px 0;
   cursor: pointer;
+  min-height: 44px;
 }
 .chk input {
   accent-color: var(--ouro);
   width: 18px;
   height: 18px;
   margin-top: 1px;
+  flex: none;
 }
 .chk small {
   display: block;
@@ -621,15 +707,28 @@ kbd {
   justify-content: space-between;
 }
 .lt-data {
+  position: relative;
   background: none;
   border: 0;
   text-align: left;
-  padding: 2px 4px;
+  padding: 2px 90px 2px 4px;
   min-width: 0;
   display: flex;
   flex-direction: column;
   border-radius: 8px;
+  overflow: hidden;
 }
+.lt-editar {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--tinta-suave);
+  font: 12px var(--sans);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.lt-eventos { margin-top: 12px; }
 .lt-data:hover {
   background: rgba(255, 255, 255, 0.05);
 }
@@ -639,6 +738,9 @@ kbd {
   color: var(--ouro-forte);
   line-height: 1.1;
   white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .lt-secundario {
   font-size: 12.5px;
@@ -661,8 +763,8 @@ kbd {
   flex-wrap: nowrap;
 }
 .lt-botoes button {
-  min-width: 40px;
-  height: 40px;
+  min-width: 44px;
+  height: 44px;
   border-radius: 20px;
   border: 1px solid var(--linha);
   background: rgba(255, 255, 255, 0.04);
@@ -682,7 +784,7 @@ kbd {
 }
 .lt-trilho {
   position: relative;
-  height: 34px;
+  height: 44px;
   margin: 8px 2px 4px;
   touch-action: none;
   cursor: pointer;
@@ -757,11 +859,9 @@ kbd {
   display: flex;
   gap: 6px;
   overflow-x: auto;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--linha) transparent;
   padding-bottom: 2px;
-}
-.lt-chips::-webkit-scrollbar {
-  display: none;
 }
 .chip-era {
   flex: none;
@@ -771,6 +871,7 @@ kbd {
   padding: 4px 11px;
   font-size: 12.5px;
   color: var(--tinta-suave);
+  min-height: 44px;
 }
 .chip-era.ativo {
   background: color-mix(in srgb, var(--cor) 35%, transparent);
@@ -792,7 +893,17 @@ kbd {
 .lt-hora input {
   width: min(240px, 40vw);
   accent-color: #e0d6b6;
+  min-height: 44px;
 }
+.lt-hora .mini {
+  min-width: 44px;
+  height: 44px;
+  border: 1px solid var(--linha);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--tinta);
+}
+.lt-hora .mini[aria-pressed='true'] { border-color: var(--ouro); color: var(--ouro); }
 .lt-hora-txt {
   color: rgb(calc(190 + 60 * var(--ouro, 0)), calc(200 + 20 * var(--prata, 0)), calc(150 + 100 * var(--prata, 0)));
 }
@@ -806,6 +917,8 @@ kbd {
   padding: 12px 14px;
   box-shadow: var(--sombra);
   width: min(380px, calc(100vw - 24px));
+  max-height: calc(100dvh - var(--lt-h) - 80px);
+  overflow: auto;
 }
 .lt-form label {
   display: flex;
@@ -817,12 +930,14 @@ kbd {
 }
 .lt-form input,
 .lt-form select {
-  font: inherit;
+  font: 16px var(--sans);
   color: var(--tinta);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--linha);
   border-radius: 8px;
   padding: 8px;
+  min-height: 44px;
+  width: 100%;
 }
 
 /* ---------- painel / ficha ---------- */
@@ -851,8 +966,8 @@ body.painel-aberto #navegacao {
   position: absolute;
   top: 6px;
   right: 6px;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 0;
   background: transparent;
@@ -860,17 +975,41 @@ body.painel-aberto #navegacao {
   color: var(--tinta-suave);
   z-index: 2;
 }
+.painel-ferramentas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 8px;
+  flex: none;
+  border-bottom: 1px solid var(--linha);
+}
+#painel .painel-ferramentas .fechar {
+  position: static;
+  margin-left: auto;
+  flex: none;
+}
+.painel-ferramentas [data-acao='voltar-ficha'] {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ouro);
+}
+.painel-ferramentas button:hover { background: var(--fundo-claro); }
 .painel-conteudo {
   overflow: auto;
   padding: 16px 18px 20px;
   outline: none;
   line-height: 1.5;
+  min-height: 0;
 }
 .ficha-cab h2 {
   font-family: var(--serif);
   font-weight: 600;
   font-size: 26px;
-  margin: 2px 40px 4px 0;
+  margin: 2px 0 4px;
   line-height: 1.15;
 }
 .ficha-cab .tipo,
@@ -1154,6 +1293,8 @@ details summary {
   border-radius: 16px;
   padding: 16px 20px 14px;
   box-shadow: var(--sombra);
+  max-height: calc(100% - var(--lt-h) - 100px);
+  overflow: auto;
 }
 #inicio h1 {
   font-family: var(--serif);
@@ -1341,6 +1482,20 @@ details summary {
   padding: 40px;
   max-width: 600px;
   margin: 0 auto;
+  max-height: 100dvh;
+  overflow: auto;
+}
+.erro-webgl button {
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--ouro);
+  color: var(--fundo-solido);
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .topo-acoes button:not(.icone) { display: none; }
 }
 
 /* ---------- celular ---------- */
@@ -1374,7 +1529,11 @@ details summary {
     min-width: 0;
     flex: 1 1 auto;
     overflow: hidden;
+    min-height: 44px;
+    width: 100%;
   }
+  .lt-topo { flex-direction: column; align-items: stretch; gap: 4px; }
+  .lt-botoes { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .lt-principal,
   .lt-secundario {
     overflow: hidden;
@@ -1388,35 +1547,31 @@ details summary {
     content: '';
   }
   .lt-botoes button {
-    min-width: 36px;
-    height: 38px;
+    min-width: 44px;
+    height: 44px;
     padding: 0 7px;
   }
-  .lt-botoes .rot,
   .lt-botoes .sep {
     display: none;
   }
+  .lt-botoes .rot { display: block; font-size: 11px; line-height: 1.1; }
+  .lt-botoes .lt-trava, .lt-botoes .lt-comparar { flex-direction: column; justify-content: center; gap: 0; }
   .lt-botoes [data-k='ev-'],
   .lt-botoes [data-k='ev+'] {
     display: none;
   }
-  #linha-tempo.mais .lt-botoes [data-k='ev-'],
-  #linha-tempo.mais .lt-botoes [data-k='ev+'] {
-    display: inline-flex;
-  }
   #painel {
     top: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left: 6px;
+    right: 6px;
+    bottom: calc(var(--lt-h) + 16px + env(safe-area-inset-bottom));
     width: auto;
-    height: 52vh;
-    border-radius: 18px 18px 0 0;
+    height: min(42dvh, calc(100% - var(--lt-h) - 100px));
+    border-radius: 16px;
     padding-bottom: env(safe-area-inset-bottom);
-    transition: height 0.25s ease;
   }
   #painel.expandido {
-    height: calc(100% - 70px);
+    height: calc(100% - var(--lt-h) - 86px);
   }
   #painel .alca {
     display: block;
@@ -1425,6 +1580,9 @@ details summary {
     cursor: grab;
     touch-action: none;
     position: relative;
+    width: 100%;
+    border: 0;
+    background: transparent;
   }
   #painel .alca::before {
     content: '';
@@ -1441,10 +1599,13 @@ details summary {
     padding-top: 0;
   }
   body.painel-aberto #navegacao {
-    right: 10px;
-    bottom: calc(52vh + 12px);
+    visibility: hidden;
   }
-  body.painel-aberto #linha-tempo,
+  .lt-hora { flex-wrap: wrap; gap: 4px 8px; }
+  .lt-hora label { flex: 1; min-width: 0; }
+  .lt-hora input { flex: 1; min-width: 60px; }
+  .lt-hora .mini { order: 2; }
+  .lt-hora-txt { order: 3; flex-basis: 100%; font-size: 12px; }
   body.painel-aberto #status {
     visibility: hidden;
   }
@@ -1481,13 +1642,27 @@ details summary {
   }
 }
 
+@media (max-width: 480px) {
+  .marca { display: none; }
+}
+
+@media (max-height: 500px) {
+  #linha-tempo .lt-hora, #linha-tempo .lt-chips { display: none; }
+  #painel { top: 68px; height: auto; }
+  #painel.expandido { height: auto; }
+}
+
+@media (max-height: 500px) and (min-width: 600px) {
+  .lt-topo { flex-direction: row; align-items: center; }
+  .lt-data { width: auto; }
+  .lt-botoes { flex: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
+  .aviso { animation: none; }
+  .aviso.saindo { transition: opacity 0.15s linear; }
+  .rotulo.realce .ponto, #carregando span { animation: none; }
+  .bussola span { transition: none; }
 }
 
 /* na comparação, os rótulos de cada lado ficam na sua metade */
@@ -2083,6 +2258,16 @@ details summary {
   padding-right: max(16px, env(safe-area-inset-right));
   outline: none;
 }
+#arvore-tela,
+#fotos-tela {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  color: var(--tinta);
+}
 .arvore-tela-cab {
   display: flex;
   align-items: center;
@@ -2149,6 +2334,7 @@ details summary {
     width: 44px;
     height: 44px;
   }
+  .mini, .abrir-arvore { min-width: 44px; min-height: 44px; }
 }
 
 /* ---------- fotografias dos lugares ---------- */
@@ -2237,7 +2423,7 @@ details summary {
   line-height: 1.15;
 }
 .tela-cab > button:not(.fechar) {
-  height: 36px;
+  min-height: 44px;
   border-radius: 18px;
   border: 1px solid var(--linha);
   background: var(--fundo);
@@ -2348,9 +2534,10 @@ details summary {
   .foto-info {
     grid-template-columns: minmax(0, 1fr);
   }
-  .foto-nav {
-    display: none;
-  }
+  .foto-palco { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; }
+  .foto-palco figure { grid-column: 1 / -1; grid-row: 1; }
+  .foto-nav { grid-row: 2; }
+  .foto-nav:last-child { grid-column: 3; }
   .tela-titulo h2 {
     font-size: 21px;
   }

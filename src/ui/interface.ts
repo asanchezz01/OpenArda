@@ -29,6 +29,7 @@ export class Interface {
   private busca!: Busca;
   private linha!: LinhaTempo;
   private cartaoJornada!: HTMLElement;
+  private jornadaFocoAntes: HTMLElement | null = null;
   private barraComparar!: HTMLElement;
   private avisos!: HTMLElement;
   private status!: HTMLElement;
@@ -36,16 +37,17 @@ export class Interface {
   private camadasEl!: HTMLElement;
   private inicio!: HTMLElement;
   private carregando!: HTMLElement;
-  private arvoreTela!: HTMLElement;
+  private arvoreTela!: HTMLDialogElement;
   private retratoTela!: HTMLDialogElement;
   private arvoreTelaId = '';
   private arvoreTelaFocoAntes: HTMLElement | null = null;
-  private fotosTela!: HTMLElement;
+  private fotosTela!: HTMLDialogElement;
   /** '' fechado; 'painel' na grade; ou o id da foto aberta no visualizador. */
   private fotosAberto = '';
   private fotosTodas = false;
   private fotosFocoAntes: HTMLElement | null = null;
   private conteudoAtual = '';
+  private historicoPainel: { sel: string; scroll: number; titulo: string }[] = [];
   private urlTimer = 0;
 
   constructor(app: App, raiz: HTMLElement) {
@@ -57,13 +59,14 @@ export class Interface {
   private montar(raiz: HTMLElement) {
     const topo = h('header', { id: 'topo' });
     topo.innerHTML = `
-      <button type="button" id="btn-camadas" class="icone" aria-label="Camadas e legenda" aria-expanded="false" title="Camadas e legenda">☰</button>
+      <button type="button" id="btn-camadas" class="icone" aria-label="Menu e camadas" aria-controls="camadas" aria-expanded="false" title="Menu e camadas"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       <div class="marca"><span class="marca-sinal">✦</span><span class="marca-nome">Atlas de Arda</span></div>
       <div id="busca" role="search">
-        <input id="busca-campo" type="search" autocomplete="off" spellcheck="false" placeholder="Buscar lugar, reino ou acontecimento" aria-label="Buscar lugar, reino ou acontecimento">
-        <div id="busca-res" role="listbox" hidden></div>
+        <input id="busca-campo" type="search" autocomplete="off" spellcheck="false" placeholder="Buscar lugares, personagens…" aria-label="Buscar lugar, reino, personagem ou acontecimento" aria-controls="busca-res" aria-describedby="busca-status">
+        <span id="busca-status" class="sr-only" role="status"></span>
+        <div id="busca-res" role="region" aria-label="Resultados da busca" hidden></div>
       </div>
-      <nav class="topo-acoes">
+      <nav class="topo-acoes" aria-label="Explorar o atlas">
         <button type="button" data-acao="jornadas" title="Jornadas guiadas (J)">Jornadas</button>
         <button type="button" data-acao="linhagens" title="Árvores genealógicas e governantes desta época">Linhagens</button>
         <button type="button" data-acao="fotografias" title="Fotografias dos reinos e lugares desta época">Fotografias</button>
@@ -72,25 +75,28 @@ export class Interface {
       </nav>`;
     raiz.appendChild(topo);
 
-    this.camadasEl = h('aside', { id: 'camadas', hidden: '', 'aria-label': 'Camadas e legenda' });
+    this.camadasEl = h('aside', { id: 'camadas', hidden: '', 'aria-labelledby': 'menu-titulo' });
     const c = this.app.camadas;
     const chk = (k: string, rot: string, desc = '') =>
       `<label class="chk"><input type="checkbox" data-camada="${k}" ${(c as unknown as Record<string, boolean>)[k] ? 'checked' : ''}> <span>${rot}${desc ? `<small>${desc}</small>` : ''}</span></label>`;
     this.camadasEl.innerHTML = `
-      <div class="menu-atalhos">
+      <div class="menu-cab"><h2 id="menu-titulo">Explorar Arda</h2><button type="button" class="fechar" data-fechar-menu aria-label="Fechar menu">×</button></div>
+      <nav class="menu-atalhos" aria-label="Seções do atlas">
         <button type="button" data-acao="jornadas">Seguir uma jornada</button>
         <button type="button" data-acao="eras">Escolher uma era</button>
         <button type="button" data-acao="linhagens">Linhagens e governantes</button>
         <button type="button" data-acao="valar">Valar e Maiar</button>
         <button type="button" data-acao="fotografias">Fotografias dos lugares</button>
+        <button type="button" data-acao="fontes">Fontes e método</button>
+      </nav>
+      <details class="menu-cidades"><summary>Cidades em 3D</summary><div class="menu-atalhos">
         <button type="button" data-acao="gondolin-3d">Visitar Gondolin em 3D</button>
         <button type="button" data-acao="minas-tirith-3d">Visitar Minas Tirith em 3D</button>
         <button type="button" data-acao="edoras-3d">Visitar Edoras em 3D</button>
         <button type="button" data-acao="menegroth-3d">Visitar Menegroth em 3D</button>
         <button type="button" data-acao="armenelos-3d">Visitar Armenelos em 3D</button>
         <button type="button" data-acao="romenna-3d">Visitar Rómenna em 3D</button>
-        <button type="button" data-acao="fontes">Fontes e método</button>
-      </div>
+      </div></details>
       <h2>Camadas</h2>
       ${chk('nomes', 'Nomes')}
       ${chk('reinos', 'Reinos e fronteiras', 'domínio, ocupação, influência')}
@@ -119,7 +125,7 @@ export class Interface {
     raiz.appendChild(this.camadasEl);
 
     this.painel = h('aside', { id: 'painel', hidden: '', role: 'dialog', 'aria-label': 'Ficha' });
-    this.painel.innerHTML = `<div class="alca" aria-hidden="true"></div><button type="button" class="fechar" aria-label="Fechar ficha">×</button><div class="painel-conteudo" tabindex="-1"></div>`;
+    this.painel.innerHTML = `<button type="button" class="alca" aria-label="Expandir ficha" aria-expanded="false"></button><div class="painel-ferramentas"><button type="button" data-acao="voltar-ficha" hidden>Voltar</button><button type="button" class="fechar" aria-label="Fechar ficha">×</button></div><div class="painel-conteudo" tabindex="-1"></div>`;
     raiz.appendChild(this.painel);
     this.conteudo = this.painel.querySelector('.painel-conteudo')!;
 
@@ -158,12 +164,12 @@ export class Interface {
     raiz.appendChild(this.inicio);
 
     // árvore genealógica em tela cheia, sobre o mapa e os painéis
-    this.arvoreTela = h('section', { id: 'arvore-tela', hidden: '', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'arvore-tela-nome', tabindex: '-1' });
+    this.arvoreTela = h('dialog', { id: 'arvore-tela', hidden: '', 'aria-labelledby': 'arvore-tela-nome' }) as HTMLDialogElement;
     raiz.appendChild(this.arvoreTela);
 
     this.retratoTela = h('dialog', { id: 'retrato-tela', 'aria-labelledby': 'retrato-nome' }) as HTMLDialogElement;
     raiz.appendChild(this.retratoTela);
-    this.fotosTela = h('section', { id: 'fotos-tela', class: 'tela-cheia', hidden: '', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'fotos-tela-titulo', tabindex: '-1' });
+    this.fotosTela = h('dialog', { id: 'fotos-tela', class: 'tela-cheia', hidden: '', 'aria-labelledby': 'fotos-tela-titulo' }) as HTMLDialogElement;
     raiz.appendChild(this.fotosTela);
 
     this.linha = new LinhaTempo(this.app, raiz);
@@ -201,6 +207,8 @@ export class Interface {
       if (e.target === this.retratoTela || (e.target as Element).closest('[data-fechar-retrato]')) this.retratoTela.close();
     });
     this.retratoTela.addEventListener('close', () => { this.retratoTela.innerHTML = ''; });
+    this.fotosTela.addEventListener('cancel', (e) => { e.preventDefault(); this.fecharFotos(); });
+    this.arvoreTela.addEventListener('cancel', (e) => { e.preventDefault(); this.fecharArvoreTela(); });
     // dentro da tela cheia, um nome recentraliza a árvore em vez de abrir a ficha atrás dela
     this.fotosTela.addEventListener('click', (e) => {
       const alvo = e.target as HTMLElement;
@@ -211,7 +219,7 @@ export class Interface {
       }
       // "Ver no mapa" e "Ir a esta época" fecham o painel e seguem para a ação normal
       const acao = alvo.closest<HTMLElement>('[data-acao]')?.dataset.acao;
-      if (acao === 'sel' || acao === 'tempo') this.fecharFotos();
+      if (acao === 'sel' || acao === 'tempo' || acao === 'fonte') this.fecharFotos();
     });
     this.fotosTela.addEventListener('change', (e) => {
       if ((e.target as HTMLElement).id !== 'fotos-todas') return;
@@ -239,23 +247,42 @@ export class Interface {
     });
     // folha inferior arrastável no celular
     const alca = this.painel.querySelector('.alca') as HTMLElement;
-    let y0 = 0;
+    let y0: number | null = null;
+    let arrastou = false;
+    const expandir = (expandido: boolean) => {
+      this.painel.classList.toggle('expandido', expandido);
+      alca.setAttribute('aria-expanded', String(expandido));
+      alca.setAttribute('aria-label', expandido ? 'Recolher ficha' : 'Expandir ficha');
+    };
     alca.addEventListener('pointerdown', (e) => {
+      if (!e.isPrimary || e.button !== 0) return;
+      arrastou = false;
       y0 = e.clientY;
       alca.setPointerCapture(e.pointerId);
     });
     alca.addEventListener('pointerup', (e) => {
+      if (y0 == null) return;
       const dy = e.clientY - y0;
-      if (Math.abs(dy) < 8) this.painel.classList.toggle('expandido');
-      else if (dy < 0) this.painel.classList.add('expandido');
-      else if (this.painel.classList.contains('expandido')) this.painel.classList.remove('expandido');
+      y0 = null;
+      if (Math.abs(dy) < 8) return;
+      arrastou = true;
+      if (dy < 0) expandir(true);
+      else if (this.painel.classList.contains('expandido')) expandir(false);
       else this.fecharPainel();
+      e.preventDefault();
+    });
+    alca.addEventListener('pointercancel', () => { y0 = null; });
+    alca.addEventListener('lostpointercapture', () => { y0 = null; });
+    alca.addEventListener('click', () => {
+      if (!arrastou) expandir(!this.painel.classList.contains('expandido'));
+      arrastou = false;
     });
 
-    document.getElementById('btn-camadas')!.addEventListener('click', (e) => {
-      const ab = this.camadasEl.hidden;
-      this.camadasEl.hidden = !ab;
-      (e.currentTarget as HTMLElement).setAttribute('aria-expanded', String(ab));
+    document.getElementById('btn-camadas')!.addEventListener('click', () => this.alternarMenu(this.camadasEl.hidden));
+    this.camadasEl.querySelector('[data-fechar-menu]')!.addEventListener('click', () => this.alternarMenu(false, true));
+    document.getElementById('busca-campo')!.addEventListener('focus', () => this.alternarMenu(false));
+    document.addEventListener('pointerdown', (e) => {
+      if (!(e.target as HTMLElement).closest('#camadas, #btn-camadas')) this.alternarMenu(false);
     });
     this.camadasEl.addEventListener('change', (e) => {
       const el = e.target as HTMLInputElement;
@@ -288,7 +315,7 @@ export class Interface {
       if (k === 'jornada') this.abrirJornadas();
       if (k === 'explorar') this.aviso('Explore à vontade. Toque num lugar para ler sua ficha ou em qualquer ponto para perguntar: o que havia aqui?', 6000);
     });
-    if (ler('arda-inicio-visto') === '1' && location.hash.length > 3) this.inicio.hidden = true;
+    if (ler('arda-inicio-visto') === '1' || location.hash.length > 3) this.inicio.hidden = true;
 
     a.aoClicarRotulo = (tipo, id) => {
       if (tipo === 'lugar') this.abrir('lugar:' + id);
@@ -344,6 +371,7 @@ export class Interface {
 
   aplicarLink(l: ReturnType<typeof lerLink>) {
     const a = this.app;
+    this.historicoPainel = [];
     if (!l.jornada && a.jornada) a.sairJornada();
     if (!l.jornada && a.emCaminhoReto) a.sairCaminhoReto();
     if (l.comparar) a.comparar(l.comparar[0], l.comparar[1]);
@@ -358,7 +386,7 @@ export class Interface {
     }
     if (l.sel) this.abrir(l.sel, false);
     else if (!this.painel.hidden) this.fecharPainel();
-    if (l.travado) a.travar(true);
+    a.travar(Boolean(l.travado));
     if (l.jornada) a.iniciarJornada(l.jornada[0], l.jornada[1]);
   }
 
@@ -367,9 +395,29 @@ export class Interface {
     guardar('arda-inicio-visto', '1');
   }
 
+  private alternarMenu(aberto: boolean, devolverFoco = false) {
+    this.camadasEl.hidden = !aberto;
+    const botao = document.getElementById('btn-camadas')!;
+    botao.setAttribute('aria-expanded', String(aberto));
+    if (aberto) {
+      this.busca.fechar();
+      this.camadasEl.querySelector<HTMLElement>('[data-acao]')!.focus({ preventScroll: true });
+    } else if (devolverFoco) botao.focus({ preventScroll: true });
+  }
+
   // ---------- painel ----------
-  abrir(sel: string, voar = false) {
+  abrir(sel: string, voar = false, registrar = true) {
     const a = this.app;
+    if (registrar && !this.painel.hidden && this.conteudoAtual && sel !== this.conteudoAtual) {
+      this.historicoPainel.push({ sel: this.conteudoAtual, scroll: this.conteudo.scrollTop, titulo: this.conteudo.querySelector('h2')?.textContent ?? 'ficha anterior' });
+    }
+    if (!this.painelFocoAntes) {
+      const foco = document.activeElement as HTMLElement | null;
+      this.painelFocoAntes = foco && this.camadasEl.contains(foco) ? document.getElementById('btn-camadas') : foco;
+    }
+    this.fecharInicio();
+    this.alternarMenu(false);
+    this.busca.fechar();
     if (sel === 'fontes' || sel === 'jornadas' || sel === 'eras' || sel === 'linhagens' || sel === 'valar' || sel.startsWith('fonte:') || sel.startsWith('aqui:')) {
       this.conteudoAtual = sel;
       if (sel.startsWith('aqui:')) a.selecionar(null);
@@ -449,18 +497,31 @@ export class Interface {
     this.painel.classList.toggle('largo', largo);
     document.body.classList.toggle('painel-largo', largo);
     const abertos = manterScroll ? [...this.conteudo.querySelectorAll('details[open] summary')].map((x) => x.textContent) : [];
+    const foco = document.activeElement as HTMLElement | null;
+    const focoFicha = manterScroll && foco && this.conteudo.contains(foco) ? { id: foco.id, tag: foco.tagName, texto: foco.textContent, dados: JSON.stringify(foco.dataset) } : null;
     this.conteudo.innerHTML = html;
+    const titulo = this.conteudo.querySelector('h2');
+    this.painel.setAttribute('aria-label', titulo?.textContent ?? 'Ficha');
+    const voltar = this.painel.querySelector<HTMLButtonElement>('[data-acao="voltar-ficha"]')!;
+    voltar.hidden = !this.historicoPainel.length;
+    voltar.setAttribute('aria-label', `Voltar para ${this.historicoPainel[this.historicoPainel.length - 1]?.titulo ?? 'a ficha anterior'}`);
     if (abertos.length) this.conteudo.querySelectorAll('details').forEach((d) => abertos.includes(d.querySelector('summary')?.textContent ?? null) && (d.open = true));
     this.painel.hidden = false;
     document.body.classList.add('painel-aberto');
     const rol = this.conteudo.querySelector<HTMLElement>('.arvore-rolagem');
     if (rol) rol.scrollLeft = manterScroll && arvoreX != null ? arvoreX : (rol.scrollWidth - rol.clientWidth) / 2;
-    if (manterScroll) this.conteudo.scrollTop = top;
+    if (manterScroll) {
+      this.conteudo.scrollTop = top;
+      if (focoFicha) {
+        const equivalente = [...this.conteudo.querySelectorAll<HTMLElement>('button, a, input, select, summary')].find((el) => focoFicha.id ? el.id === focoFicha.id : el.tagName === focoFicha.tag && el.textContent === focoFicha.texto && JSON.stringify(el.dataset) === focoFicha.dados);
+        (equivalente ?? this.conteudo).focus({ preventScroll: true });
+      }
+    }
     else {
       this.conteudo.scrollTop = 0;
       // leva o foco do teclado à ficha recém-aberta
       if (!this.painelFocoAntes) this.painelFocoAntes = document.activeElement as HTMLElement | null;
-      if (!matchMedia('(pointer: coarse)').matches) this.conteudo.focus({ preventScroll: true });
+      this.conteudo.focus({ preventScroll: true });
     }
   }
   private painelFocoAntes: HTMLElement | null = null;
@@ -468,11 +529,14 @@ export class Interface {
   fecharPainel() {
     const voltar = this.painelFocoAntes;
     this.painelFocoAntes = null;
-    if (voltar && this.painel.contains(document.activeElement) && document.contains(voltar)) voltar.focus({ preventScroll: true });
+    if (this.painel.contains(document.activeElement)) (voltar?.isConnected ? voltar : document.getElementById('btn-camadas'))?.focus({ preventScroll: true });
     this.painel.hidden = true;
     this.painel.classList.remove('expandido', 'largo');
     document.body.classList.remove('painel-aberto', 'painel-largo');
     this.conteudoAtual = '';
+    this.historicoPainel = [];
+    this.painel.querySelector('.alca')!.setAttribute('aria-expanded', 'false');
+    this.painel.querySelector('.alca')!.setAttribute('aria-label', 'Expandir ficha');
     this.app.selecionar(null);
   }
 
@@ -481,6 +545,14 @@ export class Interface {
     const a = this.app;
     const tNum = (v?: string) => (v != null && v !== '' ? Number(v) : null);
     switch (acao) {
+      case 'voltar-ficha': {
+        const anterior = this.historicoPainel.pop();
+        if (anterior) {
+          this.abrir(anterior.sel, false, false);
+          this.conteudo.scrollTop = anterior.scroll;
+        }
+        break;
+      }
       case 'gondolin-3d':
       case 'minas-tirith-3d':
       case 'edoras-3d':
@@ -497,8 +569,7 @@ export class Interface {
         a.definirCamada('detalhes', true);
         if (!v.fase(a.t)) a.definirTempo(tempo.cursor(v.padrao));
         this.fecharInicio();
-        this.camadasEl.hidden = true;
-        document.getElementById('btn-camadas')!.setAttribute('aria-expanded', 'false');
+        this.alternarMenu(false);
         this.fecharPainel();
         const viewport = a.retanguloDe(a.ladoAtual());
         a.voar({ ...v.vista, d: v.vista.d / Math.min(1, viewport.width / viewport.height) });
@@ -597,18 +668,14 @@ export class Interface {
         break;
       case 'fontes':
         this.abrir('fontes');
-        this.camadasEl.hidden = true;
         break;
       case 'jornadas':
         this.abrirJornadas();
-        this.camadasEl.hidden = true;
         break;
       case 'eras':
         this.abrirEras();
-        this.camadasEl.hidden = true;
         break;
       case 'fotografias':
-        this.camadasEl.hidden = true;
         this.abrirFotos('painel');
         break;
       case 'foto':
@@ -622,15 +689,15 @@ export class Interface {
         break;
       case 'linhagens':
         this.abrir('linhagens');
-        this.camadasEl.hidden = true;
         break;
       case 'valar':
         this.abrir('valar');
-        this.camadasEl.hidden = true;
         break;
       case 'jornada':
+        this.jornadaFocoAntes = this.painelFocoAntes;
         a.iniciarJornada(d.id, Number(d.passo) || 0);
         this.fecharPainel();
+        this.cartaoJornada.querySelector<HTMLElement>('h3')?.focus({ preventScroll: true });
         break;
       case 'era':
         this.escolherEra(d.id);
@@ -710,6 +777,8 @@ export class Interface {
     this.arvoreTelaId = id;
     this.arvoreTela.innerHTML = html;
     this.arvoreTela.hidden = false;
+    if (!this.arvoreTela.open) this.arvoreTela.showModal();
+    if (this.app.tocando) this.linha.alternarPlay();
     document.body.classList.add('arvore-tela-aberta');
     const rol = this.arvoreTela.querySelector<HTMLElement>('.arvore-rolagem')!;
     rol.scrollLeft = (rol.scrollWidth - rol.clientWidth) / 2;
@@ -720,17 +789,27 @@ export class Interface {
   private abrirFotos(alvo: string) {
     const html = alvo === 'painel' ? htmlPainelFotos(this.app, this.fotosTodas) : htmlVisualizador(this.app, alvo);
     if (!html) return;
-    if (this.fotosTela.hidden) this.fotosFocoAntes = document.activeElement as HTMLElement | null;
+    if (this.fotosTela.hidden) {
+      const foco = document.activeElement as HTMLElement | null;
+      this.fotosFocoAntes = foco && this.camadasEl.contains(foco) ? document.getElementById('btn-camadas') : foco;
+    }
+    const foco = this.fotosTela.contains(document.activeElement) ? document.activeElement as HTMLElement : null;
+    const seletorFoco = foco?.id ? `#${foco.id}` : foco?.classList.contains('foto-nav') ? (foco === this.fotosTela.querySelector('.foto-nav') ? '.foto-nav' : '.foto-nav:last-child') : '';
+    this.fecharInicio();
+    this.alternarMenu(false);
     this.fotosAberto = alvo;
     this.fotosTela.innerHTML = html;
     this.fotosTela.hidden = false;
+    if (!this.fotosTela.open) this.fotosTela.showModal();
+    if (this.app.tocando) this.linha.alternarPlay();
     this.fotosTela.classList.toggle('visualizador', alvo !== 'painel');
     this.fotosTela.scrollTop = 0;
-    this.fotosTela.querySelector<HTMLElement>('[data-fechar-fotos]')!.focus({ preventScroll: true });
+    (seletorFoco && this.fotosTela.querySelector<HTMLElement>(seletorFoco) || this.fotosTela.querySelector<HTMLElement>('[data-fechar-fotos]'))!.focus({ preventScroll: true });
   }
 
   private fecharFotos() {
     if (this.fotosTela.hidden) return;
+    this.fotosTela.close();
     this.fotosTela.hidden = true;
     this.fotosTela.innerHTML = '';
     this.fotosAberto = '';
@@ -741,6 +820,7 @@ export class Interface {
 
   private fecharArvoreTela() {
     if (this.arvoreTela.hidden) return;
+    this.arvoreTela.close();
     this.arvoreTela.hidden = true;
     this.arvoreTela.innerHTML = '';
     this.arvoreTelaId = '';
@@ -754,6 +834,8 @@ export class Interface {
   private atualizarJornada() {
     const a = this.app;
     const c = this.cartaoJornada;
+    const tinhaFoco = c.contains(document.activeElement);
+    const foco = c.contains(document.activeElement) ? (document.activeElement as HTMLElement).dataset.j : undefined;
     if (a.emCaminhoReto && !a.jornada) {
       c.hidden = false;
       c.innerHTML = `<p class="sobretitulo">Modo narrativo</p><h3>O Caminho Reto</h3><p>Depois da Queda, o mundo se curva e Aman fica fora de seus círculos. Pela estrada reta, que segue em frente enquanto o mar desce, alguns marinheiros ainda chegaram a Tol Eressëa e a Valinor.</p>${listaFontes([{ fonte: 'silm', local: 'Akallabêth (fim)' }])}<div class="acoes"><button type="button" class="primario" data-acao="sair-caminho">Voltar ao mundo redondo</button></div>`;
@@ -761,13 +843,15 @@ export class Interface {
     }
     if (!a.jornada) {
       c.hidden = true;
+      if (tinhaFoco) (this.jornadaFocoAntes ?? document.getElementById('btn-camadas'))!.focus({ preventScroll: true });
+      this.jornadaFocoAntes = null;
       return;
     }
     const { j, passo } = a.jornada;
     const p = j.passos[passo];
     c.hidden = false;
     c.innerHTML = `<p class="sobretitulo">${esc(j.titulo)} · ${passo + 1}/${j.passos.length}</p>
-      <h3>${esc(p.titulo)}</h3>
+      <h3 tabindex="-1">${esc(p.titulo)}</h3>
       <p>${esc(p.texto)}</p>
       ${p.fontes?.length ? listaFontes(p.fontes) : ''}
       <div class="progresso">${j.passos.map((_, k) => `<span class="${k === passo ? 'atual' : k < passo ? 'feito' : ''}"></span>`).join('')}</div>
@@ -775,9 +859,13 @@ export class Interface {
         <button type="button" data-j="ant" ${passo === 0 ? 'disabled' : ''} aria-label="Parada anterior">‹ Anterior</button>
         ${p.selecionar ? `<button type="button" data-j="ficha">Ver ficha</button>` : ''}
         ${p.modo === 'caminho-reto' ? `<button type="button" data-acao="sair-caminho">Voltar ao mundo</button>` : ''}
-        <button type="button" data-j="prox" class="primario" ${passo === j.passos.length - 1 ? 'disabled' : ''} aria-label="Próxima parada">Próximo ›</button>
-        <button type="button" data-j="sair" class="discreto">Sair</button>
+        <button type="button" data-j="${passo === j.passos.length - 1 ? 'sair' : 'prox'}" class="primario">${passo === j.passos.length - 1 ? 'Concluir jornada' : 'Próxima parada ›'}</button>
+        ${passo < j.passos.length - 1 ? '<button type="button" data-j="sair" class="discreto">Sair da jornada</button>' : ''}
       </div>`;
+    if (foco) {
+      const equivalente = c.querySelector<HTMLButtonElement>(`[data-j="${foco === 'prox' && passo === j.passos.length - 1 ? 'sair' : foco}"]`);
+      (equivalente && !equivalente.disabled ? equivalente : c.querySelector<HTMLElement>('h3'))?.focus({ preventScroll: true });
+    }
     c.querySelectorAll<HTMLButtonElement>('[data-j]').forEach((b) =>
       b.addEventListener('click', () => {
         const k = b.dataset.j;
@@ -811,17 +899,20 @@ export class Interface {
   private atualizarComparar() {
     const a = this.app;
     const b = this.barraComparar;
+    const foco = b.contains(document.activeElement) ? (document.activeElement as HTMLElement).dataset.lado : undefined;
     if (!a.comparando) {
       b.hidden = true;
+      if (foco) this.linha.el.querySelector<HTMLElement>('[data-k="comparar"]')!.focus({ preventScroll: true });
       return;
     }
     b.hidden = false;
     const ra = tempo.rotulo(a.A.t),
       rb = tempo.rotulo(a.B.t);
-    b.innerHTML = `<button type="button" class="lado ${a.ladoAtivo === 'A' ? 'ativo' : ''}" data-lado="A"><span class="sobretitulo">${a.divisaoVertical() ? 'Esquerda' : 'Acima'}</span><strong>${esc(ra.principal)}</strong></button>
+    b.innerHTML = `<button type="button" class="lado ${a.ladoAtivo === 'A' ? 'ativo' : ''}" data-lado="A" aria-pressed="${a.ladoAtivo === 'A'}"><span class="sobretitulo">${a.divisaoVertical() ? 'Esquerda' : 'Acima'}</span><strong>${esc(ra.principal)}</strong></button>
       <button type="button" class="trocar" data-lado="troca" aria-label="Trocar lados">⇆</button>
-      <button type="button" class="lado ${a.ladoAtivo === 'B' ? 'ativo' : ''}" data-lado="B"><span class="sobretitulo">${a.divisaoVertical() ? 'Direita' : 'Abaixo'}</span><strong>${esc(rb.principal)}</strong></button>
-      <button type="button" class="sair" data-lado="sair">Sair</button>`;
+      <button type="button" class="lado ${a.ladoAtivo === 'B' ? 'ativo' : ''}" data-lado="B" aria-pressed="${a.ladoAtivo === 'B'}"><span class="sobretitulo">${a.divisaoVertical() ? 'Direita' : 'Abaixo'}</span><strong>${esc(rb.principal)}</strong></button>
+      <button type="button" class="sair" data-lado="sair">Fechar comparação</button>`;
+    if (foco) b.querySelector<HTMLElement>(`[data-lado="${foco}"]`)?.focus({ preventScroll: true });
     b.querySelectorAll<HTMLButtonElement>('[data-lado]').forEach((x) =>
       x.addEventListener('click', () => {
         const k = x.dataset.lado;
@@ -837,11 +928,32 @@ export class Interface {
   aviso(texto: string, ms = 4000, html = '') {
     const el = h('div', { class: 'aviso' }, `<p>${esc(texto)}</p>${html}`);
     this.avisos.appendChild(el);
-    while (this.avisos.children.length > 3) this.avisos.firstElementChild!.remove();
+    this.limitarAvisos();
+    this.expirarAviso(el, ms);
+  }
+
+  private expirarAviso(el: HTMLElement, ms: number) {
     setTimeout(() => {
+      if (!el.isConnected) return;
+      if (el.matches(':hover, :focus-within')) {
+        this.expirarAviso(el, 1000);
+        return;
+      }
       el.classList.add('saindo');
-      setTimeout(() => el.remove(), 400);
+      setTimeout(() => {
+        if (el.matches(':hover, :focus-within')) {
+          el.classList.remove('saindo');
+          this.expirarAviso(el, 1000);
+        } else el.remove();
+      }, 400);
     }, ms);
+  }
+
+  private limitarAvisos() {
+    for (const el of [...this.avisos.children]) {
+      if (this.avisos.children.length <= 3) break;
+      if (!el.matches(':hover, :focus-within')) el.remove();
+    }
   }
 
   private eventosCruzados(evs: Evento[]) {
@@ -854,11 +966,8 @@ export class Interface {
         `<p class="sobretitulo">${esc(tempo.dataEvento(e))}</p><p><strong>${esc(e.titulo)}</strong></p><button type="button" class="link" data-acao="evento" data-id="${e.id}">Ler o que aconteceu</button>`,
       );
       this.avisos.appendChild(el);
-      while (this.avisos.children.length > 3) this.avisos.firstElementChild!.remove();
-      setTimeout(() => {
-        el.classList.add('saindo');
-        setTimeout(() => el.remove(), 400);
-      }, 6500);
+      this.limitarAvisos();
+      this.expirarAviso(el, 6500);
     }
   }
 
@@ -903,7 +1012,10 @@ export class Interface {
       return;
     }
     if (alvo.closest('input, select, textarea')) {
-      if (e.key === 'Escape') (alvo as HTMLInputElement).blur();
+      if (e.key === 'Escape' && !this.camadasEl.hidden) {
+        this.alternarMenu(false, true);
+        e.preventDefault();
+      }
       return;
     }
     // o trilho do tempo já trata as setas; botões já tratam Espaço e Enter
@@ -998,7 +1110,9 @@ export class Interface {
         this.busca.focar();
         break;
       case 'Escape':
-        if (!this.painel.hidden) this.fecharPainel();
+        if (!this.camadasEl.hidden) this.alternarMenu(false, true);
+        else if (!this.painel.hidden) this.fecharPainel();
+        else if (!this.inicio.hidden) this.fecharInicio();
         else if (a.jornada) a.sairJornada();
         else if (a.comparando) a.sairComparar();
         break;

@@ -5,3 +5,5 @@ dist
 AGENTS.md
 /output/imagegen/
 fontes-imagens/
+/.qwen
+/graphify-out

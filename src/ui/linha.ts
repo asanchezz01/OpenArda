@@ -38,8 +38,8 @@ export class LinhaTempo {
     this.el = h('footer', { id: 'linha-tempo', 'aria-label': 'Linha do tempo' });
     this.el.innerHTML = `
       <div class="lt-topo">
-        <button type="button" class="lt-data" aria-label="Escolher data">
-          <span class="lt-principal"></span><span class="lt-secundario"></span>
+        <button type="button" class="lt-data" aria-label="Escolher data" aria-expanded="false" aria-controls="lt-editor">
+          <span class="lt-principal"></span><span class="lt-secundario"></span><span class="lt-editar" aria-hidden="true">Alterar data</span>
         </button>
         <div class="lt-botoes" role="group" aria-label="Controles de tempo">
           <button type="button" data-k="ev-" title="Acontecimento anterior (,)" aria-label="Acontecimento anterior">⏮</button>
@@ -55,7 +55,7 @@ export class LinhaTempo {
       <div class="lt-hora" hidden>
         <label>Hora das Árvores <input type="range" min="0" max="12" step="0.05" aria-label="Hora do ciclo das Duas Árvores"></label>
         <span class="lt-hora-txt"></span>
-        <button type="button" data-k="hora-auto" class="mini" title="Ciclo automático">⟳</button>
+        <button type="button" data-k="hora-auto" class="mini" title="Ciclo automático" aria-label="Alternar ciclo automático das Árvores" aria-pressed="false">⟳</button>
       </div>
       <div class="lt-trilho" role="slider" tabindex="0" aria-label="Posição no tempo" aria-valuemin="0" aria-valuemax="100">
         <div class="lt-eras"></div>
@@ -63,7 +63,7 @@ export class LinhaTempo {
         <div class="lt-cursor"><span></span></div>
       </div>
       <div class="lt-chips" role="group" aria-label="Escolher uma era"></div>
-      <div class="lt-editor" hidden></div>`;
+      <div id="lt-editor" class="lt-editor" role="region" aria-label="Escolher data" hidden></div>`;
     pai.appendChild(this.el);
     this.trilho = this.el.querySelector('.lt-trilho')!;
     this.cursor = this.el.querySelector('.lt-cursor')!;
@@ -107,29 +107,37 @@ export class LinhaTempo {
 
     // interação no trilho
     let arrastando = false;
+    let ultimoX = 0;
     const mover = (cx: number, final: boolean) => {
+      ultimoX = cx;
       const r = this.trilho.getBoundingClientRect();
       const f = Math.min(1, Math.max(0, (cx - r.left) / r.width));
       const t = this.encaixar(this.tx(f));
       this.app.definirTempo(t, { arrastando: !final });
     };
     this.trilho.addEventListener('pointerdown', (e) => {
+      if (!e.isPrimary || e.button !== 0) return;
       if ((e.target as HTMLElement).classList.contains('lt-marca')) return;
+      this.trilho.focus({ preventScroll: true });
       arrastando = true;
       this.trilho.setPointerCapture(e.pointerId);
       mover(e.clientX, false);
     });
     this.trilho.addEventListener('pointermove', (e) => arrastando && mover(e.clientX, false));
-    const fim = (e: PointerEvent) => {
+    const fim = () => {
       if (!arrastando) return;
       arrastando = false;
-      mover(e.clientX, true);
+      mover(ultimoX, true);
     };
     this.trilho.addEventListener('pointerup', fim);
     this.trilho.addEventListener('pointercancel', fim);
+    this.trilho.addEventListener('lostpointercapture', fim);
+    window.addEventListener('blur', fim);
     this.trilho.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') this.app.passoAno(e.shiftKey ? 100 : 1);
-      else if (e.key === 'ArrowLeft') this.app.passoAno(e.shiftKey ? -100 : -1);
+      if (e.key === 'ArrowRight' || e.key === 'ArrowUp') this.app.passoAno(e.shiftKey ? 100 : 1);
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') this.app.passoAno(e.shiftKey ? -100 : -1);
+      else if (e.key === 'Home') this.app.definirTempo(this.encaixar(this.tx(0)));
+      else if (e.key === 'End') this.app.definirTempo(this.encaixar(this.tx(1)));
       else return;
       e.preventDefault();
     });
@@ -146,7 +154,15 @@ export class LinhaTempo {
       this.app.hora = Number(this.horaInput.value);
       this.app.horaAuto = false;
     });
-    this.el.querySelector('.lt-data')!.addEventListener('click', () => this.abrirEditor());
+    this.el.querySelector('.lt-data')!.addEventListener('click', () => this.editor.hidden ? this.abrirEditor() : this.fecharEditor());
+    this.editor.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      e.preventDefault();
+      this.fecharEditor();
+    });
+    document.addEventListener('pointerdown', (e) => {
+      if (!(e.target as HTMLElement).closest('.lt-editor, .lt-data')) this.fecharEditor(false);
+    });
     app.ouvir((m) => {
       if (m === 'tempo' || m === 'trava' || m === 'comparar') this.atualizar();
       if (m === 'quadro') this.quadro();
@@ -211,7 +227,8 @@ export class LinhaTempo {
     const t = a.t;
     const r = tempo.rotulo(t);
     this.dataP.textContent = r.principal;
-    this.dataS.textContent = r.incerto ? r.secundario : r.secundario + (a.comparando ? ` · lado ${a.ladoAtivo === 'A' ? 'esquerdo' : 'direito'}` : '');
+    this.el.querySelector('.lt-data')!.setAttribute('aria-label', `Escolher data: ${r.principal}`);
+    this.dataS.textContent = r.secundario + (a.comparando ? ` · ${a.divisaoVertical() ? (a.ladoAtivo === 'A' ? 'lado esquerdo' : 'lado direito') : (a.ladoAtivo === 'A' ? 'acima' : 'abaixo')}` : '');
     this.el.classList.toggle('incerto', r.incerto);
     this.cursor.style.left = `${this.fx(t) * 100}%`;
     this.trilho.setAttribute('aria-valuenow', String(Math.round(this.fx(t) * 100)));
@@ -220,7 +237,18 @@ export class LinhaTempo {
     this.btnTrava.innerHTML = `${a.travado ? '🔒' : '🔓'}<span class="rot">${a.travado ? 'Fixado' : 'Fixar'}</span>`;
     this.btnComparar.setAttribute('aria-pressed', String(a.comparando));
     const era = tempo.eraDe(t);
-    this.el.querySelectorAll<HTMLElement>('.chip-era').forEach((c) => c.classList.toggle('ativo', c.dataset.era === era.id));
+    this.el.querySelectorAll<HTMLElement>('.chip-era').forEach((c) => {
+      const atual = c.dataset.era === era.id;
+      c.classList.toggle('ativo', atual);
+      c.setAttribute('aria-pressed', String(atual));
+    });
+    for (const sentido of ['-', '+']) {
+      const botao = this.el.querySelector<HTMLButtonElement>(`[data-k="ano${sentido}"]`)!;
+      const rotulo = era.datada ? (sentido === '-' ? 'Ano anterior' : 'Próximo ano') : (sentido === '-' ? 'Acontecimento anterior' : 'Próximo acontecimento');
+      botao.textContent = era.datada ? `${sentido === '-' ? '−' : '+'}1` : sentido === '-' ? '‹' : '›';
+      botao.setAttribute('aria-label', rotulo);
+      botao.title = rotulo;
+    }
     this.horaBox.hidden = regimeDe(t) !== 'arvores';
   }
 
@@ -232,6 +260,7 @@ export class LinhaTempo {
       this.horaTxt.textContent = `${f.fase} · ${a.hora.toFixed(1)} h`;
       this.horaBox.style.setProperty('--prata', String(f.telperion));
       this.horaBox.style.setProperty('--ouro', String(f.laurelin));
+      this.horaBox.querySelector('[data-k="hora-auto"]')!.setAttribute('aria-pressed', String(a.horaAuto));
     }
     if (a.tocando) {
       const agora = performance.now();
@@ -271,19 +300,25 @@ export class LinhaTempo {
       const e = eras.find((x) => x.id === eid)!;
       if (e.datada) {
         const ano = tempo.eraDe(a.t).id === eid ? tempo.anoDe(a.t) : e.inicio;
-        return `<label>Ano <input type="number" name="ano" min="${e.inicio}" max="${e.fim}" value="${ano}" inputmode="numeric"></label><span class="nota">${e.inicio}–${e.fim} ${esc(e.abrev)}</span>`;
+        return `<label>Ano <input type="number" name="ano" min="${e.inicio}" max="${e.fim}" value="${ano}" inputmode="numeric" required></label><span class="nota">${e.inicio}–${e.fim} ${esc(e.abrev)}</span>`;
       }
       const evs = tempo.ordenados.filter((o) => o.ev.era === eid);
-      return `<label>Acontecimento <select name="ev">${evs.map((o, k) => `<option value="${o.ev.id}">${k + 1}. ${esc(o.ev.titulo)}</option>`).join('')}</select></label><p class="nota">${esc(e.nota_datas ?? '')}</p>`;
+      return `<label>Acontecimento <select name="ev">${evs.map((o, k) => `<option value="${o.ev.id}"${tempo.eventoAtual(a.t)?.id === o.ev.id ? ' selected' : ''}>${k + 1}. ${esc(o.ev.titulo)}</option>`).join('')}</select></label><p class="nota">${esc(e.nota_datas ?? '')}</p>`;
     };
-    ed.innerHTML = `<form class="lt-form"><label>Era <select name="era">${opEras}</select></label><div class="lt-corpo">${corpo(era.id)}</div><div class="acoes"><button type="submit" class="primario">Ir</button><button type="button" data-fechar>Fechar</button></div></form>`;
+    ed.innerHTML = `<form class="lt-form"><label>Era <select name="era">${opEras}</select></label><div class="lt-corpo">${corpo(era.id)}</div><div class="acoes"><button type="submit" class="primario">Ir</button><button type="button" data-fechar>Fechar</button></div><div class="acoes lt-eventos" role="group" aria-label="Saltar entre acontecimentos"><button type="button" data-evento="-1">Acontecimento anterior</button><button type="button" data-evento="1">Próximo acontecimento</button></div></form>`;
     ed.hidden = false;
+    this.el.querySelector('.lt-data')!.setAttribute('aria-expanded', 'true');
     const form = ed.querySelector('form')!;
     const selEra = form.querySelector<HTMLSelectElement>('[name=era]')!;
     selEra.addEventListener('change', () => (form.querySelector('.lt-corpo')!.innerHTML = corpo(selEra.value)));
-    form.querySelector('[data-fechar]')!.addEventListener('click', () => (ed.hidden = true));
+    form.querySelector('[data-fechar]')!.addEventListener('click', () => this.fecharEditor());
+    form.querySelectorAll<HTMLButtonElement>('[data-evento]').forEach((botao) => botao.addEventListener('click', () => {
+      a.passoEvento(botao.dataset.evento === '-1' ? -1 : 1);
+      this.fecharEditor();
+    }));
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (!form.reportValidity()) return;
       const eid = selEra.value;
       const er = eras.find((x) => x.id === eid)!;
       if (er.datada) {
@@ -293,8 +328,16 @@ export class LinhaTempo {
         const id = (form.querySelector('[name=ev]') as HTMLSelectElement).value;
         a.definirTempo(tempo.cursor('#' + id));
       }
-      ed.hidden = true;
+      this.fecharEditor();
     });
     (form.querySelector('input,select[name=ev]') as HTMLElement | null)?.focus();
+  }
+
+  private fecharEditor(devolverFoco = true) {
+    if (this.editor.hidden) return;
+    this.editor.hidden = true;
+    const botao = this.el.querySelector<HTMLElement>('.lt-data')!;
+    botao.setAttribute('aria-expanded', 'false');
+    if (devolverFoco) botao.focus({ preventScroll: true });
   }
 }

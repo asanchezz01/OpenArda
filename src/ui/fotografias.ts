@@ -47,7 +47,7 @@ export function htmlPainelFotos(app: App, todas: boolean): string {
       <label class="fotos-todas"><input type="checkbox" id="fotos-todas" ${todas ? 'checked' : ''}> Todas as épocas</label>
       <button type="button" class="fechar" data-fechar-fotos aria-label="Fechar fotografias (Esc)">×</button>
     </header>
-    <p class="nota">${SELO}. Cada foto vale para a época do lugar; mova a linha do tempo para ver outras.</p>
+    <p class="nota">${SELO}. Cada foto vale para a época do lugar. Marque <strong>Todas as épocas</strong> para ver o acervo completo.</p>
     ${
       lista.length
         ? porEra(lista)

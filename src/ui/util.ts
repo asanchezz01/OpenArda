@@ -16,6 +16,7 @@ export function norm(s: string): string {
     .replace(/[̀-ͯ]/g, '')
     .toLowerCase()
     .replace(/[^a-z0-9 ]/g, ' ')
+    .replace(/\s+/g, ' ')
     .trim();
 }
 

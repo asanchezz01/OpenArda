@@ -11,7 +11,9 @@ function iniciar() {
   try {
     app = new App(host);
   } catch (e) {
-    raiz.innerHTML = `<div class="erro-webgl"><h1>Atlas de Arda</h1><p>Não foi possível iniciar o mapa 3D. Verifique se o navegador tem WebGL ativado.</p><pre>${String(e)}</pre></div>`;
+    console.error('Não foi possível iniciar o mapa 3D.', e);
+    raiz.innerHTML = `<div class="erro-webgl" role="alert"><h1>Atlas de Arda</h1><p>Não foi possível iniciar o mapa 3D.</p><p>Ative a aceleração de gráficos nas configurações do navegador ou abra o atlas em outro navegador com suporte a WebGL 2.</p><button type="button" id="tentar-novamente">Tentar novamente</button></div>`;
+    document.getElementById('tentar-novamente')!.addEventListener('click', () => location.reload());
     return;
   }
   const ui = new Interface(app, raiz);

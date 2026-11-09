@@ -144,7 +144,7 @@ function cartaoPoder(p: Pessoa): string {
   return `<div class="valar-cartao povo-${p.povo}">
     ${r ? foto(p.id, 96, true) : `<button type="button" class="valar-sem-retrato" data-acao="sel" data-sel="linhagem:${esc(p.id)}" aria-label="Abrir ficha de ${esc(p.nome)}"><i class="povo-sinal" aria-hidden="true"></i>${esc(p.nome[0] ?? '')}</button>`}
     <div class="valar-cartao-corpo">
-      <strong class="pessoa-nome">${esc(p.nome)}</strong>
+      ${abrir(p.id, p.nome, 'pessoa-nome')}
       ${p.epiteto ? `<span class="pessoa-ep">${esc(p.epiteto)}</span>` : ''}
       ${(com || servico) ? `<span class="valar-lacos">${com}${servico}</span>` : ''}
     </div>

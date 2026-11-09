@@ -168,7 +168,7 @@ describe('atalho para a cidade', () => {
       ladoAtual: vi.fn(), retanguloDe: () => ({ width: 390, height: 844 }),
       voar: vi.fn(), renderer: { domElement: { focus: vi.fn() } },
     };
-    const ui = { app, fecharInicio: vi.fn(), fecharPainel: vi.fn(), camadasEl: { hidden: false }, aviso: vi.fn() };
+    const ui = Object.assign(Object.create(Interface.prototype), { app, fecharInicio: vi.fn(), fecharPainel: vi.fn(), camadasEl: { hidden: false }, aviso: vi.fn() });
     try {
       Interface.prototype.executar.call(ui as unknown as Interface, 'gondolin-3d', {});
       expect(app.definirCamada).toHaveBeenCalledWith('detalhes', true);
@@ -259,7 +259,7 @@ describe('Minas Tirith', () => {
       ladoAtual: vi.fn(), retanguloDe: () => ({ width: 1280, height: 800 }),
       voar: vi.fn(), renderer: { domElement: { focus: vi.fn() } },
     };
-    const ui = { app, fecharInicio: vi.fn(), fecharPainel: vi.fn(), camadasEl: { hidden: false }, aviso: vi.fn() };
+    const ui = Object.assign(Object.create(Interface.prototype), { app, fecharInicio: vi.fn(), fecharPainel: vi.fn(), camadasEl: { hidden: false }, aviso: vi.fn() });
     try {
       Interface.prototype.executar.call(ui as unknown as Interface, 'minas-tirith-3d', {});
       if (muda) expect(app.definirTempo).toHaveBeenCalledWith(tempo.tAno('TE', 3018));
