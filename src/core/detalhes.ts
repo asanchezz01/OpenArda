@@ -82,7 +82,8 @@ export function faseEdoras(t: number): string | null {
 export type FaseArmenelos = 'nimloth' | 'templo';
 
 export const ARMENELOS = lugarPorId.get('armenelos')!;
-export const VISTA_ARMENELOS: Vista = { x: ARMENELOS.em[0] + 0.15, y: ARMENELOS.em[1], d: 2.4, rumo: 255, inclinacao: 58 };
+/** A visita olha de lés-sudeste para o paço sob o penhasco, com o Meneltarma ao fundo. */
+export const VISTA_ARMENELOS: Vista = { x: ARMENELOS.em[0] - 0.04, y: ARMENELOS.em[1] - 0.06, d: 1.25, rumo: 295, inclinacao: 66 };
 export const FASES_ARMENELOS: Record<string, FaseArmenelos> = { 'SE:32': 'nimloth', 'SE:3263': 'templo' };
 
 export function faseArmenelos(t: number): FaseArmenelos | null {
@@ -96,7 +97,7 @@ export type FaseRomenna = 'barcos' | 'navios' | 'fieis';
 export const ROMENNA = lugarPorId.get('romenna')!;
 /** O marcador do atlas fica ~12 km terra adentro; o porto é assentado no fundo da baía, junto à água. */
 export const CAIS_ROMENNA: [number, number] = [-2125.15, -732];
-export const VISTA_ROMENNA: Vista = { x: CAIS_ROMENNA[0] + 0.25, y: CAIS_ROMENNA[1] - 0.05, d: 2.2, rumo: 262, inclinacao: 60 };
+export const VISTA_ROMENNA: Vista = { x: CAIS_ROMENNA[0] + 0.28, y: CAIS_ROMENNA[1] - 0.12, d: 1.4, rumo: 262, inclinacao: 76 };
 export const FASES_ROMENNA: Record<string, FaseRomenna> = { 'SE:32': 'barcos', 'SE:600': 'navios', 'SE:3310': 'fieis' };
 
 export function faseRomenna(t: number): FaseRomenna | null {

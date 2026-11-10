@@ -341,8 +341,8 @@ function detalheNargothrond(): string {
 function detalheArmenelos(): string {
   return detalhe3d(
     'Armenelos em 3D',
-    'Atravesse a muralha branca até o pátio do rei, onde Nimloth floresce entre canteiros, diante do paço de alas em U, com a cúpula dourada e a Torre do Rei. Os bairros se espalham em anéis em volta da colina ajardinada no meio da cidade.',
-    'traçado, paço, casas e jardins são interpretativos, inspirados na fotografia da cidade. São descritos Nimloth no pátio do rei e o Templo de Melkor na colina, circular, com 500 pés de diâmetro e de altura e cúpula de prata que enegreceu com a fumaça (Akallabêth).',
+    'Suba da praça ao paço sob o penhasco: a rotunda de cúpula de bronze, os pavilhões de treliça azul e a Torre do Rei no rochedo ao lado. Nimloth floresce no pátio do rei, sobre a grande muralha de arcada e friso azul, de onde cai a cascata. Abaixo ficam os bairros de casas de teto plano, o aqueduto, o canal e a colina ajardinada no meio da cidade.',
+    'o paço, o penhasco, a muralha, a estátua do rei, a torre, o aqueduto e as casas seguem o visual da série Os Anéis de Poder, que não é descrição de Tolkien; a série mostra a capital à beira-mar, e o atlas a mantém no interior, como em Contos Inacabados. São descritos Nimloth no pátio do rei e o Templo de Melkor na colina, circular, com 500 pés de diâmetro e de altura e cúpula de prata que enegreceu com a fumaça (Akallabêth).',
     'armenelos-3d',
     '32–3262 S.E.: Nimloth no pátio do rei · a partir de c. 3263: a Árvore derrubada e o Templo de Sauron na colina (o ano não é dado; o atlas o infere). Em 3319 a cidade afunda com a ilha e o modelo é ocultado. Fora desses períodos, a visita abre em 3000 S.E.',
   );
@@ -351,8 +351,8 @@ function detalheArmenelos(): string {
 function detalheRomenna(): string {
   return detalhe3d(
     'Rómenna em 3D',
-    'Desça ao grande porto no fundo da baía: o cais de pedra em V, os armazéns de madeira, os molhes com faróis, os píeres e as casas e torres que sobem até a cidadela, com terraços de vinhas atrás.',
-    'traçado, cidadela, faróis e navios são interpretativos, inspirados na fotografia do porto. O marcador de Rómenna no mapa fica cerca de 12 km terra adentro; o modelo é assentado no fundo da baía, onde a costa do atlas encontra o mar. A ilha de Tol Uinen e a torre Calmindon ainda não estão modeladas.',
+    'Entre no porto pela ponte de três arcos, sustentada por atlantes, ao lado do farol de pedra com o fogo aceso. No fundo da baía, o colosso de Eärendil ergue o braço diante do rochedo, com Elwing no ombro. Viadutos ligam os rochedos cobertos de casas, e o Salão dos Guardas do Mar fica no terraço de ciprestes sobre o cais norte. Os navios têm velas em leque.',
+    'o colosso, o farol, a ponte dos atlantes, os viadutos, as casas e os navios de velas em leque seguem o visual da série Os Anéis de Poder, que os mostra no porto da capital; o atlas os põe em Rómenna, o porto descrito por Tolkien, e nada disso é descrição dele. O marcador de Rómenna no mapa fica cerca de 12 km terra adentro; o modelo é assentado no fundo da baía, onde a costa do atlas encontra o mar. A ilha de Tol Uinen e a torre Calmindon ainda não estão modeladas.',
     'romenna-3d',
     '32–599 S.E.: barcos de pesca · 600–3309: navios de alto-mar · 3310–3318: os nove navios dos Fiéis (quatro de Elendil, três de Isildur e dois de Anárion). Em 3319 o porto afunda com a ilha. Fora desses períodos, a visita abre em 3000 S.E.',
   );

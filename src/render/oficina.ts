@@ -1,5 +1,5 @@
 // Peças de arquitetura compartilhadas pelos sítios em 3D (Númenor, Menegroth): geometrias unitárias,
-// materiais e construtores de torres, telhados, janelas, casas, árvores e navios sobre os lotes instanciados.
+// materiais e construtores de torres, telhados, janelas, casas, árvores e barcos sobre os lotes instanciados.
 import * as THREE from 'three';
 import { rng } from '../terrain/noise';
 import { criarLotes } from './lotes';
@@ -105,42 +105,12 @@ export function oficina(semente: number) {
     peca(copa, folhas, x, y, z + s * 1.15, s * 0.55, s * 0.55, s * 0.62);
   }
 
-  /** Navio de três mastros, de velas abertas ou recolhidas nas vergas. */
-  function navio(m: { casco: M; conves: M; mastro: M; vela: M; ouro: M }, x: number, y: number, ang: number, abertas: boolean, L = 0.046) {
-    const B = L * 0.24;
-    peca(casco, m.casco, x, y, -0.002, L, B, 0.0075, ang);
-    const em = (dx: number, dy = 0) => {
-      const [a, b] = giro(ang, dx, dy);
-      return [x + a, y + b] as const;
-    };
-    const conves = 0.0055;
-    bloco(m.conves, x, y, L * 0.8, B * 0.72, 0.0004, conves, ang);
-    const [px, py] = em(-L * 0.38);
-    bloco(m.casco, px, py, L * 0.2, B * 0.86, 0.0045, conves, ang); // castelo de popa
-    const [qx, qy] = em(L * 0.36);
-    bloco(m.casco, qx, qy, L * 0.12, B * 0.6, 0.0025, conves, ang); // castelo de proa
-    const [gx, gy] = em(L * 0.62);
-    bloco(m.mastro, gx, gy, L * 0.3, 0.0006, 0.0006, conves + 0.002, ang); // gurupés
-    for (const [dx, h] of [[L * 0.24, 0.032], [0, 0.04], [-L * 0.22, 0.028]] as const) {
-      const [mx, my] = em(dx);
-      peca(cilindro, m.mastro, mx, my, conves + h / 2, 0.0005, 0.0005, h);
-      for (const k of [0.45, 0.8]) {
-        const z = conves + h * k;
-        const larg = B * (k < 0.5 ? 1.25 : 0.95);
-        bloco(m.mastro, mx, my, 0.0005, larg, 0.0005, z, ang); // verga
-        if (abertas) bloco(m.vela, mx, my, 0.0005, larg * 0.95, h * 0.3, z - h * 0.3, ang);
-        else bloco(m.vela, mx, my, 0.0014, larg * 0.9, 0.0012, z - 0.0011, ang);
-      }
-      if (dx === 0) bloco(m.ouro, mx, my, 0.004, 0.0004, 0.0022, conves + h, ang); // flâmula
-    }
-  }
-
   function barco(m: { casco: M; mastro: M; vela: M }, x: number, y: number, ang: number) {
     peca(casco, m.casco, x, y, -0.0008, 0.012, 0.0035, 0.0028, ang);
     peca(cilindro, m.mastro, x, y, 0.006, 0.0003, 0.0003, 0.009);
     bloco(m.vela, x, y, 0.0003, 0.004, 0.006, 0.0035, ang + Math.PI / 2);
   }
 
-  return { ...lotes, rand, giro, telhado, ameiasLinha, ameiasRetangulo, finial, torreRedonda, torreQuadrada, janelas, casa, arvore, navio, barco };
+  return { ...lotes, rand, giro, telhado, ameiasLinha, ameiasRetangulo, finial, torreRedonda, torreQuadrada, janelas, casa, arvore, barco };
 }
 

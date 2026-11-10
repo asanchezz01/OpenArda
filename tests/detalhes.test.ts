@@ -7,7 +7,7 @@ import { COLINA_MENEGROTH, FASES_MENEGROTH, faseMenegroth, MENEGROTH, VISTA_MENE
 import { criarMenegroth, distanciaRio, PORTAO, RIO } from '../src/render/menegroth';
 import { FASES_NARGOTHROND, faseNargothrond, GIRO_NARGOTHROND, MARGEM_NARGOTHROND, NARGOTHROND, VISTA_NARGOTHROND } from '../src/core/detalhes';
 import { criarNargothrond, LESTE, OESTE, paraAtlas, PONTE, PRACA, RIO as NAROG } from '../src/render/nargothrond';
-import { alturaColina, casco, criarArmenelos, criarRomenna, naviosRomenna, TEMPLO } from '../src/render/numenor';
+import { alturaColina, caisX, casco, COLINA, COLOSSO, criarArmenelos, criarRomenna, leque, naviosRomenna, NIMLOTH, PONTE_DO_MAR, TEMPLO, TORRE_DO_REI } from '../src/render/numenor';
 import { criarEdoras, perfilEdoras } from '../src/render/edoras';
 import { criarGondolin } from '../src/render/gondolin';
 import { criarMinasTirith } from '../src/render/minas-tirith';
@@ -360,10 +360,26 @@ describe('Númenor: Armenelos e Rómenna', () => {
     expect(instancias(nimloth).map((m) => Array.from(m.instanceMatrix.array))).toEqual(instancias(criarArmenelos('nimloth')).map((m) => Array.from(m.instanceMatrix.array)));
     expect(instancias(nimloth).reduce((n, m) => n + m.count, 0)).toBeGreaterThan(3000);
     const alto = (g: THREE.Object3D) => new THREE.Box3().setFromObject(g).max.z;
-    expect(alto(nimloth)).toBeLessThan(0.15); // a Torre do Rei é o ponto mais alto
-    expect(alto(templo)).toBeGreaterThan(alturaColina(-0.12, 0) + TEMPLO.altura);
+    const flores = (g: THREE.Object3D) => instancias(g).filter((m) => (m.material as THREE.MeshStandardMaterial).color.getHex() === 0xfbfbf5).length;
+    expect(flores(nimloth)).toBe(1);
+    expect(flores(templo)).toBe(0);
+    expect(alto(templo)).toBeGreaterThan(alturaColina(COLINA.x, COLINA.y) + TEMPLO.altura);
     expect(TEMPLO.altura).toBeCloseTo(0.1524, 4);
     expect(new THREE.Box3().setFromObject(nimloth.getObjectByName('Base')!).min.z).toBeCloseTo(-0.8);
+  });
+
+  it('Armenelos segue a série: pátio do rei sobre a muralha, Torre do Rei acima do paço e penhasco por trás', () => {
+    const cidade = criarArmenelos('nimloth');
+    const rochas = new THREE.Box3().setFromObject(cidade.getObjectByName('Rochas')!);
+    const torre = TORRE_DO_REI.rocha + TORRE_DO_REI.altura;
+    expect(torre).toBeGreaterThan(0.25); // mais alta que a cúpula do paço (~0,15 km)
+    expect(rochas.max.z).toBeGreaterThan(torre); // o penhasco domina a cidade
+    expect(rochas.min.z).toBeCloseTo(0); // nenhuma rocha abaixo do chão da base
+    // Nimloth e a colina do Templo ficam dentro da base, e a colina não invade o pátio
+    expect(Math.hypot(...NIMLOTH)).toBeLessThan(0.5);
+    expect(Math.hypot(COLINA.x, COLINA.y) + COLINA.r).toBeLessThan(1);
+    expect(Math.hypot(NIMLOTH[0] - COLINA.x, NIMLOTH[1] - COLINA.y)).toBeGreaterThan(COLINA.r + 0.1);
+    expect(cidade.children.filter((c) => c instanceof THREE.Mesh).length).toBeLessThan(60);
   });
 
   it('Rómenna: os navios mudam com a época, nove dos Fiéis no fim', () => {
@@ -373,6 +389,30 @@ describe('Númenor: Armenelos e Rómenna', () => {
     const cascos = (f: 'barcos' | 'navios' | 'fieis') => instancias(criarRomenna(f).getObjectByName('Mar')!).filter((m) => m.geometry === casco).reduce((n, m) => n + m.count, 0);
     const { ancorados, aVela, barcos } = naviosRomenna('fieis');
     expect(cascos('fieis')).toBe(ancorados.length + aVela.length + barcos);
+    // velas em leque: dois pares por navio, abertos ou fechados; os barcos de pesca não as têm
+    const leques = (f: 'barcos' | 'navios' | 'fieis') => instancias(criarRomenna(f).getObjectByName('Mar')!).filter((m) => m.geometry === leque).reduce((n, m) => n + m.count, 0);
+    expect(leques('barcos')).toBe(0);
+    expect(leques('navios')).toBe(4 * (naviosRomenna('navios').ancorados.length + naviosRomenna('navios').aVela.length));
+    expect(leques('fieis')).toBe(4 * 9);
+  });
+
+  it('Rómenna segue a série: o colosso no cais, com o rochedo às costas, e a ponte sobre a boca do porto', () => {
+    const m = relevo();
+    const [x, y] = CAIS_ROMENNA;
+    // o colosso fica em terra, a menos de 100 m da água
+    expect(COLOSSO.em[0]).toBeLessThan(caisX(COLOSSO.em[1]));
+    expect(m.altura(x + COLOSSO.em[0], y + COLOSSO.em[1])).toBeGreaterThan(0);
+    expect(m.distCosta(x + COLOSSO.em[0], y + COLOSSO.em[1])).toBeLessThan(0.1);
+    const porto = criarRomenna('navios');
+    expect(new THREE.Box3().setFromObject(porto.getObjectByName('Rochas')!).max.z).toBeGreaterThan(COLOSSO.altura);
+    // a ponte cruza água do atlas, e os navios ancorados ficam do lado de dentro
+    const { a, b } = PONTE_DO_MAR;
+    for (const [px, py] of [a, b, [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]]) expect(m.altura(x + px, y + py)).toBeLessThanOrEqual(0);
+    const dentro = (nx: number, ny: number) => (b[0] - a[0]) * (ny - a[1]) - (b[1] - a[1]) * (nx - a[0]) > 0;
+    for (const fase of ['navios', 'fieis'] as const) {
+      for (const [nx, ny] of naviosRomenna(fase).ancorados) expect(dentro(nx, ny)).toBe(true);
+      for (const [nx, ny] of naviosRomenna(fase).aVela) expect(dentro(nx, ny)).toBe(false);
+    }
   });
 
   it('o porto fica em terra, com o mar logo a leste, e os navios no nível da água', () => {
