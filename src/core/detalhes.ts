@@ -136,7 +136,8 @@ export const NARGOTHROND = lugarPorId.get('nargothrond')!;
  */
 export const MARGEM_NARGOTHROND: [number, number] = [-420.8933, -211.4096];
 export const GIRO_NARGOTHROND = Math.atan2(-11, 14);
-export const VISTA_NARGOTHROND: Vista = { x: MARGEM_NARGOTHROND[0] + 0.107, y: MARGEM_NARGOTHROND[1] - 0.058, d: 1.25, rumo: 238, inclinacao: 56 };
+/** A visita olha rio acima, pela garganta, para a ponte e as Portas de Felagund. */
+export const VISTA_NARGOTHROND: Vista = { x: MARGEM_NARGOTHROND[0] + 0.202, y: MARGEM_NARGOTHROND[1] + 0.095, d: 0.8, rumo: 308, inclinacao: 70 };
 export const FASES_NARGOTHROND: Record<string, FaseNargothrond> = { 'PE:102': 'integra', 'PE:490': 'ponte', 'PE:495': 'glaurung', 'PE:501': 'abandonada' };
 
 export function faseNargothrond(t: number): FaseNargothrond | null {

@@ -331,10 +331,10 @@ function detalheMenegroth(): string {
 function detalheNargothrond(): string {
   return detalhe3d(
     'Nargothrond em 3D',
-    'Desça a garganta do Narog até as Portas de Felagund, abertas no penhasco de Taur-en-Faroth sobre o rio, com o terraço e a escada até a água. Um corte abre o penhasco rio abaixo e mostra os corredores, o salão do trono de Finrod, com pilares e lanternas, e a câmara do tesouro.',
-    'a forma da garganta, a planta dos salões, as portas, o terraço e a escada são interpretativos; o corte é um recurso de visualização, e a forma de Glaurung é artística. São descritos as cavernas sob Taur-en-Faroth na margem oeste do Narog, as portas voltadas para o rio, a grande ponte construída a conselho de Túrin e Glaurung deitado sobre o tesouro reunido no salão mais fundo (O Silmarillion, cap. 13 e 21). O marcador do mapa fica a cerca de 3 km do Narog; o modelo é assentado na margem oeste, alinhado ao traçado do rio.',
+    'Olhe rio acima pela garganta do Narog: fachadas de pedra dourada escavadas em degraus nos paredões, com janelas em arco, cúpulas, torreões e bocas de caverna sob a floresta de Taur-en-Faroth. No primeiro degrau da margem oeste ficam a praça e as Portas de Felagund; diante delas, a ponte de três arcos.',
+    'a garganta em degraus, as fachadas nas duas margens, as cúpulas, as bocas de caverna, as três arcadas da ponte e a forma de Glaurung são interpretativos, compostos a partir de uma ilustração de referência. São descritos as cavernas sob Taur-en-Faroth na margem oeste do Narog, as portas voltadas para o rio, a grande ponte construída a conselho de Túrin e Glaurung diante das portas, onde encontrou Túrin, antes de se deitar sobre o tesouro lá dentro (O Silmarillion, cap. 13 e 21). O marcador do mapa fica a cerca de 3 km do Narog; o modelo é assentado na margem oeste, alinhado ao traçado do rio.',
     'nargothrond-3d',
-    '102–489 P.E.: salões íntegros, sem ponte · c. 490–494: a ponte de Túrin diante das portas (data aproximada) · 495–500: saqueada; Glaurung deitado sobre o tesouro no salão do trono · a partir de c. 501: o dragão parte para Brethil e o tesouro é levado a Doriath; salões vazios. A partir de 587, Nargothrond afunda com Beleriand e o modelo é ocultado. Fora desses períodos, a visita abre em 400 P.E.',
+    '102–489 P.E.: fachadas iluminadas, sem ponte · c. 490–494: a ponte de Túrin diante das portas (data aproximada) · 495–500: saque; janelas apagadas, edifícios queimados e partidos, Glaurung sobre o ouro diante das portas · a partir de c. 501: o dragão parte para Brethil e o tesouro é levado a Doriath; ruínas tomadas pelo mato. A partir de 587, Nargothrond afunda com Beleriand e o modelo é ocultado. Fora desses períodos, a visita abre em 400 P.E.',
   );
 }
 

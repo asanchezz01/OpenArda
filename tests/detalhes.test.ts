@@ -6,7 +6,7 @@ import { ARMENELOS, CAIS_ROMENNA, FASES_ARMENELOS, FASES_ROMENNA, faseArmenelos,
 import { COLINA_MENEGROTH, FASES_MENEGROTH, faseMenegroth, MENEGROTH, VISTA_MENEGROTH } from '../src/core/detalhes';
 import { criarMenegroth, distanciaRio, PORTAO, RIO } from '../src/render/menegroth';
 import { FASES_NARGOTHROND, faseNargothrond, GIRO_NARGOTHROND, MARGEM_NARGOTHROND, NARGOTHROND, VISTA_NARGOTHROND } from '../src/core/detalhes';
-import { CORTE, criarNargothrond, paraAtlas, RIO as NAROG, SALOES } from '../src/render/nargothrond';
+import { criarNargothrond, LESTE, OESTE, paraAtlas, PONTE, PRACA, RIO as NAROG } from '../src/render/nargothrond';
 import { alturaColina, casco, criarArmenelos, criarRomenna, naviosRomenna, TEMPLO } from '../src/render/numenor';
 import { criarEdoras, perfilEdoras } from '../src/render/edoras';
 import { criarGondolin } from '../src/render/gondolin';
@@ -516,26 +516,28 @@ describe('Nargothrond', () => {
     expect(Math.hypot(MARGEM_NARGOTHROND[0] - NARGOTHROND.em[0], MARGEM_NARGOTHROND[1] - NARGOTHROND.em[1])).toBeLessThan(4);
   });
 
-  it('os salões ficam dentro do corte, sem se tocarem', () => {
-    for (const s of Object.values(SALOES)) {
-      expect(s.x0).toBeGreaterThan(CORTE.x0);
-      expect(s.x1).toBeLessThan(CORTE.x1);
-      expect(s.y0).toBeGreaterThan(CORTE.y0);
-      expect(s.y1).toBeLessThan(CORTE.y1);
-    }
+  it('a garganta sobe em degraus dos dois lados, e a ponte sai da praça das portas para a margem leste', () => {
+    for (const lado of [OESTE, LESTE])
+      for (let k = 1; k < lado.length; k++) {
+        expect(lado[k].s).toBeGreaterThan(lado[k - 1].s);
+        expect(lado[k].h).toBeGreaterThan(lado[k - 1].h);
+      }
+    expect(OESTE[0].s).toBeGreaterThan(NAROG.largura / 2);
+    expect(PONTE.tabuleiro).toBeGreaterThan(OESTE[0].h);
+    expect(PRACA.portas).toBeLessThan(OESTE[1].s);
   });
 
-  it('gera o corte, as lanternas, a ponte e Glaurung conforme a fase', () => {
+  it('gera as fachadas iluminadas, a ponte e Glaurung conforme a fase', () => {
     const integra = criarNargothrond('integra');
     expect(instancias(integra).map((m) => Array.from(m.instanceMatrix.array))).toEqual(instancias(criarNargothrond('integra')).map((m) => Array.from(m.instanceMatrix.array)));
-    expect(integra.getObjectByName('Corte')).toBeTruthy();
     expect(integra.getObjectByName('Base')).toBeTruthy();
     const box = new THREE.Box3().setFromObject(integra);
     expect([...box.min.toArray(), ...box.max.toArray()].every(Number.isFinite)).toBe(true);
     expect(lanternasAcesas(integra)).toBeGreaterThan(20);
     const ponte = criarNargothrond('ponte');
-    expect(instancias(ponte).some((m) => m.geometry.type === 'TorusGeometry')).toBe(true);
-    expect(instancias(integra).some((m) => m.geometry.type === 'TorusGeometry')).toBe(false);
+    expect(ponte.getObjectByName('Ponte')).toBeTruthy();
+    expect(integra.getObjectByName('Ponte')).toBeUndefined();
+    expect(criarNargothrond('abandonada').getObjectByName('Ponte')).toBeTruthy();
     const glaurung = criarNargothrond('glaurung');
     expect(lanternasAcesas(glaurung)).toBe(0);
     expect(contaMaterial(glaurung, DRAGAO)).toBeGreaterThan(30);
