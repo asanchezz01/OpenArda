@@ -157,9 +157,44 @@ As fases vêm de `menegroth` em `data/lugares.json` (`FASES_MENEGROTH`), e um te
 - O Cinturão de Melian como efeito de névoa nas bordas do reino.
 - Decidir se o marcador de Menegroth deve ir para a margem do rio (revisão cartográfica).
 
+## Sexta entrega: Nargothrond
+
+**Implementado nesta versão:** as cavernas de Finrod Felagund na margem oeste do Narog, sob as colinas de Taur-en-Faroth. O exterior segue a fotografia aprovada [As portas de Nargothrond](../public/fotografias/nargothrond-pe400.webp): uma garganta com o penhasco alto e florestado a oeste e o barranco mais baixo a leste. As Portas de Felagund têm fachada aparelhada, colunas, lintel, cornija e portas de madeira. Ficam sobre um terraço apoiado num contraforte de rocha, com uma escada até a água e espuma junto ao contraforte.
+
+**Modo de corte:** reutiliza a solução de Menegroth. Um setor retangular do penhasco, rio abaixo das portas, fica aberto. A rocha é uma laje na altura do teto dos salões, e os salões e corredores são furos reais da extrusão. Pelo corte se veem o corredor que vem das portas, o salão do trono de Finrod, com duas fileiras de pilares, lanternas e o estrado com o trono de prata, e a câmara do tesouro, com as arcas.
+
+![Nargothrond em c. 490 P.E.: a garganta do Narog, as portas no penhasco, a ponte de Túrin e o corte com os salões](capturas/12-nargothrond-3d.png)
+
+![Glaurung deitado sobre o tesouro no salão do trono (495–500 P.E.)](capturas/13-nargothrond-glaurung.png)
+
+As duas imagens são renderizações de diagnóstico da malha real, sem o terreno e a iluminação do aplicativo. O FPS no navegador do aplicativo não foi medido nesta entrega.
+
+| Período do atlas | Representação |
+| --- | --- |
+| Antes de 102 P.E. | Sem salões |
+| 102–489 P.E. | Salões íntegros, lanternas acesas, sem ponte |
+| c. 490–494 P.E. | A grande ponte diante das portas, construída a conselho de Túrin |
+| 495–500 P.E. | Saque: portas arrombadas, pilares caídos, lanternas apagadas; Glaurung deitado sobre o tesouro reunido no salão do trono |
+| c. 501–586 P.E. | Glaurung partiu para Brethil e o tesouro foi levado a Doriath; salões vazios, arcas viradas e escombros |
+| A partir de 587 P.E. | Modelo ocultado com o afundamento de Beleriand |
+
+As fases vêm de `nargothrond` em `data/lugares.json` (`FASES_NARGOTHROND`), e um teste exige que coincidam. Foram acrescentadas duas fases ao lugar, ambas com data aproximada: a ponte (c. 490, logo depois da chegada de Túrin, quando a fotografia das portas sem ponte deixa de valer) e a partida de Glaurung (501, ano da morte do dragão em Cabed-en-Aras). A ponte continua de pé depois do saque, pois foi por ela que Glaurung entrou.
+
+**Como visitar:** em **Camadas e legenda**, escolha **Visitar Nargothrond em 3D**. Também é possível abrir a ficha de Nargothrond, lugar ou reino, e escolher **Explorar cidade em 3D**. Fora do período dos salões, a visita abre em 400 P.E.
+
+**Interpretação visual:** *O Silmarillion* (cap. 13 e 21) descreve as cavernas sob Taur-en-Faroth na margem oeste do Narog, as portas voltadas para o rio, a grande ponte construída a conselho de Túrin e Glaurung, que entra pela ponte, reúne o tesouro no salão mais fundo e se deita sobre ele. São artísticos a forma da garganta, a planta e o número dos salões, as portas, o terraço, a escada, o trono, a forma de Glaurung (sem asas) e o corte.
+
+**Implantação:** o marcador de Nargothrond no mapa fica a cerca de 3 km do traçado do Narog, no lado leste. O modelo é assentado em `MARGEM_NARGOTHROND`, na margem oeste, e girado (`GIRO_NARGOTHROND`) para que o rio do modelo siga o trecho do traçado do atlas. Um teste confere que o eixo do rio cai sobre esse trecho e que o penhasco fica na margem oeste.
+
+### Próximos detalhes de Nargothrond
+
+- Decidir se o marcador de Nargothrond deve ir para a margem oeste (revisão cartográfica).
+- Representar Mîm nos salões abandonados (501) e a sua morte diante das portas, se a linha do tempo ganhar meses.
+- Inspeção em celulares reais.
+
 ## Ordem de expansão
 
-Esta é uma ordem de implementação, sem datas prometidas. Gondolin, Minas Tirith, Edoras, Armenelos, Rómenna e Menegroth já têm arquitetura 3D; os demais itens estão planejados.
+Esta é uma ordem de implementação, sem datas prometidas. Gondolin, Minas Tirith, Edoras, Armenelos, Rómenna, Menegroth e Nargothrond já têm arquitetura 3D; os demais itens estão planejados.
 
 | Ordem | Reino / domínio | Primeiro local | Entrega visual e temporal | Dependência principal |
 | --- | --- | --- | --- | --- |
@@ -168,7 +203,7 @@ Esta é uma ordem de implementação, sem datas prometidas. Gondolin, Minas Tiri
 | 3 | **Rohan** | Edoras | **Versão inicial implementada** (colina, fosso, muralha, Meduseld, túmulos e Longo Inverno); depois, o Abismo de Helm | Arquitetura de madeira e implantação no relevo |
 | 4 | **Númenor** | Armenelos e Rómenna | **Versão inicial implementada** (paço, Nimloth, Templo, porto e frotas por época; desaparecimento na Queda); depois, o Meneltarma e Andúnië | Relacionar os assentamentos à geografia da ilha |
 | 5 | **Doriath** | Menegroth | **Versão inicial implementada** (entrada, ponte, salões subterrâneos em corte, saque e destruição); depois, o Cinturão de Melian | O modo de corte foi definido: setor aberto da colina |
-| 6 | Nargothrond | Nargothrond | Portas, salões, ponte e ruínas junto ao Narog | Reutilizar o modo subterrâneo e datar a ponte |
+| 6 | **Nargothrond** | Nargothrond | **Versão inicial implementada** (portas, terraço, salões em corte, ponte de Túrin, Glaurung sobre o tesouro e abandono) | O modo subterrâneo foi reutilizado; a ponte foi datada em c. 490 P.E. |
 | 7 | Lindon e Eregion | Mithlond; depois Ost-in-Edhil | Cais, navios estáticos e oficinas; ruínas de Eregion | Acrescentar a cidade de Ost-in-Edhil aos dados com fontes próprias |
 | 8 | Arnor e Arthedain | Annúminas e Fornost | Capitais em atividade e ruínas por período | Separar os períodos de cada capital |
 | 9 | Angmar | Carn Dûm | Fortaleza e acesso montanhoso | Documentar lacunas e evitar apresentar invenções como descrições |

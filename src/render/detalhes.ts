@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import type { Globo } from './globo';
-import { ARMENELOS, CAIS_ROMENNA, COLINA_MENEGROTH, EDORAS, faseArmenelos, faseMenegroth, MENEGROTH, faseEdoras, faseGondolin, faseMinasTirith, faseRomenna, GONDOLIN, MINAS_TIRITH, ROMENNA } from '../core/detalhes';
+import { ARMENELOS, CAIS_ROMENNA, COLINA_MENEGROTH, EDORAS, faseArmenelos, faseMenegroth, MENEGROTH, faseNargothrond, MARGEM_NARGOTHROND, NARGOTHROND, faseEdoras, faseGondolin, faseMinasTirith, faseRomenna, GONDOLIN, MINAS_TIRITH, ROMENNA } from '../core/detalhes';
 import type { Lugar } from '../core/types';
 import type { ModeloTerreno } from '../terrain/model';
 import type { UniformesGlobais } from '../terrain/material';
@@ -9,6 +9,7 @@ import { criarMinasTirith } from './minas-tirith';
 import { criarEdoras } from './edoras';
 import { criarArmenelos, criarRomenna } from './numenor';
 import { criarMenegroth } from './menegroth';
+import { criarNargothrond } from './nargothrond';
 
 interface Sitio {
   lugar: Lugar;
@@ -30,6 +31,7 @@ const SITIOS: Sitio[] = [
   { lugar: EDORAS, fase: faseEdoras, criar: criarEdoras, profundos: ['Base'], raio: 0 },
   { lugar: ARMENELOS, fase: faseArmenelos, criar: criarArmenelos as Sitio['criar'], profundos: ['Base'], raio: 0 },
   { lugar: MENEGROTH, fase: faseMenegroth, criar: criarMenegroth as Sitio['criar'], profundos: ['Base'], raio: 0, em: COLINA_MENEGROTH, folga: 0.008 },
+  { lugar: NARGOTHROND, fase: faseNargothrond, criar: criarNargothrond as Sitio['criar'], profundos: ['Base'], raio: 0, em: MARGEM_NARGOTHROND, folga: 0.008 },
   { lugar: ROMENNA, fase: faseRomenna, criar: criarRomenna as Sitio['criar'], profundos: ['Base'], raio: 0, em: CAIS_ROMENNA, folga: 0.006 },
 ];
 

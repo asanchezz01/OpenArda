@@ -120,3 +120,26 @@ export function faseMenegroth(t: number): FaseMenegroth | null {
   const f = faseAtual(MENEGROTH, t);
   return f ? FASES_MENEGROTH[f.de] ?? null : null;
 }
+
+/**
+ * Nargothrond: as cavernas de Finrod na margem oeste do Narog. A ponte é construída a conselho
+ * de Túrin (c. 490); Glaurung entra por ela em 495 e se deita sobre o tesouro até partir para
+ * Brethil (501). Os salões afundam com Beleriand em 587.
+ */
+export type FaseNargothrond = 'integra' | 'ponte' | 'glaurung' | 'abandonada';
+
+export const NARGOTHROND = lugarPorId.get('nargothrond')!;
+/**
+ * O marcador fica ~3 km do traçado do Narog; o modelo é assentado na margem oeste, sob Taur-en-Faroth.
+ * No modelo, o rio corre ao longo do eixo X local (rio abaixo), em y = 0,2 km; o grupo é girado
+ * para que esse eixo siga o trecho do traçado do atlas.
+ */
+export const MARGEM_NARGOTHROND: [number, number] = [-420.8933, -211.4096];
+export const GIRO_NARGOTHROND = Math.atan2(-11, 14);
+export const VISTA_NARGOTHROND: Vista = { x: MARGEM_NARGOTHROND[0] + 0.107, y: MARGEM_NARGOTHROND[1] - 0.058, d: 1.25, rumo: 238, inclinacao: 56 };
+export const FASES_NARGOTHROND: Record<string, FaseNargothrond> = { 'PE:102': 'integra', 'PE:490': 'ponte', 'PE:495': 'glaurung', 'PE:501': 'abandonada' };
+
+export function faseNargothrond(t: number): FaseNargothrond | null {
+  const f = faseAtual(NARGOTHROND, t);
+  return f ? FASES_NARGOTHROND[f.de] ?? null : null;
+}
