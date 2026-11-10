@@ -5,6 +5,8 @@ import { ARVORE_MINAS_TIRITH, EDORAS, estadoEdoras, faseEdoras, faseGondolin, fa
 import { ARMENELOS, CAIS_ROMENNA, FASES_ARMENELOS, FASES_ROMENNA, faseArmenelos, faseRomenna, ROMENNA, VISTA_ARMENELOS, VISTA_ROMENNA } from '../src/core/detalhes';
 import { COLINA_MENEGROTH, FASES_MENEGROTH, faseMenegroth, MENEGROTH, VISTA_MENEGROTH } from '../src/core/detalhes';
 import { criarMenegroth, distanciaRio, PORTAO, RIO } from '../src/render/menegroth';
+import { FASES_NARGOTHROND, faseNargothrond, GIRO_NARGOTHROND, MARGEM_NARGOTHROND, NARGOTHROND, VISTA_NARGOTHROND } from '../src/core/detalhes';
+import { criarNargothrond, LESTE, OESTE, paraAtlas, PONTE, PRACA, RIO as NAROG } from '../src/render/nargothrond';
 import { alturaColina, casco, criarArmenelos, criarRomenna, naviosRomenna, TEMPLO } from '../src/render/numenor';
 import { criarEdoras, perfilEdoras } from '../src/render/edoras';
 import { criarGondolin } from '../src/render/gondolin';
@@ -462,5 +464,106 @@ describe('Menegroth', () => {
     const app = { t: tempo.tAno('PE', 400) } as App;
     expect(fichaLugar(app, MENEGROTH)).toContain('data-acao="menegroth-3d"');
     expect(fichaReino(app, reinoPorId.get('doriath')!)).toContain('data-acao="menegroth-3d"');
+  });
+});
+
+describe('Nargothrond', () => {
+  const instancias = (g: THREE.Object3D) => {
+    const lista: THREE.InstancedMesh[] = [];
+    g.traverse((c) => c instanceof THREE.InstancedMesh && lista.push(c));
+    return lista;
+  };
+  const lanternasAcesas = (g: THREE.Object3D) =>
+    instancias(g).filter((m) => (m.material as THREE.MeshStandardMaterial).emissive.getHex() !== 0).reduce((n, m) => n + m.count, 0);
+  const contaMaterial = (g: THREE.Object3D, cor: number) => instancias(g).filter((m) => (m.material as THREE.MeshStandardMaterial).color.getHex() === cor).reduce((n, m) => n + m.count, 0);
+  const DRAGAO = 0x6f5a2c;
+
+  it.each([
+    ['PE', 101, null], ['PE', 102, 'integra'], ['PE', 489, 'integra'], ['PE', 490, 'ponte'], ['PE', 494, 'ponte'],
+    ['PE', 495, 'glaurung'], ['PE', 500, 'glaurung'], ['PE', 501, 'abandonada'], ['PE', 586, 'abandonada'], ['PE', 587, null],
+  ] as const)('em %s %i está %s', (era, ano, fase) => {
+    expect(faseNargothrond(tempo.tAno(era, ano))).toBe(fase);
+  });
+
+  it('as fases coincidem com data/lugares.json', () => {
+    expect(NARGOTHROND.fases!.map((f) => f.de)).toEqual([...Object.keys(FASES_NARGOTHROND), 'PE:587']);
+  });
+
+  it('o Narog do modelo segue o trecho do traçado do atlas, com o penhasco na margem oeste', () => {
+    const narog = terreno.feicoes.find((f) => f.id === 'rio-narog')!.pts!;
+    // o trecho mais próximo do marcador
+    let melhor = { d: Infinity, a: [0, 0], b: [0, 0] };
+    for (let i = 0; i + 1 < narog.length; i++) {
+      const [a, b] = [narog[i], narog[i + 1]];
+      const [px, py] = MARGEM_NARGOTHROND;
+      const vx = b[0] - a[0], vy = b[1] - a[1];
+      const t = Math.max(0, Math.min(1, ((px - a[0]) * vx + (py - a[1]) * vy) / (vx * vx + vy * vy)));
+      const d = Math.hypot(px - a[0] - vx * t, py - a[1] - vy * t);
+      if (d < melhor.d) melhor = { d, a, b };
+    }
+    const { a, b } = melhor;
+    expect(GIRO_NARGOTHROND).toBeCloseTo(Math.atan2(b[1] - a[1], b[0] - a[0]), 6);
+    // dois pontos do eixo do rio no modelo caem sobre a reta do traçado
+    for (const x of [-0.5, 0.5]) {
+      const [dx, dy] = paraAtlas(x, NAROG.y);
+      const p = [MARGEM_NARGOTHROND[0] + dx, MARGEM_NARGOTHROND[1] + dy];
+      const cruz = ((b[0] - a[0]) * (p[1] - a[1]) - (b[1] - a[1]) * (p[0] - a[0])) / Math.hypot(b[0] - a[0], b[1] - a[1]);
+      expect(Math.abs(cruz)).toBeLessThan(0.002);
+    }
+    // o centro do sítio (y < rio) fica à direita do rio, que corre de a para b: a margem oeste
+    const cruzCentro = (b[0] - a[0]) * (MARGEM_NARGOTHROND[1] - a[1]) - (b[1] - a[1]) * (MARGEM_NARGOTHROND[0] - a[0]);
+    expect(cruzCentro).toBeLessThan(0);
+    expect(Math.hypot(MARGEM_NARGOTHROND[0] - NARGOTHROND.em[0], MARGEM_NARGOTHROND[1] - NARGOTHROND.em[1])).toBeLessThan(4);
+  });
+
+  it('a garganta sobe em degraus dos dois lados, e a ponte sai da praça das portas para a margem leste', () => {
+    for (const lado of [OESTE, LESTE])
+      for (let k = 1; k < lado.length; k++) {
+        expect(lado[k].s).toBeGreaterThan(lado[k - 1].s);
+        expect(lado[k].h).toBeGreaterThan(lado[k - 1].h);
+      }
+    expect(OESTE[0].s).toBeGreaterThan(NAROG.largura / 2);
+    expect(PONTE.tabuleiro).toBeGreaterThan(OESTE[0].h);
+    expect(PRACA.portas).toBeLessThan(OESTE[1].s);
+  });
+
+  it('gera as fachadas iluminadas, a ponte e Glaurung conforme a fase', () => {
+    const integra = criarNargothrond('integra');
+    expect(instancias(integra).map((m) => Array.from(m.instanceMatrix.array))).toEqual(instancias(criarNargothrond('integra')).map((m) => Array.from(m.instanceMatrix.array)));
+    expect(integra.getObjectByName('Base')).toBeTruthy();
+    const box = new THREE.Box3().setFromObject(integra);
+    expect([...box.min.toArray(), ...box.max.toArray()].every(Number.isFinite)).toBe(true);
+    expect(lanternasAcesas(integra)).toBeGreaterThan(20);
+    const ponte = criarNargothrond('ponte');
+    expect(ponte.getObjectByName('Ponte')).toBeTruthy();
+    expect(integra.getObjectByName('Ponte')).toBeUndefined();
+    expect(criarNargothrond('abandonada').getObjectByName('Ponte')).toBeTruthy();
+    const glaurung = criarNargothrond('glaurung');
+    expect(lanternasAcesas(glaurung)).toBe(0);
+    expect(contaMaterial(glaurung, DRAGAO)).toBeGreaterThan(30);
+    const abandonada = criarNargothrond('abandonada');
+    expect(lanternasAcesas(abandonada)).toBe(0);
+    expect(contaMaterial(abandonada, DRAGAO)).toBe(0);
+  });
+
+  it('aparece perto da câmera, na margem do rio, e some quando Beleriand afunda', () => {
+    const te = tempo.tAno('PE', 400);
+    const relevo = new ModeloTerreno(estadoTerreno(te).feicoes, terreno.cadeias, terreno.limites);
+    const camera = new THREE.PerspectiveCamera();
+    camera.position.set(VISTA_NARGOTHROND.x + 1, VISTA_NARGOTHROND.y, 2);
+    const camada = new DetalhesReinos();
+    const u = criarUniformesGlobais();
+    camada.atualizar(te, camera, relevo, u, true);
+    const modelo = camada.grupo.children.find((c) => c.name === 'Nargothrond: integra')!;
+    expect(modelo.visible).toBe(true);
+    expect(modelo.position.x).toBe(MARGEM_NARGOTHROND[0]);
+    camada.atualizar(tempo.tAno('PE', 587), camera, relevo, u, true);
+    expect(camada.grupo.visible).toBe(false);
+  });
+
+  it('aparece nas fichas de Nargothrond, do lugar e do reino', () => {
+    const app = { t: tempo.tAno('PE', 400) } as App;
+    expect(fichaLugar(app, NARGOTHROND)).toContain('data-acao="nargothrond-3d"');
+    expect(fichaReino(app, reinoPorId.get('nargothrond')!)).toContain('data-acao="nargothrond-3d"');
   });
 });

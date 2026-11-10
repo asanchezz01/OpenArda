@@ -128,6 +128,7 @@ export function fichaLugar(app: App, l: Lugar): string {
   if (l.id === 'minas-anor') html += detalheMinasTirith();
   if (l.id === 'edoras') html += detalheEdoras();
   if (l.id === 'menegroth') html += detalheMenegroth();
+  if (l.id === 'nargothrond') html += detalheNargothrond();
   if (l.id === 'armenelos') html += detalheArmenelos();
   if (l.id === 'romenna') html += detalheRomenna();
 
@@ -236,7 +237,7 @@ export function fichaReino(app: App, r: Reino): string {
   </dl>
   ${blocoFotoFicha(fotosDoReino(r.id, t))}
   ${governo ?? ''}
-  ${r.id === 'gondolin' ? detalheGondolin() : r.id === 'gondor' ? detalheMinasTirith() : r.id === 'rohan' ? detalheEdoras() : r.id === 'numenor' ? detalheArmenelos() + detalheRomenna() : r.id === 'doriath' ? detalheMenegroth() : ''}
+  ${r.id === 'gondolin' ? detalheGondolin() : r.id === 'gondor' ? detalheMinasTirith() : r.id === 'rohan' ? detalheEdoras() : r.id === 'numenor' ? detalheArmenelos() + detalheRomenna() : r.id === 'doriath' ? detalheMenegroth() : r.id === 'nargothrond' ? detalheNargothrond() : ''}
   <section class="bloco"><h3>Origem</h3><p>${esc(r.origem)}</p>${fund ? `<p><button type="button" class="link" data-acao="evento" data-id="${fund.id}">${esc(fund.titulo)}</button> <span class="data">${esc(tempo.dataEvento(fund))}</span></p>` : ''}</section>
   <section class="bloco"><h3>Principais transformações</h3><ol class="fases">${r.transformacoes
     .map((x) => {
@@ -324,6 +325,16 @@ function detalheMenegroth(): string {
     'a forma da colina, a planta dos salões e o portal são interpretativos; o corte é um recurso de visualização. São descritos a ponte única, os pilares esculpidos como faias, as lanternas de ouro, as fontes de prata, as bacias de mármore e os pisos coloridos (O Silmarillion, cap. 10). O marcador do mapa fica a cerca de 5 km do Esgalduin; o modelo é assentado na margem sul, junto à curva do rio.',
     'menegroth-3d',
     'Dos Anos das Árvores a 502 P.E.: salões íntegros · c. 503: saqueados pelos Anões (lanternas e tesouro levados) · 504–505: restaurados por Dior · 506–586: destruídos pelos filhos de Fëanor. A partir de 587, a colina afunda com Beleriand e o modelo é ocultado. Fora desses períodos, a visita abre em 400 P.E.',
+  );
+}
+
+function detalheNargothrond(): string {
+  return detalhe3d(
+    'Nargothrond em 3D',
+    'Olhe rio acima pela garganta do Narog: fachadas de pedra dourada escavadas em degraus nos paredões, com janelas em arco, cúpulas, torreões e bocas de caverna sob a floresta de Taur-en-Faroth. No primeiro degrau da margem oeste ficam a praça e as Portas de Felagund; diante delas, a ponte de três arcos.',
+    'a garganta em degraus, as fachadas nas duas margens, as cúpulas, as bocas de caverna, as três arcadas da ponte e a forma de Glaurung são interpretativos, compostos a partir de uma ilustração de referência. São descritos as cavernas sob Taur-en-Faroth na margem oeste do Narog, as portas voltadas para o rio, a grande ponte construída a conselho de Túrin e Glaurung diante das portas, onde encontrou Túrin, antes de se deitar sobre o tesouro lá dentro (O Silmarillion, cap. 13 e 21). O marcador do mapa fica a cerca de 3 km do Narog; o modelo é assentado na margem oeste, alinhado ao traçado do rio.',
+    'nargothrond-3d',
+    '102–489 P.E.: fachadas iluminadas, sem ponte · c. 490–494: a ponte de Túrin diante das portas (data aproximada) · 495–500: saque; janelas apagadas, edifícios queimados e partidos, Glaurung sobre o ouro diante das portas · a partir de c. 501: o dragão parte para Brethil e o tesouro é levado a Doriath; ruínas tomadas pelo mato. A partir de 587, Nargothrond afunda com Beleriand e o modelo é ocultado. Fora desses períodos, a visita abre em 400 P.E.',
   );
 }
 
