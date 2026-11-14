@@ -1,0 +1,634 @@
+{
+ "etapa": 10,
+ "titulo": "Personagens citados no atlas, Oropher e a família de Rohan",
+ "data": "2026-11-14",
+ "prioridade_geracao": [
+  "API local ComfyUI (10.1.4.150), como no HopeGym",
+  "API de imagens da OpenAI se a local estiver indisponível"
+ ],
+ "regra": "Filmes de Peter Jackson primeiro (Smaug, Girion, o manto dos Nazgûl para Khamûl, a silhueta do Balrog para Gothmog); Os Anéis de Poder só quando o personagem não está nos filmes (Tar-Palantir); demais pela literatura e pela família. Criaturas seguem motivos da arte de ilustradores de Tolkien, sem copiar obra específica.",
+ "geracao": {
+  "api": "OpenAI (ComfyUI local inacessível desta sessão)",
+  "script": "scripts/gerar-fotografias.py --retratos --etapa 10 --motor gpt",
+  "resolucao": [
+   1024,
+   1024
+  ],
+  "webp": {
+   "resolucao": [
+    512,
+    512
+   ],
+   "alvo_kib": 100
+  },
+  "referencias_enviadas": "nenhuma: o motor da OpenAI usado pelo script gera só a partir do texto"
+ },
+ "pesquisa": "Traços a partir de conhecimento prévio das obras e dos índices do Tolkien Gateway; referências de cinema e série conferidas na web em 14/11/2026 (links em 'consulta').",
+ "personagens": [
+  {
+   "id": "glaurung",
+   "nome": "Glaurung",
+   "epoca": "Nargothrond, 495 P.E.",
+   "prompt": "Photorealistic cinematic fantasy portrait for OpenArda's Tolkien genealogy: the head and neck of a single creature, centered square frame filled edge to edge, the entire head visible with safe space for a circular crop, readable as a 36-pixel avatar. Dramatic soft lighting with a warm rim, dark softly blurred background. No text, watermark, border, people or other creatures. Glaurung, Father of Dragons, the first fire-drake of Morgoth: a vast WINGLESS serpentine dragon head, long and heavy like a great worm, armoured in overlapping bronze-gold and dark iron-grey scales, a crown of short swept-back horns, deep jaws with smoke curling from the nostrils, and enormous hypnotic golden eyes with slit pupils, glowing, cruel and full of guile. Faint firelight from below, ash in the air. Ancient, malicious intelligence.",
+   "documentado": [
+    "Primeiro dos Urulóki, dragões de fogo sem asas; seu olhar enfeitiçava (Túrin, Niënor)."
+   ],
+   "inferido": [
+    "Cores das escamas e chifres são interpretação.",
+    "Aparência de criatura segue motivos recorrentes na arte de ilustradores de Tolkien (John Howe, Ted Nasmith, Alan Lee); é interpretação artística, sem copiar obra específica.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Glaurung",
+    "https://www.tednasmith.com/?p=417"
+   ]
+  },
+  {
+   "id": "ancalagon",
+   "nome": "Ancalagon",
+   "epoca": "Guerra da Ira, 545 P.E.",
+   "prompt": "Photorealistic cinematic fantasy portrait for OpenArda's Tolkien genealogy: the head and neck of a single creature, centered square frame filled edge to edge, the entire head visible with safe space for a circular crop, readable as a 36-pixel avatar. Dramatic soft lighting with a warm rim, dark softly blurred background. No text, watermark, border, people or other creatures. Ancalagon the Black, greatest of the winged dragons of Morgoth: an immense jet-black dragon head with a long armoured snout, ridges of jagged black horns, the edge of a vast leathery wing rising behind, eyes like red embers, fire glowing between the teeth. Storm clouds and lightning behind, a distant star-like light high above. Overwhelming, apocalyptic scale.",
+   "documentado": [
+    "O maior dos dragões alados, abatido por Eärendil na Guerra da Ira."
+   ],
+   "inferido": [
+    "Cor negra segue o epíteto; demais traços são interpretação.",
+    "Aparência de criatura segue motivos recorrentes na arte de ilustradores de Tolkien (John Howe, Ted Nasmith, Alan Lee); é interpretação artística, sem copiar obra específica.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Ancalagon"
+   ]
+  },
+  {
+   "id": "smaug",
+   "nome": "Smaug",
+   "epoca": "Erebor, 2941 T.E.",
+   "prompt": "Photorealistic cinematic fantasy portrait for OpenArda's Tolkien genealogy: the head and neck of a single creature, centered square frame filled edge to edge, the entire head visible with safe space for a circular crop, readable as a 36-pixel avatar. Dramatic soft lighting with a warm rim, dark softly blurred background. No text, watermark, border, people or other creatures. Smaug the Golden, the last great fire-drake of Middle-earth, as imagined for the 2013 film adaptation: a long crocodilian head covered in hand-sculpted red-gold and rust scales scarred by old battles, swept-back horns and spines, a heavy brow, a sly, intelligent reptilian eye of molten gold with a vertical pupil, faint glow of fire in the throat. Lying on heaped gold coins, warm treasure-light from below. Vain, cunning and menacing.",
+   "documentado": [
+    "Dragão vermelho-dourado, com o ventre coberto de pedras e ouro, exceto uma falha no peito."
+   ],
+   "inferido": [
+    "Desenho da cabeça segue a caracterização dos filmes de O Hobbit (Weta Digital); não é descrição literal de Tolkien.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Smaug",
+    "https://www.fxguide.com/?p=48113",
+    "https://gamesradar.com/creating-smaug"
+   ],
+   "referencia_cinematografica": {
+    "ator": "Benedict Cumberbatch (voz e captura de movimento); desenho da Weta Digital",
+    "obra": "The Hobbit: The Desolation of Smaug (2013)",
+    "consulta": "https://www.fxguide.com/?p=48113"
+   }
+  },
+  {
+   "id": "ungoliant",
+   "nome": "Ungoliant",
+   "epoca": "Avathar, Anos das Árvores",
+   "prompt": "Photorealistic cinematic fantasy portrait for OpenArda's Tolkien genealogy: the head and neck of a single creature, centered square frame filled edge to edge, the entire head visible with safe space for a circular crop, readable as a 36-pixel avatar. Dramatic soft lighting with a warm rim, dark softly blurred background. No text, watermark, border, people or other creatures. Ungoliant, a primeval spirit of darkness in the form of a monstrous spider: a colossal black arachnid head and forebody of matte void-black chitin that seems to drink the light, clusters of many glistening eyes reflecting a dying silver-gold glow, dripping mandibles, threads of an Unlight web like black mist around her. The last faint light of the Two Trees fading in the background. Insatiable hunger and dread.",
+   "documentado": [
+    "Espírito em forma de aranha monstruosa, que tecia teias de Escuridão e devorou a luz das Árvores."
+   ],
+   "inferido": [
+    "Aparência de criatura segue motivos recorrentes na arte de ilustradores de Tolkien (John Howe, Ted Nasmith, Alan Lee); é interpretação artística, sem copiar obra específica.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Ungoliant",
+    "https://valarguild.org/tolkien/encyc/articles/u/Ungoliant/UngoliantImages.htm"
+   ]
+  },
+  {
+   "id": "huan",
+   "nome": "Huan",
+   "epoca": "Beleriand, 466 P.E.",
+   "prompt": "Photorealistic cinematic fantasy portrait for OpenArda's Tolkien genealogy: the head and neck of a single creature, centered square frame filled edge to edge, the entire head visible with safe space for a circular crop, readable as a 36-pixel avatar. Dramatic soft lighting with a warm rim, dark softly blurred background. No text, watermark, border, people or other creatures. Huan, the Hound of Valinor: an enormous majestic wolfhound, larger than a horse, with a long noble head, thick shaggy silver-grey coat, intelligent deep brown eyes full of loyalty, ears alert, a faint Valinorean light in his fur. Wooded twilight of Beleriand behind, softly blurred. Proud, faithful, wise.",
+   "documentado": [
+    "Cão de caça de Valinor, presente de Oromë a Celegorm; amigo de Lúthien."
+   ],
+   "inferido": [
+    "Cor da pelagem e raça são interpretação.",
+    "Aparência de criatura segue motivos recorrentes na arte de ilustradores de Tolkien (John Howe, Ted Nasmith, Alan Lee); é interpretação artística, sem copiar obra específica.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Huan"
+   ]
+  },
+  {
+   "id": "thorondor",
+   "nome": "Thorondor",
+   "epoca": "Crissaegrim, Primeira Era",
+   "prompt": "Photorealistic cinematic fantasy portrait for OpenArda's Tolkien genealogy: the head and neck of a single creature, centered square frame filled edge to edge, the entire head visible with safe space for a circular crop, readable as a 36-pixel avatar. Dramatic soft lighting with a warm rim, dark softly blurred background. No text, watermark, border, people or other creatures. Thorondor, King of Eagles, mightiest of all birds, servant of Manwë: the head and shoulders of a colossal golden-brown eagle, feathers tipped with bronze, a hooked beak like polished gold, piercing fierce golden eyes, high snowy mountain peaks and wind-driven clouds behind. Noble, regal and watchful.",
+   "documentado": [
+    "A maior de todas as aves, com asas de trinta braças; a seu bico dourado é atribuída a cicatriz no rosto de Morgoth."
+   ],
+   "inferido": [
+    "Plumagem é interpretação.",
+    "Aparência de criatura segue motivos recorrentes na arte de ilustradores de Tolkien (John Howe, Ted Nasmith, Alan Lee); é interpretação artística, sem copiar obra específica.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Thorondor"
+   ]
+  },
+  {
+   "id": "gothmog",
+   "nome": "Gothmog",
+   "epoca": "Gondolin, 510 P.E.",
+   "prompt": "Photorealistic cinematic fantasy portrait for OpenArda's Tolkien genealogy: the head and neck of a single creature, centered square frame filled edge to edge, the entire head visible with safe space for a circular crop, readable as a 36-pixel avatar. Dramatic soft lighting with a warm rim, dark softly blurred background. No text, watermark, border, people or other creatures. Gothmog, Lord of Balrogs, a fallen fire-spirit: a towering humanoid demon head of cracked black obsidian-like hide with molten fire glowing through the cracks, great curving horns, eyes of white-hot flame, a mane of smoke and fire streaming back, embers in the air. Dark battle smoke behind. Terrible, commanding.",
+   "documentado": [
+    "Senhor dos Balrogs, alto capitão de Angband; matou Fëanor e Fingon, morreu com Ecthelion."
+   ],
+   "inferido": [
+    "Silhueta de chifres, fogo e sombra segue o Balrog dos filmes de O Senhor dos Anéis (Weta) e a arte de ilustradores; Tolkien não descreve o rosto de Gothmog.",
+    "Aparência de criatura segue motivos recorrentes na arte de ilustradores de Tolkien (John Howe, Ted Nasmith, Alan Lee); é interpretação artística, sem copiar obra específica.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Gothmog_(Balrog)"
+   ]
+  },
+  {
+   "id": "khamul",
+   "nome": "Khamûl",
+   "epoca": "Dol Guldur, Terceira Era",
+   "prompt": "Photorealistic cinematic fantasy portrait for OpenArda's Tolkien genealogy: a single hooded figure, head and shoulders, centered square frame filled edge to edge, the entire head visible with safe space for a circular crop, readable as a 36-pixel avatar. Dramatic soft lighting with a warm rim, dark softly blurred background. No text, watermark, border, people or other creatures. Khamûl, the Shadow of the East, second of the Nine Ringwraiths: a tall figure in a tattered black hooded cloak, the hood's opening empty and utterly dark except for two faint cold pale glints where eyes would be, a dull iron circlet barely visible inside the hood, black armoured gauntlet edge at the shoulder. Gloomy forest mist behind. Chilling, invisible menace.",
+   "documentado": [
+    "Um dos Nove; o segundo depois do Rei-bruxo. Invisível sem o manto."
+   ],
+   "inferido": [
+    "O manto negro com capuz vazio segue a caracterização dos Nazgûl nos filmes de Peter Jackson.",
+    "Detalhes do manto são interpretação.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Kham%C3%BBl"
+   ]
+  },
+  {
+   "id": "beor",
+   "nome": "Bëor",
+   "epoca": "Ossiriand, 310 P.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one elderly human man, a chieftain of the first Men in Beleriand with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Bëor the Old: dark brown hair streaked heavily with grey, a long grizzled beard, grey eyes, a weathered wise face marked by long journeys, a rough wool cloak with a simple bronze clasp. Thoughtful, steady expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Chefe dos primeiros Homens que entraram em Beleriand; serviu Finrod até a morte."
+   ],
+   "inferido": [
+    "Cabelo escuro e olhos cinzentos inferidos dos traços da Casa de Bëor (Beren, Barahir).",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/B%C3%ABor"
+   ]
+  },
+  {
+   "id": "hador",
+   "nome": "Hador",
+   "epoca": "Dor-lómin, Primeira Era",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one tall adult human man, a lord of the Edain with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Hador Lórindol, Goldenhead: thick golden-blond hair to the shoulders, a short golden beard, blue-grey eyes, strong broad frame, a green-and-gold tunic under a mail coat with a fur collar. Proud, valiant expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Lórindol, 'cabeça dourada': a Casa de Hador era de cabelo dourado e olhos azuis."
+   ],
+   "inferido": [
+    "Barba e trajes são interpretação.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Hador"
+   ]
+  },
+  {
+   "id": "ingwe",
+   "nome": "Ingwë",
+   "epoca": "Valinor, Anos das Árvores",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Ingwë, High King of all the Elves, lord of the Vanyar: long radiant golden hair, luminous grey-blue eyes, an ageless serene face of great nobility, white and gold robes, a slender golden circlet. A faint light seems to rest on his features. Serene, wise expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Senhor dos Vanyar, de cabelo dourado; o Alto Rei de todos os Elfos."
+   ],
+   "inferido": [
+    "Olhos e trajes são interpretação.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Ingw%C3%AB"
+   ]
+  },
+  {
+   "id": "silmarien",
+   "nome": "Silmariën",
+   "epoca": "Númenor, Segunda Era",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult Númenórean woman of royal blood with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Silmariën, eldest daughter of Tar-Elendil, ancestress of the Lords of Andúnië: long dark hair braided with silver threads, clear grey eyes, a tall graceful bearing, a deep blue gown with a silver star brooch. Calm, dignified, quietly sorrowful expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Filha mais velha de Tar-Elendil, de quem descendem os Senhores de Andúnië e Elendil."
+   ],
+   "inferido": [
+    "Cabelo escuro e olhos cinzentos inferidos dos Númenóreanos de alta linhagem.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Silmari%C3%ABn"
+   ]
+  },
+  {
+   "id": "tar-minastir",
+   "nome": "Tar-Minastir",
+   "epoca": "Númenor, 1700 S.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one mature Númenórean man, a king with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Tar-Minastir, eleventh King of Númenor, lover of the Eldar: dark hair touched with grey, a short trimmed beard, keen grey eyes, a royal deep-blue mantle with silver embroidery and a silver circlet. Resolute, far-gazing expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Rei que construiu uma torre para contemplar Tol Eressëa e enviou a frota contra Sauron."
+   ],
+   "inferido": [
+    "Traços inferidos dos Númenóreanos; trajes são interpretação.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Tar-Minastir"
+   ]
+  },
+  {
+   "id": "tar-atanamir",
+   "nome": "Tar-Atanamir",
+   "epoca": "Númenor, c. 2200 S.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one very old Númenórean man, a king with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Tar-Atanamir the Great, who clung to life and feared death: extremely aged, gaunt face, sunken grey eyes still proud, thin long white hair, rich heavy robes of black and gold, a great golden crown. Haughty, fearful, stubborn expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Rei que temeu a morte e se recusou a entregar o cetro em vida."
+   ],
+   "inferido": [
+    "A velhice extrema é inferência do fim do reinado; trajes são interpretação.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Tar-Atanamir"
+   ]
+  },
+  {
+   "id": "ar-adunakhor",
+   "nome": "Ar-Adûnakhôr",
+   "epoca": "Númenor, 2899 S.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one mature Númenórean man, a king with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Ar-Adûnakhôr, Lord of the West, the first king to take his title in the Adûnaic tongue: black hair and a black pointed beard, cold dark-grey eyes, a severe proud face, black and crimson royal robes, a heavy gold crown with an eagle motif. Arrogant expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Primeiro rei a tomar o cetro com nome em adûnaico; perseguiu os Fiéis."
+   ],
+   "inferido": [
+    "Aparência é interpretação a partir dos Númenóreanos.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Ar-Ad%C3%BBnakh%C3%B4r"
+   ]
+  },
+  {
+   "id": "tar-palantir",
+   "nome": "Tar-Palantir",
+   "epoca": "Armenelos, 3255 S.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one very old Númenórean man, a king with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Tar-Palantir the Farsighted, the penitent last true king of Númenor: an elderly gentle face with deep lines, long silver-white hair and a white beard, wise sad grey eyes, simple ivory and pale-gold robes, a thin silver crown. Sorrowful, kind, far-seeing expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Rei que se arrependeu e restaurou os costumes antigos; pai de Míriel."
+   ],
+   "inferido": [
+    "Velhice, cabelo e vestes claras seguem a caracterização da série Os Anéis de Poder; não é descrição de Tolkien.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Tar-Palantir",
+    "https://www.tvmaze.com/characters/1029350/the-lord-of-the-rings-the-rings-of-power-tar-palantir"
+   ],
+   "referencia_cinematografica": {
+    "ator": "Ken Blackburn",
+    "obra": "The Lord of the Rings: The Rings of Power (2022–2024)",
+    "consulta": "https://www.tvmaze.com/characters/1029350/the-lord-of-the-rings-the-rings-of-power-tar-palantir"
+   }
+  },
+  {
+   "id": "earendur",
+   "nome": "Eärendur",
+   "epoca": "Annúminas, 861 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of the Dúnedain of the North with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Eärendur, last king of undivided Arnor: dark hair greying at the temples, a dark beard, grey eyes, a tired regal face, a dark-blue mantle with a silver star of Elendil. Weary, troubled expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Último rei do Arnor unido; seus filhos dividiram o reino."
+   ],
+   "inferido": [
+    "Cabelo escuro e olhos cinzentos inferidos dos Dúnedain.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/E%C3%A4rendur_(King_of_Arnor)"
+   ]
+  },
+  {
+   "id": "amlaith",
+   "nome": "Amlaith",
+   "epoca": "Fornost, 861 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of the Dúnedain of the North with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Amlaith of Fornost, first king of Arthedain: dark hair to the collar, a short dark beard, grey eyes, a young but stern face, a grey cloak over dark mail with a silver star clasp. Determined expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Primogênito de Eärendur, primeiro rei de Arthedain."
+   ],
+   "inferido": [
+    "Traços inferidos dos Dúnedain e de Eärendur.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Amlaith"
+   ]
+  },
+  {
+   "id": "argeleb",
+   "nome": "Argeleb I",
+   "epoca": "Arthedain, 1356 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of the Dúnedain of the North with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Argeleb I, king of Arthedain who claimed all Arnor: dark hair, a full dark beard, grey eyes, a warrior king's scarred brow, dark mail and a grey cloak with a silver star. Fierce, resolute expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Reivindicou todo o Arnor e morreu em combate contra Rhudaur e Angmar."
+   ],
+   "inferido": [
+    "Traços inferidos dos Dúnedain.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Argeleb_I"
+   ]
+  },
+  {
+   "id": "arvedui",
+   "nome": "Arvedui",
+   "epoca": "Forochel, 1975 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of the Dúnedain of the North with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Arvedui Last-king, last king of Arthedain, in exile in the frozen north: dark hair dusted with frost, a dark beard, grey eyes full of foreboding, a heavy fur-lined grey cloak, a ring on a cord barely visible. Grim, fated expression, cold blue northern light. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Último rei de Arthedain; morreu no naufrágio na Baía de Gelo de Forochel."
+   ],
+   "inferido": [
+    "Traços inferidos dos Dúnedain; o frio e as peles seguem o fim de sua história.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Arvedui"
+   ]
+  },
+  {
+   "id": "hyarmendacil",
+   "nome": "Hyarmendacil I",
+   "epoca": "Gondor, 1050 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of Gondor, of Númenórean descent with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Hyarmendacil I, Victor of the South, king of Gondor at its height: black hair, a short black beard, piercing grey eyes, a proud tanned face, black and silver armour with the White Tree, a winged silver crown. Commanding, triumphant expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Venceu o Harad; sob ele Gondor chegou ao auge."
+   ],
+   "inferido": [
+    "Traços inferidos da linhagem de Anárion; armadura é interpretação.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Hyarmendacil_I"
+   ]
+  },
+  {
+   "id": "earnur",
+   "nome": "Eärnur",
+   "epoca": "Minas Tirith, 2050 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of Gondor, of Númenórean descent with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Eärnur, last king of Gondor, a great horseman and fighter: black hair to the shoulders, clean-shaven, grey eyes burning with pride, a young hard face, black mail with the White Tree on the breast. Proud, reckless expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Último rei de Gondor; aceitou o desafio do Rei-bruxo e desapareceu em Minas Morgul."
+   ],
+   "inferido": [
+    "Rosto barbeado e juventude são interpretação.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/E%C3%A4rnur"
+   ]
+  },
+  {
+   "id": "mardil",
+   "nome": "Mardil",
+   "epoca": "Minas Tirith, 2050 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of Gondor, of Númenórean descent with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Mardil Voronwë the Steadfast, first Ruling Steward of Gondor: dark hair greying, a neat grey-streaked beard, grey eyes, a grave patient face, a plain black robe with a silver chain and a white rod of office. Steadfast, dutiful expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Primeiro Regente Governante, da Casa de Húrin."
+   ],
+   "inferido": [
+    "Traços inferidos dos Regentes (Denethor, Boromir, Faramir).",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Mardil_Voronw%C3%AB"
+   ]
+  },
+  {
+   "id": "cirion",
+   "nome": "Cirion",
+   "epoca": "Calenardhon, 2510 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of Gondor, of Númenórean descent with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Cirion, twelfth Ruling Steward of Gondor: dark hair, a short dark beard with grey, wise grey eyes, a careworn statesman's face, black and silver surcoat with the White Tree, a dark cloak. Earnest, grateful, solemn expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Regente que deu Calenardhon a Eorl e fez com ele o juramento de amizade."
+   ],
+   "inferido": [
+    "Traços inferidos dos Regentes.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Cirion"
+   ]
+  },
+  {
+   "id": "eorl",
+   "nome": "Eorl",
+   "epoca": "Campo de Celebrant, 2510 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of the Rohirrim with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Eorl the Young, lord of the Éothéod and first King of the Mark: a young man with long flowing golden-blond hair, a short golden beard, bright blue eyes, a handsome strong face, a green cloak over gilded mail, a horn on a baldric. Bold, joyful, valiant expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Jovem senhor dos Éothéod, de cabelo dourado, que cavalgou ao Campo de Celebrant."
+   ],
+   "inferido": [
+    "Feições inferidas dos Rohirrim; trajes são interpretação.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Eorl"
+   ]
+  },
+  {
+   "id": "helm",
+   "nome": "Helm Mão-de-Martelo",
+   "epoca": "Abismo de Helm, 2758 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of the Rohirrim with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Helm Hammerhand, ninth King of Rohan, a man of great stature and terrible strength: a broad weathered face, long wild hair and a huge beard of pale gold turning white, fierce grey-blue eyes, a heavy fur cloak over scale armour, frost in his beard. Grim, indomitable expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Rei de força terrível; resistiu na fortaleza que leva seu nome e morreu no Longo Inverno."
+   ],
+   "inferido": [
+    "Barba grisalha e peles seguem o Longo Inverno e o visual de A Guerra dos Rohirrim (2024), sem copiar o desenho da animação.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Helm",
+    "https://www.theonering.net/torwp/2022/06/15/113342-brian-cox-will-be-helm-hammerhand-in-the-war-of-the-rohirrim-miranda-otto-back-as-eowyn/",
+    "https://wetaworkshopdesignstudio.artstation.com/projects/BkQ8Vk"
+   ]
+  },
+  {
+   "id": "frealaf",
+   "nome": "Fréaláf",
+   "epoca": "Edoras, 2759 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of the Rohirrim with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Fréaláf Hildeson, first king of the second line of Rohan: a man in his prime with golden-brown hair braided at the temples, a short beard, keen blue eyes, a lean hardened face, a dark-green cloak with a white horse brooch over leather and mail. Determined, avenging expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Sobrinho de Helm; retomou Edoras e tornou-se rei."
+   ],
+   "inferido": [
+    "Feições inferidas dos Rohirrim e de Helm.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Fr%C3%A9al%C3%A1f_Hildeson"
+   ]
+  },
+  {
+   "id": "thengel",
+   "nome": "Thengel",
+   "epoca": "Edoras, 2953 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of the Rohirrim with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Thengel, King of Rohan, who lived long in Gondor: golden hair going grey, a trimmed golden-grey beard, blue eyes, a cultivated, gentle face with fine features, a green and gold robe of southern cut, a slim gold circlet. Thoughtful, refined expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Rei de Rohan que viveu muitos anos em Gondor e se casou com Morwen de Lossarnach."
+   ],
+   "inferido": [
+    "Traços inferidos de Théoden e dos Rohirrim; a influência de Gondor nos trajes é interpretação.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Thengel"
+   ]
+  },
+  {
+   "id": "morwen-lossarnach",
+   "nome": "Morwen de Lossarnach",
+   "epoca": "Edoras, Terceira Era",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult woman of Gondor of Númenórean descent with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Morwen Steelsheen of Lossarnach, queen of Rohan: long dark hair, luminous grey eyes, a tall, graceful, beautiful face with a pale complexion, a deep grey gown with fine silver embroidery and a slender silver brooch. Composed, gracious expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Dama de Lossarnach, de ascendência númenóreana, mãe de Théoden; chamada Brilho de Aço."
+   ],
+   "inferido": [
+    "Cabelo escuro e olhos cinzentos inferidos de sua ascendência.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Morwen_Steelsheen"
+   ]
+  },
+  {
+   "id": "theodwyn",
+   "nome": "Théodwyn",
+   "epoca": "Aldburg, Terceira Era",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult woman of the Rohirrim with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Théodwyn, sister of Théoden and mother of Éomer and Éowyn: long golden hair in a loose braid, grey eyes, a gentle fair face, a white and green gown with a simple gold-embroidered collar. Warm, quiet expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Irmã mais nova de Théoden, mãe de Éomer e Éowyn."
+   ],
+   "inferido": [
+    "Feições inferidas de Éowyn e Théoden; trajes são interpretação.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Th%C3%A9odwyn"
+   ]
+  },
+  {
+   "id": "eomund",
+   "nome": "Éomund",
+   "epoca": "Aldburg, Terceira Era",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of the Rohirrim with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Éomund, chief Marshal of the Mark: golden-brown hair tied back, a short golden beard, keen blue eyes, a sun-weathered fierce face, a horse-hair crested helmet tucked away, a green cloak over mail. Fiery, vigilant expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Primeiro Marechal da Marca, pai de Éomer e Éowyn; morto pelos Orcs."
+   ],
+   "inferido": [
+    "Feições inferidas de Éomer e dos Rohirrim.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/%C3%89omund"
+   ]
+  },
+  {
+   "id": "oropher",
+   "nome": "Oropher",
+   "epoca": "Verdemata, Segunda Era",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult elf with natural believable skin and subtle pointed ears, clean-shaven unless specified. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Oropher, Sindarin king of the Woodland Realm, father of Thranduil: long pale silver-blond hair, cool grey eyes, a proud, ageless and severe face, a crown of autumn leaves and silver twigs, a rich dark-green and silver robe. Proud, stern, aloof expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Sinda de Doriath, rei dos Elfos Silvestres de Verdemata; morreu em Dagorlad."
+   ],
+   "inferido": [
+    "Cabelo claro e coroa de folhas inferidos de Thranduil, sem copiar a caracterização do filho nos filmes.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Oropher"
+   ]
+  },
+  {
+   "id": "dis",
+   "nome": "Dís",
+   "epoca": "Ered Luin, Terceira Era",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult dwarf woman with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Dís, daughter of Thráin II, sister of Thorin Oakenshield and mother of Fíli and Kíli: a sturdy dwarf woman with thick dark-brown hair in heavy braids bound with silver clasps, a short neat beard as dwarf women are said to have, dark eyes, strong features, a deep blue dress with a fur-trimmed collar. Proud, steady expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Filha de Thráin II, irmã de Thorin e mãe de Fíli e Kíli."
+   ],
+   "inferido": [
+    "A barba segue a nota de Tolkien de que as anãs se parecem com os anões; feições inferidas da família.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/D%C3%ADs"
+   ]
+  },
+  {
+   "id": "girion",
+   "nome": "Girion",
+   "epoca": "Valle, 2770 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of Dale with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Girion, Lord of Dale, in the year the dragon came: long dark hair, a short dark beard, dark eyes, a strong brooding face, a dark-blue and bronze surcoat over mail, an embossed bronze helm under his arm, smoke and firelight behind. Grim, defiant expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Senhor de Valle morto no ataque de Smaug; ancestral de Bard."
+   ],
+   "inferido": [
+    "Feições seguem a caracterização de Luke Evans no prólogo de A Desolação de Smaug, o mesmo ator de Bard; não é descrição de Tolkien.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Girion",
+    "https://lotr.fandom.com/wiki/Luke_Evans"
+   ],
+   "referencia_cinematografica": {
+    "ator": "Luke Evans",
+    "obra": "The Hobbit: The Desolation of Smaug (2013)",
+    "consulta": "https://uproxx.com/hitfix/luke-evans-on-facing-down-dragons-and-dwarves-in-the-hobbit-the-desolation-of-smaug"
+   }
+  },
+  {
+   "id": "marcho",
+   "nome": "Marcho",
+   "epoca": "Ponte de Pedras Arcadas, 1601 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult hobbit, small with a round pleasant face with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Marcho, a Bree-hobbit who founded the Shire with his brother: curly brown hair, no beard, bright brown eyes, ruddy cheeks, a homespun green jacket and a yellow waistcoat, a travelling cloak. Cheerful, enterprising expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Hobbit de Bri, cofundador do Condado."
+   ],
+   "inferido": [
+    "Feições e trajes seguem a descrição geral dos hobbits no Prólogo.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Marcho"
+   ]
+  },
+  {
+   "id": "blanco",
+   "nome": "Blanco",
+   "epoca": "Ponte de Pedras Arcadas, 1601 T.E.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult hobbit, small with a round pleasant face with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Blanco, Marcho's brother and co-founder of the Shire: curly sandy-blond hair, no beard, merry blue-grey eyes, freckles, a brown jacket and red waistcoat, a hooded cloak. Friendly, steady expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "documentado": [
+    "Irmão de Marcho, cofundador do Condado."
+   ],
+   "inferido": [
+    "Feições e trajes seguem a descrição geral dos hobbits no Prólogo.",
+    "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+   ],
+   "consulta": [
+    "https://tolkiengateway.net/wiki/Blanco"
+   ]
+  }
+ ]
+}
