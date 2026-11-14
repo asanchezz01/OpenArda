@@ -81,6 +81,8 @@ export class Busca {
   private campo: HTMLInputElement;
   private lista: HTMLElement;
   private app: App;
+  private tocandoLista = false;
+  private ultimoPonteiro = 'mouse';
   aoAcao?: (acao: string, dados: Record<string, string>) => void;
 
   constructor(app: App, campo: HTMLInputElement, lista: HTMLElement) {
@@ -132,14 +134,27 @@ export class Busca {
       const dados = { ...b.dataset } as Record<string, string>;
       const acao = dados.acao;
       delete dados.acao;
-      this.campo.focus({ preventScroll: true });
+      this.tocandoLista = false;
+      // no toque, devolver o foco ao campo reabriria o teclado virtual por cima da ficha
+      if (this.ultimoPonteiro === 'mouse') this.campo.focus({ preventScroll: true });
       this.fechar();
       this.aoAcao?.(acao, dados);
     });
+    // No Safari (iPhone/iPad) tocar num botão não lhe dá foco: o campo perde o foco sem
+    // relatedTarget e a lista fecharia antes de o toque virar clique. Enquanto o dedo está
+    // na lista, a perda de foco é ignorada.
+    this.lista.addEventListener('pointerdown', (e) => {
+      this.tocandoLista = true;
+      this.ultimoPonteiro = e.pointerType || 'mouse';
+    });
+    const soltar = () => setTimeout(() => (this.tocandoLista = false), 800);
+    this.lista.addEventListener('pointerup', soltar);
+    this.lista.addEventListener('pointercancel', soltar);
     document.addEventListener('pointerdown', (e) => {
       if (!(e.target as HTMLElement).closest('#busca')) this.fechar();
     });
     campo.parentElement!.addEventListener('focusout', (e) => {
+      if (this.tocandoLista) return;
       if (!campo.parentElement!.contains(e.relatedTarget as Node | null)) this.fechar();
     });
   }
