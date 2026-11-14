@@ -112,6 +112,10 @@ input { caret-color: var(--ouro-forte); }
   z-index: 20;
   pointer-events: none;
 }
+/* resultados abertos ficam acima da ficha; senão, no celular, a ficha cobre a lista e o toque não chega */
+#topo:has(#busca-res:not([hidden])) {
+  z-index: 24;
+}
 #topo > * {
   pointer-events: auto;
 }

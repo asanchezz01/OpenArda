@@ -10,6 +10,16 @@ const em = (ref: string) => tempo.cursor(ref);
 const governante = (id: string, ref: string) => governoEm(senhorios.find((s) => s.id === id)!, em(ref))?.quem;
 
 describe('linhagens', () => {
+  it('registra o Reino da Floresta de Oropher e Thranduil', () => {
+    expect(senhorioDoReino('reino-floresta')?.id).toBe('reino-floresta');
+    expect(governante('reino-floresta', 'SE:3000')).toEqual(['oropher']);
+    expect(governante('reino-floresta', 'TE:2941')).toEqual(['thranduil']);
+    expect(governante('reino-floresta', 'QE:10')).toEqual(['thranduil']);
+    const html = htmlArvoreTela({ t: em('TE:2941') } as App, 'thranduil');
+    expect(html).toContain('data-sel="linhagem:oropher"');
+    expect(html).toContain('data-sel="linhagem:legolas"');
+  });
+
   it.each(retratos.filter((r) => r.imagem).map((r) => r.id))('exibe o retrato de %s na ficha e nas árvores', (id) => {
     const retrato = retratoDe(id)!;
     const alt = esc(retrato.alt);
