@@ -28,6 +28,7 @@ export const NOME_POVO: Record<Povo, string> = {
 export interface Pessoa {
   id: string;
   nome: string;
+  outros_nomes?: string[]; // nomes em outras línguas, alcunhas e traduções, para a busca
   epiteto?: string;
   povo: Povo;
   pais?: string[];

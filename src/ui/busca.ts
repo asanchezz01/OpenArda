@@ -1,5 +1,7 @@
-// Busca de lugares, reinos e acontecimentos — inclusive de lugares que já não
-// existem na época atual, com destinos em outras épocas.
+// Busca de lugares, reinos, personagens e acontecimentos — inclusive de lugares
+// que já não existem na época atual, com destinos em outras épocas. Quando nada
+// tem o nome procurado, a busca recorre aos textos: personagens sem ficha
+// própria (Glaurung, Smaug, Ungoliant…) levam às fichas que os mencionam.
 
 import type { App } from '../app';
 import { lugares, reinos, eventos, tempo, statusLugar, ativo, textoPeriodo } from '../core/data';
@@ -13,7 +15,19 @@ interface Item {
   nome: string;
   chaves: string[];
   peso: number;
+  frases: string[]; // textos da ficha, para localizar menções
+  nomesCitados: Set<string>; // palavras de nomes próprios citados nos textos (normalizadas)
 }
+
+export interface Mencao {
+  it: Item;
+  frase: string;
+}
+
+const textos = (...xs: (string | undefined)[]) => xs.filter((x): x is string => !!x);
+const frasesDe = (ts: string[]) => ts.flatMap((t) => t.split(/(?<=[.!?])\s+/)).map((f) => f.trim()).filter(Boolean);
+// nomes próprios: palavras iniciadas por maiúscula (o início da frase entra também, sem prejuízo)
+const nomesProprios = (frases: string[]) => new Set(frases.flatMap((f) => (f.match(/\p{Lu}[\p{L}'’-]*/gu) ?? []).flatMap((w) => norm(w).split(' '))).filter((w) => w.length >= 3));
 
 const NOME_TIPO_BUSCA = { lugar: 'Lugar', reino: 'Reino', evento: 'Acontecimento', pessoa: 'Personagem' };
 
@@ -73,10 +87,17 @@ export class Busca {
     this.app = app;
     this.campo = campo;
     this.lista = lista;
-    for (const l of lugares) this.itens.push({ tipo: 'lugar', id: l.id, nome: l.nome, chaves: [l.nome, ...(l.outros_nomes ?? [])].map(norm), peso: 6 - l.posto });
-    for (const r of reinos) this.itens.push({ tipo: 'reino', id: r.id, nome: r.nome, chaves: [r.nome, ...(r.outros_nomes ?? [])].map(norm), peso: 4.5 });
-    for (const e of eventos) this.itens.push({ tipo: 'evento', id: e.id, nome: e.titulo, chaves: [norm(e.titulo)], peso: e.importante ? 2 : 1 });
-    for (const p of pessoas) this.itens.push({ tipo: 'pessoa', id: p.id, nome: p.nome, chaves: [norm(p.nome), norm(p.epiteto ?? '')], peso: 3 });
+    const novo = (it: Omit<Item, 'frases' | 'nomesCitados'>, ts: string[]) => {
+      const frases = frasesDe(ts);
+      this.itens.push({ ...it, chaves: it.chaves.filter(Boolean), frases, nomesCitados: nomesProprios(frases) });
+    };
+    for (const l of lugares)
+      novo({ tipo: 'lugar', id: l.id, nome: l.nome, chaves: [l.nome, ...(l.outros_nomes ?? [])].map(norm), peso: 6 - l.posto }, textos(l.resumo, l.depois, ...(l.fases ?? []).map((f) => f.nota)));
+    for (const r of reinos)
+      novo({ tipo: 'reino', id: r.id, nome: r.nome, chaves: [r.nome, ...(r.outros_nomes ?? [])].map(norm), peso: 4.5 }, textos(r.destino, ...(r.transformacoes ?? []).map((x) => x.texto)));
+    for (const e of eventos) novo({ tipo: 'evento', id: e.id, nome: e.titulo, chaves: [norm(e.titulo)], peso: e.importante ? 2 : 1 }, textos(e.titulo, e.resumo));
+    for (const p of pessoas)
+      novo({ tipo: 'pessoa', id: p.id, nome: p.nome, chaves: [p.nome, ...(p.outros_nomes ?? []), p.epiteto ?? ''].map(norm), peso: 3 }, textos(p.resumo));
     campo.addEventListener('input', () => this.render());
     campo.addEventListener('focus', () => this.render());
     campo.addEventListener('keydown', (e) => {
@@ -150,19 +171,49 @@ export class Busca {
     return res.slice(0, 8).map((r) => r.it);
   }
 
+  /** Fichas cujos textos citam o nome procurado — para personagens sem ficha própria. */
+  mencoes(q: string): Mencao[] {
+    const termos = norm(q).split(' ').filter(Boolean);
+    if (!termos.length || termos.some((t) => t.length < 3)) return [];
+    const casa = (w: string, t: string) => w === t || (t.length >= 4 && w.startsWith(t));
+    const res: { m: Mencao; s: number }[] = [];
+    for (const it of this.itens) {
+      const ws = [...it.nomesCitados];
+      if (!termos.every((t) => ws.some((w) => casa(w, t)))) continue;
+      const frase = it.frases.find((f) => {
+        const fw = norm(f).split(' ');
+        return termos.every((t) => fw.some((w) => casa(w, t)));
+      });
+      if (!frase) continue;
+      const exato = termos.every((t) => ws.includes(t));
+      res.push({ m: { it, frase }, s: (exato ? 10 : 0) + it.peso });
+    }
+    res.sort((a, b) => b.s - a.s);
+    return res.slice(0, 8).map((r) => r.m);
+  }
+
   private render() {
     const q = this.campo.value;
     const sugerindo = !q.trim();
-    const itens = sugerindo ? ['gondolin', 'numenor', 'minas-anor'].map((id) => this.itens.find((it) => it.tipo === 'lugar' && it.id === id)!).filter(Boolean) : this.buscar(q);
+    let itens = sugerindo ? ['gondolin', 'numenor', 'minas-anor'].map((id) => this.itens.find((it) => it.tipo === 'lugar' && it.id === id)!).filter(Boolean) : this.buscar(q);
+    const mencoes = !sugerindo && !itens.length ? this.mencoes(q) : [];
+    const fraseDe = new Map(mencoes.map((m) => [m.it, m.frase]));
+    if (mencoes.length) itens = mencoes.map((m) => m.it);
     const status = document.getElementById('busca-status');
-    if (status) status.textContent = sugerindo ? 'Destinos para começar. Use a seta para baixo para percorrer as ações.' : `${itens.length} resultado${itens.length === 1 ? '' : 's'}. Use a seta para baixo para percorrer as ações.`;
+    if (status)
+      status.textContent = sugerindo
+        ? 'Destinos para começar. Use a seta para baixo para percorrer as ações.'
+        : mencoes.length
+          ? `Nenhuma ficha com esse nome; ${itens.length} ficha${itens.length === 1 ? '' : 's'} o menciona${itens.length === 1 ? '' : 'm'}. Use a seta para baixo para percorrer as ações.`
+          : `${itens.length} resultado${itens.length === 1 ? '' : 's'}. Use a seta para baixo para percorrer as ações.`;
     if (!itens.length) {
       this.lista.innerHTML = `<p class="vazio">Nada encontrado para “${esc(q)}”. Tente outro nome, como Gondolin, Númenor ou Galadriel.</p>`;
       this.lista.hidden = false;
       return;
     }
     const t = this.app.t;
-    this.lista.innerHTML = (sugerindo ? '<p class="busca-dica">Por onde começar?</p>' : '') + itens
+    const dica = sugerindo ? 'Por onde começar?' : mencoes.length ? `Sem ficha própria para “${q.trim()}”. Fichas que o mencionam:` : '';
+    this.lista.innerHTML = (dica ? `<p class="busca-dica">${esc(dica)}</p>` : '') + itens
       .map((it) => {
         let destinos: Destino[] = [];
         let extra = '';
@@ -187,7 +238,7 @@ export class Busca {
         }
         return `<div class="resultado">
           <div class="r-cab"><span class="r-tipo">${NOME_TIPO_BUSCA[it.tipo]}</span><strong>${esc(it.nome)}</strong></div>
-          <div class="r-extra">${extra}</div>
+          <div class="r-extra">${extra}</div>${fraseDe.has(it) ? `<p class="r-mencao">${esc(fraseDe.get(it)!)}</p>` : ''}
           <div class="r-destinos">${destinos
             .map((d) => `<button type="button" class="destino${d.primario ? ' primario' : ''}" data-acao="${d.acao}" ${Object.entries(d.dados).map(([k, v]) => `data-${k}="${esc(v)}"`).join(' ')}>${esc(d.rotulo)}</button>`)
             .join('')}</div>
