@@ -40,7 +40,7 @@ describe('Valar e Maiar', () => {
     expect(pessoaPorId.get('manwe')?.pais).toEqual(['eru']);
     expect(irmaosDe('manwe')).toEqual([]); // pai comum em Eru não faz dos Valar irmãos
     expect(pessoaPorId.get('osse')?.servo_de).toEqual(['ulmo']);
-    expect(sequitoDe('manwe').map((p) => p.id)).toEqual(['eonwe']);
+    expect(sequitoDe('manwe').map((p) => p.id)).toEqual(['eonwe', 'thorondor']);
   });
 
   it('as fichas do Manwë e do Eönwë mostram os laços', () => {

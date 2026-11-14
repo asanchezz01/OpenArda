@@ -6,7 +6,7 @@ import retratosJson from '../../data/retratos.json';
 import type { FonteRef, TempoRef } from './types';
 import { reinoPorId, tempo } from './data';
 
-export type Povo = 'noldor' | 'sindar' | 'teleri' | 'vanyar' | 'maia' | 'edain' | 'meio' | 'dunedain' | 'hobbit' | 'anao' | 'homem' | 'vala' | 'ainu' | 'orc';
+export type Povo = 'noldor' | 'sindar' | 'teleri' | 'vanyar' | 'maia' | 'edain' | 'meio' | 'dunedain' | 'hobbit' | 'anao' | 'homem' | 'vala' | 'ainu' | 'orc' | 'criatura';
 
 export const NOME_POVO: Record<Povo, string> = {
   noldor: 'Noldor',
@@ -23,11 +23,13 @@ export const NOME_POVO: Record<Povo, string> = {
   vala: 'Valar',
   ainu: 'Ainur',
   orc: 'Orcs',
+  criatura: 'Criaturas',
 };
 
 export interface Pessoa {
   id: string;
   nome: string;
+  outros_nomes?: string[]; // nomes em outras línguas, alcunhas e traduções, para a busca
   epiteto?: string;
   povo: Povo;
   pais?: string[];

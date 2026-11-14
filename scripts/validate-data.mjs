@@ -175,12 +175,13 @@ const linhagens = ler('linhagens');
 const retratos = ler('retratos');
 const idPessoas = ids(linhagens.pessoas, 'pessoas');
 ids(linhagens.senhorios, 'senhorios');
-const POVOS = new Set(['noldor', 'sindar', 'teleri', 'vanyar', 'maia', 'edain', 'meio', 'dunedain', 'hobbit', 'anao', 'homem', 'vala', 'ainu', 'orc']);
+const POVOS = new Set(['noldor', 'sindar', 'teleri', 'vanyar', 'maia', 'edain', 'meio', 'dunedain', 'hobbit', 'anao', 'homem', 'vala', 'ainu', 'orc', 'criatura']);
 for (const p of linhagens.pessoas) {
   const onde = `pessoa ${p.id}`;
   if (!POVOS.has(p.povo)) erro(`${onde}: povo inválido "${p.povo}"`);
   for (const q of p.pais ?? []) if (!idPessoas.has(q) || q === p.id) erro(`${onde}: genitor inválido "${q}"`);
   if (p.elo && !p.pais?.length) erro(`${onde}: "elo" sem pais`);
+  if (p.outros_nomes && (!Array.isArray(p.outros_nomes) || p.outros_nomes.some((n) => typeof n !== 'string' || !n.trim()))) erro(`${onde}: "outros_nomes" deve ser uma lista de nomes`);
   if (!p.fontes?.length) erro(`${onde}: sem fontes`);
   verificarFontes(p.fontes, onde);
 }

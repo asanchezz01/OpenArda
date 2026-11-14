@@ -435,5 +435,355 @@
     "evento_fundacao": "te-coroacao", "ultimo_periodo": "QE:120", "comparar": ["TE:3018", "QE:6"],
     "ligacoes": [{ "texto": "Gondor", "reino": "gondor" }, { "texto": "Arnor", "reino": "arnor", "quando": "SE:3320" }],
     "fontes": [{ "fonte": "sda-apA", "local": "I (v)" }, { "fonte": "sda-apB", "local": "Acontecimentos posteriores" }]
+  },
+  {
+    "id": "reino-floresta",
+    "nome": "Reino da Floresta",
+    "outros_nomes": [
+      "Reino do Rei Elfo",
+      "Reino de Thranduil",
+      "Reino de Oropher",
+      "Woodland Realm",
+      "Eryn Lasgalen"
+    ],
+    "tipo": "Reino élfico (Silvestres, sob príncipes Sindar)",
+    "cor": "#4f8f5a",
+    "em": [
+      1700,
+      -230
+    ],
+    "de": "SE:1",
+    "periodo_texto": "Da Segunda Era (ano de fundação incerto) até a Quarta Era",
+    "capitais": [
+      {
+        "lugar": "amon-lanc",
+        "ate": "SE:1000",
+        "nota": "primeira morada de Oropher"
+      },
+      {
+        "lugar": "saloes-thranduil",
+        "de": "TE:1050"
+      }
+    ],
+    "povos": [
+      "Elfos Silvestres (Nandor)",
+      "Sindar"
+    ],
+    "governantes": [
+      {
+        "nome": "Oropher",
+        "nota": "Segunda Era – 3434 S.E."
+      },
+      {
+        "nome": "Thranduil",
+        "nota": "desde 3434 S.E."
+      }
+    ],
+    "origem": "Oropher, um Sinda de Doriath, foi para o leste na Segunda Era e tornou-se rei dos Elfos Silvestres de Verdemata, a Grande.",
+    "transformacoes": [
+      {
+        "quando": "SE:1000",
+        "texto": "Oropher recua para o norte das Emyn Duir, para longe dos Anões de Khazad-dûm e da sombra crescente de Sauron (data aproximada)."
+      },
+      {
+        "quando": "SE:3434",
+        "texto": "Oropher morre em Dagorlad; Thranduil volta com apenas um terço do exército e torna-se rei.",
+        "evento": "se-dagorlad"
+      },
+      {
+        "quando": "TE:1050",
+        "texto": "A Sombra cai sobre a floresta, que passa a ser a Floresta das Trevas; Thranduil recua para o nordeste.",
+        "evento": "te-hyarmendacil"
+      },
+      {
+        "quando": "TE:2941",
+        "texto": "Thranduil lutou na Batalha dos Cinco Exércitos.",
+        "evento": "te-cinco-exercitos"
+      },
+      {
+        "quando": "TE:3019",
+        "texto": "Thranduil repele o ataque de Dol Guldur e, depois da queda de Sauron, fica com todo o norte da floresta, renomeada Eryn Lasgalen.",
+        "evento": "te-eryn-lasgalen"
+      }
+    ],
+    "destino": "Continua na Quarta Era como Eryn Lasgalen, o reino de Thranduil ao norte das montanhas da floresta.",
+    "territorios": [
+      {
+        "de": "SE:1",
+        "ate": "SE:1000",
+        "tipo": "dominio",
+        "borda": "difusa",
+        "contorno": [
+          [
+            1527,
+            -654
+          ],
+          [
+            1552,
+            -610
+          ],
+          [
+            1582,
+            -557
+          ],
+          [
+            1700,
+            -555
+          ],
+          [
+            1800,
+            -547
+          ],
+          [
+            1826,
+            -595
+          ],
+          [
+            1814,
+            -642
+          ],
+          [
+            1782,
+            -691
+          ],
+          [
+            1719,
+            -740
+          ],
+          [
+            1664,
+            -776
+          ],
+          [
+            1601,
+            -768
+          ],
+          [
+            1562,
+            -728
+          ],
+          [
+            1519,
+            -703
+          ]
+        ]
+      },
+      {
+        "de": "SE:1000",
+        "ate": "TE:1050",
+        "tipo": "dominio",
+        "borda": "difusa",
+        "contorno": [
+          [
+            1535,
+            -150
+          ],
+          [
+            1588,
+            -126
+          ],
+          [
+            1649,
+            -146
+          ],
+          [
+            1714,
+            -130
+          ],
+          [
+            1753,
+            -168
+          ],
+          [
+            1786,
+            -201
+          ],
+          [
+            1814,
+            -242
+          ],
+          [
+            1828,
+            -290
+          ],
+          [
+            1771,
+            -315
+          ],
+          [
+            1723,
+            -292
+          ],
+          [
+            1680,
+            -268
+          ],
+          [
+            1623,
+            -264
+          ],
+          [
+            1575,
+            -300
+          ],
+          [
+            1560,
+            -288
+          ],
+          [
+            1540,
+            -235
+          ]
+        ]
+      },
+      {
+        "de": "TE:1050",
+        "ate": "TE:3019",
+        "tipo": "dominio",
+        "borda": "aproximada",
+        "contorno": [
+          [
+            1690,
+            -138
+          ],
+          [
+            1714,
+            -130
+          ],
+          [
+            1753,
+            -168
+          ],
+          [
+            1786,
+            -201
+          ],
+          [
+            1814,
+            -242
+          ],
+          [
+            1828,
+            -290
+          ],
+          [
+            1771,
+            -315
+          ],
+          [
+            1723,
+            -292
+          ],
+          [
+            1700,
+            -250
+          ],
+          [
+            1680,
+            -190
+          ]
+        ]
+      },
+      {
+        "de": "TE:3019",
+        "tipo": "dominio",
+        "borda": "documentada",
+        "contorno": [
+          [
+            1535,
+            -150
+          ],
+          [
+            1588,
+            -126
+          ],
+          [
+            1649,
+            -146
+          ],
+          [
+            1714,
+            -130
+          ],
+          [
+            1753,
+            -168
+          ],
+          [
+            1786,
+            -201
+          ],
+          [
+            1814,
+            -242
+          ],
+          [
+            1828,
+            -290
+          ],
+          [
+            1771,
+            -315
+          ],
+          [
+            1723,
+            -292
+          ],
+          [
+            1680,
+            -268
+          ],
+          [
+            1623,
+            -264
+          ],
+          [
+            1575,
+            -300
+          ],
+          [
+            1560,
+            -288
+          ],
+          [
+            1540,
+            -235
+          ]
+        ]
+      }
+    ],
+    "ligacoes": [
+      {
+        "texto": "Floresta das Trevas",
+        "lugar": "floresta-trevas"
+      },
+      {
+        "texto": "Dol Guldur, na antiga Amon Lanc",
+        "lugar": "dol-guldur"
+      },
+      {
+        "texto": "Vizinho de Lothlórien",
+        "lugar": "lothlorien"
+      }
+    ],
+    "ultimo_periodo": "QE:fim",
+    "comparar": [
+      "SE:3000",
+      "TE:2941"
+    ],
+    "fontes": [
+      {
+        "fonte": "ci",
+        "local": "Parte II, cap. 4, apêndice B (Os príncipes Sindarin dos Elfos Silvestres); Parte III, cap. 1"
+      },
+      {
+        "fonte": "hobbit",
+        "local": "caps. 8 e 9"
+      },
+      {
+        "fonte": "sda-apB",
+        "local": "A Terceira Era, anos 1050 e 3019"
+      }
+    ]
   }
 ]

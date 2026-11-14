@@ -112,6 +112,10 @@ input { caret-color: var(--ouro-forte); }
   z-index: 20;
   pointer-events: none;
 }
+/* resultados abertos ficam acima da ficha; senão, no celular, a ficha cobre a lista e o toque não chega */
+#topo:has(#busca-res:not([hidden])) {
+  z-index: 24;
+}
 #topo > * {
   pointer-events: auto;
 }
@@ -212,6 +216,14 @@ input { caret-color: var(--ouro-forte); }
   color: var(--tinta-suave);
   font-size: 13px;
   margin: 2px 0 8px;
+}
+.r-mencao {
+  margin: -4px 0 8px;
+  padding-left: 8px;
+  border-left: 2px solid var(--linha);
+  color: var(--tinta-suave);
+  font-size: 13px;
+  font-style: italic;
 }
 .r-destinos {
   display: flex;
@@ -1694,6 +1706,7 @@ details summary {
 .povo-ainu { --povo: #d8e4f3; }
 .povo-orc { --povo: #8f8a6a; }
 .povo-homem { --povo: #c89b83; }
+.povo-criatura { --povo: #c46a5a; }
 .povo-sinal {
   display: inline-block;
   width: 8px;

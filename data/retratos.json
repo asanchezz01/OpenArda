@@ -4152,5 +4152,854 @@
       "modelo": "flux-2-klein-9b-fp8.safetensors",
       "seed": 90863783289698
     }
+  },
+  {
+    "id": "glaurung",
+    "nome": "Glaurung",
+    "documentado": [
+      "Primeiro dos Urulóki, dragões de fogo sem asas; seu olhar enfeitiçava (Túrin, Niënor)."
+    ],
+    "inferido": [
+      "Cores das escamas e chifres são interpretação.",
+      "Aparência de criatura segue motivos recorrentes na arte de ilustradores de Tolkien (John Howe, Ted Nasmith, Alan Lee); é interpretação artística, sem copiar obra específica.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, caps. 18 e 21. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Glaurung"
+      }
+    ],
+    "alt": "Retrato artístico de Glaurung"
+  },
+  {
+    "id": "ancalagon",
+    "nome": "Ancalagon",
+    "documentado": [
+      "O maior dos dragões alados, abatido por Eärendil na Guerra da Ira."
+    ],
+    "inferido": [
+      "Cor negra segue o epíteto; demais traços são interpretação.",
+      "Aparência de criatura segue motivos recorrentes na arte de ilustradores de Tolkien (John Howe, Ted Nasmith, Alan Lee); é interpretação artística, sem copiar obra específica.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 24. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Ancalagon"
+      }
+    ],
+    "alt": "Retrato artístico de Ancalagon"
+  },
+  {
+    "id": "smaug",
+    "nome": "Smaug",
+    "documentado": [
+      "Dragão vermelho-dourado, com o ventre coberto de pedras e ouro, exceto uma falha no peito."
+    ],
+    "inferido": [
+      "Desenho da cabeça segue a caracterização dos filmes de O Hobbit (Weta Digital); não é descrição literal de Tolkien.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "caps. 1 e 12. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Smaug"
+      }
+    ],
+    "alt": "Retrato de Smaug; reconstrução artística com referência ao desenho do dragão nos filmes de O Hobbit.",
+    "referencia_cinematografica": {
+      "ator": "Benedict Cumberbatch (voz e captura de movimento); desenho da Weta Digital",
+      "obra": "The Hobbit: The Desolation of Smaug (2013)",
+      "consulta": "https://www.fxguide.com/?p=48113"
+    }
+  },
+  {
+    "id": "ungoliant",
+    "nome": "Ungoliant",
+    "documentado": [
+      "Espírito em forma de aranha monstruosa, que tecia teias de Escuridão e devorou a luz das Árvores."
+    ],
+    "inferido": [
+      "Aparência de criatura segue motivos recorrentes na arte de ilustradores de Tolkien (John Howe, Ted Nasmith, Alan Lee); é interpretação artística, sem copiar obra específica.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 8. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Ungoliant"
+      }
+    ],
+    "alt": "Retrato artístico de Ungoliant"
+  },
+  {
+    "id": "huan",
+    "nome": "Huan",
+    "documentado": [
+      "Cão de caça de Valinor, presente de Oromë a Celegorm; amigo de Lúthien."
+    ],
+    "inferido": [
+      "Cor da pelagem e raça são interpretação.",
+      "Aparência de criatura segue motivos recorrentes na arte de ilustradores de Tolkien (John Howe, Ted Nasmith, Alan Lee); é interpretação artística, sem copiar obra específica.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 19. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Huan"
+      }
+    ],
+    "alt": "Retrato artístico de Huan"
+  },
+  {
+    "id": "thorondor",
+    "nome": "Thorondor",
+    "documentado": [
+      "A maior de todas as aves, com asas de trinta braças; a seu bico dourado é atribuída a cicatriz no rosto de Morgoth."
+    ],
+    "inferido": [
+      "Plumagem é interpretação.",
+      "Aparência de criatura segue motivos recorrentes na arte de ilustradores de Tolkien (John Howe, Ted Nasmith, Alan Lee); é interpretação artística, sem copiar obra específica.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, caps. 13 e 18. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Thorondor"
+      }
+    ],
+    "alt": "Retrato artístico de Thorondor"
+  },
+  {
+    "id": "gothmog",
+    "nome": "Gothmog",
+    "documentado": [
+      "Senhor dos Balrogs, alto capitão de Angband; matou Fëanor e Fingon, morreu com Ecthelion."
+    ],
+    "inferido": [
+      "Silhueta de chifres, fogo e sombra segue o Balrog dos filmes de O Senhor dos Anéis (Weta) e a arte de ilustradores; Tolkien não descreve o rosto de Gothmog.",
+      "Aparência de criatura segue motivos recorrentes na arte de ilustradores de Tolkien (John Howe, Ted Nasmith, Alan Lee); é interpretação artística, sem copiar obra específica.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, caps. 20 e 23. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Gothmog_(Balrog)"
+      }
+    ],
+    "alt": "Retrato artístico de Gothmog"
+  },
+  {
+    "id": "khamul",
+    "nome": "Khamûl",
+    "documentado": [
+      "Um dos Nove; o segundo depois do Rei-bruxo. Invisível sem o manto."
+    ],
+    "inferido": [
+      "O manto negro com capuz vazio segue a caracterização dos Nazgûl nos filmes de Peter Jackson.",
+      "Detalhes do manto são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte III, cap. 4 (A Caçada ao Anel). Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Kham%C3%BBl"
+      }
+    ],
+    "alt": "Retrato artístico de Khamûl"
+  },
+  {
+    "id": "beor",
+    "nome": "Bëor",
+    "documentado": [
+      "Chefe dos primeiros Homens que entraram em Beleriand; serviu Finrod até a morte."
+    ],
+    "inferido": [
+      "Cabelo escuro e olhos cinzentos inferidos dos traços da Casa de Bëor (Beren, Barahir).",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 17. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/B%C3%ABor"
+      }
+    ],
+    "alt": "Retrato artístico de Bëor"
+  },
+  {
+    "id": "hador",
+    "nome": "Hador",
+    "documentado": [
+      "Lórindol, 'cabeça dourada': a Casa de Hador era de cabelo dourado e olhos azuis."
+    ],
+    "inferido": [
+      "Barba e trajes são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, cap. 17. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Hador"
+      }
+    ],
+    "alt": "Retrato artístico de Hador"
+  },
+  {
+    "id": "ingwe",
+    "nome": "Ingwë",
+    "documentado": [
+      "Senhor dos Vanyar, de cabelo dourado; o Alto Rei de todos os Elfos."
+    ],
+    "inferido": [
+      "Olhos e trajes são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Quenta, caps. 3 e 5. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Ingw%C3%AB"
+      }
+    ],
+    "alt": "Retrato artístico de Ingwë"
+  },
+  {
+    "id": "silmarien",
+    "nome": "Silmariën",
+    "documentado": [
+      "Filha mais velha de Tar-Elendil, de quem descendem os Senhores de Andúnië e Elendil."
+    ],
+    "inferido": [
+      "Cabelo escuro e olhos cinzentos inferidos dos Númenóreanos de alta linhagem.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte II, cap. 3. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Silmari%C3%ABn"
+      }
+    ],
+    "alt": "Retrato artístico de Silmariën"
+  },
+  {
+    "id": "tar-minastir",
+    "nome": "Tar-Minastir",
+    "documentado": [
+      "Rei que construiu uma torre para contemplar Tol Eressëa e enviou a frota contra Sauron."
+    ],
+    "inferido": [
+      "Traços inferidos dos Númenóreanos; trajes são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte II, cap. 3. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Tar-Minastir"
+      }
+    ],
+    "alt": "Retrato artístico de Tar-Minastir"
+  },
+  {
+    "id": "tar-atanamir",
+    "nome": "Tar-Atanamir",
+    "documentado": [
+      "Rei que temeu a morte e se recusou a entregar o cetro em vida."
+    ],
+    "inferido": [
+      "A velhice extrema é inferência do fim do reinado; trajes são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Akallabêth. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Tar-Atanamir"
+      }
+    ],
+    "alt": "Retrato artístico de Tar-Atanamir"
+  },
+  {
+    "id": "ar-adunakhor",
+    "nome": "Ar-Adûnakhôr",
+    "documentado": [
+      "Primeiro rei a tomar o cetro com nome em adûnaico; perseguiu os Fiéis."
+    ],
+    "inferido": [
+      "Aparência é interpretação a partir dos Númenóreanos.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Akallabêth. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Ar-Ad%C3%BBnakh%C3%B4r"
+      }
+    ],
+    "alt": "Retrato artístico de Ar-Adûnakhôr"
+  },
+  {
+    "id": "tar-palantir",
+    "nome": "Tar-Palantir",
+    "documentado": [
+      "Rei que se arrependeu e restaurou os costumes antigos; pai de Míriel."
+    ],
+    "inferido": [
+      "Velhice, cabelo e vestes claras seguem a caracterização da série Os Anéis de Poder; não é descrição de Tolkien.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Silmarillion",
+        "local": "Akallabêth. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Tar-Palantir"
+      }
+    ],
+    "alt": "Retrato de Tar-Palantir; reconstrução artística com referência à caracterização da série Os Anéis de Poder.",
+    "referencia_cinematografica": {
+      "ator": "Ken Blackburn",
+      "obra": "The Lord of the Rings: The Rings of Power (2022–2024)",
+      "consulta": "https://www.tvmaze.com/characters/1029350/the-lord-of-the-rings-the-rings-of-power-tar-palantir"
+    }
+  },
+  {
+    "id": "earendur",
+    "nome": "Eärendur",
+    "documentado": [
+      "Último rei do Arnor unido; seus filhos dividiram o reino."
+    ],
+    "inferido": [
+      "Cabelo escuro e olhos cinzentos inferidos dos Dúnedain.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "I (ii). Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/E%C3%A4rendur_(King_of_Arnor)"
+      }
+    ],
+    "alt": "Retrato artístico de Eärendur"
+  },
+  {
+    "id": "amlaith",
+    "nome": "Amlaith",
+    "documentado": [
+      "Primogênito de Eärendur, primeiro rei de Arthedain."
+    ],
+    "inferido": [
+      "Traços inferidos dos Dúnedain e de Eärendur.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "I (ii). Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Amlaith"
+      }
+    ],
+    "alt": "Retrato artístico de Amlaith"
+  },
+  {
+    "id": "argeleb",
+    "nome": "Argeleb I",
+    "documentado": [
+      "Reivindicou todo o Arnor e morreu em combate contra Rhudaur e Angmar."
+    ],
+    "inferido": [
+      "Traços inferidos dos Dúnedain.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "I (iii). Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Argeleb_I"
+      }
+    ],
+    "alt": "Retrato artístico de Argeleb I"
+  },
+  {
+    "id": "arvedui",
+    "nome": "Arvedui",
+    "documentado": [
+      "Último rei de Arthedain; morreu no naufrágio na Baía de Gelo de Forochel."
+    ],
+    "inferido": [
+      "Traços inferidos dos Dúnedain; o frio e as peles seguem o fim de sua história.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "I (iii). Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Arvedui"
+      }
+    ],
+    "alt": "Retrato artístico de Arvedui"
+  },
+  {
+    "id": "hyarmendacil",
+    "nome": "Hyarmendacil I",
+    "documentado": [
+      "Venceu o Harad; sob ele Gondor chegou ao auge."
+    ],
+    "inferido": [
+      "Traços inferidos da linhagem de Anárion; armadura é interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "I (iv). Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Hyarmendacil_I"
+      }
+    ],
+    "alt": "Retrato artístico de Hyarmendacil I"
+  },
+  {
+    "id": "earnur",
+    "nome": "Eärnur",
+    "documentado": [
+      "Último rei de Gondor; aceitou o desafio do Rei-bruxo e desapareceu em Minas Morgul."
+    ],
+    "inferido": [
+      "Rosto barbeado e juventude são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "I (iv). Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/E%C3%A4rnur"
+      }
+    ],
+    "alt": "Retrato artístico de Eärnur"
+  },
+  {
+    "id": "mardil",
+    "nome": "Mardil",
+    "documentado": [
+      "Primeiro Regente Governante, da Casa de Húrin."
+    ],
+    "inferido": [
+      "Traços inferidos dos Regentes (Denethor, Boromir, Faramir).",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "I (iv). Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Mardil_Voronw%C3%AB"
+      }
+    ],
+    "alt": "Retrato artístico de Mardil"
+  },
+  {
+    "id": "cirion",
+    "nome": "Cirion",
+    "documentado": [
+      "Regente que deu Calenardhon a Eorl e fez com ele o juramento de amizade."
+    ],
+    "inferido": [
+      "Traços inferidos dos Regentes.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte III, cap. 2. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Cirion"
+      }
+    ],
+    "alt": "Retrato artístico de Cirion"
+  },
+  {
+    "id": "eorl",
+    "nome": "Eorl",
+    "documentado": [
+      "Jovem senhor dos Éothéod, de cabelo dourado, que cavalgou ao Campo de Celebrant."
+    ],
+    "inferido": [
+      "Feições inferidas dos Rohirrim; trajes são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "II. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Eorl"
+      }
+    ],
+    "alt": "Retrato artístico de Eorl"
+  },
+  {
+    "id": "helm",
+    "nome": "Helm Mão-de-Martelo",
+    "documentado": [
+      "Rei de força terrível; resistiu na fortaleza que leva seu nome e morreu no Longo Inverno."
+    ],
+    "inferido": [
+      "Barba grisalha e peles seguem o Longo Inverno e o visual de A Guerra dos Rohirrim (2024), sem copiar o desenho da animação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "II. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Helm"
+      }
+    ],
+    "alt": "Retrato artístico de Helm Mão-de-Martelo"
+  },
+  {
+    "id": "frealaf",
+    "nome": "Fréaláf",
+    "documentado": [
+      "Sobrinho de Helm; retomou Edoras e tornou-se rei."
+    ],
+    "inferido": [
+      "Feições inferidas dos Rohirrim e de Helm.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "II. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Fr%C3%A9al%C3%A1f_Hildeson"
+      }
+    ],
+    "alt": "Retrato artístico de Fréaláf"
+  },
+  {
+    "id": "thengel",
+    "nome": "Thengel",
+    "documentado": [
+      "Rei de Rohan que viveu muitos anos em Gondor e se casou com Morwen de Lossarnach."
+    ],
+    "inferido": [
+      "Traços inferidos de Théoden e dos Rohirrim; a influência de Gondor nos trajes é interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "II. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Thengel"
+      }
+    ],
+    "alt": "Retrato artístico de Thengel"
+  },
+  {
+    "id": "morwen-lossarnach",
+    "nome": "Morwen de Lossarnach",
+    "documentado": [
+      "Dama de Lossarnach, de ascendência númenóreana, mãe de Théoden; chamada Brilho de Aço."
+    ],
+    "inferido": [
+      "Cabelo escuro e olhos cinzentos inferidos de sua ascendência.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "II. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Morwen_Steelsheen"
+      }
+    ],
+    "alt": "Retrato artístico de Morwen de Lossarnach"
+  },
+  {
+    "id": "theodwyn",
+    "nome": "Théodwyn",
+    "documentado": [
+      "Irmã mais nova de Théoden, mãe de Éomer e Éowyn."
+    ],
+    "inferido": [
+      "Feições inferidas de Éowyn e Théoden; trajes são interpretação.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "II. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Th%C3%A9odwyn"
+      }
+    ],
+    "alt": "Retrato artístico de Théodwyn"
+  },
+  {
+    "id": "eomund",
+    "nome": "Éomund",
+    "documentado": [
+      "Primeiro Marechal da Marca, pai de Éomer e Éowyn; morto pelos Orcs."
+    ],
+    "inferido": [
+      "Feições inferidas de Éomer e dos Rohirrim.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "II. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/%C3%89omund"
+      }
+    ],
+    "alt": "Retrato artístico de Éomund"
+  },
+  {
+    "id": "oropher",
+    "nome": "Oropher",
+    "documentado": [
+      "Sinda de Doriath, rei dos Elfos Silvestres de Verdemata; morreu em Dagorlad."
+    ],
+    "inferido": [
+      "Cabelo claro e coroa de folhas inferidos de Thranduil, sem copiar a caracterização do filho nos filmes.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte II, cap. 4, apêndice B. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Oropher"
+      }
+    ],
+    "alt": "Retrato artístico de Oropher"
+  },
+  {
+    "id": "dis",
+    "nome": "Dís",
+    "documentado": [
+      "Filha de Thráin II, irmã de Thorin e mãe de Fíli e Kíli."
+    ],
+    "inferido": [
+      "A barba segue a nota de Tolkien de que as anãs se parecem com os anões; feições inferidas da família.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis, Apêndice A",
+        "local": "III. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/D%C3%ADs"
+      }
+    ],
+    "alt": "Retrato artístico de Dís"
+  },
+  {
+    "id": "girion",
+    "nome": "Girion",
+    "documentado": [
+      "Senhor de Valle morto no ataque de Smaug; ancestral de Bard."
+    ],
+    "inferido": [
+      "Feições seguem a caracterização de Luke Evans no prólogo de A Desolação de Smaug, o mesmo ator de Bard; não é descrição de Tolkien.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Hobbit",
+        "local": "caps. 12 e 14. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Girion"
+      }
+    ],
+    "alt": "Retrato de Girion; reconstrução artística com referência à caracterização de Luke Evans.",
+    "referencia_cinematografica": {
+      "ator": "Luke Evans",
+      "obra": "The Hobbit: The Desolation of Smaug (2013)",
+      "consulta": "https://uproxx.com/hitfix/luke-evans-on-facing-down-dragons-and-dwarves-in-the-hobbit-the-desolation-of-smaug"
+    }
+  },
+  {
+    "id": "marcho",
+    "nome": "Marcho",
+    "documentado": [
+      "Hobbit de Bri, cofundador do Condado."
+    ],
+    "inferido": [
+      "Feições e trajes seguem a descrição geral dos hobbits no Prólogo.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Prólogo, 1. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Marcho"
+      }
+    ],
+    "alt": "Retrato artístico de Marcho"
+  },
+  {
+    "id": "blanco",
+    "nome": "Blanco",
+    "documentado": [
+      "Irmão de Marcho, cofundador do Condado."
+    ],
+    "inferido": [
+      "Feições e trajes seguem a descrição geral dos hobbits no Prólogo.",
+      "Iluminação, enquadramento, idade aparente e acabamento são reconstrução artística."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Prólogo, 1. Consulta por conhecimento prévio da obra."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Blanco"
+      }
+    ],
+    "alt": "Retrato artístico de Blanco"
   }
 ]
