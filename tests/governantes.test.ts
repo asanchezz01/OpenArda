@@ -21,7 +21,7 @@ describe('quem governa cada cidade', () => {
     ['edoras', 'TE:3019', [['eomer']]],
     ['minas-anor', 'TE:3018', [['denethor']]],
     ['minas-ithil', 'TE:3018', [['rei-bruxo']]],
-    ['minas-ithil', 'TE:1000', ['Reis de Gondor da linhagem de Anárion, até Eärnur']],
+    ['minas-ithil', 'TE:1000', ['Reis de Gondor, de Cemendur a Ciryandil']],
     ['isengard', 'TE:3018', [['saruman']]],
     ['mithlond', 'SE:100', [['cirdan'], ['gilgalad']]],
     ['carn-dum', 'TE:1500', [['rei-bruxo']]],

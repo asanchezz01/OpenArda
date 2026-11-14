@@ -175,7 +175,7 @@ const linhagens = ler('linhagens');
 const retratos = ler('retratos');
 const idPessoas = ids(linhagens.pessoas, 'pessoas');
 ids(linhagens.senhorios, 'senhorios');
-const POVOS = new Set(['noldor', 'sindar', 'teleri', 'vanyar', 'maia', 'edain', 'meio', 'dunedain', 'hobbit', 'anao', 'homem', 'vala', 'ainu', 'orc']);
+const POVOS = new Set(['noldor', 'sindar', 'teleri', 'vanyar', 'maia', 'edain', 'meio', 'dunedain', 'hobbit', 'anao', 'homem', 'vala', 'ainu', 'orc', 'criatura']);
 for (const p of linhagens.pessoas) {
   const onde = `pessoa ${p.id}`;
   if (!POVOS.has(p.povo)) erro(`${onde}: povo inválido "${p.povo}"`);

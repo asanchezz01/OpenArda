@@ -89,17 +89,27 @@ describe('busca e menu', () => {
 
   it('localiza personagens sem ficha própria pelas fichas que os mencionam', () => {
     const campo = el<HTMLInputElement>('#busca-campo');
-    campo.value = 'Glaurung';
+    campo.value = 'Wulf';
     campo.dispatchEvent(new Event('input'));
     expect(el('#busca-status').textContent).toContain('Nenhuma ficha com esse nome');
     expect(el('#busca-res').textContent).toContain('Fichas que o mencionam');
     const nomes = [...document.querySelectorAll('#busca-res .resultado strong')].map((s) => s.textContent);
-    expect(nomes).toContain('Túrin Turambar');
-    expect(nomes).toContain('Nargothrond');
-    for (const m of document.querySelectorAll('#busca-res .r-mencao')) expect(m.textContent).toContain('Glaurung');
+    expect(nomes).toContain('Fréaláf');
+    for (const m of document.querySelectorAll('#busca-res .r-mencao')) expect(m.textContent).toContain('Wulf');
     campo.value = 'xyzzy';
     campo.dispatchEvent(new Event('input'));
     expect(el('#busca-res').textContent).toContain('Tente outro nome');
+  });
+
+  it('criaturas citadas nos textos têm ficha própria', () => {
+    const campo = el<HTMLInputElement>('#busca-campo');
+    for (const [q, nome] of [['Glaurung', 'Glaurung'], ['Smaug', 'Smaug'], ['Ungoliant', 'Ungoliant'], ['Huan', 'Huan']]) {
+      campo.value = q;
+      campo.dispatchEvent(new Event('input'));
+      const primeiro = el('#busca-res .resultado');
+      expect(primeiro.querySelector('.r-tipo')!.textContent).toBe('Personagem');
+      expect(primeiro.querySelector('strong')!.textContent).toBe(nome);
+    }
   });
 
   it('percorre resultados com setas e Esc devolve foco sem fechar a ficha', () => {
