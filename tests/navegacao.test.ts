@@ -11,6 +11,8 @@ let app: App;
 let documentListeners: MockInstance<Document['addEventListener']>;
 let windowListeners: MockInstance<Window['addEventListener']>;
 const el = <T extends HTMLElement = HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
+// jsdom não tem PointerEvent
+const toque = (tipo: string) => Object.assign(new MouseEvent(tipo, { bubbles: true }), { pointerType: 'touch' });
 const tecla = (alvo: HTMLElement, key: string) => alvo.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true, cancelable: true }));
 
 beforeEach(() => {
@@ -74,6 +76,23 @@ describe('busca e menu', () => {
     ui.fecharPainel();
     expect(document.activeElement).toBe(campo);
     expect(norm('Minas   Tirith')).toBe('minas tirith');
+  });
+
+  it('no toque do Safari, a perda de foco antes do clique não fecha a lista', () => {
+    const campo = el<HTMLInputElement>('#busca-campo');
+    campo.focus();
+    campo.value = 'Thranduil';
+    campo.dispatchEvent(new Event('input'));
+    const destino = el<HTMLButtonElement>('#busca-res .destino.primario');
+    // sequência do iOS: pointerdown no botão, o campo perde o foco sem relatedTarget, depois o clique
+    destino.dispatchEvent(toque('pointerdown'));
+    campo.dispatchEvent(new FocusEvent('focusout', { bubbles: true, relatedTarget: null }));
+    expect(el('#busca-res').hidden).toBe(false);
+    destino.dispatchEvent(toque('pointerup'));
+    destino.click();
+    expect(app.selecionar).toHaveBeenCalledOnce();
+    expect(el('#painel h2').textContent).toBe('Thranduil');
+    expect(document.activeElement).not.toBe(campo); // não reabre o teclado virtual
   });
 
   it('encontra personagens por outros nomes e alcunhas', () => {
