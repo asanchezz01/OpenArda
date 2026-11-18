@@ -8,8 +8,8 @@
  ],
  "regra": "Filmes de Peter Jackson primeiro (Smaug, Girion, o manto dos Nazgûl para Khamûl, a silhueta do Balrog para Gothmog); Os Anéis de Poder só quando o personagem não está nos filmes (Tar-Palantir); demais pela literatura e pela família. Criaturas seguem motivos da arte de ilustradores de Tolkien, sem copiar obra específica.",
  "geracao": {
-  "api": "OpenAI (ComfyUI local inacessível desta sessão)",
-  "script": "scripts/gerar-fotografias.py --retratos --etapa 10 --motor gpt",
+  "api": "ComfyUI local (FLUX.2 klein 9B)",
+  "script": "scripts/gerar-fotografias.py --retratos --etapa 10 --motor comfy",
   "resolucao": [
    1024,
    1024
@@ -21,7 +21,9 @@
    ],
    "alvo_kib": 100
   },
-  "referencias_enviadas": "nenhuma: o motor da OpenAI usado pelo script gera só a partir do texto"
+  "referencias_enviadas": "Fotogramas de Smaug, Girion e Tar-Palantir, vinculados em referencia.arquivo e registrados na saída local de cada variante.",
+  "data": "2026-11-18",
+  "modelo": "flux-2-klein-9b-fp8.safetensors"
  },
  "pesquisa": "Traços a partir de conhecimento prévio das obras e dos índices do Tolkien Gateway; referências de cinema e série conferidas na web em 14/11/2026 (links em 'consulta').",
  "personagens": [
@@ -41,7 +43,8 @@
    "consulta": [
     "https://tolkiengateway.net/wiki/Glaurung",
     "https://www.tednasmith.com/?p=417"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "ancalagon",
@@ -58,13 +61,14 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Ancalagon"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "smaug",
    "nome": "Smaug",
    "epoca": "Erebor, 2941 T.E.",
-   "prompt": "Photorealistic cinematic fantasy portrait for OpenArda's Tolkien genealogy: the head and neck of a single creature, centered square frame filled edge to edge, the entire head visible with safe space for a circular crop, readable as a 36-pixel avatar. Dramatic soft lighting with a warm rim, dark softly blurred background. No text, watermark, border, people or other creatures. Smaug the Golden, the last great fire-drake of Middle-earth, as imagined for the 2013 film adaptation: a long crocodilian head covered in hand-sculpted red-gold and rust scales scarred by old battles, swept-back horns and spines, a heavy brow, a sly, intelligent reptilian eye of molten gold with a vertical pupil, faint glow of fire in the throat. Lying on heaped gold coins, warm treasure-light from below. Vain, cunning and menacing.",
+   "prompt": "Reframe the dragon in the supplied still as a photorealistic square portrait of Smaug in Erebor. Retain the specific profile of the film dragon: very long crocodilian snout with rough overlapping rust-brown scales, broad bone ridges over the nostrils, a narrow gold eye far back beneath an angled brow and uneven long teeth at the corners of a slightly opened jaw. Show the head in a slightly turned profile, with the nose and the brow fully visible at opposite sides of the frame. Keep the swept-back horn silhouette and bronze grime of the supplied creature. Diffuse amber light from reflected treasure, almost-black background with sparse soft-focus gold at the foot of the frame. One dragon, no lettering or second subject.",
    "documentado": [
     "Dragão vermelho-dourado, com o ventre coberto de pedras e ouro, exceto uma falha no peito."
    ],
@@ -78,16 +82,38 @@
     "https://gamesradar.com/creating-smaug"
    ],
    "referencia_cinematografica": {
-    "ator": "Benedict Cumberbatch (voz e captura de movimento); desenho da Weta Digital",
+    "ator": "Benedict Cumberbatch (voz e referência de atuação); desenho da Weta Digital",
     "obra": "The Hobbit: The Desolation of Smaug (2013)",
-    "consulta": "https://www.fxguide.com/?p=48113"
-   }
+    "consulta": "https://www.fxguide.com/fxfeatured/meet-smaug/"
+   },
+   "referencia": {
+    "arquivo": "fontes-imagens/referencias/smaug.jpg",
+    "arquivo_original": "fontes-imagens/referencias/smaug-fotograma.jpg",
+    "imagem": "https://www.fxguide.com/wp-content/uploads/2013/12/HTDOS-SMAUG-0071.jpg",
+    "pagina": "https://www.fxguide.com/fxfeatured/meet-smaug/",
+    "tamanho_original": [
+     1200,
+     506
+    ],
+    "recorte": [
+     689,
+     0,
+     1195,
+     506
+    ],
+    "tamanho": [
+     506,
+     506
+    ],
+    "kib": 91
+   },
+   "variacao_aprovada": 2
   },
   {
    "id": "ungoliant",
    "nome": "Ungoliant",
    "epoca": "Avathar, Anos das Árvores",
-   "prompt": "Photorealistic cinematic fantasy portrait for OpenArda's Tolkien genealogy: the head and neck of a single creature, centered square frame filled edge to edge, the entire head visible with safe space for a circular crop, readable as a 36-pixel avatar. Dramatic soft lighting with a warm rim, dark softly blurred background. No text, watermark, border, people or other creatures. Ungoliant, a primeval spirit of darkness in the form of a monstrous spider: a colossal black arachnid head and forebody of matte void-black chitin that seems to drink the light, clusters of many glistening eyes reflecting a dying silver-gold glow, dripping mandibles, threads of an Unlight web like black mist around her. The last faint light of the Two Trees fading in the background. Insatiable hunger and dread.",
+   "prompt": "Natural-history macro photograph scaled to a colossal mythic spider: Ungoliant in the darkness of Valinor. Show one complete quadruped-free arachnid from a low three-quarter angle, with a round black abdomen, a small low cephalothorax bearing eight tiny bead-like eyes and paired chelicerae, and eight long articulated spider legs whose bases and angular silhouettes are visible. Matte black chitin with sparse velvety hairs. The eyes catch a faint silver-and-gold reflection from the dying Trees, through a dark web that seems to swallow light. Square composition, readable at thumbnail size. A single spider with strictly arachnid anatomy, no writing or frame.",
    "documentado": [
     "Espírito em forma de aranha monstruosa, que tecia teias de Escuridão e devorou a luz das Árvores."
    ],
@@ -98,13 +124,14 @@
    "consulta": [
     "https://tolkiengateway.net/wiki/Ungoliant",
     "https://valarguild.org/tolkien/encyc/articles/u/Ungoliant/UngoliantImages.htm"
-   ]
+   ],
+   "variacao_aprovada": 2
   },
   {
    "id": "huan",
    "nome": "Huan",
    "epoca": "Beleriand, 466 P.E.",
-   "prompt": "Photorealistic cinematic fantasy portrait for OpenArda's Tolkien genealogy: the head and neck of a single creature, centered square frame filled edge to edge, the entire head visible with safe space for a circular crop, readable as a 36-pixel avatar. Dramatic soft lighting with a warm rim, dark softly blurred background. No text, watermark, border, people or other creatures. Huan, the Hound of Valinor: an enormous majestic wolfhound, larger than a horse, with a long noble head, thick shaggy silver-grey coat, intelligent deep brown eyes full of loyalty, ears alert, a faint Valinorean light in his fur. Wooded twilight of Beleriand behind, softly blurred. Proud, faithful, wise.",
+   "prompt": "Photorealistic portrait of Huan, the legendary domestic hunting hound of Valinor, framed in a square with room around the head for a circular crop. Give him the anatomy of a giant rough-coated sighthound: long deep muzzle, wiry silver-grey beard and eyebrows, folded rose ears close to the sides of his head, deep brown eyes, and a muscular neck rising above deep shoulders. One dog in a wooded Beleriand twilight, warm rim light on his rough fur, soft dark background. Calm and watchful. No text, frame or other subjects.",
    "documentado": [
     "Cão de caça de Valinor, presente de Oromë a Celegorm; amigo de Lúthien."
    ],
@@ -115,7 +142,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Huan"
-   ]
+   ],
+   "variacao_aprovada": 2
   },
   {
    "id": "thorondor",
@@ -132,7 +160,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Thorondor"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "gothmog",
@@ -149,13 +178,14 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Gothmog_(Balrog)"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "khamul",
    "nome": "Khamûl",
    "epoca": "Dol Guldur, Terceira Era",
-   "prompt": "Photorealistic cinematic fantasy portrait for OpenArda's Tolkien genealogy: a single hooded figure, head and shoulders, centered square frame filled edge to edge, the entire head visible with safe space for a circular crop, readable as a 36-pixel avatar. Dramatic soft lighting with a warm rim, dark softly blurred background. No text, watermark, border, people or other creatures. Khamûl, the Shadow of the East, second of the Nine Ringwraiths: a tall figure in a tattered black hooded cloak, the hood's opening empty and utterly dark except for two faint cold pale glints where eyes would be, a dull iron circlet barely visible inside the hood, black armoured gauntlet edge at the shoulder. Gloomy forest mist behind. Chilling, invisible menace.",
+   "prompt": "Photorealistic square head-and-shoulders portrait of Khamûl, the shadowy Ringwraith. One figure in a heavy, frayed black wool cloak, hood raised in a tall pointed fold. The hollow inside the hood is an uninterrupted, matte-black void. Fine coarse woven texture catches soft cold light on the outer edges. Dark weathered medieval mail and leather shoulder straps below the hood, with silver-grey forest mist behind. Strong readable silhouette with room for a circular crop. No text or frame.",
    "documentado": [
     "Um dos Nove; o segundo depois do Rei-bruxo. Invisível sem o manto."
    ],
@@ -166,7 +196,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Kham%C3%BBl"
-   ]
+   ],
+   "variacao_aprovada": 2
   },
   {
    "id": "beor",
@@ -182,7 +213,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/B%C3%ABor"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "hador",
@@ -198,7 +230,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Hador"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "ingwe",
@@ -214,7 +247,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Ingw%C3%AB"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "silmarien",
@@ -230,7 +264,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Silmari%C3%ABn"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "tar-minastir",
@@ -246,7 +281,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Tar-Minastir"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "tar-atanamir",
@@ -262,7 +298,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Tar-Atanamir"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "ar-adunakhor",
@@ -278,13 +315,14 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Ar-Ad%C3%BBnakh%C3%B4r"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "tar-palantir",
    "nome": "Tar-Palantir",
    "epoca": "Armenelos, 3255 S.E.",
-   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one very old Númenórean man, a king with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Tar-Palantir the Farsighted, the penitent last true king of Númenor: an elderly gentle face with deep lines, long silver-white hair and a white beard, wise sad grey eyes, simple ivory and pale-gold robes, a thin silver crown. Sorrowful, kind, far-seeing expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one very old Númenórean man, a king with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Tar-Palantir the Farsighted, the penitent last true king of Númenor: an elderly gentle face with deep lines, long silver-white hair and a white beard, wise sad grey eyes, simple ivory and pale-gold robes, a thin silver crown. Sorrowful, kind, far-seeing expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face. Use the supplied scene of Ken Blackburn for his face, his very long white beard and the pale oatmeal linen hood folded around his forehead. Keep the stillness and age of that face. Reframe him at eye level, centered against a dark, softly blurred palace interior.",
    "documentado": [
     "Rei que se arrependeu e restaurou os costumes antigos; pai de Míriel."
    ],
@@ -299,8 +337,30 @@
    "referencia_cinematografica": {
     "ator": "Ken Blackburn",
     "obra": "The Lord of the Rings: The Rings of Power (2022–2024)",
-    "consulta": "https://www.tvmaze.com/characters/1029350/the-lord-of-the-rings-the-rings-of-power-tar-palantir"
-   }
+    "consulta": "https://tolkiengateway.net/wiki/File:The_Rings_of_Power_(TV_series)_-_Tar-Palantir.png"
+   },
+   "referencia": {
+    "arquivo": "fontes-imagens/referencias/tar-palantir.png",
+    "arquivo_original": "fontes-imagens/referencias/tar-palantir-fotograma.png",
+    "imagem": "https://tolkiengateway.net/w/images/7/7f/The_Rings_of_Power_%28TV_series%29_-_Tar-Palantir.png",
+    "pagina": "https://tolkiengateway.net/wiki/File:The_Rings_of_Power_(TV_series)_-_Tar-Palantir.png",
+    "tamanho_original": [
+     1000,
+     649
+    ],
+    "recorte": [
+     213,
+     0,
+     862,
+     649
+    ],
+    "tamanho": [
+     649,
+     649
+    ],
+    "kib": 377
+   },
+   "variacao_aprovada": 1
   },
   {
    "id": "earendur",
@@ -316,7 +376,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/E%C3%A4rendur_(King_of_Arnor)"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "amlaith",
@@ -332,13 +393,14 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Amlaith"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "argeleb",
    "nome": "Argeleb I",
    "epoca": "Arthedain, 1356 T.E.",
-   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of the Dúnedain of the North with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Argeleb I, king of Arthedain who claimed all Arnor: dark hair, a full dark beard, grey eyes, a warrior king's scarred brow, dark mail and a grey cloak with a silver star. Fierce, resolute expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "prompt": "Photorealistic head-and-shoulders portrait of Argeleb I, the Dúnadan king of Arthedain who claimed all Arnor. Depict a weathered, angular man in his fifties with long dark hair brushed back from iron-grey temples, a full dark beard flecked with grey, a prominent aquiline nose, grey eyes and a thin old scar through one eyebrow. His shoulders are at a three-quarter angle and he looks toward the lens. Dark mail beneath a slate-grey cloak clasped with a simple silver star. Soft window light, muted charcoal background, square edge-to-edge photograph with his whole head visible. One person, no letters, border or weapons in hand.",
    "documentado": [
     "Reivindicou todo o Arnor e morreu em combate contra Rhudaur e Angmar."
    ],
@@ -348,7 +410,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Argeleb_I"
-   ]
+   ],
+   "variacao_aprovada": 2
   },
   {
    "id": "arvedui",
@@ -364,7 +427,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Arvedui"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "hyarmendacil",
@@ -380,7 +444,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Hyarmendacil_I"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "earnur",
@@ -396,7 +461,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/E%C3%A4rnur"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "mardil",
@@ -412,13 +478,14 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Mardil_Voronw%C3%AB"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "cirion",
    "nome": "Cirion",
    "epoca": "Calenardhon, 2510 T.E.",
-   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of Gondor, of Númenórean descent with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Cirion, twelfth Ruling Steward of Gondor: dark hair, a short dark beard with grey, wise grey eyes, a careworn statesman's face, black and silver surcoat with the White Tree, a dark cloak. Earnest, grateful, solemn expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "prompt": "Photorealistic square portrait of Cirion, the twelfth Ruling Steward of Gondor. He is a careworn man of Númenórean descent around fifty, with a long narrow face, high cheekbones, straight heavy brows, wise grey eyes, shoulder-length black hair drawn into a low tie and a short grey-flecked dark beard. The black and silver surcoat carries a White Tree at the chest. A weathered charcoal cloak rests at one shoulder. Show his head and shoulders in three-quarter view with clear eyes, solemn gratitude in his expression, and soft overcast hilltop light. One person, edge-to-edge frame, no lettering or border.",
    "documentado": [
     "Regente que deu Calenardhon a Eorl e fez com ele o juramento de amizade."
    ],
@@ -428,7 +495,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Cirion"
-   ]
+   ],
+   "variacao_aprovada": 2
   },
   {
    "id": "eorl",
@@ -444,7 +512,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Eorl"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "helm",
@@ -462,7 +531,8 @@
     "https://tolkiengateway.net/wiki/Helm",
     "https://www.theonering.net/torwp/2022/06/15/113342-brian-cox-will-be-helm-hammerhand-in-the-war-of-the-rohirrim-miranda-otto-back-as-eowyn/",
     "https://wetaworkshopdesignstudio.artstation.com/projects/BkQ8Vk"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "frealaf",
@@ -478,7 +548,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Fr%C3%A9al%C3%A1f_Hildeson"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "thengel",
@@ -494,7 +565,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Thengel"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "morwen-lossarnach",
@@ -510,7 +582,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Morwen_Steelsheen"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "theodwyn",
@@ -526,7 +599,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Th%C3%A9odwyn"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "eomund",
@@ -542,7 +616,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/%C3%89omund"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "oropher",
@@ -558,7 +633,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Oropher"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "dis",
@@ -574,13 +650,14 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/D%C3%ADs"
-   ]
+   ],
+   "variacao_aprovada": 1
   },
   {
    "id": "girion",
    "nome": "Girion",
    "epoca": "Valle, 2770 T.E.",
-   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult man of Dale with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Girion, Lord of Dale, in the year the dragon came: long dark hair, a short dark beard, dark eyes, a strong brooding face, a dark-blue and bronze surcoat over mail, an embossed bronze helm under his arm, smoke and firelight behind. Grim, defiant expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "prompt": "Reframe the supplied still of Luke Evans as Girion of Dale into a photorealistic square portrait. Keep the actor's broad cheekbones, straight nose, deeply set eyes and wide brow from the still, as well as his swept-back wavy brown hair and the bushy dark beard from the flashback. Match the leather over mail at the shoulders. Show him from the chest up, with space above his hair. Fill the complete square including all four corners with the softly blurred stone background. The image is an edge-to-edge photograph with no border. Bring light into his eyes with soft cool daylight and a subtle warm rim, taking away the silhouette lighting of the original shot. Muted dark stone background without the weapon or buildings. One middle-aged man, no text or watermark.",
    "documentado": [
     "Senhor de Valle morto no ataque de Smaug; ancestral de Bard."
    ],
@@ -595,14 +672,36 @@
    "referencia_cinematografica": {
     "ator": "Luke Evans",
     "obra": "The Hobbit: The Desolation of Smaug (2013)",
-    "consulta": "https://uproxx.com/hitfix/luke-evans-on-facing-down-dragons-and-dwarves-in-the-hobbit-the-desolation-of-smaug"
-   }
+    "consulta": "https://tolkiengateway.net/wiki/File:The_Hobbit_-_The_Desolation_of_Smaug_-_Girion.jpg"
+   },
+   "referencia": {
+    "arquivo": "fontes-imagens/referencias/girion.jpg",
+    "arquivo_original": "fontes-imagens/referencias/girion-fotograma.jpg",
+    "imagem": "https://tolkiengateway.net/w/images/2/20/The_Hobbit_-_The_Desolation_of_Smaug_-_Girion.jpg",
+    "pagina": "https://tolkiengateway.net/wiki/File:The_Hobbit_-_The_Desolation_of_Smaug_-_Girion.jpg",
+    "tamanho_original": [
+     1536,
+     640
+    ],
+    "recorte": [
+     557,
+     86,
+     924,
+     453
+    ],
+    "tamanho": [
+     367,
+     367
+    ],
+    "kib": 41
+   },
+   "variacao_aprovada": 3
   },
   {
    "id": "marcho",
    "nome": "Marcho",
    "epoca": "Ponte de Pedras Arcadas, 1601 T.E.",
-   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult hobbit, small with a round pleasant face with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Marcho, a Bree-hobbit who founded the Shire with his brother: curly brown hair, no beard, bright brown eyes, ruddy cheeks, a homespun green jacket and a yellow waistcoat, a travelling cloak. Cheerful, enterprising expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "prompt": "Photorealistic, edge-to-edge square portrait of Marcho, a Bree-hobbit and co-founder of the Shire. He is a fully grown, middle-aged male hobbit with visible adult features: a rounded but mature face, faint laugh lines at the eyes and around the nose, ruddy cheeks, brown eyes, dark brown curly hair and a clean-shaven chin. His nose is broad and his smile is warm and closed-lipped. Show a homespun moss-green jacket and muted yellow waistcoat, with a rough traveling cloak at the shoulders. Head and shoulders with room around the hair, soft window light and a dark blurry inn background. One adult, no border or text.",
    "documentado": [
     "Hobbit de Bri, cofundador do Condado."
    ],
@@ -612,13 +711,14 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Marcho"
-   ]
+   ],
+   "variacao_aprovada": 2
   },
   {
    "id": "blanco",
    "nome": "Blanco",
    "epoca": "Ponte de Pedras Arcadas, 1601 T.E.",
-   "prompt": "Photorealistic head-and-shoulders portrait for OpenArda's Tolkien genealogy. Exactly one adult hobbit, small with a round pleasant face with natural believable skin. Centered square frame with the entire head visible and safe space for a circular crop; face large enough for a 36-pixel avatar. Soft neutral window light, subtle warm rim, muted warm charcoal-brown blurred background, 85mm photographic portrait. No writing, watermark, border, weapons held in hand, extra people or scenery. Blanco, Marcho's brother and co-founder of the Shire: curly sandy-blond hair, no beard, merry blue-grey eyes, freckles, a brown jacket and red waistcoat, a hooded cloak. Friendly, steady expression. Create a unique individual face with natural proportions. Preserve the specified hair, eyes and dress. Family resemblance is a variation, never an identical face.",
+   "prompt": "Photorealistic, edge-to-edge square portrait of Blanco, a Bree-hobbit and Marcho's brother, at the founding of the Shire. An adult male hobbit with a fully mature face, slightly younger than his brother: curly sandy blond hair, wide blue-grey eyes, a broad freckled nose, a clean-shaven face, sun-warmed skin, faint smile lines and a steady closed-lipped smile. His chin is squarer than his brother's and his head tilts a little. Brown homespun jacket, red waistcoat and a traveling cloak. Whole head and shoulders against softly blurred brown wood, gentle window light. One adult, no border or text.",
    "documentado": [
     "Irmão de Marcho, cofundador do Condado."
    ],
@@ -628,7 +728,8 @@
    ],
    "consulta": [
     "https://tolkiengateway.net/wiki/Blanco"
-   ]
+   ],
+   "variacao_aprovada": 2
   }
  ]
 }

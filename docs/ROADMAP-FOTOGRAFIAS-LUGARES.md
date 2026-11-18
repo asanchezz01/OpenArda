@@ -443,7 +443,7 @@ Florestas, cordilheiras, mares e regiões que hoje só existem como áreas no ma
 | Caso | Tratamento previsto |
 | --- | --- |
 | Lugares nunca descritos em detalhe (Nogrod, Carn Dûm, Umbar) | Gerar só depois de registrar o que se sabe. Na legenda, a foto aparece como predominantemente artística. |
-| Interiores (Menegroth, Khazad-dûm, Aglarond) | Uma foto de exterior primeiro. Interiores ficam para depois do modo de corte dos detalhes 3D. |
+| Interiores (Menegroth, Khazad-dûm, Aglarond) | Menegroth e Khazad-dûm já têm salões em corte como referência para uma eventual rodada. A visita de Aglarond mostra a entrada. |
 | Sauron, o Olho, o Balrog e criaturas | Fora das fotos de lugar. Paisagens não incluem figuras sobrenaturais em primeiro plano. |
 | Aman depois de 3319 S.E. | Sem foto nova: a última foto com a nota "Retirado dos círculos do mundo". |
 | Versões divergentes (forma de Gondolin, posição de portões) | Seguir *O Silmarillion* publicado, como o resto do atlas, e registrar a alternativa na nota. |

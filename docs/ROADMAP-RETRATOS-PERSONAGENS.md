@@ -8,7 +8,7 @@ Atualizado em **18 de novembro de 2026**. Plano de produção para o OpenArda, c
 
 ## Ponto de partida e objetivo
 
-O catálogo contém **187 personagens** e **151 retratos com imagem**. As etapas 0 a 9 estão entregues. A etapa 9 acrescentou Eru Ilúvatar e a etapa 10 cadastrou 36 retratos que aguardam geração. [Personagens](../data/linhagens.json) · [Retratos](../data/retratos.json) · [Prompts da etapa 9](retratos-etapa-9-prompts.json) · [Prompts da etapa 10](retratos-etapa-10-prompts.json)
+O catálogo contém **187 personagens, todos com retrato integrado**. As etapas 0 a 10 estão entregues. A etapa 9 acrescentou Eru Ilúvatar e a etapa 10 acrescentou 36 retratos. [Personagens](../data/linhagens.json) · [Retratos](../data/retratos.json) · [Prompts da etapa 9](retratos-etapa-9-prompts.json) · [Prompts da etapa 10](retratos-etapa-10-prompts.json)
 
 O plano contempla **150 personagens únicos**, incluindo os 75 cadastrados no ponto de partida. Os 150 têm retrato. O catálogo também pode crescer com elos genealógicos fora desta seleção. A lista é uma seleção editorial para a biblioteca inicial, não um inventário de todos os personagens de Tolkien. Versões de um mesmo personagem e a extensão de criaturas não entram nessa contagem.
 
@@ -30,7 +30,7 @@ As etapas indicam prioridade, sem datas prometidas. Dividir cada etapa em lotes 
 | 7 | Valar e outras figuras de Aman e da Terra-média | 21 | 140 | 21 integrados; Valar e Maiar refeitos duas vezes (gênero, depois aparência divina) |
 | 8 | Completar os elos genealógicos | 10 | 150 | 10 integrados; Galathil e Amroth refeitos |
 | 9 | Eru Ilúvatar | 1 | 151 | Integrado como interpretação de uma presença de luz |
-| 10 | Criaturas, governantes e outros personagens citados no atlas | 36 | 187 | Pesquisados e cadastrados, com geração de imagens pendente |
+| 10 | Criaturas, governantes e outros personagens citados no atlas | 36 | 187 | 36 pesquisados, gerados no FLUX.2 local e integrados |
 
 A conferência no Chrome percorreu as fichas e os retratos ampliados de Finwë, Aragorn e Fingolfin, em 1280 × 800 e em 390 × 844. A validação automatizada cobre o cadastro e os arquivos do conjunto.
 
@@ -87,6 +87,12 @@ A conferência no Chrome percorreu as fichas e os retratos ampliados de Finwë, 
 **Personagens (10):** Elmo; Galadhon; Galathil; Eluréd; Elurín; Galdor de Dor-lómin; Amdír; Amroth; Findis; Írimë/Lalwen.
 
 **Entrega:** Fechar os retratos do catálogo genealógico atual e acrescentar as duas filhas de Indis.
+
+### Etapa 10 — Criaturas, governantes e personagens citados no atlas
+
+Em 18 de novembro de 2026, seis lotes de seis foram gerados no ComfyUI local com FLUX.2 klein 9B. Os 36 retratos aprovados têm WebP de 512 × 512 e miniaturas de 192 × 192. O catálogo registra o modelo e a seed de cada imagem. O arquivo de prompts registra a variante aprovada e os fotogramas enviados ao ComfyUI. [Catálogo de retratos](../data/retratos.json) · [Prompts da etapa 10](retratos-etapa-10-prompts.json)
+
+Smaug usa a anatomia do dragão de Weta Digital. Girion e Tar-Palantir usam os rostos de Luke Evans e Ken Blackburn nas cenas correspondentes. As imagens finais reconstroem os retratos com enquadramento próprio. [Smaug](https://www.fxguide.com/fxfeatured/meet-smaug/) · [Girion](https://tolkiengateway.net/wiki/File:The_Hobbit_-_The_Desolation_of_Smaug_-_Girion.jpg) · [Tar-Palantir](https://tolkiengateway.net/wiki/File:The_Rings_of_Power_(TV_series)_-_Tar-Palantir.png)
 
 ## Etapa 1 entregue: pesquisa dos cinco rostos
 
@@ -163,6 +169,12 @@ Hoje, [src/core/linhagens.ts](../src/core/linhagens.ts) consulta os retratos por
 
 Usar **100 KiB por WebP** como alvo inicial de otimização, conferindo a qualidade do rosto; avaliar exceções individualmente. Carregar sob demanda os retratos fora da área visível, informar dimensões e manter um estado de ausência legível até o retrato estar pronto.
 
+### Verificação local da etapa 10
+
+Em 18 de novembro de 2026, as duas instâncias do ComfyUI do HopeGym responderam com o FLUX.2 klein 9B disponível. Uma delas gerou o piloto de Huan em 14 s. A variante aprovada foi refeita com anatomia de cão de caça. Os PNGs e os registros de modelo, seed e prompt ficam no diretório local `fontes-imagens/retratos/`.
+
+Os três retratos com fotogramas usaram `ReferenceLatent` no ComfyUI. Os arquivos originais, os recortes enviados e a origem de cada cena estão registrados no diretório local `fontes-imagens/referencias/`. [Prompts da etapa 10](retratos-etapa-10-prompts.json)
+
 ## Critérios para concluir uma entrega
 
 - Todos os personagens do lote têm imagem, cadastro e época de referência definidos.
@@ -192,12 +204,12 @@ O briefing abaixo cobre os dez personagens da extensão. O enquadramento deve mo
 | 2 | Huan | *O Silmarillion*, cap. 19. Cão de caça associado a Valinor e a Lúthien. Pelagem, conformação e cenário do retrato são interpretação. |
 | 2 | Thorondor | *O Silmarillion*, caps. 13 e 18. Grande águia das Echoriath. Diferenciar de Gwaihir pela postura, enquadramento e época. |
 
-A etapa 10 já tem fichas e prompts de Smaug, Glaurung, Ancalagon, Ungoliant, Huan e Thorondor. Fangorn/Barbárvore, Laracna, Gwaihir e Bregalad permanecem previstos neste briefing. A geração das dez imagens continua em aberto. [Prompts da etapa 10](retratos-etapa-10-prompts.json)
+Smaug, Glaurung, Ancalagon, Ungoliant, Huan e Thorondor foram entregues na etapa 10. Fangorn/Barbárvore, Laracna, Gwaihir e Bregalad permanecem previstos neste briefing. [Prompts da etapa 10](retratos-etapa-10-prompts.json)
 
 Nimrodel, Haldir e os Magos Azuis podem entrar conforme as fichas e jornadas forem ampliadas.
 
 ## Limites deste roadmap
 
-A biblioteca inicial de 150 personagens e a etapa 9 somam 151 retratos integrados. Os apontamentos de fontes indicam os capítulos de referência. O cotejo direto das edições permanece aberto.
+A biblioteca inicial de 150 personagens, Eru Ilúvatar e os 36 da etapa 10 somam 187 retratos integrados. Os apontamentos de fontes indicam os capítulos de referência. O cotejo direto das edições permanece aberto.
 
 Referência do trabalho já realizado [galeria e notas dos retratos de Fëanor](RETRATOS-FEANOR.md).

@@ -4175,7 +4175,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Glaurung"
       }
     ],
-    "alt": "Retrato artístico de Glaurung"
+    "alt": "Retrato artístico de Glaurung",
+    "imagem": "retratos/glaurung.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 93956543326832
+    }
   },
   {
     "id": "ancalagon",
@@ -4199,7 +4205,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Ancalagon"
       }
     ],
-    "alt": "Retrato artístico de Ancalagon"
+    "alt": "Retrato artístico de Ancalagon",
+    "imagem": "retratos/ancalagon.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 115231794773745
+    }
   },
   {
     "id": "smaug",
@@ -4224,9 +4236,15 @@
     ],
     "alt": "Retrato de Smaug; reconstrução artística com referência ao desenho do dragão nos filmes de O Hobbit.",
     "referencia_cinematografica": {
-      "ator": "Benedict Cumberbatch (voz e captura de movimento); desenho da Weta Digital",
+      "ator": "Benedict Cumberbatch (voz e referência de atuação); desenho da Weta Digital",
       "obra": "The Hobbit: The Desolation of Smaug (2013)",
-      "consulta": "https://www.fxguide.com/?p=48113"
+      "consulta": "https://www.fxguide.com/fxfeatured/meet-smaug/"
+    },
+    "imagem": "retratos/smaug.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 204884670754488
     }
   },
   {
@@ -4250,7 +4268,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Ungoliant"
       }
     ],
-    "alt": "Retrato artístico de Ungoliant"
+    "alt": "Retrato artístico de Ungoliant",
+    "imagem": "retratos/ungoliant.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 202814453815937
+    }
   },
   {
     "id": "huan",
@@ -4274,7 +4298,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Huan"
       }
     ],
-    "alt": "Retrato artístico de Huan"
+    "alt": "Retrato artístico de Huan",
+    "imagem": "retratos/huan.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 15528543843978
+    }
   },
   {
     "id": "thorondor",
@@ -4298,7 +4328,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Thorondor"
       }
     ],
-    "alt": "Retrato artístico de Thorondor"
+    "alt": "Retrato artístico de Thorondor",
+    "imagem": "retratos/thorondor.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 23087560846846
+    }
   },
   {
     "id": "gothmog",
@@ -4322,7 +4358,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Gothmog_(Balrog)"
       }
     ],
-    "alt": "Retrato artístico de Gothmog"
+    "alt": "Retrato artístico de Gothmog",
+    "imagem": "retratos/gothmog.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 226717037234323
+    }
   },
   {
     "id": "khamul",
@@ -4346,7 +4388,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Kham%C3%BBl"
       }
     ],
-    "alt": "Retrato artístico de Khamûl"
+    "alt": "Retrato artístico de Khamûl",
+    "imagem": "retratos/khamul.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 277536850608044
+    }
   },
   {
     "id": "beor",
@@ -4369,7 +4417,13 @@
         "consulta": "https://tolkiengateway.net/wiki/B%C3%ABor"
       }
     ],
-    "alt": "Retrato artístico de Bëor"
+    "alt": "Retrato artístico de Bëor",
+    "imagem": "retratos/beor.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 38128770130015
+    }
   },
   {
     "id": "hador",
@@ -4392,7 +4446,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Hador"
       }
     ],
-    "alt": "Retrato artístico de Hador"
+    "alt": "Retrato artístico de Hador",
+    "imagem": "retratos/hador.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 41371925011286
+    }
   },
   {
     "id": "ingwe",
@@ -4415,7 +4475,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Ingw%C3%AB"
       }
     ],
-    "alt": "Retrato artístico de Ingwë"
+    "alt": "Retrato artístico de Ingwë",
+    "imagem": "retratos/ingwe.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 6869902369636
+    }
   },
   {
     "id": "silmarien",
@@ -4438,7 +4504,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Silmari%C3%ABn"
       }
     ],
-    "alt": "Retrato artístico de Silmariën"
+    "alt": "Retrato artístico de Silmariën",
+    "imagem": "retratos/silmarien.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 167511532449319
+    }
   },
   {
     "id": "tar-minastir",
@@ -4461,7 +4533,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Tar-Minastir"
       }
     ],
-    "alt": "Retrato artístico de Tar-Minastir"
+    "alt": "Retrato artístico de Tar-Minastir",
+    "imagem": "retratos/tar-minastir.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 168429864543663
+    }
   },
   {
     "id": "tar-atanamir",
@@ -4484,7 +4562,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Tar-Atanamir"
       }
     ],
-    "alt": "Retrato artístico de Tar-Atanamir"
+    "alt": "Retrato artístico de Tar-Atanamir",
+    "imagem": "retratos/tar-atanamir.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 230030039413981
+    }
   },
   {
     "id": "ar-adunakhor",
@@ -4507,7 +4591,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Ar-Ad%C3%BBnakh%C3%B4r"
       }
     ],
-    "alt": "Retrato artístico de Ar-Adûnakhôr"
+    "alt": "Retrato artístico de Ar-Adûnakhôr",
+    "imagem": "retratos/ar-adunakhor.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 138841113155807
+    }
   },
   {
     "id": "tar-palantir",
@@ -4534,7 +4624,13 @@
     "referencia_cinematografica": {
       "ator": "Ken Blackburn",
       "obra": "The Lord of the Rings: The Rings of Power (2022–2024)",
-      "consulta": "https://www.tvmaze.com/characters/1029350/the-lord-of-the-rings-the-rings-of-power-tar-palantir"
+      "consulta": "https://tolkiengateway.net/wiki/File:The_Rings_of_Power_(TV_series)_-_Tar-Palantir.png"
+    },
+    "imagem": "retratos/tar-palantir.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 76095135755121
     }
   },
   {
@@ -4558,7 +4654,13 @@
         "consulta": "https://tolkiengateway.net/wiki/E%C3%A4rendur_(King_of_Arnor)"
       }
     ],
-    "alt": "Retrato artístico de Eärendur"
+    "alt": "Retrato artístico de Eärendur",
+    "imagem": "retratos/earendur.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 209811312957283
+    }
   },
   {
     "id": "amlaith",
@@ -4581,7 +4683,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Amlaith"
       }
     ],
-    "alt": "Retrato artístico de Amlaith"
+    "alt": "Retrato artístico de Amlaith",
+    "imagem": "retratos/amlaith.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 129647530065205
+    }
   },
   {
     "id": "argeleb",
@@ -4604,7 +4712,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Argeleb_I"
       }
     ],
-    "alt": "Retrato artístico de Argeleb I"
+    "alt": "Retrato artístico de Argeleb I",
+    "imagem": "retratos/argeleb.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 90657170801962
+    }
   },
   {
     "id": "arvedui",
@@ -4627,7 +4741,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Arvedui"
       }
     ],
-    "alt": "Retrato artístico de Arvedui"
+    "alt": "Retrato artístico de Arvedui",
+    "imagem": "retratos/arvedui.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 29471330729782
+    }
   },
   {
     "id": "hyarmendacil",
@@ -4650,7 +4770,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Hyarmendacil_I"
       }
     ],
-    "alt": "Retrato artístico de Hyarmendacil I"
+    "alt": "Retrato artístico de Hyarmendacil I",
+    "imagem": "retratos/hyarmendacil.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 214342683740393
+    }
   },
   {
     "id": "earnur",
@@ -4673,7 +4799,13 @@
         "consulta": "https://tolkiengateway.net/wiki/E%C3%A4rnur"
       }
     ],
-    "alt": "Retrato artístico de Eärnur"
+    "alt": "Retrato artístico de Eärnur",
+    "imagem": "retratos/earnur.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 92344979251912
+    }
   },
   {
     "id": "mardil",
@@ -4696,7 +4828,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Mardil_Voronw%C3%AB"
       }
     ],
-    "alt": "Retrato artístico de Mardil"
+    "alt": "Retrato artístico de Mardil",
+    "imagem": "retratos/mardil.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 215346566953770
+    }
   },
   {
     "id": "cirion",
@@ -4719,7 +4857,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Cirion"
       }
     ],
-    "alt": "Retrato artístico de Cirion"
+    "alt": "Retrato artístico de Cirion",
+    "imagem": "retratos/cirion.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 245137156048109
+    }
   },
   {
     "id": "eorl",
@@ -4742,7 +4886,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Eorl"
       }
     ],
-    "alt": "Retrato artístico de Eorl"
+    "alt": "Retrato artístico de Eorl",
+    "imagem": "retratos/eorl.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 242968091901373
+    }
   },
   {
     "id": "helm",
@@ -4765,7 +4915,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Helm"
       }
     ],
-    "alt": "Retrato artístico de Helm Mão-de-Martelo"
+    "alt": "Retrato artístico de Helm Mão-de-Martelo",
+    "imagem": "retratos/helm.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 191872878463691
+    }
   },
   {
     "id": "frealaf",
@@ -4788,7 +4944,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Fr%C3%A9al%C3%A1f_Hildeson"
       }
     ],
-    "alt": "Retrato artístico de Fréaláf"
+    "alt": "Retrato artístico de Fréaláf",
+    "imagem": "retratos/frealaf.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 102023893088948
+    }
   },
   {
     "id": "thengel",
@@ -4811,7 +4973,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Thengel"
       }
     ],
-    "alt": "Retrato artístico de Thengel"
+    "alt": "Retrato artístico de Thengel",
+    "imagem": "retratos/thengel.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 46100865613474
+    }
   },
   {
     "id": "morwen-lossarnach",
@@ -4834,7 +5002,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Morwen_Steelsheen"
       }
     ],
-    "alt": "Retrato artístico de Morwen de Lossarnach"
+    "alt": "Retrato artístico de Morwen de Lossarnach",
+    "imagem": "retratos/morwen-lossarnach.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 78240821960204
+    }
   },
   {
     "id": "theodwyn",
@@ -4857,7 +5031,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Th%C3%A9odwyn"
       }
     ],
-    "alt": "Retrato artístico de Théodwyn"
+    "alt": "Retrato artístico de Théodwyn",
+    "imagem": "retratos/theodwyn.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 159533951355888
+    }
   },
   {
     "id": "eomund",
@@ -4880,7 +5060,13 @@
         "consulta": "https://tolkiengateway.net/wiki/%C3%89omund"
       }
     ],
-    "alt": "Retrato artístico de Éomund"
+    "alt": "Retrato artístico de Éomund",
+    "imagem": "retratos/eomund.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 243274452013335
+    }
   },
   {
     "id": "oropher",
@@ -4903,7 +5089,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Oropher"
       }
     ],
-    "alt": "Retrato artístico de Oropher"
+    "alt": "Retrato artístico de Oropher",
+    "imagem": "retratos/oropher.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 248013128867446
+    }
   },
   {
     "id": "dis",
@@ -4926,7 +5118,13 @@
         "consulta": "https://tolkiengateway.net/wiki/D%C3%ADs"
       }
     ],
-    "alt": "Retrato artístico de Dís"
+    "alt": "Retrato artístico de Dís",
+    "imagem": "retratos/dis.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 45430580214425
+    }
   },
   {
     "id": "girion",
@@ -4953,7 +5151,13 @@
     "referencia_cinematografica": {
       "ator": "Luke Evans",
       "obra": "The Hobbit: The Desolation of Smaug (2013)",
-      "consulta": "https://uproxx.com/hitfix/luke-evans-on-facing-down-dragons-and-dwarves-in-the-hobbit-the-desolation-of-smaug"
+      "consulta": "https://tolkiengateway.net/wiki/File:The_Hobbit_-_The_Desolation_of_Smaug_-_Girion.jpg"
+    },
+    "imagem": "retratos/girion.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 255099366511552
     }
   },
   {
@@ -4977,7 +5181,13 @@
         "consulta": "https://tolkiengateway.net/wiki/Marcho"
       }
     ],
-    "alt": "Retrato artístico de Marcho"
+    "alt": "Retrato artístico de Marcho",
+    "imagem": "retratos/marcho.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 233508944994288
+    }
   },
   {
     "id": "blanco",
@@ -5000,6 +5210,12 @@
         "consulta": "https://tolkiengateway.net/wiki/Blanco"
       }
     ],
-    "alt": "Retrato artístico de Blanco"
+    "alt": "Retrato artístico de Blanco",
+    "imagem": "retratos/blanco.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 149689790293722
+    }
   }
 ]
