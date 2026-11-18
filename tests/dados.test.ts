@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { estadoTerreno, faseAtual, lugarPorId, statusLugar, tempo, territoriosAtivos } from '../src/core/data';
-import { ModeloTerreno, novaAmostra } from '../src/terrain/model';
+import { estadoTerreno, faseAtual, lugarPorId, reinoAtivo, reinoPorId, statusLugar, tempo, territoriosAtivos } from '../src/core/data';
+import { ModeloTerreno, novaAmostra, pontoNoPoligonoPts } from '../src/terrain/model';
 import { terreno } from '../src/core/data';
 import { primeiroMomento, ultimoMomento } from '../src/ui/fichas';
 
@@ -43,6 +43,29 @@ describe('estados por período', () => {
     expect(ids(tempo.tAno('SE', 3320))).toContain('gondor');
     expect(ids(tempo.tAno('TE', 2510))).toContain('rohan');
     expect(ids(tempo.tAno('TE', 2509))).not.toContain('rohan');
+  });
+
+  it.each([
+    ['reino-khazad-dum', ['PE:1', 'TE:1980'], ['TE:1981', 'TE:2989']],
+    ['reino-erebor', ['TE:1999', 'TE:2209', 'TE:2590', 'TE:2769', 'TE:2941'], ['TE:1998', 'TE:2210', 'TE:2770', 'TE:2940']],
+    ['reino-lorien', ['SE:1350', 'TE:3021'], ['SE:1349', 'QE:1']],
+  ] as const)('%s tem um núcleo político apenas nas épocas em que existe', (id, vigente, ausente) => {
+    const reino = reinoPorId.get(id)!;
+    const capital = lugarPorId.get(reino.capitais[0].lugar)!;
+    const dominio = (t: number) => territoriosAtivos(t).filter((x) => x.reino === reino && x.terr.tipo === 'dominio');
+    for (const ref of vigente) {
+      const t = tempo.cursor(ref);
+      expect(reinoAtivo(reino, t)).toBe(true);
+      const [nucleo] = dominio(t);
+      expect(dominio(t)).toHaveLength(1);
+      expect(nucleo.terr.borda).toBe('difusa');
+      expect(pontoNoPoligonoPts(...capital.em, nucleo.pts)).toBe(true);
+    }
+    for (const ref of ausente) {
+      const t = tempo.cursor(ref);
+      expect(reinoAtivo(reino, t)).toBe(false);
+      expect(dominio(t)).toHaveLength(0);
+    }
   });
 
   it('o relevo muda de assinatura na Queda e não muda entre anos sem transformação', () => {

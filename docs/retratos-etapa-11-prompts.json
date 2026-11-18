@@ -1,0 +1,246 @@
+{
+  "etapa": 11,
+  "titulo": "Criaturas de Fangorn e do fim da Terceira Era",
+  "data": "2026-11-18",
+  "geracao": {
+    "api": "ComfyUI local (FLUX.2 klein 9B)",
+    "modelo": "flux-2-klein-9b-fp8.safetensors",
+    "script": "scripts/gerar-fotografias.py --retratos --etapa 11 --motor comfy",
+    "resolucao": [
+      1024,
+      1024
+    ],
+    "webp": {
+      "resolucao": [
+        512,
+        512
+      ],
+      "alvo_kib": 100
+    }
+  },
+  "personagens": [
+    {
+      "id": "barbarvore",
+      "nome": "Barbárvore",
+      "quando": "TE:3019",
+      "documentado": [
+        "Ent muito antigo de Fangorn, com olhos castanhos que revelam pontos verdes e barba semelhante a musgo e galhos."
+      ],
+      "inferido": [
+        "A pose, a iluminação, a anatomia complementar e as texturas são reconstrução artística.",
+        "Caracterização visual a partir de As Duas Torres (2002), Fangorn."
+      ],
+      "fontes": [
+        {
+          "obra": "O Senhor dos Anéis",
+          "local": "Livro III, 4 (referência identificada por índice)."
+        },
+        {
+          "obra": "Tolkien Gateway",
+          "local": "Verbete do personagem",
+          "consulta": "https://tolkiengateway.net/wiki/Treebeard"
+        },
+        {
+          "obra": "Filme dirigido por Peter Jackson",
+          "local": "As Duas Torres (2002), Fangorn",
+          "consulta": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Two_Towers_-_Treebeard.jpeg"
+        }
+      ],
+      "referencia": {
+        "arquivo": "fontes-imagens/referencias/barbarvore.jpg",
+        "arquivo_original": "fontes-imagens/referencias/barbarvore-fotograma.jpeg",
+        "imagem": "https://tolkiengateway.net/w/images/0/08/The_Lord_of_the_Rings_-_The_Two_Towers_-_Treebeard.jpeg",
+        "pagina": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Two_Towers_-_Treebeard.jpeg",
+        "tamanho_original": [
+          266,
+          201
+        ],
+        "recorte": [
+          0,
+          0,
+          266,
+          201
+        ],
+        "tamanho": [
+          266,
+          201
+        ],
+        "kib": 27,
+        "cena": "As Duas Torres (2002), Fangorn"
+      },
+      "prompt": "Photograph a living ancient ash tree creature using the supplied image as the character reference. Keep the same close three-quarter view and faithfully retain the very distinctive deep angular bark creases of its face, long straight weathered grey nose, deep-set eyes with a green glint and long shaggy moss beard. At the left of the frame a large forked tree trunk flows seamlessly down from the face. Branches and trunks form its body and irregular shoulders. Diffuse warm daylight at the edge of the dark Fangorn woods, fine natural grey fibres, green lichen and soft brown twigs, softly defocused background forest. Frame just the top of the figure down through the long tangled beard; realistic wood detail, naturally lit face, square photograph, no text.",
+      "variacao_aprovada": 3,
+      "prompts_anteriores": [
+        "A film creature of ancient wood standing in a damp old-growth woodland at gentle morning light. Keep the deeply ridged grey bark, squared weathered face, moss and fibrous long beard of the supplied character. Tall strong trunk, long branched arms, heavy rooted gait, remarkably alert brown eyes with green flecks. Three-quarter view, visible from crown to knees, a much thinner birch next to the foot for scale. Keep the face unobscured and near the upper middle. Photorealistic character portrait, square format. Natural physical textures, distinct readable outline, genuine photographic lighting, no text, signature or frame.",
+        "Portrait of the supplied Treebeard creature in a dark damp grove, preserving the silhouetted bark crown, face with distinct brow and sunken attentive brown eyes, lines of nose and massive long mossy beard. Framing from top of head through waist, knotted wooden shoulders occupy sides of frame, long angular branch arms partially visible. He is an anthropomorphic old tree with the entire torso formed by one irregular heavy bole of weathered dull grey bark, natural fissures and lichen. No human muscles, armor or abs. Small birch trunk just behind him for scale. Natural diffuse overcast light, believable wood fibers, realistic photographed woodland, square composition and no text."
+      ]
+    },
+    {
+      "id": "laracna",
+      "nome": "Laracna",
+      "quando": "TE:3019",
+      "documentado": [
+        "Aranha gigantesca de Cirith Ungol, com olhos em grupos, patas articuladas e abdome inchado."
+      ],
+      "inferido": [
+        "A pose, a iluminação, a anatomia complementar e as texturas são reconstrução artística.",
+        "Caracterização visual a partir de O Retorno do Rei (2003), toca de Laracna."
+      ],
+      "fontes": [
+        {
+          "obra": "O Senhor dos Anéis",
+          "local": "Livro IV, 9–10 e VI, 1 (referência identificada por índice)."
+        },
+        {
+          "obra": "Tolkien Gateway",
+          "local": "Verbete do personagem",
+          "consulta": "https://tolkiengateway.net/wiki/Shelob"
+        },
+        {
+          "obra": "Filme dirigido por Peter Jackson",
+          "local": "O Retorno do Rei (2003), toca de Laracna",
+          "consulta": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Return_of_the_King_-_Shelob%27s_face.jpg"
+        }
+      ],
+      "referencia": {
+        "arquivo": "fontes-imagens/referencias/laracna.jpg",
+        "arquivo_original": "fontes-imagens/referencias/laracna-fotograma.jpg",
+        "imagem": "https://tolkiengateway.net/w/images/e/e6/The_Lord_of_the_Rings_-_The_Return_of_the_King_-_Shelob%27s_face.jpg",
+        "pagina": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Return_of_the_King_-_Shelob%27s_face.jpg",
+        "tamanho_original": [
+          270,
+          335
+        ],
+        "recorte": [
+          0,
+          0,
+          270,
+          335
+        ],
+        "tamanho": [
+          270,
+          335
+        ],
+        "kib": 28,
+        "cena": "O Retorno do Rei (2003), toca de Laracna"
+      },
+      "prompt": "Wildlife photograph of the enormous spider matching the face and fangs in the source image. Dark compact head with irregular opaque chitin plates, subtle dark specular eyes in small clusters and two large black downward-curved fangs under the head. Natural true spider body and legs, eight jointed heavy legs spread across the stone, prominent pale gray black abdomen, side view at a front quarter angle. Muted cave mouth daylight across the head in a dark cavern, long foreground exposed stone shelf and sparse silk across the distant rock, no metallic armor, no bright eyes, no anthropomorphic expression. Sharp details throughout the animal, square crop, no text.",
+      "variacao_aprovada": 2,
+      "prompts_anteriores": [
+        "One enormous cave spider advancing low on eight fully visible jointed legs over an uneven rock floor. Retain the compact ridged dark head, clusters of tiny glassy eyes and heavy paired fangs of the reference. Dense short dark hairs across the heavy grey-black abdomen, coarse legs anchoring its weight. Warm faint light from a distant cave entrance falls sideways across the animal, four legs visible to each side, a narrow stone ledge and sparse dry silk strands give scale. Documentary macro wildlife photography from near the ground, sharp face and distinct leg silhouette. Photorealistic character portrait, square format. Natural physical textures, distinct readable outline, genuine photographic lighting, no text, signature or frame."
+      ]
+    },
+    {
+      "id": "gwaihir",
+      "nome": "Gwaihir",
+      "quando": "TE:3018",
+      "documentado": [
+        "Grande Águia conhecida como Senhor do Vento e descendente de Thorondor."
+      ],
+      "inferido": [
+        "A pose, a iluminação, a anatomia complementar e as texturas são reconstrução artística.",
+        "Caracterização visual a partir de A Sociedade do Anel (2001), resgate em Orthanc."
+      ],
+      "fontes": [
+        {
+          "obra": "O Senhor dos Anéis",
+          "local": "Livro II, 2 e VI, 4 (referência identificada por índice)."
+        },
+        {
+          "obra": "Tolkien Gateway",
+          "local": "Verbete do personagem",
+          "consulta": "https://tolkiengateway.net/wiki/Gwaihir"
+        },
+        {
+          "obra": "Filme dirigido por Peter Jackson",
+          "local": "A Sociedade do Anel (2001), resgate em Orthanc",
+          "consulta": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Fellowship_of_the_Ring_-_Gwaihir.png"
+        }
+      ],
+      "referencia": {
+        "arquivo": "fontes-imagens/referencias/gwaihir.jpg",
+        "arquivo_original": "fontes-imagens/referencias/gwaihir-fotograma.png",
+        "imagem": "https://tolkiengateway.net/w/images/0/04/The_Lord_of_the_Rings_-_The_Fellowship_of_the_Ring_-_Gwaihir.png",
+        "pagina": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Fellowship_of_the_Ring_-_Gwaihir.png",
+        "tamanho_original": [
+          2029,
+          720
+        ],
+        "recorte": [
+          45,
+          0,
+          1420,
+          720
+        ],
+        "tamanho": [
+          1375,
+          720
+        ],
+        "kib": 113,
+        "cena": "A Sociedade do Anel (2001), resgate em Orthanc"
+      },
+      "prompt": "A colossal adult mountain eagle in powered flight, shown banking above the remote Misty Mountains. Retain the feathered brow, head shape and layered broad wings of the eagle in the reference. Tawny mottled neck, slate-brown overlapping flight feathers, amber eye, hook of the dark beak. Both wings extend diagonally across most of the square frame. Strong but quiet morning sidelight with cloud below, a snow ridge and tiny scattered pines for scale. Eagle alone, no rider or passenger, sharp recognizable head, natural avian anatomy. Photorealistic character portrait, square format. Natural physical textures, distinct readable outline, genuine photographic lighting, no text, signature or frame.",
+      "variacao_aprovada": 1
+    },
+    {
+      "id": "bregalad",
+      "nome": "Bregalad",
+      "quando": "TE:3019",
+      "documentado": [
+        "Ent esguio e flexível, de aspecto mais jovem que Barbárvore, associado às sorveiras."
+      ],
+      "inferido": [
+        "A pose, a iluminação, a anatomia complementar e as texturas são reconstrução artística.",
+        "Caracterização visual a partir de As Duas Torres (2002), marcha sobre Isengard; identificação em cartas licenciadas da Decipher."
+      ],
+      "fontes": [
+        {
+          "obra": "O Senhor dos Anéis",
+          "local": "Livro III, 4 e VI, 6 (referência identificada por índice)."
+        },
+        {
+          "obra": "Tolkien Gateway",
+          "local": "Verbete do personagem",
+          "consulta": "https://tolkiengateway.net/wiki/Quickbeam"
+        },
+        {
+          "obra": "Filme dirigido por Peter Jackson",
+          "local": "As Duas Torres (2002), marcha sobre Isengard; identificação em cartas licenciadas da Decipher",
+          "consulta": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Two_Towers_-_Quickbeam_-_Bregalad.jpg"
+        },
+        {
+          "obra": "The Lord of the Rings Trading Card Game, Decipher",
+          "local": "Carta licenciada que identifica o Ent em Isengard",
+          "consulta": "https://wiki.lotrtcgpc.net/wiki/Quickbeam,_Bregalad_(6C33)"
+        }
+      ],
+      "referencia": {
+        "arquivo": "fontes-imagens/referencias/bregalad.jpg",
+        "arquivo_original": "fontes-imagens/referencias/bregalad-fotograma.jpg",
+        "imagem": "https://tolkiengateway.net/w/images/8/81/The_Lord_of_the_Rings_-_The_Two_Towers_-_Quickbeam_-_Bregalad.jpg",
+        "pagina": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Two_Towers_-_Quickbeam_-_Bregalad.jpg",
+        "tamanho_original": [
+          566,
+          422
+        ],
+        "recorte": [
+          0,
+          0,
+          566,
+          422
+        ],
+        "tamanho": [
+          566,
+          422
+        ],
+        "kib": 66,
+        "cena": "As Duas Torres (2002), marcha sobre Isengard; identificação em cartas licenciadas da Decipher"
+      },
+      "prompt": "Transform the supplied cinematic Ent into a wildlife photo in a shaded woodland clearing. Keep that exact character silhouette: round knot of wood with two small amber eyes for a head, at the base of an open irregular branch crown taller than the head, sparse green leaves and tiny red rowan berries; asymmetrical crooked trunk for a torso, long angular log arms that branch at the fingers and two thick root legs. The visible face is a dark wood knot with a reddish horizontal split, integrated into the trunk, no skin, no hair, no human head and no muscles. Slight forward tilt, clawed root stance; one empty hand hangs down and the other is bent. Bottom of a rocky stream and two little rowans nearby for scale. Frame the figure from branch tips to ankles, woody structure in distinct side lighting, realistic textures, square composition, no text.",
+      "variacao_aprovada": 2,
+      "prompts_anteriores": [
+        "A slim nimble young Ent with an angular figure, long folded bark arms and a small crown of living branches, recognizable as the Ent shown in the reference. Upright and relaxed near a stream in Fangorn rather than fighting; show his head, close-set expressive eyes and the slim bark torso, a full silhouette from his crown to below his knees. Rowan compound leaves arranged in clean featherlike sprigs, a few red rowan berry clusters, smooth green leafy hair and a narrow ruddy mouth. Dappled daytime forest, small rowan saplings and weathered rock for scale. No handheld boulder. Photorealistic character portrait, square format. Natural physical textures, distinct readable outline, genuine photographic lighting, no text, signature or frame."
+      ]
+    }
+  ]
+}

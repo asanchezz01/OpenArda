@@ -49,7 +49,7 @@ As variações ficam em `fontes-imagens/` (fora do git). Os prompts usados estã
 | Minas Tirith | 2ª rodada, v3 | Na 1ª rodada a proa ficava ao lado da cidade. A v4 da 2ª rodada tinha marca d'água e foi reprovada. |
 | Edoras | v3 | 281 KiB, acima do alvo de 250 KiB mesmo com qualidade 70. |
 | Gondolin | v2 | — |
-| Valfenda | 2ª rodada, v1 | Na 1ª rodada a casa era um solar vitoriano na borda da garganta. A versão aprovada é a mais fraca do lote: arquitetura gótica genérica. Candidata a refazer. |
+| Valfenda | 2ª rodada, v1 | Na 1ª rodada a casa era um solar vitoriano na borda da garganta. A versão aprovada na etapa 1 conservava uma arquitetura gótica genérica. A etapa 7 substituiu essa cena. |
 | Caras Galadhon | v3 | — |
 | Portas de Durin | v2 | A v1 tinha figuras humanas. |
 | Argonath | v2, espelhada | O modelo ergueu a mão direita nas três variações. A imagem foi espelhada, e a estátua da esquerda continua sem o machado, o que está registrado no cadastro. |
@@ -89,6 +89,7 @@ As etapas indicam prioridade, sem datas prometidas. Cada etapa é produzida em l
 | 4 | Aman e Númenor | 10 | 42 | **Entregue** |
 | 5 | Terceira Era: reinos e lugares restantes | 18 | 60 | **Entregue** |
 | 6 | Regiões e paisagens (florestas, montanhas, mares) | 15 | 75 | **Entregue** |
+| 7 | Interiores de Menegroth, Khazad-dûm e Aglarond, com revisão de Valfenda | 3 novas e 1 revista | 78 | **Entregue** |
 
 "Âncoras" são as características que o prompt deve conter, com fonte. O prompt final de cada etapa é escrito e revisado no início dela, no mesmo formato da etapa 1.
 
@@ -443,7 +444,7 @@ Florestas, cordilheiras, mares e regiões que hoje só existem como áreas no ma
 | Caso | Tratamento previsto |
 | --- | --- |
 | Lugares nunca descritos em detalhe (Nogrod, Carn Dûm, Umbar) | Gerar só depois de registrar o que se sabe. Na legenda, a foto aparece como predominantemente artística. |
-| Interiores (Menegroth, Khazad-dûm, Aglarond) | Menegroth e Khazad-dûm já têm salões em corte como referência para uma eventual rodada. A visita de Aglarond mostra a entrada. |
+| Interiores (Menegroth, Khazad-dûm, Aglarond) | Fotografias entregues na etapa 7. Menegroth e Khazad-dûm também têm salões em corte. A visita 3D de Aglarond mostra a entrada. |
 | Sauron, o Olho, o Balrog e criaturas | Fora das fotos de lugar. Paisagens não incluem figuras sobrenaturais em primeiro plano. |
 | Aman depois de 3319 S.E. | Sem foto nova: a última foto com a nota "Retirado dos círculos do mundo". |
 | Versões divergentes (forma de Gondolin, posição de portões) | Seguir *O Silmarillion* publicado, como o resto do atlas, e registrar a alternativa na nota. |
@@ -459,4 +460,6 @@ Florestas, cordilheiras, mares e regiões que hoje só existem como áreas no ma
 
 ## Limites deste roadmap
 
-As seis etapas somam 75 fotografias aprovadas e integradas. As fontes foram indicadas a partir de conhecimento prévio e índices. O cotejo direto das edições permanece aberto. Valfenda continua candidata a revisão artística em uma rodada futura.
+As sete etapas somam 78 fotografias aprovadas e integradas. A etapa 7 pesquisou, gerou e integrou quatro cenas no FLUX.2 klein 9B local. Valfenda recebeu uma casa baixa de pedra e madeira no fundo do vale, com a entrada do desfiladeiro em primeiro plano. Os novos interiores mostram o salão das faias de Menegroth, a luz da Porta Leste no Primeiro Salão de Khazad-dûm e as cortinas minerais e as piscinas de Aglarond. As quatro imagens têm WebP de 1536 × 1024, miniatura e metadados de geração. [Prompts e variações aprovadas](fotografias-etapa-7-prompts.json)
+
+As âncoras literárias foram identificadas por referências anteriores e índices. O cotejo direto das edições permanece aberto.

@@ -20,7 +20,11 @@ export function blocoFotoFicha(info: FotosDoLugar): string {
     </button>
     <p class="foto-legenda"><strong>${esc(f.titulo)}</strong> · ${esc(quando(f))}<span class="selo-ia">${SELO}</span></p>
     ${info.outraEpoca ? `<p class="nota">Ainda não há foto desta época. <button type="button" class="link" data-acao="tempo" data-t="${momento(f)}">Ver em ${esc(quando(f))}</button></p>` : ''}
-    ${outras.length ? `<div class="foto-epocas">${outras.map((x) => `<button type="button" data-acao="foto" data-id="${esc(x.id)}" title="${esc(x.titulo)} · ${esc(quando(x))}"><img src="${esc(miniatura(x.imagem!))}" alt="" width="96" height="64" loading="lazy" decoding="async"><span>${esc(quando(x))}</span></button>`).join('')}</div>` : ''}
+    ${outras.length ? `<div class="foto-epocas">${outras.map((x) => {
+      const data = quando(x);
+      const legenda = esc(`${x.titulo} · ${data}`);
+      return `<button type="button" data-acao="foto" data-id="${esc(x.id)}" title="${legenda}" aria-label="${legenda}"><img src="${esc(miniatura(x.imagem!))}" alt="" width="96" height="64" loading="lazy" decoding="async"><span>${esc(data === quando(f) ? x.titulo : data)}</span></button>`;
+    }).join('')}</div>` : ''}
   </section>`;
 }
 

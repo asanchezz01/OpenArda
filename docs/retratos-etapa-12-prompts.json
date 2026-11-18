@@ -1,0 +1,226 @@
+{
+  "etapa": 12,
+  "titulo": "Guardiões e canções de Lórien e os Magos Azuis",
+  "data": "2026-11-18",
+  "nota_versoes": "A correspondência individual entre Alatar e Pallando e os dois nomes do texto tardio permanece em aberto. A Segunda Era orienta somente a cena dos retratos inspirada pela versão tardia e pela série.",
+  "geracao": {
+    "api": "ComfyUI local (FLUX.2 klein 9B)",
+    "modelo": "flux-2-klein-9b-fp8.safetensors",
+    "script": "scripts/gerar-fotografias.py --retratos --etapa 12 --motor comfy",
+    "resolucao": [
+      1024,
+      1024
+    ],
+    "webp": {
+      "resolucao": [
+        512,
+        512
+      ],
+      "alvo_kib": 100
+    }
+  },
+  "personagens": [
+    {
+      "id": "nimrodel",
+      "nome": "Nimrodel",
+      "documentado": [
+        "Elfa silvestre de Lórien. A canção de Legolas evoca luz nos cabelos de Nimrodel, pés claros e um manto branco."
+      ],
+      "inferido": [
+        "A cor do cabelo, os traços, o bordado e o cenário são interpretação da canção. Nenhum rosto de adaptação foi identificado."
+      ],
+      "fontes": [
+        {
+          "obra": "O Senhor dos Anéis",
+          "local": "Livro II, cap. 6 (Lothlórien)"
+        },
+        {
+          "obra": "Contos Inacabados",
+          "local": "Parte II, cap. 4, Amroth e Nimrodel"
+        },
+        {
+          "obra": "Tolkien Gateway",
+          "local": "Nimrodel",
+          "consulta": "https://tolkiengateway.net/wiki/Nimrodel"
+        }
+      ],
+      "quando": "TE:1981",
+      "prompt": "Chest-up realistic portrait of an adult woodland elf woman living in ancient Lothlorien, by the cold shallow brook that bears her name. Long loose dark honey gold hair catching individual warm pinpoints of sun through branches. Clear strong gentle face with finely tapered elf ears discreetly visible, natural weathered skin and firm expression, white undyed woven cloak gathered at the shoulder, simple underdress of moss green linen, no crown and no jewels. Out-of-focus rocky stream and speckled silver-gray woodland behind her, soft cool afternoon shade and warm golden rim light, focus on eyes, understated documentary portrait with a 70mm lens, natural colors. Square composition, no lettering.",
+      "variacao_aprovada": 2
+    },
+    {
+      "id": "haldir",
+      "nome": "Haldir de Lórien",
+      "documentado": [
+        "Guardião de Lothlórien na passagem da Sociedade do Anel."
+      ],
+      "inferido": [
+        "A fisionomia e o cabelo vêm de Craig Parker caracterizado por Peter Jackson. O figurino e o bosque são interpretação. A batalha do Forte da Trombeta pertence à trajetória cinematográfica de Haldir."
+      ],
+      "fontes": [
+        {
+          "obra": "O Senhor dos Anéis",
+          "local": "Livro II, caps. 6–8"
+        },
+        {
+          "obra": "New Zealand Film Commission",
+          "local": "Craig Parker como Haldir",
+          "consulta": "https://www.nzfilm.co.nz/films/the-lord-of-the-rings-the-fellowship-of-the-ring"
+        },
+        {
+          "obra": "As Duas Torres",
+          "local": "Craig Parker como Haldir, no Forte da Trombeta",
+          "consulta": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Motion_Picture_Trilogy_-_Haldir.jpg"
+        }
+      ],
+      "quando": "TE:3019",
+      "prompt": "Reframe the young, clean-shaven elf from the supplied live-action still. Preserve the same youthful face of Craig Parker as Haldir: full smooth cheeks, true facial proportions, straight nose, small firm rounded mouth, slightly hooded alert light eyes, smooth brow, long pale straight fair hair pulled back at the temples. Only change his costume and location: a simple gray-green wool woodland cloak with a modest leather fastening in soft dappled woods of Lothlorien; one longbow peeks behind his far shoulder. Chest-up, natural diffuse light, real skin, squared photographic frame. Keep the reference age of around 30 and the same clean face. No lettering.",
+      "referencia": {
+        "arquivo": "fontes-imagens/referencias/haldir.jpg",
+        "arquivo_original": "fontes-imagens/referencias/haldir-fotograma.jpg",
+        "imagem": "https://tolkiengateway.net/w/images/b/b8/The_Lord_of_the_Rings_-_The_Motion_Picture_Trilogy_-_Haldir.jpg",
+        "pagina": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Motion_Picture_Trilogy_-_Haldir.jpg",
+        "recorte": [
+          110,
+          0,
+          405,
+          363
+        ],
+        "tamanho_original": [
+          540,
+          405
+        ],
+        "tamanho": [
+          295,
+          363
+        ],
+        "kib": 43,
+        "cena": "As Duas Torres (2002), Craig Parker no Forte da Trombeta. O recorte prioriza a fisionomia."
+      },
+      "variacao_aprovada": 4,
+      "prompts_anteriores": [
+        "Make a realistic chest-up portrait of Haldir, preserving the facial proportions, light narrow blue eyes, straight nose and cheekbones, distinct smooth face, long pale ash blond straight hair and elf ears of Craig Parker as Haldir in the supplied film reference. He is a composed vigilant marchwarden at the edge of Lothlorien; give him an unadorned weathered cool gray-green woodland cloak and a simple leather shoulder fastening, unstrung longbow faintly visible behind his shoulder. Replace battle armor and background extras with soft focus silver tree trunks and shaded gold autumn leaves. Calm expression, diffuse forest light, textured fabric and natural human skin, square realistic still, no lettering."
+      ]
+    },
+    {
+      "id": "alatar",
+      "nome": "Alatar",
+      "documentado": [
+        "Alatar é nomeado em Contos Inacabados como companheiro de Pallando. Os dois se vestem de azul-mar na descrição dos Istari."
+      ],
+      "inferido": [
+        "O ano remete à versão tardia da missão na Segunda Era e serve de âncora ilustrativa. A série mostra a dupla de costas no material consultado. O retrato usa a silhueta e o vestuário em vez de fixar um rosto sem referência."
+      ],
+      "fontes": [
+        {
+          "obra": "Contos Inacabados",
+          "local": "Parte IV, Os Istari"
+        },
+        {
+          "obra": "The Peoples of Middle-earth",
+          "local": "Parte II, Last Writings"
+        },
+        {
+          "obra": "Tolkien Gateway",
+          "local": "Blue Wizards",
+          "consulta": "https://tolkiengateway.net/wiki/Blue_Wizards"
+        },
+        {
+          "obra": "Os Anéis de Poder",
+          "local": "Terceira temporada, episódio 3, aparição da dupla em plano aberto",
+          "consulta": "https://www.primevideo.com/detail/0NGJWN4I3V9O8AY50RRY31MQV4"
+        },
+        {
+          "obra": "Prime Video via TVLine",
+          "local": "Fotograma da dupla, de costas, sem identificação facial",
+          "consulta": "https://www.tvline.com/2314986/rings-of-power-season-3-lord-of-the-rings-character-death-blue-wizard/"
+        }
+      ],
+      "quando": "SE:1600",
+      "prompt": "Realistic square environmental half-body portrait, camera close behind a single elderly wandering wizard in the mountains of eastern Middle-earth. One solitary standing man seen exactly from behind, the face entirely out of view, long loose muted silver hair on the back of a heavy sea-blue wool travelling cloak with a simple hood folded down and modest hand-sewn edges. Straight rough wooden staff held beside him, facing a mist-filled river valley set into distant grassy hills. Soft golden light from the horizon, dark blues preserved in cloth folds, restrained pre-industrial shapes. Use the supplied wide shot for robe color and fall and the silhouette of an eastern traveler. Tight waist-up crop with the figure centered and distinct, no second character, no text.",
+      "referencia": {
+        "arquivo": "fontes-imagens/referencias/alatar.jpg",
+        "arquivo_original": "fontes-imagens/referencias/alatar-fotograma.jpg",
+        "imagem": "https://www.tvline.com/img/gallery/the-rings-of-power-season-3-killed-off-a-major-tolkien-character-off-screen/the-reveal-of-the-blue-wizards-was-a-hotly-anticipated-part-of-season-3-1794502464.jpg",
+        "pagina": "https://www.tvline.com/2314986/rings-of-power-season-3-lord-of-the-rings-character-death-blue-wizard/",
+        "recorte": [
+          202,
+          125,
+          455,
+          292
+        ],
+        "tamanho_original": [
+          780,
+          438
+        ],
+        "tamanho": [
+          253,
+          167
+        ],
+        "kib": 13,
+        "cena": "Os Anéis de Poder, 3ª temporada, episódio 3. A dupla de costas em plano aberto orienta o traje."
+      },
+      "variacao_aprovada": 1
+    },
+    {
+      "id": "pallando",
+      "nome": "Pallando",
+      "documentado": [
+        "Pallando é nomeado em Contos Inacabados como companheiro de Alatar. Os dois se vestem de azul-mar na descrição dos Istari."
+      ],
+      "inferido": [
+        "O ano aproxima a versão tardia da missão na Segunda Era. A fisionomia de Ciarán Hinds vem da adaptação. O conflito entre os dois magos na série pertence à adaptação."
+      ],
+      "fontes": [
+        {
+          "obra": "Contos Inacabados",
+          "local": "Parte IV, Os Istari"
+        },
+        {
+          "obra": "The Peoples of Middle-earth",
+          "local": "Parte II, Last Writings"
+        },
+        {
+          "obra": "Tolkien Gateway",
+          "local": "Blue Wizards",
+          "consulta": "https://tolkiengateway.net/wiki/Blue_Wizards"
+        },
+        {
+          "obra": "Os Anéis de Poder",
+          "local": "Terceira temporada, episódio 3, identidade de Pallando",
+          "consulta": "https://www.primevideo.com/detail/0NGJWN4I3V9O8AY50RRY31MQV4"
+        },
+        {
+          "obra": "Ben Rothstein / Prime Video via TVLine",
+          "local": "Ciarán Hinds caracterizado",
+          "consulta": "https://www.tvline.com/2314986/rings-of-power-season-3-lord-of-the-rings-character-death-blue-wizard/"
+        }
+      ],
+      "quando": "SE:1600",
+      "prompt": "Chest-up photographic portrait of the Blue Wizard Pallando using Ciaran Hinds in character in the supplied reference. Maintain the familiar broad lined brow, heavy-set eyes, strong nose, long mostly dark hair and full dark beard with gray strands. Turn only slightly toward the camera. Sea-blue woven traveler cloak, simple fastening and an unadorned plain wood staff just entering the edge of frame, in the shade of an eastern rocky valley. Natural warm incident afternoon light, stone and dry grass softly blurred in the distance. No black crown, no gems, no obvious sorcery, no text. Low-key photographic portrait, square layout.",
+      "referencia": {
+        "arquivo": "fontes-imagens/referencias/pallando.jpg",
+        "arquivo_original": "fontes-imagens/referencias/pallando-fotograma.jpg",
+        "imagem": "https://www.tvline.com/img/gallery/the-rings-of-power-season-3-killed-off-a-major-tolkien-character-off-screen/intro-1794502462.jpg",
+        "pagina": "https://www.tvline.com/2314986/rings-of-power-season-3-lord-of-the-rings-character-death-blue-wizard/",
+        "recorte": [
+          185,
+          0,
+          654,
+          438
+        ],
+        "tamanho_original": [
+          780,
+          438
+        ],
+        "tamanho": [
+          469,
+          438
+        ],
+        "kib": 78,
+        "cena": "Os Anéis de Poder, Ciarán Hinds caracterizado, foto de Ben Rothstein / Prime Video."
+      },
+      "variacao_aprovada": 2
+    }
+  ]
+}

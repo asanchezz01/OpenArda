@@ -112,6 +112,11 @@ for (const r of reinos) {
   verificarTempo(r.de, onde);
   verificarTempo(r.ate, onde);
   verificarTempo(r.ultimo_periodo, onde);
+  for (const { de, ate } of r.interrupcoes ?? []) {
+    if (!de || !ate) erro(`${onde}: interrupção exige início e fim`);
+    verificarTempo(de, `${onde} (interrupção)`);
+    verificarTempo(ate, `${onde} (interrupção)`);
+  }
   for (const c of r.comparar ?? []) verificarTempo(c, `${onde} (comparar)`);
   if (r.evento_fundacao && !idEventos.has(r.evento_fundacao)) erro(`${onde}: evento de fundação desconhecido`);
   for (const c of r.capitais) {
@@ -175,7 +180,7 @@ const linhagens = ler('linhagens');
 const retratos = ler('retratos');
 const idPessoas = ids(linhagens.pessoas, 'pessoas');
 ids(linhagens.senhorios, 'senhorios');
-const POVOS = new Set(['noldor', 'sindar', 'teleri', 'vanyar', 'maia', 'edain', 'meio', 'dunedain', 'hobbit', 'anao', 'homem', 'vala', 'ainu', 'orc', 'criatura']);
+const POVOS = new Set(['noldor', 'sindar', 'silvano', 'teleri', 'vanyar', 'maia', 'edain', 'meio', 'dunedain', 'hobbit', 'anao', 'homem', 'vala', 'ainu', 'orc', 'criatura']);
 for (const p of linhagens.pessoas) {
   const onde = `pessoa ${p.id}`;
   if (!POVOS.has(p.povo)) erro(`${onde}: povo inválido "${p.povo}"`);

@@ -16,6 +16,7 @@ import {
   lugarContem,
   lugarPorId,
   reinoPorId,
+  reinoAtivo,
   faseAtual,
   fontePorId,
   nomeEra,
@@ -126,6 +127,7 @@ export function fichaLugar(app: App, l: Lugar): string {
   html += blocoGovernoLugar(app, l.id, l.reino) ?? '';
 
   if (l.id === 'gondolin') html += detalheGondolin();
+  if (l.id === 'tumladen') html += detalheTumladen();
   if (l.id === 'minas-anor') html += detalheMinasTirith();
   if (l.id === 'edoras') html += detalheEdoras();
   if (l.id === 'menegroth') html += detalheMenegroth();
@@ -213,7 +215,7 @@ export function fichaLugar(app: App, l: Lugar): string {
 
 export function fichaReino(app: App, r: Reino): string {
   const t = app.t;
-  const vivo = ativo('rei-' + r.id, r.de, r.ate, t);
+  const vivo = reinoAtivo(r, t);
   const terrs = r.territorios.map((tr, i) => ({ tr, i, on: ativo(`${r.id}#${i}`, tr.de, tr.ate, t) }));
   const ativos = terrs.filter((x) => x.on);
   const caps = r.capitais
@@ -312,8 +314,22 @@ function detalheGondolin(): string {
     'gondolin-3d',
     '52–115 P.E.: em construção · 116–509: íntegra · 510–586: ruínas. A partir de 587, a cidade fica submersa e o modelo é ocultado. Fora desses períodos, a visita abre em 400 P.E.',
     PONTOS_GONDOLIN.map(({ nome, nota }, i) => `<button type="button" data-acao="gondolin-3d" data-ponto="${i}" title="${esc(nota)}">${esc(nome)}</button>`).join('')
+      + '<button type="button" data-acao="tumladen-3d">Ver o vale de Tumladen</button>'
       + '<button type="button" data-acao="sel" data-sel="lugar:orfalch-echor">Ver Orfalch Echor</button>',
   );
+}
+
+function detalheTumladen(): string {
+  return `<section class="bloco destaque">
+    <h3>Vale de Tumladen em 3D</h3>
+    <p>Observe as Echoriath ao redor da planície, Amon Gwareth no centro e a passagem de Orfalch Echor a sudoeste.</p>
+    <p class="nota">A forma e as dimensões do vale são interpretações. Com a submersão em 587 P.E., a visita volta a abrir em 400 P.E.</p>
+    <div class="acoes">
+      <button type="button" class="primario" data-acao="tumladen-3d">Ver o panorama do vale</button>
+      <button type="button" data-acao="gondolin-3d">Aproximar de Gondolin</button>
+      <button type="button" data-acao="visitar-3d" data-id="orfalch-echor">Aproximar de Orfalch Echor</button>
+    </div>
+  </section>`;
 }
 
 function detalheMinasTirith(): string {

@@ -77,6 +77,10 @@ export function ativo(id: string, de: string | undefined, ate: string | undefine
   return t >= j.de && t < j.ate;
 }
 
+export function reinoAtivo(r: Reino, t: number): boolean {
+  return ativo('rei-' + r.id, r.de, r.ate, t) && !r.interrupcoes?.some(({ de, ate }) => tempo.valido(t, de, ate));
+}
+
 export interface EstadoTerreno {
   assinatura: string;
   feicoes: Feicao[];

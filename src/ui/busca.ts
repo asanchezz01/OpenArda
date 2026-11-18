@@ -4,7 +4,7 @@
 // própria (Glaurung, Smaug, Ungoliant…) levam às fichas que os mencionam.
 
 import type { App } from '../app';
-import { lugares, reinos, eventos, tempo, statusLugar, ativo, textoPeriodo } from '../core/data';
+import { lugares, reinos, eventos, tempo, statusLugar, reinoAtivo, textoPeriodo } from '../core/data';
 import { esc, norm } from './util';
 import { primeiroMomento, ultimoMomento } from './fichas';
 import { pessoas, pessoaPorId, NOME_POVO } from '../core/linhagens';
@@ -69,7 +69,7 @@ export function destinosLugar(app: App, id: string): Destino[] {
 export function destinosReino(app: App, id: string): Destino[] {
   const r = reinos.find((x) => x.id === id)!;
   const t = app.t;
-  const vivo = ativo('rei-' + r.id, r.de, r.ate, t);
+  const vivo = reinoAtivo(r, t);
   const out: Destino[] = [{ rotulo: 'Abrir a ficha', acao: 'ir-reino', dados: { id }, primario: true }];
   if (!vivo && r.ultimo_periodo) out.push({ rotulo: `Ver no último período conhecido — ${rotuloMomento(tempo.cursor(r.ultimo_periodo))}`, acao: 'ultimo', dados: { id } });
   if (!vivo && r.evento_fundacao) out.push({ rotulo: 'Ver a fundação', acao: 'fundacao', dados: { id } });

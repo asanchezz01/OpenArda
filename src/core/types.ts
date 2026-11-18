@@ -181,6 +181,7 @@ export interface Reino {
   de: TempoRef;
   ate?: TempoRef;
   periodo_texto: string;
+  interrupcoes?: { de: TempoRef; ate: TempoRef }[];
   capitais: { lugar: string; de?: TempoRef; ate?: TempoRef; nota?: string }[];
   povos: string[];
   governantes?: { nome: string; nota?: string }[];

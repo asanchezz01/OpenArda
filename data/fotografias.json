@@ -125,7 +125,7 @@
       "Outono, pela data do Conselho de Elrond (outubro de 3018)"
     ],
     "artistico": [
-      "Arquitetura e jardins da casa"
+      "Arquitetura e implantação da casa junto ao Bruinen."
     ],
     "fontes": [
       {
@@ -137,15 +137,19 @@
         "local": "Livro II, cap. 1"
       }
     ],
-    "alt": "Vale estreito e profundo com árvores de outono, cachoeiras e um rio no fundo; uma grande casa de pedra e madeira com janelas iluminadas ao entardecer.",
+    "alt": "Vista do alto de Valfenda no outono, com o Bruinen e cachoeiras junto a uma casa baixa de pedra e madeira no fundo da garganta.",
     "imagem": "fotografias/imladris-te3018.webp",
     "geracao": {
-      "n": 1,
-      "data": "2026-11-07",
+      "n": 6,
+      "data": "2026-11-18",
       "motor": "comfyui",
       "modelo": "flux-2-klein-9b-fp8.safetensors",
-      "semente": 126515848571056,
-      "segundos": 11
+      "semente": 54395513911812,
+      "segundos": 9,
+      "prompt_arquivo": "docs/fotografias-etapa-7-prompts.json",
+      "prompt": "View down into a hidden and extremely narrow wooded valley immediately below the rocky edge of a high open moor. A descending switchback path in the near cliff reveals the steepness; grey rock faces, pines, autumn birches and thin waterfalls frame the floor far below. The turbulent clear river curves past the foot of the slope. A single large, inviting, low riverside dwelling is tucked on a sheltered flat shelf deep within the glen, with groups of plain asymmetrical gabled roofs, pale simple stone and dark unpainted timber, low eaves, covered passages and just a few amber windows. The residence is low and broad, small against the enclosing landforms. The roofs are well below the level of the camera and dominate neither valley nor skyline. No castle, tower, spire, gothic ornament or city. Quiet light on a dry autumn afternoon, limestone, orange foliage and blue shadows, view from above at the start of descent.\n\nPhotorealistic landscape photograph of an imagined place, as if taken on location in the real world. Full-frame camera, natural lens, 3:2 landscape. Realistic geology, vegetation, weather, water and stone. Pre-industrial world: no modern buildings, roads, vehicles, power lines, contrails, plastic or modern clothing. People, if any, only as small distant figures in simple pre-modern dress. No text, letters, logos, signatures, watermarks or frames. No visible magic glow unless the scene describes a light source. Not in the style of any specific artist, illustrator, film or game.",
+      "referencia_enviada": null,
+      "webp_qualidade": 58
     }
   },
   {
@@ -2350,6 +2354,110 @@
       "modelo": "flux-2-klein-9b-fp8.safetensors",
       "semente": 29693655517049,
       "segundos": 10
+    }
+  },
+  {
+    "id": "menegroth-salao-pe400",
+    "lugar": "menegroth",
+    "quando": "PE:400",
+    "titulo": "O salão das faias de Menegroth",
+    "documentado": [
+      "Pilares dos salões esculpidos como faias, com troncos, ramos e folhas de pedra.",
+      "Fontes e bacias de mármore, lamparinas de ouro e piso de muitas cores."
+    ],
+    "inferido": [
+      "Salão de recepção durante o governo de Thingol, antes do saque."
+    ],
+    "artistico": [
+      "Planta, distância entre os pilares, distribuição das fontes e luz."
+    ],
+    "fontes": [
+      {
+        "fonte": "silm",
+        "local": "Quenta, cap. 10 (Dos Sindar)"
+      }
+    ],
+    "alt": "Salão subterrâneo com pilares esculpidos como faias, pequenas fontes, mosaicos no chão e luz âmbar.",
+    "imagem": "fotografias/menegroth-salao-pe400.webp",
+    "geracao": {
+      "n": 2,
+      "data": "2026-11-18",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 183753457954907,
+      "segundos": 9,
+      "prompt_arquivo": "docs/fotografias-etapa-7-prompts.json",
+      "prompt": "At the center of a subterranean elven hall, eye-level photograph of an aisle hewn deep into bedrock. Structural pillars carved from the living stone rise like spreading pale beech trees, with smooth grey trunks and shallow intricately chiseled stone leaves merging directly into a broad irregular rock ceiling. Warm hanging golden oil lamps light the stone from below, their flames small and distinct. A low pale marble basin splashes at the side, with bronze reflections dampening an orderly floor of small colored stone tesserae. Beyond the nearest pillars the passage bends into other caverns. Restrained craft, made of stone with real mass, no sky, vegetation or pointed arches.\n\nPhotorealistic landscape photograph of an imagined place, as if taken on location in the real world. Full-frame camera, natural lens, 3:2 landscape. Realistic geology, vegetation, weather, water and stone. Pre-industrial world: no modern buildings, roads, vehicles, power lines, contrails, plastic or modern clothing. People, if any, only as small distant figures in simple pre-modern dress. No text, letters, logos, signatures, watermarks or frames. No visible magic glow unless the scene describes a light source. Not in the style of any specific artist, illustrator, film or game.",
+      "referencia_enviada": null
+    }
+  },
+  {
+    "id": "khazad-dum-primeiro-salao-te3019",
+    "lugar": "khazad-dum",
+    "quando": "TE:3019",
+    "titulo": "O Primeiro Salão de Khazad-dûm",
+    "documentado": [
+      "O Primeiro Salão fica perto da Porta Leste, com janelas altas que deixam entrar a luz do dia."
+    ],
+    "inferido": [
+      "O salão ainda conserva parte da forma antiga na passagem da Sociedade, apesar dos séculos de abandono."
+    ],
+    "artistico": [
+      "Geometria dos pilares, altura das janelas, distribuição de detritos e direção da luz."
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro II, cap. 5 (A Ponte de Khazad-dûm)"
+      }
+    ],
+    "alt": "Primeiro Salão de Moria, com pilares de pedra escura e fachos de luz entrando pelas janelas altas do lado leste.",
+    "imagem": "fotografias/khazad-dum-primeiro-salao-te3019.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-18",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 77883092003856,
+      "segundos": 9,
+      "prompt_arquivo": "docs/fotografias-etapa-7-prompts.json",
+      "prompt": "Interior photograph in the easternmost hall of an abandoned underground mountain city. Massive square-cut grey stone piers, a span of dark hewn rock and vast worn flagstones, sober and unadorned monumental stonework. To camera right a series of tall narrow high east windows cut deeply through the wall spill cold white daylight steeply down to the floor, revealing thin stone dust and individual worn chisel marks. The hall extends away into shadow to camera left. A damaged low stone parapet near the side and a few fallen stones mark centuries of abandonment. No bridge in this hall, no figures, no fire or glowing runes. Low angle at human height with a wide architectural lens, careful exposure preserving the darkest stone texture.\n\nPhotorealistic landscape photograph of an imagined place, as if taken on location in the real world. Full-frame camera, natural lens, 3:2 landscape. Realistic geology, vegetation, weather, water and stone. Pre-industrial world: no modern buildings, roads, vehicles, power lines, contrails, plastic or modern clothing. People, if any, only as small distant figures in simple pre-modern dress. No text, letters, logos, signatures, watermarks or frames. No visible magic glow unless the scene describes a light source. Not in the style of any specific artist, illustrator, film or game.",
+      "referencia_enviada": null
+    }
+  },
+  {
+    "id": "abismo-de-helm-aglarond-te3019",
+    "lugar": "abismo-de-helm",
+    "quando": "TE:3019",
+    "titulo": "Aglarond, as Cavernas Cintilantes",
+    "documentado": [
+      "Cavernas naturais com colunas, cortinas minerais e águas calmas sob a rocha.",
+      "O reflexo das tochas multiplica as cores nas formações."
+    ],
+    "inferido": [
+      "Uma tocha ilumina a vista descrita por Gimli na época da Guerra do Anel."
+    ],
+    "artistico": [
+      "Disposição dos tanques, escala das galerias e cores precisas dos depósitos."
+    ],
+    "fontes": [
+      {
+        "fonte": "sda",
+        "local": "Livro III, cap. 8 (A Estrada para Isengard)"
+      }
+    ],
+    "alt": "Caverna de Aglarond com cortinas minerais claras e colunas refletidas nas águas quietas à luz de uma tocha.",
+    "imagem": "fotografias/abismo-de-helm-aglarond-te3019.webp",
+    "geracao": {
+      "n": 1,
+      "data": "2026-11-18",
+      "motor": "comfyui",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "semente": 63810724380652,
+      "segundos": 9,
+      "prompt_arquivo": "docs/fotografias-etapa-7-prompts.json",
+      "prompt": "An underground limestone cavern on a scale of several dozen meters, viewed from the edge of a clear, still natural pool. Organic folded calcite curtains ripple from the ceiling and soft-cream slender columns taper into the dark vault, with translucent alabaster rims on small terraces and muted veins of warm amber and pale rose stone. A single small warm torch on the near dry ledge gives the only light, grazing the forms and reflecting realistically in the water, far recesses remain deeply shadowed. No sunlight, no steel, no human-made stairs, no blue floodlights, no oversized colored quartz crystals. Natural cave photography from roughly water height, realistic wet mineral texture and dark backdrop.\n\nPhotorealistic landscape photograph of an imagined place, as if taken on location in the real world. Full-frame camera, natural lens, 3:2 landscape. Realistic geology, vegetation, weather, water and stone. Pre-industrial world: no modern buildings, roads, vehicles, power lines, contrails, plastic or modern clothing. People, if any, only as small distant figures in simple pre-modern dress. No text, letters, logos, signatures, watermarks or frames. No visible magic glow unless the scene describes a light source. Not in the style of any specific artist, illustrator, film or game.",
+      "referencia_enviada": null
     }
   }
 ]

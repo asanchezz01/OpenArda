@@ -2,8 +2,8 @@
 import * as THREE from 'three';
 import { describe, expect, it } from 'vitest';
 import type { App } from '../src/app';
-import { estadoTerreno, reinoPorId, tempo, terreno } from '../src/core/data';
-import { COLINA_MENEGROTH, MARGEM_NARGOTHROND } from '../src/core/detalhes';
+import { estadoTerreno, lugarPorId, reinoPorId, tempo, terreno } from '../src/core/data';
+import { COLINA_MENEGROTH, MARGEM_NARGOTHROND, VISTA_TUMLADEN, faseTumladen } from '../src/core/detalhes';
 import { NOVAS_VISITAS, PORTOES_ECHOR } from '../src/core/visitas';
 import { DetalhesReinos } from '../src/render/detalhes';
 import { criarUniformesGlobais } from '../src/terrain/material';
@@ -52,10 +52,28 @@ describe('expansão dos reinos em 3D', () => {
     ['meneltarma', 'SE:3319', null], ['tirion', 'SE:3319', null], ['angband', 'PE:587', null],
     ['cinturao-melian', 'AA:#aa-primeira-batalha', 'ativo'], ['cinturao-melian', 'PE:503', null],
     ['grande-armada', 'SE:3309', null], ['grande-armada', 'SE:3310', 'ativo'], ['grande-armada', 'SE:3319', null],
+    ['khazad-dum', 'SE:749', 'durin'], ['khazad-dum', 'SE:750', 'integra'],
     ['khazad-dum', 'TE:2989', 'balin'], ['khazad-dum', 'TE:2994', 'abandonado'], ['khazad-dum', 'TE:3018', 'lago'],
     ['erebor', 'TE:1998', null], ['erebor', 'TE:2770', 'smaug'], ['erebor', 'TE:2941', 'restaurada'],
   ])('%s em %s passa à fase %s', (id, ref, fase) => {
     expect(destino(id).fase(tempo.cursor(ref))).toBe(fase);
+  });
+
+  it('liga o panorama de Tumladen à cidade e aos portões, usando a bacia do relevo', () => {
+    const t = tempo.cursor('PE:400');
+    const ficha = fichaLugar({ t } as App, lugarPorId.get('tumladen')!);
+    expect(ficha).toContain('data-acao="tumladen-3d"');
+    expect(ficha).toContain('data-acao="gondolin-3d"');
+    expect(ficha).toContain('data-acao="visitar-3d" data-id="orfalch-echor"');
+    expect(fichaLugar({ t } as App, lugarPorId.get('gondolin')!)).toContain('data-acao="tumladen-3d"');
+    const vale = relevo(t);
+    const { x, y } = VISTA_TUMLADEN;
+    expect(vale.altura(x - 14, y)).toBeCloseTo(vale.altura(x + 14, y), 1);
+    expect(vale.altura(x - 42, y)).toBeGreaterThan(vale.altura(x - 14, y) + 0.4);
+    expect(vale.altura(x, y)).toBeGreaterThan(vale.altura(x - 14, y) + 0.2);
+    expect(faseTumladen(tempo.cursor('PE:586'))).toBe('ativo');
+    expect(faseTumladen(tempo.cursor('PE:587'))).toBeNull();
+    expect(relevo(tempo.cursor('PE:587')).distCosta(x, y)).toBeLessThan(0);
   });
 
   it('alternar o lado da comparação restaura a geometria correspondente', () => {

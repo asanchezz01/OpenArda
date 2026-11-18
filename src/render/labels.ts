@@ -3,7 +3,7 @@
 import * as THREE from 'three';
 import type { Globo } from './globo';
 import type { Lugar, Reino } from '../core/types';
-import { lugares, reinos, statusLugar, ativo, terreno } from '../core/data';
+import { lugares, reinos, statusLugar, ativo, reinoAtivo, terreno } from '../core/data';
 
 const LIMITE_POSTO = [0, 30000, 4200, 1500, 520, 170];
 const NOMES_LUGARES = new Set(lugares.map((l) => l.nome.toLowerCase()));
@@ -130,7 +130,7 @@ export class Rotulos {
         candidatos.push({ r: rot, x: p.sx, y: p.sy, prio, classe });
       }
       for (const r of reinos) {
-        if (!ativo('rei-' + r.id, r.de, r.ate, t)) continue;
+        if (!reinoAtivo(r, t)) continue;
         if (!r.territorios.some((terr, i) => ativo(`${r.id}#${i}`, terr.de, terr.ate, t))) continue;
         if (d > 3200 || d < 60) continue;
         if (NOMES_LUGARES.has(r.nome.replace(/ \(.*\)$/, '').toLowerCase())) continue;

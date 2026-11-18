@@ -1,0 +1,37 @@
+{
+  "etapa": 7,
+  "roadmap": "docs/ROADMAP-FOTOGRAFIAS-LUGARES.md",
+  "tamanho": [
+    1536,
+    1024
+  ],
+  "estilo": "Photorealistic landscape photograph of an imagined place, as if taken on location in the real world. Full-frame camera, natural lens, 3:2 landscape. Realistic geology, vegetation, weather, water and stone. Pre-industrial world: no modern buildings, roads, vehicles, power lines, contrails, plastic or modern clothing. People, if any, only as small distant figures in simple pre-modern dress. No text, letters, logos, signatures, watermarks or frames. No visible magic glow unless the scene describes a light source. Not in the style of any specific artist, illustrator, film or game.",
+  "fotos": [
+    {
+      "id": "imladris-te3018",
+      "prompt": "View down into a hidden and extremely narrow wooded valley immediately below the rocky edge of a high open moor. A descending switchback path in the near cliff reveals the steepness; grey rock faces, pines, autumn birches and thin waterfalls frame the floor far below. The turbulent clear river curves past the foot of the slope. A single large, inviting, low riverside dwelling is tucked on a sheltered flat shelf deep within the glen, with groups of plain asymmetrical gabled roofs, pale simple stone and dark unpainted timber, low eaves, covered passages and just a few amber windows. The residence is low and broad, small against the enclosing landforms. The roofs are well below the level of the camera and dominate neither valley nor skyline. No castle, tower, spire, gothic ornament or city. Quiet light on a dry autumn afternoon, limestone, orange foliage and blue shadows, view from above at the start of descent.",
+      "variacao_aprovada": 6
+    },
+    {
+      "id": "menegroth-salao-pe400",
+      "prompt": "At the center of a subterranean elven hall, eye-level photograph of an aisle hewn deep into bedrock. Structural pillars carved from the living stone rise like spreading pale beech trees, with smooth grey trunks and shallow intricately chiseled stone leaves merging directly into a broad irregular rock ceiling. Warm hanging golden oil lamps light the stone from below, their flames small and distinct. A low pale marble basin splashes at the side, with bronze reflections dampening an orderly floor of small colored stone tesserae. Beyond the nearest pillars the passage bends into other caverns. Restrained craft, made of stone with real mass, no sky, vegetation or pointed arches.",
+      "variacao_aprovada": 2
+    },
+    {
+      "id": "khazad-dum-primeiro-salao-te3019",
+      "prompt": "Interior photograph in the easternmost hall of an abandoned underground mountain city. Massive square-cut grey stone piers, a span of dark hewn rock and vast worn flagstones, sober and unadorned monumental stonework. To camera right a series of tall narrow high east windows cut deeply through the wall spill cold white daylight steeply down to the floor, revealing thin stone dust and individual worn chisel marks. The hall extends away into shadow to camera left. A damaged low stone parapet near the side and a few fallen stones mark centuries of abandonment. No bridge in this hall, no figures, no fire or glowing runes. Low angle at human height with a wide architectural lens, careful exposure preserving the darkest stone texture.",
+      "variacao_aprovada": 1
+    },
+    {
+      "id": "abismo-de-helm-aglarond-te3019",
+      "prompt": "An underground limestone cavern on a scale of several dozen meters, viewed from the edge of a clear, still natural pool. Organic folded calcite curtains ripple from the ceiling and soft-cream slender columns taper into the dark vault, with translucent alabaster rims on small terraces and muted veins of warm amber and pale rose stone. A single small warm torch on the near dry ledge gives the only light, grazing the forms and reflecting realistically in the water, far recesses remain deeply shadowed. No sunlight, no steel, no human-made stairs, no blue floodlights, no oversized colored quartz crystals. Natural cave photography from roughly water height, realistic wet mineral texture and dark backdrop.",
+      "variacao_aprovada": 1
+    }
+  ],
+  "titulo": "Valfenda revista e três interiores",
+  "geracao": {
+    "data": "2026-11-18",
+    "api": "ComfyUI local",
+    "modelo": "flux-2-klein-9b-fp8.safetensors"
+  }
+}

@@ -5217,5 +5217,295 @@
       "modelo": "flux-2-klein-9b-fp8.safetensors",
       "seed": 149689790293722
     }
+  },
+  {
+    "id": "barbarvore",
+    "nome": "Barbárvore",
+    "documentado": [
+      "Ent muito antigo de Fangorn, com olhos castanhos que revelam pontos verdes e barba semelhante a musgo e galhos."
+    ],
+    "inferido": [
+      "A pose, a iluminação, a anatomia complementar e as texturas são reconstrução artística.",
+      "Caracterização visual a partir de As Duas Torres (2002), Fangorn."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Livro III, 4 (referência identificada por índice)."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "Verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Treebeard"
+      },
+      {
+        "obra": "Filme dirigido por Peter Jackson",
+        "local": "As Duas Torres (2002), Fangorn",
+        "consulta": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Two_Towers_-_Treebeard.jpeg"
+      }
+    ],
+    "alt": "Barbárvore entre árvores de Fangorn, com barba de musgo e olhos atentos",
+    "imagem": "retratos/barbarvore.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 206909649278070
+    }
+  },
+  {
+    "id": "laracna",
+    "nome": "Laracna",
+    "documentado": [
+      "Aranha gigantesca de Cirith Ungol, com olhos em grupos, patas articuladas e abdome inchado."
+    ],
+    "inferido": [
+      "A pose, a iluminação, a anatomia complementar e as texturas são reconstrução artística.",
+      "Caracterização visual a partir de O Retorno do Rei (2003), toca de Laracna."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Livro IV, 9–10 e VI, 1 (referência identificada por índice)."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "Verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Shelob"
+      },
+      {
+        "obra": "Filme dirigido por Peter Jackson",
+        "local": "O Retorno do Rei (2003), toca de Laracna",
+        "consulta": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Return_of_the_King_-_Shelob%27s_face.jpg"
+      }
+    ],
+    "alt": "Laracna apoia as patas articuladas no chão da toca, diante de uma teia na rocha.",
+    "imagem": "retratos/laracna.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 26055631943406
+    }
+  },
+  {
+    "id": "gwaihir",
+    "nome": "Gwaihir",
+    "documentado": [
+      "Grande Águia conhecida como Senhor do Vento e descendente de Thorondor."
+    ],
+    "inferido": [
+      "A pose, a iluminação, a anatomia complementar e as texturas são reconstrução artística.",
+      "Caracterização visual a partir de A Sociedade do Anel (2001), resgate em Orthanc."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Livro II, 2 e VI, 4 (referência identificada por índice)."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "Verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Gwaihir"
+      },
+      {
+        "obra": "Filme dirigido por Peter Jackson",
+        "local": "A Sociedade do Anel (2001), resgate em Orthanc",
+        "consulta": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Fellowship_of_the_Ring_-_Gwaihir.png"
+      }
+    ],
+    "alt": "Gwaihir com as asas abertas em voo sobre as Montanhas Sombrias",
+    "imagem": "retratos/gwaihir.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 145616599401486
+    }
+  },
+  {
+    "id": "bregalad",
+    "nome": "Bregalad",
+    "documentado": [
+      "Ent esguio e flexível, de aspecto mais jovem que Barbárvore, associado às sorveiras."
+    ],
+    "inferido": [
+      "A pose, a iluminação, a anatomia complementar e as texturas são reconstrução artística.",
+      "Caracterização visual a partir de As Duas Torres (2002), marcha sobre Isengard; identificação em cartas licenciadas da Decipher."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Livro III, 4 e VI, 6 (referência identificada por índice)."
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "Verbete do personagem",
+        "consulta": "https://tolkiengateway.net/wiki/Quickbeam"
+      },
+      {
+        "obra": "Filme dirigido por Peter Jackson",
+        "local": "As Duas Torres (2002), marcha sobre Isengard; identificação em cartas licenciadas da Decipher",
+        "consulta": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Two_Towers_-_Quickbeam_-_Bregalad.jpg"
+      },
+      {
+        "obra": "The Lord of the Rings Trading Card Game, Decipher",
+        "local": "Carta licenciada que identifica o Ent em Isengard",
+        "consulta": "https://wiki.lotrtcgpc.net/wiki/Quickbeam,_Bregalad_(6C33)"
+      }
+    ],
+    "alt": "Bregalad, Ent esguio com ramos de sorveira num bosque de Fangorn",
+    "imagem": "retratos/bregalad.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 6200466126095
+    }
+  },
+  {
+    "id": "nimrodel",
+    "nome": "Nimrodel",
+    "documentado": [
+      "Elfa silvestre de Lórien. A canção de Legolas evoca luz nos cabelos de Nimrodel, pés claros e um manto branco."
+    ],
+    "inferido": [
+      "A cor do cabelo, os traços, o bordado e o cenário são interpretação da canção. Nenhum rosto de adaptação foi identificado."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Livro II, cap. 6 (Lothlórien)"
+      },
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte II, cap. 4, Amroth e Nimrodel"
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "Nimrodel",
+        "consulta": "https://tolkiengateway.net/wiki/Nimrodel"
+      }
+    ],
+    "alt": "Retrato artístico de Nimrodel, com manto claro à margem do riacho de Lórien.",
+    "imagem": "retratos/nimrodel.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 59042153791450
+    }
+  },
+  {
+    "id": "haldir",
+    "nome": "Haldir de Lórien",
+    "documentado": [
+      "Guardião de Lothlórien na passagem da Sociedade do Anel."
+    ],
+    "inferido": [
+      "A fisionomia e o cabelo vêm de Craig Parker caracterizado por Peter Jackson. O figurino e o bosque são interpretação. A batalha do Forte da Trombeta pertence à trajetória cinematográfica de Haldir."
+    ],
+    "fontes": [
+      {
+        "obra": "O Senhor dos Anéis",
+        "local": "Livro II, caps. 6–8"
+      },
+      {
+        "obra": "New Zealand Film Commission",
+        "local": "Craig Parker como Haldir",
+        "consulta": "https://www.nzfilm.co.nz/films/the-lord-of-the-rings-the-fellowship-of-the-ring"
+      },
+      {
+        "obra": "As Duas Torres",
+        "local": "Craig Parker como Haldir, no Forte da Trombeta",
+        "consulta": "https://tolkiengateway.net/wiki/File:The_Lord_of_the_Rings_-_The_Motion_Picture_Trilogy_-_Haldir.jpg"
+      }
+    ],
+    "alt": "Haldir como guardião de Lórien, com cabelo claro e manto sob as copas do bosque.",
+    "imagem": "retratos/haldir.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 252067918265779
+    }
+  },
+  {
+    "id": "alatar",
+    "nome": "Alatar",
+    "documentado": [
+      "Alatar é nomeado em Contos Inacabados como companheiro de Pallando. Os dois se vestem de azul-mar na descrição dos Istari."
+    ],
+    "inferido": [
+      "O ano remete à versão tardia da missão na Segunda Era e serve de âncora ilustrativa. A série mostra a dupla de costas no material consultado. O retrato usa a silhueta e o vestuário em vez de fixar um rosto sem referência."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte IV, Os Istari"
+      },
+      {
+        "obra": "The Peoples of Middle-earth",
+        "local": "Parte II, Last Writings"
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "Blue Wizards",
+        "consulta": "https://tolkiengateway.net/wiki/Blue_Wizards"
+      },
+      {
+        "obra": "Os Anéis de Poder",
+        "local": "Terceira temporada, episódio 3, aparição da dupla em plano aberto",
+        "consulta": "https://www.primevideo.com/detail/0NGJWN4I3V9O8AY50RRY31MQV4"
+      },
+      {
+        "obra": "Prime Video via TVLine",
+        "local": "Fotograma da dupla, de costas, sem identificação facial",
+        "consulta": "https://www.tvline.com/2314986/rings-of-power-season-3-lord-of-the-rings-character-death-blue-wizard/"
+      }
+    ],
+    "alt": "Alatar visto de costas, com um manto azul e um cajado, diante de uma paisagem do Leste.",
+    "imagem": "retratos/alatar.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 263590691775432
+    }
+  },
+  {
+    "id": "pallando",
+    "nome": "Pallando",
+    "documentado": [
+      "Pallando é nomeado em Contos Inacabados como companheiro de Alatar. Os dois se vestem de azul-mar na descrição dos Istari."
+    ],
+    "inferido": [
+      "O ano aproxima a versão tardia da missão na Segunda Era. A fisionomia de Ciarán Hinds vem da adaptação. O conflito entre os dois magos na série pertence à adaptação."
+    ],
+    "fontes": [
+      {
+        "obra": "Contos Inacabados",
+        "local": "Parte IV, Os Istari"
+      },
+      {
+        "obra": "The Peoples of Middle-earth",
+        "local": "Parte II, Last Writings"
+      },
+      {
+        "obra": "Tolkien Gateway",
+        "local": "Blue Wizards",
+        "consulta": "https://tolkiengateway.net/wiki/Blue_Wizards"
+      },
+      {
+        "obra": "Os Anéis de Poder",
+        "local": "Terceira temporada, episódio 3, identidade de Pallando",
+        "consulta": "https://www.primevideo.com/detail/0NGJWN4I3V9O8AY50RRY31MQV4"
+      },
+      {
+        "obra": "Ben Rothstein / Prime Video via TVLine",
+        "local": "Ciarán Hinds caracterizado",
+        "consulta": "https://www.tvline.com/2314986/rings-of-power-season-3-lord-of-the-rings-character-death-blue-wizard/"
+      }
+    ],
+    "alt": "Retrato de Pallando com cabelo escuro, barba longa grisalha e um manto azul-mar.",
+    "imagem": "retratos/pallando.webp",
+    "geracao": {
+      "provedor": "ComfyUI local",
+      "modelo": "flux-2-klein-9b-fp8.safetensors",
+      "seed": 263097861496486
+    }
   }
 ]

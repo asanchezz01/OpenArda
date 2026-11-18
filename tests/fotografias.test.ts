@@ -62,6 +62,16 @@ describe('fotografias dos lugares', () => {
     expect(htmlPainelFotos({ t: em('TE:3018') } as App, false)).not.toContain('data-id="tirion-aa"');
   });
 
+  it('oferece o interior mesmo quando a foto de destaque retrata o exterior na mesma data', () => {
+    const app = { t: em('PE:400') } as App;
+    expect(fotosDoLugar('menegroth', app.t).destaque?.id).toBe('menegroth-pe400');
+    const ficha = fichaLugar(app, lugarPorId.get('menegroth')!);
+    expect(ficha).toContain('data-id="menegroth-salao-pe400"');
+    expect(ficha).toContain('<span>O salão das faias de Menegroth</span>');
+    expect(fotosDoLugar('abismo-de-helm', em('TE:3018')).destaque?.id).toBe('abismo-de-helm-te3018');
+    expect(fotosDoLugar('abismo-de-helm', em('TE:3019')).destaque?.id).toBe('abismo-de-helm-aglarond-te3019');
+  });
+
   it('fichas e visualizador mostram a foto, o selo de IA e o que é descrito', () => {
     const app = { t: em('TE:3018') } as App;
     const ficha = fichaLugar(app, lugarPorId.get('minas-anor')!);

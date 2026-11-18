@@ -2,7 +2,7 @@
 
 import type { App } from '../app';
 import type { Evento, Vista } from '../core/types';
-import { eras, jornadas, lugarPorId, reinoPorId, tempo } from '../core/data';
+import { contornoTerritorio, eras, jornadas, lugarPorId, reinoPorId, tempo } from '../core/data';
 import { Busca } from './busca';
 import { LinhaTempo } from './linha';
 import { fichaAqui, fichaEvento, fichaFonte, fichaFontes, fichaLugar, fichaMarco, fichaReino } from './fichas';
@@ -11,11 +11,12 @@ import { htmlPainelFotos, htmlVisualizador } from './fotografias';
 import { esc, guardar, h, ler, listaFontes } from './util';
 import { lerLink, montarLink } from './url';
 import { regimeDe } from '../render/lighting';
-import { faseArmenelos, faseEdoras, faseGondolin, faseMenegroth, faseMinasTirith, faseNargothrond, VISTA_NARGOTHROND, faseRomenna, VISTA_ARMENELOS, VISTA_MENEGROTH, VISTA_EDORAS, VISTA_GONDOLIN, VISTA_MINAS_TIRITH, VISTA_ROMENNA } from '../core/detalhes';
+import { faseArmenelos, faseEdoras, faseGondolin, faseMenegroth, faseMinasTirith, faseNargothrond, VISTA_NARGOTHROND, faseRomenna, faseTumladen, VISTA_ARMENELOS, VISTA_MENEGROTH, VISTA_EDORAS, VISTA_GONDOLIN, VISTA_MINAS_TIRITH, VISTA_ROMENNA, VISTA_TUMLADEN } from '../core/detalhes';
 import { NOVAS_VISITAS, PONTOS_GONDOLIN, PORTOES_ECHOR } from '../core/visitas';
 
 const VISITAS_3D: Record<string, { nome: string; fase: (t: number) => string | null; vista: Vista; padrao: string; aviso: string }> = {
   'gondolin-3d': { nome: 'Gondolin', fase: faseGondolin, vista: VISTA_GONDOLIN, padrao: 'PE:400', aviso: 'Gondolin em 3D · Reconstrução artística. A linha do tempo alterna construção, cidade íntegra e ruínas.' },
+  'tumladen-3d': { nome: 'Tumladen', fase: faseTumladen, vista: VISTA_TUMLADEN, padrao: 'PE:400', aviso: 'Tumladen em 3D · Aproxime para ver Gondolin e os portões de Orfalch Echor.' },
   'edoras-3d': { nome: 'Edoras', fase: faseEdoras, vista: VISTA_EDORAS, padrao: 'TE:3018', aviso: 'Edoras em 3D · Reconstrução artística. A colina, as muralhas e Meduseld seguem a descrição; a linha do tempo mostra os túmulos dos reis e o Longo Inverno.' },
   'menegroth-3d': { nome: 'Menegroth', fase: faseMenegroth, vista: VISTA_MENEGROTH, padrao: 'PE:400', aviso: 'Menegroth em 3D · Reconstrução artística. Um corte abre a colina para mostrar os salões de pilares em forma de faia; a linha do tempo mostra o saque e a destruição.' },
   'nargothrond-3d': { nome: 'Nargothrond', fase: faseNargothrond, vista: VISTA_NARGOTHROND, padrao: 'PE:400', aviso: 'Nargothrond em 3D · Reconstrução artística. Fachadas escavadas na garganta do Narog; a linha do tempo mostra a ponte de Túrin, Glaurung diante das portas e o abandono.' },
@@ -93,6 +94,7 @@ export class Interface {
       </nav>
       <details class="menu-cidades"><summary>Visitas em 3D</summary><div class="menu-atalhos">
         <button type="button" data-acao="gondolin-3d">Visitar Gondolin em 3D</button>
+        <button type="button" data-acao="tumladen-3d">Visitar Tumladen em 3D</button>
         <button type="button" data-acao="minas-tirith-3d">Visitar Minas Tirith em 3D</button>
         <button type="button" data-acao="edoras-3d">Visitar Edoras em 3D</button>
         <button type="button" data-acao="menegroth-3d" data-corte="aberto">Visitar Menegroth em 3D</button>
@@ -556,6 +558,7 @@ export class Interface {
         break;
       }
       case 'gondolin-3d':
+      case 'tumladen-3d':
       case 'minas-tirith-3d':
       case 'edoras-3d':
       case 'menegroth-3d':
@@ -589,7 +592,8 @@ export class Interface {
         const vista = d.corte === 'aberto' && acao === 'nargothrond-3d' ? { ...v.vista, d: 1.7, rumo: 350, inclinacao: 54 }
           : portao ? { ...v.vista, x: portao.em[0], y: portao.em[1], rumo: portao.rumo, d: 1.2 }
           : ponto ? { ...v.vista, x: v.vista.x + ponto.dx, y: v.vista.y + ponto.dy, d: ponto.d } : v.vista;
-        a.voar({ ...vista, d: vista.d / Math.min(1, viewport.width / viewport.height) });
+        const aspecto = Math.min(1, viewport.width / viewport.height);
+        a.voar({ ...vista, d: vista.d / (acao === 'tumladen-3d' ? Math.max(0.8, aspecto) : aspecto) });
         a.renderer.domElement.focus({ preventScroll: true });
         this.aviso(ponto?.nota ?? (d.corte ? `${v.nome} em 3D · ${d.corte === 'aberto' ? 'Salões em corte' : 'Vista exterior'}.` : v.aviso), 7000);
         break;
@@ -671,8 +675,13 @@ export class Interface {
       case 'comparar-reino': {
         const r = reinoPorId.get(d.id)!;
         const par = r.comparar ?? [r.evento_fundacao ? '#' + r.evento_fundacao : r.de, r.ultimo_periodo ?? r.de];
+        this.fecharPainel();
         a.comparar(tempo.cursor(par[0]), tempo.cursor(par[1]));
-        a.voar({ x: r.em[0], y: r.em[1], d: 1300, inclinacao: 30 });
+        const [x, y] = r.em;
+        const raio = Math.max(0, ...r.territorios.flatMap(contornoTerritorio).map(([px, py]) => Math.hypot(px - x, py - y)));
+        const distancia = raio ? Math.min(1300, Math.max(30, raio * 3.5)) : 1300;
+        a.definirCamada('reinos', true);
+        a.voar({ x, y, d: distancia, inclinacao: distancia < 300 ? 62 : 30 });
         a.selecionar('reino:' + r.id);
         this.aviso(`Comparando as fronteiras de ${r.nome}: ${tempo.rotulo(tempo.cursor(par[0])).principal} e ${tempo.rotulo(tempo.cursor(par[1])).principal}.`);
         break;

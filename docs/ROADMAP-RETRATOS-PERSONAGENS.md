@@ -8,7 +8,7 @@ Atualizado em **18 de novembro de 2026**. Plano de produção para o OpenArda, c
 
 ## Ponto de partida e objetivo
 
-O catálogo contém **187 personagens, todos com retrato integrado**. As etapas 0 a 10 estão entregues. A etapa 9 acrescentou Eru Ilúvatar e a etapa 10 acrescentou 36 retratos. [Personagens](../data/linhagens.json) · [Retratos](../data/retratos.json) · [Prompts da etapa 9](retratos-etapa-9-prompts.json) · [Prompts da etapa 10](retratos-etapa-10-prompts.json)
+O catálogo contém **195 personagens, todos com retrato integrado**. As etapas 0 a 12 estão entregues. As duas últimas acrescentaram quatro criaturas e quatro personagens ligados a Lórien e aos Istari. [Personagens](../data/linhagens.json) · [Retratos](../data/retratos.json) · [Etapa 11](retratos-etapa-11-prompts.json) · [Etapa 12](retratos-etapa-12-prompts.json)
 
 O plano contempla **150 personagens únicos**, incluindo os 75 cadastrados no ponto de partida. Os 150 têm retrato. O catálogo também pode crescer com elos genealógicos fora desta seleção. A lista é uma seleção editorial para a biblioteca inicial, não um inventário de todos os personagens de Tolkien. Versões de um mesmo personagem e a extensão de criaturas não entram nessa contagem.
 
@@ -31,6 +31,8 @@ As etapas indicam prioridade, sem datas prometidas. Dividir cada etapa em lotes 
 | 8 | Completar os elos genealógicos | 10 | 150 | 10 integrados; Galathil e Amroth refeitos |
 | 9 | Eru Ilúvatar | 1 | 151 | Integrado como interpretação de uma presença de luz |
 | 10 | Criaturas, governantes e outros personagens citados no atlas | 36 | 187 | 36 pesquisados, gerados no FLUX.2 local e integrados |
+| 11 | Barbárvore, Laracna, Gwaihir e Bregalad | 4 | 191 | 4 pesquisados, gerados no FLUX.2 local e integrados |
+| 12 | Nimrodel, Haldir de Lórien, Alatar e Pallando | 4 | 195 | 4 pesquisados, gerados no FLUX.2 local e integrados |
 
 A conferência no Chrome percorreu as fichas e os retratos ampliados de Finwë, Aragorn e Fingolfin, em 1280 × 800 e em 390 × 844. A validação automatizada cobre o cadastro e os arquivos do conjunto.
 
@@ -204,12 +206,16 @@ O briefing abaixo cobre os dez personagens da extensão. O enquadramento deve mo
 | 2 | Huan | *O Silmarillion*, cap. 19. Cão de caça associado a Valinor e a Lúthien. Pelagem, conformação e cenário do retrato são interpretação. |
 | 2 | Thorondor | *O Silmarillion*, caps. 13 e 18. Grande águia das Echoriath. Diferenciar de Gwaihir pela postura, enquadramento e época. |
 
-Smaug, Glaurung, Ancalagon, Ungoliant, Huan e Thorondor foram entregues na etapa 10. Fangorn/Barbárvore, Laracna, Gwaihir e Bregalad permanecem previstos neste briefing. [Prompts da etapa 10](retratos-etapa-10-prompts.json)
+**Extensão concluída, 10 de 10.** Smaug, Glaurung, Ancalagon, Ungoliant, Huan e Thorondor foram entregues na etapa 10. A etapa 11 pesquisou, gerou e integrou Barbárvore, Laracna, Gwaihir e Bregalad com o FLUX.2 klein 9B no ComfyUI local. Os quatro retratos partem de fotogramas dos filmes de Peter Jackson. A identificação de Bregalad em Isengard vem de cartas licenciadas da Decipher. A referência de Gwaihir é o resgate em Orthanc. Os WebP de 512 × 512 foram aprovados abaixo de 100 KiB e têm miniaturas, fichas e textos alternativos. [Etapa 10](retratos-etapa-10-prompts.json) · [Etapa 11 e referências](retratos-etapa-11-prompts.json)
 
-Nimrodel, Haldir e os Magos Azuis podem entrar conforme as fichas e jornadas forem ampliadas.
+## Lórien e os Magos Azuis
+
+A etapa 12 acrescentou as fichas e os retratos de Nimrodel, Haldir de Lórien, Alatar e Pallando. Nimrodel segue a canção de Legolas e o relato de *Contos Inacabados*. Haldir usa a fisionomia de Craig Parker caracterizado nos filmes de Peter Jackson. Pallando usa a interpretação de Ciarán Hinds em *Os Anéis de Poder*. Alatar aparece de costas no plano consultado da dupla, e o retrato usa esse enquadramento para preservar a referência de vestuário sem atribuir um rosto. A ficha de Lothlórien ganhou a partida de Nimrodel e a chegada da Sociedade do Anel à fronteira guardada por Haldir. [Prompts e referências da etapa 12](retratos-etapa-12-prompts.json)
+
+As fichas dos Istari registram a versão de *Contos Inacabados* e a dos textos tardios que situam Morinehtar e Rómestámo na Segunda Era. A correspondência de cada nome tardio com Alatar ou Pallando permanece em aberto. A data de 1600 S.E. situa artisticamente as imagens. As ocorrências da série constam como referência de adaptação. [As duas versões dos Magos Azuis](https://tolkiengateway.net/wiki/Blue_Wizards)
 
 ## Limites deste roadmap
 
-A biblioteca inicial de 150 personagens, Eru Ilúvatar e os 36 da etapa 10 somam 187 retratos integrados. Os apontamentos de fontes indicam os capítulos de referência. O cotejo direto das edições permanece aberto.
+Os apontamentos de fontes indicam os capítulos de referência. O cotejo direto das edições permanece aberto.
 
 Referência do trabalho já realizado [galeria e notas dos retratos de Fëanor](RETRATOS-FEANOR.md).

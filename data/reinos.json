@@ -808,7 +808,9 @@
     "origem": "Durin fundou o reino nas Montanhas Nevoentas.",
     "transformacoes": [],
     "destino": "O Flagelo de Durin provocou o êxodo. Balin ocupou parte dos salões brevemente entre 2989 e 2994 T.E.",
-    "territorios": [],
+    "territorios": [
+      {"de": "PE:1", "ate": "TE:1981", "tipo": "dominio", "borda": "difusa", "rotulo": "Projeção do complexo subterrâneo", "contorno": [[1228, -616], [1237, -601], [1252, -593], [1270, -595], [1284, -608], [1280, -624], [1266, -629], [1244, -626]], "nota": "O polígono localiza os salões e as galerias sob as montanhas entre os acessos oeste e leste. A extensão em planta é inferida. A expedição de Balin ocupou parte do complexo sem restaurar o antigo domínio.", "fontes": [{"fonte": "sda", "local": "Livro II, cap. 4–5 e Apêndice A, III"}]}
+    ],
     "fontes": [
       {
         "fonte": "sda-apA",
@@ -819,7 +821,9 @@
         "local": "Livro II, cap. 4–5"
       }
     ],
-    "ate": "TE:1981"
+    "ate": "TE:1981",
+    "comparar": ["TE:1980", "TE:1981"],
+    "ultimo_periodo": "TE:1980"
   },
   {
     "id": "reino-erebor",
@@ -843,7 +847,11 @@
     "origem": "Thráin I fundou a primeira comunidade anã de Erebor.",
     "transformacoes": [],
     "destino": "Os Anões voltaram após a morte de Smaug. A coroa coube a Dáin II.",
-    "territorios": [],
+    "territorios": [
+      {"de": "TE:1999", "ate": "TE:2210", "tipo": "dominio", "borda": "difusa", "rotulo": "Núcleo da Montanha Solitária", "contorno": [[1803, -186], [1807, -174], [1816, -168], [1828, -173], [1833, -184], [1826, -193], [1816, -195], [1807, -193]], "nota": "O contorno aproxima o núcleo em torno de Erebor e da Porta Principal. Valle e Esgaroth têm história política própria.", "fontes": [{"fonte": "hobbit", "local": "caps. 1, 11 e 18"}, {"fonte": "sda-apA", "local": "III (O Povo de Durin)"}]},
+      {"de": "TE:2590", "ate": "TE:2770", "tipo": "dominio", "borda": "difusa", "rotulo": "Núcleo da Montanha Solitária", "contorno": [[1803, -186], [1807, -174], [1816, -168], [1828, -173], [1833, -184], [1826, -193], [1816, -195], [1807, -193]], "nota": "O contorno aproxima o núcleo em torno de Erebor e da Porta Principal. Valle e Esgaroth têm história política própria.", "fontes": [{"fonte": "hobbit", "local": "caps. 1, 11 e 18"}, {"fonte": "sda-apA", "local": "III (O Povo de Durin)"}]},
+      {"de": "TE:2941", "tipo": "dominio", "borda": "difusa", "rotulo": "Núcleo da Montanha Solitária", "contorno": [[1803, -186], [1807, -174], [1816, -168], [1828, -173], [1833, -184], [1826, -193], [1816, -195], [1807, -193]], "nota": "O contorno aproxima o núcleo em torno de Erebor e da Porta Principal. Valle e Esgaroth têm história política própria.", "fontes": [{"fonte": "hobbit", "local": "caps. 1, 11 e 18"}, {"fonte": "sda-apA", "local": "III (O Povo de Durin)"}]}
+    ],
     "fontes": [
       {
         "fonte": "sda-apA",
@@ -853,7 +861,9 @@
         "fonte": "hobbit",
         "local": "cap. 1 e 18"
       }
-    ]
+    ],
+    "comparar": ["TE:2770", "TE:2941"],
+    "interrupcoes": [{"de": "TE:2210", "ate": "TE:2590"}, {"de": "TE:2770", "ate": "TE:2941"}]
   },
   {
     "id": "reino-lorien",
@@ -875,9 +885,14 @@
       "Elfos silvestres e Sindar"
     ],
     "origem": "O reino silvestre se estabeleceu entre as Montanhas Nevoentas e o Anduin.",
-    "transformacoes": [],
+    "transformacoes": [
+      {"quando": "TE:1981", "texto": "Nimrodel deixa Lothlórien depois do despertar do Flagelo de Durin. Amroth se afoga na Baía de Belfalas enquanto a aguarda."},
+      {"quando": "TE:3019", "texto": "Haldir e seus irmãos guardam a entrada do bosque quando a Sociedade do Anel chega de Moria."}
+    ],
     "destino": "Os habitantes deixaram o reino gradualmente na Quarta Era.",
-    "territorios": [],
+    "territorios": [
+      {"de": "SE:1350", "ate": "QE:1", "tipo": "dominio", "borda": "difusa", "rotulo": "Bosque dos Galadhrim", "feicao": "floresta-lothlorien", "nota": "O bosque a oeste do Anduin indica o núcleo habitado, incluindo Caras Galadhon. Os limites políticos exatos e as datas do começo e do declínio são aproximados. O contorno termina na transição adotada pelo atlas para a Quarta Era.", "fontes": [{"fonte": "sda", "local": "Livro II, cap. 6–8; Livro VI, cap. 6"}, {"fonte": "ci", "local": "A História de Galadriel e Celeborn"}]}
+    ],
     "fontes": [
       {
         "fonte": "ci",
@@ -888,6 +903,8 @@
         "local": "Livro II, cap. 6–8; Livro VI, cap. 6"
       }
     ],
-    "ate": "QE:1"
+    "ate": "QE:1",
+    "comparar": ["TE:3019", "QE:1"],
+    "ultimo_periodo": "TE:3021"
   }
 ]

@@ -6,11 +6,12 @@ import retratosJson from '../../data/retratos.json';
 import type { FonteRef, TempoRef } from './types';
 import { reinoPorId, tempo } from './data';
 
-export type Povo = 'noldor' | 'sindar' | 'teleri' | 'vanyar' | 'maia' | 'edain' | 'meio' | 'dunedain' | 'hobbit' | 'anao' | 'homem' | 'vala' | 'ainu' | 'orc' | 'criatura';
+export type Povo = 'noldor' | 'sindar' | 'silvano' | 'teleri' | 'vanyar' | 'maia' | 'edain' | 'meio' | 'dunedain' | 'hobbit' | 'anao' | 'homem' | 'vala' | 'ainu' | 'orc' | 'criatura';
 
 export const NOME_POVO: Record<Povo, string> = {
   noldor: 'Noldor',
   sindar: 'Sindar',
+  silvano: 'Elfos silvestres',
   teleri: 'Teleri',
   vanyar: 'Vanyar',
   maia: 'Maia',

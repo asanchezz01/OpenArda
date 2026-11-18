@@ -1,10 +1,17 @@
-import { faseAtual, lugarPorId, statusLugar, tempo } from './data';
+import { faseAtual, feicaoPorId, lugarPorId, statusLugar, tempo } from './data';
 import type { Vista } from './types';
 
 export type FaseGondolin = 'construcao' | 'integra' | 'ruinas';
 
 export const GONDOLIN = lugarPorId.get('gondolin')!;
 export const VISTA_GONDOLIN: Vista = { x: GONDOLIN.em[0], y: GONDOLIN.em[1], d: 16, rumo: 20, inclinacao: 55 };
+const tumladen = lugarPorId.get('tumladen')!;
+const [xVale, yVale] = feicaoPorId.get('tumladen')!.circulo!;
+export const VISTA_TUMLADEN: Vista = { x: xVale, y: yVale, d: 128, rumo: 42, inclinacao: 66 };
+
+export function faseTumladen(t: number): 'ativo' | null {
+  return statusLugar(tumladen, t)[0] === 'ativo' ? 'ativo' : null;
+}
 
 /** As datas vêm das fases do lugar, compartilhadas com as fichas e a busca. */
 export function faseGondolin(t: number): FaseGondolin | null {

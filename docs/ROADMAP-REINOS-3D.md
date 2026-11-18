@@ -1,6 +1,6 @@
 # Roadmap — detalhes dos reinos em 3D
 
-O objetivo é aproximar a câmera de um reino e reconhecer sua arquitetura, suas cidades e suas transformações ao longo do tempo. A camada **Detalhes dos reinos em 3D** complementa as fronteiras políticas e o relevo do atlas. Cada reino começa por uma cidade ou fortaleza representativa. Em 18 de novembro de 2026, os 14 grupos do plano passaram a ter visitas iniciais. As 23 visitas acrescentadas nesta revisão completam 30 entradas no menu **Visitas em 3D**.
+O objetivo é aproximar a câmera de um reino e reconhecer sua arquitetura, suas cidades e suas transformações ao longo do tempo. A camada **Detalhes dos reinos em 3D** complementa as fronteiras políticas e o relevo do atlas. Cada reino começa por uma cidade ou fortaleza representativa. Em 18 de novembro de 2026, os 14 grupos do plano passaram a ter visitas iniciais. O menu **Visitas em 3D** tem 31 entradas, incluindo o panorama de Tumladen.
 
 ## Primeira entrega: Gondolin
 
@@ -34,7 +34,7 @@ As fronteiras temporais vêm de `data/lugares.json`. A comparação entre época
 
 O desfiladeiro de Orfalch Echor ganhou uma visita própria, com sete atalhos na ficha. A passagem mostra seis portões a partir de 116 P.E., o Portão de Aço a partir de c. 473, o abandono em 510 e a submersão em 587. A ficha de Gondolin oferece aproximações à entrada urbana, à praça da fonte e à Torre do Rei. Materiais e ordem dos portões seguem *Contos Inacabados*. O atlas interpreta o espaçamento e as datas. [Índice das passagens e remissões](https://tolkiengateway.net/wiki/Seven_Gates_of_Gondolin)
 
-O recorte do vale depende de estudo adicional de relevo e medição em celulares físicos.
+O panorama de Tumladen reutiliza a bacia, o anel das Echoriath e o desfiladeiro do terreno do atlas. A ficha oferece a vista de conjunto e aproximações a Gondolin e Orfalch Echor. O perfil de 400 P.E. no eixo lateral da bacia mede cerca de 0,72 km no piso a oeste de Amon Gwareth, 1,01 km no centro e 1,18 km na crista oeste. Os números descrevem o terreno procedural. O atlas mostra a cidade e os portões à medida que a câmera se aproxima. O panorama preserva o ano enquanto o vale existe e volta a 400 P.E. quando a visita começa depois da submersão.
 
 ## Segunda entrega: Gondor — Minas Tirith
 
@@ -185,7 +185,7 @@ A ficha alterna a garganta e os salões em corte. O interior usa uma planta art�
 
 | Ordem | Reino ou domínio | Visitas implementadas |
 | --- | --- | --- |
-| 1 | Gondolin | Cidade e pontos de interesse, Orfalch Echor e os sete portões. |
+| 1 | Gondolin | Panorama de Tumladen, cidade e pontos de interesse, Orfalch Echor e os sete portões. |
 | 2 | Gondor | Minas Tirith, Osgiliath, Rammas Echor e Minas Ithil/Minas Morgul. |
 | 3 | Rohan | Edoras e Abismo de Helm, com o Muro de Helm e a entrada de Aglarond. |
 | 4 | Númenor | Armenelos, Rómenna, Tol Uinen, Meneltarma, Andúnië e Grande Armada. |
@@ -200,9 +200,11 @@ A ficha alterna a garganta e os salões em corte. O interior usa uma planta art�
 | 13 | Reinos anões | Khazad-dûm, com a Porta Oeste, salões e a colônia de Balin. Erebor, com a Porta Principal, as fases de ocupação e o tesouro de Smaug. |
 | 14 | Reinos élficos da Terceira Era | Caras Galadhon com plataformas nos mallorns e salões de Thranduil, com ponte, adegas e saída dos barris. |
 
-As fichas dessas visitas indicam as fontes literárias e os pontos de interpretação. Os reinos de Khazad-dûm, Erebor e Lothlórien foram cadastrados com seus centros e períodos e ainda aguardam limites políticos. Os salões de Thranduil usam o cadastro do Reino da Floresta, com os contornos e a sucessão de Oropher e Thranduil. As datas do modelo foram marcadas como aproximadas quando as obras não dão um ano.
+As fichas indicam as fontes literárias e os pontos de interpretação. Khazad-dûm, Erebor e Lothlórien receberam contornos de borda difusa em torno de seus núcleos. Khazad-dûm usa a projeção em planta do complexo subterrâneo até o êxodo de 1981 T.E. Erebor alterna três períodos de domínio, com interrupções de 2210 a 2590 e de 2770 a 2941 T.E. Lothlórien usa o bosque dos Galadhrim a oeste do Anduin e perde o contorno na transição para a Quarta Era adotada pelo atlas. O botão **Comparar fronteiras** enquadra os contornos pequenos e apresenta o antes e o depois. As fichas registram as aproximações de cada área e data.
 
-A revisão no Chrome usou 1280 × 800 e 390 × 844. A renderização em software permitiu conferir a busca, as fichas e o enquadramento por amostragem. A correção do globo preserva os ladrilhos próximos à câmera e mantém o oceano de fundo atrás do terreno do atlas. Medições de FPS e testes de toque em aparelhos físicos continuam abertos.
+A revisão no Chrome usou 1280 × 800 e 390 × 844. A renderização em software permitiu conferir a busca, as fichas e o enquadramento por amostragem. A correção do globo preserva os ladrilhos próximos à câmera e mantém o oceano de fundo atrás do terreno do atlas.
+
+O panorama de Tumladen também foi conferido com WebGL acelerado em uma RTX 3050 Laptop. Em uma amostra estática de 2,4 s, o Chrome registrou cerca de 60 quadros por segundo em 1280 × 800, após o carregamento do relevo. O enquadramento estreito foi conferido em emulação. O desempenho e os gestos em um celular físico seguem pendentes.
 
 ## Critérios para concluir cada reino
 
