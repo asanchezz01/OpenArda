@@ -28,7 +28,7 @@ import { blocoGovernoLugar, blocoGovernoReino } from './linhagens';
 import { blocoFotoFicha } from './fotografias';
 import { fotosDoLugar, fotosDoReino } from '../core/fotografias';
 
-const NOME_STATUS: Record<string, string> = {
+export const NOME_STATUS: Record<string, string> = {
   ativo: 'Existe nesta época',
   ruina: 'Em ruínas nesta época',
   destruido: 'Destruído',

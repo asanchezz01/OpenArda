@@ -87,7 +87,7 @@ export function htmlVisualizador(app: App, id: string): string {
       <div>${itens('Descrito por Tolkien', f.documentado)}${itens('Inferido', f.inferido)}${itens('Interpretação artística', f.artistico)}</div>
       <div><h3>Fontes</h3>${listaFontes(f.fontes)}
         <div class="acoes">
-          <button type="button" class="primario" data-acao="sel" data-sel="lugar:${esc(f.lugar)}">Ver no mapa</button>
+          <button type="button" class="primario" data-acao="ver-no-mapa" data-id="${esc(f.lugar)}" data-t="${momento(f)}">Ver no mapa</button>
           ${naEpoca ? '' : irEpoca(f)}
         </div>
       </div>

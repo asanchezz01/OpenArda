@@ -1,8 +1,50 @@
 import { eras, lugares, statusLugar, tempo } from '../core/data';
-import { statusChip } from './fichas';
+import { fotosDoLugar, momento } from '../core/fotografias';
+import type { Lugar } from '../core/types';
+import { NOME_STATUS, statusChip } from './fichas';
 import { esc, norm } from './util';
 
 const porNome = [...lugares].sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+
+export function htmlEpocasDoLugar(lugar: Lugar, referencia: number): string {
+  const fases = lugar.fases ?? [];
+  const fotos = fotosDoLugar(lugar.id, referencia).todas;
+  const fins = [lugar.ate, ...fases.map((fase) => fase.ate)].filter((ref): ref is string => !!ref && ref !== '+inf');
+  if (fases.length < 2 && !fins.length && new Set(fotos.map(momento)).size < 2) return '';
+
+  const epocas = new Map<number, string>();
+  const estado = (t: number) => NOME_STATUS[statusLugar(lugar, t)[0]];
+  for (const fase of fases) {
+    const de = fase.de === '-inf' ? lugar.de : fase.de;
+    if (!de || de === '-inf') continue;
+    const t = tempo.cursor(de);
+    epocas.set(t, fase.nota ?? (fase.evento ? tempo.evento(fase.evento)?.titulo : undefined) ?? estado(t));
+  }
+  if (!fases.length && fins.length && lugar.de && lugar.de !== '-inf') {
+    const t = tempo.cursor(lugar.de);
+    epocas.set(t, estado(t));
+  }
+  for (const ref of fins) {
+    const t = tempo.cursor(ref);
+    if (!epocas.has(t)) epocas.set(t, estado(t));
+  }
+  for (const foto of fotos) {
+    const t = momento(foto);
+    if (!epocas.has(t)) epocas.set(t, foto.titulo);
+  }
+  if (!epocas.has(referencia)) epocas.set(referencia, estado(referencia));
+  if (epocas.size < 2) return '';
+
+  return `<header class="menu-cab"><h2 id="epoca-mapa-titulo">Ver ${esc(lugar.nome)} no mapa</h2>
+    <button type="button" class="fechar" data-fechar-epoca aria-label="Cancelar escolha de época">×</button></header>
+    <p>Escolha a época que deseja visitar.</p>
+    <ul class="lista-eras" role="list">${[...epocas].sort(([a], [b]) => a - b).map(([t, nota]) => {
+      const data = tempo.rotulo(t);
+      return `<li><button type="button" data-acao="abrir-epoca-mapa" data-id="${esc(lugar.id)}" data-t="${t}">
+        <strong>${esc(data.principal)}</strong><span>${esc(data.incerto ? data.secundario : nota)}</span>
+        ${data.incerto ? `<span>${esc(nota)}</span>` : ''}</button></li>`;
+    }).join('')}</ul>`;
+}
 
 export function montarListaLugares(raiz: HTMLElement, t: number, visitar?: (id: string, t: number) => void) {
   raiz.innerHTML = `

@@ -207,6 +207,13 @@ describe('lugares por era', () => {
     expect(app.definirTempo).not.toHaveBeenCalled();
     ficha.querySelector('summary')!.click();
     visitar.click();
+    const epocas = el<HTMLDialogElement>('#epoca-mapa');
+    expect(epocas.open).toBe(true);
+    expect(painel.open).toBe(true);
+    expect(app.definirTempo).not.toHaveBeenCalled();
+    expect(epocas.textContent).toContain('3319 S.E.');
+    el(`#epoca-mapa [data-t="${tempo.cursor('SE:3319')}"]`).click();
+    expect(epocas.open).toBe(false);
     expect(painel.open).toBe(false);
     expect(app.definirTempo).toHaveBeenCalledWith(tempo.cursor('SE:3319'));
     expect(el('#painel h2').textContent).toBe('Númenor');
@@ -230,6 +237,67 @@ describe('lugares por era', () => {
     acontecimento.dispatchEvent(new Event('change', { bubbles: true }));
     expect(raiz.querySelector('summary')!.textContent).toContain('Destruído');
     expect(raiz.querySelector('details')!.textContent).toContain('Destruída na queda das Lâmpadas.');
+  });
+});
+
+describe('Ver no mapa a partir das fotografias', () => {
+  it('apresenta as fases de Gondolin e só muda a época após a escolha', () => {
+    ui.executar('foto', { id: 'gondolin-pe400' });
+    const fotos = el<HTMLDialogElement>('#fotos-tela');
+    const epocas = el<HTMLDialogElement>('#epoca-mapa');
+    el('#fotos-tela [data-acao="ver-no-mapa"]').click();
+    expect(epocas.open).toBe(true);
+    expect(epocas.textContent).toContain('400 P.E.');
+    expect(epocas.textContent).toContain('510 P.E.');
+    expect(fotos.open).toBe(true);
+    expect(app.definirTempo).not.toHaveBeenCalled();
+    expect(tecla(el('#epoca-mapa [data-fechar-epoca]'), 'Escape')).toBe(true);
+    el('#epoca-mapa [data-fechar-epoca]').click();
+    expect(epocas.open).toBe(false);
+    expect(fotos.open).toBe(true);
+    el('#fotos-tela [data-acao="ver-no-mapa"]').click();
+    el(`#epoca-mapa [data-t="${tempo.cursor('PE:510')}"]`).click();
+    expect(epocas.open || fotos.open).toBe(false);
+    expect(app.definirTempo).toHaveBeenCalledWith(tempo.cursor('PE:510'));
+    expect(el('#painel h2').textContent).toBe('Gondolin');
+  });
+
+  it('abre direto um lugar com uma única aparência', () => {
+    ui.executar('foto', { id: 'bri-te3018' });
+    el('#fotos-tela [data-acao="ver-no-mapa"]').click();
+    expect(el<HTMLDialogElement>('#epoca-mapa').open).toBe(false);
+    expect(el<HTMLDialogElement>('#fotos-tela').open).toBe(false);
+    expect(app.definirTempo).not.toHaveBeenCalled();
+    expect(el('#painel h2').textContent).toBe('Bri');
+  });
+});
+
+describe('painel de personagens', () => {
+  it('abre pelo menu, filtra por alcunha e preserva a consulta ao voltar da ficha', () => {
+    el('#btn-camadas').click();
+    el('#camadas [data-acao="personagens"]').click();
+    expect(el('#painel h2').textContent).toBe('Personagens');
+    const busca = el<HTMLInputElement>('#personagens-busca');
+    busca.value = 'Olorin';
+    busca.dispatchEvent(new Event('input', { bubbles: true }));
+    expect(el('#personagens-contagem').textContent).toBe('1 personagem');
+    el('#painel [data-personagem]:not([hidden]) .pessoa-nome').click();
+    expect(el('#painel h2').textContent).toBe('Gandalf');
+    el('[data-acao="voltar-ficha"]').click();
+    expect(el<HTMLInputElement>('#personagens-busca').value).toBe('Olorin');
+    expect(el('#personagens-contagem').textContent).toBe('1 personagem');
+  });
+
+  it('exibe um cônjuge sem filhos cadastrados no cartão da árvore e abre sua ficha', () => {
+    ui.abrir('linhagem:eowyn');
+    const seletor = '.pessoa.foco .conjuge [data-sel="linhagem:faramir"]';
+    expect(el(`#painel ${seletor}`).textContent).toBe('Faramir');
+    el('#painel [data-acao="arvore-tela"]').click();
+    const conjuge = el(`#arvore-tela ${seletor}`);
+    expect(conjuge.textContent).toBe('Faramir');
+    expect(conjuge.closest('li')!.querySelector('ul')).toBeNull();
+    conjuge.click();
+    expect(el('#painel h2').textContent).toBe('Faramir');
   });
 });
 

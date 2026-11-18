@@ -27,7 +27,9 @@ A busca encontra lugares, reinos, personagens e acontecimentos. Ao focá-la, apa
 
 No celular, a linha do tempo continua acessível com uma ficha aberta. **Alterar data** permite digitar um ano, escolher um acontecimento ou saltar para o anterior/próximo. Os controles **Fixar** e **Comparar** mantêm seus nomes visíveis. Em telas baixas, os controles secundários da linha ficam recolhidos.
 
-Em **Menu → Lugares por era**, escolha um ano ou acontecimento, filtre por nome e abra o resumo de um lugar. **Ver no mapa** abre a ficha na data consultada. A lista também aparece quando o navegador não consegue iniciar o mapa 3D.
+Em **Menu → Lugares por era**, escolha um ano ou acontecimento, filtre por nome e abra o resumo de um lugar. Quando o lugar tem fases ou fotografias de épocas diferentes, **Ver no mapa** permite escolher a data antes da visita. A lista também aparece quando o navegador não consegue iniciar o mapa 3D.
+
+Em **Menu → Personagens**, filtre o catálogo por nome ou alcunha e abra a ficha, o retrato ou a árvore genealógica. As árvores exibem os cônjuges cadastrados mesmo quando a união não tem descendentes no atlas.
 
 O menu reúne as seções do atlas e os atalhos em **Visitas em 3D**. Fotografias e árvores genealógicas usam diálogos nativos, com fechamento por `Esc` e retorno do foco. Na árvore, tocar no nome abre a ficha completa do personagem com as informações cadastradas; o ícone de árvore centraliza a genealogia nele. A última parada de uma jornada oferece **Concluir jornada**.
 

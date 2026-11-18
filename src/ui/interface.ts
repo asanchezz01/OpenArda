@@ -6,9 +6,9 @@ import { contornoTerritorio, eras, jornadas, lugarPorId, reinoPorId, tempo } fro
 import { Busca } from './busca';
 import { LinhaTempo } from './linha';
 import { fichaAqui, fichaEvento, fichaFonte, fichaFontes, fichaLugar, fichaMarco, fichaReino } from './fichas';
-import { fichaLinhagem, fichaSenhorios, fichaValar, htmlArvoreTela, htmlRetrato } from './linhagens';
+import { fichaLinhagem, fichaPersonagens, fichaSenhorios, fichaValar, filtrarPersonagens, htmlArvoreTela, htmlRetrato } from './linhagens';
 import { htmlPainelFotos, htmlVisualizador } from './fotografias';
-import { montarListaLugares } from './lugares';
+import { htmlEpocasDoLugar, montarListaLugares } from './lugares';
 import { esc, guardar, h, ler, listaFontes } from './util';
 import { lerLink, montarLink } from './url';
 import { regimeDe } from '../render/lighting';
@@ -47,6 +47,8 @@ export class Interface {
   private arvoreTelaFocoAntes: HTMLElement | null = null;
   private fotosTela!: HTMLDialogElement;
   private lugaresTela!: HTMLDialogElement;
+  private epocaMapa!: HTMLDialogElement;
+  private filtroPersonagens = '';
   /** '' fechado; 'painel' na grade; ou o id da foto aberta no visualizador. */
   private fotosAberto = '';
   private fotosTodas = false;
@@ -90,6 +92,7 @@ export class Interface {
         <button type="button" data-acao="jornadas">Seguir uma jornada</button>
         <button type="button" data-acao="eras">Escolher uma era</button>
         <button type="button" data-acao="lugares">Lugares por era</button>
+        <button type="button" data-acao="personagens">Personagens</button>
         <button type="button" data-acao="linhagens">Linhagens e governantes</button>
         <button type="button" data-acao="valar">Valar e Maiar</button>
         <button type="button" data-acao="fotografias">Fotografias dos lugares</button>
@@ -184,6 +187,8 @@ export class Interface {
       <header class="menu-cab"><h2 id="lugares-titulo">Lugares por era</h2><button type="button" class="fechar" aria-label="Fechar lista de lugares">×</button></header>
       <div class="lugares-lista"></div>`) as HTMLDialogElement;
     raiz.appendChild(this.lugaresTela);
+    this.epocaMapa = h('dialog', { id: 'epoca-mapa', 'aria-labelledby': 'epoca-mapa-titulo' }) as HTMLDialogElement;
+    raiz.appendChild(this.epocaMapa);
 
     this.linha = new LinhaTempo(this.app, raiz);
     // a altura real da linha do tempo posiciona os controles acima dela
@@ -195,11 +200,11 @@ export class Interface {
   private ligar() {
     const a = this.app;
     const atividade = () => a.definirAtividadeInterface(
-      !this.fotosTela.hidden || !this.arvoreTela.hidden || this.retratoTela.open || this.lugaresTela.open,
+      !this.fotosTela.hidden || !this.arvoreTela.hidden || this.retratoTela.open || this.lugaresTela.open || this.epocaMapa.open,
       !this.painel.hidden || !this.camadasEl.hidden,
     );
     const visibilidade = new MutationObserver(atividade);
-    for (const el of [this.fotosTela, this.arvoreTela, this.retratoTela, this.lugaresTela, this.painel, this.camadasEl]) {
+    for (const el of [this.fotosTela, this.arvoreTela, this.retratoTela, this.lugaresTela, this.epocaMapa, this.painel, this.camadasEl]) {
       visibilidade.observe(el, { attributes: true, attributeFilter: ['hidden', 'open'] });
     }
     atividade();
@@ -217,6 +222,9 @@ export class Interface {
     });
     this.painel.querySelector('.fechar')!.addEventListener('click', () => this.fecharPainel());
     this.lugaresTela.querySelector('.fechar')!.addEventListener('click', () => this.lugaresTela.close());
+    this.epocaMapa.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).closest('[data-fechar-epoca]')) this.epocaMapa.close();
+    });
     this.retratoTela.addEventListener('click', (e) => {
       if (e.target === this.retratoTela || (e.target as Element).closest('[data-fechar-retrato]')) this.retratoTela.close();
     });
@@ -230,7 +238,7 @@ export class Interface {
         this.fecharFotos();
         return;
       }
-      // "Ver no mapa" e "Ir a esta época" fecham o painel e seguem para a ação normal
+      // As ações de tempo e fontes fecham as fotos antes de abrir a próxima vista.
       const acao = alvo.closest<HTMLElement>('[data-acao]')?.dataset.acao;
       if (acao === 'sel' || acao === 'tempo' || acao === 'fonte') this.fecharFotos();
     });
@@ -256,6 +264,12 @@ export class Interface {
     this.conteudo.addEventListener('change', (e) => {
       const el = e.target as HTMLSelectElement;
       if (el.id === 'linhagem-ir') this.abrir('linhagem:' + el.value);
+    });
+    this.conteudo.addEventListener('input', (e) => {
+      const el = e.target as HTMLInputElement;
+      if (el.id !== 'personagens-busca') return;
+      this.filtroPersonagens = el.value;
+      filtrarPersonagens(this.conteudo, this.filtroPersonagens);
     });
     // folha inferior arrastável no celular
     const alca = this.painel.querySelector('.alca') as HTMLElement;
@@ -430,7 +444,7 @@ export class Interface {
     this.fecharInicio();
     this.alternarMenu(false);
     this.busca.fechar();
-    if (sel === 'fontes' || sel === 'jornadas' || sel === 'eras' || sel === 'linhagens' || sel === 'valar' || sel.startsWith('fonte:') || sel.startsWith('aqui:')) {
+    if (sel === 'fontes' || sel === 'jornadas' || sel === 'eras' || sel === 'linhagens' || sel === 'valar' || sel === 'personagens' || sel.startsWith('fonte:') || sel.startsWith('aqui:')) {
       this.conteudoAtual = sel;
       if (sel.startsWith('aqui:')) a.selecionar(null);
       this.renderPainel();
@@ -467,11 +481,11 @@ export class Interface {
   private ultimoRenderPainel = 0;
   /** Redesenha a ficha aberta no máximo ~6 vezes por segundo (reprodução e arrasto do tempo). */
   private atualizarPainel() {
-    if (this.painel.hidden || !this.conteudoAtual || this.painelAgendado) return;
+    if (this.painel.hidden || !this.conteudoAtual || this.conteudoAtual === 'personagens' || this.painelAgendado) return;
     const espera = Math.max(0, 160 - (performance.now() - this.ultimoRenderPainel));
     this.painelAgendado = window.setTimeout(() => {
       this.painelAgendado = 0;
-      if (!this.painel.hidden && this.conteudoAtual) this.renderPainel(true);
+      if (!this.painel.hidden && this.conteudoAtual && this.conteudoAtual !== 'personagens') this.renderPainel(true);
     }, espera);
   }
 
@@ -501,17 +515,19 @@ export class Interface {
     else if (tipo === 'linhagem') html = fichaLinhagem(a, id);
     else if (tipo === 'linhagens') html = fichaSenhorios(a);
     else if (tipo === 'valar') html = fichaValar(a);
+    else if (tipo === 'personagens') html = fichaPersonagens(this.filtroPersonagens);
     if (!html) return;
     this.ultimoRenderPainel = performance.now();
     const top = this.conteudo.scrollTop;
     const arvoreX = this.conteudo.querySelector('.arvore-rolagem')?.scrollLeft;
-    const largo = tipo === 'linhagem' || tipo === 'valar';
+    const largo = tipo === 'linhagem' || tipo === 'valar' || tipo === 'personagens';
     this.painel.classList.toggle('largo', largo);
     document.body.classList.toggle('painel-largo', largo);
     const abertos = manterScroll ? [...this.conteudo.querySelectorAll('details[open] summary')].map((x) => x.textContent) : [];
     const foco = document.activeElement as HTMLElement | null;
     const focoFicha = manterScroll && foco && this.conteudo.contains(foco) ? { id: foco.id, tag: foco.tagName, texto: foco.textContent, dados: JSON.stringify(foco.dataset) } : null;
     this.conteudo.innerHTML = html;
+    if (tipo === 'personagens') filtrarPersonagens(this.conteudo, this.filtroPersonagens);
     const titulo = this.conteudo.querySelector('h2');
     this.painel.setAttribute('aria-label', titulo?.textContent ?? 'Ficha');
     const voltar = this.painel.querySelector<HTMLButtonElement>('[data-acao="voltar-ficha"]')!;
@@ -608,6 +624,13 @@ export class Interface {
       }
       case 'sel':
         this.abrir(d.sel, d.sel.startsWith('lugar:') || d.sel.startsWith('reino:'));
+        break;
+      case 'ver-no-mapa':
+        this.verNoMapa(d.id, a.t, tNum(d.t) ?? a.t);
+        break;
+      case 'abrir-epoca-mapa':
+        this.epocaMapa.close();
+        this.abrirLugarNoMapa(d.id, Number(d.t));
         break;
       case 'voar': {
         const v: Partial<Vista> = { x: Number(d.x), y: Number(d.y), d: Number(d.d) || 200 };
@@ -714,11 +737,7 @@ export class Interface {
         this.alternarMenu(false, true);
         this.busca.fechar();
         if (a.tocando) this.linha.alternarPlay();
-        montarListaLugares(this.lugaresTela.querySelector('.lugares-lista')!, a.t, (id, t) => {
-          this.lugaresTela.close();
-          if (t !== a.t) a.definirTempo(t);
-          this.abrir('lugar:' + id, true);
-        });
+        montarListaLugares(this.lugaresTela.querySelector('.lugares-lista')!, a.t, (id, t) => this.verNoMapa(id, t));
         this.lugaresTela.showModal();
         break;
       case 'fotografias':
@@ -735,6 +754,9 @@ export class Interface {
         break;
       case 'linhagens':
         this.abrir('linhagens');
+        break;
+      case 'personagens':
+        this.abrir('personagens');
         break;
       case 'valar':
         this.abrir('valar');
@@ -763,6 +785,23 @@ export class Interface {
         this.compartilhar();
         break;
     }
+  }
+
+  private verNoMapa(id: string, t: number, referencia = t) {
+    const lugar = lugarPorId.get(id);
+    if (!lugar) return;
+    const html = htmlEpocasDoLugar(lugar, referencia);
+    if (html) {
+      this.epocaMapa.innerHTML = html;
+      this.epocaMapa.showModal();
+    } else this.abrirLugarNoMapa(id, t);
+  }
+
+  private abrirLugarNoMapa(id: string, t: number) {
+    this.fecharFotos();
+    if (this.lugaresTela.open) this.lugaresTela.close();
+    if (t !== this.app.t) this.app.definirTempo(t);
+    this.abrir('lugar:' + id, true);
   }
 
   private vistaEvento(e: Evento): Partial<Vista> | null {
@@ -1036,7 +1075,7 @@ export class Interface {
     const alvo = e.target as HTMLElement;
     if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
     // Os diálogos nativos tratam o teclado e o Escape sem acionar a interface de fundo.
-    if (this.retratoTela.open || this.lugaresTela.open) return;
+    if (this.retratoTela.open || this.lugaresTela.open || this.epocaMapa.open) return;
     // com a árvore em tela cheia, o teclado não move o mapa; Esc fecha
     // com as fotografias abertas: Esc fecha (ou volta à grade), setas passam de foto
     if (this.fotosAberto) {

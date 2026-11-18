@@ -185,6 +185,10 @@ for (const p of linhagens.pessoas) {
   const onde = `pessoa ${p.id}`;
   if (!POVOS.has(p.povo)) erro(`${onde}: povo inválido "${p.povo}"`);
   for (const q of p.pais ?? []) if (!idPessoas.has(q) || q === p.id) erro(`${onde}: genitor inválido "${q}"`);
+  for (const q of p.casa ?? []) {
+    if (!idPessoas.has(q) || q === p.id) erro(`${onde}: cônjuge inválido "${q}"`);
+    else if (!linhagens.pessoas.find(({ id }) => id === q)?.casa?.includes(p.id)) erro(`${onde}: falta o vínculo recíproco de "${q}"`);
+  }
   if (p.elo && !p.pais?.length) erro(`${onde}: "elo" sem pais`);
   if (p.outros_nomes && (!Array.isArray(p.outros_nomes) || p.outros_nomes.some((n) => typeof n !== 'string' || !n.trim()))) erro(`${onde}: "outros_nomes" deve ser uma lista de nomes`);
   if (!p.fontes?.length) erro(`${onde}: sem fontes`);

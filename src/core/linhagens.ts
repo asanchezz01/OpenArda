@@ -37,7 +37,7 @@ export interface Pessoa {
   elo?: string; // gerações omitidas entre a pessoa e pais[0]
   fem?: boolean;
   datas?: string;
-  casa?: string[]; // cônjuge registrado nas fontes (união sem filhos)
+  casa?: string[]; // cônjuges registrados independentemente da descendência
   irmaos?: string[]; // irmãos nomeados sem pais registrados (ou com Eru como pai)
   servo_de?: string[]; // Valar/Maia a quem o Maia atende
   resumo: string;
@@ -129,13 +129,16 @@ export const reinaEm = (id: string, t: number) => reinadosDe(id).filter((x) => v
 const paisDe = (p: Pessoa) => p.pais ?? [];
 export const filhosDe = (id: string) => pessoas.filter((p) => paisDe(p).includes(id));
 
-/** Filhos agrupados pelo outro genitor ('' quando desconhecido). */
+/** Uniões registradas e filhos agrupados pelo outro genitor ('' quando desconhecido). */
 export function unioesDe(id: string): [string, Pessoa[]][] {
   const m = new Map<string, Pessoa[]>();
   for (const f of filhosDe(id)) {
     const outro = paisDe(f).find((q) => q !== id) ?? '';
     if (!m.has(outro)) m.set(outro, []);
     m.get(outro)!.push(f);
+  }
+  for (const conjuge of pessoaPorId.get(id)?.casa ?? []) {
+    if (!m.has(conjuge)) m.set(conjuge, []);
   }
   return [...m];
 }
