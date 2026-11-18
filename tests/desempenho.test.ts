@@ -1,8 +1,11 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { PerspectiveCamera } from 'three';
 import { App, type Lado } from '../src/app';
 import { estadoTerreno, tempo, type EstadoTerreno } from '../src/core/data';
 import { retratoDe } from '../src/core/linhagens';
-import { PoolWorkers } from '../src/terrain/tiles';
+import { PoolWorkers, SistemaTerreno } from '../src/terrain/tiles';
+import { criarUniformesGlobais } from '../src/terrain/material';
+import { Globo } from '../src/render/globo';
 import { fichaValar, htmlRetrato } from '../src/ui/linhagens';
 import { htmlPainelFotos } from '../src/ui/fotografias';
 import { miniatura } from '../src/ui/util';
@@ -56,6 +59,26 @@ afterEach(() => {
 });
 
 describe('trabalho do mapa durante a navegação', () => {
+  it('pede ladrilhos de detalhe sob a câmera no globo, mesmo longe do centro do ladrilho pai', () => {
+    const [x, y] = [1761.4, -1337];
+    const cam = new PerspectiveCamera(38, 1.6, 0.1, 20000);
+    cam.up.set(0, 0, 1);
+    cam.position.set(x + 0.3, y - 3.4, 1.9);
+    cam.lookAt(x, y, 0.24);
+    cam.updateMatrixWorld();
+    const pool = new PoolWorkers(1);
+    const pedidos = vi.spyOn(pool, 'pedir').mockResolvedValue(null);
+    const u = criarUniformesGlobais(), globo = new Globo();
+    globo.atualizar(1, x, y, u);
+    const sistema = new SistemaTerreno(pool, u);
+    sistema.definirEstado('terra-media', []);
+    sistema.atualizar(cam, 0.24, globo);
+    expect(pedidos.mock.calls.some(([m]) => {
+      const { x0, y0, tamanho } = m as { x0: number; y0: number; tamanho: number };
+      return tamanho < 50 && x0 <= x && x < x0 + tamanho && y0 <= y && y < y0 + tamanho;
+    })).toBe(true);
+  });
+
   it('mantém relógio, câmera e linha do tempo, sem desenhar sob uma tela cheia', () => {
     const { app, interno, camera, pool, emitir } = simularApp({ deltaRender: 10 });
     app.definirAtividadeInterface(true, true);

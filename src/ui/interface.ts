@@ -12,6 +12,7 @@ import { esc, guardar, h, ler, listaFontes } from './util';
 import { lerLink, montarLink } from './url';
 import { regimeDe } from '../render/lighting';
 import { faseArmenelos, faseEdoras, faseGondolin, faseMenegroth, faseMinasTirith, faseNargothrond, VISTA_NARGOTHROND, faseRomenna, VISTA_ARMENELOS, VISTA_MENEGROTH, VISTA_EDORAS, VISTA_GONDOLIN, VISTA_MINAS_TIRITH, VISTA_ROMENNA } from '../core/detalhes';
+import { NOVAS_VISITAS, PONTOS_GONDOLIN, PORTOES_ECHOR } from '../core/visitas';
 
 const VISITAS_3D: Record<string, { nome: string; fase: (t: number) => string | null; vista: Vista; padrao: string; aviso: string }> = {
   'gondolin-3d': { nome: 'Gondolin', fase: faseGondolin, vista: VISTA_GONDOLIN, padrao: 'PE:400', aviso: 'Gondolin em 3D · Reconstrução artística. A linha do tempo alterna construção, cidade íntegra e ruínas.' },
@@ -90,19 +91,20 @@ export class Interface {
         <button type="button" data-acao="fotografias">Fotografias dos lugares</button>
         <button type="button" data-acao="fontes">Fontes e método</button>
       </nav>
-      <details class="menu-cidades"><summary>Cidades em 3D</summary><div class="menu-atalhos">
+      <details class="menu-cidades"><summary>Visitas em 3D</summary><div class="menu-atalhos">
         <button type="button" data-acao="gondolin-3d">Visitar Gondolin em 3D</button>
         <button type="button" data-acao="minas-tirith-3d">Visitar Minas Tirith em 3D</button>
         <button type="button" data-acao="edoras-3d">Visitar Edoras em 3D</button>
-        <button type="button" data-acao="menegroth-3d">Visitar Menegroth em 3D</button>
-        <button type="button" data-acao="nargothrond-3d">Visitar Nargothrond em 3D</button>
+        <button type="button" data-acao="menegroth-3d" data-corte="aberto">Visitar Menegroth em 3D</button>
+        <button type="button" data-acao="nargothrond-3d" data-corte="fechado">Visitar Nargothrond em 3D</button>
         <button type="button" data-acao="armenelos-3d">Visitar Armenelos em 3D</button>
         <button type="button" data-acao="romenna-3d">Visitar Rómenna em 3D</button>
+        ${NOVAS_VISITAS.map(({ lugar }) => `<button type="button" data-acao="visitar-3d" data-id="${lugar.id}">Visitar ${esc(lugar.nome)} em 3D</button>`).join('')}
       </div></details>
       <h2>Camadas</h2>
       ${chk('nomes', 'Nomes')}
       ${chk('reinos', 'Reinos e fronteiras', 'domínio, ocupação, influência')}
-      ${chk('detalhes', 'Detalhes dos reinos em 3D', 'Gondolin, Menegroth, Nargothrond, Minas Tirith, Edoras, Armenelos e Rómenna: aproxime para ver as cidades')}
+      ${chk('detalhes', 'Detalhes dos reinos em 3D', 'Aproxime para ver cidades, portos, fortalezas e outros sítios')}
       ${chk('rios', 'Rios')}
       ${chk('estradas', 'Estradas')}
       ${chk('vestigios', 'Lugares desaparecidos', 'antigas posições e contornos')}
@@ -559,8 +561,13 @@ export class Interface {
       case 'menegroth-3d':
       case 'nargothrond-3d':
       case 'armenelos-3d':
-      case 'romenna-3d': {
-        const v = VISITAS_3D[acao];
+      case 'romenna-3d':
+      case 'visitar-3d': {
+        const nova = acao === 'visitar-3d' ? NOVAS_VISITAS.find((v) => v.id === d.id) : undefined;
+        const v = nova
+          ? { ...nova, nome: nova.lugar.nome, aviso: `${nova.lugar.nome} em 3D · Reconstrução artística.` }
+          : VISITAS_3D[acao];
+        if (!v) break;
         if (a.travado) {
           this.aviso(`Enquadramento fixo: destrave para visitar ${v.nome} em 3D.`);
           break;
@@ -568,14 +575,23 @@ export class Interface {
         a.sairJornada();
         a.sairCaminhoReto();
         a.definirCamada('detalhes', true);
-        if (!v.fase(a.t)) a.definirTempo(tempo.cursor(v.padrao));
+        if (d.corte && (acao === 'menegroth-3d' || acao === 'nargothrond-3d')) {
+          a.definirCorte(acao === 'menegroth-3d' ? 'menegroth' : 'nargothrond', d.corte === 'aberto');
+        }
+        const portao = nova?.id === 'orfalch-echor' ? PORTOES_ECHOR[Number(d.ponto)] : undefined;
+        const ponto = acao === 'gondolin-3d' ? PONTOS_GONDOLIN[Number(d.ponto)] : undefined;
+        const fase = v.fase(a.t);
+        if (!fase || (fase === 'seis' && portao?.nome === 'Aço')) a.definirTempo(tempo.cursor(v.padrao));
         this.fecharInicio();
         this.alternarMenu(false);
         this.fecharPainel();
         const viewport = a.retanguloDe(a.ladoAtual());
-        a.voar({ ...v.vista, d: v.vista.d / Math.min(1, viewport.width / viewport.height) });
+        const vista = d.corte === 'aberto' && acao === 'nargothrond-3d' ? { ...v.vista, d: 1.7, rumo: 350, inclinacao: 54 }
+          : portao ? { ...v.vista, x: portao.em[0], y: portao.em[1], rumo: portao.rumo, d: 1.2 }
+          : ponto ? { ...v.vista, x: v.vista.x + ponto.dx, y: v.vista.y + ponto.dy, d: ponto.d } : v.vista;
+        a.voar({ ...vista, d: vista.d / Math.min(1, viewport.width / viewport.height) });
         a.renderer.domElement.focus({ preventScroll: true });
-        this.aviso(v.aviso, 7000);
+        this.aviso(ponto?.nota ?? (d.corte ? `${v.nome} em 3D · ${d.corte === 'aberto' ? 'Salões em corte' : 'Vista exterior'}.` : v.aviso), 7000);
         break;
       }
       case 'sel':

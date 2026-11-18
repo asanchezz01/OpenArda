@@ -95,8 +95,7 @@ export function faseArmenelos(t: number): FaseArmenelos | null {
 export type FaseRomenna = 'barcos' | 'navios' | 'fieis';
 
 export const ROMENNA = lugarPorId.get('romenna')!;
-/** O marcador do atlas fica ~12 km terra adentro; o porto é assentado no fundo da baía, junto à água. */
-export const CAIS_ROMENNA: [number, number] = [-2125.15, -732];
+export const CAIS_ROMENNA = ROMENNA.em;
 export const VISTA_ROMENNA: Vista = { x: CAIS_ROMENNA[0] + 0.28, y: CAIS_ROMENNA[1] - 0.12, d: 1.4, rumo: 262, inclinacao: 76 };
 export const FASES_ROMENNA: Record<string, FaseRomenna> = { 'SE:32': 'barcos', 'SE:600': 'navios', 'SE:3310': 'fieis' };
 
@@ -112,8 +111,7 @@ export function faseRomenna(t: number): FaseRomenna | null {
 export type FaseMenegroth = 'integra' | 'saqueada' | 'destruida';
 
 export const MENEGROTH = lugarPorId.get('menegroth')!;
-/** O marcador fica ~5 km do traçado do Esgalduin; o modelo é assentado na margem sul, junto à curva do rio. */
-export const COLINA_MENEGROTH: [number, number] = [-168.7, -114.42];
+export const COLINA_MENEGROTH = MENEGROTH.em;
 export const VISTA_MENEGROTH: Vista = { x: COLINA_MENEGROTH[0] - 0.02, y: COLINA_MENEGROTH[1] + 0.06, d: 1.3, rumo: 250, inclinacao: 58 };
 export const FASES_MENEGROTH: Record<string, FaseMenegroth> = { 'AA:#aa-menegroth': 'integra', 'PE:503': 'saqueada', 'PE:504': 'integra', 'PE:506': 'destruida' };
 
@@ -131,11 +129,11 @@ export type FaseNargothrond = 'integra' | 'ponte' | 'glaurung' | 'abandonada';
 
 export const NARGOTHROND = lugarPorId.get('nargothrond')!;
 /**
- * O marcador fica ~3 km do traçado do Narog; o modelo é assentado na margem oeste, sob Taur-en-Faroth.
+ * As Portas de Felagund são assentadas na margem oeste, sob Taur-en-Faroth.
  * No modelo, o rio corre ao longo do eixo X local (rio abaixo), em y = 0,2 km; o grupo é girado
  * para que esse eixo siga o trecho do traçado do atlas.
  */
-export const MARGEM_NARGOTHROND: [number, number] = [-420.8933, -211.4096];
+export const MARGEM_NARGOTHROND = NARGOTHROND.em;
 export const GIRO_NARGOTHROND = Math.atan2(-11, 14);
 /** A visita olha rio acima, pela garganta, para a ponte e as Portas de Felagund. */
 export const VISTA_NARGOTHROND: Vista = { x: MARGEM_NARGOTHROND[0] + 0.202, y: MARGEM_NARGOTHROND[1] + 0.095, d: 0.8, rumo: 308, inclinacao: 70 };

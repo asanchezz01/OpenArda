@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import type { Globo } from './globo';
 import { ARMENELOS, CAIS_ROMENNA, COLINA_MENEGROTH, EDORAS, faseArmenelos, faseMenegroth, MENEGROTH, faseNargothrond, MARGEM_NARGOTHROND, NARGOTHROND, faseEdoras, faseGondolin, faseMinasTirith, faseRomenna, GONDOLIN, MINAS_TIRITH, ROMENNA } from '../core/detalhes';
 import type { Lugar } from '../core/types';
+import { NOVAS_VISITAS } from '../core/visitas';
 import type { ModeloTerreno } from '../terrain/model';
 import type { UniformesGlobais } from '../terrain/material';
 import { criarGondolin } from './gondolin';
@@ -10,11 +11,13 @@ import { criarEdoras } from './edoras';
 import { criarArmenelos, criarRomenna } from './numenor';
 import { criarMenegroth } from './menegroth';
 import { criarNargothrond } from './nargothrond';
+import { criarArmada, criarCalmindon, criarCapitalNorte, criarFortaleza, criarOsgiliath, criarOstInEdhil, criarPorto, criarTirion, criarValmar } from './cidades';
+import { criarAbismo, criarAngband, criarCarasGaladhon, criarCinturao, criarMeneltarma, criarOrfalch, criarRammas, criarSaloes } from './paisagens';
 
 interface Sitio {
   lugar: Lugar;
   fase: (t: number) => string | null;
-  criar: (fase: string) => THREE.Group;
+  criar: (fase: string, terreno: ModeloTerreno, em: [number, number], h: number, corte: boolean) => THREE.Group;
   /** Objetos abaixo do chão da cidade, esticados com o exagero do relevo. */
   profundos: string[];
   /** Raio (km) em que o chão é amostrado: a cidade fica no ponto mais alto, sem ser enterrada. */
@@ -23,20 +26,57 @@ interface Sitio {
   em?: [number, number];
   /** Altura acima do terreno (km); menor nos portos, para o cais ficar perto do mar. */
   folga?: number;
+  alcance?: number;
+  agua?: boolean;
+  segueTerreno?: boolean;
 }
+
+const ARQUITETURA: Record<string, Sitio['criar']> = {
+  osgiliath: criarOsgiliath,
+  'rammas-echor': criarRammas,
+  'minas-ithil': (f) => criarFortaleza('Minas Ithil', f),
+  'abismo-de-helm': criarAbismo,
+  meneltarma: (_f, terreno, em, h) => criarMeneltarma(terreno, em, h),
+  andunie: () => criarPorto('Andúnië', 0, false),
+  'grande-armada': criarArmada,
+  'tol-uinen': criarCalmindon,
+  'orfalch-echor': criarOrfalch,
+  mithlond: () => criarPorto('Mithlond', 0.33, true),
+  'ost-in-edhil': criarOstInEdhil,
+  annuminas: (f) => criarCapitalNorte('Annúminas', f),
+  fornost: (f) => criarCapitalNorte('Fornost Erain', f),
+  'carn-dum': (f) => criarFortaleza('Carn Dûm', f),
+  'barad-dur': (f) => criarFortaleza('Barad-dûr', f),
+  angband: criarAngband,
+  tirion: criarTirion,
+  valmar: criarValmar,
+  'khazad-dum': (f) => criarSaloes('Khazad-dûm', f),
+  erebor: (f) => criarSaloes('Erebor', f),
+  'caras-galadhon': criarCarasGaladhon,
+  'saloes-thranduil': (f) => criarSaloes('Salões de Thranduil', f),
+  'cinturao-melian': (_f, terreno, em, h) => criarCinturao(terreno, em, h),
+};
 
 const SITIOS: Sitio[] = [
   { lugar: GONDOLIN, fase: faseGondolin, criar: criarGondolin as Sitio['criar'], profundos: ['Amon Gwareth', 'Escadaria'], raio: 0 },
   { lugar: MINAS_TIRITH, fase: faseMinasTirith, criar: criarMinasTirith as Sitio['criar'], profundos: ['Rocha'], raio: 0.65 },
-  { lugar: EDORAS, fase: faseEdoras, criar: criarEdoras, profundos: ['Base'], raio: 0 },
+  { lugar: EDORAS, fase: faseEdoras, criar: criarEdoras, profundos: ['Base'], raio: 0, segueTerreno: true },
   { lugar: ARMENELOS, fase: faseArmenelos, criar: criarArmenelos as Sitio['criar'], profundos: ['Base'], raio: 0 },
   { lugar: MENEGROTH, fase: faseMenegroth, criar: criarMenegroth as Sitio['criar'], profundos: ['Base'], raio: 0, em: COLINA_MENEGROTH, folga: 0.008 },
-  { lugar: NARGOTHROND, fase: faseNargothrond, criar: criarNargothrond as Sitio['criar'], profundos: ['Base'], raio: 0, em: MARGEM_NARGOTHROND, folga: 0.008 },
+  { lugar: NARGOTHROND, fase: faseNargothrond, criar: (f, _terreno, _em, _h, corte) => corte
+    ? criarSaloes('Salões de Nargothrond', f)
+    : criarNargothrond(f as Parameters<typeof criarNargothrond>[0]), profundos: ['Base'], raio: 0, em: MARGEM_NARGOTHROND, folga: 0.008 },
   { lugar: ROMENNA, fase: faseRomenna, criar: criarRomenna as Sitio['criar'], profundos: ['Base'], raio: 0, em: CAIS_ROMENNA, folga: 0.006 },
+  ...NOVAS_VISITAS.map(({ lugar, em, agua, raio, vista, fase }): Sitio => ({
+    lugar, em, agua, raio: raio ?? 0, fase, criar: ARQUITETURA[lugar.id], profundos: [],
+    folga: agua ? 0 : 0.006, alcance: Math.max(14, vista.d * 2.6),
+    segueTerreno: ['meneltarma', 'orfalch-echor', 'rammas-echor', 'cinturao-melian'].includes(lugar.id),
+  })),
 ];
 
 export class DetalhesReinos {
   readonly grupo = new THREE.Group();
+  readonly cortes = { menegroth: true, nargothrond: false };
   private modelos = new Map<string, THREE.Group>();
   private alturas = new WeakMap<ModeloTerreno, Map<Sitio, number>>();
   private sol = new THREE.DirectionalLight(0xffffff, 2.2);
@@ -51,6 +91,7 @@ export class DetalhesReinos {
   }
 
   private altura(s: Sitio, terreno: ModeloTerreno): number {
+    if (s.agua) return 0;
     let porSitio = this.alturas.get(terreno);
     if (!porSitio) this.alturas.set(terreno, (porSitio = new Map()));
     let h = porSitio.get(s);
@@ -64,7 +105,7 @@ export class DetalhesReinos {
   }
 
   /** Chamada para cada viewport: a comparação usa o estado e o relevo daquele lado. */
-  atualizar(t: number, camera: THREE.Camera, terreno: ModeloTerreno | null, u: UniformesGlobais, habilitado: boolean, globo?: Globo) {
+  atualizar(t: number, camera: THREE.Camera, terreno: ModeloTerreno | null, u: UniformesGlobais, habilitado: boolean, globo?: Globo, assinaturaTerreno = '') {
     this.grupo.visible = false;
     if (!habilitado || !terreno) return;
     for (const modelo of this.modelos.values()) modelo.visible = false;
@@ -77,16 +118,28 @@ export class DetalhesReinos {
       // ponytail: no globo só a posição é curvada; a inclinação do modelo (< 1,5° a 150 km do alvo) é ignorada
       if (globo) globo.paraMundo(x, y, z, this.centro);
       else this.centro.set(x, y, z);
-      if (h <= 0 || camera.position.distanceToSquared(this.centro) > 150 * 150) continue;
-      const chave = `${s.lugar.id}:${fase}`;
+      if ((!s.agua && h <= 0) || camera.position.distanceToSquared(this.centro) > (s.alcance ?? 150) ** 2) continue;
+      const corte = s.lugar.id === 'nargothrond' && this.cortes.nargothrond;
+      const chave = `${s.lugar.id}:${fase}${corte ? ':corte' : ''}${s.segueTerreno ? ':' + assinaturaTerreno : ''}`;
       let cidade = this.modelos.get(chave);
       if (!cidade) {
-        cidade = s.criar(fase);
+        cidade = s.criar(fase, terreno, [x, y], h, corte);
         this.modelos.set(chave, cidade);
         this.grupo.add(cidade);
       }
       cidade.position.copy(this.centro);
       for (const nome of s.profundos) cidade.getObjectByName(nome)!.scale.z = u.uExag.value;
+      const base = cidade.getObjectByName('Base');
+      if (base) base.scale.z = u.uExag.value;
+      const fecho = cidade.getObjectByName('Fecho da colina');
+      if (fecho) fecho.visible = !this.cortes.menegroth;
+      const relevo = cidade.getObjectByName('Relevo');
+      if (relevo) relevo.scale.z = u.uExag.value;
+      const pontos = cidade.getObjectByName('Pontos no relevo');
+      if (pontos) {
+        pontos.scale.z = u.uExag.value;
+        for (const p of pontos.children) p.scale.z = 1 / u.uExag.value;
+      }
       // navios e molhes ficam no nível do mar, abaixo do chão da cidade
       const mar = cidade.getObjectByName('Mar');
       if (mar) mar.position.z = -z;

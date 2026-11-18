@@ -1,6 +1,6 @@
 # Roadmap — detalhes dos reinos em 3D
 
-O objetivo é aproximar a câmera de um reino e reconhecer sua arquitetura, suas cidades e suas transformações ao longo do tempo. A camada **Detalhes dos reinos em 3D** complementa as fronteiras políticas e o relevo do atlas. Cada reino começa por uma cidade ou fortaleza representativa.
+O objetivo é aproximar a câmera de um reino e reconhecer sua arquitetura, suas cidades e suas transformações ao longo do tempo. A camada **Detalhes dos reinos em 3D** complementa as fronteiras políticas e o relevo do atlas. Cada reino começa por uma cidade ou fortaleza representativa. Em 18 de novembro de 2026, os 14 grupos do plano passaram a ter visitas iniciais. As 23 visitas acrescentadas nesta revisão completam 30 entradas no menu **Visitas em 3D**.
 
 ## Primeira entrega: Gondolin
 
@@ -24,18 +24,17 @@ A imagem acima é uma renderização de diagnóstico da malha real, sem o terren
 
 As fronteiras temporais vêm de `data/lugares.json`. A comparação entre épocas desenha o modelo correspondente a cada lado. A construção e as ruínas são estados ilustrativos; não representam a progressão anual da obra ou uma simulação da batalha.
 
-**Como visitar:** abra **Camadas e legenda → Visitar Gondolin em 3D**, ou a ficha de Gondolin (lugar ou reino) e escolha **Explorar cidade em 3D**. A visita preserva uma época em que existe um modelo; fora dela, abre em 400 P.E. O enquadramento fixo precisa ser destravado para a visita. A camada pode ser desligada independentemente das fronteiras.
+**Como visitar:** abra **Menu → Visitas em 3D → Visitar Gondolin em 3D**, ou a ficha de Gondolin (lugar ou reino) e escolha **Explorar cidade em 3D**. A visita preserva uma época em que existe um modelo; fora dela, abre em 400 P.E. O enquadramento fixo precisa ser destravado para a visita. A camada pode ser desligada independentemente das fronteiras.
 
 **Interpretação visual:** a localização usa a Grade de Arda existente. A malha urbana, os tamanhos, os materiais e as formas dos edifícios são uma reconstrução artística. A muralha da cidade não representa os sete portões da passagem de Orfalch Echor. Não há interiores nem navegação a pé nesta entrega.
 
 **Desempenho:** a geometria só é criada quando a câmera se aproxima a menos de 150 km do centro. Os edifícios repetidos usam instâncias; cada estado é construído uma vez e reutilizado. O exagero do relevo move o assentamento e alonga o suporte rochoso e a escadaria de acesso, preservando as proporções dos edifícios. A visita ajusta a distância da câmera à largura da tela, incluindo o modo de comparação.
 
-### Próximos detalhes de Gondolin
+### Revisão de 18 de novembro de 2026
 
-- Modelar os sete portões ao longo de Orfalch Echor, usando o traçado da passagem existente. Distinguir sua localização inferida do material descrito nas fontes.
-- Acrescentar pontos de interesse selecionáveis na praça, na torre e na entrada, com fontes específicas.
-- Estudar um recorte do vale com aproximação gradual de detalhes e perfis de desempenho em celulares reais.
-- Refinar a implantação após cotejar as descrições de Tolkien; manter as dimensões não documentadas como artísticas.
+O desfiladeiro de Orfalch Echor ganhou uma visita própria, com sete atalhos na ficha. A passagem mostra seis portões a partir de 116 P.E., o Portão de Aço a partir de c. 473, o abandono em 510 e a submersão em 587. A ficha de Gondolin oferece aproximações à entrada urbana, à praça da fonte e à Torre do Rei. Materiais e ordem dos portões seguem *Contos Inacabados*. O atlas interpreta o espaçamento e as datas. [Índice das passagens e remissões](https://tolkiengateway.net/wiki/Seven_Gates_of_Gondolin)
+
+O recorte do vale depende de estudo adicional de relevo e medição em celulares físicos.
 
 ## Segunda entrega: Gondor — Minas Tirith
 
@@ -53,18 +52,15 @@ As fronteiras temporais vêm de `data/lugares.json`. A comparação entre época
 
 As fronteiras vêm das novas fases de `minas-anor` em `data/lugares.json`; cada fase tem um estado da Árvore em `ARVORE_MINAS_TIRITH`, e um teste exige que as duas listas coincidam. A troca de nome (2002 T.E.) e a reconstrução da Torre Branca (2698 T.E.) aparecem na ficha, sem mudar o modelo.
 
-**Como visitar:** **Camadas e legenda → Visitar Minas Tirith em 3D**, ou a ficha de Minas Anor ou de Gondor → **Explorar cidade em 3D**. Antes de 3320 S.E., a visita abre em 3018 T.E.
+**Como visitar:** **Menu → Visitas em 3D → Visitar Minas Tirith em 3D**, ou a ficha de Minas Anor ou de Gondor → **Explorar cidade em 3D**. Antes de 3320 S.E., a visita abre em 3018 T.E.
 
 **Interpretação visual:** seguem *O Senhor dos Anéis* (Livro V, cap. 1) os sete níveis com portões alternados, a muralha externa negra, a proa de rocha, os 700 pés da Cidadela sobre a planície e as 50 braças da Torre. O diâmetro, as casas e as ruas são artísticos. A forma de Minas Anor na Segunda Era não é descrita: o modelo usa a mesma cidade em todas as épocas. O cerco de 3019 não é representado, porque a linha do tempo não separa meses dentro de um ano.
 
 **Implantação:** o chão é amostrado no centro e num raio de 650 m; a cidade fica no ponto mais alto, e a rocha da colina e do ombro (abaixo do primeiro círculo) acompanha o exagero do relevo. A camada de detalhes agora é uma lista de sítios em `src/render/detalhes.ts`; as peças repetidas usam `src/render/lotes.ts`, compartilhado com Gondolin.
 
-### Próximos detalhes de Gondor
+### Revisão de 18 de novembro de 2026
 
-- Osgiliath dos dois lados do Anduin, com a ponte e as ruínas de 1437 T.E. em diante.
-- O Rammas Echor em volta do Pelennor, numa escala acima da cidade.
-- Minas Ithil/Minas Morgul, reutilizando a estrutura de sítios.
-- Inspeção em celulares reais.
+As visitas de Osgiliath, Rammas Echor e Minas Ithil foram acrescentadas. Osgiliath mostra as duas margens do Anduin, a Cúpula das Estrelas e as etapas de incêndio, abandono e ponte partida. O Rammas acompanha o relevo do Pelennor e abre brechas em 3019 T.E. Minas Ithil mostra a cidade de Isildur, as ruínas do primeiro ataque e a transformação em Minas Morgul. O circuito do Rammas, as plantas e os danos são aproximados.
 
 ## Terceira entrega: Rohan — Edoras
 
@@ -79,17 +75,15 @@ As fronteiras vêm das novas fases de `minas-anor` em `data/lugares.json`; cada 
 
 As fases vêm de `edoras` em `data/lugares.json`. O número de túmulos sai dos anos de morte dos reis no Apêndice A (`REIS_ROHAN` em `src/core/detalhes.ts`), e a divisão em nove a oeste e os da segunda linhagem a leste segue o Livro III, cap. 6. Cada combinação de neve e túmulos gera um modelo, criado uma vez e reutilizado.
 
-**Como visitar:** **Camadas e legenda → Visitar Edoras em 3D**, ou a ficha de Edoras ou de Rohan → **Explorar cidade em 3D**. Antes de 2569 T.E., a visita abre em 3018 T.E.
+**Como visitar:** **Menu → Visitas em 3D → Visitar Edoras em 3D**, ou a ficha de Edoras ou de Rohan → **Explorar cidade em 3D**. Antes de 2569 T.E., a visita abre em 3018 T.E.
 
 **Interpretação visual:** são descritos a colina, o fosso, a muralha, a cerca de espinhos, o caminho calçado com o canal, a escada, o terraço, o telhado dourado e os túmulos dos dois lados do caminho. São artísticos o tamanho da colina (cerca de 1 km de diâmetro e 80 m de altura), o número e a forma das casas, as dimensões de Meduseld e o portão ao norte. Como a linha do tempo não separa meses, o ano de 2758 inteiro aparece com neve, embora o Longo Inverno tenha começado em novembro.
 
 **Implantação:** o sítio fica na altura do terreno no centro. A base sob a colina é um talude esticado com o exagero do relevo; em encosta ele aparece como aterro, em vez de deixar a cidade flutuando. Na neve, o talude também fica branco.
 
-### Próximos detalhes de Rohan
+### Revisão de 18 de novembro de 2026
 
-- O Abismo de Helm e o Forte da Trombeta, com o Muro de Helm e Aglarond.
-- Fazer o talude acompanhar o terreno em volta, em vez de usar uma cor única.
-- Inspeção em celulares reais.
+O Abismo de Helm ganhou o Forte da Trombeta, o Muro de Helm com bueiro e a entrada de Aglarond. A fase de 3019 mostra uma brecha no muro. O talude de Edoras acompanha a altura e a inclinação do terreno na borda; a cor transita da relva ou neve para tons de terra.
 
 ## Quarta entrega: Númenor — Armenelos e Rómenna
 
@@ -117,18 +111,15 @@ As fases vêm de `edoras` em `data/lugares.json`. O número de túmulos sai dos 
 
 As fronteiras vêm das novas fases de `armenelos` e `romenna` em `data/lugares.json` (`FASES_ARMENELOS` e `FASES_ROMENNA` em `src/core/detalhes.ts`), e um teste exige que coincidam. O ano do Templo (c. 3263) é o mesmo inferido no acontecimento `se-nimloth`, pois a Akallabêth não o dá. A ligação dos navios de Elendil a Rómenna em 3310 também é inferida: a partir do ano da Grande Armada.
 
-**Como visitar:** em **Camadas e legenda**, escolha **Visitar Armenelos em 3D** ou **Visitar Rómenna em 3D**. Também é possível abrir a ficha de Armenelos, de Rómenna ou de Númenor e escolher **Explorar cidade em 3D**. Fora do período das cidades, a visita abre em 3000 S.E.
+**Como visitar:** no menu **Visitas em 3D**, escolha **Visitar Armenelos em 3D** ou **Visitar Rómenna em 3D**. Também é possível abrir a ficha de Armenelos, de Rómenna ou de Númenor e escolher **Explorar cidade em 3D**. Fora do período das cidades, a visita abre em 3000 S.E.
 
 **Interpretação visual:** a Akallabêth descreve Nimloth no pátio do rei e o Templo na colina no meio da cidade. O Templo era circular, com 500 pés de diâmetro na base e 500 pés de altura até a cúpula de prata, que logo enegreceu com a fumaça. O modelo usa essas medidas e mostra a cúpula já escura. O porto no fundo de uma baía voltada para a Terra-média e a partida dos Fiéis vêm de *Contos Inacabados* e da Akallabêth. Todo o resto é escolha da série ou composição do atlas, não descrição de Tolkien: o paço, o penhasco, a muralha, a cascata, a estátua do rei, a forma da Torre do Rei, o colosso, o farol, a ponte dos atlantes, os viadutos, as casas e os navios de velas em leque. A série reúne paço e porto numa só cidade; o atlas os separa para manter Armenelos no interior.
 
-**Implantação:** Armenelos fica sobre uma base em talude, como Edoras; o penhasco, o rochedo da torre e os patamares da encosta são uma só malha (`Rochas`), com cores por vértice. A visita olha de lés-sudeste, com o Meneltarma do atlas ao fundo. O marcador de Rómenna no mapa fica cerca de 12 km terra adentro. Por isso, o porto é assentado em `CAIS_ROMENNA`, no fundo da baía, onde a costa do atlas encontra o mar, e fica mais perto do chão (`folga`), para o cais não flutuar. A extrusão da terra tem relva no topo e a muralha do cais nas faces. O grupo `Mar` é recolocado a cada quadro no nível da água, abaixo do chão da cidade; nele ficam os promontórios, a ponte, o farol, os píeres e os navios. A ponte cruza água do atlas, e um teste confere isso e a posição do colosso em terra, junto ao cais.
+**Implantação:** Armenelos fica sobre uma base em talude, como Edoras; o penhasco, o rochedo da torre e os patamares da encosta são uma só malha (`Rochas`), com cores por vértice. A visita olha de lés-sudeste, com o Meneltarma do atlas ao fundo. O marcador e o modelo de Rómenna usam o mesmo ponto de assentamento em `CAIS_ROMENNA`, junto à costa no fundo da baía. A extrusão da terra tem relva no topo e a muralha do cais nas faces. O grupo `Mar` é recolocado a cada quadro no nível da água, abaixo do chão da cidade; nele ficam os promontórios, a ponte, o farol, os píeres e os navios. A ponte cruza água do atlas, e um teste confere isso e a posição do colosso em terra, junto ao cais.
 
-### Próximos detalhes de Númenor
+### Revisão de 18 de novembro de 2026
 
-- Tol Uinen e a torre Calmindon, na baía de Rómenna.
-- O Meneltarma: a estrada em espiral e o santuário aberto no cume, reutilizando a fotografia `meneltarma-se3000`.
-- Andúnië, no oeste, e a Grande Armada.
-- Decidir se o marcador de Rómenna deve ir para a costa (revisão cartográfica).
+O Meneltarma ganhou uma estrada em espiral que acompanha o relevo até o cume aberto, com a [fotografia do Meneltarma em 3000 S.E.](../public/fotografias/meneltarma-se3000.webp) na ficha. Andúnië ganhou um cais, com uma visita independente à Grande Armada de 3310 a 3318 S.E. A posição da frota ao largo do porto é ilustrativa. Calmindon fica numa ilhota de Tol Uinen. Os marcadores de Rómenna e Andúnië foram alinhados à implantação dos portos, com as estradas e rotas conectadas.
 
 ## Quinta entrega: Doriath — Menegroth
 
@@ -149,17 +140,15 @@ As fronteiras vêm das novas fases de `armenelos` e `romenna` em `data/lugares.j
 
 As fases vêm de `menegroth` em `data/lugares.json` (`FASES_MENEGROTH`), e um teste exige que coincidam.
 
-**Como visitar:** em **Camadas e legenda**, escolha **Visitar Menegroth em 3D**. Também é possível abrir a ficha de Menegroth ou de Doriath e escolher **Explorar cidade em 3D**. Durante a existência dos salões, a visita preserva a época, inclusive nos Anos das Árvores, sob a luz de Telperion e Laurelin. Fora dela, abre em 400 P.E.
+**Como visitar:** no menu **Visitas em 3D**, escolha **Visitar Menegroth em 3D**. Também é possível abrir a ficha de Menegroth ou de Doriath e escolher **Explorar cidade em 3D**. Durante a existência dos salões, a visita preserva a época, inclusive nos Anos das Árvores, sob a luz de Telperion e Laurelin. Fora dela, abre em 400 P.E.
 
-**Interpretação visual:** *O Silmarillion* (cap. 10) descreve a ponte única, os pilares esculpidos como as faias de Oromë, com tronco, galhos e folhas, as lanternas de ouro, as fontes de prata, as bacias de mármore e os pisos de pedras de muitas cores. A forma da colina, a planta e o número de salões, o portal e o corte são artísticos. O Cinturão de Melian não é representado.
+**Interpretação visual:** *O Silmarillion* (cap. 10) descreve a ponte única, os pilares esculpidos como as faias de Oromë, com tronco, galhos e folhas, as lanternas de ouro, as fontes de prata, as bacias de mármore e os pisos de pedras de muitas cores. A forma da colina, a planta e o número de salões, o portal e o corte são artísticos.
 
-**Implantação:** o marcador de Menegroth no mapa fica a cerca de 5 km do traçado do Esgalduin. O modelo é assentado em `COLINA_MENEGROTH`, na margem sul. A curva do rio no modelo coincide com um vértice do traçado do atlas (um teste confere), e o trecho em 3D segue as duas pernas desse traçado até a borda da base. As peças compartilhadas com Númenor (torres, telhados, árvores, navios) ficam em `src/render/oficina.ts`.
+**Implantação:** o marcador e o modelo usam `COLINA_MENEGROTH`, na margem sul do Esgalduin. A curva do rio no modelo coincide com um vértice do traçado do atlas (um teste confere), e o trecho em 3D segue as duas pernas desse traçado até a borda da base. As peças compartilhadas com Númenor (torres, telhados, árvores, navios) ficam em `src/render/oficina.ts`.
 
-### Próximos detalhes de Doriath
+### Revisão de 18 de novembro de 2026
 
-- Uma alternância do corte (aberto ou fechado) na ficha da visita.
-- O Cinturão de Melian como efeito de névoa nas bordas do reino.
-- Decidir se o marcador de Menegroth deve ir para a margem do rio (revisão cartográfica).
+A ficha de Menegroth oferece a visita em corte e uma opção para fechar a colina. A nova visita Cinturão de Melian acompanha o contorno de Doriath com névoa, da Primeira Batalha de Beleriand até a partida de Melian em c. 503 P.E. A névoa é uma interpretação do encantamento. O marcador de Menegroth passou para a margem sul do Esgalduin.
 
 ## Sexta entrega: Nargothrond
 
@@ -182,38 +171,38 @@ As duas imagens são renderizações de diagnóstico da malha real, sem o terren
 
 As fases vêm de `nargothrond` em `data/lugares.json` (`FASES_NARGOTHROND`), e um teste exige que coincidam. Foram acrescentadas duas fases ao lugar, ambas com data aproximada: a ponte (c. 490, logo depois da chegada de Túrin, quando a fotografia das portas sem ponte deixa de valer) e a partida de Glaurung (501, ano da morte do dragão em Cabed-en-Aras). A ponte continua de pé depois do saque, pois foi por ela que Glaurung entrou.
 
-**Como visitar:** em **Camadas e legenda**, escolha **Visitar Nargothrond em 3D**. Também é possível abrir a ficha de Nargothrond, lugar ou reino, e escolher **Explorar cidade em 3D**. A visita olha rio acima pela garganta. Fora do período da cidade, ela abre em 400 P.E.
+**Como visitar:** no menu **Visitas em 3D**, escolha **Visitar Nargothrond em 3D**. Também é possível abrir a ficha de Nargothrond, lugar ou reino, e escolher **Explorar cidade em 3D**. A visita olha rio acima pela garganta. Fora do período da cidade, ela abre em 400 P.E.
 
 **Interpretação visual:** *O Silmarillion* (cap. 13 e 21) descreve as cavernas sob Taur-en-Faroth na margem oeste do Narog, as portas voltadas para o rio, a grande ponte construída a conselho de Túrin e Glaurung, que entra pela ponte e encontra Túrin diante das portas antes de se deitar sobre o tesouro lá dentro. Seguem a ilustração de referência, e são portanto artísticos, a garganta em degraus, as fachadas nas duas margens (o texto só fala da margem oeste), as cúpulas, as bocas de caverna, as três arcadas da ponte e o tom dourado da pedra. A forma de Glaurung (sem asas) também é artística. O dragão fica do lado de fora para ser visto.
 
-**Implantação:** o marcador de Nargothrond no mapa fica a cerca de 3 km do traçado do Narog, no lado leste. O modelo é assentado em `MARGEM_NARGOTHROND`, na margem oeste, e girado (`GIRO_NARGOTHROND`) para que o rio do modelo siga o trecho do traçado do atlas. Um teste confere que o eixo do rio cai sobre esse trecho e que o centro do sítio fica na margem oeste.
+**Implantação:** o marcador e o modelo usam `MARGEM_NARGOTHROND`, na margem oeste. O giro `GIRO_NARGOTHROND` alinha a garganta ao traçado do rio no atlas. Um teste confere que o eixo do rio cai sobre esse trecho e que o centro do sítio fica na margem oeste.
 
-### Próximos detalhes de Nargothrond
+### Revisão de 18 de novembro de 2026
 
-- Mostrar os salões por dentro, pelas bocas de caverna ou por um corte opcional na ficha da visita.
-- Decidir se o marcador de Nargothrond deve ir para a margem oeste (revisão cartográfica).
-- Inspeção em celulares reais.
+A ficha alterna a garganta e os salões em corte. O interior usa uma planta artística com pilares e luzes, e mostra o tesouro durante a ocupação de Glaurung. O marcador de Nargothrond passou para a margem oeste do Narog.
 
-## Ordem de expansão
+## Cobertura do plano de expansão
 
-Esta é uma ordem de implementação, sem datas prometidas. Gondolin, Minas Tirith, Edoras, Armenelos, Rómenna, Menegroth e Nargothrond já têm arquitetura 3D; os demais itens estão planejados.
+| Ordem | Reino ou domínio | Visitas implementadas |
+| --- | --- | --- |
+| 1 | Gondolin | Cidade e pontos de interesse, Orfalch Echor e os sete portões. |
+| 2 | Gondor | Minas Tirith, Osgiliath, Rammas Echor e Minas Ithil/Minas Morgul. |
+| 3 | Rohan | Edoras e Abismo de Helm, com o Muro de Helm e a entrada de Aglarond. |
+| 4 | Númenor | Armenelos, Rómenna, Tol Uinen, Meneltarma, Andúnië e Grande Armada. |
+| 5 | Doriath | Menegroth em corte ou pelo exterior e Cinturão de Melian até c. 503 P.E. |
+| 6 | Nargothrond | Garganta, Portas de Felagund, ponte, Glaurung e salões em corte. |
+| 7 | Lindon e Eregion | Mithlond com cais e estaleiro. Ost-in-Edhil com oficinas élficas e ruínas de 1697 S.E. em diante. |
+| 8 | Arnor e Arthedain | Annúminas junto ao Nenuial, com abandono e restauração. Fornost murada, depois em ruínas. |
+| 9 | Angmar | Carn Dûm, com um acesso de montanha interpretativo. |
+| 10 | Mordor | Barad-dûr em construção, íntegra, nos alicerces da Segunda Era e em ruínas após 3019 T.E. |
+| 11 | Domínio de Morgoth | Entrada fortificada de Angband ao pé de Thangorodrim, até a submersão. |
+| 12 | Valinor | Tirion em terraços com a lâmpada de Ingwë em Túna e as torres de sinos de Valmar, sob a iluminação da era. |
+| 13 | Reinos anões | Khazad-dûm, com a Porta Oeste, salões e a colônia de Balin. Erebor, com a Porta Principal, as fases de ocupação e o tesouro de Smaug. |
+| 14 | Reinos élficos da Terceira Era | Caras Galadhon com plataformas nos mallorns e salões de Thranduil, com ponte, adegas e saída dos barris. |
 
-| Ordem | Reino / domínio | Primeiro local | Entrega visual e temporal | Dependência principal |
-| --- | --- | --- | --- | --- |
-| 1 | **Gondolin** | Gondolin | **Versão inicial implementada**; depois, passagem e sete portões | Validar e refinar a primeira cidade |
-| 2 | **Gondor** | Minas Anor / Minas Tirith | **Versão inicial implementada** (cidadela, níveis, muralhas e relação com Mindolluin); depois, Osgiliath e suas ruínas | Definir versões por época a partir das fases dos lugares |
-| 3 | **Rohan** | Edoras | **Versão inicial implementada** (colina, fosso, muralha, Meduseld, túmulos e Longo Inverno); depois, o Abismo de Helm | Arquitetura de madeira e implantação no relevo |
-| 4 | **Númenor** | Armenelos e Rómenna | **Versão inicial implementada e revista com o visual da série *Os Anéis de Poder*** (paço, Nimloth, Templo, porto com o colosso e frotas por época; desaparecimento na Queda); depois, o Meneltarma e Andúnië | Relacionar os assentamentos à geografia da ilha |
-| 5 | **Doriath** | Menegroth | **Versão inicial implementada** (entrada, ponte, salões subterrâneos em corte, saque e destruição); depois, o Cinturão de Melian | O modo de corte foi definido: setor aberto da colina |
-| 6 | **Nargothrond** | Nargothrond | **Versão inicial implementada** (garganta com fachadas escavadas, Portas de Felagund, ponte de três arcos, Glaurung e abandono) | O modo subterrâneo foi reutilizado; a ponte foi datada em c. 490 P.E. |
-| 7 | Lindon e Eregion | Mithlond; depois Ost-in-Edhil | Cais, navios estáticos e oficinas; ruínas de Eregion | Acrescentar a cidade de Ost-in-Edhil aos dados com fontes próprias |
-| 8 | Arnor e Arthedain | Annúminas e Fornost | Capitais em atividade e ruínas por período | Separar os períodos de cada capital |
-| 9 | Angmar | Carn Dûm | Fortaleza e acesso montanhoso | Documentar lacunas e evitar apresentar invenções como descrições |
-| 10 | Mordor | Barad-dûr | Fortaleza e estados de destruição/reconstrução | Expandir as fases do lugar quando necessário |
-| 11 | Domínio de Morgoth | Angband | Portões e relação com Thangorodrim | Exteriores e relevo antes de interiores |
-| 12 | Valinor | Tirion e Valmar | Túna, torres, praças e interação com a iluminação de Aman | Integrar luz das Árvores aos materiais da arquitetura |
-| 13 | Reinos anões | Khazad-dûm e Erebor | Portas, salões e estados de ocupação | Cadastrar os reinos/capitais ausentes antes de modelar |
-| 14 | Reinos élficos da Terceira Era | Caras Galadhon e salões de Thranduil | Arquitetura arbórea e subterrânea | Cadastrar os reinos e apoiar modelos no terreno e nas árvores |
+As fichas dessas visitas indicam as fontes literárias e os pontos de interpretação. Os reinos de Khazad-dûm, Erebor e Lothlórien foram cadastrados com seus centros e períodos e ainda aguardam limites políticos. Os salões de Thranduil usam o cadastro do Reino da Floresta, com os contornos e a sucessão de Oropher e Thranduil. As datas do modelo foram marcadas como aproximadas quando as obras não dão um ano.
+
+A revisão no Chrome usou 1280 × 800 e 390 × 844. A renderização em software permitiu conferir a busca, as fichas e o enquadramento por amostragem. A correção do globo preserva os ladrilhos próximos à câmera e mantém o oceano de fundo atrás do terreno do atlas. Medições de FPS e testes de toque em aparelhos físicos continuam abertos.
 
 ## Critérios para concluir cada reino
 

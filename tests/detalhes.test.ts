@@ -136,14 +136,15 @@ describe('camada 3D integrada ao terreno', () => {
   it('alterna os lados da comparação sem misturar épocas nem acumular modelos', () => {
     const camada = new DetalhesReinos();
     camera.position.set(VISTA_GONDOLIN.x, VISTA_GONDOLIN.y, 14);
-    const visivel = () => camada.grupo.children.filter((c) => c instanceof THREE.Group && c.visible).map((c) => c.name);
+    const modelos = () => camada.grupo.children.filter((c) => c.name.startsWith('Gondolin:'));
+    const visivel = () => modelos().filter((c) => c.visible).map((c) => c.name);
     for (let i = 0; i < 4; i++) {
       camada.atualizar(tempo.tAno('PE', 509), camera, relevo, u, true);
       expect(visivel()).toEqual(['Gondolin: integra']);
       camada.atualizar(tempo.tAno('PE', 510), camera, relevo, u, true);
       expect(visivel()).toEqual(['Gondolin: ruinas']);
     }
-    expect(camada.grupo.children.filter((c) => c instanceof THREE.Group)).toHaveLength(2);
+    expect(modelos()).toHaveLength(2);
     camada.atualizar(tempo.tAno('PE', 587), camera, relevo, u, true);
     expect(camada.grupo.visible).toBe(false);
     camada.atualizar(pe, camera, relevo, u, false);
@@ -232,7 +233,7 @@ describe('Minas Tirith', () => {
     camera.position.set(VISTA_MINAS_TIRITH.x + 3, VISTA_MINAS_TIRITH.y, 6);
     const camada = new DetalhesReinos();
     camada.atualizar(te, camera, relevo, u, true);
-    const visiveis = camada.grupo.children.filter((c) => c instanceof THREE.Group && c.visible);
+    const visiveis = camada.grupo.children.filter((c) => c.name.startsWith('Minas Tirith:') && c.visible);
     expect(visiveis.map((c) => c.name)).toEqual(['Minas Tirith: arvore-morta']);
     const cidade = visiveis[0];
     const h = relevo.altura(VISTA_MINAS_TIRITH.x, VISTA_MINAS_TIRITH.y);

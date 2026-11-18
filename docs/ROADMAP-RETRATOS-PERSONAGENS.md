@@ -1,6 +1,6 @@
 # Roadmap — rostos dos personagens de Tolkien
 
-Atualizado em **7 de novembro de 2026**. Plano de produção para o OpenArda, começando pela família de Fëanor e expandindo para os personagens centrais de *O Silmarillion*, *O Hobbit*, *O Senhor dos Anéis* e textos complementares do legendário.
+Atualizado em **18 de novembro de 2026**. Plano de produção para o OpenArda, começando pela família de Fëanor e expandindo para os personagens centrais de *O Silmarillion*, *O Hobbit*, *O Senhor dos Anéis* e textos complementares do legendário.
 
 **Preferência visual do usuário para a etapa 2 e seguintes:** usar os rostos dos atores dos filmes dirigidos por Peter Jackson como referência sempre que houver uma interpretação correspondente. Essa preferência também está registrada em [AGENTS.md](../AGENTS.md) para orientar as próximas sessões de trabalho. Substitui a orientação anterior que evitava semelhança com atores; os prompts e retratos das etapas já entregues permanecem como histórico.
 
@@ -8,11 +8,11 @@ Atualizado em **7 de novembro de 2026**. Plano de produção para o OpenArda, co
 
 ## Ponto de partida e objetivo
 
-O catálogo local contém **155 personagens** em [data/linhagens.json](../data/linhagens.json) e **150 retratos** em [data/retratos.json](../data/retratos.json): todas as etapas de 0 a 8 estão entregues. Veja as entregas da [etapa 1](RETRATOS-ETAPA-1.md), da [etapa 2](RETRATOS-ETAPA-2.md), da [etapa 3](RETRATOS-ETAPA-3.md) e das [etapas 4 a 8, com a revisão pelos atores](RETRATOS-ETAPAS-4-8.md).
+O catálogo contém **187 personagens** e **151 retratos com imagem**. As etapas 0 a 9 estão entregues. A etapa 9 acrescentou Eru Ilúvatar e a etapa 10 cadastrou 36 retratos que aguardam geração. [Personagens](../data/linhagens.json) · [Retratos](../data/retratos.json) · [Prompts da etapa 9](retratos-etapa-9-prompts.json) · [Prompts da etapa 10](retratos-etapa-10-prompts.json)
 
 O plano contempla **150 personagens únicos**, incluindo os 75 cadastrados no ponto de partida. Os 150 têm retrato. O catálogo também pode crescer com elos genealógicos fora desta seleção. A lista é uma seleção editorial para a biblioteca inicial, não um inventário de todos os personagens de Tolkien. Versões de um mesmo personagem e a extensão de criaturas não entram nessa contagem.
 
-**Regra dos intérpretes:** os filmes de Peter Jackson (*O Senhor dos Anéis* e *O Hobbit*) têm prioridade como referência facial; personagens que só aparecem em *Os Anéis de Poder* usam o ator da série. **Exceção pedida pelo usuário:** Gil-galad segue Benjamin Walker (série). Os Valar e Maiar não têm intérprete: seguem motivos recorrentes de fan arts (beleza sem idade, luz própria, elemento de cada um).
+Os filmes de Peter Jackson (*O Senhor dos Anéis* e *O Hobbit*) têm prioridade como referência facial. Personagens que só aparecem em *Os Anéis de Poder* usam o ator da série. O retrato de Gil-galad da etapa 5 registrou Benjamin Walker como referência histórica daquela entrega. Figuras divinas sem interpretação correspondente seguem a direção artística de beleza sem idade, luz própria e motivos associados a cada personagem.
 
 ## Ordem das entregas
 
@@ -21,16 +21,18 @@ As etapas indicam prioridade, sem datas prometidas. Dividir cada etapa em lotes 
 | Etapa | Escopo | Personagens na etapa | Total acumulado previsto | Situação |
 | --- | --- | ---: | ---: | --- |
 | 0 | Fëanor e os sete filhos | 9 | 9 | Criados e cadastrados na interface |
-| 1 | Completar a família imediata | 5 | 14 | Integrados; build validado; conferência visual da página pendente |
-| 2 | Protagonistas de O Senhor dos Anéis | 24 | 38 | 24 integrados e verificados automaticamente; conferência visual da página pendente |
-| 3 | Casa de Finwë, Gondolin e Nargothrond | 20 | 58 | 20 integrados e verificados automaticamente; conferência visual da página pendente |
+| 1 | Completar a família imediata | 5 | 14 | Integrados e verificados, com amostra no Chrome |
+| 2 | Protagonistas de O Senhor dos Anéis | 24 | 38 | 24 integrados e verificados, com amostra no Chrome |
+| 3 | Casa de Finwë, Gondolin e Nargothrond | 20 | 58 | 20 integrados e verificados, com amostra no Chrome |
 | 4 | Doriath e os Grandes Contos | 20 | 78 | 20 integrados; Thingol e Dior refeitos |
 | 5 | Segunda Era e herdeiros de Númenor | 19 | 97 | 19 integrados; Gil-galad, Isildur, Celebrimbor, Míriel e Ar-Pharazôn com referência dos atores |
 | 6 | O Hobbit e a linhagem de Durin | 22 | 119 | 22 integrados; 14 com referência dos filmes de O Hobbit |
 | 7 | Valar e outras figuras de Aman e da Terra-média | 21 | 140 | 21 integrados; Valar e Maiar refeitos duas vezes (gênero, depois aparência divina) |
 | 8 | Completar os elos genealógicos | 10 | 150 | 10 integrados; Galathil e Amroth refeitos |
+| 9 | Eru Ilúvatar | 1 | 151 | Integrado como interpretação de uma presença de luz |
+| 10 | Criaturas, governantes e outros personagens citados no atlas | 36 | 187 | Pesquisados e cadastrados, com geração de imagens pendente |
 
-Com a etapa 2, a biblioteca alcançou 38 retratos; com a etapa 3, 58. O próximo marco é chegar a 78 até a etapa 4. As etapas seguintes ampliam épocas, povos e completam as lacunas das árvores.
+A conferência no Chrome percorreu as fichas e os retratos ampliados de Finwë, Aragorn e Fingolfin, em 1280 × 800 e em 390 × 844. A validação automatizada cobre o cadastro e os arquivos do conjunto.
 
 ### Etapa 0 — Fëanor e os sete filhos
 
@@ -42,19 +44,19 @@ Com a etapa 2, a biblioteca alcançou 38 retratos; com a etapa 3, 58. O próximo
 
 **Personagens (5):** Finwë; Míriel Serindë; Indis; Mahtan; Celebrimbor.
 
-**Entrega realizada:** cinco retratos gerados e integrados pelo cadastro existente, com fontes, inferências e notas de versão. Os testes verificam a imagem na ficha e no cartão de cada personagem; o build e o carregamento dos arquivos passaram. Conferência visual da página pendente por indisponibilidade da automação do navegador.
+**Entrega realizada:** cinco retratos gerados e integrados pelo cadastro existente, com fontes, inferências e notas de versão. Os testes verificam a imagem na ficha e no cartão de cada personagem; o build e o carregamento dos arquivos passaram.
 
 ### Etapa 2 — Protagonistas de O Senhor dos Anéis
 
 **Personagens (24):** Galadriel; Celeborn; Elrond; Arwen; Aragorn II Elessar; Frodo; Samwise Gamgi; Meriadoc Brandebuque; Peregrin Tûk; Gandalf; Legolas; Gimli; Boromir; Bilbo; Faramir; Denethor II; Théoden; Éomer; Éowyn; Saruman; Gollum/Sméagol; Sauron; Rei-bruxo de Angmar; Gríma Língua de Cobra.
 
-**Entrega realizada:** 24 personagens pesquisados, 24 retratos criados e 24 integrados/verificados automaticamente, com atores, filmes, épocas e diferenças literárias registrados. Gandalf foi concluído pela API local do HopeGym durante a entrega da etapa 3. Os WebP têm 512 × 512 e menos de 100 KiB. A conferência visual da página depende da recuperação da automação do navegador. Consulte a [galeria e as notas da etapa 2](RETRATOS-ETAPA-2.md) e os [prompts utilizados](retratos-etapa-2-prompts.json).
+**Entrega realizada:** 24 personagens pesquisados, 24 retratos criados e 24 integrados/verificados automaticamente, com atores, filmes, épocas e diferenças literárias registrados. Gandalf foi concluído pela API local do HopeGym durante a entrega da etapa 3. Os WebP têm 512 × 512 e menos de 100 KiB. Consulte a [galeria e as notas da etapa 2](RETRATOS-ETAPA-2.md) e os [prompts utilizados](retratos-etapa-2-prompts.json).
 
 ### Etapa 3 — Casa de Finwë, Gondolin e Nargothrond
 
 **Personagens (20):** Fingolfin; Finarfin; Olwë; Eärwen; Fingon; Turgon; Elenwë; Aredhel; Idril Celebrindal; Eöl; Maeglin; Finrod Felagund; Orodreth; Angrod; Aegnor; Finduilas de Nargothrond; Anairë; Glorfindel; Ecthelion da Fonte; Voronwë.
 
-**Entrega realizada:** 20 personagens pesquisados, 20 retratos criados e 20 integrados/verificados automaticamente, usando ComfyUI/FLUX.2 Klein 9B local. Foram acrescentadas as fichas de Anairë, Glorfindel, Ecthelion e Voronwë; Anairë foi ligada aos três filhos já cadastrados. Glorfindel usa Jarl Benzon como referência facial, com a ressalva da identificação em material de cartas/divulgação; os demais seguem fontes literárias e variação familiar. Os arquivos têm 512 × 512 e menos de 100 KiB. Build aprovado com 152 testes; miniaturas inspecionadas. A conferência visual da página permanece pendente. Veja a [galeria e as decisões da etapa 3](RETRATOS-ETAPA-3.md) e os [prompts e parâmetros](retratos-etapa-3-prompts.json).
+**Entrega realizada:** 20 personagens pesquisados, 20 retratos criados e 20 integrados/verificados automaticamente, usando ComfyUI/FLUX.2 Klein 9B local. Foram acrescentadas as fichas de Anairë, Glorfindel, Ecthelion e Voronwë; Anairë foi ligada aos três filhos já cadastrados. Glorfindel usa Jarl Benzon como referência facial, com a ressalva da identificação em material de cartas/divulgação; os demais seguem fontes literárias e variação familiar. Os arquivos têm 512 × 512 e menos de 100 KiB. Build aprovado com 152 testes; miniaturas inspecionadas. Veja a [galeria e as decisões da etapa 3](RETRATOS-ETAPA-3.md) e os [prompts e parâmetros](retratos-etapa-3-prompts.json).
 
 ### Etapa 4 — Doriath e os Grandes Contos
 
@@ -173,17 +175,29 @@ Usar **100 KiB por WebP** como alvo inicial de otimização, conferindo a qualid
 
 Acompanhar três números por etapa: **pesquisados**, **retratos criados** e **integrados/verificados**. Só avançar o estado de cada item quando sua entrega correspondente existir; não contar arquivos planejados como cobertura.
 
-## Extensão posterior: criaturas e outros personagens
+## Extensão de criaturas
 
-Depois da biblioteca principal, planejar um tratamento próprio para **Fangorn/Barbárvore, Bregalad, Smaug, Glaurung, Ancalagon, Ungoliant, Laracna, Huan, Thorondor e Gwaihir**. São dez personagens adicionais, fora da meta de 150; sua anatomia e escala exigem outro briefing, sem humanizar os rostos para fazê-los caber no padrão.
+O briefing abaixo cobre os dez personagens da extensão. O enquadramento deve mostrar a anatomia que distingue cada criatura e dar uma referência de escala no ambiente. A miniatura deve continuar legível a 36 px. Nas adaptações de Jackson, use a criatura em cena como referência visual. Registre edição, cena e imagem consultada junto ao prompt. Consulte [AGENTS.md](../AGENTS.md) para o fluxo de produção.
 
-Outros nomes, como Nimrodel, Haldir, os Magos Azuis e Khamûl, podem entrar conforme as fichas e jornadas forem ampliadas. Eru Ilúvatar exige decisão editorial própria antes de qualquer representação antropomórfica.
+| Lote | Personagem | Âncora literária e direção |
+| --- | --- | --- |
+| 1 | Fangorn / Barbárvore | *O Senhor dos Anéis*, III, 4. Corpo de Ent, casca e olhos atentos. Conferir a criatura em *As Duas Torres*, no encontro com Merry e Pippin. |
+| 1 | Smaug | *O Hobbit*, caps. 12 e 14. Dragão alado sobre o tesouro, com ventre incrustado. Conferir a criatura em *A Desolação de Smaug*. |
+| 1 | Laracna | *O Senhor dos Anéis*, IV, 9. Corpo de aranha na toca, com peso e escala perceptíveis. Conferir a criatura em *O Retorno do Rei*. |
+| 1 | Gwaihir | *O Senhor dos Anéis*, II, 2 e VI, 4. Grande águia em voo. Conferir o resgate de Gandalf em Orthanc em *A Sociedade do Anel*. A identificação da águia em *O Hobbit* permanece aberta. |
+| 1 | Bregalad | *O Senhor dos Anéis*, III, 4. Ent mais jovem associado às sorveiras, com silhueta esguia. A espécie das folhas e a agilidade orientam a diferenciação de Barbárvore. |
+| 2 | Glaurung | *O Silmarillion*, cap. 21. Dragão sem asas, com a massa apoiada no chão do Narog. A coloração pode dialogar com a maquete de Nargothrond. |
+| 2 | Ancalagon | *O Silmarillion*, cap. 24. Dragão alado da Guerra da Ira acima de Thangorodrim. A escala exata e a anatomia são interpretação. |
+| 2 | Ungoliant | *O Silmarillion*, cap. 8. Forma aracnídea e escuridão ao redor em Avathar. Diferenciar da silhueta e do ambiente de Laracna. |
+| 2 | Huan | *O Silmarillion*, cap. 19. Cão de caça associado a Valinor e a Lúthien. Pelagem, conformação e cenário do retrato são interpretação. |
+| 2 | Thorondor | *O Silmarillion*, caps. 13 e 18. Grande águia das Echoriath. Diferenciar de Gwaihir pela postura, enquadramento e época. |
+
+A etapa 10 já tem fichas e prompts de Smaug, Glaurung, Ancalagon, Ungoliant, Huan e Thorondor. Fangorn/Barbárvore, Laracna, Gwaihir e Bregalad permanecem previstos neste briefing. A geração das dez imagens continua em aberto. [Prompts da etapa 10](retratos-etapa-10-prompts.json)
+
+Nimrodel, Haldir e os Magos Azuis podem entrar conforme as fichas e jornadas forem ampliadas.
 
 ## Limites deste roadmap
 
-Este documento organiza a produção e registra a pesquisa inicial do próximo lote e de alguns casos sensíveis. **A aparência dos 150 personagens ainda não foi pesquisada individualmente**, e a presença na lista não significa que um retrato foi criado.
+A biblioteca inicial de 150 personagens e a etapa 9 somam 151 retratos integrados. Os apontamentos de fontes indicam os capítulos de referência. O cotejo direto das edições permanece aberto.
 
-As etapas 0 a 3 somam 58 imagens integradas pelo padrão existente. Gandalf foi concluído; a conferência visual da página permanece pendente. Datas e custos das etapas restantes dependem da capacidade de produção, das revisões e das consultas às fontes.
-
-Referência do trabalho já realizado: [galeria e notas dos retratos de Fëanor](RETRATOS-FEANOR.md).
-
+Referência do trabalho já realizado [galeria e notas dos retratos de Fëanor](RETRATOS-FEANOR.md).

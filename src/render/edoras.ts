@@ -5,6 +5,8 @@
 // ao lado do caminho, a primeira linhagem a oeste e a segunda a leste.
 // Artísticos: tamanhos, número e posição das casas, portão ao norte.
 import * as THREE from 'three';
+import type { Pt } from '../core/types';
+import type { ModeloTerreno } from '../terrain/model';
 import { rng } from '../terrain/noise';
 import { criarLotes } from './lotes';
 
@@ -22,7 +24,7 @@ export function perfilEdoras(r: number): number {
 }
 
 /** fase: "verao|inverno-<túmulos a oeste>-<túmulos a leste>" (ver faseEdoras). */
-export function criarEdoras(fase: string): THREE.Group {
+export function criarEdoras(fase: string, terreno?: ModeloTerreno, em?: Pt, h = 0): THREE.Group {
   const [clima, o, l] = fase.split('-');
   const inverno = clima === 'inverno';
   const oeste = Number(o) || 0,
@@ -47,8 +49,19 @@ export function criarEdoras(fase: string): THREE.Group {
   const telhado = new THREE.CylinderGeometry(1, 1, 1, 3).rotateZ(Math.PI / 2).translate(0, 0, 0.5).scale(1, 1 / Math.sqrt(3), 1 / 1.5);
   const monte = new THREE.SphereGeometry(1, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2).rotateX(Math.PI / 2);
 
-  // Base em talude sob a colina, esticada com o exagero do relevo: em encostas vira um aterro, não uma parede.
-  const base = new THREE.Mesh(new THREE.CylinderGeometry(0.76, 1.56, 0.8, 48).rotateX(Math.PI / 2).translate(0, 0, -0.4), relva);
+  const geoBase = new THREE.CylinderGeometry(0.76, 1.48, 1, 48, 4).rotateX(Math.PI / 2);
+  const vertices = geoBase.getAttribute('position');
+  const cores: number[] = [], tom = new THREE.Color();
+  for (let i = 0; i < vertices.count; i++) {
+    const x = vertices.getX(i), y = vertices.getY(i), borda = 0.5 - vertices.getZ(i);
+    const solo = terreno && em ? terreno.altura(em[0] + x, em[1] + y) - h - 0.045 : -0.8;
+    vertices.setZ(i, solo * borda);
+    tom.copy(relva.color).lerp(terra.color, borda * (inverno ? 0.12 : 0.34));
+    cores.push(tom.r, tom.g, tom.b);
+  }
+  geoBase.setAttribute('color', new THREE.Float32BufferAttribute(cores, 3));
+  geoBase.computeVertexNormals();
+  const base = new THREE.Mesh(geoBase, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.9 }));
   base.name = 'Base';
   cidade.add(base);
 

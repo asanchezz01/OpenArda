@@ -239,7 +239,7 @@
   {
     "id": "eregion", "nome": "Eregion", "outros_nomes": ["Azevim"], "tipo": "Reino élfico (Noldor)", "cor": "#c9b16a", "em": [1081, -625],
     "de": "SE:750", "ate": "SE:1697", "periodo_texto": "750–1697 S.E.",
-    "capitais": [{ "lugar": "eregion", "nota": "Ost-in-Edhil" }],
+    "capitais": [{ "lugar": "ost-in-edhil" }],
     "povos": ["Noldor", "Gwaith-i-Mírdain (Ferreiros)"],
     "governantes": [{ "nome": "Celebrimbor" }],
     "origem": "Noldor atraídos pelo mithril de Khazad-dûm se estabeleceram junto ao portão oeste de Moria.",
@@ -785,5 +785,109 @@
         "local": "A Terceira Era, anos 1050 e 3019"
       }
     ]
+  },
+  {
+    "id": "reino-khazad-dum",
+    "nome": "Reino de Khazad-dûm",
+    "tipo": "Reino anão",
+    "cor": "#ae8b68",
+    "em": [
+      1251,
+      -605
+    ],
+    "de": "PE:1",
+    "periodo_texto": "Dos Dias Antigos a 1981 T.E.",
+    "capitais": [
+      {
+        "lugar": "khazad-dum"
+      }
+    ],
+    "povos": [
+      "Anões da Casa de Durin"
+    ],
+    "origem": "Durin fundou o reino nas Montanhas Nevoentas.",
+    "transformacoes": [],
+    "destino": "O Flagelo de Durin provocou o êxodo. Balin ocupou parte dos salões brevemente entre 2989 e 2994 T.E.",
+    "territorios": [],
+    "fontes": [
+      {
+        "fonte": "sda-apA",
+        "local": "III"
+      },
+      {
+        "fonte": "sda",
+        "local": "Livro II, cap. 4–5"
+      }
+    ],
+    "ate": "TE:1981"
+  },
+  {
+    "id": "reino-erebor",
+    "nome": "Reino sob a Montanha",
+    "tipo": "Reino anão",
+    "cor": "#ae8b68",
+    "em": [
+      1818,
+      -183
+    ],
+    "de": "TE:1999",
+    "periodo_texto": "Desde 1999 T.E., com interrupções",
+    "capitais": [
+      {
+        "lugar": "erebor"
+      }
+    ],
+    "povos": [
+      "Anões da Casa de Durin"
+    ],
+    "origem": "Thráin I fundou a primeira comunidade anã de Erebor.",
+    "transformacoes": [],
+    "destino": "Os Anões voltaram após a morte de Smaug. A coroa coube a Dáin II.",
+    "territorios": [],
+    "fontes": [
+      {
+        "fonte": "sda-apA",
+        "local": "III"
+      },
+      {
+        "fonte": "hobbit",
+        "local": "cap. 1 e 18"
+      }
+    ]
+  },
+  {
+    "id": "reino-lorien",
+    "nome": "Reino de Lothlórien",
+    "tipo": "Reino élfico",
+    "cor": "#9db465",
+    "em": [
+      1397,
+      -728
+    ],
+    "de": "SE:1350",
+    "periodo_texto": "Da Segunda Era ao declínio na Quarta Era",
+    "capitais": [
+      {
+        "lugar": "caras-galadhon"
+      }
+    ],
+    "povos": [
+      "Elfos silvestres e Sindar"
+    ],
+    "origem": "O reino silvestre se estabeleceu entre as Montanhas Nevoentas e o Anduin.",
+    "transformacoes": [],
+    "destino": "Os habitantes deixaram o reino gradualmente na Quarta Era.",
+    "territorios": [],
+    "fontes": [
+      {
+        "fonte": "ci",
+        "local": "A História de Galadriel e Celeborn"
+      },
+      {
+        "fonte": "sda",
+        "local": "Livro II, cap. 6–8; Livro VI, cap. 6"
+      }
+    ],
+    "ate": "QE:1"
   }
 ]

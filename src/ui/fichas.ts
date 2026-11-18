@@ -3,6 +3,7 @@
 
 import type { App } from '../app';
 import type { Evento, Lugar, Reino, StatusLugar } from '../core/types';
+import { NOVAS_VISITAS, PONTOS_GONDOLIN, PORTOES_ECHOR } from '../core/visitas';
 import {
   tempo,
   lugares,
@@ -131,6 +132,7 @@ export function fichaLugar(app: App, l: Lugar): string {
   if (l.id === 'nargothrond') html += detalheNargothrond();
   if (l.id === 'armenelos') html += detalheArmenelos();
   if (l.id === 'romenna') html += detalheRomenna();
+  html += NOVAS_VISITAS.filter((v) => v.id === l.id).map(detalheNovaVisita).join('');
 
   if (l.id === 'ezellohar') {
     const f = app.faseArvores();
@@ -170,11 +172,12 @@ export function fichaLugar(app: App, l: Lugar): string {
   }
 
   if (l.fases?.length) {
+    const fase = faseAtual(l, t);
     html += `<section class="bloco"><h3>História do lugar</h3><ol class="fases">${l.fases
       .map((f) => {
         const ev = f.evento ? tempo.evento(f.evento) : undefined;
         const tf = tempo.fronteira(f.de, -Infinity);
-        const atual = statusLugar(l, t)[0] === f.status && t >= tf;
+        const atual = fase === f && st === f.status;
         return `<li class="${atual ? 'atual' : ''}"><span class="chip st-${f.status}">${esc(NOME_STATUS[f.status] ?? f.status)}</span> <span class="data">${esc(textoPeriodo(f.de, f.ate).replace(/^desde /, 'a partir de '))}</span>${f.nota ? ` — ${esc(f.nota)}` : ''}${
           ev ? ` <button type="button" class="link" data-acao="evento" data-id="${ev.id}">${esc(ev.titulo)}</button>` : ''
         }${isFinite(tf) ? ` <button type="button" class="mini" data-acao="tempo" data-t="${momentoEm(tf)}" title="Ir a este momento">⟲</button>` : ''}</li>`;
@@ -238,6 +241,7 @@ export function fichaReino(app: App, r: Reino): string {
   ${blocoFotoFicha(fotosDoReino(r.id, t))}
   ${governo ?? ''}
   ${r.id === 'gondolin' ? detalheGondolin() : r.id === 'gondor' ? detalheMinasTirith() : r.id === 'rohan' ? detalheEdoras() : r.id === 'numenor' ? detalheArmenelos() + detalheRomenna() : r.id === 'doriath' ? detalheMenegroth() : r.id === 'nargothrond' ? detalheNargothrond() : ''}
+  ${NOVAS_VISITAS.filter((v) => v.lugar.reino === r.id || r.capitais.some((c) => c.lugar === v.id) || (r.id === 'aman-valinor' && v.id === 'tirion')).map(detalheNovaVisita).join('')}
   <section class="bloco"><h3>Origem</h3><p>${esc(r.origem)}</p>${fund ? `<p><button type="button" class="link" data-acao="evento" data-id="${fund.id}">${esc(fund.titulo)}</button> <span class="data">${esc(tempo.dataEvento(fund))}</span></p>` : ''}</section>
   <section class="bloco"><h3>Principais transformações</h3><ol class="fases">${r.transformacoes
     .map((x) => {
@@ -278,12 +282,24 @@ export function fichaReino(app: App, r: Reino): string {
   return html;
 }
 
-function detalhe3d(titulo: string, texto: string, ressalva: string, acao: string, periodos: string): string {
+function detalheNovaVisita(v: typeof NOVAS_VISITAS[number]): string {
+  return `<section class="bloco destaque">
+    <h3>${esc(v.lugar.nome)} em 3D</h3>
+    <p>${esc(v.texto)}</p>
+    <p class="nota">${esc(v.ressalva)}</p>
+    <div class="acoes">
+      <button type="button" class="primario" data-acao="visitar-3d" data-id="${v.id}">Explorar em 3D</button>
+      ${v.id === 'orfalch-echor' ? PORTOES_ECHOR.map(({ nome }, i) => `<button type="button" data-acao="visitar-3d" data-id="${v.id}" data-ponto="${i}">Portão de ${nome}</button>`).join('') : ''}
+    </div>
+  </section>`;
+}
+
+function detalhe3d(titulo: string, texto: string, ressalva: string, acao: string, periodos: string, acoes = ''): string {
   return `<section class="bloco destaque">
     <h3>${titulo}</h3>
     <p>${texto}</p>
     <p class="nota">Reconstrução artística: ${ressalva}</p>
-    <div class="acoes"><button type="button" class="primario" data-acao="${acao}">Explorar cidade em 3D</button></div>
+    <div class="acoes"><button type="button" class="primario" data-acao="${acao}"${acao === 'menegroth-3d' ? ' data-corte="aberto"' : acao === 'nargothrond-3d' ? ' data-corte="fechado"' : ''}>Explorar cidade em 3D</button>${acoes}</div>
     <p class="nota">${periodos}</p>
   </section>`;
 }
@@ -292,9 +308,11 @@ function detalheGondolin(): string {
   return detalhe3d(
     'Gondolin em 3D',
     'Explore as muralhas, os bairros, as fontes e a Torre do Rei sobre Amon Gwareth. Glingal e Belthil aparecem no pátio de Turgon.',
-    'traçado urbano, escala, arquitetura e ruínas são interpretativos. Os sete portões de Orfalch Echor ficam nas montanhas e ainda não estão modelados.',
+    'traçado urbano, escala, arquitetura e ruínas são interpretativos. Os sete portões de Orfalch Echor têm uma visita própria na passagem das montanhas.',
     'gondolin-3d',
     '52–115 P.E.: em construção · 116–509: íntegra · 510–586: ruínas. A partir de 587, a cidade fica submersa e o modelo é ocultado. Fora desses períodos, a visita abre em 400 P.E.',
+    PONTOS_GONDOLIN.map(({ nome, nota }, i) => `<button type="button" data-acao="gondolin-3d" data-ponto="${i}" title="${esc(nota)}">${esc(nome)}</button>`).join('')
+      + '<button type="button" data-acao="sel" data-sel="lugar:orfalch-echor">Ver Orfalch Echor</button>',
   );
 }
 
@@ -302,7 +320,7 @@ function detalheMinasTirith(): string {
   return detalhe3d(
     'Minas Tirith em 3D',
     'Explore os sete níveis com seus portões alternados, a muralha externa negra, a proa de pedra que divide os círculos e a Cidadela com a Fonte, a Árvore Branca e a Torre de Ecthelion. O ombro do Mindolluin, com Rath Dínen, liga a cidade à montanha.',
-    'diâmetro, casas e ruas são interpretativos; as alturas (700 pés até a Cidadela, 50 braças da Torre) seguem O Senhor dos Anéis. A forma de Minas Anor na Segunda Era não é descrita, e o modelo usa a mesma cidade em todas as épocas. O Rammas Echor e Osgiliath ainda não estão modelados.',
+    'diâmetro, casas e ruas são interpretativos; as alturas (700 pés até a Cidadela, 50 braças da Torre) seguem O Senhor dos Anéis. O modelo usa a mesma cidade em todas as épocas.',
     'minas-tirith-3d',
     '3320 S.E.–1 T.E.: sem a Árvore Branca · 2–1635 T.E.: Árvore viva · 1636–1639: morta na peste · 1640–2871: replantada · 2872–3018: Árvore Morta · a partir de 3019: a muda de Elessar. Antes de 3320 S.E., a visita abre em 3018 T.E.',
   );
@@ -322,9 +340,10 @@ function detalheMenegroth(): string {
   return detalhe3d(
     'Menegroth em 3D',
     'Atravesse a ponte de pedra sobre o Esgalduin até o portal esculpido com faias, na colina rochosa da floresta. Um corte abre um setor da colina e mostra os salões: pilares em forma de faia com lanternas de ouro, pisos de pedras de muitas cores, o salão do trono de Thingol e Melian e a fonte de prata.',
-    'a forma da colina, a planta dos salões e o portal são interpretativos; o corte é um recurso de visualização. São descritos a ponte única, os pilares esculpidos como faias, as lanternas de ouro, as fontes de prata, as bacias de mármore e os pisos coloridos (O Silmarillion, cap. 10). O marcador do mapa fica a cerca de 5 km do Esgalduin; o modelo é assentado na margem sul, junto à curva do rio.',
+    'a forma da colina, a planta dos salões, o portal e o corte são interpretativos. O Silmarillion (cap. 10) descreve a ponte única, os pilares esculpidos como faias, as lanternas de ouro, as fontes de prata, as bacias de mármore e os pisos coloridos. O modelo fica na margem sul, junto à curva do Esgalduin.',
     'menegroth-3d',
     'Dos Anos das Árvores a 502 P.E.: salões íntegros · c. 503: saqueados pelos Anões (lanternas e tesouro levados) · 504–505: restaurados por Dior · 506–586: destruídos pelos filhos de Fëanor. A partir de 587, a colina afunda com Beleriand e o modelo é ocultado. Fora desses períodos, a visita abre em 400 P.E.',
+    '<button type="button" data-acao="menegroth-3d" data-corte="fechado">Ver exterior sem corte</button>',
   );
 }
 
@@ -332,9 +351,10 @@ function detalheNargothrond(): string {
   return detalhe3d(
     'Nargothrond em 3D',
     'Olhe rio acima pela garganta do Narog: fachadas de pedra dourada escavadas em degraus nos paredões, com janelas em arco, cúpulas, torreões e bocas de caverna sob a floresta de Taur-en-Faroth. No primeiro degrau da margem oeste ficam a praça e as Portas de Felagund; diante delas, a ponte de três arcos.',
-    'a garganta em degraus, as fachadas nas duas margens, as cúpulas, as bocas de caverna, as três arcadas da ponte e a forma de Glaurung são interpretativos, compostos a partir de uma ilustração de referência. São descritos as cavernas sob Taur-en-Faroth na margem oeste do Narog, as portas voltadas para o rio, a grande ponte construída a conselho de Túrin e Glaurung diante das portas, onde encontrou Túrin, antes de se deitar sobre o tesouro lá dentro (O Silmarillion, cap. 13 e 21). O marcador do mapa fica a cerca de 3 km do Narog; o modelo é assentado na margem oeste, alinhado ao traçado do rio.',
+    'a garganta em degraus, as fachadas, as cúpulas, as arcadas, a planta dos salões e a forma de Glaurung são interpretações. O Silmarillion (cap. 13 e 21) descreve as cavernas na margem oeste do Narog, as portas voltadas para o rio, a ponte construída a conselho de Túrin e Glaurung deitado sobre o tesouro dos salões.',
     'nargothrond-3d',
     '102–489 P.E.: fachadas iluminadas, sem ponte · c. 490–494: a ponte de Túrin diante das portas (data aproximada) · 495–500: saque; janelas apagadas, edifícios queimados e partidos, Glaurung sobre o ouro diante das portas · a partir de c. 501: o dragão parte para Brethil e o tesouro é levado a Doriath; ruínas tomadas pelo mato. A partir de 587, Nargothrond afunda com Beleriand e o modelo é ocultado. Fora desses períodos, a visita abre em 400 P.E.',
+    '<button type="button" data-acao="nargothrond-3d" data-corte="aberto">Ver salões em corte</button>',
   );
 }
 
@@ -352,7 +372,7 @@ function detalheRomenna(): string {
   return detalhe3d(
     'Rómenna em 3D',
     'Entre no porto pela ponte de três arcos, sustentada por atlantes, ao lado do farol de pedra com o fogo aceso. No fundo da baía, o colosso de Eärendil ergue o braço diante do rochedo, com Elwing no ombro. Viadutos ligam os rochedos cobertos de casas, e o Salão dos Guardas do Mar fica no terraço de ciprestes sobre o cais norte. Os navios têm velas em leque.',
-    'o colosso, o farol, a ponte dos atlantes, os viadutos, as casas e os navios de velas em leque seguem o visual da série Os Anéis de Poder, que os mostra no porto da capital; o atlas os põe em Rómenna, o porto descrito por Tolkien, e nada disso é descrição dele. O marcador de Rómenna no mapa fica cerca de 12 km terra adentro; o modelo é assentado no fundo da baía, onde a costa do atlas encontra o mar. A ilha de Tol Uinen e a torre Calmindon ainda não estão modeladas.',
+    'o colosso, o farol, a ponte dos atlantes, os viadutos, as casas e os navios de velas em leque seguem o visual da série Os Anéis de Poder. O atlas os põe em Rómenna, o porto descrito por Tolkien. O modelo é assentado no fundo da baía.',
     'romenna-3d',
     '32–599 S.E.: barcos de pesca · 600–3309: navios de alto-mar · 3310–3318: os nove navios dos Fiéis (quatro de Elendil, três de Isildur e dois de Anárion). Em 3319 o porto afunda com a ilha. Fora desses períodos, a visita abre em 3000 S.E.',
   );

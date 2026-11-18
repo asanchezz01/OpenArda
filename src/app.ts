@@ -164,6 +164,7 @@ export class App {
     this.oceano = new THREE.Mesh(
       new THREE.SphereGeometry(1, 128, 96),
       new THREE.ShaderMaterial({
+        depthWrite: false,
         uniforms: { uSky: { value: new THREE.Color() }, uSunColor: { value: new THREE.Color() }, uSunDir: { value: new THREE.Vector3() }, uFogColor: { value: new THREE.Color() }, uFogDensity: { value: 0 } },
         vertexShader: /* glsl */ `
           varying vec3 vN; varying float vDist; varying vec3 vV;
@@ -192,6 +193,7 @@ export class App {
       }),
     );
     this.oceano.frustumCulled = false;
+    this.oceano.renderOrder = -1;
     this.oceano.visible = false;
     this.cena.add(this.oceano);
     this.camera.aoToque = (sx, sy) => this.tocar(sx, sy);
@@ -376,6 +378,10 @@ export class App {
   definirExagero(v: number) {
     this.exageroUsuario = v;
     this.emitir('config');
+  }
+
+  definirCorte(sitio: keyof DetalhesReinos['cortes'], aberto: boolean) {
+    this.detalhes.cortes[sitio] = aberto;
   }
 
   definirCamada<K extends keyof Camadas>(k: K, v: Camadas[K]) {
@@ -723,7 +729,7 @@ export class App {
       r.render(this.ceu.cena, this.ceu.camera);
       this.A.sistema.grupo.visible = lado === this.A;
       this.B.sistema.grupo.visible = lado === this.B;
-      this.detalhes.atualizar(lado.t, cam, this.modeloDe(lado), lado.uniformes, this.camadas.detalhes && this.caminhoReto < 0.01, lado.globo);
+      this.detalhes.atualizar(lado.t, cam, this.modeloDe(lado), lado.uniformes, this.camadas.detalhes && this.caminhoReto < 0.01, lado.globo, lado.sistema.assinatura);
       r.clearDepth();
       r.render(this.cena, cam);
     };

@@ -110,6 +110,10 @@ export function criarMenegroth(fase: FaseMenegroth): THREE.Group {
   const colina = new THREE.Mesh(new THREE.LatheGeometry(perfil, 60, (CORTE.ate + 90) * grau, (360 - aberto) * grau).rotateX(Math.PI / 2), rocha);
   colina.name = 'Colina';
   cidade.add(colina);
+  const setor = new THREE.Mesh(new THREE.LatheGeometry(perfil, 24, (CORTE.de + 90) * grau, aberto * grau).rotateX(Math.PI / 2), rocha);
+  setor.name = 'Fecho da colina';
+  setor.visible = false;
+  cidade.add(setor);
   // Faces da seção acima do teto dos salões (abaixo dele, a laje do corte fecha o setor).
   const secao = new THREE.Shape([new THREE.Vector2(0, CORTE.teto), new THREE.Vector2(R_LAJE, CORTE.teto), ...perfil.filter((q) => q.x < R_LAJE).map((q) => new THREE.Vector2(q.x, q.y))]);
   for (const a of [CORTE.de, CORTE.ate]) {

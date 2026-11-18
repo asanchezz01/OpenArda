@@ -402,12 +402,13 @@ export class SistemaTerreno {
     this.mat.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
     this.frustum.setFromProjectionMatrix(this.mat);
     const cam = camera.position;
+    const focoNoGlobo = globo?.ativo ? globo.doMundo(cam) : null;
     const exag = this.uniformes.uExag.value;
     const desejados: No[] = [];
     const visitar = (n: No) => {
       if (!this.naRegiao(n)) return;
       let dist: number;
-      if (globo?.ativo) {
+      if (globo && focoNoGlobo) {
         // no globo, a caixa é a dos cantos e do centro do ladrilho já curvados
         this.box.makeEmpty();
         let algumVisivel = false;
@@ -415,8 +416,16 @@ export class SistemaTerreno {
           for (const h of [-5, 10 * exag + 2]) {
             globo.paraMundo(n.x0 + fx * n.tam, n.y0 + fy * n.tam, h, this.ponto);
             this.box.expandByPoint(this.ponto);
-            if (h > 0 && globo.visivel(this.ponto, cam)) algumVisivel = true;
+            if (h < 0 && globo.visivel(this.ponto, cam)) algumVisivel = true;
           }
+        // A aproximação pode colocar o horizonte inteiro entre as amostras do ladrilho.
+        const x = THREE.MathUtils.clamp(focoNoGlobo.x, n.x0, n.x0 + n.tam);
+        const y = THREE.MathUtils.clamp(focoNoGlobo.y, n.y0, n.y0 + n.tam);
+        globo.paraMundo(x, y, -5, this.ponto);
+        this.box.expandByPoint(this.ponto);
+        algumVisivel ||= globo.visivel(this.ponto, cam);
+        globo.paraMundo(x, y, 10 * exag + 2, this.ponto);
+        this.box.expandByPoint(this.ponto);
         if (n.nivel > 0 && (!algumVisivel || !this.frustum.intersectsBox(this.box))) return;
         dist = this.box.distanceToPoint(cam);
       } else {

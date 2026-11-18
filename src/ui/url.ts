@@ -48,7 +48,7 @@ export function lerLink(hash = location.hash): EstadoLink {
 export function montarLink(app: App): string {
   const s = app.camera.estado;
   const p = new URLSearchParams();
-  p.set('v', [s.x, s.y, s.d, s.rumo, s.inclinacao].map((n) => (Math.abs(n) >= 100 ? n.toFixed(0) : n.toFixed(2))).join(','));
+  p.set('v', [s.x, s.y, s.d, s.rumo, s.inclinacao].map((n) => n.toFixed(s.d < 100 || Math.abs(n) < 100 ? 2 : 0)).join(','));
   if (app.comparando) p.set('c', `${tempo.serializar(app.A.t)}|${tempo.serializar(app.B.t)}`);
   else p.set('t', tempo.serializar(app.t));
   if (app.selecao) p.set('s', app.selecao);

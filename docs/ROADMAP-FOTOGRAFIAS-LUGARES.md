@@ -1,6 +1,6 @@
 # Roadmap — fotografias dos reinos e lugares
 
-Atualizado em **7 de novembro de 2026**. Plano para um **painel de fotografias** no OpenArda: imagens realistas dos reinos, cidades e paisagens, geradas por uma API de criação de imagens a partir das descrições de Tolkien e ligadas à linha do tempo do atlas.
+Atualizado em **18 de novembro de 2026**. Plano para um **painel de fotografias** no OpenArda: imagens realistas dos reinos, cidades e paisagens, geradas por uma API de criação de imagens a partir das descrições de Tolkien e ligadas à linha do tempo do atlas.
 
 ## Objetivo
 
@@ -10,8 +10,8 @@ As imagens são **interpretações geradas por IA**. Elas seguem o que Tolkien d
 
 ## Ponto de partida
 
-- **130 lugares** em [data/lugares.json](../data/lugares.json), muitos com fases (ativo, ruína, destruído, submerso, removido) e campo `aspectos`, que já separa o descrito do artístico.
-- **25 reinos** em [data/reinos.json](../data/reinos.json), cada um com capitais por período.
+- **137 lugares** em [data/lugares.json](../data/lugares.json), muitos com fases (ativo, ruína, destruído, submerso, removido) e campo `aspectos`, que já separa o descrito do artístico.
+- **29 reinos** em [data/reinos.json](../data/reinos.json), cada um com capitais por período.
 - Precedentes no projeto:
   - os retratos ([ROADMAP-RETRATOS-PERSONAGENS.md](ROADMAP-RETRATOS-PERSONAGENS.md)), com o fluxo pesquisa → prompt → geração → WebP → cadastro por ID;
   - a árvore em tela cheia, cujo padrão de camada sobre o mapa serve para a galeria;
@@ -26,7 +26,7 @@ As imagens são **interpretações geradas por IA**. Elas seguem o que Tolkien d
 - as verificações em `scripts/validate-data.mjs`;
 - `tests/fotografias.test.ts`.
 
-O `npm run build` passa com 157 testes. A conferência visual no navegador ficou pendente, porque a automação do navegador estava desconectada.
+Em 18 de novembro de 2026, o fluxo foi conferido no Chrome em 1280 × 800 e em 390 × 844. A revisão por amostragem abriu a fotografia de Gondolin em tela cheia e verificou a troca da cidade íntegra para a imagem da queda na linha do tempo.
 
 **Geração:** feita com `scripts/gerar-fotografias.py`, pelo mesmo caminho do projeto HopeGym:
 - **Motor local:** ComfyUI em `10.1.4.150`, portas 8188 e 8189 (uma GPU cada), com FLUX.2 klein 9B. Foram cerca de 10 s por imagem, e 32 imagens no total, incluindo as refeitas.
@@ -83,7 +83,7 @@ As etapas indicam prioridade, sem datas prometidas. Cada etapa é produzida em l
 
 | Etapa | Escopo | Fotos | Total | Situação |
 | --- | --- | ---: | ---: | --- |
-| 1 | Painel + vitrine: os lugares mais conhecidos, uma época cada | 8 | 8 | **Entregue**: 8 fotos aprovadas e integradas; conferência no navegador pendente |
+| 1 | Painel + vitrine: os lugares mais conhecidos, uma época cada | 8 | 8 | **Entregue**: 8 fotos aprovadas e integradas, com o visualizador conferido no Chrome |
 | 2 | Antes e depois: os mesmos lugares em outras fases | 12 | 20 | **Entregue** |
 | 3 | Beleriand e a Primeira Era | 12 | 32 | **Entregue** |
 | 4 | Aman e Númenor | 10 | 42 | **Entregue** |
@@ -459,4 +459,4 @@ Florestas, cordilheiras, mares e regiões que hoje só existem como áreas no ma
 
 ## Limites deste roadmap
 
-As seis etapas estão entregues: 75 fotos de 75 lugares e épocas. As fontes foram indicadas a partir de conhecimento prévio das obras e índices, e precisam de cotejo com as edições. Fotos mais fracas, como Valfenda, podem ser refeitas com `refazer` e `aprovar` sem mexer no código. As fontes listadas foram indicadas a partir de conhecimento prévio das obras e índices; não equivalem a consulta direta ao livro. Custo e prazo dependem da API escolhida e são medidos no primeiro lote.
+As seis etapas somam 75 fotografias aprovadas e integradas. As fontes foram indicadas a partir de conhecimento prévio e índices. O cotejo direto das edições permanece aberto. Valfenda continua candidata a revisão artística em uma rodada futura.
