@@ -1988,7 +1988,7 @@ details summary {
   margin-bottom: 6px;
 }
 .geracao > .nota {
-  width: 56px;
+  width: 82px;
   flex: none;
 }
 .chips {
@@ -2060,6 +2060,56 @@ details summary {
 .arvore {
   width: max-content;
   min-width: 100%;
+}
+.arvore-pais {
+  --vao-pais: 10px;
+  display: flex;
+  justify-content: center;
+  gap: var(--vao-pais);
+}
+.arvore-genitor {
+  position: relative;
+  width: min(156px, 41vw);
+  padding: 5px 8px;
+  background: var(--fundo-claro);
+  border: 1px solid var(--linha);
+  border-top-color: var(--povo, var(--linha));
+  border-radius: 8px;
+}
+.arvore-genitor-acoes {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.arvore-genitor-acoes .pessoa-nome {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.arvore-genitor:not(:only-child)::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  width: calc(50% + var(--vao-pais) / 2 + 1px);
+  height: 12px;
+  border-bottom: 1px solid var(--linha);
+}
+.arvore-genitor:first-child::after {
+  left: 50%;
+  border-left: 1px solid var(--linha);
+}
+.arvore-genitor:last-child::after {
+  right: 50%;
+  border-right: 1px solid var(--linha);
+}
+.arvore-pais:has(.arvore-genitor:nth-child(2)) + .arvore-ligacao-pais { padding-top: 12px; }
+.arvore-ligacao-pais {
+  display: flex;
+  justify-content: center;
+}
+.arvore-ligacao-pais:empty::before {
+  content: '';
+  height: 16px;
+  border-left: 1px solid var(--linha);
 }
 .arvore ul {
   display: flex;
@@ -2392,6 +2442,7 @@ details summary {
   max-height: 22vh;
   overflow: auto;
 }
+.arvore-tela-asc summary { cursor: pointer; }
 #arvore-tela .legenda-povos {
   flex: none;
   margin: 0;
@@ -2416,6 +2467,7 @@ details summary {
     height: 44px;
   }
   .mini, .abrir-arvore { min-width: 44px; min-height: 44px; }
+  .arvore-genitor-acoes .pessoa-nome { min-height: 44px; }
 }
 
 /* ---------- fotografias dos lugares ---------- */

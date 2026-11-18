@@ -225,15 +225,33 @@ function chip(id: string, tag = ''): string {
   return `<button type="button" class="chip-pessoa povo-${p.povo}" data-acao="sel" data-sel="linhagem:${esc(id)}"><i class="povo-sinal" aria-hidden="true"></i>${nome(id)}${tag ? ` <em>${esc(tag)}</em>` : ''}</button>`;
 }
 
-function htmlAscendencia(id: string): string {
+function htmlAscendencia(id: string, inicio = 0): string {
   const asc = ascendencia(id);
   const ROT = ['Pais', 'Avós', 'Bisavós'];
-  if (!asc.length) return `<p class="nota">As fontes registradas não nomeiam os pais de ${nome(id)}.</p>`;
+  if (!asc.length && inicio === 0) return `<p class="nota">As fontes registradas não nomeiam os pais de ${nome(id)}.</p>`;
   return asc
-    .map((casais, i) => ({ casais, rot: ROT[i] }))
+    .map((casais, i) => ({ casais, rot: asc.slice(0, i + 1).some((grupo) => grupo.some((c) => c.elo)) ? 'Ascendentes' : ROT[i] }))
+    .slice(inicio)
     .reverse()
     .map(({ casais, rot }) => `<div class="geracao"><span class="nota">${rot}</span><div class="chips">${casais.map((c) => `<span class="casal">${c.pais.map((q) => chip(q)).join('<i>e</i>')}${c.elo ? `<span class="nota">… ${esc(c.elo)}</span>` : ''}</span>`).join('')}</div></div>`)
     .join('');
+}
+
+function arvoreFamilia(app: App, p: Pessoa, profundidade = PROFUNDIDADE): string {
+  const pais = p.pais ?? [];
+  const asc = pais.map((id, i) => {
+    const q = pessoaPorId.get(id)!;
+    const rotulo = i === 0 && p.elo ? 'Ascendente' : q.povo === 'ainu' ? 'Criador' : q.fem ? 'Mãe' : 'Pai';
+    return `<div class="arvore-genitor povo-${q.povo}">
+      <span class="nota">${rotulo}</span>
+      <div class="arvore-genitor-acoes">${abrir(id, nome(id), 'pessoa-nome')}${botaoArvore(id)}</div>
+    </div>`;
+  }).join('');
+  return `<div class="arvore">
+    ${asc ? `<div class="arvore-pais" role="group" aria-label="Ascendência de ${nome(p.id)}">${asc}</div>
+      <div class="arvore-ligacao-pais">${p.elo ? `<div class="elo">${esc(p.elo)}</div>` : ''}</div>` : ''}
+    <ul>${no(app, p.id, p.id, 0, null, profundidade)}</ul>
+  </div>`;
 }
 
 const legendaPovos = () => `<ul class="legenda-povos">${Object.entries(NOME_POVO).map(([k, v]) => `<li class="povo-${k}"><i class="povo-sinal" aria-hidden="true"></i>${v}</li>`).join('')}</ul>`;
@@ -256,15 +274,17 @@ export function htmlArvoreTela(app: App, id: string): string {
   const p = pessoaPorId.get(id);
   if (!p) return '';
   const r = retratoDe(id);
+  const anteriores = htmlAscendencia(id, 1);
   return `<header class="arvore-tela-cab">
       ${r ? foto(id, 56) : ''}
       <div class="arvore-tela-titulo"><p class="tipo">Árvore genealógica · ${esc(NOME_POVO[p.povo])} · ${esc(tempo.rotulo(app.t).principal)}</p><h2 id="arvore-tela-nome">${esc(p.nome)}</h2>${p.epiteto ? `<p class="outros">${esc(p.epiteto)}</p>` : ''}</div>
       <button type="button" class="fechar" data-fechar-arvore aria-label="Fechar árvore genealógica (Esc)">×</button>
     </header>
-    <div class="arvore-tela-asc">${htmlAscendencia(id)}</div>
+    ${anteriores ? `<details class="arvore-tela-asc"><summary>Gerações anteriores</summary>${anteriores}</details>` : ''}
+    ${!p.pais?.length ? htmlAscendencia(id) : ''}
     ${blocosFamilia(id)}
     ${legendaPovos()}
-    <div class="arvore-rolagem arvore-tela-rolagem"><div class="arvore"><ul>${no(app, id, id, 0, null, 6)}</ul></div></div>
+    <div class="arvore-rolagem arvore-tela-rolagem">${arvoreFamilia(app, p, 6)}</div>
     <p class="nota arvore-tela-nota">Toque num nome para abrir a ficha completa do personagem. Use o ícone de árvore para explorar a família dele. A coroa marca quem governa em ${esc(tempo.rotulo(app.t).principal)}.</p>`;
 }
 
@@ -295,9 +315,9 @@ export function fichaLinhagem(app: App, id: string): string {
     <section class="bloco"><h3>Ascendência</h3>${htmlAscendencia(id)}</section>
     ${irmaos.length ? `<section class="bloco"><h3>Irmãos</h3><div class="chips">${irmaos.map(({ p: x, meio }) => chip(x.id, meio ? (x.fem ? 'meia-irmã' : 'meio-irmão') : '')).join('')}</div></section>` : ''}
     ${blocosFamilia(id)}
-    <section class="bloco"><h3>Descendência</h3>
+    <section class="bloco"><h3>Árvore genealógica</h3>
       ${legendaPovos()}
-      <div class="arvore-rolagem"><div class="arvore"><ul>${no(app, id, id, 0, null)}</ul></div></div>
+      <div class="arvore-rolagem">${arvoreFamilia(app, p)}</div>
       <p class="nota">A coroa marca quem governa em ${esc(tempo.rotulo(t).principal)}. Mova a linha do tempo para ver a sucessão mudar.</p>
     </section>
     <section class="bloco"><h3>Fontes</h3>${listaFontes(p.fontes)}</section>

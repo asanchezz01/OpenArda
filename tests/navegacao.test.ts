@@ -361,9 +361,37 @@ describe('fichas, telas cheias e jornadas', () => {
     expect(document.activeElement).toBe(gatilho);
   });
 
+  it('conecta pai e mãe ao personagem no diagrama da ficha e da árvore em tela cheia', () => {
+    ui.abrir('linhagem:faramir');
+    const verificarPais = (raiz: string) => {
+      const pais = el(`${raiz} .arvore-pais`);
+      expect(pais.getAttribute('aria-label')).toBe('Ascendência de Faramir');
+      expect(pais.querySelector('[data-sel="linhagem:denethor"]')?.closest('.arvore-genitor')?.querySelector('.nota')?.textContent).toBe('Pai');
+      expect(pais.querySelector('[data-sel="linhagem:finduilas-dol-amroth"]')?.closest('.arvore-genitor')?.querySelector('.nota')?.textContent).toBe('Mãe');
+      expect(pais.closest('.arvore')?.querySelector('.pessoa.foco [data-sel="linhagem:faramir"]')).toBeTruthy();
+    };
+    verificarPais('#painel');
+    el('#painel [data-acao="arvore-tela"]').click();
+    verificarPais('#arvore-tela');
+    el('#arvore-tela .arvore-genitor [data-acao="arvore-tela"][data-id="denethor"]').click();
+    expect(el('#arvore-tela-nome').textContent).toBe('Denethor II');
+  });
+
+  it.each([
+    ['legolas', 'thranduil', 'Pai'],
+    ['thengel', 'frealaf', 'Ascendente'],
+  ])('exibe apenas a relação registrada entre %s e %s', (id, genitor, rotulo) => {
+    ui.executar('arvore-tela', { id });
+    const pais = el('#arvore-tela .arvore-pais');
+    expect(pais.querySelectorAll('.arvore-genitor')).toHaveLength(1);
+    expect(pais.querySelector('.pessoa-nome')?.getAttribute('data-sel')).toBe(`linhagem:${genitor}`);
+    expect(pais.querySelector('.nota')?.textContent).toBe(rotulo);
+    if (rotulo === 'Ascendente') expect(el('#arvore-tela .arvore-ligacao-pais').textContent).toContain('via Brytta');
+  });
+
   it.each([
     ['maedhros', '.pessoa-nome'],
-    ['finwe', '.chip-pessoa'],
+    ['finwe', '.arvore-genitor .pessoa-nome'],
     ['nerdanel', '.conjuge button'],
   ])('abre a ficha completa de %s ao clicar no nome da árvore em tela cheia', (id, seletor) => {
     ui.abrir('linhagem:feanor');
@@ -381,7 +409,7 @@ describe('fichas, telas cheias e jornadas', () => {
     for (const dado of [pessoa.epiteto, pessoa.datas].filter(Boolean)) expect(el('#painel').textContent).toContain(dado);
     expect(el('#painel .tipo').textContent).toContain('Personagem');
     const secoes = [...document.querySelectorAll('#painel h3')].map((h) => h.textContent);
-    expect(secoes).toEqual(expect.arrayContaining(['Reinos que governou', 'Ascendência', 'Descendência', 'Fontes']));
+    expect(secoes).toEqual(expect.arrayContaining(['Reinos que governou', 'Ascendência', 'Árvore genealógica', 'Fontes']));
     expect(document.activeElement).toBe(el('.painel-conteudo'));
     el<HTMLButtonElement>('[data-acao="voltar-ficha"]').click();
     expect(el('#painel h2').textContent).toBe('Fëanor');
