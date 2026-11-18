@@ -9,6 +9,7 @@ import { criarGondolin } from './gondolin';
 import { criarMinasTirith } from './minas-tirith';
 import { criarEdoras } from './edoras';
 import { criarArmenelos, criarRomenna } from './numenor';
+import { criarAndunie, criarEldalonde, criarEmerie, criarHyarastorni, criarNindamos, criarNoirinan } from './numenor-assentamentos';
 import { criarMenegroth } from './menegroth';
 import { criarNargothrond } from './nargothrond';
 import { criarArmada, criarCalmindon, criarCapitalNorte, criarFortaleza, criarOsgiliath, criarOstInEdhil, criarPorto, criarTirion, criarValmar } from './cidades';
@@ -37,7 +38,12 @@ const ARQUITETURA: Record<string, Sitio['criar']> = {
   'minas-ithil': (f) => criarFortaleza('Minas Ithil', f),
   'abismo-de-helm': criarAbismo,
   meneltarma: (_f, terreno, em, h) => criarMeneltarma(terreno, em, h),
-  andunie: () => criarPorto('Andúnië', 0, false),
+  andunie: criarAndunie,
+  eldalonde: criarEldalonde,
+  nindamos: criarNindamos,
+  emerie: criarEmerie,
+  hyarastorni: criarHyarastorni,
+  noirinan: criarNoirinan,
   'grande-armada': criarArmada,
   'tol-uinen': criarCalmindon,
   'orfalch-echor': criarOrfalch,
@@ -70,7 +76,7 @@ const SITIOS: Sitio[] = [
   ...NOVAS_VISITAS.map(({ lugar, em, agua, raio, vista, fase }): Sitio => ({
     lugar, em, agua, raio: raio ?? 0, fase, criar: ARQUITETURA[lugar.id], profundos: [],
     folga: agua ? 0 : 0.006, alcance: Math.max(14, vista.d * 2.6),
-    segueTerreno: ['meneltarma', 'orfalch-echor', 'rammas-echor', 'cinturao-melian'].includes(lugar.id),
+    segueTerreno: ['meneltarma', 'emerie', 'hyarastorni', 'noirinan', 'orfalch-echor', 'rammas-echor', 'cinturao-melian'].includes(lugar.id),
   })),
 ];
 

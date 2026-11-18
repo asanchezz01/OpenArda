@@ -1,6 +1,6 @@
 # Roadmap — detalhes dos reinos em 3D
 
-O objetivo é aproximar a câmera de um reino e reconhecer sua arquitetura, suas cidades e suas transformações ao longo do tempo. A camada **Detalhes dos reinos em 3D** complementa as fronteiras políticas e o relevo do atlas. Cada reino começa por uma cidade ou fortaleza representativa. Em 18 de novembro de 2026, os 14 grupos do plano passaram a ter visitas iniciais. O menu **Visitas em 3D** tem 31 entradas, incluindo o panorama de Tumladen.
+O objetivo é aproximar a câmera de um reino e reconhecer sua arquitetura, suas cidades e suas transformações ao longo do tempo. A camada **Detalhes dos reinos em 3D** complementa as fronteiras políticas e o relevo do atlas. Cada reino começa por uma cidade ou fortaleza representativa. Em 18 de novembro de 2026, os 14 grupos do plano passaram a ter visitas iniciais. O menu **Visitas em 3D** tem 36 entradas, incluindo o panorama de Tumladen.
 
 ## Primeira entrega: Gondolin
 
@@ -127,6 +127,17 @@ As fronteiras vêm das novas fases de `armenelos` e `romenna` em `data/lugares.j
 
 O Meneltarma ganhou uma estrada em espiral que acompanha o relevo até o cume aberto, com a [fotografia do Meneltarma em 3000 S.E.](../public/fotografias/meneltarma-se3000.webp) na ficha. Andúnië ganhou um cais, com uma visita independente à Grande Armada de 3310 a 3318 S.E. A posição da frota ao largo do porto é ilustrativa. Calmindon fica numa ilhota de Tol Uinen. Os marcadores de Rómenna e Andúnië foram alinhados à implantação dos portos, com as estradas e rotas conectadas.
 
+### Cidades costeiras e edificações do interior
+
+As fotografias de Rómenna e Armenelos orientaram a cantaria clara, os cais em degraus, os volumes escalonados e os telhados. Os relatos de *Contos Inacabados* orientaram a função e a implantação de cada sítio. As plantas, as dimensões e os ornamentos são interpretações do atlas. [Rómenna](../public/fotografias/romenna-se3000.webp) · [Armenelos](../public/fotografias/armenelos-se3000.webp)
+
+- **Andúnië** ganhou armazéns à beira-mar, bairros em terraços e um solar no alto. O solar aparece em 630 S.E., quando é criado o título de Senhor de Andúnië. [Andúnië](https://tolkiengateway.net/wiki/And%C3%BAni%C3%AB)
+- **Eldalondë e Nindamos** ganharam cais nas fozes do Nunduinë e do Siril. Eldalondë tem um pórtico entre as árvores de Nísimaldar e barcos de Eressëa. Nindamos é uma aldeia de pescadores com passadiços. A fase de Eldalondë a partir de 2251 S.E. representa o afastamento dos Eldar. [Eldalondë](https://tolkiengateway.net/wiki/Eldalond%C3%AB) · [Nindamos](https://tolkiengateway.net/wiki/Nindamos)
+- **Emerië e Hyarastorni** mostram a Casa Branca de Erendis e a casa de Hallatan, com pastagens do Mittalmar. A maquete usa 882 S.E., ano em que Aldarion visita as duas propriedades, como início da visita. A ficha de Hyarastorni foi corrigida para situá-la no Mittalmar. [Emerië](https://tolkiengateway.net/wiki/Emeri%C3%AB) · [Hyarastorni](https://tolkiengateway.net/wiki/Hyarastorni)
+- **Noirinan** mostra entradas dos túmulos reais escavadas na rocha ao pé do Meneltarma. A visita usa a morte de Elros, em 442 S.E., como início. [Noirinan](https://tolkiengateway.net/wiki/Noirinan)
+
+As visitas estão no menu **Visitas em 3D** e na ficha da ilha. As edificações deixam de aparecer na Queda de Númenor, em 3319 S.E.
+
 ## Quinta entrega: Doriath — Menegroth
 
 **Implementado nesta versão:** as Mil Cavernas de Thingol e Melian, numa colina rochosa da floresta de faias, na margem sul do Esgalduin. O exterior segue a fotografia aprovada [A entrada de Menegroth](../public/fotografias/menegroth-pe400.webp): uma única ponte de pedra em arco sobre o rio, o caminho calçado e o portal cavado na encosta, com faias e colunas em relevo, portas de madeira e degraus. A colina tem topo musgoso, afloramentos de rocha e árvores.
@@ -194,7 +205,7 @@ A ficha alterna a garganta e os salões em corte. O interior usa uma planta art�
 | 1 | Gondolin | Panorama de Tumladen, cidade e pontos de interesse, Orfalch Echor e os sete portões. |
 | 2 | Gondor | Minas Tirith, Osgiliath, Rammas Echor e Minas Ithil/Minas Morgul. |
 | 3 | Rohan | Edoras e Abismo de Helm, com o Muro de Helm e a entrada de Aglarond. |
-| 4 | Númenor | Armenelos, Rómenna, Tol Uinen, Meneltarma, Andúnië e Grande Armada. |
+| 4 | Númenor | Armenelos, Rómenna, Tol Uinen, Meneltarma, Andúnië, Eldalondë, Nindamos, Emerië, Hyarastorni, Noirinan e Grande Armada. |
 | 5 | Doriath | Menegroth em corte ou pelo exterior e Cinturão de Melian até c. 503 P.E. |
 | 6 | Nargothrond | Garganta, Portas de Felagund, ponte, Glaurung e salões em corte. |
 | 7 | Lindon e Eregion | Mithlond com cais e estaleiro. Ost-in-Edhil com oficinas élficas e ruínas de 1697 S.E. em diante. |

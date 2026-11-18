@@ -6,6 +6,7 @@ import { estadoTerreno, lugarPorId, reinoPorId, tempo, terreno } from '../src/co
 import { COLINA_MENEGROTH, MARGEM_NARGOTHROND, VISTA_TUMLADEN, faseTumladen } from '../src/core/detalhes';
 import { NOVAS_VISITAS, PORTOES_ECHOR } from '../src/core/visitas';
 import { DetalhesReinos } from '../src/render/detalhes';
+import { casco } from '../src/render/oficina';
 import { criarUniformesGlobais } from '../src/terrain/material';
 import { ModeloTerreno } from '../src/terrain/model';
 import { fichaLugar, fichaReino } from '../src/ui/fichas';
@@ -112,6 +113,68 @@ describe('expansão dos reinos em 3D', () => {
         expect(local(x + 0.09, 0.17)).toBeLessThan(0);
         expect(local(x, -0.28)).toBeGreaterThan(0);
       }
+    }
+  });
+
+  it.each([
+    ['eldalonde', 'rio-nunduine', 1.22, [-0.37, 0.24], [-0.50, -0.265]],
+    ['nindamos', 'rio-siril', Math.PI, [-0.481, 0.21], [-0.56, -0.21]],
+  ] as const)('alinha %s à foz e mantém barcos na água e edificações em terra', (id, rio, giro, barco, casa) => {
+    const v = destino(id), m = relevo(tempo.cursor(v.padrao));
+    const local = ([x, y]: readonly [number, number]) => m.distCosta(v.vista.x + x * Math.cos(giro) - y * Math.sin(giro), v.vista.y + x * Math.sin(giro) + y * Math.cos(giro));
+    expect(local(barco)).toBeLessThan(0);
+    expect(local(casa)).toBeGreaterThan(0);
+    expect(m.distCosta(...v.lugar.em)).toBeGreaterThan(0);
+    expect(Math.hypot(v.lugar.em[0] - v.vista.x, v.lugar.em[1] - v.vista.y)).toBeLessThan(0.25);
+    const pontos = terreno.feicoes.find((f) => f.id === rio)!.pts!;
+    const [inicio, fim] = pontos.slice(-2);
+    const a = new THREE.Vector3(...inicio, 0), b = new THREE.Vector3(...fim, 0);
+    const cais = new THREE.Vector3(v.vista.x, v.vista.y, 0);
+    expect(new THREE.Line3(a, b).closestPointToPoint(cais, true, new THREE.Vector3()).distanceTo(cais)).toBeLessThan(0.15);
+  });
+
+  it('mantém os cais de Eldalondë e muda as embarcações depois da divisão', () => {
+    const v = destino('eldalonde'), camada = new DetalhesReinos();
+    const barcos = (modelo: THREE.Group) => {
+      let n = 0;
+      modelo.traverse((obj) => { if (obj instanceof THREE.InstancedMesh && obj.geometry === casco) n += obj.count; });
+      return n;
+    };
+    expect(barcos(atualizar(camada, v, 'SE:2250')!)).toBe(3);
+    const tarde = atualizar(camada, v, 'SE:2251')!;
+    expect(barcos(tarde)).toBe(1);
+    expect(tarde.getObjectByName('Cais dos Eldar')).toBeDefined();
+  });
+
+  it('mostra o solar de Andúnië a partir da criação do senhorio', () => {
+    const v = destino('andunie'), camada = new DetalhesReinos();
+    const antes = atualizar(camada, v, 'SE:629')!;
+    const depois = atualizar(camada, v, 'SE:630')!;
+    expect(antes.getObjectByName('Cais e armazéns de Andúnië')).toBeDefined();
+    expect(antes.getObjectByName('Solar dos Senhores de Andúnië')).toBeUndefined();
+    expect(depois.getObjectByName('Solar dos Senhores de Andúnië')).toBeDefined();
+  });
+
+  it.each([
+    ['emerie', 'SE:881', 'Casa Branca de Erendis'],
+    ['hyarastorni', 'SE:881', 'Casa de Hallatan'],
+    ['noirinan', 'SE:441', 'Sepultura de Elros'],
+  ])('assenta %s no relevo e respeita o período de visita', (id, antes, nome) => {
+    const v = destino(id), camada = new DetalhesReinos();
+    expect(atualizar(camada, v, antes)).toBeUndefined();
+    const g = atualizar(camada, v, v.padrao, 5)!;
+    const edificio = g.getObjectByName(nome)!;
+    expect(edificio.getWorldScale(new THREE.Vector3()).z).toBeCloseTo(1);
+    expect(edificio.getWorldPosition(new THREE.Vector3()).z).toBeCloseTo(relevo(tempo.cursor(v.padrao)).altura(v.vista.x, v.vista.y) * 5 + 0.006);
+    expect(v.fase(tempo.cursor('SE:3319'))).toBeNull();
+  });
+
+  it('oferece todas as novas edificações na ficha da ilha e oculta os portos depois da Queda', () => {
+    const ficha = fichaLugar({ t: tempo.cursor('SE:3000') } as App, lugarPorId.get('numenor')!);
+    for (const id of ['andunie', 'eldalonde', 'nindamos', 'emerie', 'hyarastorni', 'noirinan']) {
+      expect(ficha).toContain(`data-acao="visitar-3d" data-id="${id}"`);
+      expect(destino(id).fase(tempo.cursor('SE:3318'))).toBeTruthy();
+      expect(destino(id).fase(tempo.cursor('SE:3319'))).toBeNull();
     }
   });
 

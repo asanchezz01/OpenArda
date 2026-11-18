@@ -1,5 +1,5 @@
-import { faseAtual, feicaoPorId, lugarPorId, statusLugar } from './data';
-import type { Lugar, Pt, Vista } from './types';
+import { faseAtual, feicaoPorId, lugarPorId, statusLugar, tempo } from './data';
+import type { Lugar, Pt, TempoRef, Vista } from './types';
 
 interface Destino3d {
   id: string;
@@ -8,6 +8,7 @@ interface Destino3d {
   em?: Pt;
   raio?: number;
   agua?: boolean;
+  inicio?: TempoRef;
   fases?: Record<string, string>;
   texto: string;
   ressalva: string;
@@ -31,9 +32,26 @@ const destinos: Destino3d[] = [
   { id: 'meneltarma', padrao: 'SE:3000', vista: [29, 310, 63],
     texto: 'A estrada sobe em espiral até o santuário de Eru, uma clareira aberta ao céu no cume.',
     ressalva: 'A estrada em espiral e o cume aberto seguem Contos Inacabados. O percurso exato, a largura da estrada e a altitude são interpretações do atlas.' },
-  { id: 'andunie', padrao: 'SE:3000', em: [-2564.87, -574.77], vista: [2.6, 175, 65], agua: true,
-    texto: 'Cais, armazéns e embarcações no porto ocidental dos Senhores de Andúnië. O porto desaparece na Queda de Númenor.',
-    ressalva: 'O porto no Andustar é documentado. A implantação local, os edifícios e as embarcações são interpretativos.' },
+  { id: 'andunie', padrao: 'SE:3000', em: [-2564.87, -574.77], vista: [2.9, 174, 62], agua: true,
+    fases: { 'SE:32': 'porto', 'SE:630': 'senhorio' },
+    texto: 'Cais e armazéns de cantaria ao pé de três terraços. A partir de 630 S.E., o solar dos Senhores de Andúnië aparece no alto da encosta.',
+    ressalva: 'Contos Inacabados descreve as habitações na encosta. O solar, os cais e as fachadas foram reconstruídos artisticamente com referências das fotografias do atlas.' },
+  { id: 'eldalonde', padrao: 'SE:1200', em: [-2453.94, -771.25], vista: [2.4, 245, 67], agua: true,
+    fases: { 'SE:32': 'eldar', 'SE:2251': 'sombra' },
+    texto: 'O porto fica na foz do Nunduinë, entre as árvores perfumadas de Nísimaldar. Na fase inicial, veleiros claros representam as visitas de Eressëa.',
+    ressalva: 'O porto e as árvores vêm de Contos Inacabados. A maquete usa 2251 S.E., ano da divisão dos Númenóreanos no atlas, para representar o afastamento dos Eldar. Pórtico, cais e embarcações são interpretações.' },
+  { id: 'nindamos', padrao: 'SE:3000', em: [-2208, -932.77], vista: [1.9, 23, 65], agua: true,
+    texto: 'Uma aldeia de pescadores ocupa os baixios da foz do Siril, com casas baixas, passadiços e pequenas embarcações.',
+    ressalva: 'Contos Inacabados situa a aldeia junto aos pântanos do Siril. As estacas, os telhados e a distribuição das casas são interpretações.' },
+  { id: 'emerie', padrao: 'SE:882', inicio: 'SE:882', vista: [1.12, 15, 61],
+    texto: 'A Casa Branca de Erendis fica entre pastagens. Um redil recorda os rebanhos do Mittalmar e a juventude de Ancalimë.',
+    ressalva: 'A casa e os rebanhos vêm de Aldarion e Erendis. O atlas usa o ano da visita de Aldarion como primeira data da maquete. A planta e o alpendre são interpretações.' },
+  { id: 'hyarastorni', padrao: 'SE:882', inicio: 'SE:882', vista: [1.5, 5, 60],
+    texto: 'A propriedade de Hallatan reúne a casa principal, anexos rurais e muros baixos de pastagem no Mittalmar.',
+    ressalva: 'A visita de Aldarion à casa de Hallatan é narrada em Aldarion e Erendis, em 882 S.E. A posição, a planta e os celeiros são interpretações.' },
+  { id: 'noirinan', padrao: 'SE:3000', inicio: '#se-elros', vista: [2.45, 0, 66],
+    texto: 'Entradas funerárias abrem-se na rocha ao pé do Meneltarma, com uma sepultura em destaque dedicada a Elros.',
+    ressalva: 'Contos Inacabados situa os túmulos reais escavados na rocha. A data inicial usa a morte de Elros. A quantidade, a posição das aberturas e a cantaria são interpretações.' },
   { id: 'grande-armada', padrao: 'SE:3318', vista: [3.4, 215, 64], agua: true,
     texto: 'Navios da Grande Armada se reúnem ao largo do oeste de Númenor, antes da partida para Aman.',
     ressalva: 'A preparação da frota é descrita na Akallabêth. O ponto de reunião, os navios e sua quantidade são escolhas artísticas.' },
@@ -96,7 +114,8 @@ export const NOVAS_VISITAS = destinos.map((d) => {
   const [x, y] = d.em ?? lugar.em;
   const [distancia, rumo, inclinacao] = d.vista;
   const vista: Vista = { x, y, d: distancia, rumo, inclinacao };
-  return { ...d, lugar, vista, fase: (t: number) => faseVisita(lugar, d.fases, t) };
+  const inicio = tempo.fronteira(d.inicio, -Infinity);
+  return { ...d, lugar, vista, fase: (t: number) => t < inicio ? null : faseVisita(lugar, d.fases, t) };
 });
 
 const trecho = feicaoPorId.get('orfalch-echor')!.pts!;
