@@ -4,6 +4,7 @@ import type { App } from '../src/app';
 import { eras, jornadas, tempo } from '../src/core/data';
 import { pessoaPorId } from '../src/core/linhagens';
 import { Interface } from '../src/ui/interface';
+import { montarListaLugares } from '../src/ui/lugares';
 import { norm } from '../src/ui/util';
 
 let ui: Interface;
@@ -179,6 +180,56 @@ describe('busca e menu', () => {
     el<HTMLButtonElement>('#btn-camadas').click();
     el<HTMLButtonElement>('#camadas [data-acao="fontes"]').click();
     expect(document.activeElement).toBe(el('.painel-conteudo'));
+  });
+});
+
+describe('lugares por era', () => {
+  it('mostra a mudança de estado de Númenor e abre a ficha na data consultada', () => {
+    el('#btn-camadas').click();
+    el('[data-acao="lugares"]').click();
+    const painel = el<HTMLDialogElement>('#lugares-tela');
+    expect(painel.open).toBe(true);
+    const era = el<HTMLSelectElement>('#lugares-tela [name="era"]');
+    era.value = 'SE';
+    era.dispatchEvent(new Event('change'));
+    const busca = el<HTMLInputElement>('#lugares-tela input[type="search"]');
+    busca.value = 'numenor';
+    busca.dispatchEvent(new Event('input'));
+    const botao = el<HTMLButtonElement>('#lugares-tela [data-lugar="numenor"]');
+    expect(botao.closest('details')!.textContent).toContain('Existe nesta época');
+
+    const ano = el<HTMLInputElement>('#lugares-tela [name="ano"]');
+    ano.value = '3319';
+    el('#lugares-tela button[type="submit"]').click();
+    const visitar = el<HTMLButtonElement>('#lugares-tela [data-lugar="numenor"]');
+    const ficha = visitar.closest('details')!;
+    expect(ficha.textContent).toContain('Submerso');
+    expect(app.definirTempo).not.toHaveBeenCalled();
+    ficha.querySelector('summary')!.click();
+    visitar.click();
+    expect(painel.open).toBe(false);
+    expect(app.definirTempo).toHaveBeenCalledWith(tempo.cursor('SE:3319'));
+    expect(el('#painel h2').textContent).toBe('Númenor');
+  });
+
+  it('oferece a sequência de acontecimentos e o resumo do lugar sem mapa', () => {
+    const raiz = document.createElement('main');
+    montarListaLugares(raiz, tempo.cursor('#al-almaren'));
+    const era = raiz.querySelector<HTMLSelectElement>('[name="era"]')!;
+    expect(era.value).toBe('AL');
+    expect(raiz.querySelector('[name="ano"]')).toBeNull();
+    const acontecimento = raiz.querySelector<HTMLSelectElement>('[name="acontecimento"]')!;
+    expect(acontecimento.selectedOptions[0].textContent).toContain('Almaren');
+    const busca = raiz.querySelector<HTMLInputElement>('input[type="search"]')!;
+    busca.value = 'Almaren';
+    busca.dispatchEvent(new Event('input'));
+    expect(raiz.querySelector('summary')!.textContent).toContain('Almaren');
+    expect(raiz.querySelector('details p')!.textContent).toBeTruthy();
+    expect(raiz.querySelector('[data-lugar]')).toBeNull();
+    acontecimento.value = String(tempo.cursor('#al-queda-lampadas'));
+    acontecimento.dispatchEvent(new Event('change', { bubbles: true }));
+    expect(raiz.querySelector('summary')!.textContent).toContain('Destruído');
+    expect(raiz.querySelector('details')!.textContent).toContain('Destruída na queda das Lâmpadas.');
   });
 });
 

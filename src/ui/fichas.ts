@@ -103,7 +103,7 @@ function vistaAttrs(l: { em: [number, number]; vista?: Partial<{ d: number; rumo
   return `data-x="${l.em[0]}" data-y="${l.em[1]}" data-d="${v.d ?? padraoD}" data-rumo="${v.rumo ?? ''}" data-inclinacao="${v.inclinacao ?? ''}"`;
 }
 
-function statusChip(st: StatusLugar | 'futuro' | 'ausente', nota?: string) {
+export function statusChip(st: StatusLugar | 'futuro' | 'ausente', nota?: string) {
   return `<span class="chip st-${st}">${esc(NOME_STATUS[st] ?? st)}</span>${nota ? ` <span class="nota">${esc(nota)}</span>` : ''}`;
 }
 

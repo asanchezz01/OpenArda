@@ -8,6 +8,7 @@ import { LinhaTempo } from './linha';
 import { fichaAqui, fichaEvento, fichaFonte, fichaFontes, fichaLugar, fichaMarco, fichaReino } from './fichas';
 import { fichaLinhagem, fichaSenhorios, fichaValar, htmlArvoreTela, htmlRetrato } from './linhagens';
 import { htmlPainelFotos, htmlVisualizador } from './fotografias';
+import { montarListaLugares } from './lugares';
 import { esc, guardar, h, ler, listaFontes } from './util';
 import { lerLink, montarLink } from './url';
 import { regimeDe } from '../render/lighting';
@@ -45,6 +46,7 @@ export class Interface {
   private arvoreTelaId = '';
   private arvoreTelaFocoAntes: HTMLElement | null = null;
   private fotosTela!: HTMLDialogElement;
+  private lugaresTela!: HTMLDialogElement;
   /** '' fechado; 'painel' na grade; ou o id da foto aberta no visualizador. */
   private fotosAberto = '';
   private fotosTodas = false;
@@ -87,6 +89,7 @@ export class Interface {
       <nav class="menu-atalhos" aria-label="Seções do atlas">
         <button type="button" data-acao="jornadas">Seguir uma jornada</button>
         <button type="button" data-acao="eras">Escolher uma era</button>
+        <button type="button" data-acao="lugares">Lugares por era</button>
         <button type="button" data-acao="linhagens">Linhagens e governantes</button>
         <button type="button" data-acao="valar">Valar e Maiar</button>
         <button type="button" data-acao="fotografias">Fotografias dos lugares</button>
@@ -177,6 +180,10 @@ export class Interface {
     raiz.appendChild(this.retratoTela);
     this.fotosTela = h('dialog', { id: 'fotos-tela', class: 'tela-cheia', hidden: '', 'aria-labelledby': 'fotos-tela-titulo' }) as HTMLDialogElement;
     raiz.appendChild(this.fotosTela);
+    this.lugaresTela = h('dialog', { id: 'lugares-tela', 'aria-labelledby': 'lugares-titulo' }, `
+      <header class="menu-cab"><h2 id="lugares-titulo">Lugares por era</h2><button type="button" class="fechar" aria-label="Fechar lista de lugares">×</button></header>
+      <div class="lugares-lista"></div>`) as HTMLDialogElement;
+    raiz.appendChild(this.lugaresTela);
 
     this.linha = new LinhaTempo(this.app, raiz);
     // a altura real da linha do tempo posiciona os controles acima dela
@@ -188,11 +195,11 @@ export class Interface {
   private ligar() {
     const a = this.app;
     const atividade = () => a.definirAtividadeInterface(
-      !this.fotosTela.hidden || !this.arvoreTela.hidden || this.retratoTela.open,
+      !this.fotosTela.hidden || !this.arvoreTela.hidden || this.retratoTela.open || this.lugaresTela.open,
       !this.painel.hidden || !this.camadasEl.hidden,
     );
     const visibilidade = new MutationObserver(atividade);
-    for (const el of [this.fotosTela, this.arvoreTela, this.retratoTela, this.painel, this.camadasEl]) {
+    for (const el of [this.fotosTela, this.arvoreTela, this.retratoTela, this.lugaresTela, this.painel, this.camadasEl]) {
       visibilidade.observe(el, { attributes: true, attributeFilter: ['hidden', 'open'] });
     }
     atividade();
@@ -209,6 +216,7 @@ export class Interface {
       this.executar(acao, dados);
     });
     this.painel.querySelector('.fechar')!.addEventListener('click', () => this.fecharPainel());
+    this.lugaresTela.querySelector('.fechar')!.addEventListener('click', () => this.lugaresTela.close());
     this.retratoTela.addEventListener('click', (e) => {
       if (e.target === this.retratoTela || (e.target as Element).closest('[data-fechar-retrato]')) this.retratoTela.close();
     });
@@ -701,6 +709,18 @@ export class Interface {
       case 'eras':
         this.abrirEras();
         break;
+      case 'lugares':
+        this.fecharInicio();
+        this.alternarMenu(false, true);
+        this.busca.fechar();
+        if (a.tocando) this.linha.alternarPlay();
+        montarListaLugares(this.lugaresTela.querySelector('.lugares-lista')!, a.t, (id, t) => {
+          this.lugaresTela.close();
+          if (t !== a.t) a.definirTempo(t);
+          this.abrir('lugar:' + id, true);
+        });
+        this.lugaresTela.showModal();
+        break;
       case 'fotografias':
         this.abrirFotos('painel');
         break;
@@ -1015,8 +1035,8 @@ export class Interface {
   private teclado(e: KeyboardEvent) {
     const alvo = e.target as HTMLElement;
     if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
-    // O dialog mantém o teclado no retrato; Esc nativo não fecha a árvore atrás.
-    if (this.retratoTela.open) return;
+    // Os diálogos nativos tratam o teclado e o Escape sem acionar a interface de fundo.
+    if (this.retratoTela.open || this.lugaresTela.open) return;
     // com a árvore em tela cheia, o teclado não move o mapa; Esc fecha
     // com as fotografias abertas: Esc fecha (ou volta à grade), setas passam de foto
     if (this.fotosAberto) {
