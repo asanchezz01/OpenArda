@@ -1,10 +1,13 @@
 // Reconstrução artística a partir de fotografias/gondolin-pe400.webp; volumes em km, Z para cima.
 import * as THREE from 'three';
 import type { FaseGondolin } from '../core/detalhes';
+import type { Pt } from '../core/types';
+import type { ModeloTerreno } from '../terrain/model';
 import { rng } from '../terrain/noise';
+import { criarAmonGwareth } from './gwareth';
 import { criarLotes } from './lotes';
 
-export function criarGondolin(fase: FaseGondolin): THREE.Group {
+export function criarGondolin(fase: FaseGondolin, terreno?: ModeloTerreno, em?: Pt, h = 0): THREE.Group {
   const cidade = new THREE.Group();
   cidade.name = `Gondolin: ${fase}`;
   const ruinas = fase === 'ruinas';
@@ -130,28 +133,10 @@ export function criarGondolin(fase: FaseGondolin): THREE.Group {
     peca(cilindro, prata, x, y, z + hh + lanternim + r * 1.30 + 0.045, 0.008, 0.008, 0.09);
   }
 
-  // Só o soco e a escadaria de acesso acompanham o exagero do relevo.
-  const geoBase = new THREE.CylinderGeometry(2.9, 4.0, 0.8, 96, 8).rotateX(Math.PI / 2).translate(0, 0, -0.4);
-  const vertices = geoBase.getAttribute('position');
-  const cores = new Float32Array(vertices.count * 3);
-  const cor = new THREE.Color();
-  const corPedra = new THREE.Color(0x9b9787), corRelva = new THREE.Color(0x62724e);
-  for (let i = 0; i < vertices.count; i++) {
-    const x = vertices.getX(i), y = vertices.getY(i), z = vertices.getZ(i);
-    const a = Math.atan2(y, x), k = Math.max(0, Math.min(1, -z / 0.8));
-    const dobra = 1 + Math.sin(k * Math.PI) * (Math.sin(a * 17 + k * 8) * 0.017 + Math.cos(a * 31 - k * 6) * 0.012);
-    vertices.setXYZ(i, x * dobra, y * dobra, z);
-    const relva = THREE.MathUtils.smoothstep(Math.sin(a * 5 + k * 4) + Math.cos(a * 11) * 0.4, -0.3, 0.8);
-    cor.copy(corPedra).lerp(corRelva, relva).multiplyScalar(0.88 + Math.sin(a * 23 + k * 14) * 0.1);
-    cor.toArray(cores, i * 3);
-  }
-  geoBase.setAttribute('color', new THREE.BufferAttribute(cores, 3));
-  geoBase.computeVertexNormals();
-  const materialBase = material(0xffffff);
-  materialBase.vertexColors = true;
-  const base = new THREE.Mesh(geoBase, materialBase);
-  base.name = 'Amon Gwareth';
-  cidade.add(base);
+  // A colina e o acesso acompanham o exagero do terreno. A cidade mantém suas proporções.
+  const alturaTerreno = terreno && em ? (x: number, y: number) => terreno.altura(em[0] + x, em[1] + y) - h : () => -0.30;
+  const { base, escadaria } = criarAmonGwareth(alturaTerreno, caixa, pedra);
+  cidade.add(base, escadaria);
   peca(plataforma, piso, 0, 0, 0.015, 2.83, 2.83, 0.03);
 
   // Terraços de contenção e jardins, não sete muralhas/portões dentro da cidade.
@@ -192,20 +177,6 @@ export function criarGondolin(fase: FaseGondolin): THREE.Group {
     if (i % 8 === 0) torre(x, y, 0.09, 0.40, 0.03);
   }
 
-  const escadaria = new THREE.InstancedMesh(caixa, pedra, 24);
-  escadaria.name = 'Escadaria';
-  escadaria.position.z = 0.035;
-  const transform = new THREE.Object3D();
-  for (let i = 0; i < escadaria.count; i++) {
-    const y = -3.88 + i * 0.045;
-    const topo = Math.min(0, (2.9 + y) * 0.8 / 1.1);
-    transform.position.set(0, y, (topo - 0.8) / 2);
-    transform.scale.set(0.52, 0.06, topo + 0.8);
-    transform.updateMatrix();
-    escadaria.setMatrixAt(i, transform.matrix);
-  }
-  escadaria.computeBoundingSphere();
-  cidade.add(escadaria);
   torre(-0.30, -2.61, 0.14, 0.55, 0.03);
   torre(0.30, -2.61, 0.14, 0.55, 0.03);
   if (completa) peca(arco, calcario, 0, -2.66, 0.26, 0.38, 0.22, 0.46);

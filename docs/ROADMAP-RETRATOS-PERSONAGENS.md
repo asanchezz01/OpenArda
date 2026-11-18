@@ -8,7 +8,7 @@ Atualizado em **18 de novembro de 2026**. Plano de produção para o OpenArda, c
 
 ## Ponto de partida e objetivo
 
-O catálogo contém **195 personagens, todos com retrato integrado**. As etapas 0 a 12 estão entregues. As duas últimas acrescentaram quatro criaturas e quatro personagens ligados a Lórien e aos Istari. [Personagens](../data/linhagens.json) · [Retratos](../data/retratos.json) · [Etapa 11](retratos-etapa-11-prompts.json) · [Etapa 12](retratos-etapa-12-prompts.json)
+As etapas 0 a 12 entregaram **195 retratos integrados**. As duas últimas acrescentaram quatro criaturas e quatro personagens ligados a Lórien e aos Istari. O catálogo inclui também seis fichas de cônjuges, exibidas com as iniciais no painel de personagens. [Personagens](../data/linhagens.json) · [Retratos](../data/retratos.json) · [Etapa 11](retratos-etapa-11-prompts.json) · [Etapa 12](retratos-etapa-12-prompts.json)
 
 O plano contempla **150 personagens únicos**, incluindo os 75 cadastrados no ponto de partida. Os 150 têm retrato. O catálogo também pode crescer com elos genealógicos fora desta seleção. A lista é uma seleção editorial para a biblioteca inicial, não um inventário de todos os personagens de Tolkien. Versões de um mesmo personagem e a extensão de criaturas não entram nessa contagem.
 

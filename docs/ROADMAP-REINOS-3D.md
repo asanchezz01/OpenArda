@@ -36,6 +36,12 @@ O desfiladeiro de Orfalch Echor ganhou uma visita própria, com sete atalhos na 
 
 O panorama de Tumladen reutiliza a bacia, o anel das Echoriath e o desfiladeiro do terreno do atlas. A ficha oferece a vista de conjunto e aproximações a Gondolin e Orfalch Echor. O perfil de 400 P.E. no eixo lateral da bacia mede cerca de 0,72 km no piso a oeste de Amon Gwareth, 1,01 km no centro e 1,18 km na crista oeste. Os números descrevem o terreno procedural. O atlas mostra a cidade e os portões à medida que a câmera se aproxima. O panorama preserva o ano enquanto o vale existe e volta a 400 P.E. quando a visita começa depois da submersão.
 
+### Base rochosa de Amon Gwareth
+
+A colina ganhou um contorno assimétrico, escarpas com estratos, blocos fraturados e encostas de relva que acompanham o piso de Tumladen. A escadaria principal segue um perfil talhado na mesma malha, do chão do vale até o patamar da muralha. O atalho de visita abre um enquadramento mais amplo para incluir a encosta. Construção, cidade íntegra e ruínas usam a mesma formação rochosa. [Gondolin vista das Echoriath](../public/fotografias/gondolin-pe400.webp) · [Gondolin depois da queda](../public/fotografias/gondolin-pe510.webp)
+
+Os testes conferem a continuidade do apoio da escadaria entre os níveis de exagero 1× e 5×, o suporte sob o piso urbano e a junção da encosta com o relevo do vale. Os afloramentos usam instâncias em uma chamada de desenho.
+
 ## Segunda entrega: Gondor — Minas Tirith
 
 **Implementado nesta versão:** Minas Anor/Minas Tirith na encosta do Mindolluin, com sete níveis escavados na colina, uma muralha e um portão por nível (o Grande Portão a leste, os demais alternando entre sul e norte), muralha externa negra, a proa de rocha que divide os círculos e sobe até a Cidadela, o Pátio da Fonte, a Árvore Branca, a Torre de Ecthelion e o ombro que liga a cidade à montanha, com as casas de Rath Dínen.

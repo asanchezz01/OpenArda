@@ -4,7 +4,7 @@ import type { Vista } from './types';
 export type FaseGondolin = 'construcao' | 'integra' | 'ruinas';
 
 export const GONDOLIN = lugarPorId.get('gondolin')!;
-export const VISTA_GONDOLIN: Vista = { x: GONDOLIN.em[0], y: GONDOLIN.em[1], d: 16, rumo: 20, inclinacao: 55 };
+export const VISTA_GONDOLIN: Vista = { x: GONDOLIN.em[0], y: GONDOLIN.em[1], d: 24, rumo: 20, inclinacao: 68 };
 const tumladen = lugarPorId.get('tumladen')!;
 const [xVale, yVale] = feicaoPorId.get('tumladen')!.circulo!;
 export const VISTA_TUMLADEN: Vista = { x: xVale, y: yVale, d: 128, rumo: 42, inclinacao: 66 };

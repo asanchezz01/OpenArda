@@ -207,6 +207,13 @@ describe('lugares por era', () => {
     expect(app.definirTempo).not.toHaveBeenCalled();
     ficha.querySelector('summary')!.click();
     visitar.click();
+    const epocas = el<HTMLDialogElement>('#epoca-mapa');
+    expect(epocas.open).toBe(true);
+    expect(painel.open).toBe(true);
+    expect(app.definirTempo).not.toHaveBeenCalled();
+    expect(epocas.textContent).toContain('3319 S.E.');
+    el(`#epoca-mapa [data-t="${tempo.cursor('SE:3319')}"]`).click();
+    expect(epocas.open).toBe(false);
     expect(painel.open).toBe(false);
     expect(app.definirTempo).toHaveBeenCalledWith(tempo.cursor('SE:3319'));
     expect(el('#painel h2').textContent).toBe('Númenor');
@@ -230,6 +237,67 @@ describe('lugares por era', () => {
     acontecimento.dispatchEvent(new Event('change', { bubbles: true }));
     expect(raiz.querySelector('summary')!.textContent).toContain('Destruído');
     expect(raiz.querySelector('details')!.textContent).toContain('Destruída na queda das Lâmpadas.');
+  });
+});
+
+describe('Ver no mapa a partir das fotografias', () => {
+  it('apresenta as fases de Gondolin e só muda a época após a escolha', () => {
+    ui.executar('foto', { id: 'gondolin-pe400' });
+    const fotos = el<HTMLDialogElement>('#fotos-tela');
+    const epocas = el<HTMLDialogElement>('#epoca-mapa');
+    el('#fotos-tela [data-acao="ver-no-mapa"]').click();
+    expect(epocas.open).toBe(true);
+    expect(epocas.textContent).toContain('400 P.E.');
+    expect(epocas.textContent).toContain('510 P.E.');
+    expect(fotos.open).toBe(true);
+    expect(app.definirTempo).not.toHaveBeenCalled();
+    expect(tecla(el('#epoca-mapa [data-fechar-epoca]'), 'Escape')).toBe(true);
+    el('#epoca-mapa [data-fechar-epoca]').click();
+    expect(epocas.open).toBe(false);
+    expect(fotos.open).toBe(true);
+    el('#fotos-tela [data-acao="ver-no-mapa"]').click();
+    el(`#epoca-mapa [data-t="${tempo.cursor('PE:510')}"]`).click();
+    expect(epocas.open || fotos.open).toBe(false);
+    expect(app.definirTempo).toHaveBeenCalledWith(tempo.cursor('PE:510'));
+    expect(el('#painel h2').textContent).toBe('Gondolin');
+  });
+
+  it('abre direto um lugar com uma única aparência', () => {
+    ui.executar('foto', { id: 'bri-te3018' });
+    el('#fotos-tela [data-acao="ver-no-mapa"]').click();
+    expect(el<HTMLDialogElement>('#epoca-mapa').open).toBe(false);
+    expect(el<HTMLDialogElement>('#fotos-tela').open).toBe(false);
+    expect(app.definirTempo).not.toHaveBeenCalled();
+    expect(el('#painel h2').textContent).toBe('Bri');
+  });
+});
+
+describe('painel de personagens', () => {
+  it('abre pelo menu, filtra por alcunha e preserva a consulta ao voltar da ficha', () => {
+    el('#btn-camadas').click();
+    el('#camadas [data-acao="personagens"]').click();
+    expect(el('#painel h2').textContent).toBe('Personagens');
+    const busca = el<HTMLInputElement>('#personagens-busca');
+    busca.value = 'Olorin';
+    busca.dispatchEvent(new Event('input', { bubbles: true }));
+    expect(el('#personagens-contagem').textContent).toBe('1 personagem');
+    el('#painel [data-personagem]:not([hidden]) .pessoa-nome').click();
+    expect(el('#painel h2').textContent).toBe('Gandalf');
+    el('[data-acao="voltar-ficha"]').click();
+    expect(el<HTMLInputElement>('#personagens-busca').value).toBe('Olorin');
+    expect(el('#personagens-contagem').textContent).toBe('1 personagem');
+  });
+
+  it('exibe um cônjuge sem filhos cadastrados no cartão da árvore e abre sua ficha', () => {
+    ui.abrir('linhagem:eowyn');
+    const seletor = '.pessoa.foco .conjuge [data-sel="linhagem:faramir"]';
+    expect(el(`#painel ${seletor}`).textContent).toBe('Faramir');
+    el('#painel [data-acao="arvore-tela"]').click();
+    const conjuge = el(`#arvore-tela ${seletor}`);
+    expect(conjuge.textContent).toBe('Faramir');
+    expect(conjuge.closest('li')!.querySelector('ul')).toBeNull();
+    conjuge.click();
+    expect(el('#painel h2').textContent).toBe('Faramir');
   });
 });
 
@@ -293,9 +361,37 @@ describe('fichas, telas cheias e jornadas', () => {
     expect(document.activeElement).toBe(gatilho);
   });
 
+  it('conecta pai e mãe ao personagem no diagrama da ficha e da árvore em tela cheia', () => {
+    ui.abrir('linhagem:faramir');
+    const verificarPais = (raiz: string) => {
+      const pais = el(`${raiz} .arvore-pais`);
+      expect(pais.getAttribute('aria-label')).toBe('Ascendência de Faramir');
+      expect(pais.querySelector('[data-sel="linhagem:denethor"]')?.closest('.arvore-genitor')?.querySelector('.nota')?.textContent).toBe('Pai');
+      expect(pais.querySelector('[data-sel="linhagem:finduilas-dol-amroth"]')?.closest('.arvore-genitor')?.querySelector('.nota')?.textContent).toBe('Mãe');
+      expect(pais.closest('.arvore')?.querySelector('.pessoa.foco [data-sel="linhagem:faramir"]')).toBeTruthy();
+    };
+    verificarPais('#painel');
+    el('#painel [data-acao="arvore-tela"]').click();
+    verificarPais('#arvore-tela');
+    el('#arvore-tela .arvore-genitor [data-acao="arvore-tela"][data-id="denethor"]').click();
+    expect(el('#arvore-tela-nome').textContent).toBe('Denethor II');
+  });
+
+  it.each([
+    ['legolas', 'thranduil', 'Pai'],
+    ['thengel', 'frealaf', 'Ascendente'],
+  ])('exibe apenas a relação registrada entre %s e %s', (id, genitor, rotulo) => {
+    ui.executar('arvore-tela', { id });
+    const pais = el('#arvore-tela .arvore-pais');
+    expect(pais.querySelectorAll('.arvore-genitor')).toHaveLength(1);
+    expect(pais.querySelector('.pessoa-nome')?.getAttribute('data-sel')).toBe(`linhagem:${genitor}`);
+    expect(pais.querySelector('.nota')?.textContent).toBe(rotulo);
+    if (rotulo === 'Ascendente') expect(el('#arvore-tela .arvore-ligacao-pais').textContent).toContain('via Brytta');
+  });
+
   it.each([
     ['maedhros', '.pessoa-nome'],
-    ['finwe', '.chip-pessoa'],
+    ['finwe', '.arvore-genitor .pessoa-nome'],
     ['nerdanel', '.conjuge button'],
   ])('abre a ficha completa de %s ao clicar no nome da árvore em tela cheia', (id, seletor) => {
     ui.abrir('linhagem:feanor');
@@ -313,7 +409,7 @@ describe('fichas, telas cheias e jornadas', () => {
     for (const dado of [pessoa.epiteto, pessoa.datas].filter(Boolean)) expect(el('#painel').textContent).toContain(dado);
     expect(el('#painel .tipo').textContent).toContain('Personagem');
     const secoes = [...document.querySelectorAll('#painel h3')].map((h) => h.textContent);
-    expect(secoes).toEqual(expect.arrayContaining(['Reinos que governou', 'Ascendência', 'Descendência', 'Fontes']));
+    expect(secoes).toEqual(expect.arrayContaining(['Reinos que governou', 'Ascendência', 'Árvore genealógica', 'Fontes']));
     expect(document.activeElement).toBe(el('.painel-conteudo'));
     el<HTMLButtonElement>('[data-acao="voltar-ficha"]').click();
     expect(el('#painel h2').textContent).toBe('Fëanor');

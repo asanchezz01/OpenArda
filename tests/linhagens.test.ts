@@ -56,7 +56,14 @@ describe('linhagens', () => {
 
   it('liga Boromir e Faramir a Denethor sem confundir as duas Finduilas', () => {
     expect(unioesDe('denethor')[0][1].map((p) => p.id)).toEqual(['boromir', 'faramir']);
-    expect(unioesDe('denethor')[0][0]).toBe('');
+    expect(unioesDe('denethor').map(([q]) => q)).toEqual(['finduilas-dol-amroth']);
+  });
+
+  it('inclui uniões recíprocas sem filhos cadastrados', () => {
+    expect(unioesDe('manwe')).toEqual([['varda', []]]);
+    expect(unioesDe('varda')).toEqual([['manwe', []]]);
+    expect(unioesDe('sam')).toEqual([['rosie-cotton', []]]);
+    expect(unioesDe('rosie-cotton')).toEqual([['sam', []]]);
   });
 
   it('Fëanor tem sete filhos com Nerdanel e meios-irmãos por Indis', () => {
