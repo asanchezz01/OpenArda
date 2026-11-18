@@ -65,12 +65,12 @@ Referências técnicas: [diálogos modais da W3C](https://www.w3.org/WAI/ARIA/ap
 - `jsdom` foi adicionado somente como dependência de desenvolvimento, compatível com o requisito Node.js 18. Não entra no bundle do atlas.
 - Os testes existentes dos atalhos 3D foram ajustados para utilizar o protótipo real da interface, incluindo o fechamento compartilhado do menu.
 
-## Pendências de validação
+## Verificação complementar
 
-O navegador Chrome conectado falhou antes de carregar o endereço local, com erro de infraestrutura envolvendo `timeoutMs`. O navegador integrado estava indisponível. Foram usadas as capturas históricas de desktop e celular para conhecer a identidade existente; elas **não validam a aparência nova**.
+O Chromium 156 conferiu a lista **Lugares por era** em 1280 × 800, 390 × 844, 844 × 390 e 640 × 400. O teste percorreu o menu pelo teclado, abriu o diálogo com Enter, conferiu os rótulos na árvore de acessibilidade e confirmou o retorno do foco ao menu com Escape. Nas três larguras menores, o teste abriu a ficha de Númenor em 3319 S.E. e manteve acesso ao editor de data. Com WebGL desativado, a lista abriu na data do link e exibiu o resumo sobre a submersão de Númenor.
 
-Ainda é necessário conferir no navegador real: desktop, celular em retrato e paisagem, zoom de 200%, teclado e leitor de tela. Verificar especialmente a ficha acima da linha do tempo e a disposição dos controles em telas baixas. O ambiente jsdom não implementa a camada modal: os testes conferem o acionamento e o ciclo de abertura/fechamento, com métodos simulados, sem comprovar isolamento real de foco ou gestos físicos.
+As jornadas **A Guerra do Anel** e **A queda de Arnor** foram percorridas até a última parada. A jornada de Arnor abriu a comparação entre 1973 e 1975 T.E. e voltou à vista única na parada seguinte. Em Gondolin, o Chromium abriu a foto de 400 P.E., atualizou a ficha para a imagem de 510 P.E. e gerou o modelo das ruínas na visita 3D. O build passou com **516 testes em 14 arquivos**, inclusive com Node.js 18.20.8.
 
-`npm audit` também apontou cinco alertas nas dependências de desenvolvimento já existentes: Vite, Vitest e suas dependências. Não foram ampliadas as atualizações de ferramentas nesta revisão de UX; esses alertas merecem uma manutenção separada.
+Vite 6.4.6 e Vitest 3.2.7 mantêm o suporte a Node.js 18. A auditoria passou de cinco para três alertas nas dependências de desenvolvimento, ligados ao Vitest e à sua cadeia de dependências. `npm audit --omit=dev` retornou zero alertas.
 
-Não foi feita publicação ou mudança de serviços externos. A revisão foi concluída no código local; a confirmação visual permanece pendente.
+Seguem pendentes as verificações com leitor de tela, zoom real de 200%, gestos em celular físico e desempenho com GPU. A emulação em 640 × 400 conferiu a disposição dos controles em uma janela reduzida.

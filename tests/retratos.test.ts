@@ -5,7 +5,7 @@ import { htmlRetrato } from '../src/ui/linhagens';
 function visualizador(aberto = false) {
   const dialog = { open: aberto, innerHTML: '', showModal: vi.fn() };
   const fecharArvoreTela = vi.fn();
-  const ui = Object.assign(Object.create(Interface.prototype), { retratoTela: dialog, arvoreTelaId: 'feanor', fecharArvoreTela }) as {
+  const ui = Object.assign(Object.create(Interface.prototype), { retratoTela: dialog, lugaresTela: { open: false }, arvoreTelaId: 'feanor', fecharArvoreTela }) as {
     abrirRetrato(id: string): void;
     teclado(e: KeyboardEvent): void;
   };

@@ -8,7 +8,7 @@ Em qualquer ponto do mapa, o atlas responde a duas perguntas: **"O que havia aqu
 
 ## Como executar
 
-Requer Node.js 18 ou mais recente e um navegador com WebGL 2.
+Requer Node.js 18 ou mais recente. O mapa 3D usa WebGL 2.
 
 ```bash
 npm install
@@ -26,6 +26,8 @@ A pasta `dist/` é estática e pode ser publicada em qualquer servidor de arquiv
 A busca encontra lugares, reinos, personagens e acontecimentos. Ao focá-la, aparecem sugestões de destinos. Use `↓` para percorrer as ações e `Esc` para voltar ao campo. As fichas oferecem **Voltar**, preservando a rolagem da consulta anterior.
 
 No celular, a linha do tempo continua acessível com uma ficha aberta. **Alterar data** permite digitar um ano, escolher um acontecimento ou saltar para o anterior/próximo. Os controles **Fixar** e **Comparar** mantêm seus nomes visíveis. Em telas baixas, os controles secundários da linha ficam recolhidos.
+
+Em **Menu → Lugares por era**, escolha um ano ou acontecimento, filtre por nome e abra o resumo de um lugar. **Ver no mapa** abre a ficha na data consultada. A lista também aparece quando o navegador não consegue iniciar o mapa 3D.
 
 O menu reúne as seções do atlas e os atalhos em **Visitas em 3D**. Fotografias e árvores genealógicas usam diálogos nativos, com fechamento por `Esc` e retorno do foco. Na árvore, tocar no nome abre a ficha completa do personagem com as informações cadastradas; o ícone de árvore centraliza a genealogia nele. A última parada de uma jornada oferece **Concluir jornada**.
 
@@ -66,7 +68,7 @@ Veja o [registro da revisão de UX, verificações e pendências](docs/REVISAO-U
   - Buscar Gondolin na Terceira Era oferece *Visitar Gondolin na Primeira Era*.
   - Buscar Númenor depois da Queda oferece a *antiga posição no oceano* e a *ilha durante sua existência*.
 - **Links compartilháveis.** O endereço guarda o local, o período, o enquadramento, a seleção, a trava, a comparação e a jornada em curso.
-- **Jornadas completas:** *Aman sob a luz das Duas Árvores*, *Beleriand antes e depois da Guerra da Ira* e *Númenor antes e depois da Queda*.
+- **Jornadas completas:** *Aman sob a luz das Duas Árvores*, *Beleriand antes e depois da Guerra da Ira*, *Númenor antes e depois da Queda*, *A Guerra do Anel* e *A queda de Arnor*.
 - **O mundo redondo depois da Queda.** A partir de 3319 S.E. o mapa se curva até virar um globo, como conta a Akallabêth. A navegação passa a ser como num globo virtual: arrastar gira a esfera, e ao afastar a câmera aparece o planeta inteiro contra o espaço. O raio adotado é o da Terra (6.371 km), porque depois da Queda o mundo é a Terra e a escala do atlas já segue distâncias reais. Tolkien não dá esse número. A Grade de Arda continua sendo a referência: o mapa é projetado na esfera e gira para que o ponto central da vista fique sempre no topo (`src/render/globo.ts`).
 - **Modo narrativo *Seguir o Caminho Reto*.** Depois da Queda, o mundo se curva para baixo enquanto uma estrada de luz segue reta até Aman, mostrada como terra velada. Quem navega pela superfície do mundo não encontra mais Aman.
 
@@ -179,4 +181,4 @@ Datas e detalhes que dependem dessas obras foram conferidos em índices especial
 - Os Anos das Lâmpadas têm só uma geografia esquemática.
 - O relevo é procedural: os rios escavam vales, mas o atlas não simula drenagem.
 - O desempenho depende da GPU. Em aparelhos modestos o atlas reduz a resolução automaticamente; o parâmetro `?qualidade=fixa` desativa esse ajuste.
-- Próximos passos possíveis: consultar diretamente as fontes registradas como lacuna, ampliar os reinos da Terceira Era, acrescentar jornadas (a Guerra do Anel, a queda de Arnor) e oferecer navegação acessível alternativa, como uma lista de lugares por era.
+- Próximos passos possíveis: consultar diretamente as fontes registradas como lacuna e ampliar os reinos da Terceira Era.
