@@ -54,7 +54,10 @@ describe('geometria de Gondolin', () => {
     const base = integra.getObjectByName('Amon Gwareth') as THREE.Mesh;
     base.geometry.computeBoundingBox();
     expect(base.geometry.boundingBox!.max.z).toBeCloseTo(0);
-    expect(base.geometry.boundingBox!.min.z).toBeCloseTo(-0.8);
+    for (const fase of [outra, ruinas, obra]) {
+      const colina = fase.getObjectByName('Amon Gwareth') as THREE.Mesh;
+      expect(colina.geometry.getAttribute('position').array).toEqual(base.geometry.getAttribute('position').array);
+    }
   });
 
   it('mantém o caminho central livre e sobe aos três terraços por patamares distintos', () => {
@@ -69,7 +72,8 @@ describe('geometria de Gondolin', () => {
 
   it('inclui cúpulas, arcadas e janelas detalhadas dentro do orçamento de geometria', () => {
     const cidade = criarGondolin('integra');
-    const meshes = cidade.children.filter((c): c is THREE.Mesh => c instanceof THREE.Mesh);
+    const meshes: THREE.Mesh[] = [];
+    cidade.traverse((c) => { if (c instanceof THREE.Mesh) meshes.push(c); });
     const nome = (n: string) => meshes.filter((m) => m.geometry.name === n);
     expect(nome('Cúpulas').length).toBeGreaterThan(0);
     expect(nome('Arcadas de pedra').length).toBeGreaterThan(0);
@@ -116,21 +120,54 @@ describe('camada 3D integrada ao terreno', () => {
   });
 
   it('mantém a escadaria apoiada na rocha do exagero mínimo ao máximo', () => {
-    const cidade = criarGondolin('integra');
+    const em: [number, number] = [VISTA_GONDOLIN.x, VISTA_GONDOLIN.y];
+    const h = relevo.altura(...em);
+    const cidade = criarGondolin('integra', relevo, em, h);
+    const colina = cidade.getObjectByName('Amon Gwareth') as THREE.Mesh;
     const escada = cidade.getObjectByName('Escadaria') as THREE.InstancedMesh;
     const matriz = new THREE.Matrix4();
+    const raio = new THREE.Raycaster(undefined, new THREE.Vector3(0, 0, -1));
     for (const exag of [1, 2.5, 5]) {
+      colina.scale.z = escada.scale.z = exag;
+      cidade.updateMatrixWorld(true);
       for (let i = 0; i < escada.count; i++) {
         escada.getMatrixAt(i, matriz);
         const centro = new THREE.Vector3().setFromMatrixPosition(matriz);
         const escala = new THREE.Vector3().setFromMatrixScale(matriz);
-        const rochaZ = Math.min(0, (2.9 + centro.y) * 0.8 / 1.1) * exag;
         const fundo = (centro.z - escala.z / 2) * exag + escada.position.z;
         const topo = (centro.z + escala.z / 2) * exag + escada.position.z;
-        expect(fundo).toBeLessThan(rochaZ);
-        expect(topo).toBeGreaterThan(rochaZ);
+        for (const x of [-0.20, 0, 0.20]) {
+          raio.ray.origin.set(x, centro.y, 1);
+          const rochaZ = raio.intersectObject(colina, false)[0].point.z;
+          const terrenoZ = (relevo.altura(em[0] + x, em[1] + centro.y) - h) * exag - 0.035;
+          expect(fundo).toBeLessThan(rochaZ);
+          expect(topo).toBeGreaterThan(Math.max(rochaZ, terrenoZ));
+        }
       }
     }
+  });
+
+  it('assenta o pé irregular no vale e sustenta todo o contorno urbano', () => {
+    const em: [number, number] = [VISTA_GONDOLIN.x, VISTA_GONDOLIN.y];
+    const h = relevo.altura(...em);
+    const cidade = criarGondolin('integra', relevo, em, h);
+    const colina = cidade.getObjectByName('Amon Gwareth') as THREE.Mesh;
+    const borda = colina.geometry.getAttribute('position');
+    const raio = new THREE.Raycaster(undefined, new THREE.Vector3(0, 0, -1));
+    const encosta: number[] = [];
+    for (let i = 0; i < 24; i++) {
+      const a = i * Math.PI / 12;
+      raio.ray.origin.set(2.83 * Math.cos(a), 2.83 * Math.sin(a), 1);
+      expect(raio.intersectObject(colina, false)[0].point.z).toBeCloseTo(0);
+      raio.ray.origin.set(3.52 * Math.cos(a), 3.52 * Math.sin(a), 1);
+      encosta.push(raio.intersectObject(colina, false)[0].point.z);
+    }
+    expect(Math.max(...encosta) - Math.min(...encosta)).toBeGreaterThan(0.08);
+    for (let i = borda.count - 144; i < borda.count; i++) {
+      const chao = relevo.altura(em[0] + borda.getX(i), em[1] + borda.getY(i)) - h;
+      expect(borda.getZ(i) + 0.035).toBeLessThan(chao);
+    }
+    expect(colina.children.some((m) => m instanceof THREE.InstancedMesh && m.count > 40)).toBe(true);
   });
 
   it('alterna os lados da comparação sem misturar épocas nem acumular modelos', () => {

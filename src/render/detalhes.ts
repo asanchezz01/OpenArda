@@ -58,7 +58,7 @@ const ARQUITETURA: Record<string, Sitio['criar']> = {
 };
 
 const SITIOS: Sitio[] = [
-  { lugar: GONDOLIN, fase: faseGondolin, criar: criarGondolin as Sitio['criar'], profundos: ['Amon Gwareth', 'Escadaria'], raio: 0 },
+  { lugar: GONDOLIN, fase: faseGondolin, criar: criarGondolin as Sitio['criar'], profundos: ['Amon Gwareth', 'Escadaria'], raio: 0, segueTerreno: true },
   { lugar: MINAS_TIRITH, fase: faseMinasTirith, criar: criarMinasTirith as Sitio['criar'], profundos: ['Rocha'], raio: 0.65 },
   { lugar: EDORAS, fase: faseEdoras, criar: criarEdoras, profundos: ['Base'], raio: 0, segueTerreno: true },
   { lugar: ARMENELOS, fase: faseArmenelos, criar: criarArmenelos as Sitio['criar'], profundos: ['Base'], raio: 0 },
