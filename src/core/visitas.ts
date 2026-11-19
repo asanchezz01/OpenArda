@@ -32,7 +32,7 @@ const destinos: Destino3d[] = [
   { id: 'meneltarma', padrao: 'SE:3000', vista: [29, 310, 63],
     texto: 'A estrada sobe em espiral até o santuário de Eru, uma clareira aberta ao céu no cume.',
     ressalva: 'A estrada em espiral e o cume aberto seguem Contos Inacabados. O percurso exato, a largura da estrada e a altitude são interpretações do atlas.' },
-  { id: 'andunie', padrao: 'SE:3000', em: [-2564.87, -574.77], vista: [2.9, 174, 62], agua: true,
+  { id: 'andunie', padrao: 'SE:3000', em: [-2564.87, -574.77], vista: [2.65, 156, 62], agua: true,
     fases: { 'SE:32': 'porto', 'SE:630': 'senhorio' },
     texto: 'Cais e armazéns de cantaria ao pé de três terraços. A partir de 630 S.E., o solar dos Senhores de Andúnië aparece no alto da encosta.',
     ressalva: 'Contos Inacabados descreve as habitações na encosta. O solar, os cais e as fachadas foram reconstruídos artisticamente com referências das fotografias do atlas.' },

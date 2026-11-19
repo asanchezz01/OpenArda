@@ -136,6 +136,10 @@ As fotografias de Rómenna e Armenelos orientaram a cantaria clara, os cais em d
 - **Emerië e Hyarastorni** mostram a Casa Branca de Erendis e a casa de Hallatan, com pastagens do Mittalmar. A maquete usa 882 S.E., ano em que Aldarion visita as duas propriedades, como início da visita. A ficha de Hyarastorni foi corrigida para situá-la no Mittalmar. [Emerië](https://tolkiengateway.net/wiki/Emeri%C3%AB) · [Hyarastorni](https://tolkiengateway.net/wiki/Hyarastorni)
 - **Noirinan** mostra entradas dos túmulos reais escavadas na rocha ao pé do Meneltarma. A visita usa a morte de Elros, em 442 S.E., como início. [Noirinan](https://tolkiengateway.net/wiki/Noirinan)
 
+O detalhamento acrescenta revestimentos de cantaria, telha, reboco e madeira gerados no atlas. Andúnië tem arcadas, escadarias e uma galeria no solar. Eldalondë tem pavilhões abertos e um caminho entre as árvores de Nísimaldar. Nindamos tem palafitas com contraventamento, tábuas nos passadiços e redes nos cais. A Casa Branca se distingue pela varanda e pelas portadas azuis, e a casa de Hallatan pelo madeiramento e pelo pátio de serviço. Em Noirinan, a escarpa envolve as entradas, com vestíbulos rebaixados e uma escadaria maior no túmulo de Elros.
+
+As imagens de produção de *Os Anéis de Poder* complementaram as fotografias do atlas na escolha de materiais e na composição das ruas e dos cais. [Imagens de Númenor](https://www.aboutamazon.com/news/entertainment/lord-of-the-rings-numenor-images) · [Materiais e bastidores](https://www.aboutamazon.com/news/entertainment/8-secrets-of-numenor-an-unseen-kingdom-in-the-lord-of-the-rings-the-rings-of-power) · [Portfólio de Ramsey Avery](https://www.ramseyaverydesign.com/work/the-lord-of-the-rings-the-rings-of-power)
+
 As visitas estão no menu **Visitas em 3D** e na ficha da ilha. As edificações deixam de aparecer na Queda de Númenor, em 3319 S.E.
 
 ## Quinta entrega: Doriath — Menegroth

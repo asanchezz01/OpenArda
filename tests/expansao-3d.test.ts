@@ -5,7 +5,9 @@ import type { App } from '../src/app';
 import { estadoTerreno, lugarPorId, reinoPorId, tempo, terreno } from '../src/core/data';
 import { COLINA_MENEGROTH, MARGEM_NARGOTHROND, VISTA_TUMLADEN, faseTumladen } from '../src/core/detalhes';
 import { NOVAS_VISITAS, PORTOES_ECHOR } from '../src/core/visitas';
+import { maquete } from '../src/render/arquitetura';
 import { DetalhesReinos } from '../src/render/detalhes';
+import { arcada, moldura } from '../src/render/numenor-acabamentos';
 import { casco } from '../src/render/oficina';
 import { criarUniformesGlobais } from '../src/terrain/material';
 import { ModeloTerreno } from '../src/terrain/model';
@@ -131,6 +133,22 @@ describe('expansão dos reinos em 3D', () => {
     const a = new THREE.Vector3(...inicio, 0), b = new THREE.Vector3(...fim, 0);
     const cais = new THREE.Vector3(v.vista.x, v.vista.y, 0);
     expect(new THREE.Line3(a, b).closestPointToPoint(cais, true, new THREE.Vector3()).distanceTo(cais)).toBeLessThan(0.15);
+  });
+
+  it('mantém os vãos das arcadas abertos e agrupa as peças repetidas', () => {
+    const o = maquete('Arcadas de Númenor', 174);
+    arcada(o, moldura, 0, 0, 0, 1, 0.1, 1);
+    arcada(o, moldura, 1, 0, 0, 1, 0.1, 1);
+    const grupo = o.montar();
+    const lotes = grupo.children.filter((obj) => obj instanceof THREE.InstancedMesh);
+    expect(lotes).toHaveLength(1);
+    expect(lotes[0]).toHaveProperty('count', 2);
+    grupo.updateMatrixWorld(true);
+    const lançar = (x: number, z: number) =>
+      new THREE.Raycaster(new THREE.Vector3(x, 1, z), new THREE.Vector3(0, -1, 0)).intersectObject(grupo);
+    expect(lançar(0, 0.7)).toHaveLength(0);
+    expect(lançar(0.43, 0.4).length).toBeGreaterThan(0);
+    expect(lançar(1, 0.91).length).toBeGreaterThan(0);
   });
 
   it('mantém os cais de Eldalondë e muda as embarcações depois da divisão', () => {
