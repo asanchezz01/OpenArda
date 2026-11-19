@@ -9,7 +9,7 @@ import { fichaAqui, fichaEvento, fichaFonte, fichaFontes, fichaLugar, fichaMarco
 import { fichaLinhagem, fichaPersonagens, fichaSenhorios, fichaValar, filtrarPersonagens, htmlArvoreTela, htmlRetrato } from './linhagens';
 import { htmlPainelFotos, htmlVisualizador } from './fotografias';
 import { htmlEpocasDoLugar, montarListaLugares } from './lugares';
-import { esc, guardar, h, ler, listaFontes } from './util';
+import { esc, guardar, h, ler, listaFontes, miniatura } from './util';
 import { lerLink, montarLink } from './url';
 import { regimeDe } from '../render/lighting';
 import { faseArmenelos, faseEdoras, faseGondolin, faseMenegroth, faseMinasTirith, faseNargothrond, VISTA_NARGOTHROND, faseRomenna, faseTumladen, VISTA_ARMENELOS, VISTA_MENEGROTH, VISTA_EDORAS, VISTA_GONDOLIN, VISTA_MINAS_TIRITH, VISTA_ROMENNA, VISTA_TUMLADEN } from '../core/detalhes';
@@ -25,6 +25,16 @@ const VISITAS_3D: Record<string, { nome: string; fase: (t: number) => string | n
   'romenna-3d': { nome: 'Rómenna', fase: faseRomenna, vista: VISTA_ROMENNA, padrao: 'SE:3000', aviso: 'Rómenna em 3D · Reconstrução artística, com o visual da série Os Anéis de Poder. A linha do tempo mostra os barcos, os navios de alto-mar e, no fim, os nove navios dos Fiéis.' },
   'minas-tirith-3d': { nome: 'Minas Tirith', fase: faseMinasTirith, vista: VISTA_MINAS_TIRITH, padrao: 'TE:3018', aviso: 'Minas Tirith em 3D · Reconstrução artística. Os sete níveis seguem a descrição; a linha do tempo mostra a Árvore Branca ausente, viva ou morta.' },
 };
+
+const CATALOGO_3D = [
+  ...Object.entries(VISITAS_3D).map(([acao, { nome }]) => ({
+    id: acao.slice(0, -3), nome, acao,
+    corte: acao === 'menegroth-3d' ? 'aberto' : acao === 'nargothrond-3d' ? 'fechado' : '',
+  })),
+  ...NOVAS_VISITAS.map(({ id, lugar }) => ({ id, nome: lugar.nome, acao: 'visitar-3d', corte: '' })),
+];
+const dadosVisita = ({ id, acao, corte }: typeof CATALOGO_3D[number]) =>
+  `data-acao="${acao}" data-id="${id}"${corte ? ` data-corte="${corte}"` : ''}`;
 
 export class Interface {
   private app: App;
@@ -77,6 +87,7 @@ export class Interface {
         <button type="button" data-acao="jornadas" title="Jornadas guiadas (J)">Jornadas</button>
         <button type="button" data-acao="linhagens" title="Árvores genealógicas e governantes desta época">Linhagens</button>
         <button type="button" data-acao="fotografias" title="Fotografias dos reinos e lugares desta época">Fotografias</button>
+        <button type="button" data-acao="catalogo-3d" aria-controls="painel" title="Maquetes e paisagens no mapa">3D</button>
         <button type="button" data-acao="fontes" title="Fontes e método">Fontes</button>
         <button type="button" data-acao="compartilhar" class="icone" aria-label="Copiar link desta vista" title="Copiar link desta vista">⤴</button>
       </nav>`;
@@ -99,15 +110,7 @@ export class Interface {
         <button type="button" data-acao="fontes">Fontes e método</button>
       </nav>
       <details class="menu-cidades"><summary>Visitas em 3D</summary><div class="menu-atalhos">
-        <button type="button" data-acao="gondolin-3d">Visitar Gondolin em 3D</button>
-        <button type="button" data-acao="tumladen-3d">Visitar Tumladen em 3D</button>
-        <button type="button" data-acao="minas-tirith-3d">Visitar Minas Tirith em 3D</button>
-        <button type="button" data-acao="edoras-3d">Visitar Edoras em 3D</button>
-        <button type="button" data-acao="menegroth-3d" data-corte="aberto">Visitar Menegroth em 3D</button>
-        <button type="button" data-acao="nargothrond-3d" data-corte="fechado">Visitar Nargothrond em 3D</button>
-        <button type="button" data-acao="armenelos-3d">Visitar Armenelos em 3D</button>
-        <button type="button" data-acao="romenna-3d">Visitar Rómenna em 3D</button>
-        ${NOVAS_VISITAS.map(({ lugar }) => `<button type="button" data-acao="visitar-3d" data-id="${lugar.id}">Visitar ${esc(lugar.nome)} em 3D</button>`).join('')}
+        ${CATALOGO_3D.map((v) => `<button type="button" ${dadosVisita(v)}>Visitar ${esc(v.nome)} em 3D</button>`).join('')}
       </div></details>
       <h2>Camadas</h2>
       ${chk('nomes', 'Nomes')}
@@ -215,6 +218,10 @@ export class Interface {
     document.addEventListener('click', (e) => {
       const b = (e.target as HTMLElement).closest<HTMLElement>('[data-acao]');
       if (!b || b.closest('#busca-res')) return;
+      if (b instanceof HTMLAnchorElement) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+      }
       const dados = { ...b.dataset } as Record<string, string>;
       const acao = dados.acao;
       delete dados.acao;
@@ -414,6 +421,8 @@ export class Interface {
     else if (!this.painel.hidden) this.fecharPainel();
     a.travar(Boolean(l.travado));
     if (l.jornada) a.iniciarJornada(l.jornada[0], l.jornada[1]);
+    const visita = CATALOGO_3D.find((v) => v.id === l.visita3d);
+    if (visita) this.executar(visita.acao, { id: visita.id, corte: visita.corte });
   }
 
   private fecharInicio() {
@@ -444,7 +453,7 @@ export class Interface {
     this.fecharInicio();
     this.alternarMenu(false);
     this.busca.fechar();
-    if (sel === 'fontes' || sel === 'jornadas' || sel === 'eras' || sel === 'linhagens' || sel === 'valar' || sel === 'personagens' || sel.startsWith('fonte:') || sel.startsWith('aqui:')) {
+    if (sel === 'fontes' || sel === 'jornadas' || sel === 'catalogo-3d' || sel === 'eras' || sel === 'linhagens' || sel === 'valar' || sel === 'personagens' || sel.startsWith('fonte:') || sel.startsWith('aqui:')) {
       this.conteudoAtual = sel;
       if (sel.startsWith('aqui:')) a.selecionar(null);
       this.renderPainel();
@@ -481,11 +490,11 @@ export class Interface {
   private ultimoRenderPainel = 0;
   /** Redesenha a ficha aberta no máximo ~6 vezes por segundo (reprodução e arrasto do tempo). */
   private atualizarPainel() {
-    if (this.painel.hidden || !this.conteudoAtual || this.conteudoAtual === 'personagens' || this.painelAgendado) return;
+    if (this.painel.hidden || !this.conteudoAtual || ['personagens', 'catalogo-3d'].includes(this.conteudoAtual) || this.painelAgendado) return;
     const espera = Math.max(0, 160 - (performance.now() - this.ultimoRenderPainel));
     this.painelAgendado = window.setTimeout(() => {
       this.painelAgendado = 0;
-      if (!this.painel.hidden && this.conteudoAtual && this.conteudoAtual !== 'personagens') this.renderPainel(true);
+      if (!this.painel.hidden && this.conteudoAtual && !['personagens', 'catalogo-3d'].includes(this.conteudoAtual)) this.renderPainel(true);
     }, espera);
   }
 
@@ -511,6 +520,7 @@ export class Interface {
     else if (tipo === 'fonte') html = fichaFonte(id);
     else if (tipo === 'marco') html = fichaMarco(id);
     else if (tipo === 'jornadas') html = this.htmlJornadas();
+    else if (tipo === 'catalogo-3d') html = this.htmlCatalogo3d();
     else if (tipo === 'eras') html = this.htmlEras();
     else if (tipo === 'linhagem') html = fichaLinhagem(a, id);
     else if (tipo === 'linhagens') html = fichaSenhorios(a);
@@ -599,6 +609,7 @@ export class Interface {
           this.aviso(`Enquadramento fixo: destrave para visitar ${v.nome} em 3D.`);
           break;
         }
+        if (a.tocando) this.linha.alternarPlay();
         a.sairJornada();
         a.sairCaminhoReto();
         a.definirCamada('detalhes', true);
@@ -617,7 +628,7 @@ export class Interface {
           : portao ? { ...v.vista, x: portao.em[0], y: portao.em[1], rumo: portao.rumo, d: 1.2 }
           : ponto ? { ...v.vista, x: v.vista.x + ponto.dx, y: v.vista.y + ponto.dy, d: ponto.d } : v.vista;
         const aspecto = Math.min(1, viewport.width / viewport.height);
-        a.voar({ ...vista, d: vista.d / (acao === 'tumladen-3d' ? Math.max(0.8, aspecto) : aspecto) });
+        a.voar({ ...vista, d: vista.d / Math.max(aspecto, acao === 'tumladen-3d' ? 0.8 : nova?.id === 'avallone' ? 0.7 : 0) });
         a.renderer.domElement.focus({ preventScroll: true });
         this.aviso(ponto?.nota ?? (d.corte ? `${v.nome} em 3D · ${d.corte === 'aberto' ? 'Salões em corte' : 'Vista exterior'}.` : v.aviso), 7000);
         break;
@@ -728,6 +739,9 @@ export class Interface {
         break;
       case 'jornadas':
         this.abrirJornadas();
+        break;
+      case 'catalogo-3d':
+        this.abrir('catalogo-3d');
         break;
       case 'eras':
         this.abrirEras();
@@ -845,6 +859,16 @@ export class Interface {
       .map((j) => `<li><button type="button" data-acao="jornada" data-id="${j.id}"><strong>${esc(j.titulo)}</strong><span>${esc(j.subtitulo)}</span><span class="data">${j.passos.length} paradas</span></button></li>`)
       .join('')}</ul>
     <section class="bloco"><h3>Seguir o Caminho Reto</h3><p>Depois da Queda de Númenor, Aman não está mais na superfície do mundo. Este modo narrativo mostra, segundo a Akallabêth, como a estrada reta continua enquanto o mundo se curva.</p><div class="acoes"><button type="button" data-acao="caminho-reto">Seguir o Caminho Reto</button></div></section>`;
+  }
+
+  private htmlCatalogo3d(): string {
+    const destaques = CATALOGO_3D.filter((v) => v.id === 'avallone');
+    const demais = CATALOGO_3D.filter((v) => v.id !== 'avallone').sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+    return `<header class="ficha-cab"><h2>Criações em 3D</h2></header>
+    <ul class="lista-3d">${[...destaques, ...demais].map((v) => `<li><a href="#3d=${v.id}" ${dadosVisita(v)}>
+      ${v.id === 'avallone' ? `<img src="${esc(miniatura('fotografias/avallone-aa.webp'))}" alt="" width="384" height="256">` : ''}
+      <span><strong>${esc(v.nome)}</strong><small>Ver no mapa <span aria-hidden="true">↗</span></small></span>
+    </a></li>`).join('')}</ul>`;
   }
 
   // ---------- árvore em tela cheia ----------

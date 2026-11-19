@@ -6,6 +6,7 @@ import { NOVAS_VISITAS } from '../core/visitas';
 import type { ModeloTerreno } from '../terrain/model';
 import type { UniformesGlobais } from '../terrain/material';
 import { criarGondolin } from './gondolin';
+import { criarAvallone } from './avallone';
 import { criarMinasTirith } from './minas-tirith';
 import { criarEdoras } from './edoras';
 import { criarArmenelos, criarRomenna } from './numenor';
@@ -33,6 +34,7 @@ interface Sitio {
 }
 
 const ARQUITETURA: Record<string, Sitio['criar']> = {
+  avallone: criarAvallone,
   osgiliath: criarOsgiliath,
   'rammas-echor': criarRammas,
   'minas-ithil': (f) => criarFortaleza('Minas Ithil', f),

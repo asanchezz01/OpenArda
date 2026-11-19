@@ -1292,6 +1292,51 @@ details summary {
   color: var(--tinta-suave);
 }
 
+.lista-3d {
+  list-style: none;
+  margin: 12px 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.lista-3d a {
+  display: block;
+  color: var(--tinta);
+  text-decoration: none;
+  border: 1px solid var(--linha);
+  border-radius: 10px;
+  background: var(--fundo);
+}
+.lista-3d a:hover {
+  border-color: var(--ouro);
+  background: var(--fundo-claro);
+}
+.lista-3d img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2.45;
+  object-fit: cover;
+  object-position: 50% 59%;
+  border-radius: 9px 9px 0 0;
+  display: block;
+}
+.lista-3d a > span {
+  min-height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+}
+.lista-3d strong {
+  font-family: var(--serif);
+  font-size: 17px;
+}
+.lista-3d small {
+  color: var(--ouro);
+  white-space: nowrap;
+}
+
 /* ---------- abertura ---------- */
 #inicio {
   position: absolute;
@@ -1566,7 +1611,7 @@ details summary {
 .lugares-resultados details > p { margin: 6px 4px 12px; }
 
 @media (min-width: 761px) and (max-width: 1100px) {
-  .topo-acoes button:not(.icone) { display: none; }
+  .topo-acoes button:not(.icone, [data-acao='catalogo-3d']) { display: none; }
 }
 
 /* ---------- celular ---------- */
@@ -1580,7 +1625,7 @@ details summary {
   .marca {
     padding: 0 13px;
   }
-  .topo-acoes button:not(.icone) {
+  .topo-acoes button:not(.icone, [data-acao='catalogo-3d']) {
     display: none;
   }
   #topo {

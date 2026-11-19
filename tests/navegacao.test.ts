@@ -3,8 +3,10 @@ import { afterEach, beforeEach, describe, expect, it, vi, type MockInstance } fr
 import type { App } from '../src/app';
 import { eras, jornadas, tempo } from '../src/core/data';
 import { pessoaPorId } from '../src/core/linhagens';
+import { NOVAS_VISITAS } from '../src/core/visitas';
 import { Interface } from '../src/ui/interface';
 import { montarListaLugares } from '../src/ui/lugares';
+import { lerLink } from '../src/ui/url';
 import { norm } from '../src/ui/util';
 
 let ui: Interface;
@@ -302,6 +304,28 @@ describe('painel de personagens', () => {
 });
 
 describe('fichas, telas cheias e jornadas', () => {
+  it('lista todas as visitas no cabeçalho e abre Avallónë pelo catálogo ou por link direto', () => {
+    Object.assign(app, {
+      definirCamada: vi.fn(), ladoAtual: vi.fn(), retanguloDe: () => ({ width: 1200, height: 800 }),
+    });
+    const v = NOVAS_VISITAS.find(({ id }) => id === 'avallone')!;
+    app.definirTempo(tempo.cursor('TE:3018'));
+    el<HTMLButtonElement>('.topo-acoes [data-acao="catalogo-3d"]').click();
+    expect(el('#painel h2').textContent).toBe('Criações em 3D');
+    const links = [...document.querySelectorAll<HTMLAnchorElement>('.lista-3d a')];
+    const menu = [...document.querySelectorAll<HTMLElement>('.menu-cidades [data-acao]')];
+    expect(new Set(links.map((link) => link.dataset.id))).toEqual(new Set(menu.map((botao) => botao.dataset.id)));
+    expect(links[0].hash).toBe('#3d=avallone');
+    links[0].click();
+    expect(app.t).toBe(tempo.cursor(v.padrao));
+    expect(app.definirCamada).toHaveBeenCalledWith('detalhes', true);
+    expect(app.voar).toHaveBeenCalledWith(v.vista);
+    expect(el('#painel').hidden).toBe(true);
+    expect(document.activeElement).toBe(el('canvas'));
+    ui.aplicarLink(lerLink(links[0].hash));
+    expect(app.voar).toHaveBeenCalledTimes(2);
+  });
+
   it('volta da fonte à ficha original com a rolagem preservada', () => {
     ui.abrir('lugar:gondolin');
     el('.painel-conteudo').scrollTop = 240;

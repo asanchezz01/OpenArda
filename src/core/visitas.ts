@@ -15,6 +15,9 @@ interface Destino3d {
 }
 
 const destinos: Destino3d[] = [
+  { id: 'avallone', padrao: 'AA:#aa-silmarils', em: [-3166.17, -142], vista: [3.05, 249, 84], agua: true,
+    texto: 'A torre branca domina o porto, acima de um cais com duas arcadas. Casas de telhados escuros e pátios sobem pela encosta de Tol Eressëa, diante dos veleiros.',
+    ressalva: 'A torre e o porto voltado para leste vêm da Akallabêth. A planta, as fachadas, os patamares e os barcos foram reconstruídos a partir da fotografia do atlas.' },
   { id: 'osgiliath', padrao: 'TE:1000', em: [1761.4, -1337], vista: [3.8, 355, 64],
     fases: { 'SE:3320': 'integra', 'TE:1437': 'incendiada', 'TE:1640': 'ruinas', 'TE:3018': 'ponte-partida' },
     texto: 'Bairros nas duas margens do Anduin, uma grande ponte e a Cúpula das Estrelas. A Contenda e o abandono deixam casas queimadas e a cúpula caída. A ponte aparece partida a partir de 3018 T.E.',

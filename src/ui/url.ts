@@ -12,6 +12,7 @@ export interface EstadoLink {
   comparar?: [number, number];
   hora?: number;
   jornada?: [string, number];
+  visita3d?: string;
 }
 
 export function lerLink(hash = location.hash): EstadoLink {
@@ -42,6 +43,8 @@ export function lerLink(hash = location.hash): EstadoLink {
     const [id, k] = j.split('.');
     out.jornada = [id, Number(k) || 0];
   }
+  const visita3d = p.get('3d');
+  if (visita3d) out.visita3d = visita3d;
   return out;
 }
 

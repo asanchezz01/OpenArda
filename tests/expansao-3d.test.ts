@@ -48,6 +48,8 @@ describe('expansão dos reinos em 3D', () => {
   });
 
   it.each([
+    ['avallone', 'AL:#al-queda-lampadas', null], ['avallone', 'AA:#aa-silmarils', 'ativo'],
+    ['avallone', 'SE:3318', 'ativo'], ['avallone', 'SE:3319', null],
     ['osgiliath', 'SE:3319', null], ['osgiliath', 'TE:1437', 'incendiada'], ['osgiliath', 'TE:1640', 'ruinas'],
     ['osgiliath', 'TE:3018', 'ponte-partida'],
     ['barad-dur', 'SE:1000', 'construcao'], ['barad-dur', 'SE:1600', 'integra'], ['barad-dur', 'SE:3441', 'alicerces'],
@@ -60,6 +62,20 @@ describe('expansão dos reinos em 3D', () => {
     ['erebor', 'TE:1998', null], ['erebor', 'TE:2770', 'smaug'], ['erebor', 'TE:2941', 'restaurada'],
   ])('%s em %s passa à fase %s', (id, ref, fase) => {
     expect(destino(id).fase(tempo.cursor(ref))).toBe(fase);
+  });
+
+  it('reconstrói a torre, os patamares e os barcos de Avallónë junto à costa', () => {
+    const v = destino('avallone'), camada = new DetalhesReinos();
+    const modelo = atualizar(camada, v, v.padrao)!;
+    const torre = modelo.getObjectByName('Torre branca de Avallónë')!;
+    const patamares = modelo.getObjectByName('Patamares de Avallónë')!;
+    const barcos = modelo.getObjectByName('Veleiros e atracadouros')!;
+    const max = (obj: THREE.Object3D) => new THREE.Box3().setFromObject(obj).max.z;
+    expect(modelo.position.z).toBe(0);
+    expect(max(torre)).toBeGreaterThan(max(patamares));
+    expect(barcos.children.some((obj) => obj instanceof THREE.InstancedMesh && obj.geometry === casco)).toBe(true);
+    expect(Math.abs(relevo(tempo.cursor(v.padrao)).distCosta(v.vista.x, v.vista.y))).toBeLessThan(0.05);
+    expect(atualizar(camada, v, 'SE:3319')).toBeUndefined();
   });
 
   it('liga o panorama de Tumladen à cidade e aos portões, usando a bacia do relevo', () => {
