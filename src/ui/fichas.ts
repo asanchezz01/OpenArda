@@ -134,6 +134,7 @@ export function fichaLugar(app: App, l: Lugar): string {
   if (l.id === 'nargothrond') html += detalheNargothrond();
   if (l.id === 'armenelos') html += detalheArmenelos();
   if (l.id === 'romenna') html += detalheRomenna();
+  if (l.id === 'numenor') html += visitasDaIlha();
   html += NOVAS_VISITAS.filter((v) => v.id === l.id).map(detalheNovaVisita).join('');
 
   if (l.id === 'ezellohar') {
@@ -282,6 +283,15 @@ export function fichaReino(app: App, r: Reino): string {
   html += `<section class="bloco"><h3>Fontes</h3>${listaFontes(r.fontes)}${r.territorios.flatMap((x) => x.fontes ?? []).length ? listaFontes(r.territorios.flatMap((x) => x.fontes ?? [])) : ''}</section>
   <div class="acoes rodape"><button type="button" data-acao="voar" data-x="${r.em[0]}" data-y="${r.em[1]}" data-d="900">Ir para ${esc(r.nome)}</button><button type="button" data-acao="compartilhar">Copiar link desta vista</button></div>`;
   return html;
+}
+
+function visitasDaIlha(): string {
+  const visitas = NOVAS_VISITAS.filter((v) => v.lugar.reino === 'numenor' || v.id === 'meneltarma');
+  return `<section class="bloco destaque"><h3>Visitas em 3D em Númenor</h3><div class="acoes">
+    <button type="button" data-acao="armenelos-3d">Armenelos</button>
+    <button type="button" data-acao="romenna-3d">Rómenna</button>
+    ${visitas.map((v) => `<button type="button" data-acao="visitar-3d" data-id="${esc(v.id)}">${esc(v.lugar.nome)}</button>`).join('')}
+  </div></section>`;
 }
 
 function detalheNovaVisita(v: typeof NOVAS_VISITAS[number]): string {
