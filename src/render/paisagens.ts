@@ -96,8 +96,7 @@ export function criarSaloes(nome: string, fase: string) {
   const o = maquete(nome, 533);
   const elfos = nome === 'Salões de Thranduil', erebor = nome === 'Erebor';
   const narog = nome === 'Salões de Nargothrond';
-  if (!narog && !erebor && !elfos) o.grupo.rotation.z = -Math.PI / 2;
-  const deserto = ['abandonado', 'smaug', 'glaurung', 'abandonada', 'lago'].includes(fase);
+  const deserto = ['abandonado', 'smaug', 'glaurung', 'abandonada'].includes(fase);
   const rocha = elfos ? material(0x545f50) : narog ? material(0xa48656) : o.rocha;
   const piso = material(elfos ? 0x7e7559 : 0x8e8272);
   o.aterro(0.55, 0.54, 0.21);
@@ -111,21 +110,12 @@ export function criarSaloes(nome: string, fase: string) {
     for (const y of [-0.19, -0.063, 0.064, 0.191]) {
       o.peca(cilindro, o.pedra, x, y, 0.077, 0.019, 0.026, 0.115);
       o.bloco(rocha, x, y, 0.056, 0.052, 0.014, 0.128);
-      if (!deserto && (fase !== 'balin' || y < 0)) o.peca(copa, luz, x, y - 0.024, 0.102, 0.008, 0.008, 0.012);
+      if (!deserto) o.peca(copa, luz, x, y - 0.024, 0.102, 0.008, 0.008, 0.012);
     }
     o.muro(rocha, [x, -0.201], [x, 0.233], 0.141, 0.018, 0.042);
   }
   const entrada = o.arco(o.pedra, 0, -0.329, 0.018, 0.225, 0.076, 0.168);
-  entrada.name = narog ? 'Portas de Felagund' : erebor ? 'Porta Principal' : elfos ? 'Portão do Rei Élfico' : 'Entrada Oeste';
-  if (!narog && !erebor && !elfos && fase !== 'durin') {
-    const prata = material(0xb2d2d3, { emissive: 0x355654 });
-    o.arco(prata, 0, -0.369, 0.018, 0.133, 0.004, 0.116).name = 'Porta de Durin';
-    for (const x of [-0.124, 0.124]) o.arvore(madeira, o.relva, x, -0.4, 0.01, 0.039);
-    if (fase === 'lago') {
-      o.peca(cilindro, o.rocha, 0, -0.55, 0.009, 0.385, 0.264, 0.02);
-      o.peca(cilindro, agua, 0, -0.55, 0.022, 0.356, 0.239, 0.006);
-    }
-  }
+  entrada.name = narog ? 'Portas de Felagund' : erebor ? 'Porta Principal' : 'Portão do Rei Élfico';
   if (elfos || erebor) {
     o.bloco(agua, 0, -0.468, 1.35, 0.19, 0.013, -0.055);
     o.arco(o.pedra, 0.015, -0.475, -0.071, 0.278, 0.079, 0.084, Math.PI / 2);

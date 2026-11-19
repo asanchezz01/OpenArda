@@ -12,6 +12,7 @@ import { criarEdoras } from './edoras';
 import { criarArmenelos, criarRomenna } from './numenor';
 import { criarAndunie, criarEldalonde, criarEmerie, criarHyarastorni, criarNindamos, criarNoirinan } from './numenor-assentamentos';
 import { criarMenegroth } from './menegroth';
+import { criarKhazadDum } from './khazad-dum';
 import { criarNargothrond } from './nargothrond';
 import { criarArmada, criarCalmindon, criarCapitalNorte, criarFortaleza, criarOsgiliath, criarOstInEdhil, criarPorto, criarTirion, criarValmar } from './cidades';
 import { criarAbismo, criarAngband, criarCarasGaladhon, criarCinturao, criarMeneltarma, criarOrfalch, criarRammas, criarSaloes } from './paisagens';
@@ -58,7 +59,7 @@ const ARQUITETURA: Record<string, Sitio['criar']> = {
   angband: criarAngband,
   tirion: criarTirion,
   valmar: criarValmar,
-  'khazad-dum': (f) => criarSaloes('Khazad-dûm', f),
+  'khazad-dum': criarKhazadDum,
   erebor: (f) => criarSaloes('Erebor', f),
   'caras-galadhon': criarCarasGaladhon,
   'saloes-thranduil': (f) => criarSaloes('Salões de Thranduil', f),

@@ -618,6 +618,7 @@ export class Interface {
         }
         const portao = nova?.id === 'orfalch-echor' ? PORTOES_ECHOR[Number(d.ponto)] : undefined;
         const ponto = acao === 'gondolin-3d' ? PONTOS_GONDOLIN[Number(d.ponto)] : undefined;
+        const enquadramento = nova?.pontos?.[Number(d.ponto)];
         const fase = v.fase(a.t);
         if (!fase || (fase === 'seis' && portao?.nome === 'Aço')) a.definirTempo(tempo.cursor(v.padrao));
         this.fecharInicio();
@@ -626,11 +627,13 @@ export class Interface {
         const viewport = a.retanguloDe(a.ladoAtual());
         const vista = d.corte === 'aberto' && acao === 'nargothrond-3d' ? { ...v.vista, d: 1.7, rumo: 350, inclinacao: 54 }
           : portao ? { ...v.vista, x: portao.em[0], y: portao.em[1], rumo: portao.rumo, d: 1.2 }
+          : enquadramento ? { x: v.vista.x + enquadramento.dx, y: v.vista.y + enquadramento.dy, rumo: enquadramento.rumo, inclinacao: enquadramento.inclinacao, d: 1.2 }
           : ponto ? { ...v.vista, x: v.vista.x + ponto.dx, y: v.vista.y + ponto.dy, d: ponto.d } : v.vista;
         const aspecto = Math.min(1, viewport.width / viewport.height);
-        a.voar({ ...vista, d: vista.d / Math.max(aspecto, acao === 'tumladen-3d' ? 0.8 : nova?.id === 'avallone' ? 0.7 : 0) });
+        const aspectoMinimo = enquadramento || acao === 'tumladen-3d' ? 0.8 : nova?.id === 'avallone' ? 0.7 : nova?.id === 'khazad-dum' ? 0.59 : 0;
+        a.voar({ ...vista, d: vista.d / Math.max(aspecto, aspectoMinimo) });
         a.renderer.domElement.focus({ preventScroll: true });
-        this.aviso(ponto?.nota ?? (d.corte ? `${v.nome} em 3D · ${d.corte === 'aberto' ? 'Salões em corte' : 'Vista exterior'}.` : v.aviso), 7000);
+        this.aviso(ponto?.nota ?? (enquadramento ? `${v.nome} em 3D · ${enquadramento.nome}` : d.corte ? `${v.nome} em 3D · ${d.corte === 'aberto' ? 'Salões em corte' : 'Vista exterior'}.` : v.aviso), 7000);
         break;
       }
       case 'sel':

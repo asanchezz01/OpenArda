@@ -218,7 +218,7 @@ A ficha alterna a garganta e os salões em corte. O interior usa uma planta art�
 | 10 | Mordor | Barad-dûr em construção, íntegra, nos alicerces da Segunda Era e em ruínas após 3019 T.E. |
 | 11 | Domínio de Morgoth | Entrada fortificada de Angband ao pé de Thangorodrim, até a submersão. |
 | 12 | Valinor | Tirion em terraços com a lâmpada de Ingwë em Túna e as torres de sinos de Valmar, sob a iluminação da era. |
-| 13 | Reinos anões | Khazad-dûm, com a Porta Oeste, salões e a colônia de Balin. Erebor, com a Porta Principal, as fases de ocupação e o tesouro de Smaug. |
+| 13 | Reinos anões | Khazad-dûm em corte, com as Portas de Durin, o Vigésimo Primeiro Salão, Mazarbul, a ponte e os Grandes Portões. Erebor, com a Porta Principal, as fases de ocupação e o tesouro de Smaug. |
 | 14 | Reinos élficos da Terceira Era | Caras Galadhon com plataformas nos mallorns e salões de Thranduil, com ponte, adegas e saída dos barris. |
 
 As fichas indicam as fontes literárias e os pontos de interpretação. Khazad-dûm, Erebor e Lothlórien receberam contornos de borda difusa em torno de seus núcleos. Khazad-dûm usa a projeção em planta do complexo subterrâneo até o êxodo de 1981 T.E. Erebor alterna três períodos de domínio, com interrupções de 2210 a 2590 e de 2770 a 2941 T.E. Lothlórien usa o bosque dos Galadhrim a oeste do Anduin e perde o contorno na transição para a Quarta Era adotada pelo atlas. O botão **Comparar fronteiras** enquadra os contornos pequenos e apresenta o antes e o depois. As fichas registram as aproximações de cada área e data.
@@ -226,6 +226,12 @@ As fichas indicam as fontes literárias e os pontos de interpretação. Khazad-d
 A revisão no Chrome usou 1280 × 800 e 390 × 844. A renderização em software permitiu conferir a busca, as fichas e o enquadramento por amostragem. A correção do globo preserva os ladrilhos próximos à câmera e mantém o oceano de fundo atrás do terreno do atlas.
 
 O panorama de Tumladen também foi conferido com WebGL acelerado em uma RTX 3050 Laptop. Em uma amostra estática de 2,4 s, o Chrome registrou cerca de 60 quadros por segundo em 1280 × 800, após o carregamento do relevo. O enquadramento estreito foi conferido em emulação. O desempenho e os gestos em um celular físico seguem pendentes.
+
+### Referências de Khazad-dûm
+
+O Livro II de *A Sociedade do Anel*, capítulos 4 e 5, orienta a subida de duzentos degraus a oeste, os pilares do Vigésimo Primeiro Salão, o poço de luz oriental de Mazarbul e o arco estreito da ponte entre o Segundo e o Primeiro Salão. A maquete mostra o desabamento da ponte a partir de 3019 T.E. e usa o Apêndice A, III, e o Apêndice B para situar a vida do reino, o êxodo e a colônia de Balin. [Arquivo dos capítulos na Marquette University](https://www.marquette.edu/library/archives/Mss/JRRT/JRRT-series3.php)
+
+O desenho de Tolkien orienta a parede rochosa da entrada oeste. Ted Nasmith oferece referências para a aproximação pelo lago e John Howe para a silhueta da ponte contra o abismo. As distâncias, a geologia, os perfis da cantaria e a distribuição da luz fora das passagens descritas são escolhas da reconstrução. [Desenhos de J. R. R. Tolkien](https://www.tolkienestate.com/painting/the-lord-of-the-rings/), [*Moria Gate* de Ted Nasmith](https://www.tednasmith.com/tolkien/moria-gate-2021/), [*The Bridge of Khazad-dum* de John Howe](https://www.john-howe.com/portfolio/gallery/details.php?image_id=81)
 
 ## Critérios para concluir cada reino
 

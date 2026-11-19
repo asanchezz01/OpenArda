@@ -58,10 +58,30 @@ describe('expansão dos reinos em 3D', () => {
     ['cinturao-melian', 'AA:#aa-primeira-batalha', 'ativo'], ['cinturao-melian', 'PE:503', null],
     ['grande-armada', 'SE:3309', null], ['grande-armada', 'SE:3310', 'ativo'], ['grande-armada', 'SE:3319', null],
     ['khazad-dum', 'SE:749', 'durin'], ['khazad-dum', 'SE:750', 'integra'],
-    ['khazad-dum', 'TE:2989', 'balin'], ['khazad-dum', 'TE:2994', 'abandonado'], ['khazad-dum', 'TE:3018', 'lago'],
+    ['khazad-dum', 'TE:2989', 'balin'], ['khazad-dum', 'TE:2994', 'ruinas-de-balin'], ['khazad-dum', 'TE:3018', 'lago'],
+    ['khazad-dum', 'TE:3019', 'lago-ponte-partida'],
     ['erebor', 'TE:1998', null], ['erebor', 'TE:2770', 'smaug'], ['erebor', 'TE:2941', 'restaurada'],
   ])('%s em %s passa à fase %s', (id, ref, fase) => {
     expect(destino(id).fase(tempo.cursor(ref))).toBe(fase);
+  });
+
+  it('expõe os dois níveis de Khazad-dûm e distingue a queda da ponte da queda da colônia', () => {
+    const v = destino('khazad-dum'), camada = new DetalhesReinos();
+    const em = (ref: string) => atualizar(camada, v, ref)!;
+    expect(em('SE:749').getObjectByName('Portas de Durin')).toBeUndefined();
+    expect(em('TE:2989').getObjectByName('Túmulo de Balin')).toBeUndefined();
+    const colônia = em('TE:2994');
+    expect(colônia.getObjectByName('Túmulo de Balin')).toBeDefined();
+    expect(colônia.getObjectByName('Lago da Porta Oeste')).toBeUndefined();
+    const moria = em('TE:3018');
+    const caixa = (modelo: THREE.Group, nome: string) => new THREE.Box3().setFromObject(modelo.getObjectByName(nome)!);
+    const ponte = caixa(moria, 'Ponte de Durin');
+    expect(caixa(moria, 'Câmara de Mazarbul').min.z).toBeGreaterThan(ponte.max.z);
+    expect(caixa(moria, 'Lago da Porta Oeste').max.x).toBeLessThan(ponte.min.x);
+    expect(caixa(moria, 'Primeiro Salão e Grandes Portões').max.x).toBeGreaterThan(ponte.max.x);
+    const ruína = em('TE:3019');
+    expect(caixa(ruína, 'Ponte de Durin desabada').max.x).toBeLessThan(ponte.getCenter(new THREE.Vector3()).x);
+    expect(ruína.getObjectByName('Ponte de Durin')).toBeUndefined();
   });
 
   it('reconstrói a torre, os patamares e os barcos de Avallónë junto à costa', () => {

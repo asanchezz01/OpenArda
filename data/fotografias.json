@@ -191,6 +191,7 @@
     "id": "khazad-dum-te3019",
     "lugar": "khazad-dum",
     "quando": "TE:3019",
+    "de": "TE:3018",
     "titulo": "As Portas de Durin ao luar",
     "documentado": [
       "As portas numa parede de rocha lisa, invisíveis a não ser pelo desenho de prata ao luar",
@@ -2395,6 +2396,7 @@
     "id": "khazad-dum-primeiro-salao-te3019",
     "lugar": "khazad-dum",
     "quando": "TE:3019",
+    "de": "TE:3018",
     "titulo": "O Primeiro Salão de Khazad-dûm",
     "documentado": [
       "O Primeiro Salão fica perto da Porta Leste, com janelas altas que deixam entrar a luz do dia."

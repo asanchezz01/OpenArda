@@ -302,6 +302,7 @@ function detalheNovaVisita(v: typeof NOVAS_VISITAS[number]): string {
     <div class="acoes">
       <button type="button" class="primario" data-acao="visitar-3d" data-id="${v.id}">Explorar em 3D</button>
       ${v.id === 'orfalch-echor' ? PORTOES_ECHOR.map(({ nome }, i) => `<button type="button" data-acao="visitar-3d" data-id="${v.id}" data-ponto="${i}">Portão de ${nome}</button>`).join('') : ''}
+      ${v.pontos?.map(({ nome }, i) => `<button type="button" data-acao="visitar-3d" data-id="${v.id}" data-ponto="${i}">${esc(nome)}</button>`).join('') ?? ''}
     </div>
   </section>`;
 }

@@ -10,6 +10,7 @@ interface Destino3d {
   agua?: boolean;
   inicio?: TempoRef;
   fases?: Record<string, string>;
+  pontos?: { nome: string; dx: number; dy: number; rumo: number; inclinacao: number }[];
   texto: string;
   ressalva: string;
 }
@@ -93,10 +94,15 @@ const destinos: Destino3d[] = [
   { id: 'valmar', padrao: 'AA:#aa-silmarils', vista: [2.9, 100, 64], raio: 0.65,
     texto: 'Torres com sinos cercam as praças. O portão de oeste se volta para Ezellohar.',
     ressalva: 'Os sinos, o portão ocidental e a relação com o monte vêm de O Silmarillion. Planta, pórticos e torres são interpretativos.' },
-  { id: 'khazad-dum', padrao: 'TE:3018', em: [1237, -610], vista: [1.65, 89, 55], raio: 0.3,
-    fases: { 'PE:1': 'durin', 'SE:750': 'integra', 'TE:1981': 'abandonado', 'TE:2989': 'balin', 'TE:2994': 'abandonado', 'TE:3018': 'lago' },
-    texto: 'Um corte mostra os pilares e os salões de Khazad-dûm. A Porta de Durin aparece a partir da amizade com Eregion. Os salões escurecem com o êxodo, ganham luzes na ocupação de Balin e a Porta Oeste aparece diante do lago no fim da Terceira Era.',
-    ressalva: 'O corte, a distribuição dos salões e a posição escolhida para a Porta Oeste são artísticos. O relevo e o nível da água representam a cena da porta em fase ilustrativa.' },
+  { id: 'khazad-dum', padrao: 'TE:3018', em: [1237, -610], vista: [2.16, 12, 47], raio: 0.3,
+    fases: { 'PE:1': 'durin', 'SE:750': 'integra', 'TE:1981': 'abandonado', 'TE:2989': 'balin', 'TE:2994': 'ruinas-de-balin', 'TE:3018': 'lago', 'TE:3019': 'lago-ponte-partida' },
+    pontos: [
+      { nome: 'Entrada oeste', dx: -0.43, dy: -0.008, rumo: 74, inclinacao: 59 },
+      { nome: 'Câmara de Mazarbul', dx: 0.086, dy: 0.278, rumo: 335, inclinacao: 28 },
+      { nome: 'Ponte de Durin', dx: 0.53, dy: -0.05, rumo: 358, inclinacao: 54 },
+    ],
+    texto: 'O corte vai das Portas de Durin e da escadaria ocidental aos Grandes Portões no leste. O Vigésimo Primeiro Salão fica acima do Segundo Salão, de onde a ponte estreita cruza o abismo. Em Mazarbul, a luz entra por um poço oriental e incide sobre o túmulo de Balin. Em 3019 T.E., a ponte aparece desabada.',
+    ressalva: 'A travessia e o túmulo seguem A Sociedade do Anel, Livro II, caps. 4 e 5. O corte comprime as distâncias, e a geologia, as proporções e o acabamento da cantaria são reconstruções artísticas.' },
   { id: 'erebor', padrao: 'TE:2941', em: [1816, -192], vista: [2.2, 350, 65], raio: 0.45,
     fases: { 'TE:1999': 'thrain', 'TE:2210': 'abandonado', 'TE:2590': 'integra', 'TE:2770': 'smaug', 'TE:2941': 'restaurada' },
     texto: 'A Porta Principal se abre acima do Rio Corrente. O corte distingue o salão ativo, o abandono e o tesouro acumulado na fase de Smaug.',
